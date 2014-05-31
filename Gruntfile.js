@@ -34,6 +34,9 @@ module.exports = function (grunt) {
 			},
 			clientTest: {
 				src: ['<%= opt.client.tsTest %>/main-spec.ts']
+			},
+			testFixture: {
+				src: ['<%= opt.client.tsTest %>/valid/**/*.d.ts']
 			}
 		},
 		tslint: {
@@ -173,7 +176,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		'test',
 		"exec test suites",
-		['default', 'ts:clientTest', 'mochaTest']);
+		['default', 'ts:clientTest', 'mochaTest', 'ts:testFixture']);
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };
