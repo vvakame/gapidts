@@ -1,0 +1,48 @@
+{
+  "name": "google-api-typescript-definition-generator",
+  "author": "vvakame",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "main": "./index",
+  "scripts": {
+    "build": "grunt default",
+    "test": "grunt test-node"
+  },
+  "keywords": [
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vvakame/google-api-typescript-definition-generator",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vvakame/google-api-typescript-definition-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vvakame/google-api-typescript-definition-generator/issues"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "update-notifier": "0.1.8",
+    "commander": "2.2.0"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+
+    "grunt-contrib-clean": "0.5.0",
+
+    "grunt-ts": "1.11.2",
+    "typescript": "1.0.1",
+    "grunt-tslint": "0.4.1",
+    "grunt-tsd": "0.1.0",
+
+    "mocha": "1.19.0",
+    "power-assert": "0.7.2",
+    "espower-loader": "0.7.1",
+
+    "grunt-mocha": "0.4.10",
+    "grunt-mocha-test": "0.10.2",
+    "matchdep": "0.3.0"
+  }
+}

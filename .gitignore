@@ -1,5 +1,9 @@
 .idea/
 
+node_modules/
+
 typings/
+.tscache/
 
 lib/**/*.js
+test/**/*.js

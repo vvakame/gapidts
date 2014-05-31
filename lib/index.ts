@@ -13,7 +13,7 @@ if (!true) {
 		method: "GET",
 		path: "/discovery/v1/apis/urlshortener/v1/rest"
 	}, (response)=> {
-		(<any>response).setEncoding('utf8');
+		(<any>response).setEncoding("utf8");
 		var result = "";
 		response.on("data", (d:string) => {
 			result += d;
@@ -24,7 +24,7 @@ if (!true) {
 	});
 
 	request.on("error", (e:any) => {
-		console.log('problem with request: ' + e.message);
+		console.log("problem with request: " + e.message);
 	});
 } else {
 	var result = fs.readFileSync("./resources/urlshortener-v1-rest.json", "utf8");
