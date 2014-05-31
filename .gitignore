@@ -1,1 +1,5 @@
 .idea/
+
+typings/
+
+lib/**/*.js
