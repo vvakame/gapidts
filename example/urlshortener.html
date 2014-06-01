@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Try urlshortener</title>
-    <script>
-        function appendResults(text) {
-            var results = document.getElementById('results');
-            results.appendChild(document.createElement('P'));
-            results.appendChild(document.createTextNode(text));
-        }
-
-        function makeRequest() {
-            var request = gapi.client.urlshortener.url.get({
-                'shortUrl': 'http://goo.gl/fbsS'
-            });
-            request.execute(function (response) {
-                appendResults(response.longUrl);
-            });
-        }
-
-        function load() {
-            // gapi.client.setApiKey('YOUR API KEY');
-            gapi.client.load('urlshortener', 'v1', makeRequest);
-        }
-    </script>
-    <script src="https://apis.google.com/js/client.js?onload=load"></script>
+	<meta charset="UTF-8">
+	<title>Try urlshortener</title>
+	<script>
+		function load() {
+			// gapi.client.setApiKey('YOUR API KEY');
+			gapi.client.load('urlshortener', 'v1', function () {
+				(function () {
+					var request = gapi.client.urlshortener.url.get({
+						'shortUrl': 'http://goo.gl/fbsS'
+					});
+					request.execute(function (response) {
+						console.log("object", response);
+					});
+				})();
+				(function () {
+					var request = gapi.client.urlshortener.url.get({
+					});
+					request.execute(function (response) {
+						console.log("none (invalid)", response);
+					});
+				})();
+				(function () {
+					var request = gapi.client.urlshortener.url.get({
+						'shortUrl': 'http://goo.gl/fbsS',
+						'projection': 'FULL'
+					});
+					request.execute(function (response) {
+						console.log("all", response);
+					});
+				})();
+				(function () {
+					var request = gapi.client.urlshortener.url.get('http://goo.gl/fbsS', {
+						'projection': 'FULL'
+					});
+					request.execute(function (response) {
+						console.log("fixed (internal error...)", response);
+					});
+				})();
+				(function () {
+					var request = gapi.client.urlshortener.url.get('http://goo.gl/fbsS', 'FULL');
+					request.execute(function (response) {
+						console.log("fixed (invalid)", response);
+					});
+				})();
+			});
+		}
+	</script>
+	<script src="https://apis.google.com/js/client.js?onload=load"></script>
 </head>
 <body>
 <div id="results"></div>
