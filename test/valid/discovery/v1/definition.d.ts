@@ -1,5 +1,15 @@
 declare module gapi.client {
     module discovery {
+        var apis: {
+            getRest: (params: {
+                api: string;
+                version: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRestDescription
+            list: (params: {
+                name?: string;
+                preferred?: boolean;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDirectoryList
+        };
         interface IDirectoryList {
             discoveryVersion: string;
             items: {

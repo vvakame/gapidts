@@ -1,5 +1,540 @@
 declare module gapi.client {
     module compute {
+        var addresses: {
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAddressAggregatedList
+            delete: (params: {
+                address: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                address: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAddress
+            insert: (params: {
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAddressList
+        };
+        var diskTypes: {
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskTypeAggregatedList
+            get: (params: {
+                diskType: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskType
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskTypeList
+        };
+        var disks: {
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskAggregatedList
+            createSnapshot: (params: {
+                disk: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            delete: (params: {
+                disk: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                disk: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDisk
+            insert: (params: {
+                project: string;
+                sourceImage?: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskList
+        };
+        var firewalls: {
+            delete: (params: {
+                firewall: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                firewall: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IFirewall
+            insert: (params: {
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IFirewallList
+            patch: (params: {
+                firewall: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            update: (params: {
+                firewall: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+        };
+        var forwardingRules: {
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IForwardingRuleAggregatedList
+            delete: (params: {
+                forwardingRule: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                forwardingRule: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IForwardingRule
+            insert: (params: {
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IForwardingRuleList
+            setTarget: (params: {
+                forwardingRule: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+        };
+        var globalOperations: {
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperationAggregatedList
+            delete: (params: {
+                operation: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            get: (params: {
+                operation: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperationList
+        };
+        var httpHealthChecks: {
+            delete: (params: {
+                httpHealthCheck: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                httpHealthCheck: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IHttpHealthCheck
+            insert: (params: {
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IHttpHealthCheckList
+            patch: (params: {
+                httpHealthCheck: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            update: (params: {
+                httpHealthCheck: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+        };
+        var images: {
+            delete: (params: {
+                image: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            deprecate: (params: {
+                image: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                image: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IImage
+            insert: (params: {
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IImageList
+        };
+        var instances: {
+            addAccessConfig: (params: {
+                instance: string;
+                networkInterface: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IInstanceAggregatedList
+            attachDisk: (params: {
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            delete: (params: {
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            deleteAccessConfig: (params: {
+                accessConfig: string;
+                instance: string;
+                networkInterface: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            detachDisk: (params: {
+                deviceName: string;
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IInstance
+            getSerialPortOutput: (params: {
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISerialPortOutput
+            insert: (params: {
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IInstanceList
+            reset: (params: {
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            setDiskAutoDelete: (params: {
+                autoDelete: boolean;
+                deviceName: string;
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            setMetadata: (params: {
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            setScheduling: (params: {
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            setTags: (params: {
+                instance: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+        };
+        var machineTypes: {
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMachineTypeAggregatedList
+            get: (params: {
+                machineType: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMachineType
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMachineTypeList
+        };
+        var networks: {
+            delete: (params: {
+                network: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                network: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // INetwork
+            insert: (params: {
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // INetworkList
+        };
+        var projects: {
+            get: (params: {
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IProject
+            setCommonInstanceMetadata: (params: {
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+        };
+        var regionOperations: {
+            delete: (params: {
+                operation: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            get: (params: {
+                operation: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperationList
+        };
+        var regions: {
+            get: (params: {
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRegion
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRegionList
+        };
+        var routes: {
+            delete: (params: {
+                project: string;
+                route: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                project: string;
+                route: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRoute
+            insert: (params: {
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRouteList
+        };
+        var snapshots: {
+            delete: (params: {
+                project: string;
+                snapshot: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                project: string;
+                snapshot: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISnapshot
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISnapshotList
+        };
+        var targetInstances: {
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetInstanceAggregatedList
+            delete: (params: {
+                project: string;
+                targetInstance: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                project: string;
+                targetInstance: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetInstance
+            insert: (params: {
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetInstanceList
+        };
+        var targetPools: {
+            addHealthCheck: (params: {
+                project: string;
+                region: string;
+                targetPool: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            addInstance: (params: {
+                project: string;
+                region: string;
+                targetPool: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            aggregatedList: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetPoolAggregatedList
+            delete: (params: {
+                project: string;
+                region: string;
+                targetPool: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            get: (params: {
+                project: string;
+                region: string;
+                targetPool: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetPool
+            getHealth: (params: {
+                project: string;
+                region: string;
+                targetPool: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetPoolInstanceHealth
+            insert: (params: {
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                region: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetPoolList
+            removeHealthCheck: (params: {
+                project: string;
+                region: string;
+                targetPool: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            removeInstance: (params: {
+                project: string;
+                region: string;
+                targetPool: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            setBackup: (params: {
+                failoverRatio?: number;
+                project: string;
+                region: string;
+                targetPool: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+        };
+        var zoneOperations: {
+            delete: (params: {
+                operation: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            get: (params: {
+                operation: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperationList
+        };
+        var zones: {
+            get: (params: {
+                project: string;
+                zone: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IZone
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IZoneList
+        };
         interface IAccessConfig {
             kind: string;
             name: string;

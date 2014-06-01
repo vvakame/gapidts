@@ -1,5 +1,28 @@
 declare module gapi.client {
     module datastore {
+        var datasets: {
+            allocateIds: (params: {
+                datasetId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAllocateIdsResponse
+            beginTransaction: (params: {
+                datasetId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IBeginTransactionResponse
+            blindWrite: (params: {
+                datasetId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IBlindWriteResponse
+            commit: (params: {
+                datasetId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICommitResponse
+            lookup: (params: {
+                datasetId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ILookupResponse
+            rollback: (params: {
+                datasetId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRollbackResponse
+            runQuery: (params: {
+                datasetId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRunQueryResponse
+        };
         interface IAllocateIdsRequest {
             keys: IKey[];
         }

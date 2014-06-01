@@ -1,5 +1,41 @@
 declare module gapi.client {
     module customsearch {
+        var cse: {
+            list: (params: {
+                c2coff?: string;
+                cr?: string;
+                cref?: string;
+                cx?: string;
+                dateRestrict?: string;
+                exactTerms?: string;
+                excludeTerms?: string;
+                fileType?: string;
+                filter?: string;
+                gl?: string;
+                googlehost?: string;
+                highRange?: string;
+                hl?: string;
+                hq?: string;
+                imgColorType?: string;
+                imgDominantColor?: string;
+                imgSize?: string;
+                imgType?: string;
+                linkSite?: string;
+                lowRange?: string;
+                lr?: string;
+                num?: number;
+                orTerms?: string;
+                q: string;
+                relatedSite?: string;
+                rights?: string;
+                safe?: string;
+                searchType?: string;
+                siteSearch?: string;
+                siteSearchFilter?: string;
+                sort?: string;
+                start?: number;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISearch
+        };
         interface IContext {
             facets: {
                 anchor: string;

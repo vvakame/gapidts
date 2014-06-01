@@ -1,5 +1,16 @@
 declare module gapi.client {
     module urlshortener {
+        var url: {
+            get: (params: {
+                projection?: string;
+                shortUrl: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IUrl
+            insert: () => { execute(callback: (data:any, original: string) => void):void; }; // IUrl
+            list: (params: {
+                projection?: string;
+                "start-token"?: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IUrlHistory
+        };
         interface IAnalyticsSnapshot {
             browsers: IStringCount[];
             countries: IStringCount[];

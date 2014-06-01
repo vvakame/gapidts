@@ -21,10 +21,10 @@ export class Discovery {
 		this.name = base.name;
 
 		this.schemas = Object.keys(base.schemas).map(schemaName=> {
-			return new Schema(base.schemas[schemaName]);
+			return new Schema(schemaName, base.schemas[schemaName]);
 		});
 		this.resources = Object.keys(base.resources).map(resourceName=> {
-			return new Resource(base.resources[resourceName]);
+			return new Resource(resourceName, base.resources[resourceName]);
 		});
 	}
 
@@ -48,32 +48,86 @@ export class Resource {
 
 	methods:Method[] = [];
 
-	constructor(base:model.IRestResource) {
+	constructor(public name:string, public base:model.IRestResource) {
 		this.methods = Object.keys(base.methods).map(methodName=> {
-			return new Method(base.methods[methodName]);
+			return new Method(methodName, base.methods[methodName]);
 		});
 	}
 
 	emit(process:Process):void {
-		// TODO
+		// note: why var? if API has "delete" method. it can't contains to module.
+		process.output("var ").output(this.name).output(": {").outputLine();
+		process.increaseIndent();
+
+		this.methods.forEach(method=> {
+			method.emit(process);
+		});
+
+		process.decreaseIndent();
+		process.outputLine("};");
 	}
 }
 
 export class Method {
-	constructor(base:model.IRestMethod) {
+	constructor(public name:string, public base:model.IRestMethod) {
 	}
 
 	emit(process:Process):void {
-		// TODO
+		process.output(this.name).output(": (");
+
+		if (this.base.parameters) {
+			var parameterNames = Object.keys(this.base.parameters);
+			if (parameterNames.length !== 0) {
+				process.outputLine("params: {");
+				process.increaseIndent();
+				parameterNames.forEach(parameterName=> {
+					var parameter = this.base.parameters[parameterName];
+					if (/\-/.test(parameterName)) {
+						process.output("\"").output(parameterName).output("\"");
+					} else {
+						process.output(parameterName);
+					}
+					if (!parameter.required) {
+						process.output("?");
+					}
+					process.output(": ");
+					switch (parameter.type) {
+						case "string":
+							process.output("string");
+							break;
+						case "integer":
+						case "number":
+							process.output("number");
+							break;
+						case "boolean":
+							process.output("boolean");
+							break;
+						default :
+							console.log(this.base);
+							throw new Error("unknown type");
+					}
+					process.outputLine(";");
+				});
+				process.decreaseIndent();
+				process.output("}");
+			}
+		}
+
+		process.output(") => ");
+		process.output("{ execute(callback: (data:any, original: string) => void):void; }; // ");
+		if (!this.base.response) {
+			process.outputLine("void");
+		} else if (this.base.response.$ref) {
+			process.output("I").output(this.base.response.$ref).outputLine();
+		} else {
+			console.log(this.base);
+			throw new Error("unknown response");
+		}
 	}
 }
 
 export class Schema {
-	name:string;
-
-	constructor(public base:model.IJsonSchema) {
-		this.name = base.id;
-
+	constructor(public name:string, public base:model.IJsonSchema) {
 		if (base.type !== "object") {
 			throw base;
 		}

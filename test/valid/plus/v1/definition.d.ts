@@ -1,5 +1,76 @@
 declare module gapi.client {
     module plus {
+        var activities: {
+            get: (params: {
+                activityId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IActivity
+            list: (params: {
+                collection: string;
+                maxResults?: number;
+                pageToken?: string;
+                userId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IActivityFeed
+            search: (params: {
+                language?: string;
+                maxResults?: number;
+                orderBy?: string;
+                pageToken?: string;
+                query: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IActivityFeed
+        };
+        var comments: {
+            get: (params: {
+                commentId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IComment
+            list: (params: {
+                activityId: string;
+                maxResults?: number;
+                pageToken?: string;
+                sortOrder?: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICommentFeed
+        };
+        var moments: {
+            insert: (params: {
+                collection: string;
+                debug?: boolean;
+                userId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMoment
+            list: (params: {
+                collection: string;
+                maxResults?: number;
+                pageToken?: string;
+                targetUrl?: string;
+                type?: string;
+                userId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMomentsFeed
+            remove: (params: {
+                id: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+        };
+        var people: {
+            get: (params: {
+                userId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPerson
+            list: (params: {
+                collection: string;
+                maxResults?: number;
+                orderBy?: string;
+                pageToken?: string;
+                userId: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPeopleFeed
+            listByActivity: (params: {
+                activityId: string;
+                collection: string;
+                maxResults?: number;
+                pageToken?: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPeopleFeed
+            search: (params: {
+                language?: string;
+                maxResults?: number;
+                pageToken?: string;
+                query: string;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPeopleFeed
+        };
         interface IAcl {
             description: string;
             items: IPlusAclentryResource[];
