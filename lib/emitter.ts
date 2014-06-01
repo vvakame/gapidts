@@ -7,7 +7,7 @@ export function emit(root:model.IRestDescription):{ definition:string; data:Disc
 	api.emit(process);
 
 	return {
-		definition: process.result,
+		definition: process.toDefinition(),
 		data: api
 	};
 }
@@ -242,38 +242,37 @@ export class Schema {
 				console.log(property);
 				throw new Error("unknown type: " + property.type);
 		}
-
 	}
 }
 
 export class Process {
-	result = "";
 	indentChar = " ";
 	indentStep = 4;
 	indent = 0;
 
-	alreadlyIndentThisLine = false;
+	_result = "";
+	_alreadlyIndentThisLine = false;
 
 	output(str:string):Process {
 		this.doIndent();
-		this.result += str;
+		this._result += str;
 		return this;
 	}
 
 	outputLine(str?:string):Process {
 		this.doIndent();
 		if (str) {
-			this.result += str;
+			this._result += str;
 		}
-		this.result += "\n";
-		this.alreadlyIndentThisLine = false;
+		this._result += "\n";
+		this._alreadlyIndentThisLine = false;
 		return this;
 	}
 
 	doIndent():Process {
-		if (!this.alreadlyIndentThisLine) {
-			this.result += this.getIndent();
-			this.alreadlyIndentThisLine = true;
+		if (!this._alreadlyIndentThisLine) {
+			this._result += this.getIndent();
+			this._alreadlyIndentThisLine = true;
 		}
 		return this;
 	}
@@ -302,5 +301,9 @@ export class Process {
 			result += s;
 		}
 		return result;
+	}
+
+	toDefinition():string {
+		return this._result;
 	}
 }
