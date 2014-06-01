@@ -59,8 +59,8 @@ describe("definition emitter", ()=> {
 
 	serviceInfos.forEach(serviceInfo => {
 		it("create same file every time about " + serviceInfo.name + "-" + serviceInfo.version, (done)=> {
-			var jsonFilePath = "test/fixture/" + serviceInfo.name + "/" + serviceInfo.version + "/rest.json";
-			var expectedDefinitionPath = "test/valid/" + serviceInfo.name + "/" + serviceInfo.version + "/definition.d.ts";
+			var jsonFilePath = "test/fixture/" + serviceInfo.name + "-" + serviceInfo.version + "-rest.json";
+			var expectedDefinitionPath = "test/valid/" + serviceInfo.name + "-" + serviceInfo.version + ".d.ts";
 
 			var doTest = (json:string, expectedDefinition:string)=> {
 				var root:model.IRestDescription = JSON.parse(json);
