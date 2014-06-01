@@ -1,3 +1,5 @@
+// copied by discovery v1 definition.
+
 export interface IDirectoryList {
 	discoveryVersion: string;
 	items: {

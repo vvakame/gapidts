@@ -27,15 +27,7 @@ if (!true) {
 		console.log("problem with request: " + e.message);
 	});
 } else {
-	var result = fs.readFileSync("./resources/urlshortener-v1-rest.json", "utf8");
-	// var result = fs.readFileSync("./resources/plus-v1-rest.json", "utf8");
-	// var result = fs.readFileSync("./resources/discovery-v1-rest.json", "utf8");
-	// var result = fs.readFileSync("./resources/calendar-v3-rest.json", "utf8");
-	// var result = fs.readFileSync("./resources/blogger-v3-rest.json", "utf8");
-	// var result = fs.readFileSync("./resources/compute-v1-rest.json", "utf8");
-	// var result = fs.readFileSync("./resources/customsearch-v1-rest.json", "utf8");
-	// var result = fs.readFileSync("./resources/datastore-v1beta1-rest.json", "utf8");
-	// var result = fs.readFileSync("./resources/tasks-v1-rest.json", "utf8");
+	var result = fs.readFileSync("./test/fixture/bigquery/v2/rest.json", "utf8");
 	process(result);
 }
 
