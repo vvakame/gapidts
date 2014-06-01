@@ -1,94 +1,130 @@
-export interface IRoot {
-	kind: string;
-	etag: string;
+export interface IDirectoryList {
 	discoveryVersion: string;
-	id: string;
-	name: string;
-	version: string;
-	title: string;
+	items: {
+		description: string;
+		discoveryLink: string;
+		discoveryRestUrl: string;
+		documentationLink: string;
+		icons: {
+			x16: string;
+			x32: string;
+		};
+		id: string;
+		kind: string;
+		labels: string[];
+		name: string;
+		preferred: boolean;
+		title: string;
+		version: string;
+	}[];
+	kind: string;
+}
+export interface IJsonSchema {
+	$ref: string;
+	additionalProperties: IJsonSchema;
+	annotations: {
+		required: string[];
+	};
+	default: string;
 	description: string;
-	ownerDomain:string;
-	ownerName: string;
+	enum: string[];
+	enumDescriptions: string[];
+	format: string;
+	id: string;
+	items: IJsonSchema;
+	location: string;
+	maximum: string;
+	minimum: string;
+	pattern: string;
+	properties: { [name:string]: IJsonSchema; };
+	readOnly: boolean;
+	repeated: boolean;
+	required: boolean;
+	type: string;
+	variant: {
+		discriminant: string;
+		map: {
+			$ref: string;
+			type_value: string;
+		}[];
+	};
+}
+export interface IRestDescription {
+	auth: {
+		oauth2: {
+			scopes: {
+				[name:string]: {
+					description: string;
+				};
+			};
+		};
+	};
+	basePath: string;
+	baseUrl: string;
+	batchPath: string;
+	canonicalName: string;
+	description: string;
+	discoveryVersion: string;
+	documentationLink: string;
+	etag: string;
+	features: string[];
 	icons: {
 		x16: string;
 		x32: string;
 	};
-	documentationLink: string;
+	id: string;
+	kind: string;
+	labels: string[];
+	methods: { [name:string]: IRestMethod; };
+	name: string;
+	ownerDomain: string;
+	ownerName: string;
+	packagePath: string;
+	parameters: { [name:string]: IJsonSchema; };
 	protocol: string;
-	baseUrl: string;
-	basePath: string;
+	resources: { [name:string]: IRestResource; };
+	revision: string;
 	rootUrl: string;
+	schemas: { [name:string]: IJsonSchema; };
 	servicePath: string;
-	batchPath: string;
-	parameters: {
-		alt:IParameter;
-		key:IParameter;
-		oauth_token:IParameter; // access_token?
-		prettyPrint:IParameter;
-		quotaUser:IParameter;
-		userIp:IParameter;
-		[index:string]: IParameter;
-	};
-	auth: {
-		oauth2: {
-			scopes: { [url:string]: {description:string; }; };
+	title: string;
+	version: string;
+}
+export interface IRestMethod {
+	description: string;
+	etagRequired: boolean;
+	httpMethod: string;
+	id: string;
+	mediaUpload: {
+		accept: string[];
+		maxSize: string;
+		protocols: {
+			resumable: {
+				multipart: boolean;
+				path: string;
+			};
+			simple: {
+				multipart: boolean;
+				path: string;
+			};
 		};
 	};
-	schemas: {
-		[name:string]:ISchema;
+	parameterOrder: string[];
+	parameters: { [name:string]: IJsonSchema; };
+	path: string;
+	request: {
+		$ref: string;
+		parameterName: string;
 	};
-	resources: {
-		[name:string]:IResource;
+	response: {
+		$ref: string;
 	};
+	scopes: string[];
+	supportsMediaDownload: boolean;
+	supportsMediaUpload: boolean;
+	supportsSubscription: boolean;
 }
-
-export interface IParameter {
-	type:string;
-	description:string;
-	location?:string;
-	default?:string;
-	enum?:string[];
-	enumDescriptions?:string[];
-	// schemas only?
-	$ref?:string;
-	properties?:any;
-	items?:any; // TODO
-	additionalProperties?:any; // TODO
-	// resources only?
-	required?:boolean;
-	format?:string;
-	minimum?:string;
-	maximum?:string;
-}
-
-export interface ISchema {
-	id: string;
-	type: string;
-	properties:{
-		[propertyName:string]:IParameter;
-	};
-}
-
-export interface IResource {
-	methods: {
-		[method:string]: IMethod;
-	};
-}
-
-export interface IMethod {
-	id:string;
-	path:string;
-	httpMethod:string;
-	description:string;
-	parameters: IParameter;
-	parameterOrder:string[];
-	request?:{
-		"$ref":string;
-		[label:string]:string;
-	};
-	response:{
-		"$ref":string;
-		[label:string]:string;
-	};
-	scopes:string[];
+export interface IRestResource {
+	methods: { [name:string]: IRestMethod; };
+	resources: { [name:string]: IRestResource; };
 }

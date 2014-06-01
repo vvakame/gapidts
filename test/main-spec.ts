@@ -63,7 +63,7 @@ describe("definition emitter", ()=> {
 			var expectedDefinitionPath = "test/valid/" + serviceInfo.name + "/" + serviceInfo.version + "/definition.d.ts";
 
 			var doTest = (json:string, expectedDefinition:string)=> {
-				var root:model.IRoot = JSON.parse(json);
+				var root:model.IRestDescription = JSON.parse(json);
 				var result = emitter.emit(root);
 
 				assert(result.definition === expectedDefinition);
@@ -93,7 +93,7 @@ describe("definition emitter", ()=> {
 			};
 
 			var makeDefinitionFile = () => {
-				var root:model.IRoot = JSON.parse(fs.readFileSync(jsonFilePath, "utf8"));
+				var root:model.IRestDescription = JSON.parse(fs.readFileSync(jsonFilePath, "utf8"));
 				var result = emitter.emit(root);
 				util.mkdirp(path.dirname(expectedDefinitionPath));
 				fs.writeFileSync(expectedDefinitionPath, result.definition);

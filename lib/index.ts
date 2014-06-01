@@ -40,7 +40,7 @@ if (!true) {
 }
 
 function process(json:string) {
-	var root:model.IRoot = JSON.parse(json);
+	var root:model.IRestDescription = JSON.parse(json);
 
 	var result = emitter.emit(root);
 	console.log(result.definition);

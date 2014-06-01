@@ -1,6 +1,6 @@
 import model = require("./model");
 
-export function emit(root:model.IRoot):{ definition:string; data:Discovery; } {
+export function emit(root:model.IRestDescription):{ definition:string; data:Discovery; } {
 
 	var api = new Discovery(root);
 	var process = new Process();
@@ -17,7 +17,7 @@ export class Discovery {
 	schemas:Schema[];
 	resources:Resource[];
 
-	constructor(base:model.IRoot) {
+	constructor(base:model.IRestDescription) {
 		this.name = base.name;
 
 		this.schemas = Object.keys(base.schemas).map(schemaName=> {
@@ -48,7 +48,7 @@ export class Resource {
 
 	methods:Method[] = [];
 
-	constructor(base:model.IResource) {
+	constructor(base:model.IRestResource) {
 		this.methods = Object.keys(base.methods).map(methodName=> {
 			return new Method(base.methods[methodName]);
 		});
@@ -60,7 +60,7 @@ export class Resource {
 }
 
 export class Method {
-	constructor(base:model.IMethod) {
+	constructor(base:model.IRestMethod) {
 	}
 
 	emit(process:Process):void {
@@ -71,7 +71,7 @@ export class Method {
 export class Schema {
 	name:string;
 
-	constructor(public base:model.ISchema) {
+	constructor(public base:model.IJsonSchema) {
 		this.name = base.id;
 
 		if (base.type !== "object") {
@@ -91,7 +91,7 @@ export class Schema {
 		process.outputLine("}");
 	}
 
-	emitProperty(process:Process, name:string, property:model.IParameter, child = false):void {
+	emitProperty(process:Process, name:string, property:model.IJsonSchema, child = false):void {
 		if (name) {
 			process.output(name).output(": ");
 		}
