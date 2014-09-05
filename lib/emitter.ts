@@ -17,13 +17,13 @@ export class Discovery {
 	schemas:Schema[];
 	resources:Resource[];
 
-	constructor(base:model.IRestDescription) {
-		this.name = base.name;
+	constructor(public base:model.IRestDescription) {
+		this.name = this.base.name;
 
-		this.schemas = Object.keys(base.schemas).map(schemaName=> {
+		this.schemas = Object.keys(this.base.schemas).map(schemaName=> {
 			return new Schema(schemaName, base.schemas[schemaName]);
 		});
-		this.resources = Object.keys(base.resources).map(resourceName=> {
+		this.resources = Object.keys(this.base.resources).map(resourceName=> {
 			return new Resource(resourceName, base.resources[resourceName]);
 		});
 	}
@@ -31,6 +31,7 @@ export class Discovery {
 	emit(process:Process):void {
 		process.outputLine("declare module gapi.client {");
 		process.increaseIndent();
+		process.outputJSDoc(this.base.description);
 		process.output("module ").output(this.name).output(" {").outputLine();
 		process.increaseIndent();
 
@@ -73,6 +74,7 @@ export class Method {
 	}
 
 	emit(process:Process):void {
+		process.outputJSDoc(this.base.description, this.base.parameters);
 		process.output(this.name).output(": (");
 
 		if (this.base.parameters) {
@@ -134,10 +136,12 @@ export class Schema {
 	}
 
 	emit(process:Process):void {
+		process.outputJSDoc(this.base.description);
 		process.output("interface I").output(this.name).outputLine(" {");
 		process.increaseIndent();
 
 		Object.keys(this.base.properties).forEach(propertyName=> {
+			process.outputJSDoc(this.base.properties[propertyName].description);
 			this.emitProperty(process, propertyName, this.base.properties[propertyName]);
 		});
 
@@ -320,6 +324,42 @@ export class Process {
 		}
 		this._result += "\n";
 		this._alreadlyIndentThisLine = false;
+		return this;
+	}
+
+	outputJSDoc(description:string, parameters:{ [name:string]: model.IJsonSchema; } = {}):Process {
+		if (!description && Object.keys(parameters).length === 0) {
+			return;
+		}
+		description = description || "";
+
+		this.outputLine("/**");
+		description.split("\n").forEach(line => {
+			this.output(" * ").outputLine(line);
+		});
+		Object.keys(parameters).forEach(parameterKey => {
+			var parameter = parameters[parameterKey];
+			// TODO type doc
+			this.output(" * @params {");
+			switch (parameter.type) {
+				case "string":
+					this.output("string");
+					break;
+				case "integer":
+				case "number":
+					this.output("number");
+					break;
+				case "boolean":
+					this.output("boolean");
+					break;
+				default :
+					console.log(parameter);
+					throw new Error("unknown type");
+			}
+
+			this.output("} ").output(parameterKey).output(" ").outputLine(parameter.description);
+		});
+		this.outputLine(" */");
 		return this;
 	}
 
