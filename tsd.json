@@ -1,18 +1,30 @@
 {
-  "version": "v4",
-  "repo": "borisyankov/DefinitelyTyped",
-  "ref": "master",
-  "path": "typings",
-  "bundle": "typings/tsd.d.ts",
-  "installed": {
-    "node/node.d.ts": {
-      "commit": "9d2478b8a80febe1d89a5d35cdf6051d121f5437"
-    },
-    "mocha/mocha.d.ts": {
-      "commit": "9d2478b8a80febe1d89a5d35cdf6051d121f5437"
-    },
-    "assert/assert.d.ts": {
-      "commit": "9d2478b8a80febe1d89a5d35cdf6051d121f5437"
-    }
-  }
+	"version": "v4",
+	"repo": "borisyankov/DefinitelyTyped",
+	"ref": "master",
+	"path": "typings",
+	"bundle": "typings/tsd.d.ts",
+	"installed": {
+		"node/node.d.ts": {
+			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+		},
+		"commander/commander.d.ts": {
+			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+		},
+		"update-notifier/update-notifier.d.ts": {
+			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+		},
+		"colors/colors.d.ts": {
+			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+		},
+		"es6-promise/es6-promise.d.ts": {
+			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+		},
+		"mocha/mocha.d.ts": {
+			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+		},
+		"assert/assert.d.ts": {
+			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+		}
+	}
 }

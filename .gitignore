@@ -6,4 +6,6 @@ typings/
 .tscache/
 
 lib/**/*.js
+lib/**/*.js.map
 test/**/*.js
+test/**/*.js.map

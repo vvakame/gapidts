@@ -50,7 +50,7 @@ export class Resource {
 	methods:Method[] = [];
 
 	constructor(public name:string, public base:model.IRestResource) {
-		this.methods = Object.keys(base.methods).map(methodName=> {
+		this.methods = Object.keys(base.methods || []).map(methodName=> {
 			return new Method(methodName, base.methods[methodName]);
 		});
 	}

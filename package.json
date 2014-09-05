@@ -5,11 +5,17 @@
   "version": "0.0.0",
   "description": "",
   "main": "./index",
+  "bin": {
+    "gapidts": "./bin/gapidts"
+  },
   "scripts": {
     "build": "grunt default",
-    "test": "grunt test-node"
+    "test": "grunt test"
   },
   "keywords": [
+    "TypeScript",
+    "google",
+    "google apis"
   ],
   "license": "MIT",
   "homepage": "https://github.com/vvakame/google-api-typescript-definition-generator",
@@ -25,7 +31,10 @@
   },
   "dependencies": {
     "update-notifier": "0.2.0",
-    "commander": "2.3.0"
+    "commander": "2.3.0",
+    "colors": "0.6.2",
+    "es6-promise": "1.0.0",
+    "source-map-support": "0.2.7"
   },
   "devDependencies": {
     "googleapis": "1.0.11",
