@@ -1,4 +1,6 @@
-# gapidts (TypeScript definition file generator for Google APIs Discovery Service)
+# gapidts
+
+the TypeScript definition file generator for Google APIs Discovery Service
 
 ## Usage
 
