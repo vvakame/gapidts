@@ -1,5 +1,7 @@
 export function toTSType(type:string, debugSource?:any) {
 	switch (type) {
+		case "any":
+			return "any";
 		case "string":
 			return "string";
 		case "integer":
@@ -7,6 +9,9 @@ export function toTSType(type:string, debugSource?:any) {
 			return "number";
 		case "boolean":
 			return "boolean";
+		case "object":
+		case "array":
+			return null;
 		default :
 			if (debugSource) {
 				console.error(debugSource);

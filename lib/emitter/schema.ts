@@ -1,4 +1,5 @@
 import model = require("../model");
+import utils = require("../utils");
 
 import Process = require("./process");
 
@@ -56,55 +57,46 @@ class Schema {
 			this.emitNamedType(process, "I" + property.$ref, property, terminate);
 			return;
 		}
-		switch (property.type) {
-			case "any":
-				this.emitNamedType(process, "any", property, terminate);
-				break;
-			case "string":
-				this.emitNamedType(process, "string", property, terminate);
-				break;
-			case "number":
-			case "integer":
-				this.emitNamedType(process, "number", property, terminate);
-				break;
-			case "boolean":
-				this.emitNamedType(process, "boolean", property, terminate);
-				break;
-			case "object":
-				if (property.properties) {
-					process.increaseIndent();
-					process.outputLine("{");
-					Object.keys(property.properties).forEach(propertyName => {
-						this.emitProperty(process, propertyName, property.properties[propertyName]);
-					});
-					process.decreaseIndent();
-					process.output("}");
-					if (terminate) {
-						process.outputLine(";");
-					}
-				} else if (property.additionalProperties) {
-					process.outputLine("{");
-					process.increaseIndent();
-					process.output("[name:string]: ");
-					this.emitProperty(process, null, property.additionalProperties, false);
-					process.outputLine(";");
-					process.decreaseIndent();
-					process.output("}");
-					if (terminate) {
-						process.outputLine(";");
-					}
-				}
-				break;
-			case "array":
-				this.emitProperty(process, null, property.items, false);
-				process.output("[]");
+		var tsType = utils.toTSType(property.type, property);
+		if (tsType) {
+			this.emitNamedType(process, tsType, property, terminate);
+			return;
+		}
+		if (property.type === "object") {
+			if (property.properties) {
+				process.increaseIndent();
+				process.outputLine("{");
+				Object.keys(property.properties).forEach(propertyName => {
+					this.emitProperty(process, propertyName, property.properties[propertyName]);
+				});
+				process.decreaseIndent();
+				process.output("}");
 				if (terminate) {
 					process.outputLine(";");
 				}
-				break;
-			default:
-				console.error(property);
-				throw new Error("unknown type: " + property.type);
+			} else if (property.additionalProperties) {
+				process.outputLine("{");
+				process.increaseIndent();
+				process.output("[name:string]: ");
+				this.emitProperty(process, null, property.additionalProperties, false);
+				process.outputLine(";");
+				process.decreaseIndent();
+				process.output("}");
+				if (terminate) {
+					process.outputLine(";");
+				}
+			}
+
+		} else if (property.type === "array") {
+			this.emitProperty(process, null, property.items, false);
+			process.output("[]");
+			if (terminate) {
+				process.outputLine(";");
+			}
+
+		} else {
+			console.error(property);
+			throw new Error("unknown type: " + property.type);
 		}
 	}
 
