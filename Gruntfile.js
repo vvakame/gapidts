@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-	grunt.initConfig({
+	var config = {
 		pkg: grunt.file.readJSON('package.json'),
 		// Java用プロジェクト構成向け設定
 		opt: {
@@ -34,9 +34,6 @@ module.exports = function (grunt) {
 			},
 			clientTest: {
 				src: ['<%= opt.client.tsTest %>/main-spec.ts']
-			},
-			testFixture: {
-				src: ['<%= opt.client.tsTest %>/valid/**/*.d.ts']
 			}
 		},
 		tslint: {
@@ -85,7 +82,7 @@ module.exports = function (grunt) {
 							"check-branch",
 							"check-decl",
 							"check-operator",
-							"check-separator" ,
+							"check-separator",
 							"check-type"
 						]
 					}
@@ -161,7 +158,26 @@ module.exports = function (grunt) {
 				]
 			}
 		}
-	});
+	};
+
+	var testFixtureTasks = [];
+	(function () {
+		var fs = require("fs");
+		fs.readdirSync("./test/fixture").forEach(function (fileName) {
+			var matches = fileName.match(/^(.+)-(v.+)-rest.json$/);
+			if (matches.length !== 3) {
+				return;
+			}
+			var name = matches[1] + "-" + matches[2];
+			var taskName = "testFixture-" + name;
+			testFixtureTasks.push("ts:" + taskName);
+			config.ts[taskName] = {
+				src: ['<%= opt.client.tsTest %>/valid/' + name + ".d.ts"]
+			};
+		});
+	})();
+
+	grunt.initConfig(config);
 
 	grunt.registerTask(
 		'setup',
@@ -176,7 +192,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		'test',
 		"exec test suites",
-		['default', 'ts:clientTest', 'mochaTest', 'ts:testFixture']);
+		['default', 'ts:clientTest', 'mochaTest'].concat(testFixtureTasks));
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };
