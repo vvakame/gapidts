@@ -4,7 +4,7 @@ import Process = require("./process");
 
 class Schema {
 	constructor(public name:string, public base:model.IJsonSchema) {
-		if (base.type !== "object" && base.type !== "any") {
+		if (base.type !== "object" && base.type !== "any" && base.type !== "array") {
 			console.error(base);
 			throw new Error("unknown type: " + base.type);
 		}
@@ -12,6 +12,42 @@ class Schema {
 
 	emit(process:Process):void {
 		process.outputJSDoc(this.base.description);
+		if (this.base.type === "array") {
+			process.output("interface I").output(this.name).output(" extends Array<");
+			if (this.base.items.$ref) {
+				process.output("I").output(this.base.items.$ref);
+			} else {
+				switch (this.base.items.type) {
+					case "number":
+						process.output("number");
+						break;
+					case "string":
+						process.output("string");
+						break;
+					case "object":
+						if (this.base.items.properties) {
+							process.increaseIndent();
+							process.outputLine("{");
+							Object.keys(this.base.items.properties).forEach(propertyName => {
+								this.emitProperty(process, propertyName, this.base.items.properties[propertyName], false);
+							});
+							process.decreaseIndent();
+							process.output("}");
+						}
+						break;
+
+					default :
+						console.log(this.base.items);
+						throw new Error("unknown type: " + this.base.items.type);
+				}
+				if (this.base.items.format) {
+					process.output(" /* ").output(this.base.items.format).output(" */");
+				}
+			}
+			process.outputLine("> {");
+			process.outputLine("}");
+			return;
+		}
 		process.output("interface I").output(this.name).outputLine(" {");
 		process.increaseIndent();
 
@@ -87,6 +123,16 @@ class Schema {
 							process.outputLine(";");
 						}
 
+					} else if (property.additionalProperties.type === "number") {
+						process.output("{ [name:string]: number");
+						if (property.additionalProperties.format) {
+							process.output(" /* ").output(property.additionalProperties.format).output(" */");
+						}
+						process.output("; }");
+						if (!child) {
+							process.outputLine(";");
+						}
+
 					} else if (property.additionalProperties.type === "any") {
 						process.output("{ [name:string]: any; }");
 						if (!child) {
@@ -141,7 +187,7 @@ class Schema {
 					}
 					return;
 
-				} else if (property.items.type === "integer") {
+				} else if (property.items.type === "integer" || property.items.type === "number") {
 					process.output("number[]");
 					if (!child) {
 						process.output(";");
@@ -179,9 +225,8 @@ class Schema {
 							this.emitProperty(process, propertyName, property.items.properties[propertyName], child);
 						});
 					} else if (property.items.additionalProperties) {
-						process.output("{ [name: string]: ");
-						this.emitProperty(process, null, property.items.additionalProperties, child);
-						process.outputLine("};");
+						process.output("[name: string]: ");
+						this.emitProperty(process, null, property.items.additionalProperties, true);
 					} else {
 						throw new Error("unknown items");
 					}

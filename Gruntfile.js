@@ -164,7 +164,7 @@ module.exports = function (grunt) {
 	(function () {
 		var fs = require("fs");
 		fs.readdirSync("./test/fixture").forEach(function (fileName) {
-			var matches = fileName.match(/^(.+)-(v.+)-rest.json$/);
+			var matches = fileName.match(/^(.+)-(.+)-rest.json$/);
 			if (matches.length !== 3) {
 				return;
 			}

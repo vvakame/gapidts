@@ -15,7 +15,7 @@ class Root {
 		this.schemas = Object.keys(this.base.schemas || {}).map(schemaName=> {
 			return new Schema(schemaName, base.schemas[schemaName]);
 		});
-		this.resources = Object.keys(this.base.resources).map(resourceName=> {
+		this.resources = Object.keys(this.base.resources || {}).map(resourceName=> {
 			return new Resource(resourceName, base.resources[resourceName]);
 		});
 	}
