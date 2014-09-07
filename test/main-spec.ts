@@ -10,7 +10,7 @@ import path = require("path");
 import util = require("./util");
 
 import model = require("../lib/model");
-import emitter = require("../lib/emitter");
+import emitter = require("../lib/emitter/index");
 
 interface IServiceInfo {
 	name: string;
