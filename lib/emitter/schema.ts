@@ -4,8 +4,9 @@ import Process = require("./process");
 
 class Schema {
 	constructor(public name:string, public base:model.IJsonSchema) {
-		if (base.type !== "object") {
-			throw base;
+		if (base.type !== "object" && base.type !== "any") {
+			console.error(base);
+			throw new Error("unknown type: " + base.type);
 		}
 	}
 
@@ -14,7 +15,11 @@ class Schema {
 		process.output("interface I").output(this.name).outputLine(" {");
 		process.increaseIndent();
 
-		Object.keys(this.base.properties).forEach(propertyName=> {
+		if (this.base.type === "any") {
+			process.outputLine("// any");
+		}
+
+		Object.keys(this.base.properties || {}).forEach(propertyName=> {
 			process.outputJSDoc(this.base.properties[propertyName].description);
 			this.emitProperty(process, propertyName, this.base.properties[propertyName]);
 		});

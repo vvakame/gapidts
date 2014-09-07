@@ -12,7 +12,7 @@ class Root {
 	constructor(public base:model.IRestDescription) {
 		this.name = this.base.name;
 
-		this.schemas = Object.keys(this.base.schemas).map(schemaName=> {
+		this.schemas = Object.keys(this.base.schemas || {}).map(schemaName=> {
 			return new Schema(schemaName, base.schemas[schemaName]);
 		});
 		this.resources = Object.keys(this.base.resources).map(resourceName=> {

@@ -74,8 +74,9 @@ function fetch(params:any):Promise<string> {
 			port: parseInt(params.port, 10),
 			method: "GET",
 			path: params.path
-		}, (response)=> {
-			(<any>response).setEncoding("utf8");
+		}, (response:any)=> {
+			response.setEncoding("utf8");
+
 			var result = "";
 			response.on("data", (d:string) => {
 				result += d;
@@ -83,6 +84,8 @@ function fetch(params:any):Promise<string> {
 			response.on("end", ()=> {
 				fulfilled(result);
 			});
+		}).on("error", (e:any) => {
+			reject(e);
 		});
 	});
 	return promise;
@@ -113,7 +116,18 @@ function processList() {
 					console.log();
 				}
 			});
-		}, ()=> {
+		})
+		.catch((err)=> {
+			if (err instanceof Error) {
+				console.error(err.stack);
+			} else if (typeof err === "string") {
+				console.error(err);
+			} else if (err && err.stack) {
+				console.error(err.stack);
+			}
+			return Promise.reject(null);
+		})
+		.catch(()=> {
 			process.exit(1);
 		});
 }
@@ -149,7 +163,7 @@ function processFromId() {
 			if (found) {
 				return Promise.resolve(found);
 			} else {
-				return Promise.reject(null);
+				return Promise.reject(opts.id + " not exists");
 			}
 		})
 		.then((item:any)=> item.discoveryRestUrl)
@@ -186,7 +200,13 @@ function processFromId() {
 			return true;
 		})
 		.catch((err)=> {
-			console.error(opts.id, err.stack);
+			if (err instanceof Error) {
+				console.error(err.stack);
+			} else if (typeof err === "string") {
+				console.error(err);
+			} else if (err && err.stack) {
+				console.error(err.stack);
+			}
 			return Promise.reject(null);
 		})
 		.catch((err)=> {
