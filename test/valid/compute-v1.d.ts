@@ -70,6 +70,77 @@ declare module gapi.client {
                 region: string;
             }) => { execute(callback: (data: IAddressList, original: string) => void):void; };
         };
+        var backendServices: {
+            /**
+             * Deletes the specified BackendService resource.
+             * @params {string} backendService Name of the BackendService resource to delete.
+             * @params {string} project Name of the project scoping this request.
+             */
+            delete: (params: {
+                backendService: string;
+                project: string;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Returns the specified BackendService resource.
+             * @params {string} backendService Name of the BackendService resource to return.
+             * @params {string} project Name of the project scoping this request.
+             */
+            get: (params: {
+                backendService: string;
+                project: string;
+            }) => { execute(callback: (data: IBackendService, original: string) => void):void; };
+            /**
+             * Gets the most recent health check results for this BackendService.
+             * @params {string} backendService Name of the BackendService resource to which the queried instance belongs.
+             * @params {string} project 
+             */
+            getHealth: (params: {
+                backendService: string;
+                project: string;
+                resource?: IResourceGroupReference;
+            }) => { execute(callback: (data: IBackendServiceGroupHealth, original: string) => void):void; };
+            /**
+             * Creates a BackendService resource in the specified project using the data included in the request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            insert: (params: {
+                project: string;
+                resource?: IBackendService;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Retrieves the list of BackendService resources available to the specified project.
+             * @params {string} filter Optional. Filter expression for filtering listed resources.
+             * @params {number} maxResults Optional. Maximum count of results to be returned. Maximum value is 500 and default value is 500.
+             * @params {string} pageToken Optional. Tag returned by a previous list request truncated by maxResults. Used to continue a previous list request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data: IBackendServiceList, original: string) => void):void; };
+            /**
+             * Update the entire content of the BackendService resource. This method supports patch semantics.
+             * @params {string} backendService Name of the BackendService resource to update.
+             * @params {string} project Name of the project scoping this request.
+             */
+            patch: (params: {
+                backendService: string;
+                project: string;
+                resource?: IBackendService;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Update the entire content of the BackendService resource.
+             * @params {string} backendService Name of the BackendService resource to update.
+             * @params {string} project Name of the project scoping this request.
+             */
+            update: (params: {
+                backendService: string;
+                project: string;
+                resource?: IBackendService;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+        };
         var diskTypes: {
             /**
              * Retrieves the list of disk type resources grouped by scope.
@@ -319,6 +390,98 @@ declare module gapi.client {
                 forwardingRule: string;
                 project: string;
                 region: string;
+                resource?: ITargetReference;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+        };
+        var globalAddresses: {
+            /**
+             * Deletes the specified address resource.
+             * @params {string} address Name of the address resource to delete.
+             * @params {string} project Name of the project scoping this request.
+             */
+            delete: (params: {
+                address: string;
+                project: string;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Returns the specified address resource.
+             * @params {string} address Name of the address resource to return.
+             * @params {string} project Name of the project scoping this request.
+             */
+            get: (params: {
+                address: string;
+                project: string;
+            }) => { execute(callback: (data: IAddress, original: string) => void):void; };
+            /**
+             * Creates an address resource in the specified project using the data included in the request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            insert: (params: {
+                project: string;
+                resource?: IAddress;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Retrieves the list of global address resources.
+             * @params {string} filter Optional. Filter expression for filtering listed resources.
+             * @params {number} maxResults Optional. Maximum count of results to be returned. Maximum value is 500 and default value is 500.
+             * @params {string} pageToken Optional. Tag returned by a previous list request truncated by maxResults. Used to continue a previous list request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data: IAddressList, original: string) => void):void; };
+        };
+        var globalForwardingRules: {
+            /**
+             * Deletes the specified ForwardingRule resource.
+             * @params {string} forwardingRule Name of the ForwardingRule resource to delete.
+             * @params {string} project Name of the project scoping this request.
+             */
+            delete: (params: {
+                forwardingRule: string;
+                project: string;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Returns the specified ForwardingRule resource.
+             * @params {string} forwardingRule Name of the ForwardingRule resource to return.
+             * @params {string} project Name of the project scoping this request.
+             */
+            get: (params: {
+                forwardingRule: string;
+                project: string;
+            }) => { execute(callback: (data: IForwardingRule, original: string) => void):void; };
+            /**
+             * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            insert: (params: {
+                project: string;
+                resource?: IForwardingRule;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Retrieves the list of ForwardingRule resources available to the specified project.
+             * @params {string} filter Optional. Filter expression for filtering listed resources.
+             * @params {number} maxResults Optional. Maximum count of results to be returned. Maximum value is 500 and default value is 500.
+             * @params {string} pageToken Optional. Tag returned by a previous list request truncated by maxResults. Used to continue a previous list request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data: IForwardingRuleList, original: string) => void):void; };
+            /**
+             * Changes target url for forwarding rule.
+             * @params {string} forwardingRule Name of the ForwardingRule resource in which target is to be set.
+             * @params {string} project Name of the project scoping this request.
+             */
+            setTarget: (params: {
+                forwardingRule: string;
+                project: string;
                 resource?: ITargetReference;
             }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
@@ -669,6 +832,17 @@ declare module gapi.client {
                 resource?: ITags;
             }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
+        var licenses: {
+            /**
+             * Returns the specified license resource.
+             * @params {string} license Name of the license resource to return.
+             * @params {string} project Name of the project scoping this request.
+             */
+            get: (params: {
+                license: string;
+                project: string;
+            }) => { execute(callback: (data: ILicense, original: string) => void):void; };
+        };
         var machineTypes: {
             /**
              * Retrieves the list of machine type resources grouped by scope.
@@ -766,6 +940,14 @@ declare module gapi.client {
             setCommonInstanceMetadata: (params: {
                 project: string;
                 resource?: IMetadata;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Sets usage export location
+             * @params {string} project Name of the project scoping this request.
+             */
+            setUsageExportBucket: (params: {
+                project: string;
+                resource?: IUsageExportLocation;
             }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
         var regionOperations: {
@@ -904,6 +1086,57 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
             }) => { execute(callback: (data: ISnapshotList, original: string) => void):void; };
+        };
+        var targetHttpProxies: {
+            /**
+             * Deletes the specified TargetHttpProxy resource.
+             * @params {string} project Name of the project scoping this request.
+             * @params {string} targetHttpProxy Name of the TargetHttpProxy resource to delete.
+             */
+            delete: (params: {
+                project: string;
+                targetHttpProxy: string;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Returns the specified TargetHttpProxy resource.
+             * @params {string} project Name of the project scoping this request.
+             * @params {string} targetHttpProxy Name of the TargetHttpProxy resource to return.
+             */
+            get: (params: {
+                project: string;
+                targetHttpProxy: string;
+            }) => { execute(callback: (data: ITargetHttpProxy, original: string) => void):void; };
+            /**
+             * Creates a TargetHttpProxy resource in the specified project using the data included in the request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            insert: (params: {
+                project: string;
+                resource?: ITargetHttpProxy;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Retrieves the list of TargetHttpProxy resources available to the specified project.
+             * @params {string} filter Optional. Filter expression for filtering listed resources.
+             * @params {number} maxResults Optional. Maximum count of results to be returned. Maximum value is 500 and default value is 500.
+             * @params {string} pageToken Optional. Tag returned by a previous list request truncated by maxResults. Used to continue a previous list request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data: ITargetHttpProxyList, original: string) => void):void; };
+            /**
+             * Changes the URL map for TargetHttpProxy.
+             * @params {string} project Name of the project scoping this request.
+             * @params {string} targetHttpProxy Name of the TargetHttpProxy resource whose URL map is to be set.
+             */
+            setUrlMap: (params: {
+                project: string;
+                targetHttpProxy: string;
+                resource?: IUrlMapReference;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
         var targetInstances: {
             /**
@@ -1103,6 +1336,77 @@ declare module gapi.client {
                 resource?: ITargetReference;
             }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
+        var urlMaps: {
+            /**
+             * Deletes the specified UrlMap resource.
+             * @params {string} project Name of the project scoping this request.
+             * @params {string} urlMap Name of the UrlMap resource to delete.
+             */
+            delete: (params: {
+                project: string;
+                urlMap: string;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Returns the specified UrlMap resource.
+             * @params {string} project Name of the project scoping this request.
+             * @params {string} urlMap Name of the UrlMap resource to return.
+             */
+            get: (params: {
+                project: string;
+                urlMap: string;
+            }) => { execute(callback: (data: IUrlMap, original: string) => void):void; };
+            /**
+             * Creates a UrlMap resource in the specified project using the data included in the request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            insert: (params: {
+                project: string;
+                resource?: IUrlMap;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Retrieves the list of UrlMap resources available to the specified project.
+             * @params {string} filter Optional. Filter expression for filtering listed resources.
+             * @params {number} maxResults Optional. Maximum count of results to be returned. Maximum value is 500 and default value is 500.
+             * @params {string} pageToken Optional. Tag returned by a previous list request truncated by maxResults. Used to continue a previous list request.
+             * @params {string} project Name of the project scoping this request.
+             */
+            list: (params: {
+                filter?: string;
+                maxResults?: number;
+                pageToken?: string;
+                project: string;
+            }) => { execute(callback: (data: IUrlMapList, original: string) => void):void; };
+            /**
+             * Update the entire content of the UrlMap resource. This method supports patch semantics.
+             * @params {string} project Name of the project scoping this request.
+             * @params {string} urlMap Name of the UrlMap resource to update.
+             */
+            patch: (params: {
+                project: string;
+                urlMap: string;
+                resource?: IUrlMap;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Update the entire content of the UrlMap resource.
+             * @params {string} project Name of the project scoping this request.
+             * @params {string} urlMap Name of the UrlMap resource to update.
+             */
+            update: (params: {
+                project: string;
+                urlMap: string;
+                resource?: IUrlMap;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
+            /**
+             * Run static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
+             * @params {string} project Name of the project scoping this request.
+             * @params {string} urlMap Name of the UrlMap resource to be validated as.
+             */
+            validate: (params: {
+                project: string;
+                urlMap: string;
+                resource?: IUrlMapsValidateRequest;
+            }) => { execute(callback: (data: IUrlMapsValidateResponse, original: string) => void):void; };
+        };
         var zoneOperations: {
             /**
              * Deletes the specified zone-specific operation resource.
@@ -1216,7 +1520,7 @@ declare module gapi.client {
              */
             name: string;
             /**
-             * URL of the region where the address resides (output only).
+             * URL of the region where the regional address resides (output only). This field is not applicable to global addresses.
              */
             region: string;
             /**
@@ -1325,6 +1629,10 @@ declare module gapi.client {
              */
             kind: string;
             /**
+             * Public visible licenses.
+             */
+            licenses: string[];
+            /**
              * The mode in which to attach this disk, either "READ_WRITE" or "READ_ONLY".
              */
             mode: string;
@@ -1338,7 +1646,7 @@ declare module gapi.client {
             type: string;
         }
         /**
-         * Initialization parameters for the new disk (Mutually exclusive with 'source', can currently only be specified on the boot disk).
+         * Initialization parameters for the new disk (input-only). Can only be specified on the boot disk or local SSDs. Mutually exclusive with 'source'.
          */
         interface IAttachedDiskInitializeParams {
             /**
@@ -1350,9 +1658,132 @@ declare module gapi.client {
              */
             diskSizeGb: string; // int64
             /**
+             * URL of the disk type resource describing which disk type to use to create the disk; provided by the client when the disk is created.
+             */
+            diskType: string;
+            /**
              * The source image used to create this disk.
              */
             sourceImage: string;
+        }
+        /**
+         * Message containing information of one individual backend.
+         */
+        interface IBackend {
+            /**
+             * The balancing mode of this backend, default is UTILIZATION.
+             */
+            balancingMode: string;
+            /**
+             * The multiplier (a value between 0 and 1e6) of the max capacity (CPU or RPS, depending on 'balancingMode') the group should serve up to. 0 means the group is totally drained. Default value is 1. Valid range is [0, 1e6].
+             */
+            capacityScaler: number; // float
+            /**
+             * An optional textual description of the resource, which is provided by the client when the resource is created.
+             */
+            description: string;
+            /**
+             * URL of a zonal Cloud Resource View resource. This resource view defines the list of instances that serve traffic. Member virtual machine instances from each resource view must live in the same zone as the resource view itself. No two backends in a backend service are allowed to use same Resource View resource.
+             */
+            group: string;
+            /**
+             * The max RPS of the group. Can be used with either balancing mode, but required if RATE mode. For RATE mode, either maxRate or maxRatePerInstance must be set.
+             */
+            maxRate: number; // int32
+            /**
+             * The max RPS that a single backed instance can handle. This is used to calculate the capacity of the group. Can be used in either balancing mode. For RATE mode, either maxRate or maxRatePerInstance must be set.
+             */
+            maxRatePerInstance: number; // float
+            /**
+             * Used when 'balancingMode' is UTILIZATION. This ratio defines the CPU utilization target for the group. The default is 0.8. Valid range is [0, 1].
+             */
+            maxUtilization: number; // float
+        }
+        /**
+         * A BackendService resource. This resource defines a group of backend VMs together with their serving capacity.
+         */
+        interface IBackendService {
+            /**
+             * The list of backends that serve this BackendService.
+             */
+            backends: IBackend[];
+            /**
+             * Creation timestamp in RFC3339 text format (output only).
+             */
+            creationTimestamp: string;
+            /**
+             * An optional textual description of the resource; provided by the client when the resource is created.
+             */
+            description: string;
+            /**
+             * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService.
+             */
+            fingerprint: string; // byte
+            /**
+             * The list of URLs to the HttpHealthCheck resource for health checking this BackendService. Currently at most one health check can be specified, and a health check is required.
+             */
+            healthChecks: string[];
+            /**
+             * Unique identifier for the resource; defined by the server (output only).
+             */
+            id: string; // uint64
+            /**
+             * Type of the resource.
+             */
+            kind: string;
+            /**
+             * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.
+             */
+            name: string;
+            /**
+             * The TCP port to connect on the backend. The default value is 80.
+             */
+            port: number; // int32
+            /**
+             * Name of backend port. The same name should appear in the resource views referenced by this service. Required.
+             */
+            portName: string;
+            protocol: string;
+            /**
+             * Server defined URL for the resource (output only).
+             */
+            selfLink: string;
+            /**
+             * How many seconds to wait for the backend before considering it a failed request. Default is 30 seconds.
+             */
+            timeoutSec: number; // int32
+        }
+        interface IBackendServiceGroupHealth {
+            healthStatus: IHealthStatus[];
+            /**
+             * Type of resource.
+             */
+            kind: string;
+        }
+        /**
+         * Contains a list of BackendService resources.
+         */
+        interface IBackendServiceList {
+            /**
+             * Unique identifier for the resource; defined by the server (output only).
+             */
+            id: string;
+            /**
+             * The BackendService resources.
+             */
+            items: IBackendService[];
+            /**
+             * Type of resource.
+             */
+            kind: string;
+            /**
+             * A token used to continue a truncated list request (output only).
+             */
+            nextPageToken: string;
+            /**
+             * Server defined URL for this resource (output only).
+             */
+            selfLink: string;
         }
         /**
          * Deprecation status for a public resource.
@@ -1400,6 +1831,10 @@ declare module gapi.client {
              */
             kind: string;
             /**
+             * Public visible licenses.
+             */
+            licenses: string[];
+            /**
              * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.
              */
             name: string;
@@ -1435,6 +1870,10 @@ declare module gapi.client {
              * The status of disk creation (output only).
              */
             status: string;
+            /**
+             * URL of the disk type resource describing which disk type to use to create the disk; provided by the client when the disk is created.
+             */
+            type: string;
             /**
              * URL of the zone where the disk resides (output only).
              */
@@ -1495,6 +1934,10 @@ declare module gapi.client {
              * Creation timestamp in RFC3339 text format (output only).
              */
             creationTimestamp: string;
+            /**
+             * Server defined default disk size in gb (output only).
+             */
+            defaultDiskSizeGb: string; // int64
             /**
              * The deprecation status associated with this disk type.
              */
@@ -1691,11 +2134,11 @@ declare module gapi.client {
          */
         interface IForwardingRule {
             /**
-             * Value of the reserved IP address that this forwarding rule is serving on behalf of. The address resource must live in the same region as the forwarding rule. If left empty (default value), an ephemeral IP will be assigned.
+             * Value of the reserved IP address that this forwarding rule is serving on behalf of. For global forwarding rules, the address must be a global IP; for regional forwarding rules, the address must live in the same region as the forwarding rule. If left empty (default value), an ephemeral IP from the same scope (global or regional) will be assigned.
              */
             IPAddress: string;
             /**
-             * The IP protocol to which this rule applies, valid options are 'TCP', 'UDP', 'ESP', 'AH' or 'SCTP'
+             * The IP protocol to which this rule applies, valid options are 'TCP', 'UDP', 'ESP', 'AH' or 'SCTP'.
              */
             IPProtocol: string;
             /**
@@ -1719,11 +2162,11 @@ declare module gapi.client {
              */
             name: string;
             /**
-             * Applicable only when 'IPProtocol' is 'TCP', 'UDP' or 'SCTP', only packets addressed to ports in the specified range will be forwarded to 'target'. If 'portRange' is left empty (default value), all ports are forwarded. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges. @pattern: \d+(?:-\d+)?
+             * Applicable only when 'IPProtocol' is 'TCP', 'UDP' or 'SCTP', only packets addressed to ports in the specified range will be forwarded to 'target'. If 'portRange' is left empty (default value), all ports are forwarded. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
              */
             portRange: string;
             /**
-             * URL of the region where the forwarding rule resides (output only).
+             * URL of the region where the regional forwarding rule resides (output only). This field is not applicable to global forwarding rules.
              */
             region: string;
             /**
@@ -1731,7 +2174,7 @@ declare module gapi.client {
              */
             selfLink: string;
             /**
-             * The URL of the target resource to receive the matched traffic. It must live in the same region as this forwarding rule.
+             * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must live in the same region as the forwarding rule. For global forwarding rules, this target must be a global TargetHttpProxy resource.
              */
             target: string;
         }
@@ -1815,6 +2258,24 @@ declare module gapi.client {
              * The IP address represented by this resource.
              */
             ipAddress: string;
+            /**
+             * The port on the instance.
+             */
+            port: number; // int32
+        }
+        /**
+         * A host-matching rule for a URL. If matched, will use the named PathMatcher to select the BackendService.
+         */
+        interface IHostRule {
+            description: string;
+            /**
+             * The list of host patterns to match. They must be valid hostnames except that they may start with *. or *-. The * acts like a glob and will match any string of atoms (separated by .s and -s) to the left.
+             */
+            hosts: string[];
+            /**
+             * The name of the PathMatcher to match the path portion of the URL, if the this HostRule matches the URL's host portion.
+             */
+            pathMatcher: string;
         }
         /**
          * An HttpHealthCheck resource. This resource defines a template for how individual VMs should be checked for health, via HTTP.
@@ -1931,6 +2392,10 @@ declare module gapi.client {
              */
             kind: string;
             /**
+             * Public visible licenses.
+             */
+            licenses: string[];
+            /**
              * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.
              */
             name: string;
@@ -1946,6 +2411,14 @@ declare module gapi.client {
              * Server defined URL for the resource (output only).
              */
             selfLink: string;
+            /**
+             * The source disk used to create this image. Once the source disk has been deleted from the system, this field will be cleared, and will not be set even if a disk with the same name has been re-created.
+             */
+            sourceDisk: string;
+            /**
+             * The 'id' value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+             */
+            sourceDiskId: string;
             /**
              * Must be "RAW"; provided by the client when the disk image is created.
              */
@@ -2119,6 +2592,27 @@ declare module gapi.client {
                 }[];
                 message: string;
             };
+        }
+        /**
+         * A license resource.
+         */
+        interface ILicense {
+            /**
+             * If true, the customer will be charged license fee for running software that contains this license on an instance.
+             */
+            chargesUseFee: boolean;
+            /**
+             * Type of resource.
+             */
+            kind: string;
+            /**
+             * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.
+             */
+            name: string;
+            /**
+             * Server defined URL for the resource (output only).
+             */
+            selfLink: string;
         }
         /**
          * A machine type resource.
@@ -2521,6 +3015,37 @@ declare module gapi.client {
             };
         }
         /**
+         * A matcher for the path portion of the URL. The BackendService from the longest-matched rule will serve the URL. If no rule was matched, the default_service will be used.
+         */
+        interface IPathMatcher {
+            /**
+             * The URL to the BackendService resource. This will be used if none of the 'pathRules' defined by this PathMatcher is met by the URL's path portion.
+             */
+            defaultService: string;
+            description: string;
+            /**
+             * The name to which this PathMatcher is referred by the HostRule.
+             */
+            name: string;
+            /**
+             * The list of path rules.
+             */
+            pathRules: IPathRule[];
+        }
+        /**
+         * A path-matching rule for a URL. If matched, will use the specified BackendService to handle the traffic arriving at this URL.
+         */
+        interface IPathRule {
+            /**
+             * The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
+             */
+            paths: string[];
+            /**
+             * The URL of the BackendService resource if this rule is matched.
+             */
+            service: string;
+        }
+        /**
          * A project resource. Projects can be created only in the APIs Console. Unless marked otherwise, values can only be modified in the console.
          */
         interface IProject {
@@ -2647,6 +3172,12 @@ declare module gapi.client {
              * Server defined URL for this resource (output only).
              */
             selfLink: string;
+        }
+        interface IResourceGroupReference {
+            /**
+             * A URI referencing one of the resource views listed in the backend service.
+             */
+            group: string;
         }
         /**
          * The route resource. A Route is a rule that specifies how certain packets should be handled by the virtual network. Routes are associated with VMs by tag and the set of Routes for a particular VM is called its routing table. For each packet leaving a VM, the system searches that VM's routing table for a single best matching Route. Routes match packets by destination IP address, preferring smaller or more specific ranges over larger ones. If there is a tie, the system selects the Route with the smallest priority value. If there is still a tie, it uses the layer three and four packet headers to select just one of the remaining matching Routes. The packet is then forwarded as specified by the next_hop field of the winning Route -- either to another VM destination, a VM gateway or a GCE operated gateway. Packets that do not match any Route in the sending VM's routing table will be dropped.
@@ -2813,6 +3344,10 @@ declare module gapi.client {
              */
             kind: string;
             /**
+             * Public visible licenses.
+             */
+            licenses: string[];
+            /**
              * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.
              */
             name: string;
@@ -2878,6 +3413,64 @@ declare module gapi.client {
              * An array of tags. Each tag must be 1-63 characters long, and comply with RFC1035.
              */
             items: string[];
+        }
+        /**
+         * A TargetHttpProxy resource. This resource defines an HTTP proxy.
+         */
+        interface ITargetHttpProxy {
+            /**
+             * Creation timestamp in RFC3339 text format (output only).
+             */
+            creationTimestamp: string;
+            /**
+             * An optional textual description of the resource; provided by the client when the resource is created.
+             */
+            description: string;
+            /**
+             * Unique identifier for the resource; defined by the server (output only).
+             */
+            id: string; // uint64
+            /**
+             * Type of the resource.
+             */
+            kind: string;
+            /**
+             * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.
+             */
+            name: string;
+            /**
+             * Server defined URL for the resource (output only).
+             */
+            selfLink: string;
+            /**
+             * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
+             */
+            urlMap: string;
+        }
+        /**
+         * Contains a list of TargetHttpProxy resources.
+         */
+        interface ITargetHttpProxyList {
+            /**
+             * Unique identifier for the resource; defined by the server (output only).
+             */
+            id: string;
+            /**
+             * The TargetHttpProxy resources.
+             */
+            items: ITargetHttpProxy[];
+            /**
+             * Type of resource.
+             */
+            kind: string;
+            /**
+             * A token used to continue a truncated list request (output only).
+             */
+            nextPageToken: string;
+            /**
+             * Server defined URL for this resource (output only).
+             */
+            selfLink: string;
         }
         /**
          * A TargetInstance resource. This resource defines an endpoint VM that terminates traffic of certain protocols.
@@ -3142,6 +3735,134 @@ declare module gapi.client {
         }
         interface ITargetReference {
             target: string;
+        }
+        interface ITestFailure {
+            actualService: string;
+            expectedService: string;
+            host: string;
+            path: string;
+        }
+        /**
+         * A UrlMap resource. This resource defines the mapping from URL to the BackendService resource, based on the "longest-match" of the URL's host and path.
+         */
+        interface IUrlMap {
+            /**
+             * Creation timestamp in RFC3339 text format (output only).
+             */
+            creationTimestamp: string;
+            /**
+             * The URL of the BackendService resource if none of the hostRules match.
+             */
+            defaultService: string;
+            /**
+             * An optional textual description of the resource; provided by the client when the resource is created.
+             */
+            description: string;
+            /**
+             * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date fingerprint must be provided in order to update the UrlMap.
+             */
+            fingerprint: string; // byte
+            /**
+             * The list of HostRules to use against the URL.
+             */
+            hostRules: IHostRule[];
+            /**
+             * Unique identifier for the resource; defined by the server (output only).
+             */
+            id: string; // uint64
+            /**
+             * Type of the resource.
+             */
+            kind: string;
+            /**
+             * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035.
+             */
+            name: string;
+            /**
+             * The list of named PathMatchers to use against the URL.
+             */
+            pathMatchers: IPathMatcher[];
+            /**
+             * Server defined URL for the resource (output only).
+             */
+            selfLink: string;
+            /**
+             * The list of expected URL mappings. Request to update this UrlMap will succeed only all of the test cases pass.
+             */
+            tests: IUrlMapTest[];
+        }
+        /**
+         * Contains a list of UrlMap resources.
+         */
+        interface IUrlMapList {
+            /**
+             * Unique identifier for the resource; defined by the server (output only).
+             */
+            id: string;
+            /**
+             * The UrlMap resources.
+             */
+            items: IUrlMap[];
+            /**
+             * Type of resource.
+             */
+            kind: string;
+            /**
+             * A token used to continue a truncated list request (output only).
+             */
+            nextPageToken: string;
+            /**
+             * Server defined URL for this resource (output only).
+             */
+            selfLink: string;
+        }
+        interface IUrlMapReference {
+            urlMap: string;
+        }
+        /**
+         * Message for the expected URL mappings.
+         */
+        interface IUrlMapTest {
+            /**
+             * Description of this test case.
+             */
+            description: string;
+            /**
+             * Host portion of the URL.
+             */
+            host: string;
+            /**
+             * Path portion of the URL.
+             */
+            path: string;
+            /**
+             * Expected BackendService resource the given URL should be mapped to.
+             */
+            service: string;
+        }
+        /**
+         * Message representing the validation result for a UrlMap.
+         */
+        interface IUrlMapValidationResult {
+            loadErrors: string[];
+            /**
+             * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the reasons.
+             */
+            loadSucceeded: boolean;
+            testFailures: ITestFailure[];
+            /**
+             * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's indicate the reason of failure.
+             */
+            testPassed: boolean;
+        }
+        interface IUrlMapsValidateRequest {
+            /**
+             * Content of the UrlMap to be validated.
+             */
+            resource: IUrlMap;
+        }
+        interface IUrlMapsValidateResponse {
+            result: IUrlMapValidationResult;
         }
         /**
          * The location in Cloud Storage and naming method of the daily usage report. Contains bucket_name and report_name prefix.

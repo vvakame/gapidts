@@ -66,7 +66,11 @@ class Schema {
 
 	emitProperty(process:Process, name:string, property:model.IJsonSchema, child = false):void {
 		if (name) {
-			process.output(name).output(": ");
+			if (name.indexOf("-") !== -1 || name.indexOf(".") !== -1) {
+				process.output("\"").output(name).output("\": ");
+			} else {
+				process.output(name).output(": ");
+			}
 		}
 		if (property.$ref) {
 			process.output("I").output(property.$ref);
@@ -80,11 +84,18 @@ class Schema {
 				process.output("any;");
 				break;
 			case "string":
-				process.output("string;");
-				if (property.format) {
-					process.output(" // ").output(property.format);
+				process.output("string");
+				if (!child) {
+					process.output(";");
+					if (property.format) {
+						process.output(" // ").output(property.format);
+					}
+					process.outputLine();
+				} else {
+					if (property.format) {
+						process.output(" /* ").output(property.format).output(" */");
+					}
 				}
-				process.outputLine();
 				break;
 			case "number":
 			case "integer":
@@ -222,7 +233,7 @@ class Schema {
 					process.outputLine("{");
 					if (property.items.properties) {
 						Object.keys(property.items.properties).forEach(propertyName => {
-							this.emitProperty(process, propertyName, property.items.properties[propertyName], child);
+							this.emitProperty(process, propertyName, property.items.properties[propertyName], false);
 						});
 					} else if (property.items.additionalProperties) {
 						process.output("[name: string]: ");

@@ -1,10 +1,11 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"C11OM5Qtr9122-scy_WeqND9D3o/5fAOCCT-EMDzKZ0hPKCYdJUAc9k\"",
+ "etag": "\"uUWyYHXmEn-ab7WLvo8qNz2S8ws/KsgpNVP8dzFmgPzAjDdH7uBJP_M\"",
  "discoveryVersion": "v1",
  "id": "customsearch:v1",
  "name": "customsearch",
  "version": "v1",
+ "revision": "20131205",
  "title": "CustomSearch API",
  "description": "Lets you search over a website or collection of websites",
  "ownerDomain": "google.com",

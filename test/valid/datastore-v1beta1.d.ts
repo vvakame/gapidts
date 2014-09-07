@@ -106,6 +106,7 @@ declare module gapi.client {
             mutationResult: IMutationResult;
         }
         interface ICommitRequest {
+            ignoreReadOnly: boolean;
             /**
              * The mutation to perform. Optional.
              */
@@ -189,7 +190,7 @@ declare module gapi.client {
              */
             partitionId: IPartitionId;
             /**
-             * The entity path. An entity path consists of one or more elements composed of a kind and a string or numerical identifier, which identify entities. The first element identifies a root entity, the second element identifies a child of the root entity, the third element a child of the second entity, and so forth. The entities identified by all prefixes of the path are called the element's ancestors. An entity path is always fully complete: ALL of the entity's ancestors are required to be in the path along with the entity identifier itself. The only exception is that in some documented cases, the identifier in the last path element (for the entity) itself may be omitted. A path can never be empty.
+             * The entity path. An entity path consists of one or more elements composed of a kind and a string or numerical identifier, which identify entities. The first element identifies a root entity, the second element identifies a child of the root entity, the third element a child of the second entity, and so forth. The entities identified by all prefixes of the path are called the element's ancestors. An entity path is always fully complete: ALL of the entity's ancestors are required to be in the path along with the entity identifier itself. The only exception is that in some documented cases, the identifier in the last path element (for the entity) itself may be omitted. A path can never be empty. The path can have at most 100 elements.
              */
             path: IKeyPathElement[];
         }
@@ -200,15 +201,15 @@ declare module gapi.client {
          */
         interface IKeyPathElement {
             /**
-             * The ID of the entity. Always > 0.
+             * The ID of the entity. Never equal to zero. Values less than zero are discouraged and will not be supported in the future.
              */
             id: string; // int64
             /**
-             * The kind of the entity. Kinds matching regex "__.*__" are reserved/read-only. Cannot be "".
+             * The kind of the entity. A kind matching regex "__.*__" is reserved/read-only. A kind must not contain more than 500 characters. Cannot be "".
              */
             kind: string;
             /**
-             * The name of the entity. Names matching regex "__.*__" are reserved/read-only. Cannot be "".
+             * The name of the entity. A name matching regex "__.*__" is reserved/read-only. A name must not be more than 500 characters. Cannot be "".
              */
             name: string;
         }
@@ -411,7 +412,7 @@ declare module gapi.client {
         }
         interface IResponseHeader {
             /**
-             * The kind, fixed to "datastore#responseHeader".
+             * Identifies what kind of resource this is. Value: the fixed string "datastore#responseHeader".
              */
             kind: string;
         }
@@ -430,7 +431,7 @@ declare module gapi.client {
              */
             gqlQuery: IGqlQuery;
             /**
-             * Entities are partitioned into subsets, identified by a dataset (usually implicitly specified by the project) and namespace ID. Queries are scoped to a single partition.
+             * Entities are partitioned into subsets, identified by a dataset (usually implicitly specified by the project) and namespace ID. Queries are scoped to a single partition. This partition ID is normalized with the standard default context partition ID, but all other partition IDs in RunQueryRequest are normalized with this partition ID as the context partition ID.
              */
             partitionId: IPartitionId;
             /**
@@ -455,7 +456,7 @@ declare module gapi.client {
              */
             blobKeyValue: string;
             /**
-             * A blob value.
+             * A blob value. May be a maximum of 1,000,000 bytes.
              */
             blobValue: string; // byte
             /**

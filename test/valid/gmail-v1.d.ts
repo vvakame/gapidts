@@ -154,11 +154,13 @@ declare module gapi.client {
                  * Gets the specified message.
                  * @params {string} format The format to return the message in.
                  * @params {string} id The ID of the message to retrieve.
+                 * @params {string} metadataHeaders When given and format is METADATA, only include headers specified.
                  * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
                  */
                 get: (params: {
                     format?: string;
                     id: string;
+                    metadataHeaders?: string;
                     userId: string;
                 }) => { execute(callback: (data: IMessage, original: string) => void):void; };
                 /**

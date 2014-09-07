@@ -57,7 +57,7 @@ class Method {
 	}
 
 	emitParameter(process:Process, parameterName:string, parameter:model.IJsonSchema) {
-		if (/\-/.test(parameterName)) {
+		if (parameterName.indexOf("-") !== -1 || parameterName.indexOf(".") !== -1) {
 			process.output("\"").output(parameterName).output("\"");
 		} else {
 			process.output(parameterName);

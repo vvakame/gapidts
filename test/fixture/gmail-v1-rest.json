@@ -1,18 +1,18 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"uUWyYHXmEn-ab7WLvo8qNz2S8ws/0sTH_Tyg9mQyPqsqG8CmUHYdc4I\"",
+ "etag": "\"uUWyYHXmEn-ab7WLvo8qNz2S8ws/5fnY39OGLjxI_epC657MRv3fFjE\"",
  "discoveryVersion": "v1",
  "id": "gmail:v1",
  "name": "gmail",
  "version": "v1",
- "revision": "20140820",
+ "revision": "20140902",
  "title": "Gmail API",
  "description": "The Gmail REST API.",
  "ownerDomain": "google.com",
  "ownerName": "Google",
  "icons": {
-  "x16": "http://www.google.com/images/icons/product/googlemail-16.png",
-  "x32": "http://www.google.com/images/icons/product/googlemail-32.png"
+  "x16": "https://www.google.com/images/icons/product/googlemail-16.png",
+  "x32": "https://www.google.com/images/icons/product/googlemail-32.png"
  },
  "documentationLink": "https://developers.google.com/gmail/api/",
  "protocol": "rest",
@@ -602,10 +602,12 @@
          "default": "full",
          "enum": [
           "full",
+          "metadata",
           "minimal",
           "raw"
          ],
          "enumDescriptions": [
+          "",
           "",
           "",
           ""
@@ -1065,10 +1067,12 @@
          "default": "full",
          "enum": [
           "full",
+          "metadata",
           "minimal",
           "raw"
          ],
          "enumDescriptions": [
+          "",
           "",
           "",
           ""
@@ -1080,6 +1084,12 @@
          "description": "The ID of the message to retrieve.",
          "required": true,
          "location": "path"
+        },
+        "metadataHeaders": {
+         "type": "string",
+         "description": "When given and format is METADATA, only include headers specified.",
+         "repeated": true,
+         "location": "query"
         },
         "userId": {
          "type": "string",

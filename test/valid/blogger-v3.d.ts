@@ -23,10 +23,10 @@ declare module gapi.client {
         };
         var blogs: {
             /**
-             * Gets one blog by id.
+             * Gets one blog by ID.
              * @params {string} blogId The ID of the blog to get.
              * @params {number} maxPosts Maximum number of posts to pull back with the blog.
-             * @params {string} view Access level with which to view the blogs. Note that some fields require elevated access.
+             * @params {string} view Access level with which to view the blog. Note that some fields require elevated access.
              */
             get: (params: {
                 blogId: string;
@@ -36,7 +36,7 @@ declare module gapi.client {
             /**
              * Retrieve a Blog by URL.
              * @params {string} url The URL of the blog to retrieve.
-             * @params {string} view Access level with which to view the blogs. Note that some fields require elevated access.
+             * @params {string} view Access level with which to view the blog. Note that some fields require elevated access.
              */
             getByUrl: (params: {
                 url: string;
@@ -46,12 +46,14 @@ declare module gapi.client {
              * Retrieves a list of blogs, possibly filtered.
              * @params {boolean} fetchUserInfo Whether the response is a list of blogs with per-user information instead of just blogs.
              * @params {string} role User access types for blogs to include in the results, e.g. AUTHOR will return blogs where the user has author level access. If no roles are specified, defaults to ADMIN and AUTHOR roles.
+             * @params {string} status Blog statuses to include in the result (default: Live blogs only). Note that ADMIN access is required to view deleted blogs.
              * @params {string} userId ID of the user whose blogs are to be fetched. Either the word 'self' (sans quote marks) or the user's profile identifier.
              * @params {string} view Access level with which to view the blogs. Note that some fields require elevated access.
              */
             listByUser: (params: {
                 fetchUserInfo?: boolean;
                 role?: string;
+                status?: string;
                 userId: string;
                 view?: string;
             }) => { execute(callback: (data: IBlogList, original: string) => void):void; };
@@ -59,7 +61,7 @@ declare module gapi.client {
         var comments: {
             /**
              * Marks a comment as not spam.
-             * @params {string} blogId The Id of the Blog.
+             * @params {string} blogId The ID of the Blog.
              * @params {string} commentId The ID of the comment to mark as not spam.
              * @params {string} postId The ID of the Post.
              */
@@ -69,8 +71,8 @@ declare module gapi.client {
                 postId: string;
             }) => { execute(callback: (data: IComment, original: string) => void):void; };
             /**
-             * Delete a comment by id.
-             * @params {string} blogId The Id of the Blog.
+             * Delete a comment by ID.
+             * @params {string} blogId The ID of the Blog.
              * @params {string} commentId The ID of the comment to delete.
              * @params {string} postId The ID of the Post.
              */
@@ -80,7 +82,7 @@ declare module gapi.client {
                 postId: string;
             }) => { execute(callback: (data:any, original: string) => void):void; }; // void
             /**
-             * Gets one comment by id.
+             * Gets one comment by ID.
              * @params {string} blogId ID of the blog to containing the comment.
              * @params {string} commentId The ID of the comment to get.
              * @params {string} postId ID of the post to fetch posts from.
@@ -134,7 +136,7 @@ declare module gapi.client {
             }) => { execute(callback: (data: ICommentList, original: string) => void):void; };
             /**
              * Marks a comment as spam.
-             * @params {string} blogId The Id of the Blog.
+             * @params {string} blogId The ID of the Blog.
              * @params {string} commentId The ID of the comment to mark as spam.
              * @params {string} postId The ID of the Post.
              */
@@ -145,7 +147,7 @@ declare module gapi.client {
             }) => { execute(callback: (data: IComment, original: string) => void):void; };
             /**
              * Removes the content of a comment.
-             * @params {string} blogId The Id of the Blog.
+             * @params {string} blogId The ID of the Blog.
              * @params {string} commentId The ID of the comment to delete content from.
              * @params {string} postId The ID of the Post.
              */
@@ -168,8 +170,8 @@ declare module gapi.client {
         };
         var pages: {
             /**
-             * Delete a page by id.
-             * @params {string} blogId The Id of the Blog.
+             * Delete a page by ID.
+             * @params {string} blogId The ID of the Blog.
              * @params {string} pageId The ID of the Page.
              */
             delete: (params: {
@@ -177,7 +179,7 @@ declare module gapi.client {
                 pageId: string;
             }) => { execute(callback: (data:any, original: string) => void):void; }; // void
             /**
-             * Gets one blog page by id.
+             * Gets one blog page by ID.
              * @params {string} blogId ID of the blog containing the page.
              * @params {string} pageId The ID of the page to get.
              * @params {string} view 
@@ -190,9 +192,11 @@ declare module gapi.client {
             /**
              * Add a page.
              * @params {string} blogId ID of the blog to add the page to.
+             * @params {boolean} isDraft Whether to create the page as a draft (default: false).
              */
             insert: (params: {
                 blogId: string;
+                isDraft?: boolean;
                 resource?: IPage;
             }) => { execute(callback: (data: IPage, original: string) => void):void; };
             /**
@@ -212,26 +216,52 @@ declare module gapi.client {
              * Update a page. This method supports patch semantics.
              * @params {string} blogId The ID of the Blog.
              * @params {string} pageId The ID of the Page.
+             * @params {boolean} publish Whether a publish action should be performed when the page is updated (default: false).
+             * @params {boolean} revert Whether a revert action should be performed when the page is updated (default: false).
              */
             patch: (params: {
                 blogId: string;
                 pageId: string;
+                publish?: boolean;
+                revert?: boolean;
                 resource?: IPage;
+            }) => { execute(callback: (data: IPage, original: string) => void):void; };
+            /**
+             * Publishes a draft page.
+             * @params {string} blogId The ID of the blog.
+             * @params {string} pageId The ID of the page.
+             */
+            publish: (params: {
+                blogId: string;
+                pageId: string;
+            }) => { execute(callback: (data: IPage, original: string) => void):void; };
+            /**
+             * Revert a published or scheduled page to draft state.
+             * @params {string} blogId The ID of the blog.
+             * @params {string} pageId The ID of the page.
+             */
+            revert: (params: {
+                blogId: string;
+                pageId: string;
             }) => { execute(callback: (data: IPage, original: string) => void):void; };
             /**
              * Update a page.
              * @params {string} blogId The ID of the Blog.
              * @params {string} pageId The ID of the Page.
+             * @params {boolean} publish Whether a publish action should be performed when the page is updated (default: false).
+             * @params {boolean} revert Whether a revert action should be performed when the page is updated (default: false).
              */
             update: (params: {
                 blogId: string;
                 pageId: string;
+                publish?: boolean;
+                revert?: boolean;
                 resource?: IPage;
             }) => { execute(callback: (data: IPage, original: string) => void):void; };
         };
         var postUserInfos: {
             /**
-             * Gets one post and user info pair, by post id and user id. The post user info contains per-user information about the post, such as access rights, specific to the user.
+             * Gets one post and user info pair, by post ID and user ID. The post user info contains per-user information about the post, such as access rights, specific to the user.
              * @params {string} blogId The ID of the blog.
              * @params {number} maxComments Maximum number of comments to pull back on a post.
              * @params {string} postId The ID of the post to get.
@@ -273,8 +303,8 @@ declare module gapi.client {
         };
         var posts: {
             /**
-             * Delete a post by id.
-             * @params {string} blogId The Id of the Blog.
+             * Delete a post by ID.
+             * @params {string} blogId The ID of the Blog.
              * @params {string} postId The ID of the Post.
              */
             delete: (params: {
@@ -282,7 +312,7 @@ declare module gapi.client {
                 postId: string;
             }) => { execute(callback: (data:any, original: string) => void):void; }; // void
             /**
-             * Get a post by id.
+             * Get a post by ID.
              * @params {string} blogId ID of the blog to fetch the post from.
              * @params {boolean} fetchBody Whether the body content of the post is included (default: true). This should be set to false when the post bodies are not required, to help minimize traffic.
              * @params {boolean} fetchImages Whether image URL metadata for each post is included (default: false).
@@ -373,10 +403,10 @@ declare module gapi.client {
                 resource?: IPost;
             }) => { execute(callback: (data: IPost, original: string) => void):void; };
             /**
-             * Publish a draft post.
+             * Publishes a draft post, optionally at the specific time of the given publishDate parameter.
              * @params {string} blogId The ID of the Blog.
              * @params {string} postId The ID of the Post.
-             * @params {string} publishDate The date and time to schedule the publishing of the Blog.
+             * @params {string} publishDate Optional date and time to schedule the publishing of the Blog. If no publishDate parameter is given, the post is either published at the a previously saved schedule date (if present), or the current time. If a future date is given, the post will be scheduled to be published.
              */
             publish: (params: {
                 blogId: string;
@@ -428,7 +458,7 @@ declare module gapi.client {
         };
         var users: {
             /**
-             * Gets one user by id.
+             * Gets one user by ID.
              * @params {string} userId The ID of the user to get.
              */
             get: (params: {
@@ -487,6 +517,10 @@ declare module gapi.client {
              * The API REST URL to fetch this resource from.
              */
             selfLink: string;
+            /**
+             * The status of the blog.
+             */
+            status: string;
             /**
              * RFC 3339 date-time when this blog was last updated.
              */
@@ -650,6 +684,10 @@ declare module gapi.client {
              */
             content: string;
             /**
+             * Etag of the resource.
+             */
+            etag: string;
+            /**
              * The identifier for this resource.
              */
             id: string;
@@ -696,7 +734,7 @@ declare module gapi.client {
             /**
              * Blog Id
              */
-            blogId: string; // int64
+            blogId: string;
             /**
              * The container of posts in this blog.
              */
@@ -736,6 +774,10 @@ declare module gapi.client {
              */
             customMetaData: string;
             /**
+             * Etag of the resource.
+             */
+            etag: string;
+            /**
              * The identifier of this Post.
              */
             id: string;
@@ -766,6 +808,10 @@ declare module gapi.client {
              * RFC 3339 date-time when this Post was published.
              */
             published: string; // date-time
+            /**
+             * Comment control and display setting for readers of this post.
+             */
+            readerComments: string;
             /**
              * The container of comments on this Post.
              */
