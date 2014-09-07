@@ -9,8 +9,10 @@ try {
 } catch (e) {
 }
 
-function gapidts(json:string):_emitter.IResult {
-	var root:_model.IRestDescription = JSON.parse(json);
+function gapidts(root:_model.IRestDescription):_emitter.IResult {
+	if (typeof root === "string") {
+		root = JSON.parse(<any>root);
+	}
 	return _emitter.emit(root);
 }
 

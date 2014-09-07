@@ -118,7 +118,7 @@ function processFromSource() {
 		return;
 	}
 
-	var result = gapidts(fs.readFileSync(opts.source, "utf8"));
+	var result = gapidts(JSON.parse(fs.readFileSync(opts.source, "utf8")));
 	if (opts.out) {
 		fs.writeFileSync(opts.out, result.definition, {encoding: "utf8"});
 	} else {
@@ -153,7 +153,7 @@ function processFromId() {
 			});
 		})
 		.then(data=> {
-			var result = gapidts(data);
+			var result = gapidts(JSON.parse(data));
 			if (opts.out) {
 				fs.writeFileSync(opts.out, result.definition, {encoding: "utf8"});
 			} else {
