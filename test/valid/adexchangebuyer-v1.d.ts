@@ -138,7 +138,8 @@ declare module gapi.client {
             /**
              * All attributes for the ads that may be shown from this snippet.
              */
-            attribute: number[]; /* int32 */ /**
+            attribute: number[]; /* int32 */ 
+            /**
              * A buyer-specific id identifying the creative in this ad.
              */
             buyerCreativeId: string;
@@ -161,20 +162,24 @@ declare module gapi.client {
             /**
              * Detected product categories, if any. Read-only. This field should not be set in requests.
              */
-            productCategories: number[]; /* int32 */ /**
+            productCategories: number[]; /* int32 */ 
+            /**
              * All restricted categories for the ads that may be shown from this snippet.
              */
-            restrictedCategories: number[]; /* int32 */ /**
+            restrictedCategories: number[]; /* int32 */ 
+            /**
              * Detected sensitive categories, if any. Read-only. This field should not be set in requests.
              */
-            sensitiveCategories: number[]; /* int32 */ /**
+            sensitiveCategories: number[]; /* int32 */ 
+            /**
              * Creative serving status. Read-only. This field should not be set in requests.
              */
             status: string;
             /**
              * All vendor types for the ads that may be shown from this snippet.
              */
-            vendorType: number[]; /* int32 */ /**
+            vendorType: number[]; /* int32 */ 
+            /**
              * The url to fetch a video ad. If set, HTMLSnippet should not be set.
              */
             videoURL: string;

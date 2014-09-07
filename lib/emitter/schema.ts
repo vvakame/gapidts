@@ -143,6 +143,18 @@ class Schema {
 						if (property.items.format) {
 							process.output(" /* ").output(property.items.format).output(" */ ");
 						}
+						process.outputLine();
+					}
+					return;
+
+				} else if (property.items.type === "any") {
+					process.output("any[]");
+					if (!child) {
+						process.output(";");
+						if (property.items.format) {
+							process.output(" /* ").output(property.items.format).output(" */ ");
+						}
+						process.outputLine();
 					}
 					return;
 
