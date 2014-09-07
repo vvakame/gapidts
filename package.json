@@ -33,11 +33,11 @@
     "update-notifier": "0.2.0",
     "commander": "2.3.0",
     "colors": "0.6.2",
-    "es6-promise": "1.0.0",
-    "source-map-support": "0.2.7"
+    "es6-promise": "1.0.0"
   },
   "devDependencies": {
     "googleapis": "1.0.11",
+    "source-map-support": "0.2.7",
 
     "grunt": "0.4.5",
 
