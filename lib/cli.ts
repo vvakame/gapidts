@@ -37,6 +37,7 @@ program
 	.option("--discovery-api-path <path>", "discovery api path. default /discovery/v1/apis", null, "/discovery/v1/apis")
 	.option("--endpoint <endpoint>", "path. e.g. https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest")
 	.option("--out <outFileName>", "output file name")
+	.option("--silent", "execute silently")
 	.parse(process.argv);
 
 interface ICommandlineOptions {
@@ -53,6 +54,7 @@ interface ICommandlineOptions {
 	endpoint: string;
 
 	out: string;
+	silent: boolean;
 }
 
 var opts = <any>program;
@@ -99,6 +101,9 @@ function processList() {
 	fetchApiList()
 		.then(data=> {
 			data.items.forEach((item:any) => {
+				if (opts.silent) {
+					return;
+				}
 				if (opts.listShort) {
 					console.log(item.id);
 				} else {
@@ -124,6 +129,9 @@ function processFromSource() {
 	if (opts.out) {
 		fs.writeFileSync(opts.out, result.definition, {encoding: "utf8"});
 	} else {
+		if (opts.silent) {
+			return;
+		}
 		console.log(result.definition);
 	}
 }
@@ -159,6 +167,9 @@ function processFromId() {
 				if (opts.out) {
 					fs.writeFileSync(opts.out, data, {encoding: "utf8"});
 				} else {
+					if (opts.silent) {
+						return;
+					}
 					console.log(data);
 				}
 				return true;
@@ -167,12 +178,15 @@ function processFromId() {
 			if (opts.out) {
 				fs.writeFileSync(opts.out, result.definition, {encoding: "utf8"});
 			} else {
+				if (opts.silent) {
+					return;
+				}
 				console.log(result.definition);
 			}
 			return true;
 		})
 		.catch((err)=> {
-			console.error(err.stack);
+			console.error(opts.id, err.stack);
 			return Promise.reject(null);
 		})
 		.catch((err)=> {
