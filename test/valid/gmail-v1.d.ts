@@ -9,6 +9,310 @@ declare module gapi.client {
      */
     module gmail {
         var users: {
+            drafts: {
+                /**
+                 * Creates a new draft with the DRAFT label.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                create: (params: {
+                    userId: string;
+                    resource?: IDraft;
+                }) => { execute(callback: (data: IDraft, original: string) => void):void; };
+                /**
+                 * Immediately and permanently deletes the specified draft. Does not simply trash it.
+                 * @params {string} id The ID of the draft to delete.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                delete: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                /**
+                 * Gets the specified draft.
+                 * @params {string} format The format to return the draft in.
+                 * @params {string} id The ID of the draft to retrieve.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                get: (params: {
+                    format?: string;
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data: IDraft, original: string) => void):void; };
+                /**
+                 * Lists the drafts in the user's mailbox.
+                 * @params {number} maxResults Maximum number of drafts to return.
+                 * @params {string} pageToken Page token to retrieve a specific page of results in the list.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                list: (params: {
+                    maxResults?: number;
+                    pageToken?: string;
+                    userId: string;
+                }) => { execute(callback: (data: IListDraftsResponse, original: string) => void):void; };
+                /**
+                 * Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                send: (params: {
+                    userId: string;
+                    resource?: IDraft;
+                }) => { execute(callback: (data: IMessage, original: string) => void):void; };
+                /**
+                 * Replaces a draft's content.
+                 * @params {string} id The ID of the draft to update.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                update: (params: {
+                    id: string;
+                    userId: string;
+                    resource?: IDraft;
+                }) => { execute(callback: (data: IDraft, original: string) => void):void; };
+            };
+            history: {
+                /**
+                 * Lists the history of all changes to the given mailbox. History results are returned in chronological order (increasing historyId).
+                 * @params {string} labelId Only return messages with a label matching the ID.
+                 * @params {number} maxResults The maximum number of history records to return.
+                 * @params {string} pageToken Page token to retrieve a specific page of results in the list.
+                 * @params {string} startHistoryId Required. Returns history records after the specified startHistoryId. The supplied startHistoryId should be obtained from the historyId of a message, thread, or previous list response. History IDs increase chronologically but are not contiguous with random gaps in between valid IDs. Supplying an invalid or out of date startHistoryId typically returns an HTTP 404 error code. A historyId is typically valid for at least a week, but in some circumstances may be valid for only a few hours. If you receive an HTTP 404 error response, your application should perform a full sync. If you receive no nextPageToken in the response, there are no updates to retrieve and you can store the returned historyId for a future request.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                list: (params: {
+                    labelId?: string;
+                    maxResults?: number;
+                    pageToken?: string;
+                    startHistoryId?: string;
+                    userId: string;
+                }) => { execute(callback: (data: IListHistoryResponse, original: string) => void):void; };
+            };
+            labels: {
+                /**
+                 * Creates a new label.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                create: (params: {
+                    userId: string;
+                    resource?: ILabel;
+                }) => { execute(callback: (data: ILabel, original: string) => void):void; };
+                /**
+                 * Immediately and permanently deletes the specified label and removes it from any messages and threads that it is applied to.
+                 * @params {string} id The ID of the label to delete.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                delete: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                /**
+                 * Gets the specified label.
+                 * @params {string} id The ID of the label to retrieve.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                get: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data: ILabel, original: string) => void):void; };
+                /**
+                 * Lists all labels in the user's mailbox.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                list: (params: {
+                    userId: string;
+                }) => { execute(callback: (data: IListLabelsResponse, original: string) => void):void; };
+                /**
+                 * Updates the specified label. This method supports patch semantics.
+                 * @params {string} id The ID of the label to update.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                patch: (params: {
+                    id: string;
+                    userId: string;
+                    resource?: ILabel;
+                }) => { execute(callback: (data: ILabel, original: string) => void):void; };
+                /**
+                 * Updates the specified label.
+                 * @params {string} id The ID of the label to update.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                update: (params: {
+                    id: string;
+                    userId: string;
+                    resource?: ILabel;
+                }) => { execute(callback: (data: ILabel, original: string) => void):void; };
+            };
+            messages: {
+                /**
+                 * Immediately and permanently deletes the specified message. This operation cannot be undone. Prefer messages.trash instead.
+                 * @params {string} id The ID of the message to delete.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                delete: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                /**
+                 * Gets the specified message.
+                 * @params {string} format The format to return the message in.
+                 * @params {string} id The ID of the message to retrieve.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                get: (params: {
+                    format?: string;
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data: IMessage, original: string) => void):void; };
+                /**
+                 * Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
+                 * @params {string} internalDateSource Source for Gmail's internal date of the message.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                import: (params: {
+                    internalDateSource?: string;
+                    userId: string;
+                    resource?: IMessage;
+                }) => { execute(callback: (data: IMessage, original: string) => void):void; };
+                /**
+                 * Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.
+                 * @params {string} internalDateSource Source for Gmail's internal date of the message.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                insert: (params: {
+                    internalDateSource?: string;
+                    userId: string;
+                    resource?: IMessage;
+                }) => { execute(callback: (data: IMessage, original: string) => void):void; };
+                /**
+                 * Lists the messages in the user's mailbox.
+                 * @params {boolean} includeSpamTrash Include messages from SPAM and TRASH in the results.
+                 * @params {string} labelIds Only return messages with labels that match all of the specified label IDs.
+                 * @params {number} maxResults Maximum number of messages to return.
+                 * @params {string} pageToken Page token to retrieve a specific page of results in the list.
+                 * @params {string} q Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, "from:someuser@example.com rfc822msgid: is:unread".
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                list: (params: {
+                    includeSpamTrash?: boolean;
+                    labelIds?: string;
+                    maxResults?: number;
+                    pageToken?: string;
+                    q?: string;
+                    userId: string;
+                }) => { execute(callback: (data: IListMessagesResponse, original: string) => void):void; };
+                /**
+                 * Modifies the labels on the specified message.
+                 * @params {string} id The ID of the message to modify.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                modify: (params: {
+                    id: string;
+                    userId: string;
+                    resource?: IModifyMessageRequest;
+                }) => { execute(callback: (data: IMessage, original: string) => void):void; };
+                /**
+                 * Sends the specified message to the recipients in the To, Cc, and Bcc headers.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                send: (params: {
+                    userId: string;
+                    resource?: IMessage;
+                }) => { execute(callback: (data: IMessage, original: string) => void):void; };
+                /**
+                 * Moves the specified message to the trash.
+                 * @params {string} id The ID of the message to Trash.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                trash: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data: IMessage, original: string) => void):void; };
+                /**
+                 * Removes the specified message from the trash.
+                 * @params {string} id The ID of the message to remove from Trash.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                untrash: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data: IMessage, original: string) => void):void; };
+                attachments: {
+                    /**
+                     * Gets the specified message attachment.
+                     * @params {string} id The ID of the attachment.
+                     * @params {string} messageId The ID of the message containing the attachment.
+                     * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                     */
+                    get: (params: {
+                        id: string;
+                        messageId: string;
+                        userId: string;
+                    }) => { execute(callback: (data: IMessagePartBody, original: string) => void):void; };
+                };
+            };
+            threads: {
+                /**
+                 * Immediately and permanently deletes the specified thread. This operation cannot be undone. Prefer threads.trash instead.
+                 * @params {string} id ID of the Thread to delete.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                delete: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                /**
+                 * Gets the specified thread.
+                 * @params {string} id The ID of the thread to retrieve.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                get: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data: IThread, original: string) => void):void; };
+                /**
+                 * Lists the threads in the user's mailbox.
+                 * @params {boolean} includeSpamTrash Include threads from SPAM and TRASH in the results.
+                 * @params {string} labelIds Only return threads with labels that match all of the specified label IDs.
+                 * @params {number} maxResults Maximum number of threads to return.
+                 * @params {string} pageToken Page token to retrieve a specific page of results in the list.
+                 * @params {string} q Only return threads matching the specified query. Supports the same query format as the Gmail search box. For example, "from:someuser@example.com rfc822msgid: is:unread".
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                list: (params: {
+                    includeSpamTrash?: boolean;
+                    labelIds?: string;
+                    maxResults?: number;
+                    pageToken?: string;
+                    q?: string;
+                    userId: string;
+                }) => { execute(callback: (data: IListThreadsResponse, original: string) => void):void; };
+                /**
+                 * Modifies the labels applied to the thread. This applies to all messages in the thread.
+                 * @params {string} id The ID of the thread to modify.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                modify: (params: {
+                    id: string;
+                    userId: string;
+                    resource?: IModifyThreadRequest;
+                }) => { execute(callback: (data: IThread, original: string) => void):void; };
+                /**
+                 * Moves the specified thread to the trash.
+                 * @params {string} id The ID of the thread to Trash.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                trash: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data: IThread, original: string) => void):void; };
+                /**
+                 * Removes the specified thread from the trash.
+                 * @params {string} id The ID of the thread to remove from Trash.
+                 * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
+                 */
+                untrash: (params: {
+                    id: string;
+                    userId: string;
+                }) => { execute(callback: (data: IThread, original: string) => void):void; };
+            };
         };
         /**
          * A draft email in the user's mailbox.
