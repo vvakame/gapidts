@@ -18,44 +18,18 @@ interface IServiceInfo {
 }
 
 describe("definition emitter", ()=> {
-	var serviceInfos:IServiceInfo[] = [
-		{
-			name: "blogger",
-			version: "v3"
-		},
-		{
-			name: "calendar",
-			version: "v3"
-		},
-		{
-			name: "compute",
-			version: "v1"
-		},
-		{
-			name: "customsearch",
-			version: "v1"
-		},
-		{
-			name: "datastore",
-			version: "v1beta1"
-		},
-		{
-			name: "discovery",
-			version: "v1"
-		},
-		{
-			name: "plus",
-			version: "v1"
-		},
-		{
-			name: "tasks",
-			version: "v1"
-		},
-		{
-			name: "urlshortener",
-			version: "v1"
-		}
-	];
+	var serviceInfos:IServiceInfo[] = fs.readdirSync("./test/fixture")
+		.map(fileName=> {
+			var matches = fileName.match(/^(.+)-(v.+)-rest.json$/);
+			if (matches.length !== 3) {
+				return;
+			}
+			return {
+				name: matches[1],
+				version: matches[2]
+			};
+		})
+		.filter(v => !!v);
 
 	serviceInfos.forEach(serviceInfo => {
 		it("create same file every time about " + serviceInfo.name + "-" + serviceInfo.version, (done)=> {

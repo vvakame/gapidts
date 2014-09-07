@@ -30,6 +30,7 @@ program
 	.option("--source <file>", "specified source JSON file")
 	.option("--list-short", "list of API ID.")
 	.option("--list", "list of API ID.")
+	.option("--json", "emit schema source by JSON.")
 	.option("--id <apiId>", "endpoint ID. e.g. urlshortener:v1")
 	.option("--host [hostName]", "host name. default www.googleapis.com", null, "www.googleapis.com")
 	.option("--port [port]", "port number. default 443", null, "443")
@@ -43,6 +44,7 @@ interface ICommandlineOptions {
 
 	listShort: boolean;
 	list: boolean;
+	json: boolean;
 	id: string;
 
 	host: string;
@@ -153,12 +155,21 @@ function processFromId() {
 			});
 		})
 		.then(data=> {
+			if (opts.json) {
+				if (opts.out) {
+					fs.writeFileSync(opts.out, data, {encoding: "utf8"});
+				} else {
+					console.log(data);
+				}
+				return true;
+			}
 			var result = gapidts(JSON.parse(data));
 			if (opts.out) {
 				fs.writeFileSync(opts.out, result.definition, {encoding: "utf8"});
 			} else {
 				console.log(result.definition);
 			}
+			return true;
 		})
 		.catch((err)=> {
 			console.error(err.stack);
