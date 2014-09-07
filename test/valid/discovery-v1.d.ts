@@ -17,7 +17,7 @@ declare module gapi.client {
             getRest: (params: {
                 api: string;
                 version: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRestDescription
+            }) => { execute(callback: (data: IRestDescription, original: string) => void):void; };
             /**
              * Retrieve the list of APIs supported at this endpoint.
              * @params {string} name Only include APIs with the given name.
@@ -26,7 +26,7 @@ declare module gapi.client {
             list: (params: {
                 name?: string;
                 preferred?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDirectoryList
+            }) => { execute(callback: (data: IDirectoryList, original: string) => void):void; };
         };
         interface IDirectoryList {
             /**

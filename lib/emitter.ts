@@ -29,26 +29,44 @@ export class Discovery {
 	}
 
 	emit(process:Process):void {
+		this.emitDefinitionHeader(process);
+
+		this.emitInModule(process, ()=> {
+			this.emitMethods(process);
+			this.emitTypes(process);
+		});
+	}
+
+	emitDefinitionHeader(process:Process) {
 		process.output("// Type definitions for ").output(this.base.ownerName || "").output(" ");
 		process.output(this.base.title).output(" ").outputLine(this.base.version);
 		process.output("// Project: ").outputLine(this.base.documentationLink);
 		process.outputLine("// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>");
 		process.outputLine("// Definitions: https://github.com/vvakame/gapidts");
 		process.outputLine("");
+	}
 
+	emitInModule(process:Process, proc:()=>void) {
 		process.outputLine("declare module gapi.client {");
 		process.increaseIndent();
 		process.outputJSDoc(this.base.description);
 		process.output("module ").output(this.name).output(" {").outputLine();
 		process.increaseIndent();
 
-		this.resources.forEach(resource=>resource.emit(process));
-		this.schemas.forEach(schema=>schema.emit(process));
+		proc();
 
 		process.decreaseIndent();
 		process.outputLine("}");
 		process.decreaseIndent();
 		process.outputLine("}");
+	}
+
+	emitMethods(process:Process) {
+		this.resources.forEach(resource=>resource.emit(process));
+	}
+
+	emitTypes(process:Process) {
+		this.schemas.forEach(schema=>schema.emit(process));
 	}
 }
 
@@ -80,58 +98,62 @@ export class Method {
 	constructor(public name:string, public base:model.IRestMethod) {
 	}
 
+	toTSType(type:string) {
+		switch (type) {
+			case "string":
+				return "string";
+			case "integer":
+			case "number":
+				return "number";
+			case "boolean":
+				return "boolean";
+			default :
+				console.log(this.base);
+				throw new Error("unknown type: " + type);
+		}
+	}
+
 	emit(process:Process):void {
 		process.outputJSDoc(this.base.description, this.base.parameters);
 		process.output(this.name).output(": (");
 
-		if (this.base.parameters) {
-			var parameterNames = Object.keys(this.base.parameters);
-			if (parameterNames.length !== 0) {
-				process.outputLine("params: {");
-				process.increaseIndent();
-				parameterNames.forEach(parameterName=> {
-					var parameter = this.base.parameters[parameterName];
-					if (/\-/.test(parameterName)) {
-						process.output("\"").output(parameterName).output("\"");
-					} else {
-						process.output(parameterName);
-					}
-					if (!parameter.required) {
-						process.output("?");
-					}
-					process.output(": ");
-					switch (parameter.type) {
-						case "string":
-							process.output("string");
-							break;
-						case "integer":
-						case "number":
-							process.output("number");
-							break;
-						case "boolean":
-							process.output("boolean");
-							break;
-						default :
-							console.log(this.base);
-							throw new Error("unknown type");
-					}
-					process.outputLine(";");
-				});
-				process.decreaseIndent();
-				process.output("}");
-			}
+		// request
+		var parameterNames = Object.keys(this.base.parameters || {});
+		process.outputLine("params: {");
+		process.increaseIndent();
+		parameterNames.forEach(parameterName=> {
+			this.emitParameter(process, parameterName, this.base.parameters[parameterName]);
+		});
+		if (this.base.request) {
+			process.output("resource?: I").output(this.base.request.$ref).outputLine(";");
 		}
+		process.decreaseIndent();
+		process.output("}");
 
 		process.output(") => ");
-		process.output("{ execute(callback: (data:any, original: string) => void):void; }; // ");
-		if (!this.base.response) {
-			process.outputLine("void");
-		} else if (this.base.response.$ref) {
-			process.output("I").output(this.base.response.$ref).outputLine();
+
+		// response
+		if (this.base.response && this.base.response.$ref) {
+			process.output("{ execute(callback: (data: I").output(this.base.response.$ref).outputLine(", original: string) => void):void; };");
+		} else if (!this.base.response) {
+			// e.g. blogger-v3 blogger.comments.delete and other delete, remove API
+			process.outputLine("{ execute(callback: (data:any, original: string) => void):void; }; // void");
 		} else {
 			console.log(this.base);
 			throw new Error("unknown response");
 		}
+	}
+
+	emitParameter(process:Process, parameterName:string, parameter:model.IJsonSchema) {
+		if (/\-/.test(parameterName)) {
+			process.output("\"").output(parameterName).output("\"");
+		} else {
+			process.output(parameterName);
+		}
+		if (!parameter.required) {
+			process.output("?");
+		}
+		process.output(": ").output(this.toTSType(parameter.type)).outputLine(";");
 	}
 }
 

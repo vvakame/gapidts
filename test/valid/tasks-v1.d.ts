@@ -22,11 +22,13 @@ declare module gapi.client {
              */
             get: (params: {
                 tasklist: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITaskList
+            }) => { execute(callback: (data: ITaskList, original: string) => void):void; };
             /**
              * Creates a new task list and adds it to the authenticated user's task lists.
              */
-            insert: () => { execute(callback: (data:any, original: string) => void):void; }; // ITaskList
+            insert: (params: {
+                resource?: ITaskList;
+            }) => { execute(callback: (data: ITaskList, original: string) => void):void; };
             /**
              * Returns all the authenticated user's task lists.
              * @params {string} maxResults Maximum number of task lists returned on one page. Optional. The default is 100.
@@ -35,21 +37,23 @@ declare module gapi.client {
             list: (params: {
                 maxResults?: string;
                 pageToken?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITaskLists
+            }) => { execute(callback: (data: ITaskLists, original: string) => void):void; };
             /**
              * Updates the authenticated user's specified task list. This method supports patch semantics.
              * @params {string} tasklist Task list identifier.
              */
             patch: (params: {
                 tasklist: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITaskList
+                resource?: ITaskList;
+            }) => { execute(callback: (data: ITaskList, original: string) => void):void; };
             /**
              * Updates the authenticated user's specified task list.
              * @params {string} tasklist Task list identifier.
              */
             update: (params: {
                 tasklist: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITaskList
+                resource?: ITaskList;
+            }) => { execute(callback: (data: ITaskList, original: string) => void):void; };
         };
         var tasks: {
             /**
@@ -76,7 +80,7 @@ declare module gapi.client {
             get: (params: {
                 task: string;
                 tasklist: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITask
+            }) => { execute(callback: (data: ITask, original: string) => void):void; };
             /**
              * Creates a new task on the specified task list.
              * @params {string} parent Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.
@@ -87,7 +91,8 @@ declare module gapi.client {
                 parent?: string;
                 previous?: string;
                 tasklist: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITask
+                resource?: ITask;
+            }) => { execute(callback: (data: ITask, original: string) => void):void; };
             /**
              * Returns all tasks in the specified task list.
              * @params {string} completedMax Upper bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.
@@ -114,7 +119,7 @@ declare module gapi.client {
                 showHidden?: boolean;
                 tasklist: string;
                 updatedMin?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITasks
+            }) => { execute(callback: (data: ITasks, original: string) => void):void; };
             /**
              * Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.
              * @params {string} parent New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.
@@ -127,7 +132,7 @@ declare module gapi.client {
                 previous?: string;
                 task: string;
                 tasklist: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITask
+            }) => { execute(callback: (data: ITask, original: string) => void):void; };
             /**
              * Updates the specified task. This method supports patch semantics.
              * @params {string} task Task identifier.
@@ -136,7 +141,8 @@ declare module gapi.client {
             patch: (params: {
                 task: string;
                 tasklist: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITask
+                resource?: ITask;
+            }) => { execute(callback: (data: ITask, original: string) => void):void; };
             /**
              * Updates the specified task.
              * @params {string} task Task identifier.
@@ -145,7 +151,8 @@ declare module gapi.client {
             update: (params: {
                 task: string;
                 tasklist: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITask
+                resource?: ITask;
+            }) => { execute(callback: (data: ITask, original: string) => void):void; };
         };
         interface ITask {
             /**

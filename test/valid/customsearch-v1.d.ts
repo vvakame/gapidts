@@ -77,7 +77,7 @@ declare module gapi.client {
                 siteSearchFilter?: string;
                 sort?: string;
                 start?: number;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISearch
+            }) => { execute(callback: (data: ISearch, original: string) => void):void; };
         };
         interface IContext {
             facets: {

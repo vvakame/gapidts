@@ -19,7 +19,7 @@ declare module gapi.client {
                 blogId: string;
                 maxPosts?: number;
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IBlogUserInfo
+            }) => { execute(callback: (data: IBlogUserInfo, original: string) => void):void; };
         };
         var blogs: {
             /**
@@ -32,7 +32,7 @@ declare module gapi.client {
                 blogId: string;
                 maxPosts?: number;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IBlog
+            }) => { execute(callback: (data: IBlog, original: string) => void):void; };
             /**
              * Retrieve a Blog by URL.
              * @params {string} url The URL of the blog to retrieve.
@@ -41,7 +41,7 @@ declare module gapi.client {
             getByUrl: (params: {
                 url: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IBlog
+            }) => { execute(callback: (data: IBlog, original: string) => void):void; };
             /**
              * Retrieves a list of blogs, possibly filtered.
              * @params {boolean} fetchUserInfo Whether the response is a list of blogs with per-user information instead of just blogs.
@@ -54,7 +54,7 @@ declare module gapi.client {
                 role?: string;
                 userId: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IBlogList
+            }) => { execute(callback: (data: IBlogList, original: string) => void):void; };
         };
         var comments: {
             /**
@@ -67,7 +67,7 @@ declare module gapi.client {
                 blogId: string;
                 commentId: string;
                 postId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IComment
+            }) => { execute(callback: (data: IComment, original: string) => void):void; };
             /**
              * Delete a comment by id.
              * @params {string} blogId The Id of the Blog.
@@ -91,7 +91,7 @@ declare module gapi.client {
                 commentId: string;
                 postId: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IComment
+            }) => { execute(callback: (data: IComment, original: string) => void):void; };
             /**
              * Retrieves the comments for a post, possibly filtered.
              * @params {string} blogId ID of the blog to fetch comments from.
@@ -114,7 +114,7 @@ declare module gapi.client {
                 startDate?: string;
                 status?: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICommentList
+            }) => { execute(callback: (data: ICommentList, original: string) => void):void; };
             /**
              * Retrieves the comments for a blog, across all posts, possibly filtered.
              * @params {string} blogId ID of the blog to fetch comments from.
@@ -131,7 +131,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 startDate?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICommentList
+            }) => { execute(callback: (data: ICommentList, original: string) => void):void; };
             /**
              * Marks a comment as spam.
              * @params {string} blogId The Id of the Blog.
@@ -142,7 +142,7 @@ declare module gapi.client {
                 blogId: string;
                 commentId: string;
                 postId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IComment
+            }) => { execute(callback: (data: IComment, original: string) => void):void; };
             /**
              * Removes the content of a comment.
              * @params {string} blogId The Id of the Blog.
@@ -153,7 +153,7 @@ declare module gapi.client {
                 blogId: string;
                 commentId: string;
                 postId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IComment
+            }) => { execute(callback: (data: IComment, original: string) => void):void; };
         };
         var pageViews: {
             /**
@@ -164,7 +164,7 @@ declare module gapi.client {
             get: (params: {
                 blogId: string;
                 range?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPageviews
+            }) => { execute(callback: (data: IPageviews, original: string) => void):void; };
         };
         var pages: {
             /**
@@ -186,14 +186,15 @@ declare module gapi.client {
                 blogId: string;
                 pageId: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPage
+            }) => { execute(callback: (data: IPage, original: string) => void):void; };
             /**
              * Add a page.
              * @params {string} blogId ID of the blog to add the page to.
              */
             insert: (params: {
                 blogId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPage
+                resource?: IPage;
+            }) => { execute(callback: (data: IPage, original: string) => void):void; };
             /**
              * Retrieves the pages for a blog, optionally including non-LIVE statuses.
              * @params {string} blogId ID of the blog to fetch pages from.
@@ -206,7 +207,7 @@ declare module gapi.client {
                 fetchBodies?: boolean;
                 status?: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPageList
+            }) => { execute(callback: (data: IPageList, original: string) => void):void; };
             /**
              * Update a page. This method supports patch semantics.
              * @params {string} blogId The ID of the Blog.
@@ -215,7 +216,8 @@ declare module gapi.client {
             patch: (params: {
                 blogId: string;
                 pageId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPage
+                resource?: IPage;
+            }) => { execute(callback: (data: IPage, original: string) => void):void; };
             /**
              * Update a page.
              * @params {string} blogId The ID of the Blog.
@@ -224,7 +226,8 @@ declare module gapi.client {
             update: (params: {
                 blogId: string;
                 pageId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPage
+                resource?: IPage;
+            }) => { execute(callback: (data: IPage, original: string) => void):void; };
         };
         var postUserInfos: {
             /**
@@ -239,7 +242,7 @@ declare module gapi.client {
                 maxComments?: number;
                 postId: string;
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPostUserInfo
+            }) => { execute(callback: (data: IPostUserInfo, original: string) => void):void; };
             /**
              * Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.
              * @params {string} blogId ID of the blog to fetch posts from.
@@ -266,7 +269,7 @@ declare module gapi.client {
                 status?: string;
                 userId: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPostUserInfosList
+            }) => { execute(callback: (data: IPostUserInfosList, original: string) => void):void; };
         };
         var posts: {
             /**
@@ -294,7 +297,7 @@ declare module gapi.client {
                 maxComments?: number;
                 postId: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPost
+            }) => { execute(callback: (data: IPost, original: string) => void):void; };
             /**
              * Retrieve a Post by Path.
              * @params {string} blogId ID of the blog to fetch the post from.
@@ -307,7 +310,7 @@ declare module gapi.client {
                 maxComments?: number;
                 path: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPost
+            }) => { execute(callback: (data: IPost, original: string) => void):void; };
             /**
              * Add a post.
              * @params {string} blogId ID of the blog to add the post to.
@@ -320,7 +323,8 @@ declare module gapi.client {
                 fetchBody?: boolean;
                 fetchImages?: boolean;
                 isDraft?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPost
+                resource?: IPost;
+            }) => { execute(callback: (data: IPost, original: string) => void):void; };
             /**
              * Retrieves a list of posts, possibly filtered.
              * @params {string} blogId ID of the blog to fetch posts from.
@@ -347,7 +351,7 @@ declare module gapi.client {
                 startDate?: string;
                 status?: string;
                 view?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPostList
+            }) => { execute(callback: (data: IPostList, original: string) => void):void; };
             /**
              * Update a post. This method supports patch semantics.
              * @params {string} blogId The ID of the Blog.
@@ -366,7 +370,8 @@ declare module gapi.client {
                 postId: string;
                 publish?: boolean;
                 revert?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPost
+                resource?: IPost;
+            }) => { execute(callback: (data: IPost, original: string) => void):void; };
             /**
              * Publish a draft post.
              * @params {string} blogId The ID of the Blog.
@@ -377,7 +382,7 @@ declare module gapi.client {
                 blogId: string;
                 postId: string;
                 publishDate?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPost
+            }) => { execute(callback: (data: IPost, original: string) => void):void; };
             /**
              * Revert a published or scheduled post to draft state.
              * @params {string} blogId The ID of the Blog.
@@ -386,7 +391,7 @@ declare module gapi.client {
             revert: (params: {
                 blogId: string;
                 postId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPost
+            }) => { execute(callback: (data: IPost, original: string) => void):void; };
             /**
              * Search for a post.
              * @params {string} blogId ID of the blog to fetch the post from.
@@ -399,7 +404,7 @@ declare module gapi.client {
                 fetchBodies?: boolean;
                 orderBy?: string;
                 q: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPostList
+            }) => { execute(callback: (data: IPostList, original: string) => void):void; };
             /**
              * Update a post.
              * @params {string} blogId The ID of the Blog.
@@ -418,7 +423,8 @@ declare module gapi.client {
                 postId: string;
                 publish?: boolean;
                 revert?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPost
+                resource?: IPost;
+            }) => { execute(callback: (data: IPost, original: string) => void):void; };
         };
         var users: {
             /**
@@ -427,7 +433,7 @@ declare module gapi.client {
              */
             get: (params: {
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IUser
+            }) => { execute(callback: (data: IUser, original: string) => void):void; };
         };
         interface IBlog {
             /**

@@ -15,7 +15,7 @@ declare module gapi.client {
              */
             get: (params: {
                 activityId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IActivity
+            }) => { execute(callback: (data: IActivity, original: string) => void):void; };
             /**
              * List all of the activities in the specified collection for a particular user.
              * @params {string} collection The collection of activities to list.
@@ -28,7 +28,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IActivityFeed
+            }) => { execute(callback: (data: IActivityFeed, original: string) => void):void; };
             /**
              * Search public activities.
              * @params {string} language Specify the preferred language to search with. See search language codes for available values.
@@ -43,7 +43,7 @@ declare module gapi.client {
                 orderBy?: string;
                 pageToken?: string;
                 query: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IActivityFeed
+            }) => { execute(callback: (data: IActivityFeed, original: string) => void):void; };
         };
         var comments: {
             /**
@@ -52,7 +52,7 @@ declare module gapi.client {
              */
             get: (params: {
                 commentId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IComment
+            }) => { execute(callback: (data: IComment, original: string) => void):void; };
             /**
              * List all of the comments for an activity.
              * @params {string} activityId The ID of the activity to get comments for.
@@ -65,7 +65,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 sortOrder?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICommentFeed
+            }) => { execute(callback: (data: ICommentFeed, original: string) => void):void; };
         };
         var moments: {
             /**
@@ -78,7 +78,8 @@ declare module gapi.client {
                 collection: string;
                 debug?: boolean;
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMoment
+                resource?: IMoment;
+            }) => { execute(callback: (data: IMoment, original: string) => void):void; };
             /**
              * List all of the moments for a particular user.
              * @params {string} collection The collection of moments to list.
@@ -95,7 +96,7 @@ declare module gapi.client {
                 targetUrl?: string;
                 type?: string;
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMomentsFeed
+            }) => { execute(callback: (data: IMomentsFeed, original: string) => void):void; };
             /**
              * Delete a moment.
              * @params {string} id The ID of the moment to delete.
@@ -111,7 +112,7 @@ declare module gapi.client {
              */
             get: (params: {
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPerson
+            }) => { execute(callback: (data: IPerson, original: string) => void):void; };
             /**
              * List all of the people in the specified collection.
              * @params {string} collection The collection of people to list.
@@ -126,7 +127,7 @@ declare module gapi.client {
                 orderBy?: string;
                 pageToken?: string;
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPeopleFeed
+            }) => { execute(callback: (data: IPeopleFeed, original: string) => void):void; };
             /**
              * List all of the people in the specified collection for a particular activity.
              * @params {string} activityId The ID of the activity to get the list of people for.
@@ -139,7 +140,7 @@ declare module gapi.client {
                 collection: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPeopleFeed
+            }) => { execute(callback: (data: IPeopleFeed, original: string) => void):void; };
             /**
              * Search all public profiles.
              * @params {string} language Specify the preferred language to search with. See search language codes for available values.
@@ -152,7 +153,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 query: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IPeopleFeed
+            }) => { execute(callback: (data: IPeopleFeed, original: string) => void):void; };
         };
         interface IAcl {
             /**

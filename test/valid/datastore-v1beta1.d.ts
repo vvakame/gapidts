@@ -15,49 +15,56 @@ declare module gapi.client {
              */
             allocateIds: (params: {
                 datasetId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAllocateIdsResponse
+                resource?: IAllocateIdsRequest;
+            }) => { execute(callback: (data: IAllocateIdsResponse, original: string) => void):void; };
             /**
              * Begin a new transaction.
              * @params {string} datasetId Identifies the dataset.
              */
             beginTransaction: (params: {
                 datasetId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IBeginTransactionResponse
+                resource?: IBeginTransactionRequest;
+            }) => { execute(callback: (data: IBeginTransactionResponse, original: string) => void):void; };
             /**
              * Create, delete or modify some entities outside a transaction.
              * @params {string} datasetId Identifies the dataset.
              */
             blindWrite: (params: {
                 datasetId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IBlindWriteResponse
+                resource?: IBlindWriteRequest;
+            }) => { execute(callback: (data: IBlindWriteResponse, original: string) => void):void; };
             /**
              * Commit a transaction, optionally creating, deleting or modifying some entities.
              * @params {string} datasetId Identifies the dataset.
              */
             commit: (params: {
                 datasetId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICommitResponse
+                resource?: ICommitRequest;
+            }) => { execute(callback: (data: ICommitResponse, original: string) => void):void; };
             /**
              * Look up some entities by key.
              * @params {string} datasetId Identifies the dataset.
              */
             lookup: (params: {
                 datasetId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ILookupResponse
+                resource?: ILookupRequest;
+            }) => { execute(callback: (data: ILookupResponse, original: string) => void):void; };
             /**
              * Roll back a transaction.
              * @params {string} datasetId Identifies the dataset.
              */
             rollback: (params: {
                 datasetId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRollbackResponse
+                resource?: IRollbackRequest;
+            }) => { execute(callback: (data: IRollbackResponse, original: string) => void):void; };
             /**
              * Query for entities.
              * @params {string} datasetId Identifies the dataset.
              */
             runQuery: (params: {
                 datasetId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRunQueryResponse
+                resource?: IRunQueryRequest;
+            }) => { execute(callback: (data: IRunQueryResponse, original: string) => void):void; };
         };
         interface IAllocateIdsRequest {
             /**

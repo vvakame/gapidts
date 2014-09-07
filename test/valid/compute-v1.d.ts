@@ -21,7 +21,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAddressAggregatedList
+            }) => { execute(callback: (data: IAddressAggregatedList, original: string) => void):void; };
             /**
              * Deletes the specified address resource.
              * @params {string} address Name of the address resource to delete.
@@ -32,7 +32,7 @@ declare module gapi.client {
                 address: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified address resource.
              * @params {string} address Name of the address resource to return.
@@ -43,7 +43,7 @@ declare module gapi.client {
                 address: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAddress
+            }) => { execute(callback: (data: IAddress, original: string) => void):void; };
             /**
              * Creates an address resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -52,7 +52,8 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IAddress;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of address resources contained within the specified region.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -67,7 +68,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAddressList
+            }) => { execute(callback: (data: IAddressList, original: string) => void):void; };
         };
         var diskTypes: {
             /**
@@ -82,7 +83,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskTypeAggregatedList
+            }) => { execute(callback: (data: IDiskTypeAggregatedList, original: string) => void):void; };
             /**
              * Returns the specified disk type resource.
              * @params {string} diskType Name of the disk type resource to return.
@@ -93,7 +94,7 @@ declare module gapi.client {
                 diskType: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskType
+            }) => { execute(callback: (data: IDiskType, original: string) => void):void; };
             /**
              * Retrieves the list of disk type resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -108,7 +109,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskTypeList
+            }) => { execute(callback: (data: IDiskTypeList, original: string) => void):void; };
         };
         var disks: {
             /**
@@ -123,7 +124,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskAggregatedList
+            }) => { execute(callback: (data: IDiskAggregatedList, original: string) => void):void; };
             /**
              * 
              * @params {string} disk Name of the persistent disk resource to snapshot.
@@ -134,7 +135,8 @@ declare module gapi.client {
                 disk: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ISnapshot;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Deletes the specified persistent disk resource.
              * @params {string} disk Name of the persistent disk resource to delete.
@@ -145,7 +147,7 @@ declare module gapi.client {
                 disk: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified persistent disk resource.
              * @params {string} disk Name of the persistent disk resource to return.
@@ -156,7 +158,7 @@ declare module gapi.client {
                 disk: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDisk
+            }) => { execute(callback: (data: IDisk, original: string) => void):void; };
             /**
              * Creates a persistent disk resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -167,7 +169,8 @@ declare module gapi.client {
                 project: string;
                 sourceImage?: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IDisk;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of persistent disk resources contained within the specified zone.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -182,7 +185,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IDiskList
+            }) => { execute(callback: (data: IDiskList, original: string) => void):void; };
         };
         var firewalls: {
             /**
@@ -193,7 +196,7 @@ declare module gapi.client {
             delete: (params: {
                 firewall: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified firewall resource.
              * @params {string} firewall Name of the firewall resource to return.
@@ -202,14 +205,15 @@ declare module gapi.client {
             get: (params: {
                 firewall: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IFirewall
+            }) => { execute(callback: (data: IFirewall, original: string) => void):void; };
             /**
              * Creates a firewall resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
              */
             insert: (params: {
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IFirewall;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of firewall resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -222,7 +226,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IFirewallList
+            }) => { execute(callback: (data: IFirewallList, original: string) => void):void; };
             /**
              * Updates the specified firewall resource with the data included in the request. This method supports patch semantics.
              * @params {string} firewall Name of the firewall resource to update.
@@ -231,7 +235,8 @@ declare module gapi.client {
             patch: (params: {
                 firewall: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IFirewall;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Updates the specified firewall resource with the data included in the request.
              * @params {string} firewall Name of the firewall resource to update.
@@ -240,7 +245,8 @@ declare module gapi.client {
             update: (params: {
                 firewall: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IFirewall;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
         var forwardingRules: {
             /**
@@ -255,7 +261,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IForwardingRuleAggregatedList
+            }) => { execute(callback: (data: IForwardingRuleAggregatedList, original: string) => void):void; };
             /**
              * Deletes the specified ForwardingRule resource.
              * @params {string} forwardingRule Name of the ForwardingRule resource to delete.
@@ -266,7 +272,7 @@ declare module gapi.client {
                 forwardingRule: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified ForwardingRule resource.
              * @params {string} forwardingRule Name of the ForwardingRule resource to return.
@@ -277,7 +283,7 @@ declare module gapi.client {
                 forwardingRule: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IForwardingRule
+            }) => { execute(callback: (data: IForwardingRule, original: string) => void):void; };
             /**
              * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -286,7 +292,8 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IForwardingRule;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of ForwardingRule resources available to the specified project and region.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -301,7 +308,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IForwardingRuleList
+            }) => { execute(callback: (data: IForwardingRuleList, original: string) => void):void; };
             /**
              * Changes target url for forwarding rule.
              * @params {string} forwardingRule Name of the ForwardingRule resource in which target is to be set.
@@ -312,7 +319,8 @@ declare module gapi.client {
                 forwardingRule: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITargetReference;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
         var globalOperations: {
             /**
@@ -327,7 +335,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperationAggregatedList
+            }) => { execute(callback: (data: IOperationAggregatedList, original: string) => void):void; };
             /**
              * Deletes the specified operation resource.
              * @params {string} operation Name of the operation resource to delete.
@@ -345,7 +353,7 @@ declare module gapi.client {
             get: (params: {
                 operation: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of operation resources contained within the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -358,7 +366,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperationList
+            }) => { execute(callback: (data: IOperationList, original: string) => void):void; };
         };
         var httpHealthChecks: {
             /**
@@ -369,7 +377,7 @@ declare module gapi.client {
             delete: (params: {
                 httpHealthCheck: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified HttpHealthCheck resource.
              * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to return.
@@ -378,14 +386,15 @@ declare module gapi.client {
             get: (params: {
                 httpHealthCheck: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IHttpHealthCheck
+            }) => { execute(callback: (data: IHttpHealthCheck, original: string) => void):void; };
             /**
              * Creates a HttpHealthCheck resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
              */
             insert: (params: {
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IHttpHealthCheck;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of HttpHealthCheck resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -398,7 +407,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IHttpHealthCheckList
+            }) => { execute(callback: (data: IHttpHealthCheckList, original: string) => void):void; };
             /**
              * Updates a HttpHealthCheck resource in the specified project using the data included in the request. This method supports patch semantics.
              * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to update.
@@ -407,7 +416,8 @@ declare module gapi.client {
             patch: (params: {
                 httpHealthCheck: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IHttpHealthCheck;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Updates a HttpHealthCheck resource in the specified project using the data included in the request.
              * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to update.
@@ -416,7 +426,8 @@ declare module gapi.client {
             update: (params: {
                 httpHealthCheck: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IHttpHealthCheck;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
         var images: {
             /**
@@ -427,7 +438,7 @@ declare module gapi.client {
             delete: (params: {
                 image: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Sets the deprecation status of an image. If no message body is given, clears the deprecation status instead.
              * @params {string} image Image name.
@@ -436,7 +447,8 @@ declare module gapi.client {
             deprecate: (params: {
                 image: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IDeprecationStatus;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified image resource.
              * @params {string} image Name of the image resource to return.
@@ -445,14 +457,15 @@ declare module gapi.client {
             get: (params: {
                 image: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IImage
+            }) => { execute(callback: (data: IImage, original: string) => void):void; };
             /**
              * Creates an image resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
              */
             insert: (params: {
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IImage;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of image resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -465,7 +478,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IImageList
+            }) => { execute(callback: (data: IImageList, original: string) => void):void; };
         };
         var instances: {
             /**
@@ -480,7 +493,8 @@ declare module gapi.client {
                 networkInterface: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IAccessConfig;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * 
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -493,7 +507,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IInstanceAggregatedList
+            }) => { execute(callback: (data: IInstanceAggregatedList, original: string) => void):void; };
             /**
              * Attaches a disk resource to an instance.
              * @params {string} instance Instance name.
@@ -504,7 +518,8 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IAttachedDisk;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Deletes the specified instance resource.
              * @params {string} instance Name of the instance resource to delete.
@@ -515,7 +530,7 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Deletes an access config from an instance's network interface.
              * @params {string} accessConfig Access config name.
@@ -530,7 +545,7 @@ declare module gapi.client {
                 networkInterface: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Detaches a disk from an instance.
              * @params {string} deviceName Disk device name to detach.
@@ -543,7 +558,7 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified instance resource.
              * @params {string} instance Name of the instance resource to return.
@@ -554,7 +569,7 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IInstance
+            }) => { execute(callback: (data: IInstance, original: string) => void):void; };
             /**
              * Returns the specified instance's serial port output.
              * @params {string} instance Name of the instance scoping this request.
@@ -565,7 +580,7 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISerialPortOutput
+            }) => { execute(callback: (data: ISerialPortOutput, original: string) => void):void; };
             /**
              * Creates an instance resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -574,7 +589,8 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IInstance;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of instance resources contained within the specified zone.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -589,7 +605,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IInstanceList
+            }) => { execute(callback: (data: IInstanceList, original: string) => void):void; };
             /**
              * Performs a hard reset on the instance.
              * @params {string} instance Name of the instance scoping this request.
@@ -600,7 +616,7 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Sets the auto-delete flag for a disk attached to an instance
              * @params {boolean} autoDelete Whether to auto-delete the disk when the instance is deleted.
@@ -615,7 +631,7 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Sets metadata for the specified instance to the data included in the request.
              * @params {string} instance Name of the instance scoping this request.
@@ -626,7 +642,8 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IMetadata;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Sets an instance's scheduling options.
              * @params {string} instance Instance name.
@@ -637,7 +654,8 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IScheduling;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Sets tags for the specified instance to the data included in the request.
              * @params {string} instance Name of the instance scoping this request.
@@ -648,7 +666,8 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITags;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
         var machineTypes: {
             /**
@@ -663,7 +682,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMachineTypeAggregatedList
+            }) => { execute(callback: (data: IMachineTypeAggregatedList, original: string) => void):void; };
             /**
              * Returns the specified machine type resource.
              * @params {string} machineType Name of the machine type resource to return.
@@ -674,7 +693,7 @@ declare module gapi.client {
                 machineType: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMachineType
+            }) => { execute(callback: (data: IMachineType, original: string) => void):void; };
             /**
              * Retrieves the list of machine type resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -689,7 +708,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IMachineTypeList
+            }) => { execute(callback: (data: IMachineTypeList, original: string) => void):void; };
         };
         var networks: {
             /**
@@ -700,7 +719,7 @@ declare module gapi.client {
             delete: (params: {
                 network: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified network resource.
              * @params {string} network Name of the network resource to return.
@@ -709,14 +728,15 @@ declare module gapi.client {
             get: (params: {
                 network: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // INetwork
+            }) => { execute(callback: (data: INetwork, original: string) => void):void; };
             /**
              * Creates a network resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
              */
             insert: (params: {
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: INetwork;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of network resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -729,7 +749,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // INetworkList
+            }) => { execute(callback: (data: INetworkList, original: string) => void):void; };
         };
         var projects: {
             /**
@@ -738,14 +758,15 @@ declare module gapi.client {
              */
             get: (params: {
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IProject
+            }) => { execute(callback: (data: IProject, original: string) => void):void; };
             /**
              * Sets metadata common to all instances within the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
              */
             setCommonInstanceMetadata: (params: {
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IMetadata;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
         var regionOperations: {
             /**
@@ -769,7 +790,7 @@ declare module gapi.client {
                 operation: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of operation resources contained within the specified region.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -784,7 +805,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperationList
+            }) => { execute(callback: (data: IOperationList, original: string) => void):void; };
         };
         var regions: {
             /**
@@ -795,7 +816,7 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRegion
+            }) => { execute(callback: (data: IRegion, original: string) => void):void; };
             /**
              * Retrieves the list of region resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -808,7 +829,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRegionList
+            }) => { execute(callback: (data: IRegionList, original: string) => void):void; };
         };
         var routes: {
             /**
@@ -819,7 +840,7 @@ declare module gapi.client {
             delete: (params: {
                 project: string;
                 route: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified route resource.
              * @params {string} project Name of the project scoping this request.
@@ -828,14 +849,15 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 route: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRoute
+            }) => { execute(callback: (data: IRoute, original: string) => void):void; };
             /**
              * Creates a route resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
              */
             insert: (params: {
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: IRoute;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of route resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -848,7 +870,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IRouteList
+            }) => { execute(callback: (data: IRouteList, original: string) => void):void; };
         };
         var snapshots: {
             /**
@@ -859,7 +881,7 @@ declare module gapi.client {
             delete: (params: {
                 project: string;
                 snapshot: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified persistent disk snapshot resource.
              * @params {string} project Name of the project scoping this request.
@@ -868,7 +890,7 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 snapshot: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISnapshot
+            }) => { execute(callback: (data: ISnapshot, original: string) => void):void; };
             /**
              * Retrieves the list of persistent disk snapshot resources contained within the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -881,7 +903,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISnapshotList
+            }) => { execute(callback: (data: ISnapshotList, original: string) => void):void; };
         };
         var targetInstances: {
             /**
@@ -896,7 +918,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetInstanceAggregatedList
+            }) => { execute(callback: (data: ITargetInstanceAggregatedList, original: string) => void):void; };
             /**
              * Deletes the specified TargetInstance resource.
              * @params {string} project Name of the project scoping this request.
@@ -907,7 +929,7 @@ declare module gapi.client {
                 project: string;
                 targetInstance: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified TargetInstance resource.
              * @params {string} project Name of the project scoping this request.
@@ -918,7 +940,7 @@ declare module gapi.client {
                 project: string;
                 targetInstance: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetInstance
+            }) => { execute(callback: (data: ITargetInstance, original: string) => void):void; };
             /**
              * Creates a TargetInstance resource in the specified project and zone using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -927,7 +949,8 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITargetInstance;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of TargetInstance resources available to the specified project and zone.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -942,7 +965,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetInstanceList
+            }) => { execute(callback: (data: ITargetInstanceList, original: string) => void):void; };
         };
         var targetPools: {
             /**
@@ -955,7 +978,8 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITargetPoolsAddHealthCheckRequest;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Adds instance url to targetPool.
              * @params {string} project 
@@ -966,7 +990,8 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITargetPoolsAddInstanceRequest;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of target pools grouped by scope.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -979,7 +1004,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetPoolAggregatedList
+            }) => { execute(callback: (data: ITargetPoolAggregatedList, original: string) => void):void; };
             /**
              * Deletes the specified TargetPool resource.
              * @params {string} project Name of the project scoping this request.
@@ -990,7 +1015,7 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Returns the specified TargetPool resource.
              * @params {string} project Name of the project scoping this request.
@@ -1001,7 +1026,7 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetPool
+            }) => { execute(callback: (data: ITargetPool, original: string) => void):void; };
             /**
              * Gets the most recent health check results for each IP for the given instance that is referenced by given TargetPool.
              * @params {string} project 
@@ -1012,7 +1037,8 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetPoolInstanceHealth
+                resource?: IInstanceReference;
+            }) => { execute(callback: (data: ITargetPoolInstanceHealth, original: string) => void):void; };
             /**
              * Creates a TargetPool resource in the specified project and region using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -1021,7 +1047,8 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITargetPool;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of TargetPool resources available to the specified project and region.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1036,7 +1063,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ITargetPoolList
+            }) => { execute(callback: (data: ITargetPoolList, original: string) => void):void; };
             /**
              * Removes health check URL from targetPool.
              * @params {string} project 
@@ -1047,7 +1074,8 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITargetPoolsRemoveHealthCheckRequest;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Removes instance URL from targetPool.
              * @params {string} project 
@@ -1058,7 +1086,8 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITargetPoolsRemoveInstanceRequest;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Changes backup pool configurations.
              * @params {number} failoverRatio New failoverRatio value for the containing target pool.
@@ -1071,7 +1100,8 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+                resource?: ITargetReference;
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
         };
         var zoneOperations: {
             /**
@@ -1095,7 +1125,7 @@ declare module gapi.client {
                 operation: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperation
+            }) => { execute(callback: (data: IOperation, original: string) => void):void; };
             /**
              * Retrieves the list of operation resources contained within the specified zone.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1110,7 +1140,7 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IOperationList
+            }) => { execute(callback: (data: IOperationList, original: string) => void):void; };
         };
         var zones: {
             /**
@@ -1121,7 +1151,7 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IZone
+            }) => { execute(callback: (data: IZone, original: string) => void):void; };
             /**
              * Retrieves the list of zone resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1134,7 +1164,7 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IZoneList
+            }) => { execute(callback: (data: IZoneList, original: string) => void):void; };
         };
         /**
          * An access configuration attached to an instance's network interface.

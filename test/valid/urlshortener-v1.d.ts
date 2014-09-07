@@ -17,11 +17,13 @@ declare module gapi.client {
             get: (params: {
                 projection?: string;
                 shortUrl: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IUrl
+            }) => { execute(callback: (data: IUrl, original: string) => void):void; };
             /**
              * Creates a new short URL.
              */
-            insert: () => { execute(callback: (data:any, original: string) => void):void; }; // IUrl
+            insert: (params: {
+                resource?: IUrl;
+            }) => { execute(callback: (data: IUrl, original: string) => void):void; };
             /**
              * Retrieves a list of URLs shortened by a user.
              * @params {string} projection Additional information to return.
@@ -30,7 +32,7 @@ declare module gapi.client {
             list: (params: {
                 projection?: string;
                 "start-token"?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IUrlHistory
+            }) => { execute(callback: (data: IUrlHistory, original: string) => void):void; };
         };
         interface IAnalyticsSnapshot {
             /**

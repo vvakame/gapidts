@@ -1,13 +1,18 @@
 /// <reference path="../typings/node/node.d.ts" />
 
-import model = require("./model");
-import emitter = require("./emitter");
+import _model = require("./model");
+import _emitter = require("./emitter");
 
 require("source-map-support").install();
 
-function gapidts(json:string):{ definition:string; data:emitter.Discovery; } {
-	var root:model.IRestDescription = JSON.parse(json);
-	return emitter.emit(root);
+function gapidts(json:string):{ definition:string; data:_emitter.Discovery; } {
+	var root:_model.IRestDescription = JSON.parse(json);
+	return _emitter.emit(root);
+}
+
+module gapidts {
+	export var model = _model;
+	export var emitter = _emitter;
 }
 
 export = gapidts;

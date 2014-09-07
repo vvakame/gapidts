@@ -26,14 +26,15 @@ declare module gapi.client {
             get: (params: {
                 calendarId: string;
                 ruleId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAclRule
+            }) => { execute(callback: (data: IAclRule, original: string) => void):void; };
             /**
              * Creates an access control rule.
              * @params {string} calendarId Calendar identifier.
              */
             insert: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAclRule
+                resource?: IAclRule;
+            }) => { execute(callback: (data: IAclRule, original: string) => void):void; };
             /**
              * Returns the rules in the access control list for the calendar.
              * @params {string} calendarId Calendar identifier.
@@ -51,7 +52,7 @@ Optional. The default is to return all entries.
                 pageToken?: string;
                 showDeleted?: boolean;
                 syncToken?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAcl
+            }) => { execute(callback: (data: IAcl, original: string) => void):void; };
             /**
              * Updates an access control rule. This method supports patch semantics.
              * @params {string} calendarId Calendar identifier.
@@ -60,7 +61,8 @@ Optional. The default is to return all entries.
             patch: (params: {
                 calendarId: string;
                 ruleId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAclRule
+                resource?: IAclRule;
+            }) => { execute(callback: (data: IAclRule, original: string) => void):void; };
             /**
              * Updates an access control rule.
              * @params {string} calendarId Calendar identifier.
@@ -69,7 +71,8 @@ Optional. The default is to return all entries.
             update: (params: {
                 calendarId: string;
                 ruleId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IAclRule
+                resource?: IAclRule;
+            }) => { execute(callback: (data: IAclRule, original: string) => void):void; };
             /**
              * Watch for changes to ACL resources.
              * @params {string} calendarId Calendar identifier.
@@ -87,7 +90,8 @@ Optional. The default is to return all entries.
                 pageToken?: string;
                 showDeleted?: boolean;
                 syncToken?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IChannel
+                resource?: IChannel;
+            }) => { execute(callback: (data: IChannel, original: string) => void):void; };
         };
         var calendarList: {
             /**
@@ -103,14 +107,15 @@ Optional. The default is to return all entries.
              */
             get: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICalendarListEntry
+            }) => { execute(callback: (data: ICalendarListEntry, original: string) => void):void; };
             /**
              * Adds an entry to the user's calendar list.
              * @params {boolean} colorRgbFormat Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.
              */
             insert: (params: {
                 colorRgbFormat?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICalendarListEntry
+                resource?: ICalendarListEntry;
+            }) => { execute(callback: (data: ICalendarListEntry, original: string) => void):void; };
             /**
              * Returns entries on the user's calendar list.
              * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -131,7 +136,7 @@ Optional. The default is to return all entries.
                 showDeleted?: boolean;
                 showHidden?: boolean;
                 syncToken?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICalendarList
+            }) => { execute(callback: (data: ICalendarList, original: string) => void):void; };
             /**
              * Updates an entry on the user's calendar list. This method supports patch semantics.
              * @params {string} calendarId Calendar identifier.
@@ -140,7 +145,8 @@ Optional. The default is to return all entries.
             patch: (params: {
                 calendarId: string;
                 colorRgbFormat?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICalendarListEntry
+                resource?: ICalendarListEntry;
+            }) => { execute(callback: (data: ICalendarListEntry, original: string) => void):void; };
             /**
              * Updates an entry on the user's calendar list.
              * @params {string} calendarId Calendar identifier.
@@ -149,7 +155,8 @@ Optional. The default is to return all entries.
             update: (params: {
                 calendarId: string;
                 colorRgbFormat?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICalendarListEntry
+                resource?: ICalendarListEntry;
+            }) => { execute(callback: (data: ICalendarListEntry, original: string) => void):void; };
             /**
              * Watch for changes to CalendarList resources.
              * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -170,7 +177,8 @@ Optional. The default is to return all entries.
                 showDeleted?: boolean;
                 showHidden?: boolean;
                 syncToken?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IChannel
+                resource?: IChannel;
+            }) => { execute(callback: (data: IChannel, original: string) => void):void; };
         };
         var calendars: {
             /**
@@ -193,37 +201,44 @@ Optional. The default is to return all entries.
              */
             get: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICalendar
+            }) => { execute(callback: (data: ICalendar, original: string) => void):void; };
             /**
              * Creates a secondary calendar.
              */
-            insert: () => { execute(callback: (data:any, original: string) => void):void; }; // ICalendar
+            insert: (params: {
+                resource?: ICalendar;
+            }) => { execute(callback: (data: ICalendar, original: string) => void):void; };
             /**
              * Updates metadata for a calendar. This method supports patch semantics.
              * @params {string} calendarId Calendar identifier.
              */
             patch: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICalendar
+                resource?: ICalendar;
+            }) => { execute(callback: (data: ICalendar, original: string) => void):void; };
             /**
              * Updates metadata for a calendar.
              * @params {string} calendarId Calendar identifier.
              */
             update: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ICalendar
+                resource?: ICalendar;
+            }) => { execute(callback: (data: ICalendar, original: string) => void):void; };
         };
         var channels: {
             /**
              * Stop watching resources through this channel
              */
-            stop: () => { execute(callback: (data:any, original: string) => void):void; }; // void
+            stop: (params: {
+                resource?: IChannel;
+            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
         };
         var colors: {
             /**
              * Returns the color definitions for calendars and events.
              */
-            get: () => { execute(callback: (data:any, original: string) => void):void; }; // IColors
+            get: (params: {
+            }) => { execute(callback: (data: IColors, original: string) => void):void; };
         };
         var events: {
             /**
@@ -251,14 +266,15 @@ Optional. The default is to return all entries.
                 eventId: string;
                 maxAttendees?: number;
                 timeZone?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvent
+            }) => { execute(callback: (data: IEvent, original: string) => void):void; };
             /**
              * Imports an event. This operation is used to add a private copy of an existing event to a calendar.
              * @params {string} calendarId Calendar identifier.
              */
             import: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvent
+                resource?: IEvent;
+            }) => { execute(callback: (data: IEvent, original: string) => void):void; };
             /**
              * Creates an event.
              * @params {string} calendarId Calendar identifier.
@@ -269,7 +285,8 @@ Optional. The default is to return all entries.
                 calendarId: string;
                 maxAttendees?: number;
                 sendNotifications?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvent
+                resource?: IEvent;
+            }) => { execute(callback: (data: IEvent, original: string) => void):void; };
             /**
              * Returns instances of the specified recurring event.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -296,7 +313,7 @@ Optional. The default is to return all entries.
                 timeMax?: string;
                 timeMin?: string;
                 timeZone?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvents
+            }) => { execute(callback: (data: IEvents, original: string) => void):void; };
             /**
              * Returns events on the specified calendar.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -350,7 +367,7 @@ Optional. The default is to return all entries.
                 timeMin?: string;
                 timeZone?: string;
                 updatedMin?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvents
+            }) => { execute(callback: (data: IEvents, original: string) => void):void; };
             /**
              * Moves an event to another calendar, i.e. changes an event's organizer.
              * @params {string} calendarId Calendar identifier of the source calendar where the event currently is on.
@@ -363,7 +380,7 @@ Optional. The default is to return all entries.
                 destination: string;
                 eventId: string;
                 sendNotifications?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvent
+            }) => { execute(callback: (data: IEvent, original: string) => void):void; };
             /**
              * Updates an event. This method supports patch semantics.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -378,7 +395,8 @@ Optional. The default is to return all entries.
                 eventId: string;
                 maxAttendees?: number;
                 sendNotifications?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvent
+                resource?: IEvent;
+            }) => { execute(callback: (data: IEvent, original: string) => void):void; };
             /**
              * Creates an event based on a simple text string.
              * @params {string} calendarId Calendar identifier.
@@ -389,7 +407,7 @@ Optional. The default is to return all entries.
                 calendarId: string;
                 sendNotifications?: boolean;
                 text: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvent
+            }) => { execute(callback: (data: IEvent, original: string) => void):void; };
             /**
              * Updates an event.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -404,7 +422,8 @@ Optional. The default is to return all entries.
                 eventId: string;
                 maxAttendees?: number;
                 sendNotifications?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IEvent
+                resource?: IEvent;
+            }) => { execute(callback: (data: IEvent, original: string) => void):void; };
             /**
              * Watch for changes to Events resources.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -458,13 +477,16 @@ Optional. The default is to return all entries.
                 timeMin?: string;
                 timeZone?: string;
                 updatedMin?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IChannel
+                resource?: IChannel;
+            }) => { execute(callback: (data: IChannel, original: string) => void):void; };
         };
         var freebusy: {
             /**
              * Returns free/busy information for a set of calendars.
              */
-            query: () => { execute(callback: (data:any, original: string) => void):void; }; // IFreeBusyResponse
+            query: (params: {
+                resource?: IFreeBusyRequest;
+            }) => { execute(callback: (data: IFreeBusyResponse, original: string) => void):void; };
         };
         var settings: {
             /**
@@ -473,7 +495,7 @@ Optional. The default is to return all entries.
              */
             get: (params: {
                 setting: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISetting
+            }) => { execute(callback: (data: ISetting, original: string) => void):void; };
             /**
              * Returns all user settings for the authenticated user.
              * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -487,7 +509,7 @@ Optional. The default is to return all entries.
                 maxResults?: number;
                 pageToken?: string;
                 syncToken?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // ISettings
+            }) => { execute(callback: (data: ISettings, original: string) => void):void; };
             /**
              * Watch for changes to Settings resources.
              * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -501,7 +523,8 @@ Optional. The default is to return all entries.
                 maxResults?: number;
                 pageToken?: string;
                 syncToken?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IChannel
+                resource?: IChannel;
+            }) => { execute(callback: (data: IChannel, original: string) => void):void; };
         };
         interface IAcl {
             /**
