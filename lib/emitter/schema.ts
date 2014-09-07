@@ -136,6 +136,16 @@ class Schema {
 					}
 					return;
 
+				} else if (property.items.type === "integer") {
+					process.output("number[]");
+					if (!child) {
+						process.output(";");
+						if (property.items.format) {
+							process.output(" /* ").output(property.items.format).output(" */ ");
+						}
+					}
+					return;
+
 				} else if (property.items.type === "array") {
 					this.emitProperty(process, null, property.items, true);
 					process.output("[]");
