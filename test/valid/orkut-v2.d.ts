@@ -889,7 +889,7 @@ declare module gapi.client {
             /**
              * List of options the user has voted on, if there are any.
              */
-            votedOptions: number[]; /* int32 */ 
+            votedOptions: number /* int32 */ [];
         }
         interface ICommunityPollComment {
             /**
@@ -977,7 +977,7 @@ declare module gapi.client {
             /**
              * The ids of the voted options.
              */
-            optionIds: number[]; /* int32 */ 
+            optionIds: number /* int32 */ [];
         }
         interface ICommunityTopic {
             /**

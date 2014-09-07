@@ -192,7 +192,12 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		'test',
 		"exec test suites",
-		['default', 'ts:clientTest', 'mochaTest'].concat(testFixtureTasks));
+		['default', 'ts:clientTest', 'mochaTest']);
+
+	grunt.registerTask(
+		'test-paranoia',
+		"exec test suites",
+		['test'].concat(testFixtureTasks));
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };

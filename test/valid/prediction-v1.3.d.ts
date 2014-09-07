@@ -109,9 +109,13 @@ declare module gapi.client {
                 classWeightedAccuracy: number; // double
                 classificationAccuracy: number; // double
                 confusionMatrix: {
-                    [name:string]: { [name:string]: number /* double */; };
+                    [name:string]: {
+                        [name:string]: number /* double */ ;
+                    };
                 };
-                confusionMatrixRowTotals: { [name:string]: number /* double */; };
+                confusionMatrixRowTotals: {
+                    [name:string]: number /* double */ ;
+                };
                 meanSquaredError: number; // double
                 modelType: string;
                 numberClasses: string; // int64
@@ -129,7 +133,7 @@ declare module gapi.client {
              * A class weighting function, which allows the importance weights for classes to be specified [Categorical models only].
              */
             utility: {
-                [name: string]: number; // double
+                [name:string]: number /* double */ ;
             }[];
         }
         interface IUpdate {

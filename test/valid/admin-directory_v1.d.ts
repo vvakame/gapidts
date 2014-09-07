@@ -735,7 +735,9 @@ declare module gapi.client {
             /**
              * Additional parameters controlling delivery channel behavior. Optional.
              */
-            params: { [name:string]: string; };
+            params: {
+                [name:string]: string;
+            };
             /**
              * A Boolean value to indicate whether payload is wanted. Optional.
              */
@@ -1306,7 +1308,8 @@ declare module gapi.client {
          * JSON template for User object in Apps Directory API.
          */
         interface IUser {
-            addresses: any;/**
+            addresses: any;
+            /**
              * Indicates if user has agreed to terms (Read-only)
              */
             agreedToTerms: boolean;
@@ -1327,11 +1330,13 @@ declare module gapi.client {
              */
             customerId: string;
             deletionTime: string; // date-time
-            emails: any;/**
+            emails: any;
+            /**
              * ETag of the resource.
              */
             etag: string;
-            externalIds: any;/**
+            externalIds: any;
+            /**
              * Hash function name for password. Supported are MD5, SHA-1 and crypt
              */
             hashFunction: string;
@@ -1339,7 +1344,8 @@ declare module gapi.client {
              * Unique identifier of User (Read-only)
              */
             id: string;
-            ims: any;/**
+            ims: any;
+            /**
              * Boolean indicating if user is included in Global Address List
              */
             includeInGlobalAddressList: boolean;
@@ -1379,15 +1385,18 @@ declare module gapi.client {
              * OrgUnit of User
              */
             orgUnitPath: string;
-            organizations: any;/**
+            organizations: any;
+            /**
              * User's password
              */
             password: string;
-            phones: any;/**
+            phones: any;
+            /**
              * username of User
              */
             primaryEmail: string;
-            relations: any;/**
+            relations: any;
+            /**
              * Indicates if user is suspended
              */
             suspended: boolean;

@@ -190,7 +190,9 @@ declare module gapi.client {
             /**
              * [Output Only] List of status for the modules in this deployment.
              */
-            modules: { [name:string]: IModuleStatus; };
+            modules: {
+                [name:string]: IModuleStatus;
+            };
             /**
              * Name of this deployment. The name must conform to the following regular expression: [a-zA-Z0-9-_]{1,64}
              */
@@ -491,7 +493,9 @@ declare module gapi.client {
             /**
              * A list of environment variables.
              */
-            envVariables: { [name:string]: IEnvVariable; };
+            envVariables: {
+                [name:string]: IEnvVariable;
+            };
             /**
              * The Health Checks to configure for the ReplicaPoolModule
              */
@@ -619,7 +623,9 @@ declare module gapi.client {
             /**
              * Action definitions for use in Module intents in this Template.
              */
-            actions: { [name:string]: IAction; };
+            actions: {
+                [name:string]: IAction;
+            };
             /**
              * A user-supplied description of this Template.
              */
@@ -627,7 +633,9 @@ declare module gapi.client {
             /**
              * A list of modules for this Template.
              */
-            modules: { [name:string]: IModule; };
+            modules: {
+                [name:string]: IModule;
+            };
             /**
              * Name of this Template. The name must conform to the expression: [a-zA-Z0-9-_]{1,64}
              */

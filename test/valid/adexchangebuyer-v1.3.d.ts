@@ -265,7 +265,7 @@ declare module gapi.client {
             /**
              * Detected advertiser id, if any. Read-only. This field should not be set in requests.
              */
-            advertiserId: string[];
+            advertiserId: string /* int64 */ [];
             /**
              * The name of the company being advertised in the creative.
              */
@@ -277,7 +277,7 @@ declare module gapi.client {
             /**
              * All attributes for the ads that may be shown from this snippet.
              */
-            attribute: number[]; /* int32 */ 
+            attribute: number /* int32 */ [];
             /**
              * A buyer-specific id identifying the creative in this ad.
              */
@@ -321,15 +321,15 @@ declare module gapi.client {
             /**
              * Detected product categories, if any. Read-only. This field should not be set in requests.
              */
-            productCategories: number[]; /* int32 */ 
+            productCategories: number /* int32 */ [];
             /**
              * All restricted categories for the ads that may be shown from this snippet.
              */
-            restrictedCategories: number[]; /* int32 */ 
+            restrictedCategories: number /* int32 */ [];
             /**
              * Detected sensitive categories, if any. Read-only. This field should not be set in requests.
              */
-            sensitiveCategories: number[]; /* int32 */ 
+            sensitiveCategories: number /* int32 */ [];
             /**
              * Creative serving status. Read-only. This field should not be set in requests.
              */
@@ -337,7 +337,7 @@ declare module gapi.client {
             /**
              * All vendor types for the ads that may be shown from this snippet.
              */
-            vendorType: number[]; /* int32 */ 
+            vendorType: number /* int32 */ [];
             /**
              * The url to fetch a video ad. If set, HTMLSnippet should not be set.
              */
@@ -539,11 +539,11 @@ declare module gapi.client {
             /**
              * Requests with any of these content labels will not match. Values are from content-labels.txt in the downloadable files section.
              */
-            excludedContentLabels: string[];
+            excludedContentLabels: string /* int64 */ [];
             /**
              * Requests containing any of these geo criteria ids will not match.
              */
-            excludedGeoCriteriaIds: string[];
+            excludedGeoCriteriaIds: string /* int64 */ [];
             /**
              * Requests containing any of these placements will not match.
              */
@@ -554,15 +554,15 @@ declare module gapi.client {
             /**
              * Requests containing any of these users list ids will not match.
              */
-            excludedUserLists: string[];
+            excludedUserLists: string /* int64 */ [];
             /**
              * Requests containing any of these vertical ids will not match. Values are from the publisher-verticals.txt file in the downloadable files section.
              */
-            excludedVerticals: string[];
+            excludedVerticals: string /* int64 */ [];
             /**
              * Requests containing any of these geo criteria ids will match.
              */
-            geoCriteriaIds: string[];
+            geoCriteriaIds: string /* int64 */ [];
             /**
              * Whether this config is active. Required for all requests.
              */
@@ -578,15 +578,15 @@ declare module gapi.client {
             /**
              * Requests containing any of these mobile carrier ids will match. Values are from mobile-carriers.csv in the downloadable files section.
              */
-            mobileCarriers: string[];
+            mobileCarriers: string /* int64 */ [];
             /**
              * Requests containing any of these mobile device ids will match. Values are from mobile-devices.csv in the downloadable files section.
              */
-            mobileDevices: string[];
+            mobileDevices: string /* int64 */ [];
             /**
              * Requests containing any of these mobile operating system version ids will match. Values are from mobile-os.csv in the downloadable files section.
              */
-            mobileOperatingSystemVersions: string[];
+            mobileOperatingSystemVersions: string /* int64 */ [];
             /**
              * Requests containing any of these placements will match.
              */
@@ -601,19 +601,19 @@ declare module gapi.client {
             /**
              * Creative attributes should be declared here if all creatives corresponding to this pretargeting configuration have that creative attribute. Values are from pretargetable-creative-attributes.txt in the downloadable files section.
              */
-            supportedCreativeAttributes: string[];
+            supportedCreativeAttributes: string /* int64 */ [];
             /**
              * Requests containing any of these user list ids will match.
              */
-            userLists: string[];
+            userLists: string /* int64 */ [];
             /**
              * Requests that allow any of these vendor ids will match. Values are from vendors.txt in the downloadable files section.
              */
-            vendorTypes: string[];
+            vendorTypes: string /* int64 */ [];
             /**
              * Requests containing any of these vertical ids will match.
              */
-            verticals: string[];
+            verticals: string /* int64 */ [];
         }
         interface IPretargetingConfigList {
             /**

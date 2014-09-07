@@ -354,7 +354,9 @@ If neither oldest nor timespan is specified, the default time interval will be (
             /**
              * The set of key-value pairs that describe this time series, including target-specific labels and metric-specific labels.
              */
-            labels: { [name:string]: string; };
+            labels: {
+                [name:string]: string;
+            };
             /**
              * The name of the metric.
              */

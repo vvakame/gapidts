@@ -29,7 +29,9 @@ declare module gapi.client {
             /**
              * The font files (with all supported scripts) for each one of the available variants, as a key : value map.
              */
-            files: { [name:string]: string; };
+            files: {
+                [name:string]: string;
+            };
             /**
              * This kind represents a webfont object in the webfonts service.
              */

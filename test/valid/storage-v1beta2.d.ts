@@ -688,7 +688,9 @@ declare module gapi.client {
             /**
              * Additional parameters controlling delivery channel behavior. Optional.
              */
-            params: { [name:string]: string; };
+            params: {
+                [name:string]: string;
+            };
             /**
              * A Boolean value to indicate whether payload is wanted. Optional.
              */
@@ -800,7 +802,9 @@ declare module gapi.client {
             /**
              * User-provided metadata, in key/value pairs.
              */
-            metadata: { [name:string]: string; };
+            metadata: {
+                [name:string]: string;
+            };
             /**
              * The generation of the metadata for this object at this generation. Used for metadata versioning. Has no meaning outside of the context of this generation.
              */

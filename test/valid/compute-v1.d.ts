@@ -1544,7 +1544,9 @@ declare module gapi.client {
             /**
              * A map of scoped address lists.
              */
-            items: { [name:string]: IAddressesScopedList; };
+            items: {
+                [name:string]: IAddressesScopedList;
+            };
             /**
              * Type of resource.
              */
@@ -1887,7 +1889,9 @@ declare module gapi.client {
             /**
              * A map of scoped disk lists.
              */
-            items: { [name:string]: IDisksScopedList; };
+            items: {
+                [name:string]: IDisksScopedList;
+            };
             /**
              * Type of resource.
              */
@@ -1979,7 +1983,9 @@ declare module gapi.client {
             /**
              * A map of scoped disk type lists.
              */
-            items: { [name:string]: IDiskTypesScopedList; };
+            items: {
+                [name:string]: IDiskTypesScopedList;
+            };
             /**
              * Type of resource.
              */
@@ -2186,7 +2192,9 @@ declare module gapi.client {
             /**
              * A map of scoped forwarding rule lists.
              */
-            items: { [name:string]: IForwardingRulesScopedList; };
+            items: {
+                [name:string]: IForwardingRulesScopedList;
+            };
             /**
              * Type of resource.
              */
@@ -2534,7 +2542,9 @@ declare module gapi.client {
             /**
              * A map of scoped instance lists.
              */
-            items: { [name:string]: IInstancesScopedList; };
+            items: {
+                [name:string]: IInstancesScopedList;
+            };
             /**
              * Type of resource.
              */
@@ -2685,7 +2695,9 @@ declare module gapi.client {
             /**
              * A map of scoped machine type lists.
              */
-            items: { [name:string]: IMachineTypesScopedList; };
+            items: {
+                [name:string]: IMachineTypesScopedList;
+            };
             /**
              * Type of resource.
              */
@@ -2958,7 +2970,9 @@ declare module gapi.client {
             /**
              * A map of scoped operation lists.
              */
-            items: { [name:string]: IOperationsScopedList; };
+            items: {
+                [name:string]: IOperationsScopedList;
+            };
             /**
              * Type of resource.
              */
@@ -3521,7 +3535,9 @@ declare module gapi.client {
             /**
              * A map of scoped target instance lists.
              */
-            items: { [name:string]: ITargetInstancesScopedList; };
+            items: {
+                [name:string]: ITargetInstancesScopedList;
+            };
             /**
              * Type of resource.
              */
@@ -3646,7 +3662,9 @@ declare module gapi.client {
             /**
              * A map of scoped target pool lists.
              */
-            items: { [name:string]: ITargetPoolsScopedList; };
+            items: {
+                [name:string]: ITargetPoolsScopedList;
+            };
             /**
              * Type of resource.
              */

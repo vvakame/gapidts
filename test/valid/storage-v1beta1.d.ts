@@ -447,7 +447,9 @@ declare module gapi.client {
             /**
              * User-provided metadata, in key/value pairs.
              */
-            metadata: { [name:string]: string; };
+            metadata: {
+                [name:string]: string;
+            };
             /**
              * The name of this object. Required if not specified by URL parameter.
              */

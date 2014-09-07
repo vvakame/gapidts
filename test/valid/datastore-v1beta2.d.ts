@@ -126,7 +126,9 @@ declare module gapi.client {
             /**
              * The entity's properties.
              */
-            properties: { [name:string]: IProperty; };
+            properties: {
+                [name:string]: IProperty;
+            };
         }
         interface IEntityResult {
             /**

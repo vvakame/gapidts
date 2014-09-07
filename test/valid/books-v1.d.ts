@@ -732,7 +732,8 @@ declare module gapi.client {
              * The type of annotation this data is for.
              */
             annotationType: string;
-            data: any;/**
+            data: any;
+            /**
              * Base64 encoded data for this annotation data.
              */
             encoded_data: string; // byte
@@ -1429,7 +1430,8 @@ declare module gapi.client {
                 publishedDate: string;
                 publisher: string;
                 ratingsCount: number; // int32
-                readingModes: any;subtitle: string;
+                readingModes: any;
+                subtitle: string;
                 title: string;
             };
         }

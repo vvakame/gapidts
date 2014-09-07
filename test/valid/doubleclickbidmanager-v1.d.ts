@@ -73,7 +73,7 @@ declare module gapi.client {
             /**
              * Ids of the specified filter type used to filter line items to fetch. If omitted, all the line items will be returned.
              */
-            filterIds: string[];
+            filterIds: string /* int64 */ [];
             /**
              * Filter type used to filter line items to fetch.
              */

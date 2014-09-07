@@ -492,7 +492,9 @@ declare module gapi.client {
             /**
              * Political geographic divisions that contain the requested address.
              */
-            divisions: { [name:string]: IGeographicDivision; };
+            divisions: {
+                [name:string]: IGeographicDivision;
+            };
             /**
              * Identifies what kind of resource this is. Value: the fixed string "civicinfo#representativeInfoResponse".
              */
@@ -504,11 +506,15 @@ declare module gapi.client {
             /**
              * Elected offices referenced by the divisions listed above. Will only be present if includeOffices was true in the request.
              */
-            offices: { [name:string]: IOffice; };
+            offices: {
+                [name:string]: IOffice;
+            };
             /**
              * Officials holding the offices listed above. Will only be present if includeOffices was true in the request.
              */
-            officials: { [name:string]: IOfficial; };
+            officials: {
+                [name:string]: IOfficial;
+            };
             /**
              * The result of the request. One of: success, noStreetSegmentFound, addressUnparseable, noAddressParameter, multipleStreetSegmentsFound, electionOver, electionUnknown, internalLookupFailure, RequestedBothAddressAndOcdId
              */

@@ -424,7 +424,8 @@ declare module gapi.client {
              * The list of geometries in this geometry collection.
              */
             geometries: any[];
-            geometry: any;/**
+            geometry: any;
+            /**
              * Type: A collection of geometries.
              */
             type: string;
@@ -449,7 +450,7 @@ declare module gapi.client {
             /**
              * The coordinates that define the line.
              */
-            coordinates: number[][];
+            coordinates: number /* double */ [][];
             /**
              * Type: A line geometry.
              */
@@ -487,7 +488,7 @@ declare module gapi.client {
             /**
              * The coordinates that define the point.
              */
-            coordinates: number[]; /* double */ 
+            coordinates: number /* double */ [];
             /**
              * Point: A point geometry.
              */
@@ -513,7 +514,7 @@ declare module gapi.client {
             /**
              * The coordinates that define the polygon.
              */
-            coordinates: number[][][];
+            coordinates: number /* double */ [][][];
             /**
              * Type: A polygon geometry.
              */

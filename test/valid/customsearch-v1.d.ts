@@ -169,7 +169,9 @@ declare module gapi.client {
             link: string;
             mime: string;
             pagemap: {
-                [name:string]: { [name:string]: any; }[];
+                [name:string]: {
+                    [name:string]: any;
+                }[];
             };
             snippet: string;
             title: string;

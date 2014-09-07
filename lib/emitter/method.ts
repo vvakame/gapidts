@@ -2,23 +2,10 @@ import model = require("../model");
 
 import Process = require("./process");
 
+import utils = require("../utils");
+
 class Method {
 	constructor(public name:string, public base:model.IRestMethod) {
-	}
-
-	toTSType(type:string) {
-		switch (type) {
-			case "string":
-				return "string";
-			case "integer":
-			case "number":
-				return "number";
-			case "boolean":
-				return "boolean";
-			default :
-				console.log(this.base);
-				throw new Error("unknown type: " + type);
-		}
 	}
 
 	emit(process:Process):void {
@@ -57,15 +44,11 @@ class Method {
 	}
 
 	emitParameter(process:Process, parameterName:string, parameter:model.IJsonSchema) {
-		if (parameterName.indexOf("-") !== -1 || parameterName.indexOf(".") !== -1) {
-			process.output("\"").output(parameterName).output("\"");
-		} else {
-			process.output(parameterName);
-		}
+		process.outputKey(parameterName);
 		if (!parameter.required) {
 			process.output("?");
 		}
-		process.output(": ").output(this.toTSType(parameter.type)).outputLine(";");
+		process.output(": ").output(utils.toTSType(parameter.type, this.base)).outputLine(";");
 	}
 }
 

@@ -731,7 +731,7 @@ declare module gapi.client {
             /**
              * A rectangular bounding box which contains all of the data in this asset. The numbers represent latitude and longitude in decimal degrees.
              */
-            bbox: number[]; /* double */ 
+            bbox: number /* double */ [];
             /**
              * The creation time of this asset. The value is an RFC 3339-formatted date-time value (for example, 1970-01-01T00:00:00Z).
              */
@@ -952,7 +952,8 @@ declare module gapi.client {
             /**
              * Value to be evaluated against attribute.
              */
-            value: any;}
+            value: any;
+        }
         interface IGeoJsonGeometry {
         }
         /**
@@ -1034,7 +1035,7 @@ declare module gapi.client {
         /**
          * A position represents a geographical position as an array containing a longitude and a latitude, and optionally an altitude, in that order. All Geometry objects make use of positions to represent geometries as nested arrays. The structure of the array is governed by the type of the geometry.
          */
-        interface IGeoJsonPosition extends Array<number /* double */> {
+        interface IGeoJsonPosition extends Array<number /* double */ > {
         }
         /**
          * The properties associated with a feature.
@@ -1120,7 +1121,7 @@ declare module gapi.client {
         /**
          * A rectangular geographic bounds.
          */
-        interface ILatLngBox extends Array<number /* double */> {
+        interface ILatLngBox extends Array<number /* double */ > {
         }
         /**
          * A Layer combines multiple datasources, with styling information, for presentation on a map.
@@ -1129,7 +1130,7 @@ declare module gapi.client {
             /**
              * A rectangular bounding box which contains all of the data in this Layer. The numbers represent latitude and longitude in decimal degrees.
              */
-            bbox: number[]; /* double */ 
+            bbox: number /* double */ [];
             /**
              * The creation time of this layer. The value is an RFC 3339 formatted date-time value (e.g. 1970-01-01T00:00:00Z).
              */
@@ -1219,7 +1220,7 @@ declare module gapi.client {
             /**
              * Dash defines the pattern of the line, the values are pixel lengths of alternating dash and gap. If dash is not provided, then it means a solid line. Dash can contain up to 10 values and must contain even number of values.
              */
-            dash: number[]; /* double */ 
+            dash: number /* double */ [];
             /**
              * Label style for the line.
              */
@@ -1240,7 +1241,7 @@ declare module gapi.client {
             /**
              * A rectangular bounding box which contains all of the data in this Map. The numbers represent latitude and longitude in decimal degrees.
              */
-            bbox: number[]; /* double */ 
+            bbox: number /* double */ [];
             /**
              * The contents of this Map.
              */
@@ -1309,7 +1310,7 @@ declare module gapi.client {
             /**
              * An array of four numbers (west, south, east, north) which defines the rectangular bounding box of the default viewport. The numbers represent latitude and longitude in decimal degrees.
              */
-            defaultViewport: number[]; /* double */ 
+            defaultViewport: number /* double */ [];
             /**
              * The expandability setting of this MapFolder. If true, the folder can be expanded.
              */
@@ -1337,7 +1338,7 @@ declare module gapi.client {
             /**
              * An array of four numbers (west, south, east, north) which defines the rectangular bounding box of the default viewport. The numbers represent latitude and longitude in decimal degrees.
              */
-            defaultViewport: number[]; /* double */ 
+            defaultViewport: number /* double */ [];
             /**
              * The URL to the KML file represented by this MapKmlLink.
              */
@@ -1359,7 +1360,7 @@ declare module gapi.client {
             /**
              * An array of four numbers (west, south, east, north) which defines the rectangular bounding box of the default viewport. The numbers represent latitude and longitude in decimal degrees.
              */
-            defaultViewport: number[]; /* double */ 
+            defaultViewport: number /* double */ [];
             /**
              * The ID of this MapLayer. This ID can be used to request more details about the layer.
              */
@@ -1489,7 +1490,7 @@ declare module gapi.client {
             /**
              * A rectangular bounding box which contains all of the data in this Raster. The numbers represent latitude and longitude in decimal degrees.
              */
-            bbox: number[]; /* double */ 
+            bbox: number /* double */ [];
             /**
              * The creation time of this raster. The value is an RFC 3339 formatted date-time value (e.g. 1970-01-01T00:00:00Z).
              */
@@ -1554,7 +1555,7 @@ declare module gapi.client {
             /**
              * A rectangular bounding box which contains all of the data in this RasterCollection. The numbers represent latitude and longitude in decimal degrees.
              */
-            bbox: number[]; /* double */ 
+            bbox: number /* double */ [];
             /**
              * The creation time of this RasterCollection. The value is an RFC 3339 formatted date-time value (e.g. 1970-01-01T00:00:00Z).
              */
@@ -1624,7 +1625,7 @@ declare module gapi.client {
             /**
              * A rectangular bounding box which contains all of the data in this Raster. The numbers represent latitude and longitude in decimal degrees.
              */
-            bbox: number[]; /* double */ 
+            bbox: number /* double */ [];
             /**
              * The creation time of this raster. The value is an RFC 3339 formatted date-time value (e.g. 1970-01-01T00:00:00Z).
              */
@@ -1736,7 +1737,7 @@ declare module gapi.client {
             /**
              * A rectangular bounding box which contains all of the data in this table. The numbers represent latitude and longitude in decimal degrees.
              */
-            bbox: number[]; /* double */ 
+            bbox: number /* double */ [];
             /**
              * The creation time of this table. The value is an RFC 3339 formatted date-time value (e.g. 1970-01-01T00:00:00Z).
              */

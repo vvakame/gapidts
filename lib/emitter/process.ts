@@ -26,6 +26,15 @@ class Process {
 		return this;
 	}
 
+	outputKey(name:string):Process {
+		if (name.indexOf("-") !== -1 || name.indexOf(".") !== -1) {
+			this.output("\"").output(name).output("\"");
+		} else {
+			this.output(name);
+		}
+		return this;
+	}
+
 	outputBrowser(str:string):Process {
 		this.doIndent();
 		this._results["browser"] += str;

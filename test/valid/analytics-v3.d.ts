@@ -1168,7 +1168,9 @@ declare module gapi.client {
             /**
              * Map of attribute name and value for this column.
              */
-            attributes: { [name:string]: string; };
+            attributes: {
+                [name:string]: string;
+            };
             /**
              * Column id.
              */
@@ -2085,7 +2087,9 @@ declare module gapi.client {
             /**
              * Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request.
              */
-            totalsForAllResults: { [name:string]: string; };
+            totalsForAllResults: {
+                [name:string]: string;
+            };
         }
         /**
          * JSON template for Analytics goal resource.
@@ -2321,7 +2325,9 @@ declare module gapi.client {
             /**
              * Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request.
              */
-            totalsForAllResults: { [name:string]: string; };
+            totalsForAllResults: {
+                [name:string]: string;
+            };
         }
         /**
          * JSON template for an Analytics view (profile).
@@ -2645,7 +2651,9 @@ declare module gapi.client {
             /**
              * Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request.
              */
-            totalsForAllResults: { [name:string]: string; };
+            totalsForAllResults: {
+                [name:string]: string;
+            };
         }
         /**
          * JSON template for an Analytics segment.

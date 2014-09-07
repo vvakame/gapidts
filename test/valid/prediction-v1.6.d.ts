@@ -127,7 +127,8 @@ declare module gapi.client {
              * List of errors with the data.
              */
             errors: {
-                [name: string]: string}[];
+                [name:string]: string;
+            }[];
             /**
              * The unique name for the predictive model.
              */
@@ -141,9 +142,13 @@ declare module gapi.client {
              */
             modelDescription: {
                 confusionMatrix: {
-                    [name:string]: { [name:string]: string; };
+                    [name:string]: {
+                        [name:string]: string;
+                    };
                 };
-                confusionMatrixRowTotals: { [name:string]: string; };
+                confusionMatrixRowTotals: {
+                    [name:string]: string;
+                };
                 modelinfo: IInsert2;
             };
             /**
@@ -195,7 +200,7 @@ declare module gapi.client {
              * A class weighting function, which allows the importance weights for class labels to be specified (Categorical models only).
              */
             utility: {
-                [name: string]: number; // double
+                [name:string]: number /* double */ ;
             }[];
         }
         interface IInsert2 {

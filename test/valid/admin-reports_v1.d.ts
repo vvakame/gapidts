@@ -201,7 +201,9 @@ declare module gapi.client {
             /**
              * Additional parameters controlling delivery channel behavior. Optional.
              */
-            params: { [name:string]: string; };
+            params: {
+                [name:string]: string;
+            };
             /**
              * A Boolean value to indicate whether payload is wanted. Optional.
              */
@@ -256,7 +258,8 @@ declare module gapi.client {
                 datetimeValue: string; // date-time
                 intValue: string; // int64
                 msgValue: {
-                    [name: string]: any;}[];
+                    [name:string]: any;
+                }[];
                 name: string;
                 stringValue: string;
             }[];

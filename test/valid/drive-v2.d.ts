@@ -1025,7 +1025,9 @@ declare module gapi.client {
             /**
              * Additional parameters controlling delivery channel behavior. Optional.
              */
-            params: { [name:string]: string; };
+            params: {
+                [name:string]: string;
+            };
             /**
              * A Boolean value to indicate whether payload is wanted. Optional.
              */
@@ -1311,7 +1313,9 @@ declare module gapi.client {
             /**
              * Links for exporting Google Docs to specific formats.
              */
-            exportLinks: { [name:string]: string; };
+            exportLinks: {
+                [name:string]: string;
+            };
             /**
              * The file extension used when downloading this file. This field is read only. To set the extension, include it in the title when creating the file. This is only populated for files with content stored in Drive.
              */
@@ -1417,7 +1421,9 @@ declare module gapi.client {
             /**
              * A map of the id of each of the user's apps to a link to open this file with that app. Only populated when the drive.apps.readonly scope is used.
              */
-            openWithLinks: { [name:string]: string; };
+            openWithLinks: {
+                [name:string]: string;
+            };
             /**
              * The original filename if the file was uploaded manually, or the original title if the file was inserted through the API. Note that renames of the title will not change the original filename. This will only be populated on files with content stored in Drive.
              */
@@ -1741,7 +1747,9 @@ declare module gapi.client {
             /**
              * Links for exporting Google Docs to specific formats.
              */
-            exportLinks: { [name:string]: string; };
+            exportLinks: {
+                [name:string]: string;
+            };
             /**
              * The size of the revision in bytes. This will only be populated on files with content stored in Drive.
              */

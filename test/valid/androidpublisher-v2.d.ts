@@ -675,7 +675,9 @@ declare module gapi.client {
             /**
              * List of localized title and description data.
              */
-            listings: { [name:string]: IInAppProductListing; };
+            listings: {
+                [name:string]: IInAppProductListing;
+            };
             /**
              * The package name of the parent app.
              */
@@ -683,7 +685,9 @@ declare module gapi.client {
             /**
              * Prices per buyer region. None of these prices should be zero. In-app products can never be free.
              */
-            prices: { [name:string]: IPrice; };
+            prices: {
+                [name:string]: IPrice;
+            };
             /**
              * Purchase type enum value. Unmodifiable after creation.
              */
@@ -853,7 +857,7 @@ declare module gapi.client {
         interface ITrack {
             track: string;
             userFraction: number; // double
-            versionCodes: number[]; /* int32 */ 
+            versionCodes: number /* int32 */ [];
         }
         interface ITracksListResponse {
             /**

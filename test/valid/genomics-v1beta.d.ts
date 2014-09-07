@@ -321,11 +321,11 @@ declare module gapi.client {
             /**
              * The genotype of this variant call. Each value represents either the value of the referenceBases field or a 1-based index into alternateBases. If a variant had a referenceBases field of "T" and an alternateBases value of ["A", "C"], and the genotype was [2, 1], that would mean the call represented the heterozygous value "CA" for this variant. If the genotype was instead [0, 1], the represented value would be "TA". Ordering of the genotype values is important if the phaseset field is present. If a genotype is not called (that is, a "." is present in the GT string) -1 is returned.
              */
-            genotype: number[]; /* int32 */ 
+            genotype: number /* int32 */ [];
             /**
              * The genotype likelihoods for this variant call. Each array entry represents how likely a specific genotype is for this call. The value ordering is defined by the GL tag in the VCF spec.
              */
-            genotypeLikelihood: number[]; /* double */ 
+            genotypeLikelihood: number /* double */ [];
             /**
              * A map of additional variant call information.
              */

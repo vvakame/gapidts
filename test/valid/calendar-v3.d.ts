@@ -747,7 +747,9 @@ Optional. The default is to return all entries.
             /**
              * Additional parameters controlling delivery channel behavior. Optional.
              */
-            params: { [name:string]: string; };
+            params: {
+                [name:string]: string;
+            };
             /**
              * A Boolean value to indicate whether payload is wanted. Optional.
              */
@@ -783,11 +785,15 @@ Optional. The default is to return all entries.
             /**
              * Palette of calendar colors, mapping from the color ID to its definition. A calendarListEntry resource refers to one of these color IDs in its color field. Read-only.
              */
-            calendar: { [name:string]: IColorDefinition; };
+            calendar: {
+                [name:string]: IColorDefinition;
+            };
             /**
              * Palette of event colors, mapping from the color ID to its definition. An event resource may refer to one of these color IDs in its color field. Read-only.
              */
-            event: { [name:string]: IColorDefinition; };
+            event: {
+                [name:string]: IColorDefinition;
+            };
             /**
              * Type of the resource ("calendar#colors").
              */
@@ -861,8 +867,12 @@ Optional. The default is to return all entries.
              * Extended properties of the event.
              */
             extendedProperties: {
-                private: { [name:string]: string; };
-                shared: { [name:string]: string; };
+                private: {
+                    [name:string]: string;
+                };
+                shared: {
+                    [name:string]: string;
+                };
             };
             /**
              * A gadget that extends this event.
@@ -872,7 +882,9 @@ Optional. The default is to return all entries.
                 height: number; // int32
                 iconLink: string;
                 link: string;
-                preferences: { [name:string]: string; };
+                preferences: {
+                    [name:string]: string;
+                };
                 title: string;
                 type: string;
                 width: number; // int32
@@ -1177,11 +1189,15 @@ Optional. The default is to return all entries.
             /**
              * List of free/busy information for calendars.
              */
-            calendars: { [name:string]: IFreeBusyCalendar; };
+            calendars: {
+                [name:string]: IFreeBusyCalendar;
+            };
             /**
              * Expansion of groups.
              */
-            groups: { [name:string]: IFreeBusyGroup; };
+            groups: {
+                [name:string]: IFreeBusyGroup;
+            };
             /**
              * Type of the resource ("calendar#freeBusy").
              */

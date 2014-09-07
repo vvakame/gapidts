@@ -292,7 +292,7 @@ declare module gapi.client {
             /**
              * List of merchant center ids for this advertiser
              */
-            merchantCenterIds: string[];
+            merchantCenterIds: string /* int64 */ [];
             /**
              * The name of this advertiser.
              */
