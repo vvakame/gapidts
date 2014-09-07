@@ -1,3 +1,8 @@
+// Type definitions for Google APIs Discovery Service v1
+// Project: https://developers.google.com/discovery/
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API.

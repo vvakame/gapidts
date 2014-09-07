@@ -1,3 +1,8 @@
+// Type definitions for Google CustomSearch API v1
+// Project: https://developers.google.com/custom-search/v1/using_rest
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * Lets you search over a website or collection of websites

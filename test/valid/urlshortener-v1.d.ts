@@ -1,3 +1,8 @@
+// Type definitions for Google URL Shortener API v1
+// Project: http://code.google.com/apis/urlshortener/v1/getting_started.html
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * Lets you create, inspect, and manage goo.gl short URLs

@@ -1,3 +1,8 @@
+// Type definitions for Google Blogger API v3
+// Project: https://developers.google.com/blogger/docs/3.0/getting_started
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * API for access to the data within Blogger.

@@ -1,3 +1,8 @@
+// Type definitions for Google Calendar API v3
+// Project: https://developers.google.com/google-apps/calendar/firstapp
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * Lets you manipulate events and other calendar data.

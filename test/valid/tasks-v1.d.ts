@@ -1,3 +1,8 @@
+// Type definitions for Google Tasks API v1
+// Project: https://developers.google.com/google-apps/tasks/firstapp
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * Lets you manage your tasks and task lists.

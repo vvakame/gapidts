@@ -1,3 +1,8 @@
+// Type definitions for Google Compute Engine API v1
+// Project: https://developers.google.com/compute/docs/reference/latest/
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * API for the Google Compute Engine service.

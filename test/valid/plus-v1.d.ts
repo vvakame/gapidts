@@ -1,3 +1,8 @@
+// Type definitions for Google Google+ API v1
+// Project: https://developers.google.com/+/api/
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * The Google+ API enables developers to build on top of the Google+ platform.

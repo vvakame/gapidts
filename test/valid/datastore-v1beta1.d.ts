@@ -1,3 +1,8 @@
+// Type definitions for Google Google Cloud Datastore API v1beta1
+// Project: https://developers.google.com/datastore/
+// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
+// Definitions: https://github.com/vvakame/gapidts
+
 declare module gapi.client {
     /**
      * API for accessing Google Cloud Datastore.

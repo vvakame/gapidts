@@ -29,6 +29,13 @@ export class Discovery {
 	}
 
 	emit(process:Process):void {
+		process.output("// Type definitions for ").output(this.base.ownerName || "").output(" ");
+		process.output(this.base.title).output(" ").outputLine(this.base.version);
+		process.output("// Project: ").outputLine(this.base.documentationLink);
+		process.outputLine("// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>");
+		process.outputLine("// Definitions: https://github.com/vvakame/gapidts");
+		process.outputLine("");
+
 		process.outputLine("declare module gapi.client {");
 		process.increaseIndent();
 		process.outputJSDoc(this.base.description);
