@@ -1,25 +1,49 @@
 import model = require("../model");
 
 class Process {
+
+	targets = ["browser", "nodejs"];
+
 	indentChar = " ";
 	indentStep = 4;
 	indent = 0;
 
+	_results:{ [target:string]:string} = {};
 	_result = "";
 	_alreadlyIndentThisLine = false;
 
+	constructor() {
+		this.targets.forEach(target=> {
+			this._results[target] = "";
+		});
+	}
+
 	output(str:string):Process {
 		this.doIndent();
-		this._result += str;
+		this.targets.forEach(target=> {
+			this._results[target] += str;
+		});
+		return this;
+	}
+
+	outputBrowser(str:string):Process {
+		this.doIndent();
+		this._results["browser"] += str;
+		return this;
+	}
+
+	outputNodeJS(str:string):Process {
+		this.doIndent();
+		this._results["nodejs"] += str;
 		return this;
 	}
 
 	outputLine(str?:string):Process {
 		this.doIndent();
 		if (str) {
-			this._result += str;
+			this.output(str);
 		}
-		this._result += "\n";
+		this.output("\n");
 		this._alreadlyIndentThisLine = false;
 		return this;
 	}
@@ -62,7 +86,10 @@ class Process {
 
 	doIndent():Process {
 		if (!this._alreadlyIndentThisLine) {
-			this._result += this.getIndent();
+			var indent = this.getIndent();
+			this.targets.forEach(target=> {
+				this._results[target] += indent;
+			});
 			this._alreadlyIndentThisLine = true;
 		}
 		return this;
@@ -94,8 +121,11 @@ class Process {
 		return result;
 	}
 
-	toDefinition():string {
-		return this._result;
+	toDefinition(target = "browser"):string {
+		if (this.targets.indexOf(target) === -1) {
+			throw new Error("unknown target: " + target);
+		}
+		return this._results[target];
 	}
 }
 

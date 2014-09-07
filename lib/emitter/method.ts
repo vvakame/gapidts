@@ -38,14 +38,18 @@ class Method {
 		process.decreaseIndent();
 		process.output("}");
 
-		process.output(") => ");
+		process.outputBrowser(") => ");
 
 		// response
 		if (this.base.response && this.base.response.$ref) {
-			process.output("{ execute(callback: (data: I").output(this.base.response.$ref).outputLine(", original: string) => void):void; };");
+			process.outputBrowser("{ execute(callback: (data: I").outputBrowser(this.base.response.$ref).outputBrowser(", original: string) => void):void; };");
+			process.outputNodeJS(", (err: any, response: I").outputNodeJS(this.base.response.$ref).outputNodeJS(") => void;");
+			process.outputLine("");
 		} else if (!this.base.response) {
 			// e.g. blogger-v3 blogger.comments.delete and other delete, remove API
-			process.outputLine("{ execute(callback: (data:any, original: string) => void):void; }; // void");
+			process.outputBrowser("{ execute(callback: (data:any, original: string) => void):void; }; // void");
+			process.outputNodeJS(", (err: any, response: any) => void; // void");
+			process.outputLine("");
 		} else {
 			console.log(this.base);
 			throw new Error("unknown response");
