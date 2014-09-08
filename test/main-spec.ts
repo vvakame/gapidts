@@ -32,62 +32,73 @@ describe("definition emitter", ()=> {
 		.filter(v => !!v);
 
 	serviceInfos.forEach(serviceInfo => {
-		it("create same file every time about " + serviceInfo.name + "-" + serviceInfo.version, (done)=> {
-			var jsonFilePath = "test/fixture/" + serviceInfo.name + "-" + serviceInfo.version + "-rest.json";
-			var expectedDefinitionPath = "test/valid/" + serviceInfo.name + "-" + serviceInfo.version + ".d.ts";
+		var jsonFilePath = "test/fixture/" + serviceInfo.name + "-" + serviceInfo.version + "-rest.json";
+		var envList = ["browser", "nodejs"];
+		envList.forEach(env => {
+			it("create same file every time about " + serviceInfo.name + "-" + serviceInfo.version + "-" + env, (done)=> {
+				var expectedDefinitionPath = "test/valid/" + serviceInfo.name + "-" + serviceInfo.version + "-" + env + ".d.ts";
 
-			var doTest = (json:string, expectedDefinition:string)=> {
-				var root:model.IRestDescription = JSON.parse(json);
-				var result = emitter.emit(root);
+				var doTest = (json:string, expectedDefinition:string)=> {
+					var root:model.IRestDescription = JSON.parse(json);
+					var result = emitter.emit(root);
 
-				assert(result.definition === expectedDefinition);
+					if (env === "browser") {
+						assert(result.browserDefinition === expectedDefinition);
+					} else {
+						assert(result.nodejsDefinition === expectedDefinition);
+					}
 
-				done();
-			};
+					done();
+				};
 
-			var makeJsonFile = () => {
-				var request = https.get({
-					host: "www.googleapis.com",
-					port: 443,
-					method: "GET",
-					path: "/discovery/v1/apis/" + serviceInfo.name + "/" + serviceInfo.version + "/rest"
-				}, (response)=> {
-					(<any>response).setEncoding("utf8");
-					var result = "";
-					response.on("data", (d:string) => {
-						result += d;
+				var makeJsonFile = () => {
+					var request = https.get({
+						host: "www.googleapis.com",
+						port: 443,
+						method: "GET",
+						path: "/discovery/v1/apis/" + serviceInfo.name + "/" + serviceInfo.version + "/rest"
+					}, (response)=> {
+						(<any>response).setEncoding("utf8");
+						var result = "";
+						response.on("data", (d:string) => {
+							result += d;
+						});
+						response.on("end", ()=> {
+							util.mkdirp(path.dirname(jsonFilePath));
+							fs.writeFileSync(jsonFilePath, result);
+
+							doTasks();
+						});
 					});
-					response.on("end", ()=> {
-						util.mkdirp(path.dirname(jsonFilePath));
-						fs.writeFileSync(jsonFilePath, result);
+				};
 
-						doTasks();
-					});
-				});
-			};
+				var makeDefinitionFile = () => {
+					var root:model.IRestDescription = JSON.parse(fs.readFileSync(jsonFilePath, "utf8"));
+					var result = emitter.emit(root);
+					util.mkdirp(path.dirname(expectedDefinitionPath));
+					if (env === "browser") {
+						fs.writeFileSync(expectedDefinitionPath, result.browserDefinition);
+					} else {
+						fs.writeFileSync(expectedDefinitionPath, result.nodejsDefinition);
+					}
 
-			var makeDefinitionFile = () => {
-				var root:model.IRestDescription = JSON.parse(fs.readFileSync(jsonFilePath, "utf8"));
-				var result = emitter.emit(root);
-				util.mkdirp(path.dirname(expectedDefinitionPath));
-				fs.writeFileSync(expectedDefinitionPath, result.definition);
+					doTasks();
+				};
+
+				var doTasks = () => {
+					if (!fs.existsSync(jsonFilePath)) {
+						makeJsonFile();
+						return;
+					}
+					if (!fs.existsSync(expectedDefinitionPath)) {
+						makeDefinitionFile();
+						return;
+					}
+					doTest(fs.readFileSync(jsonFilePath, "utf8"), fs.readFileSync(expectedDefinitionPath, "utf8"));
+				};
 
 				doTasks();
-			};
-
-			var doTasks = () => {
-				if (!fs.existsSync(jsonFilePath)) {
-					makeJsonFile();
-					return;
-				}
-				if (!fs.existsSync(expectedDefinitionPath)) {
-					makeDefinitionFile();
-					return;
-				}
-				doTest(fs.readFileSync(jsonFilePath, "utf8"), fs.readFileSync(expectedDefinitionPath, "utf8"));
-			};
-
-			doTasks();
+			});
 		});
 	});
 });

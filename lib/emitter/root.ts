@@ -36,6 +36,10 @@ class Root {
 		process.outputLine("// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>");
 		process.outputLine("// Definitions: https://github.com/vvakame/gapidts");
 		process.outputLine("");
+		process.outputBrowser("/// <reference path=\"./googleapis-browser-common.d.ts\" />");
+		process.outputNodeJS("/// <reference path=\"./googleapis-nodejs-common.d.ts\" />");
+		process.outputLine("");
+		process.outputLine("");
 	}
 
 	emitInModule(process:Process, proc:()=>void) {

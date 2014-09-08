@@ -3,6 +3,7 @@
 /// <reference path="../typings/commander/commander.d.ts" />
 /// <reference path="../typings/colors/colors.d.ts" />
 /// <reference path="../typings/es6-promise/es6-promise.d.ts" />
+/// <reference path="../typings/mkdirp/mkdirp.d.ts" />
 
 import https = require("https");
 import fs = require("fs");
@@ -10,7 +11,8 @@ import url = require("url");
 import updateNotifier = require("update-notifier");
 import program = require("commander");
 import _Promise = require("es6-promise");
-var Promise = _Promise.Promise;
+import Promise = _Promise.Promise;
+import mkdirp = require("mkdirp");
 require("colors");
 
 import gapidts = require("./index");
@@ -25,18 +27,15 @@ if (notifier.update) {
 	notifier.notify();
 }
 
-// <hoge> は required, [hoge] は optional
+// <hoge> is required, [hoge] is optional
 program
 	.option("--source <file>", "specified source JSON file")
 	.option("--list-short", "list of API ID.")
 	.option("--list", "list of API ID.")
 	.option("--json", "emit schema source by JSON.")
 	.option("--id <apiId>", "endpoint ID. e.g. urlshortener:v1")
-	.option("--host [hostName]", "host name. default www.googleapis.com", null, "www.googleapis.com")
-	.option("--port [port]", "port number. default 443", null, "443")
-	.option("--discovery-api-path <path>", "discovery api path. default /discovery/v1/apis", null, "/discovery/v1/apis")
 	.option("--endpoint <endpoint>", "path. e.g. https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest")
-	.option("--out <outFileName>", "output file name")
+	.option("--outDir <directory>", "output file name")
 	.option("--silent", "execute silently")
 	.parse(process.argv);
 
@@ -46,18 +45,15 @@ interface ICommandlineOptions {
 	listShort: boolean;
 	list: boolean;
 	json: boolean;
-	id: string;
 
-	host: string;
-	port: string;
-	discoveryApiPath: string;
+	id: string;
 	endpoint: string;
 
-	out: string;
+	outDir: string;
 	silent: boolean;
 }
 
-var opts = <any>program;
+var opts:ICommandlineOptions = <any>program;
 
 if (opts.list || opts.listShort) {
 	processList();
@@ -67,11 +63,11 @@ if (opts.list || opts.listShort) {
 	processFromId();
 }
 
-function fetch(params:any):Promise<string> {
+function fetch(params:{host: string; port: number; path: string;}):Promise<string> {
 	var promise = new Promise((fulfilled, reject)=> {
 		https.get({
 			host: params.host,
-			port: parseInt(params.port, 10),
+			port: params.port,
 			method: "GET",
 			path: params.path
 		}, (response:any)=> {
@@ -91,19 +87,19 @@ function fetch(params:any):Promise<string> {
 	return promise;
 }
 
-function fetchApiList() {
+function fetchApiList():Promise<gapidts.model.IDirectoryList> {
 	return fetch({
-		host: opts.host || "www.googleapis.com",
-		port: parseInt(opts.port || "443", 10),
+		host: "www.googleapis.com",
+		port: 443,
 		method: "GET",
-		path: opts.discoveryApiPath || "/discovery/v1/apis"
+		path: "/discovery/v1/apis"
 	}).then(resp => JSON.parse(resp));
 }
 
 function processList() {
 	fetchApiList()
 		.then(data=> {
-			data.items.forEach((item:any) => {
+			data.items.forEach(item => {
 				if (opts.silent) {
 					return;
 				}
@@ -117,7 +113,7 @@ function processList() {
 				}
 			});
 		})
-		.catch((err)=> {
+		.catch(err=> {
 			if (err instanceof Error) {
 				console.error(err.stack);
 			} else if (typeof err === "string") {
@@ -140,13 +136,20 @@ function processFromSource() {
 	}
 
 	var result = gapidts(JSON.parse(fs.readFileSync(opts.source, "utf8")));
-	if (opts.out) {
-		fs.writeFileSync(opts.out, result.definition, {encoding: "utf8"});
+	if (opts.outDir) {
+		mkdirp.sync(opts.outDir);
+		fs.writeFileSync(opts.outDir + "/googleapis-browser-common.d.ts", result.browserCommon, {encoding: "utf8"});
+		fs.writeFileSync(opts.outDir + "/googleapis-nodejs-common.d.ts", result.nodejsCommon, {encoding: "utf8"});
+		fs.writeFileSync(opts.outDir + "/" + result.name + "-" + result.version + "-browser.d.ts", result.browserDefinition, {encoding: "utf8"});
+		fs.writeFileSync(opts.outDir + "/" + result.name + "-" + result.version + "-nodejs.d.ts", result.nodejsDefinition, {encoding: "utf8"});
 	} else {
 		if (opts.silent) {
 			return;
 		}
-		console.log(result.definition);
+		console.log(result.browserCommon);
+		console.log(result.browserDefinition);
+		console.log(result.nodejsCommon);
+		console.log(result.nodejsDefinition);
 	}
 }
 
@@ -158,15 +161,15 @@ function processFromId() {
 	}
 
 	fetchApiList()
-		.then((data:any)=> {
-			var found = data.items.filter((item:any) => item.id === opts.id)[0];
+		.then(data=> {
+			var found = data.items.filter(item => item.id === opts.id)[0];
 			if (found) {
 				return Promise.resolve(found);
 			} else {
 				return Promise.reject(opts.id + " not exists");
 			}
 		})
-		.then((item:any)=> item.discoveryRestUrl)
+		.then(item=> item.discoveryRestUrl)
 		.then((discoveryRestUrl:string)=> {
 			var data = url.parse(discoveryRestUrl);
 			return fetch({
@@ -178,8 +181,10 @@ function processFromId() {
 		})
 		.then(data=> {
 			if (opts.json) {
-				if (opts.out) {
-					fs.writeFileSync(opts.out, data, {encoding: "utf8"});
+				if (opts.outDir) {
+					mkdirp.sync(opts.outDir);
+					// TODO
+					fs.writeFileSync(opts.outDir + "/test.json", data, {encoding: "utf8"});
 				} else {
 					if (opts.silent) {
 						return;
@@ -189,13 +194,21 @@ function processFromId() {
 				return true;
 			}
 			var result = gapidts(JSON.parse(data));
-			if (opts.out) {
-				fs.writeFileSync(opts.out, result.definition, {encoding: "utf8"});
+			if (opts.outDir) {
+				mkdirp.sync(opts.outDir);
+				// TODO
+				fs.writeFileSync(opts.outDir + "/googleapis-browser-common.d.ts", result.browserCommon, {encoding: "utf8"});
+				fs.writeFileSync(opts.outDir + "/googleapis-nodejs-common.d.ts", result.nodejsCommon, {encoding: "utf8"});
+				fs.writeFileSync(opts.outDir + "/" + result.name + "-" + result.version + "-browser.d.ts", result.browserDefinition, {encoding: "utf8"});
+				fs.writeFileSync(opts.outDir + "/" + result.name + "-" + result.version + "-nodejs.d.ts", result.nodejsDefinition, {encoding: "utf8"});
 			} else {
 				if (opts.silent) {
 					return;
 				}
-				console.log(result.definition);
+				console.log(result.browserCommon);
+				console.log(result.browserDefinition);
+				console.log(result.nodejsCommon);
+				console.log(result.nodejsDefinition);
 			}
 			return true;
 		})

@@ -6,25 +6,28 @@
 	"bundle": "typings/tsd.d.ts",
 	"installed": {
 		"node/node.d.ts": {
-			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+			"commit": "50dd84eb5d5593787b7686decf1476d094f5e13a"
 		},
 		"commander/commander.d.ts": {
-			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+			"commit": "50dd84eb5d5593787b7686decf1476d094f5e13a"
 		},
 		"update-notifier/update-notifier.d.ts": {
-			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+			"commit": "50dd84eb5d5593787b7686decf1476d094f5e13a"
 		},
 		"colors/colors.d.ts": {
-			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+			"commit": "50dd84eb5d5593787b7686decf1476d094f5e13a"
 		},
 		"es6-promise/es6-promise.d.ts": {
-			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+			"commit": "50dd84eb5d5593787b7686decf1476d094f5e13a"
+		},
+		"mkdirp/mkdirp.d.ts": {
+			"commit": "50dd84eb5d5593787b7686decf1476d094f5e13a"
 		},
 		"mocha/mocha.d.ts": {
-			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+			"commit": "50dd84eb5d5593787b7686decf1476d094f5e13a"
 		},
 		"assert/assert.d.ts": {
-			"commit": "0c4b4ef263d7e3b98a2b81492c34bfe03b614d7c"
+			"commit": "50dd84eb5d5593787b7686decf1476d094f5e13a"
 		}
 	}
 }

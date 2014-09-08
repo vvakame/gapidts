@@ -168,12 +168,15 @@ module.exports = function (grunt) {
 			if (matches.length !== 3) {
 				return;
 			}
-			var name = matches[1] + "-" + matches[2];
-			var taskName = "testFixture-" + name;
-			testFixtureTasks.push("ts:" + taskName);
-			config.ts[taskName] = {
-				src: ['<%= opt.client.tsTest %>/valid/' + name + ".d.ts"]
-			};
+			var envList = ["browser", "nodejs"];
+			envList.forEach(function (env) {
+				var name = matches[1] + "-" + matches[2] + "-" + env;
+				var taskName = "testFixture-" + name;
+				testFixtureTasks.push("ts:" + taskName);
+				config.ts[taskName] = {
+					src: ['<%= opt.client.tsTest %>/valid/' + name + ".d.ts"]
+				};
+			});
 		});
 	})();
 

@@ -29,13 +29,13 @@ class Method {
 
 		// response
 		if (this.base.response && this.base.response.$ref) {
-			process.outputBrowser("{ execute(callback: (data: I").outputBrowser(this.base.response.$ref).outputBrowser(", original: string) => void):void; };");
-			process.outputNodeJS(", (err: any, response: I").outputNodeJS(this.base.response.$ref).outputNodeJS(") => void;");
+			process.outputBrowser("{ execute(callback: (data: IResponse<I").outputBrowser(this.base.response.$ref).outputBrowser(">, original: string) => void):void; };");
+			process.outputNodeJS(", callback: (err: any, response: I").outputNodeJS(this.base.response.$ref).outputNodeJS(") => void) => void;");
 			process.outputLine("");
 		} else if (!this.base.response) {
 			// e.g. blogger-v3 blogger.comments.delete and other delete, remove API
 			process.outputBrowser("{ execute(callback: (data:any, original: string) => void):void; }; // void");
-			process.outputNodeJS(", (err: any, response: any) => void; // void");
+			process.outputNodeJS(", callback: (err: any, response: any) => void ) => void; // void");
 			process.outputLine("");
 		} else {
 			console.log(this.base);

@@ -1,6 +1,7 @@
 /// <reference path="../typings/node/node.d.ts" />
 
 import _model = require("./model");
+_model; // avoid eliminator
 import _emitter = require("./emitter/index");
 
 try {
@@ -17,8 +18,8 @@ function gapidts(root:_model.IRestDescription):_emitter.IResult {
 }
 
 module gapidts {
-	export var model = _model;
-	export var emitter = _emitter;
+	export import model = _model;
+	export import emitter = _emitter;
 }
 
 export = gapidts;
