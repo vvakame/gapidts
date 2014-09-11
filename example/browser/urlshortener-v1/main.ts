@@ -1,8 +1,4 @@
-/// <reference path="./urlshortener-v1.d.ts" />
-
-declare module gapi.client {
-	function load(apiName:string, version:string, callback:()=> void):void;
-}
+/// <reference path="./urlshortener-v1-browser.d.ts" />
 
 function init() {
 	gapi.client.load('urlshortener', 'v1', () => {
@@ -15,9 +11,9 @@ function init() {
 				shortUrl: input.value,
 				projection: 'FULL'
 			});
-			request.execute((data, original) => {
+			request.execute(data => {
 				if (typeof data.code === "undefined") {
-					result.innerText = data.longUrl;
+					result.innerText = data.result.longUrl;
 				} else {
 					result.innerText = data.message;
 				}

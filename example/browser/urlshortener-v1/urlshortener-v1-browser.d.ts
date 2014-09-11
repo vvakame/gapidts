@@ -3,6 +3,8 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+/// <reference path="./googleapis-browser-common.d.ts" />
+
 declare module gapi.client {
     /**
      * Lets you create, inspect, and manage goo.gl short URLs
@@ -17,11 +19,13 @@ declare module gapi.client {
             get: (params: {
                 projection?: string;
                 shortUrl: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IUrl
+            }) => { execute(callback: (data: IResponse<IUrl>, original: string) => void):void; };
             /**
              * Creates a new short URL.
              */
-            insert: () => { execute(callback: (data:any, original: string) => void):void; }; // IUrl
+            insert: (params: {
+                resource?: IUrl;
+            }) => { execute(callback: (data: IResponse<IUrl>, original: string) => void):void; };
             /**
              * Retrieves a list of URLs shortened by a user.
              * @params {string} projection Additional information to return.
@@ -30,7 +34,7 @@ declare module gapi.client {
             list: (params: {
                 projection?: string;
                 "start-token"?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // IUrlHistory
+            }) => { execute(callback: (data: IResponse<IUrlHistory>, original: string) => void):void; };
         };
         interface IAnalyticsSnapshot {
             /**
