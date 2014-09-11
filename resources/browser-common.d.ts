@@ -3,6 +3,8 @@
 // Definitions by: vvakame <https://github.com/vvakame>
 // Definitions: https://github.com/vvakame/gapidts
 
+// https://developers.google.com/api-client-library/javascript/reference/referencedocs
+
 declare module gapi {
 	module auth {
 		function authorize(params:IAuthorizeParams, callback:(tokens:ITokenObject)=>void):void;
