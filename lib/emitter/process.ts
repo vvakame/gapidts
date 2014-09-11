@@ -6,21 +6,23 @@ class Process {
 
 	indentChar = " ";
 	indentStep = 4;
-	indent = 0;
 
-	_results:{ [target:string]:string} = {};
-	_result = "";
-	_alreadlyIndentThisLine = false;
+	indent:{ [target: string]: number;} = {};
+
+	_results:{ [target:string]:string; } = {};
+	_alreadlyIndentThisLine:{ [target:string]:boolean; } = {};
 
 	constructor() {
 		this.targets.forEach(target=> {
+			this.indent[target] = 0;
 			this._results[target] = "";
+			this._alreadlyIndentThisLine[target] = false;
 		});
 	}
 
 	output(str:string):Process {
-		this.doIndent();
 		this.targets.forEach(target=> {
+			this.doIndent(target);
 			this._results[target] += str;
 		});
 		return this;
@@ -36,24 +38,48 @@ class Process {
 	}
 
 	outputBrowser(str:string):Process {
-		this.doIndent();
+		this.doIndent("browser");
 		this._results["browser"] += str;
 		return this;
 	}
 
 	outputNodeJS(str:string):Process {
-		this.doIndent();
+		this.doIndent("nodejs");
 		this._results["nodejs"] += str;
 		return this;
 	}
 
 	outputLine(str?:string):Process {
-		this.doIndent();
+		this.targets.forEach(target=> {
+			this.doIndent(target);
+		});
 		if (str) {
 			this.output(str);
 		}
 		this.output("\n");
-		this._alreadlyIndentThisLine = false;
+		this.targets.forEach(target=> {
+			this._alreadlyIndentThisLine[target] = false;
+		});
+		return this;
+	}
+
+	outputLineBrowser(str?:string):Process {
+		this.doIndent("browser");
+		if (str) {
+			this.outputBrowser(str);
+		}
+		this.outputBrowser("\n");
+		this._alreadlyIndentThisLine["browser"] = false;
+		return this;
+	}
+
+	outputLineNodeJS(str?:string):Process {
+		this.doIndent("nodejs");
+		if (str) {
+			this.outputNodeJS(str);
+		}
+		this.outputNodeJS("\n");
+		this._alreadlyIndentThisLine["nodejs"] = false;
 		return this;
 	}
 
@@ -93,30 +119,52 @@ class Process {
 		return this;
 	}
 
-	doIndent():Process {
-		if (!this._alreadlyIndentThisLine) {
-			var indent = this.getIndent();
-			this.targets.forEach(target=> {
-				this._results[target] += indent;
-			});
-			this._alreadlyIndentThisLine = true;
+	doIndent(target:string):Process {
+		if (!this._alreadlyIndentThisLine[target]) {
+			var indent = this.getIndent(target);
+			this._results[target] += indent;
+			this._alreadlyIndentThisLine[target] = true;
 		}
 		return this;
 	}
 
 	increaseIndent():Process {
-		this.indent++;
+		this.targets.forEach(target=> {
+			this.indent[target]++;
+		});
+		return this;
+	}
+
+	increaseIndentBrowser():Process {
+		this.indent["browser"]++;
+		return this;
+	}
+
+	increaseIndentNodeJS():Process {
+		this.indent["nodejs"]++;
 		return this;
 	}
 
 	decreaseIndent():Process {
-		this.indent--;
+		this.targets.forEach(target=> {
+			this.indent[target]--;
+		});
 		return this;
 	}
 
-	getIndent():string {
+	decreaseIndentBrowser():Process {
+		this.indent["browser"]--;
+		return this;
+	}
+
+	decreaseIndentNodeJS():Process {
+		this.indent["nodejs"]--;
+		return this;
+	}
+
+	getIndent(target:string):string {
 		var indent = "";
-		for (var i = 0; i < this.indent; i++) {
+		for (var i = 0; i < this.indent[target]; i++) {
 			indent += this.repeatString(this.indentStep, this.indentChar);
 		}
 		return indent;

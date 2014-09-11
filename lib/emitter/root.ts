@@ -43,18 +43,27 @@ class Root {
 	}
 
 	emitInModule(process:Process, proc:()=>void) {
-		process.outputLine("declare module gapi.client {");
-		process.increaseIndent();
+		process.outputLineBrowser("declare module gapi.client {");
+		process.increaseIndentBrowser();
+
+		process.outputLineNodeJS("declare module \"googleapis\" {");
+		process.increaseIndentNodeJS();
+		process.outputNodeJS("function ").outputNodeJS(this.name).outputNodeJS("(version:string):typeof googleapis.").outputNodeJS(this.name).outputLineNodeJS(";");
+		process.decreaseIndentNodeJS();
+		process.outputLineNodeJS("}");
+
 		process.outputJSDoc(this.base.description);
-		process.output("module ").output(this.name).output(" {").outputLine();
+
+		process.outputBrowser("module ").outputBrowser(this.name).outputBrowser(" {").outputLineBrowser();
+		process.outputNodeJS("declare module googleapis.").outputNodeJS(this.name).outputNodeJS(" {").outputLineNodeJS();
 		process.increaseIndent();
 
 		proc();
 
 		process.decreaseIndent();
 		process.outputLine("}");
-		process.decreaseIndent();
-		process.outputLine("}");
+		process.decreaseIndentBrowser();
+		process.outputLineBrowser("}");
 	}
 
 	emitMethods(process:Process) {

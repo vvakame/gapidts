@@ -5,32 +5,33 @@
 
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
-declare module gapi.client {
-    /**
-     * Groups Migration Api.
-     */
-    module groupsmigration {
-        var archive: {
-            /**
-             * Inserts a new mail into the archive of the Google group.
-             * @params {string} groupId The group ID
-             */
-            insert: (params: {
-                groupId: string;
-            }, callback: (err: any, response: IGroups) => void) => void;
-        };
+declare module "googleapis" {
+    function groupsmigration(version:string):typeof googleapis.groupsmigration;
+}
+/**
+ * Groups Migration Api.
+ */
+declare module googleapis.groupsmigration {
+    var archive: {
         /**
-         * JSON response template for groups migration API.
+         * Inserts a new mail into the archive of the Google group.
+         * @params {string} groupId The group ID
          */
-        interface IGroups {
-            /**
-             * The kind of insert resource this is.
-             */
-            kind: string;
-            /**
-             * The status of the insert request.
-             */
-            responseCode: string;
-        }
+        insert: (params: {
+            groupId: string;
+        }, callback: (err: any, response: IGroups) => void) => void;
+    };
+    /**
+     * JSON response template for groups migration API.
+     */
+    interface IGroups {
+        /**
+         * The kind of insert resource this is.
+         */
+        kind: string;
+        /**
+         * The status of the insert request.
+         */
+        responseCode: string;
     }
 }
