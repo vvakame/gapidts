@@ -26,7 +26,7 @@ declare module googleapis.cloudmonitoring {
             project: string;
             query?: string;
             resource?: IListMetricDescriptorsRequest;
-        }, callback: (err: any, response: IListMetricDescriptorsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListMetricDescriptorsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var timeseries: {
         /**
@@ -62,7 +62,7 @@ If neither oldest nor timespan is specified, the default time interval will be (
             timespan?: string;
             youngest: string;
             resource?: IListTimeseriesRequest;
-        }, callback: (err: any, response: IListTimeseriesResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListTimeseriesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var timeseriesDescriptors: {
         /**
@@ -98,7 +98,7 @@ If neither oldest nor timespan is specified, the default time interval will be (
             timespan?: string;
             youngest: string;
             resource?: IListTimeseriesDescriptorsRequest;
-        }, callback: (err: any, response: IListTimeseriesDescriptorsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListTimeseriesDescriptorsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * The request of cloudmonitoring.metricDescriptors.list.

@@ -18,7 +18,7 @@ declare module googleapis.content {
          */
         custombatch: (params: {
             resource?: IAccountsCustomBatchRequest;
-        }, callback: (err: any, response: IAccountsCustomBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccountsCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a Merchant Center sub-account.
          * @params {string} accountId The ID of the account.
@@ -27,7 +27,7 @@ declare module googleapis.content {
         delete: (params: {
             accountId: string;
             merchantId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a Merchant Center account.
          * @params {string} accountId The ID of the account.
@@ -36,7 +36,7 @@ declare module googleapis.content {
         get: (params: {
             accountId: string;
             merchantId: string;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a Merchant Center sub-account.
          * @params {string} merchantId The ID of the managing account.
@@ -44,7 +44,7 @@ declare module googleapis.content {
         insert: (params: {
             merchantId: string;
             resource?: IAccount;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the sub-accounts in your Merchant Center account.
          * @params {number} maxResults The maximum number of accounts to return in the response, used for paging.
@@ -55,7 +55,7 @@ declare module googleapis.content {
             maxResults?: number;
             merchantId: string;
             pageToken?: string;
-        }, callback: (err: any, response: IAccountsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccountsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a Merchant Center account. This method supports patch semantics.
          * @params {string} accountId The ID of the account.
@@ -65,7 +65,7 @@ declare module googleapis.content {
             accountId: string;
             merchantId: string;
             resource?: IAccount;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a Merchant Center account.
          * @params {string} accountId The ID of the account.
@@ -75,12 +75,12 @@ declare module googleapis.content {
             accountId: string;
             merchantId: string;
             resource?: IAccount;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var accountstatuses: {
         custombatch: (params: {
             resource?: IAccountstatusesCustomBatchRequest;
-        }, callback: (err: any, response: IAccountstatusesCustomBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccountstatusesCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the status of a Merchant Center account.
          * @params {string} accountId The ID of the account.
@@ -89,7 +89,7 @@ declare module googleapis.content {
         get: (params: {
             accountId: string;
             merchantId: string;
-        }, callback: (err: any, response: IAccountStatus) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccountStatus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the statuses of the sub-accounts in your Merchant Center account.
          * @params {number} maxResults The maximum number of account statuses to return in the response, used for paging.
@@ -100,12 +100,12 @@ declare module googleapis.content {
             maxResults?: number;
             merchantId: string;
             pageToken?: string;
-        }, callback: (err: any, response: IAccountstatusesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccountstatusesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var datafeeds: {
         custombatch: (params: {
             resource?: IDatafeedsCustomBatchRequest;
-        }, callback: (err: any, response: IDatafeedsCustomBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeedsCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a datafeed from your Merchant Center account.
          * @params {string} datafeedId 
@@ -114,7 +114,7 @@ declare module googleapis.content {
         delete: (params: {
             datafeedId: string;
             merchantId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a datafeed from your Merchant Center account.
          * @params {string} datafeedId 
@@ -123,7 +123,7 @@ declare module googleapis.content {
         get: (params: {
             datafeedId: string;
             merchantId: string;
-        }, callback: (err: any, response: IDatafeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Registers a datafeed with your Merchant Center account.
          * @params {string} merchantId 
@@ -131,14 +131,14 @@ declare module googleapis.content {
         insert: (params: {
             merchantId: string;
             resource?: IDatafeed;
-        }, callback: (err: any, response: IDatafeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the datafeeds in your Merchant Center account.
          * @params {string} merchantId 
          */
         list: (params: {
             merchantId: string;
-        }, callback: (err: any, response: IDatafeedsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeedsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a datafeed of your Merchant Center account. This method supports patch semantics.
          * @params {string} datafeedId 
@@ -148,7 +148,7 @@ declare module googleapis.content {
             datafeedId: string;
             merchantId: string;
             resource?: IDatafeed;
-        }, callback: (err: any, response: IDatafeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a datafeed of your Merchant Center account.
          * @params {string} datafeedId 
@@ -158,12 +158,12 @@ declare module googleapis.content {
             datafeedId: string;
             merchantId: string;
             resource?: IDatafeed;
-        }, callback: (err: any, response: IDatafeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var datafeedstatuses: {
         custombatch: (params: {
             resource?: IDatafeedstatusesCustomBatchRequest;
-        }, callback: (err: any, response: IDatafeedstatusesCustomBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeedstatusesCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the status of a datafeed from your Merchant Center account.
          * @params {string} datafeedId 
@@ -172,14 +172,14 @@ declare module googleapis.content {
         get: (params: {
             datafeedId: string;
             merchantId: string;
-        }, callback: (err: any, response: IDatafeedStatus) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeedStatus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the statuses of the datafeeds in your Merchant Center account.
          * @params {string} merchantId 
          */
         list: (params: {
             merchantId: string;
-        }, callback: (err: any, response: IDatafeedstatusesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatafeedstatusesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var inventory: {
         /**
@@ -187,7 +187,7 @@ declare module googleapis.content {
          */
         custombatch: (params: {
             resource?: IInventoryCustomBatchRequest;
-        }, callback: (err: any, response: IInventoryCustomBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInventoryCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates price and availability of a product in your Merchant Center account.
          * @params {string} merchantId The ID of the managing account.
@@ -199,7 +199,7 @@ declare module googleapis.content {
             productId: string;
             storeCode: string;
             resource?: IInventorySetRequest;
-        }, callback: (err: any, response: IInventorySetResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInventorySetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var products: {
         /**
@@ -209,7 +209,7 @@ declare module googleapis.content {
         custombatch: (params: {
             dryRun?: boolean;
             resource?: IProductsCustomBatchRequest;
-        }, callback: (err: any, response: IProductsCustomBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProductsCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a product from your Merchant Center account.
          * @params {boolean} dryRun Flag to run the request in dry-run mode.
@@ -220,7 +220,7 @@ declare module googleapis.content {
             dryRun?: boolean;
             merchantId: string;
             productId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a product from your Merchant Center account.
          * @params {string} merchantId The ID of the managing account.
@@ -229,7 +229,7 @@ declare module googleapis.content {
         get: (params: {
             merchantId: string;
             productId: string;
-        }, callback: (err: any, response: IProduct) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Uploads a product to your Merchant Center account.
          * @params {boolean} dryRun Flag to run the request in dry-run mode.
@@ -239,7 +239,7 @@ declare module googleapis.content {
             dryRun?: boolean;
             merchantId: string;
             resource?: IProduct;
-        }, callback: (err: any, response: IProduct) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the products in your Merchant Center account.
          * @params {number} maxResults The maximum number of products to return in the response, used for paging.
@@ -250,7 +250,7 @@ declare module googleapis.content {
             maxResults?: number;
             merchantId: string;
             pageToken?: string;
-        }, callback: (err: any, response: IProductsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProductsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var productstatuses: {
         /**
@@ -258,7 +258,7 @@ declare module googleapis.content {
          */
         custombatch: (params: {
             resource?: IProductstatusesCustomBatchRequest;
-        }, callback: (err: any, response: IProductstatusesCustomBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProductstatusesCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets the status of a product from your Merchant Center account.
          * @params {string} merchantId The ID of the managing account.
@@ -267,7 +267,7 @@ declare module googleapis.content {
         get: (params: {
             merchantId: string;
             productId: string;
-        }, callback: (err: any, response: IProductStatus) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProductStatus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the statuses of the products in your Merchant Center account.
          * @params {number} maxResults The maximum number of product statuses to return in the response, used for paging.
@@ -278,7 +278,7 @@ declare module googleapis.content {
             maxResults?: number;
             merchantId: string;
             pageToken?: string;
-        }, callback: (err: any, response: IProductstatusesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProductstatusesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAccount {
         /**

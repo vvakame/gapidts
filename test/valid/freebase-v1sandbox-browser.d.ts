@@ -10,6 +10,7 @@ declare module gapi.client {
      * Find Freebase entities using textual queries and other constraints.
      */
     module freebase {
+        var _tmp: {};
         interface IReconcileCandidate {
             /**
              * Percentage likelihood that this candidate is the unique matching entity. Value will be between 0.0 and 1.0

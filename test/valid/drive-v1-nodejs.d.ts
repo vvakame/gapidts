@@ -23,13 +23,13 @@ declare module googleapis.drive {
             id: string;
             projection?: string;
             updateViewedDate?: boolean;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a file, and any settable metadata or blob content sent with the request.
          */
         insert: (params: {
             resource?: IFile;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates file metadata and/or content. This method supports patch semantics.
          * @params {string} id The id for the file in question.
@@ -43,7 +43,7 @@ declare module googleapis.drive {
             updateModifiedDate?: boolean;
             updateViewedDate?: boolean;
             resource?: IFile;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates file metadata and/or content
          * @params {string} id The id for the file in question.
@@ -57,7 +57,7 @@ declare module googleapis.drive {
             updateModifiedDate?: boolean;
             updateViewedDate?: boolean;
             resource?: IFile;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * The metadata for a file.

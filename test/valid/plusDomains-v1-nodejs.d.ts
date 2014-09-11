@@ -19,7 +19,7 @@ declare module googleapis.plusDomains {
          */
         get: (params: {
             activityId: string;
-        }, callback: (err: any, response: IActivity) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a new activity for the authenticated user.
          * @params {boolean} preview If "true", extract the potential media attachments for a URL. The response will include all possible attachments for a URL, including video, photos, and articles based on the content of the page.
@@ -29,7 +29,7 @@ declare module googleapis.plusDomains {
             preview?: boolean;
             userId: string;
             resource?: IActivity;
-        }, callback: (err: any, response: IActivity) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the activities in the specified collection for a particular user.
          * @params {string} collection The collection of activities to list.
@@ -42,7 +42,7 @@ declare module googleapis.plusDomains {
             maxResults?: number;
             pageToken?: string;
             userId: string;
-        }, callback: (err: any, response: IActivityFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivityFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var audiences: {
         /**
@@ -55,7 +55,7 @@ declare module googleapis.plusDomains {
             maxResults?: number;
             pageToken?: string;
             userId: string;
-        }, callback: (err: any, response: IAudiencesFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAudiencesFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var circles: {
         /**
@@ -68,14 +68,14 @@ declare module googleapis.plusDomains {
             circleId: string;
             email?: string;
             userId?: string;
-        }, callback: (err: any, response: ICircle) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a circle.
          * @params {string} circleId The ID of the circle to get.
          */
         get: (params: {
             circleId: string;
-        }, callback: (err: any, response: ICircle) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a new circle for the authenticated user.
          * @params {string} userId The ID of the user to create the circle on behalf of. The value "me" can be used to indicate the authenticated user.
@@ -83,7 +83,7 @@ declare module googleapis.plusDomains {
         insert: (params: {
             userId: string;
             resource?: ICircle;
-        }, callback: (err: any, response: ICircle) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the circles for a user.
          * @params {number} maxResults The maximum number of circles to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.
@@ -94,7 +94,7 @@ declare module googleapis.plusDomains {
             maxResults?: number;
             pageToken?: string;
             userId: string;
-        }, callback: (err: any, response: ICircleFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICircleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a circle's description. This method supports patch semantics.
          * @params {string} circleId The ID of the circle to update.
@@ -102,14 +102,14 @@ declare module googleapis.plusDomains {
         patch: (params: {
             circleId: string;
             resource?: ICircle;
-        }, callback: (err: any, response: ICircle) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a circle.
          * @params {string} circleId The ID of the circle to delete.
          */
         remove: (params: {
             circleId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Remove a person from a circle.
          * @params {string} circleId The ID of the circle to remove the person from.
@@ -120,7 +120,7 @@ declare module googleapis.plusDomains {
             circleId: string;
             email?: string;
             userId?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Update a circle's description.
          * @params {string} circleId The ID of the circle to update.
@@ -128,7 +128,7 @@ declare module googleapis.plusDomains {
         update: (params: {
             circleId: string;
             resource?: ICircle;
-        }, callback: (err: any, response: ICircle) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
         /**
@@ -137,7 +137,7 @@ declare module googleapis.plusDomains {
          */
         get: (params: {
             commentId: string;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a new comment in reply to an activity.
          * @params {string} activityId The ID of the activity to reply to.
@@ -145,7 +145,7 @@ declare module googleapis.plusDomains {
         insert: (params: {
             activityId: string;
             resource?: IComment;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the comments for an activity.
          * @params {string} activityId The ID of the activity to get comments for.
@@ -158,7 +158,7 @@ declare module googleapis.plusDomains {
             maxResults?: number;
             pageToken?: string;
             sortOrder?: string;
-        }, callback: (err: any, response: ICommentFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var media: {
         /**
@@ -170,7 +170,7 @@ declare module googleapis.plusDomains {
             collection: string;
             userId: string;
             resource?: IMedia;
-        }, callback: (err: any, response: IMedia) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMedia, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var people: {
         /**
@@ -179,7 +179,7 @@ declare module googleapis.plusDomains {
          */
         get: (params: {
             userId: string;
-        }, callback: (err: any, response: IPerson) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPerson, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people in the specified collection.
          * @params {string} collection The collection of people to list.
@@ -194,7 +194,7 @@ declare module googleapis.plusDomains {
             orderBy?: string;
             pageToken?: string;
             userId: string;
-        }, callback: (err: any, response: IPeopleFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people in the specified collection for a particular activity.
          * @params {string} activityId The ID of the activity to get the list of people for.
@@ -207,7 +207,7 @@ declare module googleapis.plusDomains {
             collection: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IPeopleFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people who are members of a circle.
          * @params {string} circleId The ID of the circle to get the members of.
@@ -218,7 +218,7 @@ declare module googleapis.plusDomains {
             circleId: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IPeopleFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAcl {
         /**

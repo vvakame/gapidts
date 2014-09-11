@@ -32,7 +32,7 @@ declare module googleapis.appsactivity {
             pageToken?: string;
             source?: string;
             userId?: string;
-        }, callback: (err: any, response: IListActivitiesResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListActivitiesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * An Activity resource is a combined view of multiple events. An activity has a list of individual events and a combined view of the common fields among all events.

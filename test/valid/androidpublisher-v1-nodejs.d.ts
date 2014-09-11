@@ -23,7 +23,7 @@ declare module googleapis.androidpublisher {
             packageName: string;
             subscriptionId: string;
             token: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Checks whether a user's subscription purchase is valid and returns its expiry time.
          * @params {string} packageName The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
@@ -34,7 +34,7 @@ declare module googleapis.androidpublisher {
             packageName: string;
             subscriptionId: string;
             token: string;
-        }, callback: (err: any, response: ISubscriptionPurchase) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscriptionPurchase, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * A SubscriptionPurchase resource indicates the status of a user's subscription purchase.

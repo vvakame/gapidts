@@ -24,7 +24,7 @@ declare module googleapis.dfareporting {
             pageToken?: string;
             profileId: string;
             resource?: IDimensionValueRequest;
-        }, callback: (err: any, response: IDimensionValueList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDimensionValueList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var files: {
         /**
@@ -41,7 +41,7 @@ declare module googleapis.dfareporting {
             profileId: string;
             sortField?: string;
             sortOrder?: string;
-        }, callback: (err: any, response: IFileList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFileList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
         /**
@@ -52,7 +52,7 @@ declare module googleapis.dfareporting {
         delete: (params: {
             profileId: string;
             reportId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a report by its ID.
          * @params {string} profileId The DFA user profile ID.
@@ -61,7 +61,7 @@ declare module googleapis.dfareporting {
         get: (params: {
             profileId: string;
             reportId: string;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a report.
          * @params {string} profileId The DFA user profile ID.
@@ -69,7 +69,7 @@ declare module googleapis.dfareporting {
         insert: (params: {
             profileId: string;
             resource?: IReport;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves list of reports.
          * @params {number} maxResults Maximum number of results to return.
@@ -84,7 +84,7 @@ declare module googleapis.dfareporting {
             profileId: string;
             sortField?: string;
             sortOrder?: string;
-        }, callback: (err: any, response: IReportList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReportList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a report. This method supports patch semantics.
          * @params {string} profileId The DFA user profile ID.
@@ -94,7 +94,7 @@ declare module googleapis.dfareporting {
             profileId: string;
             reportId: string;
             resource?: IReport;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Runs a report.
          * @params {string} profileId The DFA profile ID.
@@ -105,7 +105,7 @@ declare module googleapis.dfareporting {
             profileId: string;
             reportId: string;
             synchronous?: boolean;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a report.
          * @params {string} profileId The DFA user profile ID.
@@ -115,7 +115,7 @@ declare module googleapis.dfareporting {
             profileId: string;
             reportId: string;
             resource?: IReport;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         files: {
             /**
              * Retrieves a report file.
@@ -127,7 +127,7 @@ declare module googleapis.dfareporting {
                 fileId: string;
                 profileId: string;
                 reportId: string;
-            }, callback: (err: any, response: IFile) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists files for a report.
              * @params {number} maxResults Maximum number of results to return.
@@ -144,7 +144,7 @@ declare module googleapis.dfareporting {
                 reportId: string;
                 sortField?: string;
                 sortOrder?: string;
-            }, callback: (err: any, response: IFileList) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFileList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var userProfiles: {
@@ -154,12 +154,12 @@ declare module googleapis.dfareporting {
          */
         get: (params: {
             profileId: string;
-        }, callback: (err: any, response: IUserProfile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUserProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves list of user profiles for a user.
          */
         list: (params: {
-        }, callback: (err: any, response: IUserProfileList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUserProfileList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Represents an activity group.

@@ -18,27 +18,27 @@ declare module googleapis.pubsub {
          */
         acknowledge: (params: {
             resource?: IAcknowledgeRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a subscription on a given topic for a given subscriber. If the subscription already exists, returns ALREADY_EXISTS. If the corresponding topic doesn't exist, returns NOT_FOUND.
          */
         create: (params: {
             resource?: ISubscription;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes an existing subscription. All pending messages in the subscription are immediately dropped. Calls to Pull after deletion will return NOT_FOUND.
          * @params {string} subscription The subscription to delete.
          */
         delete: (params: {
             subscription: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets the configuration details of a subscription.
          * @params {string} subscription The name of the subscription to get.
          */
         get: (params: {
             subscription: string;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists matching subscriptions.
          * @params {number} maxResults Maximum number of subscriptions to return.
@@ -49,25 +49,25 @@ declare module googleapis.pubsub {
             maxResults?: number;
             pageToken?: string;
             query?: string;
-        }, callback: (err: any, response: IListSubscriptionsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListSubscriptionsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modifies the Ack deadline for a message received from a pull request.
          */
         modifyAckDeadline: (params: {
             resource?: IModifyAckDeadlineRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Modifies the PushConfig for a specified subscription. This method can be used to suspend the flow of messages to an end point by clearing the PushConfig field in the request. Messages will be accumulated for delivery even if no push configuration is defined or while the configuration is modified.
          */
         modifyPushConfig: (params: {
             resource?: IModifyPushConfigRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Pulls a single message from the server. If return_immediately is true, and no messages are available in the subscription, this method returns FAILED_PRECONDITION. The system is free to return an UNAVAILABLE error if no messages are available in a reasonable amount of time (to reduce system load).
          */
         pull: (params: {
             resource?: IPullRequest;
-        }, callback: (err: any, response: IPullResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPullResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var topics: {
         /**
@@ -75,21 +75,21 @@ declare module googleapis.pubsub {
          */
         create: (params: {
             resource?: ITopic;
-        }, callback: (err: any, response: ITopic) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITopic, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the topic with the given name. All subscriptions to this topic are also deleted. Returns NOT_FOUND if the topic does not exist. After a topic is deleted, a new topic may be created with the same name.
          * @params {string} topic Name of the topic to delete.
          */
         delete: (params: {
             topic: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets the configuration of a topic. Since the topic only has the name attribute, this method is only useful to check the existence of a topic. If other attributes are added in the future, they will be returned here.
          * @params {string} topic The name of the topic to get.
          */
         get: (params: {
             topic: string;
-        }, callback: (err: any, response: ITopic) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITopic, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists matching topics.
          * @params {number} maxResults Maximum number of topics to return.
@@ -100,13 +100,13 @@ declare module googleapis.pubsub {
             maxResults?: number;
             pageToken?: string;
             query?: string;
-        }, callback: (err: any, response: IListTopicsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListTopicsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a message to the topic. Returns NOT_FOUND if the topic does not exist.
          */
         publish: (params: {
             resource?: IPublishRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     interface IAcknowledgeRequest {
         /**

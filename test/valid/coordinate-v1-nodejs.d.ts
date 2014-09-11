@@ -19,7 +19,7 @@ declare module googleapis.coordinate {
          */
         list: (params: {
             teamId: string;
-        }, callback: (err: any, response: ICustomFieldDefListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomFieldDefListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var jobs: {
         /**
@@ -30,7 +30,7 @@ declare module googleapis.coordinate {
         get: (params: {
             jobId: string;
             teamId: string;
-        }, callback: (err: any, response: IJob) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new job. Only the state field of the job should be set.
          * @params {string} address Job address as newline (Unix) separated string
@@ -56,7 +56,7 @@ declare module googleapis.coordinate {
             teamId: string;
             title: string;
             resource?: IJob;
-        }, callback: (err: any, response: IJob) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves jobs created or modified since the given timestamp.
          * @params {number} maxResults Maximum number of results to return in one page.
@@ -69,7 +69,7 @@ declare module googleapis.coordinate {
             minModifiedTimestampMs?: string;
             pageToken?: string;
             teamId: string;
-        }, callback: (err: any, response: IJobListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJobListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a job. Fields that are set in the job state will be updated. This method supports patch semantics.
          * @params {string} address Job address as newline (Unix) separated string
@@ -99,7 +99,7 @@ declare module googleapis.coordinate {
             teamId: string;
             title?: string;
             resource?: IJob;
-        }, callback: (err: any, response: IJob) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a job. Fields that are set in the job state will be updated.
          * @params {string} address Job address as newline (Unix) separated string
@@ -129,7 +129,7 @@ declare module googleapis.coordinate {
             teamId: string;
             title?: string;
             resource?: IJob;
-        }, callback: (err: any, response: IJob) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var location: {
         /**
@@ -146,7 +146,7 @@ declare module googleapis.coordinate {
             startTimestampMs: string;
             teamId: string;
             workerEmail: string;
-        }, callback: (err: any, response: ILocationListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILocationListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var schedule: {
         /**
@@ -157,7 +157,7 @@ declare module googleapis.coordinate {
         get: (params: {
             jobId: string;
             teamId: string;
-        }, callback: (err: any, response: ISchedule) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISchedule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Replaces the schedule of a job with the provided schedule. This method supports patch semantics.
          * @params {boolean} allDay Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.
@@ -175,7 +175,7 @@ declare module googleapis.coordinate {
             startTime?: string;
             teamId: string;
             resource?: ISchedule;
-        }, callback: (err: any, response: ISchedule) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISchedule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Replaces the schedule of a job with the provided schedule.
          * @params {boolean} allDay Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.
@@ -193,7 +193,7 @@ declare module googleapis.coordinate {
             startTime?: string;
             teamId: string;
             resource?: ISchedule;
-        }, callback: (err: any, response: ISchedule) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISchedule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var worker: {
         /**
@@ -202,7 +202,7 @@ declare module googleapis.coordinate {
          */
         list: (params: {
             teamId: string;
-        }, callback: (err: any, response: IWorkerListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IWorkerListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Custom field.

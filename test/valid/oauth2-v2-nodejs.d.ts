@@ -12,13 +12,14 @@ declare module "googleapis" {
  * Lets you access OAuth2 protocol related APIs.
  */
 declare module googleapis.oauth2 {
+    var _tmp: {};
     var userinfo: {
         get: (params: {
-        }, callback: (err: any, response: IUserinfoplus) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUserinfoplus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         v2: {
             me: {
                 get: (params: {
-                }, callback: (err: any, response: IUserinfoplus) => void) => void;
+                }, callback: (err: IErrorResponse, response: IUserinfoplus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
     };

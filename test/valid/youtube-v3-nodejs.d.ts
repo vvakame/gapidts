@@ -24,7 +24,7 @@ The part names that you can include in the parameter value are snippet and conte
         insert: (params: {
             part: string;
             resource?: IActivity;
-        }, callback: (err: any, response: IActivity) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns a list of channel activity events that match the request criteria. For example, you can retrieve events associated with a particular channel, events associated with the user's subscriptions and Google+ friends, or the YouTube home page feed, which is customized for each user.
          * @params {string} channelId The channelId parameter specifies a unique YouTube channel ID. The API will then return a list of that channel's activities.
@@ -49,7 +49,7 @@ If the parameter identifies a property that contains child properties, the child
             publishedAfter?: string;
             publishedBefore?: string;
             regionCode?: string;
-        }, callback: (err: any, response: IActivityListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivityListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channelBanners: {
         /**
@@ -65,7 +65,7 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
         insert: (params: {
             onBehalfOfContentOwner?: string;
             resource?: IChannelBannerResource;
-        }, callback: (err: any, response: IChannelBannerResource) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannelBannerResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channelSections: {
         /**
@@ -74,7 +74,7 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a channelSection for the authenticated user's channel.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -94,7 +94,7 @@ The part names that you can include in the parameter value are snippet and conte
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             resource?: IChannelSection;
-        }, callback: (err: any, response: IChannelSection) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannelSection, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns channelSection resources that match the API request criteria.
          * @params {string} channelId The channelId parameter specifies a YouTube channel ID. The API will only return that channel's channelSections.
@@ -113,7 +113,7 @@ If the parameter identifies a property that contains child properties, the child
             mine?: boolean;
             onBehalfOfContentOwner?: string;
             part: string;
-        }, callback: (err: any, response: IChannelSectionListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannelSectionListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a channelSection.
          * @params {string} part The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -123,7 +123,7 @@ The part names that you can include in the parameter value are snippet and conte
         update: (params: {
             part: string;
             resource?: IChannelSection;
-        }, callback: (err: any, response: IChannelSection) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannelSection, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channels: {
         /**
@@ -152,7 +152,7 @@ If the parameter identifies a property that contains child properties, the child
             onBehalfOfContentOwner?: string;
             pageToken?: string;
             part: string;
-        }, callback: (err: any, response: IChannelListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannelListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a channel's metadata.
          * @params {string} onBehalfOfContentOwner The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.
@@ -166,7 +166,7 @@ Note that this method will override the existing values for all of the mutable p
             onBehalfOfContentOwner?: string;
             part: string;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var guideCategories: {
         /**
@@ -183,7 +183,7 @@ If the parameter identifies a property that contains child properties, the child
             id?: string;
             part: string;
             regionCode?: string;
-        }, callback: (err: any, response: IGuideCategoryListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGuideCategoryListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var i18nLanguages: {
         /**
@@ -194,7 +194,7 @@ If the parameter identifies a property that contains child properties, the child
         list: (params: {
             hl?: string;
             part: string;
-        }, callback: (err: any, response: II18nLanguageListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: II18nLanguageListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var i18nRegions: {
         /**
@@ -205,7 +205,7 @@ If the parameter identifies a property that contains child properties, the child
         list: (params: {
             hl?: string;
             part: string;
-        }, callback: (err: any, response: II18nRegionListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: II18nRegionListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var liveBroadcasts: {
         /**
@@ -228,7 +228,7 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             streamId?: string;
-        }, callback: (err: any, response: ILiveBroadcast) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Controls the settings for a slate that can be displayed in the broadcast stream.
          * @params {boolean} displaySlate The displaySlate parameter specifies whether the slate is being enabled or disabled.
@@ -257,7 +257,7 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             walltime?: string;
-        }, callback: (err: any, response: ILiveBroadcast) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a broadcast.
          * @params {string} id The id parameter specifies the YouTube live broadcast ID for the resource that is being deleted.
@@ -274,7 +274,7 @@ This parameter is intended for YouTube content partners that own and manage many
             id: string;
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a broadcast.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -294,7 +294,7 @@ The part properties that you can include in the parameter value are id, snippet,
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             resource?: ILiveBroadcast;
-        }, callback: (err: any, response: ILiveBroadcast) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns a list of YouTube broadcasts that match the API request parameters.
          * @params {string} broadcastStatus The broadcastStatus parameter filters the API response to only include broadcasts with the specified status.
@@ -321,7 +321,7 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwnerChannel?: string;
             pageToken?: string;
             part: string;
-        }, callback: (err: any, response: ILiveBroadcastListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveBroadcastListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes the status of a YouTube live broadcast and initiates any processes associated with the new status. For example, when you transition a broadcast's status to testing, YouTube starts to transmit video to that broadcast's monitor stream. Before calling this method, you should confirm that the value of the status.streamStatus property for the stream bound to your broadcast is active.
          * @params {string} broadcastStatus The broadcastStatus parameter identifies the state to which the broadcast is changing. Note that to transition a broadcast to either the testing or live state, the status.streamStatus must be active for the stream that the broadcast is bound to.
@@ -342,7 +342,7 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
             part: string;
-        }, callback: (err: any, response: ILiveBroadcast) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a broadcast. For example, you could modify the broadcast settings defined in the liveBroadcast resource's contentDetails object.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -364,7 +364,7 @@ Note that this method will override the existing values for all of the mutable p
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             resource?: ILiveBroadcast;
-        }, callback: (err: any, response: ILiveBroadcast) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var liveStreams: {
         /**
@@ -383,7 +383,7 @@ This parameter is intended for YouTube content partners that own and manage many
             id: string;
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a video stream. The stream enables you to send your video to YouTube, which can then broadcast the video to your audience.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -403,7 +403,7 @@ The part properties that you can include in the parameter value are id, snippet,
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             resource?: ILiveStream;
-        }, callback: (err: any, response: ILiveStream) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveStream, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns a list of video streams that match the API request parameters.
          * @params {string} id The id parameter specifies a comma-separated list of YouTube stream IDs that identify the streams being retrieved. In a liveStream resource, the id property specifies the stream's ID.
@@ -428,7 +428,7 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwnerChannel?: string;
             pageToken?: string;
             part: string;
-        }, callback: (err: any, response: ILiveStreamListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveStreamListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a video stream. If the properties that you want to change cannot be updated, then you need to create a new stream with the proper settings.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -450,7 +450,7 @@ Note that this method will override the existing values for all of the mutable p
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             resource?: ILiveStream;
-        }, callback: (err: any, response: ILiveStream) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILiveStream, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var playlistItems: {
         /**
@@ -459,7 +459,7 @@ Note that this method will override the existing values for all of the mutable p
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a resource to a playlist.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -473,7 +473,7 @@ The part names that you can include in the parameter value are snippet, contentD
             onBehalfOfContentOwner?: string;
             part: string;
             resource?: IPlaylistItem;
-        }, callback: (err: any, response: IPlaylistItem) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlaylistItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns a collection of playlist items that match the API request parameters. You can retrieve all of the playlist items in a specified playlist or retrieve one or more playlist items by their unique IDs.
          * @params {string} id The id parameter specifies a comma-separated list of one or more unique playlist item IDs.
@@ -496,7 +496,7 @@ If the parameter identifies a property that contains child properties, the child
             part: string;
             playlistId?: string;
             videoId?: string;
-        }, callback: (err: any, response: IPlaylistItemListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlaylistItemListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modifies a playlist item. For example, you could update the item's position in the playlist.
          * @params {string} part The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -508,7 +508,7 @@ Note that this method will override the existing values for all of the mutable p
         update: (params: {
             part: string;
             resource?: IPlaylistItem;
-        }, callback: (err: any, response: IPlaylistItem) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlaylistItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var playlists: {
         /**
@@ -521,7 +521,7 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
         delete: (params: {
             id: string;
             onBehalfOfContentOwner?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a playlist.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -541,7 +541,7 @@ The part names that you can include in the parameter value are snippet and statu
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             resource?: IPlaylist;
-        }, callback: (err: any, response: IPlaylist) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlaylist, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns a collection of playlists that match the API request parameters. For example, you can retrieve all playlists that the authenticated user owns, or you can retrieve one or more playlists by their unique IDs.
          * @params {string} channelId This value indicates that the API should only return the specified channel's playlists.
@@ -570,7 +570,7 @@ If the parameter identifies a property that contains child properties, the child
             onBehalfOfContentOwnerChannel?: string;
             pageToken?: string;
             part: string;
-        }, callback: (err: any, response: IPlaylistListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlaylistListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modifies a playlist. For example, you could change a playlist's title, description, or privacy status.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -586,7 +586,7 @@ Note that this method will override the existing values for all of the mutable p
             onBehalfOfContentOwner?: string;
             part: string;
             resource?: IPlaylist;
-        }, callback: (err: any, response: IPlaylist) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlaylist, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var search: {
         /**
@@ -657,7 +657,7 @@ If the parameter identifies a property that contains child properties, the child
             videoLicense?: string;
             videoSyndicated?: string;
             videoType?: string;
-        }, callback: (err: any, response: ISearchListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISearchListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var subscriptions: {
         /**
@@ -666,7 +666,7 @@ If the parameter identifies a property that contains child properties, the child
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a subscription for the authenticated user's channel.
          * @params {string} part The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -676,7 +676,7 @@ The part names that you can include in the parameter value are snippet and conte
         insert: (params: {
             part: string;
             resource?: ISubscription;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns subscription resources that match the API request criteria.
          * @params {string} channelId The channelId parameter specifies a YouTube channel ID. The API will only return that channel's subscriptions.
@@ -711,7 +711,7 @@ If the parameter identifies a property that contains child properties, the child
             order?: string;
             pageToken?: string;
             part: string;
-        }, callback: (err: any, response: ISubscriptionListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscriptionListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var thumbnails: {
         /**
@@ -722,7 +722,7 @@ If the parameter identifies a property that contains child properties, the child
         set: (params: {
             onBehalfOfContentOwner?: string;
             videoId: string;
-        }, callback: (err: any, response: IThumbnailSetResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IThumbnailSetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var videoCategories: {
         /**
@@ -737,7 +737,7 @@ If the parameter identifies a property that contains child properties, the child
             id?: string;
             part: string;
             regionCode?: string;
-        }, callback: (err: any, response: IVideoCategoryListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVideoCategoryListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var videos: {
         /**
@@ -750,7 +750,7 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
         delete: (params: {
             id: string;
             onBehalfOfContentOwner?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the ratings that the authorized user gave to a list of specified videos.
          * @params {string} id The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) for which you are retrieving rating data. In a video resource, the id property specifies the video's ID.
@@ -761,7 +761,7 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
         getRating: (params: {
             id: string;
             onBehalfOfContentOwner?: string;
-        }, callback: (err: any, response: IVideoGetRatingResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVideoGetRatingResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Uploads a video to YouTube and optionally sets the video's metadata.
          * @params {boolean} autoLevels The autoLevels parameter indicates whether YouTube should automatically enhance the video's lighting and color.
@@ -787,7 +787,7 @@ The part names that you can include in the parameter value are snippet, contentD
             part: string;
             stabilize?: boolean;
             resource?: IVideo;
-        }, callback: (err: any, response: IVideo) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVideo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns a list of videos that match the API request parameters.
          * @params {string} chart The chart parameter identifies the chart that you want to retrieve.
@@ -820,7 +820,7 @@ If the parameter identifies a property that contains child properties, the child
             part: string;
             regionCode?: string;
             videoCategoryId?: string;
-        }, callback: (err: any, response: IVideoListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVideoListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a like or dislike rating to a video or remove a rating from a video.
          * @params {string} id The id parameter specifies the YouTube video ID of the video that is being rated or having its rating removed.
@@ -833,7 +833,7 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
             id: string;
             onBehalfOfContentOwner?: string;
             rating: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Updates a video's metadata.
          * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -851,7 +851,7 @@ In addition, not all of those parts contain properties that can be set when sett
             onBehalfOfContentOwner?: string;
             part: string;
             resource?: IVideo;
-        }, callback: (err: any, response: IVideo) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVideo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var watermarks: {
         /**
@@ -863,7 +863,7 @@ In addition, not all of those parts contain properties that can be set when sett
             channelId: string;
             onBehalfOfContentOwner?: string;
             resource?: IInvideoBranding;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Deletes a watermark.
          * @params {string} channelId The channelId parameter specifies a YouTube channel ID for which the watermark is being unset.
@@ -872,7 +872,7 @@ In addition, not all of those parts contain properties that can be set when sett
         unset: (params: {
             channelId: string;
             onBehalfOfContentOwner?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     /**
      * Rights management policy for YouTube resources.

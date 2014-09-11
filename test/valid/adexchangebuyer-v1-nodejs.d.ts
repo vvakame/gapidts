@@ -19,12 +19,12 @@ declare module googleapis.adexchangebuyer {
          */
         get: (params: {
             id: number;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the authenticated user's list of accounts.
          */
         list: (params: {
-        }, callback: (err: any, response: IAccountsList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccountsList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing account. This method supports patch semantics.
          * @params {number} id The account id
@@ -32,7 +32,7 @@ declare module googleapis.adexchangebuyer {
         patch: (params: {
             id: number;
             resource?: IAccount;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing account.
          * @params {number} id The account id
@@ -40,7 +40,7 @@ declare module googleapis.adexchangebuyer {
         update: (params: {
             id: number;
             resource?: IAccount;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var creatives: {
         /**
@@ -53,13 +53,13 @@ declare module googleapis.adexchangebuyer {
             accountId: number;
             adgroupId: string;
             buyerCreativeId: string;
-        }, callback: (err: any, response: ICreative) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICreative, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Submit a new creative.
          */
         insert: (params: {
             resource?: ICreative;
-        }, callback: (err: any, response: ICreative) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICreative, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of the authenticated user's active creatives.
          * @params {number} maxResults Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
@@ -68,7 +68,7 @@ declare module googleapis.adexchangebuyer {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ICreativesList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICreativesList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Configuration data for an Ad Exchange buyer account.

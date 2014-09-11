@@ -25,7 +25,7 @@ declare module googleapis.genomics {
             contig?: string;
             position?: string;
             variantsetId: string;
-        }, callback: (err: any, response: IBeacon) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBeacon, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var callsets: {
         /**
@@ -33,21 +33,21 @@ declare module googleapis.genomics {
          */
         create: (params: {
             resource?: ICallset;
-        }, callback: (err: any, response: ICallset) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICallset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a callset.
          * @params {string} callsetId The ID of the callset to be deleted.
          */
         delete: (params: {
             callsetId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a callset by ID.
          * @params {string} callsetId The ID of the callset.
          */
         get: (params: {
             callsetId: string;
-        }, callback: (err: any, response: ICallset) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICallset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a callset. This method supports patch semantics.
          * @params {string} callsetId The ID of the callset to be updated.
@@ -55,13 +55,13 @@ declare module googleapis.genomics {
         patch: (params: {
             callsetId: string;
             resource?: ICallset;
-        }, callback: (err: any, response: ICallset) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICallset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a list of callsets matching the criteria.
          */
         search: (params: {
             resource?: ISearchCallsetsRequest;
-        }, callback: (err: any, response: ISearchCallsetsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISearchCallsetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a callset.
          * @params {string} callsetId The ID of the callset to be updated.
@@ -69,7 +69,7 @@ declare module googleapis.genomics {
         update: (params: {
             callsetId: string;
             resource?: ICallset;
-        }, callback: (err: any, response: ICallset) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICallset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var datasets: {
         /**
@@ -77,21 +77,21 @@ declare module googleapis.genomics {
          */
         create: (params: {
             resource?: IDataset;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a dataset.
          * @params {string} datasetId The ID of the dataset to be deleted.
          */
         delete: (params: {
             datasetId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a dataset by ID.
          * @params {string} datasetId The ID of the dataset.
          */
         get: (params: {
             datasetId: string;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all datasets.
          * @params {string} maxResults The maximum number of results returned by this request.
@@ -102,7 +102,7 @@ declare module googleapis.genomics {
             maxResults?: string;
             pageToken?: string;
             projectId?: string;
-        }, callback: (err: any, response: IListDatasetsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListDatasetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a dataset. This method supports patch semantics.
          * @params {string} datasetId The ID of the dataset to be updated.
@@ -110,14 +110,14 @@ declare module googleapis.genomics {
         patch: (params: {
             datasetId: string;
             resource?: IDataset;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Undeletes a dataset by restoring a dataset which was deleted via this API. This operation is only possible for a week after the deletion occurred.
          * @params {string} datasetId The ID of the dataset to be undeleted.
          */
         undelete: (params: {
             datasetId: string;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a dataset.
          * @params {string} datasetId The ID of the dataset to be updated.
@@ -125,7 +125,7 @@ declare module googleapis.genomics {
         update: (params: {
             datasetId: string;
             resource?: IDataset;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var experimental: {
         jobs: {
@@ -134,7 +134,7 @@ declare module googleapis.genomics {
              */
             create: (params: {
                 resource?: IExperimentalCreateJobRequest;
-            }, callback: (err: any, response: IExperimentalCreateJobResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExperimentalCreateJobResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var jobs: {
@@ -144,20 +144,20 @@ declare module googleapis.genomics {
          */
         cancel: (params: {
             jobId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a job by ID.
          * @params {string} jobId Required. The ID of the job.
          */
         get: (params: {
             jobId: string;
-        }, callback: (err: any, response: IJob) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a list of jobs matching the criteria.
          */
         search: (params: {
             resource?: ISearchJobsRequest;
-        }, callback: (err: any, response: ISearchJobsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISearchJobsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reads: {
         /**
@@ -165,7 +165,7 @@ declare module googleapis.genomics {
          */
         search: (params: {
             resource?: ISearchReadsRequest;
-        }, callback: (err: any, response: ISearchReadsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISearchReadsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var readsets: {
         /**
@@ -174,26 +174,26 @@ declare module googleapis.genomics {
          */
         delete: (params: {
             readsetId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Exports readsets to a BAM file in Google Cloud Storage. Note that currently there may be some differences between exported BAM files and the original BAM file at the time of import. In particular, comments in the input file header will not be preserved, and some custom tags will be converted to strings.
          */
         export: (params: {
             resource?: IExportReadsetsRequest;
-        }, callback: (err: any, response: IExportReadsetsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IExportReadsetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a readset by ID.
          * @params {string} readsetId The ID of the readset.
          */
         get: (params: {
             readsetId: string;
-        }, callback: (err: any, response: IReadset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReadset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates readsets by asynchronously importing the provided information. Note that currently comments in the input file header are not imported and some custom tags will be converted to strings, rather than preserving tag types. The caller must have WRITE permissions to the dataset.
          */
         import: (params: {
             resource?: IImportReadsetsRequest;
-        }, callback: (err: any, response: IImportReadsetsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IImportReadsetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a readset. This method supports patch semantics.
          * @params {string} readsetId The ID of the readset to be updated. The caller must have WRITE permissions to the dataset associated with this readset.
@@ -201,13 +201,13 @@ declare module googleapis.genomics {
         patch: (params: {
             readsetId: string;
             resource?: IReadset;
-        }, callback: (err: any, response: IReadset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReadset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a list of readsets matching the criteria.
          */
         search: (params: {
             resource?: ISearchReadsetsRequest;
-        }, callback: (err: any, response: ISearchReadsetsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISearchReadsetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a readset.
          * @params {string} readsetId The ID of the readset to be updated. The caller must have WRITE permissions to the dataset associated with this readset.
@@ -215,7 +215,7 @@ declare module googleapis.genomics {
         update: (params: {
             readsetId: string;
             resource?: IReadset;
-        }, callback: (err: any, response: IReadset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReadset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         coveragebuckets: {
             /**
              * Lists fixed width coverage buckets for a readset, each of which correspond to a range of a reference sequence. Each bucket summarizes coverage information across its corresponding genomic range. Coverage is defined as the number of reads which are aligned to a given base in the reference sequence. Coverage buckets are available at various bucket widths, enabling various coverage "zoom levels". The caller must have READ permissions for the target readset.
@@ -235,7 +235,7 @@ declare module googleapis.genomics {
                 "range.sequenceStart"?: string;
                 readsetId: string;
                 targetBucketWidth?: string;
-            }, callback: (err: any, response: IListCoverageBucketsResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListCoverageBucketsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var variants: {
@@ -244,40 +244,40 @@ declare module googleapis.genomics {
          */
         create: (params: {
             resource?: IVariant;
-        }, callback: (err: any, response: IVariant) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVariant, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a variant.
          * @params {string} variantId The ID of the variant to be deleted.
          */
         delete: (params: {
             variantId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Exports variant data to an external destination.
          */
         export: (params: {
             resource?: IExportVariantsRequest;
-        }, callback: (err: any, response: IExportVariantsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IExportVariantsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a variant by ID.
          * @params {string} variantId The ID of the variant.
          */
         get: (params: {
             variantId: string;
-        }, callback: (err: any, response: IVariant) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVariant, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a summary of all the variant data in a variantset.
          * @params {string} variantsetId Required. The ID of the variant set to get variant summary information for.
          */
         getSummary: (params: {
             variantsetId?: string;
-        }, callback: (err: any, response: IGetVariantsSummaryResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGetVariantsSummaryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates variant data by asynchronously importing the provided information.
          */
         import: (params: {
             resource?: IImportVariantsRequest;
-        }, callback: (err: any, response: IImportVariantsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IImportVariantsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a variant. This method supports patch semantics.
          * @params {string} variantId The ID of the variant to be updated..
@@ -285,13 +285,13 @@ declare module googleapis.genomics {
         patch: (params: {
             variantId: string;
             resource?: IVariant;
-        }, callback: (err: any, response: IVariant) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVariant, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a list of variants matching the criteria.
          */
         search: (params: {
             resource?: ISearchVariantsRequest;
-        }, callback: (err: any, response: ISearchVariantsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISearchVariantsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a variant.
          * @params {string} variantId The ID of the variant to be updated..
@@ -299,7 +299,7 @@ declare module googleapis.genomics {
         update: (params: {
             variantId: string;
             resource?: IVariant;
-        }, callback: (err: any, response: IVariant) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVariant, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * A beacon represents whether any variant call in a variantset has a specific allele at a particular position.

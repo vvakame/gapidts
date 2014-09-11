@@ -23,7 +23,7 @@ declare module googleapis.gan {
             advertiserId?: string;
             role: string;
             roleId: string;
-        }, callback: (err: any, response: IAdvertiser) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdvertiser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves data about all advertisers that the requesting advertiser/publisher has access to.
          * @params {string} advertiserCategory Caret(^) delimted list of advertiser categories. Valid categories are defined here: http://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en&answer=107581. Filters out all advertisers not in one of the given advertiser categories. Optional.
@@ -46,7 +46,7 @@ declare module googleapis.gan {
             relationshipStatus?: string;
             role: string;
             roleId: string;
-        }, callback: (err: any, response: IAdvertisers) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdvertisers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var ccOffers: {
         /**
@@ -59,7 +59,7 @@ declare module googleapis.gan {
             advertiser?: string;
             projection?: string;
             publisher: string;
-        }, callback: (err: any, response: ICcOffers) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICcOffers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var events: {
         /**
@@ -102,7 +102,7 @@ declare module googleapis.gan {
             sku?: string;
             status?: string;
             type?: string;
-        }, callback: (err: any, response: IEvents) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvents, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var links: {
         /**
@@ -115,7 +115,7 @@ declare module googleapis.gan {
             linkId: string;
             role: string;
             roleId: string;
-        }, callback: (err: any, response: ILink) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new link.
          * @params {string} role The role of the requester. Valid values: 'advertisers' or 'publishers'.
@@ -125,7 +125,7 @@ declare module googleapis.gan {
             role: string;
             roleId: string;
             resource?: ILink;
-        }, callback: (err: any, response: ILink) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves all links that match the query parameters.
          * @params {string} advertiserId Limits the resulting links to the ones belonging to the listed advertisers.
@@ -160,7 +160,7 @@ declare module googleapis.gan {
             searchText?: string;
             startDateMax?: string;
             startDateMin?: string;
-        }, callback: (err: any, response: ILinks) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var publishers: {
         /**
@@ -173,7 +173,7 @@ declare module googleapis.gan {
             publisherId?: string;
             role: string;
             roleId: string;
-        }, callback: (err: any, response: IPublisher) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPublisher, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves data about all publishers that the requesting advertiser/publisher has access to.
          * @params {number} maxResults Max number of items to return in this page. Optional. Defaults to 20.
@@ -196,7 +196,7 @@ declare module googleapis.gan {
             relationshipStatus?: string;
             role: string;
             roleId: string;
-        }, callback: (err: any, response: IPublishers) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPublishers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
         /**
@@ -231,7 +231,7 @@ declare module googleapis.gan {
             startDate?: string;
             startIndex?: number;
             status?: string;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * An AdvertiserResource.

@@ -29,7 +29,7 @@ declare module googleapis.pagespeedonline {
             screenshot?: boolean;
             strategy?: string;
             url: string;
-        }, callback: (err: any, response: IResult) => void) => void;
+        }, callback: (err: IErrorResponse, response: IResult, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IResult {
         /**

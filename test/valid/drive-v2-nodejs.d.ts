@@ -23,7 +23,7 @@ declare module googleapis.drive {
             includeSubscribed?: boolean;
             maxChangeIdCount?: string;
             startChangeId?: string;
-        }, callback: (err: any, response: IAbout) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAbout, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var apps: {
         /**
@@ -32,7 +32,7 @@ declare module googleapis.drive {
          */
         get: (params: {
             appId: string;
-        }, callback: (err: any, response: IApp) => void) => void;
+        }, callback: (err: IErrorResponse, response: IApp, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a user's installed apps.
          * @params {string} appFilterExtensions A comma-separated list of file extensions for open with filtering. All apps within the given app query scope which can open any of the given file extensions will be included in the response. If appFilterMimeTypes are provided as well, the result is a union of the two resulting app lists.
@@ -43,7 +43,7 @@ declare module googleapis.drive {
             appFilterExtensions?: string;
             appFilterMimeTypes?: string;
             languageCode?: string;
-        }, callback: (err: any, response: IAppList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAppList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var changes: {
         /**
@@ -52,7 +52,7 @@ declare module googleapis.drive {
          */
         get: (params: {
             changeId: string;
-        }, callback: (err: any, response: IChange) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChange, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the changes for a user.
          * @params {boolean} includeDeleted Whether to include deleted items.
@@ -67,7 +67,7 @@ declare module googleapis.drive {
             maxResults?: number;
             pageToken?: string;
             startChangeId?: string;
-        }, callback: (err: any, response: IChangeList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChangeList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Subscribe to changes for a user.
          * @params {boolean} includeDeleted Whether to include deleted items.
@@ -83,7 +83,7 @@ declare module googleapis.drive {
             pageToken?: string;
             startChangeId?: string;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channels: {
         /**
@@ -91,7 +91,7 @@ declare module googleapis.drive {
          */
         stop: (params: {
             resource?: IChannel;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var children: {
         /**
@@ -102,7 +102,7 @@ declare module googleapis.drive {
         delete: (params: {
             childId: string;
             folderId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific child reference.
          * @params {string} childId The ID of the child.
@@ -111,7 +111,7 @@ declare module googleapis.drive {
         get: (params: {
             childId: string;
             folderId: string;
-        }, callback: (err: any, response: IChildReference) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChildReference, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a file into a folder.
          * @params {string} folderId The ID of the folder.
@@ -119,7 +119,7 @@ declare module googleapis.drive {
         insert: (params: {
             folderId: string;
             resource?: IChildReference;
-        }, callback: (err: any, response: IChildReference) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChildReference, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a folder's children.
          * @params {string} folderId The ID of the folder.
@@ -132,7 +132,7 @@ declare module googleapis.drive {
             maxResults?: number;
             pageToken?: string;
             q?: string;
-        }, callback: (err: any, response: IChildList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChildList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
         /**
@@ -143,7 +143,7 @@ declare module googleapis.drive {
         delete: (params: {
             commentId: string;
             fileId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a comment by ID.
          * @params {string} commentId The ID of the comment.
@@ -154,7 +154,7 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             includeDeleted?: boolean;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new comment on the given file.
          * @params {string} fileId The ID of the file.
@@ -162,7 +162,7 @@ declare module googleapis.drive {
         insert: (params: {
             fileId: string;
             resource?: IComment;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a file's comments.
          * @params {string} fileId The ID of the file.
@@ -177,7 +177,7 @@ declare module googleapis.drive {
             maxResults?: number;
             pageToken?: string;
             updatedMin?: string;
-        }, callback: (err: any, response: ICommentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing comment. This method supports patch semantics.
          * @params {string} commentId The ID of the comment.
@@ -187,7 +187,7 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             resource?: IComment;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing comment.
          * @params {string} commentId The ID of the comment.
@@ -197,7 +197,7 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             resource?: IComment;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var files: {
         /**
@@ -221,19 +221,19 @@ declare module googleapis.drive {
             timedTextTrackName?: string;
             visibility?: string;
             resource?: IFile;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Permanently deletes a file by ID. Skips the trash.
          * @params {string} fileId The ID of the file to delete.
          */
         delete: (params: {
             fileId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Permanently deletes all of the user's trashed files.
          */
         emptyTrash: (params: {
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a file's metadata by ID.
          * @params {string} fileId The ID for the file in question.
@@ -244,7 +244,7 @@ declare module googleapis.drive {
             fileId: string;
             projection?: string;
             updateViewedDate?: boolean;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Insert a new file.
          * @params {boolean} convert Whether to convert this file to the corresponding Google Docs format.
@@ -266,7 +266,7 @@ declare module googleapis.drive {
             useContentAsIndexableText?: boolean;
             visibility?: string;
             resource?: IFile;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the user's files.
          * @params {string} corpus The body of items (files/documents) to which the query applies.
@@ -281,7 +281,7 @@ declare module googleapis.drive {
             pageToken?: string;
             projection?: string;
             q?: string;
-        }, callback: (err: any, response: IFileList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFileList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates file metadata and/or content. This method supports patch semantics.
          * @params {string} addParents Comma-separated list of parent IDs to add.
@@ -313,28 +313,28 @@ declare module googleapis.drive {
             updateViewedDate?: boolean;
             useContentAsIndexableText?: boolean;
             resource?: IFile;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Set the file's updated time to the current server time.
          * @params {string} fileId The ID of the file to update.
          */
         touch: (params: {
             fileId: string;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Moves a file to the trash.
          * @params {string} fileId The ID of the file to trash.
          */
         trash: (params: {
             fileId: string;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Restores a file from the trash.
          * @params {string} fileId The ID of the file to untrash.
          */
         untrash: (params: {
             fileId: string;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates file metadata and/or content.
          * @params {string} addParents Comma-separated list of parent IDs to add.
@@ -366,7 +366,7 @@ declare module googleapis.drive {
             updateViewedDate?: boolean;
             useContentAsIndexableText?: boolean;
             resource?: IFile;
-        }, callback: (err: any, response: IFile) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Subscribe to changes on a file
          * @params {string} fileId The ID for the file in question.
@@ -378,7 +378,7 @@ declare module googleapis.drive {
             projection?: string;
             updateViewedDate?: boolean;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var parents: {
         /**
@@ -389,7 +389,7 @@ declare module googleapis.drive {
         delete: (params: {
             fileId: string;
             parentId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific parent reference.
          * @params {string} fileId The ID of the file.
@@ -398,7 +398,7 @@ declare module googleapis.drive {
         get: (params: {
             fileId: string;
             parentId: string;
-        }, callback: (err: any, response: IParentReference) => void) => void;
+        }, callback: (err: IErrorResponse, response: IParentReference, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a parent folder for a file.
          * @params {string} fileId The ID of the file.
@@ -406,14 +406,14 @@ declare module googleapis.drive {
         insert: (params: {
             fileId: string;
             resource?: IParentReference;
-        }, callback: (err: any, response: IParentReference) => void) => void;
+        }, callback: (err: IErrorResponse, response: IParentReference, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a file's parents.
          * @params {string} fileId The ID of the file.
          */
         list: (params: {
             fileId: string;
-        }, callback: (err: any, response: IParentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IParentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var permissions: {
         /**
@@ -424,7 +424,7 @@ declare module googleapis.drive {
         delete: (params: {
             fileId: string;
             permissionId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a permission by ID.
          * @params {string} fileId The ID for the file.
@@ -433,14 +433,14 @@ declare module googleapis.drive {
         get: (params: {
             fileId: string;
             permissionId: string;
-        }, callback: (err: any, response: IPermission) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPermission, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the permission ID for an email address.
          * @params {string} email The email address for which to return a permission ID
          */
         getIdForEmail: (params: {
             email: string;
-        }, callback: (err: any, response: IPermissionId) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPermissionId, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a permission for a file.
          * @params {string} emailMessage A custom message to include in notification emails.
@@ -452,14 +452,14 @@ declare module googleapis.drive {
             fileId: string;
             sendNotificationEmails?: boolean;
             resource?: IPermission;
-        }, callback: (err: any, response: IPermission) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPermission, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a file's permissions.
          * @params {string} fileId The ID for the file.
          */
         list: (params: {
             fileId: string;
-        }, callback: (err: any, response: IPermissionList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPermissionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a permission. This method supports patch semantics.
          * @params {string} fileId The ID for the file.
@@ -471,7 +471,7 @@ declare module googleapis.drive {
             permissionId: string;
             transferOwnership?: boolean;
             resource?: IPermission;
-        }, callback: (err: any, response: IPermission) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPermission, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a permission.
          * @params {string} fileId The ID for the file.
@@ -483,7 +483,7 @@ declare module googleapis.drive {
             permissionId: string;
             transferOwnership?: boolean;
             resource?: IPermission;
-        }, callback: (err: any, response: IPermission) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPermission, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var properties: {
         /**
@@ -496,7 +496,7 @@ declare module googleapis.drive {
             fileId: string;
             propertyKey: string;
             visibility?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a property by its key.
          * @params {string} fileId The ID of the file.
@@ -507,7 +507,7 @@ declare module googleapis.drive {
             fileId: string;
             propertyKey: string;
             visibility?: string;
-        }, callback: (err: any, response: IProperty) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a property to a file.
          * @params {string} fileId The ID of the file.
@@ -515,14 +515,14 @@ declare module googleapis.drive {
         insert: (params: {
             fileId: string;
             resource?: IProperty;
-        }, callback: (err: any, response: IProperty) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a file's properties.
          * @params {string} fileId The ID of the file.
          */
         list: (params: {
             fileId: string;
-        }, callback: (err: any, response: IPropertyList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPropertyList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a property. This method supports patch semantics.
          * @params {string} fileId The ID of the file.
@@ -534,7 +534,7 @@ declare module googleapis.drive {
             propertyKey: string;
             visibility?: string;
             resource?: IProperty;
-        }, callback: (err: any, response: IProperty) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a property.
          * @params {string} fileId The ID of the file.
@@ -546,7 +546,7 @@ declare module googleapis.drive {
             propertyKey: string;
             visibility?: string;
             resource?: IProperty;
-        }, callback: (err: any, response: IProperty) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var realtime: {
         /**
@@ -557,7 +557,7 @@ declare module googleapis.drive {
         get: (params: {
             fileId: string;
             revision?: number;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Overwrites the Realtime API data model associated with this file with the provided JSON data model.
          * @params {string} baseRevision The revision of the model to diff the uploaded model against. If set, the uploaded model is diffed against the provided revision and those differences are merged with any changes made to the model after the provided revision. If not set, the uploaded model replaces the current model on the server.
@@ -566,7 +566,7 @@ declare module googleapis.drive {
         update: (params: {
             baseRevision?: string;
             fileId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var replies: {
         /**
@@ -579,7 +579,7 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             replyId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a reply.
          * @params {string} commentId The ID of the comment.
@@ -592,7 +592,7 @@ declare module googleapis.drive {
             fileId: string;
             includeDeleted?: boolean;
             replyId: string;
-        }, callback: (err: any, response: ICommentReply) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentReply, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new reply to the given comment.
          * @params {string} commentId The ID of the comment.
@@ -602,7 +602,7 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             resource?: ICommentReply;
-        }, callback: (err: any, response: ICommentReply) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentReply, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all of the replies to a comment.
          * @params {string} commentId The ID of the comment.
@@ -617,7 +617,7 @@ declare module googleapis.drive {
             includeDeleted?: boolean;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ICommentReplyList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentReplyList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing reply. This method supports patch semantics.
          * @params {string} commentId The ID of the comment.
@@ -629,7 +629,7 @@ declare module googleapis.drive {
             fileId: string;
             replyId: string;
             resource?: ICommentReply;
-        }, callback: (err: any, response: ICommentReply) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentReply, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing reply.
          * @params {string} commentId The ID of the comment.
@@ -641,7 +641,7 @@ declare module googleapis.drive {
             fileId: string;
             replyId: string;
             resource?: ICommentReply;
-        }, callback: (err: any, response: ICommentReply) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentReply, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var revisions: {
         /**
@@ -652,7 +652,7 @@ declare module googleapis.drive {
         delete: (params: {
             fileId: string;
             revisionId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific revision.
          * @params {string} fileId The ID of the file.
@@ -661,14 +661,14 @@ declare module googleapis.drive {
         get: (params: {
             fileId: string;
             revisionId: string;
-        }, callback: (err: any, response: IRevision) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRevision, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a file's revisions.
          * @params {string} fileId The ID of the file.
          */
         list: (params: {
             fileId: string;
-        }, callback: (err: any, response: IRevisionList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRevisionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a revision. This method supports patch semantics.
          * @params {string} fileId The ID for the file.
@@ -678,7 +678,7 @@ declare module googleapis.drive {
             fileId: string;
             revisionId: string;
             resource?: IRevision;
-        }, callback: (err: any, response: IRevision) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRevision, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a revision.
          * @params {string} fileId The ID for the file.
@@ -688,7 +688,7 @@ declare module googleapis.drive {
             fileId: string;
             revisionId: string;
             resource?: IRevision;
-        }, callback: (err: any, response: IRevision) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRevision, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * An item with user information and settings.

@@ -19,7 +19,7 @@ declare module googleapis.webfonts {
          */
         list: (params: {
             sort?: string;
-        }, callback: (err: any, response: IWebfontList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IWebfontList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IWebfont {
         /**

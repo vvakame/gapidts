@@ -18,13 +18,13 @@ declare module googleapis.doubleclickbidmanager {
          */
         downloadlineitems: (params: {
             resource?: IDownloadLineItemsRequest;
-        }, callback: (err: any, response: IDownloadLineItemsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDownloadLineItemsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Uploads line items in CSV format.
          */
         uploadlineitems: (params: {
             resource?: IUploadLineItemsRequest;
-        }, callback: (err: any, response: IUploadLineItemsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUploadLineItemsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var queries: {
         /**
@@ -32,26 +32,26 @@ declare module googleapis.doubleclickbidmanager {
          */
         createquery: (params: {
             resource?: IQuery;
-        }, callback: (err: any, response: IQuery) => void) => void;
+        }, callback: (err: IErrorResponse, response: IQuery, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a stored query as well as the associated stored reports.
          * @params {string} queryId Query ID to delete.
          */
         deletequery: (params: {
             queryId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a stored query.
          * @params {string} queryId Query ID to retrieve.
          */
         getquery: (params: {
             queryId: string;
-        }, callback: (err: any, response: IQuery) => void) => void;
+        }, callback: (err: IErrorResponse, response: IQuery, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves stored queries.
          */
         listqueries: (params: {
-        }, callback: (err: any, response: IListQueriesResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListQueriesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Runs a stored query to generate a report.
          * @params {string} queryId Query ID to run.
@@ -59,7 +59,7 @@ declare module googleapis.doubleclickbidmanager {
         runquery: (params: {
             queryId: string;
             resource?: IRunQueryRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var reports: {
         /**
@@ -68,7 +68,7 @@ declare module googleapis.doubleclickbidmanager {
          */
         listreports: (params: {
             queryId: string;
-        }, callback: (err: any, response: IListReportsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListReportsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Request to fetch stored line items.

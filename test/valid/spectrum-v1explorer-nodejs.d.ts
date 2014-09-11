@@ -18,37 +18,37 @@ declare module googleapis.spectrum {
          */
         getSpectrum: (params: {
             resource?: IPawsGetSpectrumRequest;
-        }, callback: (err: any, response: IPawsGetSpectrumResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPawsGetSpectrumResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * The Google Spectrum Database does not support batch requests, so this method always yields an UNIMPLEMENTED error.
          */
         getSpectrumBatch: (params: {
             resource?: IPawsGetSpectrumBatchRequest;
-        }, callback: (err: any, response: IPawsGetSpectrumBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPawsGetSpectrumBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Initializes the connection between a white space device and the database.
          */
         init: (params: {
             resource?: IPawsInitRequest;
-        }, callback: (err: any, response: IPawsInitResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPawsInitResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Notifies the database that the device has selected certain frequency ranges for transmission. Only to be invoked when required by the regulator. The Google Spectrum Database does not operate in domains that require notification, so this always yields an UNIMPLEMENTED error.
          */
         notifySpectrumUse: (params: {
             resource?: IPawsNotifySpectrumUseRequest;
-        }, callback: (err: any, response: IPawsNotifySpectrumUseResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPawsNotifySpectrumUseResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * The Google Spectrum Database implements registration in the getSpectrum method. As such this always returns an UNIMPLEMENTED error.
          */
         register: (params: {
             resource?: IPawsRegisterRequest;
-        }, callback: (err: any, response: IPawsRegisterResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPawsRegisterResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Validates a device for white space use in accordance with regulatory rules. The Google Spectrum Database does not support master/slave configurations, so this always yields an UNIMPLEMENTED error.
          */
         verifyDevice: (params: {
             resource?: IPawsVerifyDeviceRequest;
-        }, callback: (err: any, response: IPawsVerifyDeviceResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPawsVerifyDeviceResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Antenna characteristics provide additional information, such as the antenna height, antenna type, etc. Whether antenna characteristics must be provided in a request depends on the device type and regulatory domain.

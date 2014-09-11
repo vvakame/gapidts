@@ -19,20 +19,20 @@ declare module googleapis.siteVerification {
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get the most current data for a website or domain.
          * @params {string} id The id of a verified site or domain.
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: ISiteVerificationWebResourceResource) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a verification token for placing on a website or domain.
          */
         getToken: (params: {
             resource?: ISiteVerificationWebResourceGettokenRequest;
-        }, callback: (err: any, response: ISiteVerificationWebResourceGettokenResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceGettokenResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Attempt verification of a website or domain.
          * @params {string} verificationMethod The method to use for verifying a site or domain.
@@ -40,12 +40,12 @@ declare module googleapis.siteVerification {
         insert: (params: {
             verificationMethod: string;
             resource?: ISiteVerificationWebResourceResource;
-        }, callback: (err: any, response: ISiteVerificationWebResourceResource) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get the list of your verified websites and domains.
          */
         list: (params: {
-        }, callback: (err: any, response: ISiteVerificationWebResourceListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modify the list of owners for your website or domain. This method supports patch semantics.
          * @params {string} id The id of a verified site or domain.
@@ -53,7 +53,7 @@ declare module googleapis.siteVerification {
         patch: (params: {
             id: string;
             resource?: ISiteVerificationWebResourceResource;
-        }, callback: (err: any, response: ISiteVerificationWebResourceResource) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modify the list of owners for your website or domain.
          * @params {string} id The id of a verified site or domain.
@@ -61,7 +61,7 @@ declare module googleapis.siteVerification {
         update: (params: {
             id: string;
             resource?: ISiteVerificationWebResourceResource;
-        }, callback: (err: any, response: ISiteVerificationWebResourceResource) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface ISiteVerificationWebResourceGettokenRequest {
         /**

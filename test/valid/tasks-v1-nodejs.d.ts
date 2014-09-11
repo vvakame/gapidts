@@ -19,20 +19,20 @@ declare module googleapis.tasks {
          */
         delete: (params: {
             tasklist: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the authenticated user's specified task list.
          * @params {string} tasklist Task list identifier.
          */
         get: (params: {
             tasklist: string;
-        }, callback: (err: any, response: ITaskList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new task list and adds it to the authenticated user's task lists.
          */
         insert: (params: {
             resource?: ITaskList;
-        }, callback: (err: any, response: ITaskList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns all the authenticated user's task lists.
          * @params {string} maxResults Maximum number of task lists returned on one page. Optional. The default is 100.
@@ -41,7 +41,7 @@ declare module googleapis.tasks {
         list: (params: {
             maxResults?: string;
             pageToken?: string;
-        }, callback: (err: any, response: ITaskLists) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITaskLists, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the authenticated user's specified task list. This method supports patch semantics.
          * @params {string} tasklist Task list identifier.
@@ -49,7 +49,7 @@ declare module googleapis.tasks {
         patch: (params: {
             tasklist: string;
             resource?: ITaskList;
-        }, callback: (err: any, response: ITaskList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the authenticated user's specified task list.
          * @params {string} tasklist Task list identifier.
@@ -57,7 +57,7 @@ declare module googleapis.tasks {
         update: (params: {
             tasklist: string;
             resource?: ITaskList;
-        }, callback: (err: any, response: ITaskList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tasks: {
         /**
@@ -66,7 +66,7 @@ declare module googleapis.tasks {
          */
         clear: (params: {
             tasklist: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Deletes the specified task from the task list.
          * @params {string} task Task identifier.
@@ -75,7 +75,7 @@ declare module googleapis.tasks {
         delete: (params: {
             task: string;
             tasklist: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the specified task.
          * @params {string} task Task identifier.
@@ -84,7 +84,7 @@ declare module googleapis.tasks {
         get: (params: {
             task: string;
             tasklist: string;
-        }, callback: (err: any, response: ITask) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new task on the specified task list.
          * @params {string} parent Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.
@@ -96,7 +96,7 @@ declare module googleapis.tasks {
             previous?: string;
             tasklist: string;
             resource?: ITask;
-        }, callback: (err: any, response: ITask) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns all tasks in the specified task list.
          * @params {string} completedMax Upper bound for a task's completion date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by completion date.
@@ -123,7 +123,7 @@ declare module googleapis.tasks {
             showHidden?: boolean;
             tasklist: string;
             updatedMin?: string;
-        }, callback: (err: any, response: ITasks) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITasks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.
          * @params {string} parent New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.
@@ -136,7 +136,7 @@ declare module googleapis.tasks {
             previous?: string;
             task: string;
             tasklist: string;
-        }, callback: (err: any, response: ITask) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the specified task. This method supports patch semantics.
          * @params {string} task Task identifier.
@@ -146,7 +146,7 @@ declare module googleapis.tasks {
             task: string;
             tasklist: string;
             resource?: ITask;
-        }, callback: (err: any, response: ITask) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the specified task.
          * @params {string} task Task identifier.
@@ -156,7 +156,7 @@ declare module googleapis.tasks {
             task: string;
             tasklist: string;
             resource?: ITask;
-        }, callback: (err: any, response: ITask) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface ITask {
         /**

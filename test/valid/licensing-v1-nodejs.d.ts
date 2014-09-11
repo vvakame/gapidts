@@ -23,7 +23,7 @@ declare module googleapis.licensing {
             productId: string;
             skuId: string;
             userId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get license assignment of a particular product and sku for a user
          * @params {string} productId Name for product
@@ -34,7 +34,7 @@ declare module googleapis.licensing {
             productId: string;
             skuId: string;
             userId: string;
-        }, callback: (err: any, response: ILicenseAssignment) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILicenseAssignment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Assign License.
          * @params {string} productId Name for product
@@ -44,7 +44,7 @@ declare module googleapis.licensing {
             productId: string;
             skuId: string;
             resource?: ILicenseAssignmentInsert;
-        }, callback: (err: any, response: ILicenseAssignment) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILicenseAssignment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List license assignments for given product of the customer.
          * @params {string} customerId CustomerId represents the customer for whom licenseassignments are queried
@@ -57,7 +57,7 @@ declare module googleapis.licensing {
             maxResults?: number;
             pageToken?: string;
             productId: string;
-        }, callback: (err: any, response: ILicenseAssignmentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILicenseAssignmentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List license assignments for given product and sku of the customer.
          * @params {string} customerId CustomerId represents the customer for whom licenseassignments are queried
@@ -72,7 +72,7 @@ declare module googleapis.licensing {
             pageToken?: string;
             productId: string;
             skuId: string;
-        }, callback: (err: any, response: ILicenseAssignmentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILicenseAssignmentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Assign License. This method supports patch semantics.
          * @params {string} productId Name for product
@@ -84,7 +84,7 @@ declare module googleapis.licensing {
             skuId: string;
             userId: string;
             resource?: ILicenseAssignment;
-        }, callback: (err: any, response: ILicenseAssignment) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILicenseAssignment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Assign License.
          * @params {string} productId Name for product
@@ -96,7 +96,7 @@ declare module googleapis.licensing {
             skuId: string;
             userId: string;
             resource?: ILicenseAssignment;
-        }, callback: (err: any, response: ILicenseAssignment) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILicenseAssignment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Template for LiscenseAssignment Resource

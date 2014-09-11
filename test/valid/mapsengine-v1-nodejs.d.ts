@@ -19,7 +19,7 @@ declare module googleapis.mapsengine {
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: IAsset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAsset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all assets readable by the current user.
          * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -50,7 +50,7 @@ declare module googleapis.mapsengine {
             search?: string;
             tags?: string;
             type?: string;
-        }, callback: (err: any, response: IAssetsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAssetsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         parents: {
             /**
              * Return all parent ids of the specified asset.
@@ -62,7 +62,7 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IParentsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var layers: {
@@ -72,7 +72,7 @@ declare module googleapis.mapsengine {
          */
         cancelProcessing: (params: {
             id: string;
-        }, callback: (err: any, response: IProcessResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a layer asset.
          * @params {boolean} process Whether to queue the created layer for processing.
@@ -80,14 +80,14 @@ declare module googleapis.mapsengine {
         create: (params: {
             process?: boolean;
             resource?: ILayer;
-        }, callback: (err: any, response: ILayer) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILayer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a layer.
          * @params {string} id The ID of the layer. Only the layer creator or project owner are permitted to delete. If the layer is published, or included in a map, the request will fail. Unpublish the layer, and remove it from all maps prior to deleting.
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a particular layer.
          * @params {string} id The ID of the layer.
@@ -96,7 +96,7 @@ declare module googleapis.mapsengine {
         get: (params: {
             id: string;
             version?: string;
-        }, callback: (err: any, response: ILayer) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILayer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all layers readable by the current user.
          * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -127,7 +127,7 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
-        }, callback: (err: any, response: ILayersListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILayersListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a layer asset.
          * @params {string} id The ID of the layer.
@@ -135,14 +135,14 @@ declare module googleapis.mapsengine {
         patch: (params: {
             id: string;
             resource?: ILayer;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Process a layer asset.
          * @params {string} id The ID of the layer.
          */
         process: (params: {
             id: string;
-        }, callback: (err: any, response: IProcessResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Publish a layer asset.
          * @params {boolean} force If set to true, the API will allow publication of the layer even if it's out of date. If not true, you'll need to reprocess any out-of-date layer before publishing.
@@ -151,14 +151,14 @@ declare module googleapis.mapsengine {
         publish: (params: {
             force?: boolean;
             id: string;
-        }, callback: (err: any, response: IPublishResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPublishResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Unpublish a layer asset.
          * @params {string} id The ID of the layer.
          */
         unpublish: (params: {
             id: string;
-        }, callback: (err: any, response: IPublishResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPublishResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         parents: {
             /**
              * Return all parent ids of the specified layer.
@@ -170,7 +170,7 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IParentsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var maps: {
@@ -179,14 +179,14 @@ declare module googleapis.mapsengine {
          */
         create: (params: {
             resource?: IMap;
-        }, callback: (err: any, response: IMap) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMap, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a map.
          * @params {string} id The ID of the map. Only the map creator or project owner are permitted to delete. If the map is published the request will fail. Unpublish the map prior to deleting.
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a particular map.
          * @params {string} id The ID of the map.
@@ -195,7 +195,7 @@ declare module googleapis.mapsengine {
         get: (params: {
             id: string;
             version?: string;
-        }, callback: (err: any, response: IMap) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMap, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all maps readable by the current user.
          * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -226,7 +226,7 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
-        }, callback: (err: any, response: IMapsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMapsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a map asset.
          * @params {string} id The ID of the map.
@@ -234,7 +234,7 @@ declare module googleapis.mapsengine {
         patch: (params: {
             id: string;
             resource?: IMap;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Publish a map asset.
          * @params {boolean} force If set to true, the API will allow publication of the map even if it's out of date. If false, the map must have a processingStatus of complete before publishing.
@@ -243,21 +243,21 @@ declare module googleapis.mapsengine {
         publish: (params: {
             force?: boolean;
             id: string;
-        }, callback: (err: any, response: IPublishResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPublishResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Unpublish a map asset.
          * @params {string} id The ID of the map.
          */
         unpublish: (params: {
             id: string;
-        }, callback: (err: any, response: IPublishResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPublishResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var projects: {
         /**
          * Return all projects readable by the current user.
          */
         list: (params: {
-        }, callback: (err: any, response: IProjectsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProjectsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         icons: {
             /**
              * Create an icon.
@@ -266,7 +266,7 @@ declare module googleapis.mapsengine {
             create: (params: {
                 projectId: string;
                 resource?: IIcon;
-            }, callback: (err: any, response: IIcon) => void) => void;
+            }, callback: (err: IErrorResponse, response: IIcon, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Return metadata for a specific icon
              * @params {string} id The ID of the icon.
@@ -275,7 +275,7 @@ declare module googleapis.mapsengine {
             get: (params: {
                 id: string;
                 projectId: string;
-            }, callback: (err: any, response: IIcon) => void) => void;
+            }, callback: (err: IErrorResponse, response: IIcon, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Return all icons in the current project
              * @params {number} maxResults The maximum number of items to include in a single response page. The maximum supported value is 50.
@@ -286,7 +286,7 @@ declare module googleapis.mapsengine {
                 maxResults?: number;
                 pageToken?: string;
                 projectId: string;
-            }, callback: (err: any, response: IIconsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IIconsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var rasterCollections: {
@@ -296,27 +296,27 @@ declare module googleapis.mapsengine {
          */
         cancelProcessing: (params: {
             id: string;
-        }, callback: (err: any, response: IProcessResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a raster collection asset.
          */
         create: (params: {
             resource?: IRasterCollection;
-        }, callback: (err: any, response: IRasterCollection) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRasterCollection, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a raster collection.
          * @params {string} id The ID of the raster collection. Only the raster collection creator or project owner are permitted to delete. If the rastor collection is included in a layer, the request will fail. Remove the raster collection from all layers prior to deleting.
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a particular raster collection.
          * @params {string} id The ID of the raster collection.
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: IRasterCollection) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRasterCollection, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all raster collections readable by the current user.
          * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -347,7 +347,7 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
-        }, callback: (err: any, response: IRasterCollectionsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRasterCollectionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a raster collection asset.
          * @params {string} id The ID of the raster collection.
@@ -355,14 +355,14 @@ declare module googleapis.mapsengine {
         patch: (params: {
             id: string;
             resource?: IRasterCollection;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Process a raster collection asset.
          * @params {string} id The ID of the raster collection.
          */
         process: (params: {
             id: string;
-        }, callback: (err: any, response: IProcessResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         parents: {
             /**
              * Return all parent ids of the specified raster collection.
@@ -374,7 +374,7 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IParentsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         rasters: {
             /**
@@ -386,7 +386,7 @@ declare module googleapis.mapsengine {
             batchDelete: (params: {
                 id: string;
                 resource?: IRasterCollectionsRasterBatchDeleteRequest;
-            }, callback: (err: any, response: IRasterCollectionsRastersBatchDeleteResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IRasterCollectionsRastersBatchDeleteResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Add rasters to an existing raster collection. Rasters must be successfully processed in order to be added to a raster collection.
              * 
@@ -396,7 +396,7 @@ declare module googleapis.mapsengine {
             batchInsert: (params: {
                 id: string;
                 resource?: IRasterCollectionsRastersBatchInsertRequest;
-            }, callback: (err: any, response: IRasterCollectionsRastersBatchInsertResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IRasterCollectionsRastersBatchInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Return all rasters within a raster collection.
              * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -425,7 +425,7 @@ declare module googleapis.mapsengine {
                 role?: string;
                 search?: string;
                 tags?: string;
-            }, callback: (err: any, response: IRasterCollectionsRastersListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IRasterCollectionsRastersListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var rasters: {
@@ -435,14 +435,14 @@ declare module googleapis.mapsengine {
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a single raster.
          * @params {string} id The ID of the raster.
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: IRaster) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRaster, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all rasters readable by the current user.
          * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -473,7 +473,7 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
-        }, callback: (err: any, response: IRastersListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRastersListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a raster asset.
          * @params {string} id The ID of the raster.
@@ -481,20 +481,20 @@ declare module googleapis.mapsengine {
         patch: (params: {
             id: string;
             resource?: IRaster;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Process a raster asset.
          * @params {string} id The ID of the raster.
          */
         process: (params: {
             id: string;
-        }, callback: (err: any, response: IProcessResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a skeleton raster asset for upload.
          */
         upload: (params: {
             resource?: IRaster;
-        }, callback: (err: any, response: IRaster) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRaster, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         files: {
             /**
              * Upload a file to a raster asset.
@@ -504,7 +504,7 @@ declare module googleapis.mapsengine {
             insert: (params: {
                 filename: string;
                 id: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         parents: {
             /**
@@ -517,7 +517,7 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IParentsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var tables: {
@@ -526,14 +526,14 @@ declare module googleapis.mapsengine {
          */
         create: (params: {
             resource?: ITable;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a table.
          * @params {string} id The ID of the table. Only the table creator or project owner are permitted to delete. If the table is included in a layer, the request will fail. Remove it from all layers prior to deleting.
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a particular table, including the schema.
          * @params {string} id The ID of the table.
@@ -542,7 +542,7 @@ declare module googleapis.mapsengine {
         get: (params: {
             id: string;
             version?: string;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all tables readable by the current user.
          * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -573,7 +573,7 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
-        }, callback: (err: any, response: ITablesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITablesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a table asset.
          * @params {string} id The ID of the table.
@@ -581,14 +581,14 @@ declare module googleapis.mapsengine {
         patch: (params: {
             id: string;
             resource?: ITable;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Process a table asset.
          * @params {string} id The ID of the table.
          */
         process: (params: {
             id: string;
-        }, callback: (err: any, response: IProcessResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a placeholder table asset to which table files can be uploaded.
          * Once the placeholder has been created, files are uploaded to the https://www.googleapis.com/upload/mapsengine/v1/tables/table_id/files endpoint.
@@ -596,7 +596,7 @@ declare module googleapis.mapsengine {
          */
         upload: (params: {
             resource?: ITable;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         features: {
             /**
              * Delete all features matching the given IDs.
@@ -605,7 +605,7 @@ declare module googleapis.mapsengine {
             batchDelete: (params: {
                 id: string;
                 resource?: IFeaturesBatchDeleteRequest;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Append features to an existing table.
              * 
@@ -621,7 +621,7 @@ declare module googleapis.mapsengine {
             batchInsert: (params: {
                 id: string;
                 resource?: IFeaturesBatchInsertRequest;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Update the supplied features.
              * 
@@ -643,7 +643,7 @@ declare module googleapis.mapsengine {
             batchPatch: (params: {
                 id: string;
                 resource?: IFeaturesBatchPatchRequest;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Return a single feature, given its ID.
              * @params {string} id The ID of the feature to get.
@@ -656,7 +656,7 @@ declare module googleapis.mapsengine {
                 select?: string;
                 tableId: string;
                 version?: string;
-            }, callback: (err: any, response: IFeature) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFeature, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Return all features readable by the current user.
              * @params {string} id The ID of the table to which these features belong.
@@ -681,7 +681,7 @@ declare module googleapis.mapsengine {
                 select?: string;
                 version?: string;
                 where?: string;
-            }, callback: (err: any, response: IFeaturesListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFeaturesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         files: {
             /**
@@ -693,7 +693,7 @@ declare module googleapis.mapsengine {
             insert: (params: {
                 filename: string;
                 id: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         parents: {
             /**
@@ -706,7 +706,7 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IParentsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     /**

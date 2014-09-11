@@ -21,7 +21,7 @@ declare module googleapis.orkut {
         delete: (params: {
             activityId: string;
             userId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var activities: {
         /**
@@ -30,7 +30,7 @@ declare module googleapis.orkut {
          */
         delete: (params: {
             activityId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a list of activities.
          * @params {string} collection The collection of activities to list.
@@ -45,7 +45,7 @@ declare module googleapis.orkut {
             maxResults?: number;
             pageToken?: string;
             userId: string;
-        }, callback: (err: any, response: IActivityList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivityList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var activityVisibility: {
         /**
@@ -54,7 +54,7 @@ declare module googleapis.orkut {
          */
         get: (params: {
             activityId: string;
-        }, callback: (err: any, response: IVisibility) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVisibility, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the visibility of an existing activity. This method supports patch semantics.
          * @params {string} activityId ID of the activity.
@@ -62,7 +62,7 @@ declare module googleapis.orkut {
         patch: (params: {
             activityId: string;
             resource?: IVisibility;
-        }, callback: (err: any, response: IVisibility) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVisibility, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the visibility of an existing activity.
          * @params {string} activityId ID of the activity.
@@ -70,7 +70,7 @@ declare module googleapis.orkut {
         update: (params: {
             activityId: string;
             resource?: IVisibility;
-        }, callback: (err: any, response: IVisibility) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVisibility, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var badges: {
         /**
@@ -81,14 +81,14 @@ declare module googleapis.orkut {
         get: (params: {
             badgeId: string;
             userId: string;
-        }, callback: (err: any, response: IBadge) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBadge, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of visible badges of a user.
          * @params {string} userId The id of the user whose badges will be listed. Can be me to refer to caller.
          */
         list: (params: {
             userId: string;
-        }, callback: (err: any, response: IBadgeList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBadgeList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
         /**
@@ -97,7 +97,7 @@ declare module googleapis.orkut {
          */
         delete: (params: {
             commentId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves an existing comment.
          * @params {string} commentId ID of the comment to get.
@@ -106,7 +106,7 @@ declare module googleapis.orkut {
         get: (params: {
             commentId: string;
             hl?: string;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new comment to an activity.
          * @params {string} activityId The ID of the activity to contain the new comment.
@@ -114,7 +114,7 @@ declare module googleapis.orkut {
         insert: (params: {
             activityId: string;
             resource?: IComment;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of comments, possibly filtered.
          * @params {string} activityId The ID of the activity containing the comments.
@@ -129,7 +129,7 @@ declare module googleapis.orkut {
             maxResults?: number;
             orderBy?: string;
             pageToken?: string;
-        }, callback: (err: any, response: ICommentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communities: {
         /**
@@ -140,7 +140,7 @@ declare module googleapis.orkut {
         get: (params: {
             communityId: number;
             hl?: string;
-        }, callback: (err: any, response: ICommunity) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of communities the current user is a member of.
          * @params {string} hl Specifies the interface language (host language) of your user interface.
@@ -153,7 +153,7 @@ declare module googleapis.orkut {
             maxResults?: number;
             orderBy?: string;
             userId: string;
-        }, callback: (err: any, response: ICommunityList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityFollow: {
         /**
@@ -164,7 +164,7 @@ declare module googleapis.orkut {
         delete: (params: {
             communityId: number;
             userId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a user as a follower of a community.
          * @params {number} communityId ID of the community.
@@ -173,7 +173,7 @@ declare module googleapis.orkut {
         insert: (params: {
             communityId: number;
             userId: string;
-        }, callback: (err: any, response: ICommunityMembers) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityMembers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityMembers: {
         /**
@@ -184,7 +184,7 @@ declare module googleapis.orkut {
         delete: (params: {
             communityId: number;
             userId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the relationship between a user and a community.
          * @params {number} communityId ID of the community.
@@ -195,7 +195,7 @@ declare module googleapis.orkut {
             communityId: number;
             hl?: string;
             userId: string;
-        }, callback: (err: any, response: ICommunityMembers) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityMembers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Makes the user join a community.
          * @params {number} communityId ID of the community.
@@ -204,7 +204,7 @@ declare module googleapis.orkut {
         insert: (params: {
             communityId: number;
             userId: string;
-        }, callback: (err: any, response: ICommunityMembers) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityMembers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists members of a community. Use the pagination tokens to retrieve the full list; do not rely on the member count available in the community profile information to know when to stop iterating, as that count may be approximate.
          * @params {number} communityId The ID of the community whose members will be listed.
@@ -219,7 +219,7 @@ declare module googleapis.orkut {
             hl?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ICommunityMembersList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityMembersList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityMessages: {
         /**
@@ -232,7 +232,7 @@ declare module googleapis.orkut {
             communityId: number;
             messageId: string;
             topicId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a message to a given community topic.
          * @params {number} communityId The ID of the community the message should be added to.
@@ -242,7 +242,7 @@ declare module googleapis.orkut {
             communityId: number;
             topicId: string;
             resource?: ICommunityMessage;
-        }, callback: (err: any, response: ICommunityMessage) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the messages of a topic of a community.
          * @params {number} communityId The ID of the community which messages will be listed.
@@ -257,7 +257,7 @@ declare module googleapis.orkut {
             maxResults?: number;
             pageToken?: string;
             topicId: string;
-        }, callback: (err: any, response: ICommunityMessageList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityMessageList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityPollComments: {
         /**
@@ -269,7 +269,7 @@ declare module googleapis.orkut {
             communityId: number;
             pollId: string;
             resource?: ICommunityPollComment;
-        }, callback: (err: any, response: ICommunityPollComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityPollComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the comments of a community poll.
          * @params {number} communityId The ID of the community whose poll is having its comments listed.
@@ -284,7 +284,7 @@ declare module googleapis.orkut {
             maxResults?: number;
             pageToken?: string;
             pollId: string;
-        }, callback: (err: any, response: ICommunityPollCommentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityPollCommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityPollVotes: {
         /**
@@ -296,7 +296,7 @@ declare module googleapis.orkut {
             communityId: number;
             pollId: string;
             resource?: ICommunityPollVote;
-        }, callback: (err: any, response: ICommunityPollVote) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityPollVote, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityPolls: {
         /**
@@ -309,7 +309,7 @@ declare module googleapis.orkut {
             communityId: number;
             hl?: string;
             pollId: string;
-        }, callback: (err: any, response: ICommunityPoll) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityPoll, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the polls of a community.
          * @params {number} communityId The ID of the community which polls will be listed.
@@ -322,7 +322,7 @@ declare module googleapis.orkut {
             hl?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ICommunityPollList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityPollList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityRelated: {
         /**
@@ -333,7 +333,7 @@ declare module googleapis.orkut {
         list: (params: {
             communityId: number;
             hl?: string;
-        }, callback: (err: any, response: ICommunityList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityTopics: {
         /**
@@ -344,7 +344,7 @@ declare module googleapis.orkut {
         delete: (params: {
             communityId: number;
             topicId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a topic of a community.
          * @params {number} communityId The ID of the community whose topic will be retrieved.
@@ -355,7 +355,7 @@ declare module googleapis.orkut {
             communityId: number;
             hl?: string;
             topicId: string;
-        }, callback: (err: any, response: ICommunityTopic) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityTopic, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a topic to a given community.
          * @params {number} communityId The ID of the community the topic should be added to.
@@ -365,7 +365,7 @@ declare module googleapis.orkut {
             communityId: number;
             isShout?: boolean;
             resource?: ICommunityTopic;
-        }, callback: (err: any, response: ICommunityTopic) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityTopic, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the topics of a community.
          * @params {number} communityId The ID of the community which topics will be listed.
@@ -378,7 +378,7 @@ declare module googleapis.orkut {
             hl?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ICommunityTopicList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommunityTopicList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var counters: {
         /**
@@ -387,7 +387,7 @@ declare module googleapis.orkut {
          */
         list: (params: {
             userId: string;
-        }, callback: (err: any, response: ICounters) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICounters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var scraps: {
         /**
@@ -395,7 +395,7 @@ declare module googleapis.orkut {
          */
         insert: (params: {
             resource?: IActivity;
-        }, callback: (err: any, response: IActivity) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAcl {
         /**

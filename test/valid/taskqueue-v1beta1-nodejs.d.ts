@@ -23,7 +23,7 @@ declare module googleapis.taskqueue {
             getStats?: boolean;
             project: string;
             taskqueue: string;
-        }, callback: (err: any, response: ITaskQueue) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITaskQueue, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tasks: {
         /**
@@ -36,7 +36,7 @@ declare module googleapis.taskqueue {
             project: string;
             task: string;
             taskqueue: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get a particular task from a TaskQueue.
          * @params {string} project The project under which the queue lies.
@@ -47,7 +47,7 @@ declare module googleapis.taskqueue {
             project: string;
             task: string;
             taskqueue: string;
-        }, callback: (err: any, response: ITask) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lease 1 or more tasks from a TaskQueue.
          * @params {number} leaseSecs The lease in seconds.
@@ -60,7 +60,7 @@ declare module googleapis.taskqueue {
             numTasks: number;
             project: string;
             taskqueue: string;
-        }, callback: (err: any, response: ITasks) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITasks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List Tasks in a TaskQueue
          * @params {string} project The project under which the queue lies.
@@ -69,7 +69,7 @@ declare module googleapis.taskqueue {
         list: (params: {
             project: string;
             taskqueue: string;
-        }, callback: (err: any, response: ITasks2) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITasks2, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface ITask {
         /**

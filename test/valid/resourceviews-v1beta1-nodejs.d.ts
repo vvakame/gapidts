@@ -24,7 +24,7 @@ declare module googleapis.resourceviews {
             region: string;
             resourceViewName: string;
             resource?: IRegionViewsAddResourcesRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Delete a resource view.
          * @params {string} projectName The project name of the resource view.
@@ -35,7 +35,7 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resourceViewName: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get the information of a resource view.
          * @params {string} projectName The project name of the resource view.
@@ -46,7 +46,7 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resourceViewName: string;
-        }, callback: (err: any, response: IResourceView) => void) => void;
+        }, callback: (err: IErrorResponse, response: IResourceView, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a resource view.
          * @params {string} projectName The project name of the resource view.
@@ -56,7 +56,7 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resource?: IResourceView;
-        }, callback: (err: any, response: IRegionViewsInsertResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRegionViewsInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List resource views.
          * @params {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 5000, inclusive. (Default: 5000)
@@ -69,7 +69,7 @@ declare module googleapis.resourceviews {
             pageToken?: string;
             projectName: string;
             region: string;
-        }, callback: (err: any, response: IRegionViewsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRegionViewsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the resources in the view.
          * @params {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 5000, inclusive. (Default: 5000)
@@ -84,7 +84,7 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resourceViewName: string;
-        }, callback: (err: any, response: IRegionViewsListResourcesResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRegionViewsListResourcesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Remove resources from the view.
          * @params {string} projectName The project name of the resource view.
@@ -96,7 +96,7 @@ declare module googleapis.resourceviews {
             region: string;
             resourceViewName: string;
             resource?: IRegionViewsRemoveResourcesRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var zoneViews: {
         /**
@@ -110,7 +110,7 @@ declare module googleapis.resourceviews {
             resourceViewName: string;
             zone: string;
             resource?: IZoneViewsAddResourcesRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Delete a resource view.
          * @params {string} projectName The project name of the resource view.
@@ -121,7 +121,7 @@ declare module googleapis.resourceviews {
             projectName: string;
             resourceViewName: string;
             zone: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get the information of a zonal resource view.
          * @params {string} projectName The project name of the resource view.
@@ -132,7 +132,7 @@ declare module googleapis.resourceviews {
             projectName: string;
             resourceViewName: string;
             zone: string;
-        }, callback: (err: any, response: IResourceView) => void) => void;
+        }, callback: (err: IErrorResponse, response: IResourceView, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a resource view.
          * @params {string} projectName The project name of the resource view.
@@ -142,7 +142,7 @@ declare module googleapis.resourceviews {
             projectName: string;
             zone: string;
             resource?: IResourceView;
-        }, callback: (err: any, response: IZoneViewsInsertResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IZoneViewsInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List resource views.
          * @params {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 5000, inclusive. (Default: 5000)
@@ -155,7 +155,7 @@ declare module googleapis.resourceviews {
             pageToken?: string;
             projectName: string;
             zone: string;
-        }, callback: (err: any, response: IZoneViewsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IZoneViewsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the resources of the resource view.
          * @params {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 5000, inclusive. (Default: 5000)
@@ -170,7 +170,7 @@ declare module googleapis.resourceviews {
             projectName: string;
             resourceViewName: string;
             zone: string;
-        }, callback: (err: any, response: IZoneViewsListResourcesResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IZoneViewsListResourcesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Remove resources from the view.
          * @params {string} projectName The project name of the resource view.
@@ -182,7 +182,7 @@ declare module googleapis.resourceviews {
             resourceViewName: string;
             zone: string;
             resource?: IZoneViewsRemoveResourcesRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     /**
      * The Label to be applied to the resource views.

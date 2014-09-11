@@ -23,7 +23,7 @@ declare module googleapis.bigquery {
             datasetId: string;
             deleteContents?: boolean;
             projectId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the dataset specified by datasetID.
          * @params {string} datasetId Dataset ID of the requested dataset
@@ -32,7 +32,7 @@ declare module googleapis.bigquery {
         get: (params: {
             datasetId: string;
             projectId: string;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new empty dataset.
          * @params {string} projectId Project ID of the new dataset
@@ -40,7 +40,7 @@ declare module googleapis.bigquery {
         insert: (params: {
             projectId: string;
             resource?: IDataset;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all the datasets in the specified project to which the caller has read access; however, a project owner can list (but not necessarily get) all datasets in his project.
          * @params {boolean} all Whether to list all datasets, including hidden ones
@@ -53,7 +53,7 @@ declare module googleapis.bigquery {
             maxResults?: number;
             pageToken?: string;
             projectId: string;
-        }, callback: (err: any, response: IDatasetList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatasetList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource. This method supports patch semantics.
          * @params {string} datasetId Dataset ID of the dataset being updated
@@ -63,7 +63,7 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             resource?: IDataset;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource.
          * @params {string} datasetId Dataset ID of the dataset being updated
@@ -73,7 +73,7 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             resource?: IDataset;
-        }, callback: (err: any, response: IDataset) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var jobs: {
         /**
@@ -84,7 +84,7 @@ declare module googleapis.bigquery {
         get: (params: {
             jobId: string;
             projectId: string;
-        }, callback: (err: any, response: IJob) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the results of a query job.
          * @params {string} jobId Job ID of the query job
@@ -101,7 +101,7 @@ declare module googleapis.bigquery {
             projectId: string;
             startIndex?: string;
             timeoutMs?: number;
-        }, callback: (err: any, response: IGetQueryResultsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGetQueryResultsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Starts a new asynchronous job.
          * @params {string} projectId Project ID of the project that will be billed for the job
@@ -109,7 +109,7 @@ declare module googleapis.bigquery {
         insert: (params: {
             projectId: string;
             resource?: IJob;
-        }, callback: (err: any, response: IJob) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all the Jobs in the specified project that were started by the user. The job list returns in reverse chronological order of when the jobs were created, starting with the most recent job created.
          * @params {boolean} allUsers Whether to display jobs owned by all users in the project. Default false
@@ -126,7 +126,7 @@ declare module googleapis.bigquery {
             projectId: string;
             projection?: string;
             stateFilter?: string;
-        }, callback: (err: any, response: IJobList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IJobList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Runs a BigQuery SQL query synchronously and returns query results if the query completes within a specified timeout.
          * @params {string} projectId Project ID of the project billed for the query
@@ -134,7 +134,7 @@ declare module googleapis.bigquery {
         query: (params: {
             projectId: string;
             resource?: IQueryRequest;
-        }, callback: (err: any, response: IQueryResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IQueryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var projects: {
         /**
@@ -145,7 +145,7 @@ declare module googleapis.bigquery {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IProjectList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProjectList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tabledata: {
         /**
@@ -159,7 +159,7 @@ declare module googleapis.bigquery {
             projectId: string;
             tableId: string;
             resource?: ITableDataInsertAllRequest;
-        }, callback: (err: any, response: ITableDataInsertAllResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITableDataInsertAllResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves table data from a specified set of rows.
          * @params {string} datasetId Dataset ID of the table to read
@@ -176,7 +176,7 @@ declare module googleapis.bigquery {
             projectId: string;
             startIndex?: string;
             tableId: string;
-        }, callback: (err: any, response: ITableDataList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITableDataList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tables: {
         /**
@@ -189,7 +189,7 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             tableId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets the specified table resource by table ID. This method does not return the data in the table, it only returns the table resource, which describes the structure of this table.
          * @params {string} datasetId Dataset ID of the requested table
@@ -200,7 +200,7 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             tableId: string;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new, empty table in the dataset.
          * @params {string} datasetId Dataset ID of the new table
@@ -210,7 +210,7 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             resource?: ITable;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all tables in the specified dataset.
          * @params {string} datasetId Dataset ID of the tables to list
@@ -223,7 +223,7 @@ declare module googleapis.bigquery {
             maxResults?: number;
             pageToken?: string;
             projectId: string;
-        }, callback: (err: any, response: ITableList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITableList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource. This method supports patch semantics.
          * @params {string} datasetId Dataset ID of the table to update
@@ -235,7 +235,7 @@ declare module googleapis.bigquery {
             projectId: string;
             tableId: string;
             resource?: ITable;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource.
          * @params {string} datasetId Dataset ID of the table to update
@@ -247,7 +247,7 @@ declare module googleapis.bigquery {
             projectId: string;
             tableId: string;
             resource?: ITable;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IDataset {
         /**

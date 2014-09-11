@@ -21,7 +21,7 @@ declare module googleapis.fusiontables {
         delete: (params: {
             columnId: string;
             tableId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a specific column by its id.
          * @params {string} columnId Name or identifier for the column that is being requested.
@@ -30,7 +30,7 @@ declare module googleapis.fusiontables {
         get: (params: {
             columnId: string;
             tableId: string;
-        }, callback: (err: any, response: IColumn) => void) => void;
+        }, callback: (err: IErrorResponse, response: IColumn, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a new column to the table.
          * @params {string} tableId Table for which a new column is being added.
@@ -38,7 +38,7 @@ declare module googleapis.fusiontables {
         insert: (params: {
             tableId: string;
             resource?: IColumn;
-        }, callback: (err: any, response: IColumn) => void) => void;
+        }, callback: (err: IErrorResponse, response: IColumn, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of columns.
          * @params {number} maxResults Maximum number of columns to return. Optional. Default is 5.
@@ -49,7 +49,7 @@ declare module googleapis.fusiontables {
             maxResults?: number;
             pageToken?: string;
             tableId: string;
-        }, callback: (err: any, response: IColumnList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IColumnList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the name or type of an existing column. This method supports patch semantics.
          * @params {string} columnId Name or identifier for the column that is being updated.
@@ -59,7 +59,7 @@ declare module googleapis.fusiontables {
             columnId: string;
             tableId: string;
             resource?: IColumn;
-        }, callback: (err: any, response: IColumn) => void) => void;
+        }, callback: (err: IErrorResponse, response: IColumn, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the name or type of an existing column.
          * @params {string} columnId Name or identifier for the column that is being updated.
@@ -69,7 +69,7 @@ declare module googleapis.fusiontables {
             columnId: string;
             tableId: string;
             resource?: IColumn;
-        }, callback: (err: any, response: IColumn) => void) => void;
+        }, callback: (err: IErrorResponse, response: IColumn, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var query: {
         /**
@@ -82,7 +82,7 @@ declare module googleapis.fusiontables {
             hdrs?: boolean;
             sql: string;
             typed?: boolean;
-        }, callback: (err: any, response: ISqlresponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISqlresponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Executes an SQL SELECT/SHOW/DESCRIBE statement.
          * @params {boolean} hdrs Should column names be included (in the first row)?. Default is true.
@@ -93,7 +93,7 @@ declare module googleapis.fusiontables {
             hdrs?: boolean;
             sql: string;
             typed?: boolean;
-        }, callback: (err: any, response: ISqlresponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISqlresponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var style: {
         /**
@@ -104,7 +104,7 @@ declare module googleapis.fusiontables {
         delete: (params: {
             styleId: number;
             tableId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific style.
          * @params {number} styleId Identifier (integer) for a specific style in a table
@@ -113,7 +113,7 @@ declare module googleapis.fusiontables {
         get: (params: {
             styleId: number;
             tableId: string;
-        }, callback: (err: any, response: IStyleSetting) => void) => void;
+        }, callback: (err: IErrorResponse, response: IStyleSetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a new style for the table.
          * @params {string} tableId Table for which a new style is being added
@@ -121,7 +121,7 @@ declare module googleapis.fusiontables {
         insert: (params: {
             tableId: string;
             resource?: IStyleSetting;
-        }, callback: (err: any, response: IStyleSetting) => void) => void;
+        }, callback: (err: IErrorResponse, response: IStyleSetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of styles.
          * @params {number} maxResults Maximum number of styles to return. Optional. Default is 5.
@@ -132,7 +132,7 @@ declare module googleapis.fusiontables {
             maxResults?: number;
             pageToken?: string;
             tableId: string;
-        }, callback: (err: any, response: IStyleSettingList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IStyleSettingList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing style. This method supports patch semantics.
          * @params {number} styleId Identifier (within a table) for the style being updated.
@@ -142,7 +142,7 @@ declare module googleapis.fusiontables {
             styleId: number;
             tableId: string;
             resource?: IStyleSetting;
-        }, callback: (err: any, response: IStyleSetting) => void) => void;
+        }, callback: (err: IErrorResponse, response: IStyleSetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing style.
          * @params {number} styleId Identifier (within a table) for the style being updated.
@@ -152,7 +152,7 @@ declare module googleapis.fusiontables {
             styleId: number;
             tableId: string;
             resource?: IStyleSetting;
-        }, callback: (err: any, response: IStyleSetting) => void) => void;
+        }, callback: (err: IErrorResponse, response: IStyleSetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var table: {
         /**
@@ -163,21 +163,21 @@ declare module googleapis.fusiontables {
         copy: (params: {
             copyPresentation?: boolean;
             tableId: string;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a table.
          * @params {string} tableId ID of the table that is being deleted.
          */
         delete: (params: {
             tableId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a specific table by its id.
          * @params {string} tableId Identifier(ID) for the table being requested.
          */
         get: (params: {
             tableId: string;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Import more rows into a table.
          * @params {string} delimiter The delimiter used to separate cell values. This can only consist of a single character. Default is ','.
@@ -194,7 +194,7 @@ declare module googleapis.fusiontables {
             isStrict?: boolean;
             startLine?: number;
             tableId: string;
-        }, callback: (err: any, response: IImport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IImport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Import a new table.
          * @params {string} delimiter The delimiter used to separate cell values. This can only consist of a single character. Default is ','.
@@ -205,13 +205,13 @@ declare module googleapis.fusiontables {
             delimiter?: string;
             encoding?: string;
             name: string;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new table.
          */
         insert: (params: {
             resource?: ITable;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of tables a user owns.
          * @params {number} maxResults Maximum number of styles to return. Optional. Default is 5.
@@ -220,7 +220,7 @@ declare module googleapis.fusiontables {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ITableList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITableList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing table. Unless explicitly requested, only the name, description, and attribution will be updated. This method supports patch semantics.
          * @params {boolean} replaceViewDefinition Should the view definition also be updated? The specified view definition replaces the existing one. Only a view can be updated with a new definition.
@@ -230,7 +230,7 @@ declare module googleapis.fusiontables {
             replaceViewDefinition?: boolean;
             tableId: string;
             resource?: ITable;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing table. Unless explicitly requested, only the name, description, and attribution will be updated.
          * @params {boolean} replaceViewDefinition Should the view definition also be updated? The specified view definition replaces the existing one. Only a view can be updated with a new definition.
@@ -240,7 +240,7 @@ declare module googleapis.fusiontables {
             replaceViewDefinition?: boolean;
             tableId: string;
             resource?: ITable;
-        }, callback: (err: any, response: ITable) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var task: {
         /**
@@ -251,7 +251,7 @@ declare module googleapis.fusiontables {
         delete: (params: {
             tableId: string;
             taskId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a specific task by its id.
          * @params {string} tableId Table to which the task belongs.
@@ -260,7 +260,7 @@ declare module googleapis.fusiontables {
         get: (params: {
             tableId: string;
             taskId: string;
-        }, callback: (err: any, response: ITask) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of tasks.
          * @params {number} maxResults Maximum number of columns to return. Optional. Default is 5.
@@ -273,7 +273,7 @@ declare module googleapis.fusiontables {
             pageToken?: string;
             startIndex?: number;
             tableId: string;
-        }, callback: (err: any, response: ITaskList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var template: {
         /**
@@ -284,7 +284,7 @@ declare module googleapis.fusiontables {
         delete: (params: {
             tableId: string;
             templateId: number;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a specific template by its id
          * @params {string} tableId Table to which the template belongs
@@ -293,7 +293,7 @@ declare module googleapis.fusiontables {
         get: (params: {
             tableId: string;
             templateId: number;
-        }, callback: (err: any, response: ITemplate) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new template for the table.
          * @params {string} tableId Table for which a new template is being created
@@ -301,7 +301,7 @@ declare module googleapis.fusiontables {
         insert: (params: {
             tableId: string;
             resource?: ITemplate;
-        }, callback: (err: any, response: ITemplate) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of templates.
          * @params {number} maxResults Maximum number of templates to return. Optional. Default is 5.
@@ -312,7 +312,7 @@ declare module googleapis.fusiontables {
             maxResults?: number;
             pageToken?: string;
             tableId: string;
-        }, callback: (err: any, response: ITemplateList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITemplateList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing template. This method supports patch semantics.
          * @params {string} tableId Table to which the updated template belongs
@@ -322,7 +322,7 @@ declare module googleapis.fusiontables {
             tableId: string;
             templateId: number;
             resource?: ITemplate;
-        }, callback: (err: any, response: ITemplate) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing template
          * @params {string} tableId Table to which the updated template belongs
@@ -332,7 +332,7 @@ declare module googleapis.fusiontables {
             tableId: string;
             templateId: number;
             resource?: ITemplate;
-        }, callback: (err: any, response: ITemplate) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Specifies the minimum and maximum values, the color, opacity, icon and weight of a bucket within a StyleSetting.

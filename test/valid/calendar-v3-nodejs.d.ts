@@ -21,7 +21,7 @@ declare module googleapis.calendar {
         delete: (params: {
             calendarId: string;
             ruleId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns an access control rule.
          * @params {string} calendarId Calendar identifier.
@@ -30,7 +30,7 @@ declare module googleapis.calendar {
         get: (params: {
             calendarId: string;
             ruleId: string;
-        }, callback: (err: any, response: IAclRule) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAclRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an access control rule.
          * @params {string} calendarId Calendar identifier.
@@ -38,7 +38,7 @@ declare module googleapis.calendar {
         insert: (params: {
             calendarId: string;
             resource?: IAclRule;
-        }, callback: (err: any, response: IAclRule) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAclRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the rules in the access control list for the calendar.
          * @params {string} calendarId Calendar identifier.
@@ -56,7 +56,7 @@ Optional. The default is to return all entries.
             pageToken?: string;
             showDeleted?: boolean;
             syncToken?: string;
-        }, callback: (err: any, response: IAcl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAcl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an access control rule. This method supports patch semantics.
          * @params {string} calendarId Calendar identifier.
@@ -66,7 +66,7 @@ Optional. The default is to return all entries.
             calendarId: string;
             ruleId: string;
             resource?: IAclRule;
-        }, callback: (err: any, response: IAclRule) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAclRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an access control rule.
          * @params {string} calendarId Calendar identifier.
@@ -76,7 +76,7 @@ Optional. The default is to return all entries.
             calendarId: string;
             ruleId: string;
             resource?: IAclRule;
-        }, callback: (err: any, response: IAclRule) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAclRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Watch for changes to ACL resources.
          * @params {string} calendarId Calendar identifier.
@@ -95,7 +95,7 @@ Optional. The default is to return all entries.
             showDeleted?: boolean;
             syncToken?: string;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var calendarList: {
         /**
@@ -104,14 +104,14 @@ Optional. The default is to return all entries.
          */
         delete: (params: {
             calendarId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns an entry on the user's calendar list.
          * @params {string} calendarId Calendar identifier.
          */
         get: (params: {
             calendarId: string;
-        }, callback: (err: any, response: ICalendarListEntry) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendarListEntry, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds an entry to the user's calendar list.
          * @params {boolean} colorRgbFormat Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.
@@ -119,7 +119,7 @@ Optional. The default is to return all entries.
         insert: (params: {
             colorRgbFormat?: boolean;
             resource?: ICalendarListEntry;
-        }, callback: (err: any, response: ICalendarListEntry) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendarListEntry, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns entries on the user's calendar list.
          * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -140,7 +140,7 @@ Optional. The default is to return all entries.
             showDeleted?: boolean;
             showHidden?: boolean;
             syncToken?: string;
-        }, callback: (err: any, response: ICalendarList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendarList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an entry on the user's calendar list. This method supports patch semantics.
          * @params {string} calendarId Calendar identifier.
@@ -150,7 +150,7 @@ Optional. The default is to return all entries.
             calendarId: string;
             colorRgbFormat?: boolean;
             resource?: ICalendarListEntry;
-        }, callback: (err: any, response: ICalendarListEntry) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendarListEntry, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an entry on the user's calendar list.
          * @params {string} calendarId Calendar identifier.
@@ -160,7 +160,7 @@ Optional. The default is to return all entries.
             calendarId: string;
             colorRgbFormat?: boolean;
             resource?: ICalendarListEntry;
-        }, callback: (err: any, response: ICalendarListEntry) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendarListEntry, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Watch for changes to CalendarList resources.
          * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -182,7 +182,7 @@ Optional. The default is to return all entries.
             showHidden?: boolean;
             syncToken?: string;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var calendars: {
         /**
@@ -191,27 +191,27 @@ Optional. The default is to return all entries.
          */
         clear: (params: {
             calendarId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Deletes a secondary calendar.
          * @params {string} calendarId Calendar identifier.
          */
         delete: (params: {
             calendarId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns metadata for a calendar.
          * @params {string} calendarId Calendar identifier.
          */
         get: (params: {
             calendarId: string;
-        }, callback: (err: any, response: ICalendar) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendar, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a secondary calendar.
          */
         insert: (params: {
             resource?: ICalendar;
-        }, callback: (err: any, response: ICalendar) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendar, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates metadata for a calendar. This method supports patch semantics.
          * @params {string} calendarId Calendar identifier.
@@ -219,7 +219,7 @@ Optional. The default is to return all entries.
         patch: (params: {
             calendarId: string;
             resource?: ICalendar;
-        }, callback: (err: any, response: ICalendar) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendar, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates metadata for a calendar.
          * @params {string} calendarId Calendar identifier.
@@ -227,7 +227,7 @@ Optional. The default is to return all entries.
         update: (params: {
             calendarId: string;
             resource?: ICalendar;
-        }, callback: (err: any, response: ICalendar) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICalendar, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channels: {
         /**
@@ -235,14 +235,14 @@ Optional. The default is to return all entries.
          */
         stop: (params: {
             resource?: IChannel;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var colors: {
         /**
          * Returns the color definitions for calendars and events.
          */
         get: (params: {
-        }, callback: (err: any, response: IColors) => void) => void;
+        }, callback: (err: IErrorResponse, response: IColors, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var events: {
         /**
@@ -255,7 +255,7 @@ Optional. The default is to return all entries.
             calendarId: string;
             eventId: string;
             sendNotifications?: boolean;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns an event.
          * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -270,7 +270,7 @@ Optional. The default is to return all entries.
             eventId: string;
             maxAttendees?: number;
             timeZone?: string;
-        }, callback: (err: any, response: IEvent) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Imports an event. This operation is used to add a private copy of an existing event to a calendar.
          * @params {string} calendarId Calendar identifier.
@@ -278,7 +278,7 @@ Optional. The default is to return all entries.
         import: (params: {
             calendarId: string;
             resource?: IEvent;
-        }, callback: (err: any, response: IEvent) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an event.
          * @params {string} calendarId Calendar identifier.
@@ -290,7 +290,7 @@ Optional. The default is to return all entries.
             maxAttendees?: number;
             sendNotifications?: boolean;
             resource?: IEvent;
-        }, callback: (err: any, response: IEvent) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns instances of the specified recurring event.
          * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -317,7 +317,7 @@ Optional. The default is to return all entries.
             timeMax?: string;
             timeMin?: string;
             timeZone?: string;
-        }, callback: (err: any, response: IEvents) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvents, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns events on the specified calendar.
          * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -371,7 +371,7 @@ Optional. The default is to return all entries.
             timeMin?: string;
             timeZone?: string;
             updatedMin?: string;
-        }, callback: (err: any, response: IEvents) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvents, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Moves an event to another calendar, i.e. changes an event's organizer.
          * @params {string} calendarId Calendar identifier of the source calendar where the event currently is on.
@@ -384,7 +384,7 @@ Optional. The default is to return all entries.
             destination: string;
             eventId: string;
             sendNotifications?: boolean;
-        }, callback: (err: any, response: IEvent) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an event. This method supports patch semantics.
          * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -400,7 +400,7 @@ Optional. The default is to return all entries.
             maxAttendees?: number;
             sendNotifications?: boolean;
             resource?: IEvent;
-        }, callback: (err: any, response: IEvent) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an event based on a simple text string.
          * @params {string} calendarId Calendar identifier.
@@ -411,7 +411,7 @@ Optional. The default is to return all entries.
             calendarId: string;
             sendNotifications?: boolean;
             text: string;
-        }, callback: (err: any, response: IEvent) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an event.
          * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -427,7 +427,7 @@ Optional. The default is to return all entries.
             maxAttendees?: number;
             sendNotifications?: boolean;
             resource?: IEvent;
-        }, callback: (err: any, response: IEvent) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Watch for changes to Events resources.
          * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -482,7 +482,7 @@ Optional. The default is to return all entries.
             timeZone?: string;
             updatedMin?: string;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var freebusy: {
         /**
@@ -490,7 +490,7 @@ Optional. The default is to return all entries.
          */
         query: (params: {
             resource?: IFreeBusyRequest;
-        }, callback: (err: any, response: IFreeBusyResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFreeBusyResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var settings: {
         /**
@@ -499,7 +499,7 @@ Optional. The default is to return all entries.
          */
         get: (params: {
             setting: string;
-        }, callback: (err: any, response: ISetting) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns all user settings for the authenticated user.
          * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -513,7 +513,7 @@ Optional. The default is to return all entries.
             maxResults?: number;
             pageToken?: string;
             syncToken?: string;
-        }, callback: (err: any, response: ISettings) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISettings, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Watch for changes to Settings resources.
          * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -528,7 +528,7 @@ Optional. The default is to return all entries.
             pageToken?: string;
             syncToken?: string;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAcl {
         /**

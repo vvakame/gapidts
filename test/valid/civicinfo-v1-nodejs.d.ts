@@ -19,14 +19,14 @@ declare module googleapis.civicinfo {
          */
         search: (params: {
             query?: string;
-        }, callback: (err: any, response: IDivisionSearchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDivisionSearchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var elections: {
         /**
          * List of available elections to query.
          */
         electionQuery: (params: {
-        }, callback: (err: any, response: IElectionsQueryResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IElectionsQueryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Looks up information relevant to a voter based on the voter's registered address.
          * @params {string} electionId The unique ID of the election to look up. A list of election IDs can be obtained at https://www.googleapis.com/civicinfo/{version}/elections
@@ -36,7 +36,7 @@ declare module googleapis.civicinfo {
             electionId: string;
             officialOnly?: boolean;
             resource?: IVoterInfoRequest;
-        }, callback: (err: any, response: IVoterInfoResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVoterInfoResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var representatives: {
         /**
@@ -50,7 +50,7 @@ declare module googleapis.civicinfo {
             ocdId?: string;
             recursive?: boolean;
             resource?: IRepresentativeInfoRequest;
-        }, callback: (err: any, response: IRepresentativeInfoResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRepresentativeInfoResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Describes information about a regional election administrative area.

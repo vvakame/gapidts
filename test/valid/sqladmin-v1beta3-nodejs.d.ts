@@ -25,7 +25,7 @@ declare module googleapis.sqladmin {
             dueTime: string;
             instance: string;
             project: string;
-        }, callback: (err: any, response: IBackupRun) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBackupRun, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all backup runs associated with a Cloud SQL instance.
          * @params {string} backupConfiguration Identifier for the backup configuration. This gets generated automatically when a backup configuration is created.
@@ -40,14 +40,14 @@ declare module googleapis.sqladmin {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IBackupRunsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBackupRunsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var flags: {
         /**
          * Lists all database flags that can be set for Google Cloud SQL instances.
          */
         list: (params: {
-        }, callback: (err: any, response: IFlagsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFlagsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var instances: {
         /**
@@ -57,7 +57,7 @@ declare module googleapis.sqladmin {
         clone: (params: {
             project: string;
             resource?: IInstancesCloneRequest;
-        }, callback: (err: any, response: IInstancesCloneResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesCloneResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a Cloud SQL instance.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -66,7 +66,7 @@ declare module googleapis.sqladmin {
         delete: (params: {
             instance: string;
             project: string;
-        }, callback: (err: any, response: IInstancesDeleteResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesDeleteResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Exports data from a Cloud SQL instance to a Google Cloud Storage bucket as a MySQL dump file.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -76,7 +76,7 @@ declare module googleapis.sqladmin {
             instance: string;
             project: string;
             resource?: IInstancesExportRequest;
-        }, callback: (err: any, response: IInstancesExportResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesExportResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves information about a Cloud SQL instance.
          * @params {string} instance Database instance ID. This does not include the project ID.
@@ -85,7 +85,7 @@ declare module googleapis.sqladmin {
         get: (params: {
             instance: string;
             project: string;
-        }, callback: (err: any, response: IDatabaseInstance) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDatabaseInstance, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Imports data into a Cloud SQL instance from a MySQL dump file stored in a Google Cloud Storage bucket.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -95,7 +95,7 @@ declare module googleapis.sqladmin {
             instance: string;
             project: string;
             resource?: IInstancesImportRequest;
-        }, callback: (err: any, response: IInstancesImportResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesImportResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new Cloud SQL instance.
          * @params {string} project Project ID of the project to which the newly created Cloud SQL instances should belong.
@@ -103,7 +103,7 @@ declare module googleapis.sqladmin {
         insert: (params: {
             project: string;
             resource?: IDatabaseInstance;
-        }, callback: (err: any, response: IInstancesInsertResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists instances for a given project, in alphabetical order by instance name.
          * @params {number} maxResults The maximum number of results to return per response.
@@ -114,7 +114,7 @@ declare module googleapis.sqladmin {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IInstancesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the settings of a Cloud SQL instance. This method supports patch semantics.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -124,7 +124,7 @@ declare module googleapis.sqladmin {
             instance: string;
             project: string;
             resource?: IDatabaseInstance;
-        }, callback: (err: any, response: IInstancesUpdateResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesUpdateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Promotes the read replica instance to be a stand-alone Cloud SQL instance.
          * @params {string} instance Cloud SQL read replica instance name.
@@ -133,7 +133,7 @@ declare module googleapis.sqladmin {
         promoteReplica: (params: {
             instance: string;
             project: string;
-        }, callback: (err: any, response: IInstancesPromoteReplicaResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesPromoteReplicaResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes all client certificates and generates a new server SSL certificate for a Cloud SQL instance.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -142,7 +142,7 @@ declare module googleapis.sqladmin {
         resetSslConfig: (params: {
             instance: string;
             project: string;
-        }, callback: (err: any, response: IInstancesResetSslConfigResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesResetSslConfigResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Restarts a Cloud SQL instance.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -151,7 +151,7 @@ declare module googleapis.sqladmin {
         restart: (params: {
             instance: string;
             project: string;
-        }, callback: (err: any, response: IInstancesRestartResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesRestartResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Restores a backup of a Cloud SQL instance.
          * @params {string} backupConfiguration The identifier of the backup configuration. This gets generated automatically when a backup configuration is created.
@@ -164,7 +164,7 @@ declare module googleapis.sqladmin {
             dueTime: string;
             instance: string;
             project: string;
-        }, callback: (err: any, response: IInstancesRestoreBackupResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesRestoreBackupResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets the password for the root user of the specified Cloud SQL instance.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -174,7 +174,7 @@ declare module googleapis.sqladmin {
             instance: string;
             project: string;
             resource?: IInstanceSetRootPasswordRequest;
-        }, callback: (err: any, response: IInstancesSetRootPasswordResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesSetRootPasswordResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the settings of a Cloud SQL instance.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -184,7 +184,7 @@ declare module googleapis.sqladmin {
             instance: string;
             project: string;
             resource?: IDatabaseInstance;
-        }, callback: (err: any, response: IInstancesUpdateResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstancesUpdateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var operations: {
         /**
@@ -197,7 +197,7 @@ declare module googleapis.sqladmin {
             instance: string;
             operation: string;
             project: string;
-        }, callback: (err: any, response: IInstanceOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstanceOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all operations that have been performed on a Cloud SQL instance.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -210,7 +210,7 @@ declare module googleapis.sqladmin {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IOperationsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperationsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var sslCerts: {
         /**
@@ -223,7 +223,7 @@ declare module googleapis.sqladmin {
             instance: string;
             project: string;
             sha1Fingerprint: string;
-        }, callback: (err: any, response: ISslCertsDeleteResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISslCertsDeleteResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves an SSL certificate as specified by its SHA-1 fingerprint.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -234,7 +234,7 @@ declare module googleapis.sqladmin {
             instance: string;
             project: string;
             sha1Fingerprint: string;
-        }, callback: (err: any, response: ISslCert) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISslCert, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an SSL certificate and returns the certificate, the associated private key, and the server certificate authority.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -244,7 +244,7 @@ declare module googleapis.sqladmin {
             instance: string;
             project: string;
             resource?: ISslCertsInsertRequest;
-        }, callback: (err: any, response: ISslCertsInsertResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISslCertsInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all of the current SSL certificates defined for a Cloud SQL instance.
          * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -253,7 +253,7 @@ declare module googleapis.sqladmin {
         list: (params: {
             instance: string;
             project: string;
-        }, callback: (err: any, response: ISslCertsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISslCertsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tiers: {
         /**
@@ -262,7 +262,7 @@ declare module googleapis.sqladmin {
          */
         list: (params: {
             project: string;
-        }, callback: (err: any, response: ITiersListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITiersListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Database instance backup configuration.

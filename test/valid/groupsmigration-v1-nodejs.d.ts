@@ -19,7 +19,7 @@ declare module googleapis.groupsmigration {
          */
         insert: (params: {
             groupId: string;
-        }, callback: (err: any, response: IGroups) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * JSON response template for groups migration API.

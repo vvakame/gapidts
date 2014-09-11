@@ -21,7 +21,7 @@ declare module googleapis.gmail {
             create: (params: {
                 userId: string;
                 resource?: IDraft;
-            }, callback: (err: any, response: IDraft) => void) => void;
+            }, callback: (err: IErrorResponse, response: IDraft, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Immediately and permanently deletes the specified draft. Does not simply trash it.
              * @params {string} id The ID of the draft to delete.
@@ -30,7 +30,7 @@ declare module googleapis.gmail {
             delete: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets the specified draft.
              * @params {string} format The format to return the draft in.
@@ -41,7 +41,7 @@ declare module googleapis.gmail {
                 format?: string;
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: IDraft) => void) => void;
+            }, callback: (err: IErrorResponse, response: IDraft, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists the drafts in the user's mailbox.
              * @params {number} maxResults Maximum number of drafts to return.
@@ -52,7 +52,7 @@ declare module googleapis.gmail {
                 maxResults?: number;
                 pageToken?: string;
                 userId: string;
-            }, callback: (err: any, response: IListDraftsResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListDraftsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
              * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
@@ -60,7 +60,7 @@ declare module googleapis.gmail {
             send: (params: {
                 userId: string;
                 resource?: IDraft;
-            }, callback: (err: any, response: IMessage) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Replaces a draft's content.
              * @params {string} id The ID of the draft to update.
@@ -70,7 +70,7 @@ declare module googleapis.gmail {
                 id: string;
                 userId: string;
                 resource?: IDraft;
-            }, callback: (err: any, response: IDraft) => void) => void;
+            }, callback: (err: IErrorResponse, response: IDraft, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         history: {
             /**
@@ -87,7 +87,7 @@ declare module googleapis.gmail {
                 pageToken?: string;
                 startHistoryId?: string;
                 userId: string;
-            }, callback: (err: any, response: IListHistoryResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListHistoryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         labels: {
             /**
@@ -97,7 +97,7 @@ declare module googleapis.gmail {
             create: (params: {
                 userId: string;
                 resource?: ILabel;
-            }, callback: (err: any, response: ILabel) => void) => void;
+            }, callback: (err: IErrorResponse, response: ILabel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Immediately and permanently deletes the specified label and removes it from any messages and threads that it is applied to.
              * @params {string} id The ID of the label to delete.
@@ -106,7 +106,7 @@ declare module googleapis.gmail {
             delete: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets the specified label.
              * @params {string} id The ID of the label to retrieve.
@@ -115,14 +115,14 @@ declare module googleapis.gmail {
             get: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: ILabel) => void) => void;
+            }, callback: (err: IErrorResponse, response: ILabel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all labels in the user's mailbox.
              * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
              */
             list: (params: {
                 userId: string;
-            }, callback: (err: any, response: IListLabelsResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListLabelsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the specified label. This method supports patch semantics.
              * @params {string} id The ID of the label to update.
@@ -132,7 +132,7 @@ declare module googleapis.gmail {
                 id: string;
                 userId: string;
                 resource?: ILabel;
-            }, callback: (err: any, response: ILabel) => void) => void;
+            }, callback: (err: IErrorResponse, response: ILabel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the specified label.
              * @params {string} id The ID of the label to update.
@@ -142,7 +142,7 @@ declare module googleapis.gmail {
                 id: string;
                 userId: string;
                 resource?: ILabel;
-            }, callback: (err: any, response: ILabel) => void) => void;
+            }, callback: (err: IErrorResponse, response: ILabel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         messages: {
             /**
@@ -153,7 +153,7 @@ declare module googleapis.gmail {
             delete: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets the specified message.
              * @params {string} format The format to return the message in.
@@ -166,7 +166,7 @@ declare module googleapis.gmail {
                 id: string;
                 metadataHeaders?: string;
                 userId: string;
-            }, callback: (err: any, response: IMessage) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
              * @params {string} internalDateSource Source for Gmail's internal date of the message.
@@ -176,7 +176,7 @@ declare module googleapis.gmail {
                 internalDateSource?: string;
                 userId: string;
                 resource?: IMessage;
-            }, callback: (err: any, response: IMessage) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.
              * @params {string} internalDateSource Source for Gmail's internal date of the message.
@@ -186,7 +186,7 @@ declare module googleapis.gmail {
                 internalDateSource?: string;
                 userId: string;
                 resource?: IMessage;
-            }, callback: (err: any, response: IMessage) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists the messages in the user's mailbox.
              * @params {boolean} includeSpamTrash Include messages from SPAM and TRASH in the results.
@@ -203,7 +203,7 @@ declare module googleapis.gmail {
                 pageToken?: string;
                 q?: string;
                 userId: string;
-            }, callback: (err: any, response: IListMessagesResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListMessagesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Modifies the labels on the specified message.
              * @params {string} id The ID of the message to modify.
@@ -213,7 +213,7 @@ declare module googleapis.gmail {
                 id: string;
                 userId: string;
                 resource?: IModifyMessageRequest;
-            }, callback: (err: any, response: IMessage) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Sends the specified message to the recipients in the To, Cc, and Bcc headers.
              * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
@@ -221,7 +221,7 @@ declare module googleapis.gmail {
             send: (params: {
                 userId: string;
                 resource?: IMessage;
-            }, callback: (err: any, response: IMessage) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Moves the specified message to the trash.
              * @params {string} id The ID of the message to Trash.
@@ -230,7 +230,7 @@ declare module googleapis.gmail {
             trash: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: IMessage) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Removes the specified message from the trash.
              * @params {string} id The ID of the message to remove from Trash.
@@ -239,7 +239,7 @@ declare module googleapis.gmail {
             untrash: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: IMessage) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             attachments: {
                 /**
                  * Gets the specified message attachment.
@@ -251,7 +251,7 @@ declare module googleapis.gmail {
                     id: string;
                     messageId: string;
                     userId: string;
-                }, callback: (err: any, response: IMessagePartBody) => void) => void;
+                }, callback: (err: IErrorResponse, response: IMessagePartBody, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
         threads: {
@@ -263,7 +263,7 @@ declare module googleapis.gmail {
             delete: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets the specified thread.
              * @params {string} id The ID of the thread to retrieve.
@@ -272,7 +272,7 @@ declare module googleapis.gmail {
             get: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: IThread) => void) => void;
+            }, callback: (err: IErrorResponse, response: IThread, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists the threads in the user's mailbox.
              * @params {boolean} includeSpamTrash Include threads from SPAM and TRASH in the results.
@@ -289,7 +289,7 @@ declare module googleapis.gmail {
                 pageToken?: string;
                 q?: string;
                 userId: string;
-            }, callback: (err: any, response: IListThreadsResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListThreadsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Modifies the labels applied to the thread. This applies to all messages in the thread.
              * @params {string} id The ID of the thread to modify.
@@ -299,7 +299,7 @@ declare module googleapis.gmail {
                 id: string;
                 userId: string;
                 resource?: IModifyThreadRequest;
-            }, callback: (err: any, response: IThread) => void) => void;
+            }, callback: (err: IErrorResponse, response: IThread, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Moves the specified thread to the trash.
              * @params {string} id The ID of the thread to Trash.
@@ -308,7 +308,7 @@ declare module googleapis.gmail {
             trash: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: IThread) => void) => void;
+            }, callback: (err: IErrorResponse, response: IThread, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Removes the specified thread from the trash.
              * @params {string} id The ID of the thread to remove from Trash.
@@ -317,7 +317,7 @@ declare module googleapis.gmail {
             untrash: (params: {
                 id: string;
                 userId: string;
-            }, callback: (err: any, response: IThread) => void) => void;
+            }, callback: (err: IErrorResponse, response: IThread, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     /**

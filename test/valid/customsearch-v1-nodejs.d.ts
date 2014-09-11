@@ -81,7 +81,7 @@ declare module googleapis.customsearch {
             siteSearchFilter?: string;
             sort?: string;
             start?: number;
-        }, callback: (err: any, response: ISearch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISearch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IContext {
         facets: {

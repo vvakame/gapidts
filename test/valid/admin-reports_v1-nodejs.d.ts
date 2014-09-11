@@ -37,7 +37,7 @@ declare module googleapis.admin {
             pageToken?: string;
             startTime?: string;
             userKey: string;
-        }, callback: (err: any, response: IActivities) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivities, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Push changes to activities
          * @params {string} actorIpAddress IP Address of host where the event was performed. Supports both IPv4 and IPv6 addresses.
@@ -63,7 +63,7 @@ declare module googleapis.admin {
             startTime?: string;
             userKey: string;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channels: {
         /**
@@ -71,7 +71,7 @@ declare module googleapis.admin {
          */
         stop: (params: {
             resource?: IChannel;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var customerUsageReports: {
         /**
@@ -86,7 +86,7 @@ declare module googleapis.admin {
             date: string;
             pageToken?: string;
             parameters?: string;
-        }, callback: (err: any, response: IUsageReports) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUsageReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var userUsageReport: {
         /**
@@ -107,7 +107,7 @@ declare module googleapis.admin {
             pageToken?: string;
             parameters?: string;
             userKey: string;
-        }, callback: (err: any, response: IUsageReports) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUsageReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * JSON template for a collection of activites.

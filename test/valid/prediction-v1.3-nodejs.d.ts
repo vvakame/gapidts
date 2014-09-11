@@ -20,7 +20,7 @@ declare module googleapis.prediction {
         predict: (params: {
             hostedModelName: string;
             resource?: IInput;
-        }, callback: (err: any, response: IOutput) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var training: {
         /**
@@ -29,20 +29,20 @@ declare module googleapis.prediction {
          */
         delete: (params: {
             data: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Check training status of your model
          * @params {string} data mybucket/mydata resource in Google Storage
          */
         get: (params: {
             data: string;
-        }, callback: (err: any, response: ITraining) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Begin training your model
          */
         insert: (params: {
             resource?: ITraining;
-        }, callback: (err: any, response: ITraining) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Submit data and request a prediction
          * @params {string} data mybucket/mydata resource in Google Storage
@@ -50,7 +50,7 @@ declare module googleapis.prediction {
         predict: (params: {
             data: string;
             resource?: IInput;
-        }, callback: (err: any, response: IOutput) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add new data to a trained model
          * @params {string} data mybucket/mydata resource in Google Storage
@@ -58,7 +58,7 @@ declare module googleapis.prediction {
         update: (params: {
             data: string;
             resource?: IUpdate;
-        }, callback: (err: any, response: ITraining) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IInput {
         /**

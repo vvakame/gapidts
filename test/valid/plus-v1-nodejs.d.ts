@@ -19,7 +19,7 @@ declare module googleapis.plus {
          */
         get: (params: {
             activityId: string;
-        }, callback: (err: any, response: IActivity) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the activities in the specified collection for a particular user.
          * @params {string} collection The collection of activities to list.
@@ -32,7 +32,7 @@ declare module googleapis.plus {
             maxResults?: number;
             pageToken?: string;
             userId: string;
-        }, callback: (err: any, response: IActivityFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivityFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Search public activities.
          * @params {string} language Specify the preferred language to search with. See search language codes for available values.
@@ -47,7 +47,7 @@ declare module googleapis.plus {
             orderBy?: string;
             pageToken?: string;
             query: string;
-        }, callback: (err: any, response: IActivityFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivityFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
         /**
@@ -56,7 +56,7 @@ declare module googleapis.plus {
          */
         get: (params: {
             commentId: string;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the comments for an activity.
          * @params {string} activityId The ID of the activity to get comments for.
@@ -69,7 +69,7 @@ declare module googleapis.plus {
             maxResults?: number;
             pageToken?: string;
             sortOrder?: string;
-        }, callback: (err: any, response: ICommentFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var moments: {
         /**
@@ -83,7 +83,7 @@ declare module googleapis.plus {
             debug?: boolean;
             userId: string;
             resource?: IMoment;
-        }, callback: (err: any, response: IMoment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMoment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the moments for a particular user.
          * @params {string} collection The collection of moments to list.
@@ -100,14 +100,14 @@ declare module googleapis.plus {
             targetUrl?: string;
             type?: string;
             userId: string;
-        }, callback: (err: any, response: IMomentsFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMomentsFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a moment.
          * @params {string} id The ID of the moment to delete.
          */
         remove: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var people: {
         /**
@@ -116,7 +116,7 @@ declare module googleapis.plus {
          */
         get: (params: {
             userId: string;
-        }, callback: (err: any, response: IPerson) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPerson, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people in the specified collection.
          * @params {string} collection The collection of people to list.
@@ -131,7 +131,7 @@ declare module googleapis.plus {
             orderBy?: string;
             pageToken?: string;
             userId: string;
-        }, callback: (err: any, response: IPeopleFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people in the specified collection for a particular activity.
          * @params {string} activityId The ID of the activity to get the list of people for.
@@ -144,7 +144,7 @@ declare module googleapis.plus {
             collection: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IPeopleFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Search all public profiles.
          * @params {string} language Specify the preferred language to search with. See search language codes for available values.
@@ -157,7 +157,7 @@ declare module googleapis.plus {
             maxResults?: number;
             pageToken?: string;
             query: string;
-        }, callback: (err: any, response: IPeopleFeed) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAcl {
         /**

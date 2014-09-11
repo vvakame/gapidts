@@ -23,7 +23,7 @@ declare module googleapis.manager {
             deploymentName: string;
             projectId: string;
             region: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * 
          * @params {string} deploymentName 
@@ -34,7 +34,7 @@ declare module googleapis.manager {
             deploymentName: string;
             projectId: string;
             region: string;
-        }, callback: (err: any, response: IDeployment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDeployment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
          * @params {string} projectId 
@@ -44,7 +44,7 @@ declare module googleapis.manager {
             projectId: string;
             region: string;
             resource?: IDeployment;
-        }, callback: (err: any, response: IDeployment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDeployment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
          * @params {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)
@@ -57,7 +57,7 @@ declare module googleapis.manager {
             pageToken?: string;
             projectId: string;
             region: string;
-        }, callback: (err: any, response: IDeploymentsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDeploymentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var templates: {
         /**
@@ -68,7 +68,7 @@ declare module googleapis.manager {
         delete: (params: {
             projectId: string;
             templateName: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * 
          * @params {string} projectId 
@@ -77,7 +77,7 @@ declare module googleapis.manager {
         get: (params: {
             projectId: string;
             templateName: string;
-        }, callback: (err: any, response: ITemplate) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
          * @params {string} projectId 
@@ -85,7 +85,7 @@ declare module googleapis.manager {
         insert: (params: {
             projectId: string;
             resource?: ITemplate;
-        }, callback: (err: any, response: ITemplate) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
          * @params {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)
@@ -96,7 +96,7 @@ declare module googleapis.manager {
             maxResults?: number;
             pageToken?: string;
             projectId: string;
-        }, callback: (err: any, response: ITemplatesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITemplatesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * A Compute Engine network accessConfig. Identical to the accessConfig on corresponding Compute Engine resource.

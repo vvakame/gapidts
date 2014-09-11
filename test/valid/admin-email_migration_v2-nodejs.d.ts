@@ -20,7 +20,7 @@ declare module googleapis.admin {
         insert: (params: {
             userKey: string;
             resource?: IMailItem;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     /**
      * JSON template for MailItem object in Email Migration API.

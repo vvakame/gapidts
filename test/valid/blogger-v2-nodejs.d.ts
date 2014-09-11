@@ -19,7 +19,7 @@ declare module googleapis.blogger {
          */
         get: (params: {
             blogId: string;
-        }, callback: (err: any, response: IBlog) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBlog, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
         /**
@@ -32,7 +32,7 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the comments for a blog, possibly filtered.
          * @params {string} blogId ID of the blog to fetch comments from.
@@ -49,7 +49,7 @@ declare module googleapis.blogger {
             pageToken?: string;
             postId: string;
             startDate?: string;
-        }, callback: (err: any, response: ICommentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pages: {
         /**
@@ -60,7 +60,7 @@ declare module googleapis.blogger {
         get: (params: {
             blogId: string;
             pageId: string;
-        }, callback: (err: any, response: IPage) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves pages for a blog, possibly filtered.
          * @params {string} blogId ID of the blog to fetch pages from.
@@ -69,7 +69,7 @@ declare module googleapis.blogger {
         list: (params: {
             blogId: string;
             fetchBodies?: boolean;
-        }, callback: (err: any, response: IPageList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPageList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var posts: {
         /**
@@ -80,7 +80,7 @@ declare module googleapis.blogger {
         get: (params: {
             blogId: string;
             postId: string;
-        }, callback: (err: any, response: IPost) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of posts, possibly filtered.
          * @params {string} blogId ID of the blog to fetch posts from.
@@ -95,7 +95,7 @@ declare module googleapis.blogger {
             maxResults?: number;
             pageToken?: string;
             startDate?: string;
-        }, callback: (err: any, response: IPostList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPostList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var users: {
         /**
@@ -104,7 +104,7 @@ declare module googleapis.blogger {
          */
         get: (params: {
             userId: string;
-        }, callback: (err: any, response: IUser) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         blogs: {
             /**
              * Retrieves a list of blogs, possibly filtered.
@@ -112,7 +112,7 @@ declare module googleapis.blogger {
              */
             list: (params: {
                 userId: string;
-            }, callback: (err: any, response: IBlogList) => void) => void;
+            }, callback: (err: IErrorResponse, response: IBlogList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     interface IBlog {

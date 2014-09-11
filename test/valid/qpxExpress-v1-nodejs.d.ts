@@ -18,7 +18,7 @@ declare module googleapis.qpxExpress {
          */
         search: (params: {
             resource?: ITripsSearchRequest;
-        }, callback: (err: any, response: ITripsSearchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITripsSearchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * The make, model, and type of an aircraft.

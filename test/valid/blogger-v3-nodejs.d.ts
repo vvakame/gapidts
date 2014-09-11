@@ -23,7 +23,7 @@ declare module googleapis.blogger {
             blogId: string;
             maxPosts?: number;
             userId: string;
-        }, callback: (err: any, response: IBlogUserInfo) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBlogUserInfo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var blogs: {
         /**
@@ -36,7 +36,7 @@ declare module googleapis.blogger {
             blogId: string;
             maxPosts?: number;
             view?: string;
-        }, callback: (err: any, response: IBlog) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBlog, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve a Blog by URL.
          * @params {string} url The URL of the blog to retrieve.
@@ -45,7 +45,7 @@ declare module googleapis.blogger {
         getByUrl: (params: {
             url: string;
             view?: string;
-        }, callback: (err: any, response: IBlog) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBlog, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of blogs, possibly filtered.
          * @params {boolean} fetchUserInfo Whether the response is a list of blogs with per-user information instead of just blogs.
@@ -60,7 +60,7 @@ declare module googleapis.blogger {
             status?: string;
             userId: string;
             view?: string;
-        }, callback: (err: any, response: IBlogList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBlogList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
         /**
@@ -73,7 +73,7 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a comment by ID.
          * @params {string} blogId The ID of the Blog.
@@ -84,7 +84,7 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets one comment by ID.
          * @params {string} blogId ID of the blog to containing the comment.
@@ -97,7 +97,7 @@ declare module googleapis.blogger {
             commentId: string;
             postId: string;
             view?: string;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the comments for a post, possibly filtered.
          * @params {string} blogId ID of the blog to fetch comments from.
@@ -120,7 +120,7 @@ declare module googleapis.blogger {
             startDate?: string;
             status?: string;
             view?: string;
-        }, callback: (err: any, response: ICommentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the comments for a blog, across all posts, possibly filtered.
          * @params {string} blogId ID of the blog to fetch comments from.
@@ -137,7 +137,7 @@ declare module googleapis.blogger {
             maxResults?: number;
             pageToken?: string;
             startDate?: string;
-        }, callback: (err: any, response: ICommentList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Marks a comment as spam.
          * @params {string} blogId The ID of the Blog.
@@ -148,7 +148,7 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Removes the content of a comment.
          * @params {string} blogId The ID of the Blog.
@@ -159,7 +159,7 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
-        }, callback: (err: any, response: IComment) => void) => void;
+        }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pageViews: {
         /**
@@ -170,7 +170,7 @@ declare module googleapis.blogger {
         get: (params: {
             blogId: string;
             range?: string;
-        }, callback: (err: any, response: IPageviews) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPageviews, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pages: {
         /**
@@ -181,7 +181,7 @@ declare module googleapis.blogger {
         delete: (params: {
             blogId: string;
             pageId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets one blog page by ID.
          * @params {string} blogId ID of the blog containing the page.
@@ -192,7 +192,7 @@ declare module googleapis.blogger {
             blogId: string;
             pageId: string;
             view?: string;
-        }, callback: (err: any, response: IPage) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a page.
          * @params {string} blogId ID of the blog to add the page to.
@@ -202,7 +202,7 @@ declare module googleapis.blogger {
             blogId: string;
             isDraft?: boolean;
             resource?: IPage;
-        }, callback: (err: any, response: IPage) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the pages for a blog, optionally including non-LIVE statuses.
          * @params {string} blogId ID of the blog to fetch pages from.
@@ -215,7 +215,7 @@ declare module googleapis.blogger {
             fetchBodies?: boolean;
             status?: string;
             view?: string;
-        }, callback: (err: any, response: IPageList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPageList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a page. This method supports patch semantics.
          * @params {string} blogId The ID of the Blog.
@@ -229,7 +229,7 @@ declare module googleapis.blogger {
             publish?: boolean;
             revert?: boolean;
             resource?: IPage;
-        }, callback: (err: any, response: IPage) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Publishes a draft page.
          * @params {string} blogId The ID of the blog.
@@ -238,7 +238,7 @@ declare module googleapis.blogger {
         publish: (params: {
             blogId: string;
             pageId: string;
-        }, callback: (err: any, response: IPage) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Revert a published or scheduled page to draft state.
          * @params {string} blogId The ID of the blog.
@@ -247,7 +247,7 @@ declare module googleapis.blogger {
         revert: (params: {
             blogId: string;
             pageId: string;
-        }, callback: (err: any, response: IPage) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a page.
          * @params {string} blogId The ID of the Blog.
@@ -261,7 +261,7 @@ declare module googleapis.blogger {
             publish?: boolean;
             revert?: boolean;
             resource?: IPage;
-        }, callback: (err: any, response: IPage) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var postUserInfos: {
         /**
@@ -276,7 +276,7 @@ declare module googleapis.blogger {
             maxComments?: number;
             postId: string;
             userId: string;
-        }, callback: (err: any, response: IPostUserInfo) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPostUserInfo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.
          * @params {string} blogId ID of the blog to fetch posts from.
@@ -303,7 +303,7 @@ declare module googleapis.blogger {
             status?: string;
             userId: string;
             view?: string;
-        }, callback: (err: any, response: IPostUserInfosList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPostUserInfosList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var posts: {
         /**
@@ -314,7 +314,7 @@ declare module googleapis.blogger {
         delete: (params: {
             blogId: string;
             postId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get a post by ID.
          * @params {string} blogId ID of the blog to fetch the post from.
@@ -331,7 +331,7 @@ declare module googleapis.blogger {
             maxComments?: number;
             postId: string;
             view?: string;
-        }, callback: (err: any, response: IPost) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve a Post by Path.
          * @params {string} blogId ID of the blog to fetch the post from.
@@ -344,7 +344,7 @@ declare module googleapis.blogger {
             maxComments?: number;
             path: string;
             view?: string;
-        }, callback: (err: any, response: IPost) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a post.
          * @params {string} blogId ID of the blog to add the post to.
@@ -358,7 +358,7 @@ declare module googleapis.blogger {
             fetchImages?: boolean;
             isDraft?: boolean;
             resource?: IPost;
-        }, callback: (err: any, response: IPost) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of posts, possibly filtered.
          * @params {string} blogId ID of the blog to fetch posts from.
@@ -385,7 +385,7 @@ declare module googleapis.blogger {
             startDate?: string;
             status?: string;
             view?: string;
-        }, callback: (err: any, response: IPostList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPostList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a post. This method supports patch semantics.
          * @params {string} blogId The ID of the Blog.
@@ -405,7 +405,7 @@ declare module googleapis.blogger {
             publish?: boolean;
             revert?: boolean;
             resource?: IPost;
-        }, callback: (err: any, response: IPost) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Publishes a draft post, optionally at the specific time of the given publishDate parameter.
          * @params {string} blogId The ID of the Blog.
@@ -416,7 +416,7 @@ declare module googleapis.blogger {
             blogId: string;
             postId: string;
             publishDate?: string;
-        }, callback: (err: any, response: IPost) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Revert a published or scheduled post to draft state.
          * @params {string} blogId The ID of the Blog.
@@ -425,7 +425,7 @@ declare module googleapis.blogger {
         revert: (params: {
             blogId: string;
             postId: string;
-        }, callback: (err: any, response: IPost) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Search for a post.
          * @params {string} blogId ID of the blog to fetch the post from.
@@ -438,7 +438,7 @@ declare module googleapis.blogger {
             fetchBodies?: boolean;
             orderBy?: string;
             q: string;
-        }, callback: (err: any, response: IPostList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPostList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a post.
          * @params {string} blogId The ID of the Blog.
@@ -458,7 +458,7 @@ declare module googleapis.blogger {
             publish?: boolean;
             revert?: boolean;
             resource?: IPost;
-        }, callback: (err: any, response: IPost) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var users: {
         /**
@@ -467,7 +467,7 @@ declare module googleapis.blogger {
          */
         get: (params: {
             userId: string;
-        }, callback: (err: any, response: IUser) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IBlog {
         /**

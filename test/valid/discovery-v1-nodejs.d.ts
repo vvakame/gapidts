@@ -21,7 +21,7 @@ declare module googleapis.discovery {
         getRest: (params: {
             api: string;
             version: string;
-        }, callback: (err: any, response: IRestDescription) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRestDescription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve the list of APIs supported at this endpoint.
          * @params {string} name Only include APIs with the given name.
@@ -30,7 +30,7 @@ declare module googleapis.discovery {
         list: (params: {
             name?: string;
             preferred?: boolean;
-        }, callback: (err: any, response: IDirectoryList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDirectoryList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IDirectoryList {
         /**

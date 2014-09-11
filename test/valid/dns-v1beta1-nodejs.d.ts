@@ -22,7 +22,7 @@ declare module googleapis.dns {
             managedZone: string;
             project: string;
             resource?: IChange;
-        }, callback: (err: any, response: IChange) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChange, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Fetch the representation of an existing Change.
          * @params {string} changeId The identifier of the requested change, from a previous ResourceRecordSetsChangeResponse.
@@ -33,7 +33,7 @@ declare module googleapis.dns {
             changeId: string;
             managedZone: string;
             project: string;
-        }, callback: (err: any, response: IChange) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChange, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Enumerate Changes to a ResourceRecordSet collection.
          * @params {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or id.
@@ -50,7 +50,7 @@ declare module googleapis.dns {
             project: string;
             sortBy?: string;
             sortOrder?: string;
-        }, callback: (err: any, response: IChangesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChangesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var managedZones: {
         /**
@@ -60,7 +60,7 @@ declare module googleapis.dns {
         create: (params: {
             project: string;
             resource?: IManagedZone;
-        }, callback: (err: any, response: IManagedZone) => void) => void;
+        }, callback: (err: IErrorResponse, response: IManagedZone, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a previously created ManagedZone.
          * @params {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or id.
@@ -69,7 +69,7 @@ declare module googleapis.dns {
         delete: (params: {
             managedZone: string;
             project: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Fetch the representation of an existing ManagedZone.
          * @params {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or id.
@@ -78,7 +78,7 @@ declare module googleapis.dns {
         get: (params: {
             managedZone: string;
             project: string;
-        }, callback: (err: any, response: IManagedZone) => void) => void;
+        }, callback: (err: IErrorResponse, response: IManagedZone, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Enumerate ManagedZones that have been created but not yet deleted.
          * @params {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
@@ -89,7 +89,7 @@ declare module googleapis.dns {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IManagedZonesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IManagedZonesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var projects: {
         /**
@@ -98,7 +98,7 @@ declare module googleapis.dns {
          */
         get: (params: {
             project: string;
-        }, callback: (err: any, response: IProject) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var resourceRecordSets: {
         /**
@@ -117,7 +117,7 @@ declare module googleapis.dns {
             pageToken?: string;
             project: string;
             type?: string;
-        }, callback: (err: any, response: IResourceRecordSetsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IResourceRecordSetsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * An atomic update to a collection of ResourceRecordSets.

@@ -18,66 +18,66 @@ declare module googleapis.identitytoolkit {
          */
         createAuthUri: (params: {
             resource?: IIdentitytoolkitRelyingpartyCreateAuthUriRequest;
-        }, callback: (err: any, response: ICreateAuthUriResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICreateAuthUriResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete user account.
          */
         deleteAccount: (params: {
             resource?: IIdentitytoolkitRelyingpartyDeleteAccountRequest;
-        }, callback: (err: any, response: IDeleteAccountResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDeleteAccountResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Batch download user accounts.
          */
         downloadAccount: (params: {
             resource?: IIdentitytoolkitRelyingpartyDownloadAccountRequest;
-        }, callback: (err: any, response: IDownloadAccountResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDownloadAccountResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the account info.
          */
         getAccountInfo: (params: {
             resource?: IIdentitytoolkitRelyingpartyGetAccountInfoRequest;
-        }, callback: (err: any, response: IGetAccountInfoResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGetAccountInfoResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a code for user action confirmation.
          */
         getOobConfirmationCode: (params: {
             resource?: IRelyingparty;
-        }, callback: (err: any, response: IGetOobConfirmationCodeResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGetOobConfirmationCodeResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get token signing public key.
          */
         getPublicKeys: (params: {
-        }, callback: (err: any, response: IIdentitytoolkitRelyingpartyGetPublicKeysResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IIdentitytoolkitRelyingpartyGetPublicKeysResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Set account info for a user.
          */
         resetPassword: (params: {
             resource?: IIdentitytoolkitRelyingpartyResetPasswordRequest;
-        }, callback: (err: any, response: IResetPasswordResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IResetPasswordResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Set account info for a user.
          */
         setAccountInfo: (params: {
             resource?: IIdentitytoolkitRelyingpartySetAccountInfoRequest;
-        }, callback: (err: any, response: ISetAccountInfoResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISetAccountInfoResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Batch upload existing user accounts.
          */
         uploadAccount: (params: {
             resource?: IIdentitytoolkitRelyingpartyUploadAccountRequest;
-        }, callback: (err: any, response: IUploadAccountResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUploadAccountResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Verifies the assertion returned by the IdP.
          */
         verifyAssertion: (params: {
             resource?: IIdentitytoolkitRelyingpartyVerifyAssertionRequest;
-        }, callback: (err: any, response: IVerifyAssertionResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVerifyAssertionResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Verifies the user entered password.
          */
         verifyPassword: (params: {
             resource?: IIdentitytoolkitRelyingpartyVerifyPasswordRequest;
-        }, callback: (err: any, response: IVerifyPasswordResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVerifyPasswordResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Response of creating the IDP authentication URL.

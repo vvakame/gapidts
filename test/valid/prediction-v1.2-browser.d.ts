@@ -10,6 +10,7 @@ declare module gapi.client {
      * Lets you access a cloud hosted machine learning service that makes it easy to build smart apps
      */
     module prediction {
+        var _tmp: {};
         var hostedmodels: {
             /**
              * Submit input and request an output against a hosted model

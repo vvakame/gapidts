@@ -23,7 +23,7 @@ declare module googleapis.books {
             shelf: string;
             source?: string;
             userId: string;
-        }, callback: (err: any, response: IBookshelf) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBookshelf, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of public bookshelves for the specified user.
          * @params {string} source String to identify the originator of this request.
@@ -32,7 +32,7 @@ declare module googleapis.books {
         list: (params: {
             source?: string;
             userId: string;
-        }, callback: (err: any, response: IBookshelves) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBookshelves, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         volumes: {
             /**
              * Retrieves volumes in a specific bookshelf for the specified user.
@@ -50,7 +50,7 @@ declare module googleapis.books {
                 source?: string;
                 startIndex?: number;
                 userId: string;
-            }, callback: (err: any, response: IVolumes) => void) => void;
+            }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var cloudloading: {
@@ -66,17 +66,17 @@ declare module googleapis.books {
             mime_type?: string;
             name?: string;
             upload_client_token?: string;
-        }, callback: (err: any, response: IBooksCloudloadingResource) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBooksCloudloadingResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Remove the book and its contents
          * @params {string} volumeId The id of the book to be removed.
          */
         deleteBook: (params: {
             volumeId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         updateBook: (params: {
             resource?: IBooksCloudloadingResource;
-        }, callback: (err: any, response: IBooksCloudloadingResource) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBooksCloudloadingResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var layers: {
         /**
@@ -91,7 +91,7 @@ declare module googleapis.books {
             source?: string;
             summaryId: string;
             volumeId: string;
-        }, callback: (err: any, response: ILayersummary) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILayersummary, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the layer summaries for a volume.
          * @params {string} contentVersion The content version for the requested volume.
@@ -106,7 +106,7 @@ declare module googleapis.books {
             pageToken?: string;
             source?: string;
             volumeId: string;
-        }, callback: (err: any, response: ILayersummaries) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILayersummaries, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         annotationData: {
             /**
              * Gets the annotation data.
@@ -132,7 +132,7 @@ declare module googleapis.books {
                 source?: string;
                 volumeId: string;
                 w?: number;
-            }, callback: (err: any, response: IAnnotationdata) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAnnotationdata, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Gets the annotation data for a volume and layer.
              * @params {string} annotationDataId The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
@@ -163,7 +163,7 @@ declare module googleapis.books {
                 updatedMin?: string;
                 volumeId: string;
                 w?: number;
-            }, callback: (err: any, response: IAnnotationsdata) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAnnotationsdata, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         volumeAnnotations: {
             /**
@@ -180,7 +180,7 @@ declare module googleapis.books {
                 locale?: string;
                 source?: string;
                 volumeId: string;
-            }, callback: (err: any, response: IVolumeannotation) => void) => void;
+            }, callback: (err: IErrorResponse, response: IVolumeannotation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Gets the volume annotations for a volume and layer.
              * @params {string} contentVersion The content version for the requested volume.
@@ -215,7 +215,7 @@ declare module googleapis.books {
                 updatedMin?: string;
                 volumeAnnotationsVersion?: string;
                 volumeId: string;
-            }, callback: (err: any, response: IVolumeannotations) => void) => void;
+            }, callback: (err: IErrorResponse, response: IVolumeannotations, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var myconfig: {
@@ -231,7 +231,7 @@ declare module googleapis.books {
             locale?: string;
             source?: string;
             volumeIds: string;
-        }, callback: (err: any, response: IDownloadAccesses) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDownloadAccesses, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Request concurrent and download access restrictions.
          * @params {string} cpksver The device/version ID from which to request the restrictions.
@@ -248,7 +248,7 @@ declare module googleapis.books {
             nonce: string;
             source: string;
             volumeId: string;
-        }, callback: (err: any, response: IRequestAccess) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRequestAccess, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Request downloaded content access for specified volumes on the My eBooks shelf.
          * @params {string} cpksver The device/version ID from which to release the restriction.
@@ -267,7 +267,7 @@ declare module googleapis.books {
             showPreorders?: boolean;
             source: string;
             volumeIds?: string;
-        }, callback: (err: any, response: IVolumes) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var mylibrary: {
         annotations: {
@@ -279,7 +279,7 @@ declare module googleapis.books {
             delete: (params: {
                 annotationId: string;
                 source?: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets an annotation by its ID.
              * @params {string} annotationId The ID for the annotation to retrieve.
@@ -288,7 +288,7 @@ declare module googleapis.books {
             get: (params: {
                 annotationId: string;
                 source?: string;
-            }, callback: (err: any, response: IAnnotation) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAnnotation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Inserts a new annotation.
              * @params {boolean} showOnlySummaryInResponse Requests that only the summary of the specified layer be provided in the response.
@@ -298,7 +298,7 @@ declare module googleapis.books {
                 showOnlySummaryInResponse?: boolean;
                 source?: string;
                 resource?: IAnnotation;
-            }, callback: (err: any, response: IAnnotation) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAnnotation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Retrieves a list of annotations, possibly filtered.
              * @params {string} contentVersion The content version for the requested volume.
@@ -325,7 +325,7 @@ declare module googleapis.books {
                 updatedMax?: string;
                 updatedMin?: string;
                 volumeId?: string;
-            }, callback: (err: any, response: IAnnotations) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAnnotations, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Gets the summary of specified layers.
              * @params {string} layerIds Array of layer IDs to get the summary for.
@@ -334,7 +334,7 @@ declare module googleapis.books {
             summary: (params: {
                 layerIds: string;
                 volumeId: string;
-            }, callback: (err: any, response: IAnnotationsSummary) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAnnotationsSummary, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing annotation.
              * @params {string} annotationId The ID for the annotation to update.
@@ -344,7 +344,7 @@ declare module googleapis.books {
                 annotationId: string;
                 source?: string;
                 resource?: IAnnotation;
-            }, callback: (err: any, response: IAnnotation) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAnnotation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         bookshelves: {
             /**
@@ -357,7 +357,7 @@ declare module googleapis.books {
                 shelf: string;
                 source?: string;
                 volumeId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Clears all volumes from a bookshelf.
              * @params {string} shelf ID of bookshelf from which to remove a volume.
@@ -366,7 +366,7 @@ declare module googleapis.books {
             clearVolumes: (params: {
                 shelf: string;
                 source?: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Retrieves metadata for a specific bookshelf belonging to the authenticated user.
              * @params {string} shelf ID of bookshelf to retrieve.
@@ -375,14 +375,14 @@ declare module googleapis.books {
             get: (params: {
                 shelf: string;
                 source?: string;
-            }, callback: (err: any, response: IBookshelf) => void) => void;
+            }, callback: (err: IErrorResponse, response: IBookshelf, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Retrieves a list of bookshelves belonging to the authenticated user.
              * @params {string} source String to identify the originator of this request.
              */
             list: (params: {
                 source?: string;
-            }, callback: (err: any, response: IBookshelves) => void) => void;
+            }, callback: (err: IErrorResponse, response: IBookshelves, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Moves a volume within a bookshelf.
              * @params {string} shelf ID of bookshelf with the volume.
@@ -395,7 +395,7 @@ declare module googleapis.books {
                 source?: string;
                 volumeId: string;
                 volumePosition: number;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Removes a volume from a bookshelf.
              * @params {string} shelf ID of bookshelf from which to remove a volume.
@@ -406,7 +406,7 @@ declare module googleapis.books {
                 shelf: string;
                 source?: string;
                 volumeId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             volumes: {
                 /**
                  * Gets volume information for volumes on a bookshelf.
@@ -428,7 +428,7 @@ declare module googleapis.books {
                     showPreorders?: boolean;
                     source?: string;
                     startIndex?: number;
-                }, callback: (err: any, response: IVolumes) => void) => void;
+                }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
         readingpositions: {
@@ -442,7 +442,7 @@ declare module googleapis.books {
                 contentVersion?: string;
                 source?: string;
                 volumeId: string;
-            }, callback: (err: any, response: IReadingPosition) => void) => void;
+            }, callback: (err: IErrorResponse, response: IReadingPosition, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Sets my reading position information for a volume.
              * @params {string} action Action that caused this reading position to be set.
@@ -461,7 +461,7 @@ declare module googleapis.books {
                 source?: string;
                 timestamp: string;
                 volumeId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
     };
     var promooffer: {
@@ -485,7 +485,7 @@ declare module googleapis.books {
             product?: string;
             serial?: string;
             volumeId?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * 
          * @params {string} androidId device android_id
@@ -504,7 +504,7 @@ declare module googleapis.books {
             offerId?: string;
             product?: string;
             serial?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns a list of promo offers available to the user
          * @params {string} androidId device android_id
@@ -521,7 +521,7 @@ declare module googleapis.books {
             model?: string;
             product?: string;
             serial?: string;
-        }, callback: (err: any, response: IOffers) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOffers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var volumes: {
         /**
@@ -538,7 +538,7 @@ declare module googleapis.books {
             projection?: string;
             source?: string;
             volumeId: string;
-        }, callback: (err: any, response: IVolume) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVolume, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Performs a book search.
          * @params {string} download Restrict to volumes by download availability.
@@ -569,7 +569,7 @@ declare module googleapis.books {
             showPreorders?: boolean;
             source?: string;
             startIndex?: number;
-        }, callback: (err: any, response: IVolumes) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         associated: {
             /**
              * Return a list of associated books.
@@ -583,7 +583,7 @@ declare module googleapis.books {
                 locale?: string;
                 source?: string;
                 volumeId: string;
-            }, callback: (err: any, response: IVolumes) => void) => void;
+            }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         mybooks: {
             /**
@@ -602,7 +602,7 @@ declare module googleapis.books {
                 processingState?: string;
                 source?: string;
                 startIndex?: number;
-            }, callback: (err: any, response: IVolumes) => void) => void;
+            }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         recommended: {
             /**
@@ -613,7 +613,7 @@ declare module googleapis.books {
             list: (params: {
                 locale?: string;
                 source?: string;
-            }, callback: (err: any, response: IVolumes) => void) => void;
+            }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Rate a recommended book for the current user.
              * @params {string} locale ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
@@ -626,7 +626,7 @@ declare module googleapis.books {
                 rating: string;
                 source?: string;
                 volumeId: string;
-            }, callback: (err: any, response: IBooksVolumesRecommendedRateResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IBooksVolumesRecommendedRateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         useruploaded: {
             /**
@@ -645,7 +645,7 @@ declare module googleapis.books {
                 source?: string;
                 startIndex?: number;
                 volumeId?: string;
-            }, callback: (err: any, response: IVolumes) => void) => void;
+            }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     interface IAnnotation {

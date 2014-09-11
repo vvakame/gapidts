@@ -37,7 +37,7 @@ declare module googleapis.analytics {
             sort?: string;
             "start-date": string;
             "start-index"?: number;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var management: {
         accounts: {
@@ -49,7 +49,7 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         goals: {
             /**
@@ -66,7 +66,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         profiles: {
             /**
@@ -81,7 +81,7 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         segments: {
             /**
@@ -92,7 +92,7 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         webproperties: {
             /**
@@ -105,7 +105,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
     };
 }

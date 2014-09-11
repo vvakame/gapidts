@@ -21,7 +21,7 @@ declare module googleapis.adsense {
         get: (params: {
             accountId: string;
             tree?: boolean;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all accounts available to this AdSense account.
          * @params {number} maxResults The maximum number of accounts to include in the response, used for paging.
@@ -30,7 +30,7 @@ declare module googleapis.adsense {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IAccounts) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccounts, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         adclients: {
             /**
              * List all ad clients in the specified account.
@@ -42,7 +42,7 @@ declare module googleapis.adsense {
                 accountId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IAdClients) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         adunits: {
             /**
@@ -55,7 +55,7 @@ declare module googleapis.adsense {
                 accountId: string;
                 adClientId: string;
                 adUnitId: string;
-            }, callback: (err: any, response: IAdUnit) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all ad units in the specified ad client for the specified account.
              * @params {string} accountId Account to which the ad client belongs.
@@ -70,7 +70,7 @@ declare module googleapis.adsense {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IAdUnits) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             customchannels: {
                 /**
                  * List all custom channels which the specified ad unit belongs to.
@@ -86,7 +86,7 @@ declare module googleapis.adsense {
                     adUnitId: string;
                     maxResults?: number;
                     pageToken?: string;
-                }, callback: (err: any, response: ICustomChannels) => void) => void;
+                }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
         customchannels: {
@@ -100,7 +100,7 @@ declare module googleapis.adsense {
                 accountId: string;
                 adClientId: string;
                 customChannelId: string;
-            }, callback: (err: any, response: ICustomChannel) => void) => void;
+            }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all custom channels in the specified ad client for the specified account.
              * @params {string} accountId Account to which the ad client belongs.
@@ -113,7 +113,7 @@ declare module googleapis.adsense {
                 adClientId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: ICustomChannels) => void) => void;
+            }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             adunits: {
                 /**
                  * List all ad units in the specified custom channel.
@@ -131,7 +131,7 @@ declare module googleapis.adsense {
                     includeInactive?: boolean;
                     maxResults?: number;
                     pageToken?: string;
-                }, callback: (err: any, response: IAdUnits) => void) => void;
+                }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
         reports: {
@@ -161,7 +161,7 @@ declare module googleapis.adsense {
                 sort?: string;
                 startDate: string;
                 startIndex?: number;
-            }, callback: (err: any, response: IAdsenseReportsGenerateResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdsenseReportsGenerateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             saved: {
                 /**
                  * Generate an AdSense report based on the saved report ID sent in the query parameters.
@@ -177,7 +177,7 @@ declare module googleapis.adsense {
                     maxResults?: number;
                     savedReportId: string;
                     startIndex?: number;
-                }, callback: (err: any, response: IAdsenseReportsGenerateResponse) => void) => void;
+                }, callback: (err: IErrorResponse, response: IAdsenseReportsGenerateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
                 /**
                  * List all saved reports in the specified AdSense account.
                  * @params {string} accountId Account to which the saved reports belong.
@@ -188,7 +188,7 @@ declare module googleapis.adsense {
                     accountId: string;
                     maxResults?: number;
                     pageToken?: string;
-                }, callback: (err: any, response: ISavedReports) => void) => void;
+                }, callback: (err: IErrorResponse, response: ISavedReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
         savedadstyles: {
@@ -200,7 +200,7 @@ declare module googleapis.adsense {
             get: (params: {
                 accountId: string;
                 savedAdStyleId: string;
-            }, callback: (err: any, response: ISavedAdStyle) => void) => void;
+            }, callback: (err: IErrorResponse, response: ISavedAdStyle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all saved ad styles in the specified account.
              * @params {string} accountId Account for which to list saved ad styles.
@@ -211,7 +211,7 @@ declare module googleapis.adsense {
                 accountId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: ISavedAdStyles) => void) => void;
+            }, callback: (err: IErrorResponse, response: ISavedAdStyles, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         urlchannels: {
             /**
@@ -226,7 +226,7 @@ declare module googleapis.adsense {
                 adClientId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IUrlChannels) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUrlChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var adclients: {
@@ -238,7 +238,7 @@ declare module googleapis.adsense {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IAdClients) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var adunits: {
         /**
@@ -249,7 +249,7 @@ declare module googleapis.adsense {
         get: (params: {
             adClientId: string;
             adUnitId: string;
-        }, callback: (err: any, response: IAdUnit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all ad units in the specified ad client for this AdSense account.
          * @params {string} adClientId Ad client for which to list ad units.
@@ -262,7 +262,7 @@ declare module googleapis.adsense {
             includeInactive?: boolean;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IAdUnits) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         customchannels: {
             /**
              * List all custom channels which the specified ad unit belongs to.
@@ -276,7 +276,7 @@ declare module googleapis.adsense {
                 adUnitId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: ICustomChannels) => void) => void;
+            }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var customchannels: {
@@ -288,7 +288,7 @@ declare module googleapis.adsense {
         get: (params: {
             adClientId: string;
             customChannelId: string;
-        }, callback: (err: any, response: ICustomChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all custom channels in the specified ad client for this AdSense account.
          * @params {string} adClientId Ad client for which to list custom channels.
@@ -299,7 +299,7 @@ declare module googleapis.adsense {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ICustomChannels) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         adunits: {
             /**
              * List all ad units in the specified custom channel.
@@ -315,7 +315,7 @@ declare module googleapis.adsense {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IAdUnits) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var reports: {
@@ -345,7 +345,7 @@ declare module googleapis.adsense {
             sort?: string;
             startDate: string;
             startIndex?: number;
-        }, callback: (err: any, response: IAdsenseReportsGenerateResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdsenseReportsGenerateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         saved: {
             /**
              * Generate an AdSense report based on the saved report ID sent in the query parameters.
@@ -359,7 +359,7 @@ declare module googleapis.adsense {
                 maxResults?: number;
                 savedReportId: string;
                 startIndex?: number;
-            }, callback: (err: any, response: IAdsenseReportsGenerateResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdsenseReportsGenerateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all saved reports in this AdSense account.
              * @params {number} maxResults The maximum number of saved reports to include in the response, used for paging.
@@ -368,7 +368,7 @@ declare module googleapis.adsense {
             list: (params: {
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: ISavedReports) => void) => void;
+            }, callback: (err: IErrorResponse, response: ISavedReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var savedadstyles: {
@@ -378,7 +378,7 @@ declare module googleapis.adsense {
          */
         get: (params: {
             savedAdStyleId: string;
-        }, callback: (err: any, response: ISavedAdStyle) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISavedAdStyle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all saved ad styles in the user's account.
          * @params {number} maxResults The maximum number of saved ad styles to include in the response, used for paging.
@@ -387,7 +387,7 @@ declare module googleapis.adsense {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ISavedAdStyles) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISavedAdStyles, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var urlchannels: {
         /**
@@ -400,7 +400,7 @@ declare module googleapis.adsense {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IUrlChannels) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAccount {
         /**

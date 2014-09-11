@@ -19,7 +19,7 @@ declare module googleapis.adexchangeseller {
          */
         get: (params: {
             accountId: string;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var adclients: {
         /**
@@ -30,7 +30,7 @@ declare module googleapis.adexchangeseller {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IAdClients) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var adunits: {
         /**
@@ -41,7 +41,7 @@ declare module googleapis.adexchangeseller {
         get: (params: {
             adClientId: string;
             adUnitId: string;
-        }, callback: (err: any, response: IAdUnit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all ad units in the specified ad client for this Ad Exchange account.
          * @params {string} adClientId Ad client for which to list ad units.
@@ -54,7 +54,7 @@ declare module googleapis.adexchangeseller {
             includeInactive?: boolean;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IAdUnits) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         customchannels: {
             /**
              * List all custom channels which the specified ad unit belongs to.
@@ -68,7 +68,7 @@ declare module googleapis.adexchangeseller {
                 adUnitId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: ICustomChannels) => void) => void;
+            }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var alerts: {
@@ -78,7 +78,7 @@ declare module googleapis.adexchangeseller {
          */
         list: (params: {
             locale?: string;
-        }, callback: (err: any, response: IAlerts) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAlerts, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var customchannels: {
         /**
@@ -89,7 +89,7 @@ declare module googleapis.adexchangeseller {
         get: (params: {
             adClientId: string;
             customChannelId: string;
-        }, callback: (err: any, response: ICustomChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all custom channels in the specified ad client for this Ad Exchange account.
          * @params {string} adClientId Ad client for which to list custom channels.
@@ -100,7 +100,7 @@ declare module googleapis.adexchangeseller {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ICustomChannels) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         adunits: {
             /**
              * List all ad units in the specified custom channel.
@@ -116,7 +116,7 @@ declare module googleapis.adexchangeseller {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IAdUnits) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var metadata: {
@@ -125,14 +125,14 @@ declare module googleapis.adexchangeseller {
              * List the metadata for the dimensions available to this AdExchange account.
              */
             list: (params: {
-            }, callback: (err: any, response: IMetadata) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMetadata, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         metrics: {
             /**
              * List the metadata for the metrics available to this AdExchange account.
              */
             list: (params: {
-            }, callback: (err: any, response: IMetadata) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMetadata, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var preferreddeals: {
@@ -142,12 +142,12 @@ declare module googleapis.adexchangeseller {
          */
         get: (params: {
             dealId: string;
-        }, callback: (err: any, response: IPreferredDeal) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPreferredDeal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the preferred deals for this Ad Exchange account.
          */
         list: (params: {
-        }, callback: (err: any, response: IPreferredDeals) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPreferredDeals, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
         /**
@@ -172,7 +172,7 @@ declare module googleapis.adexchangeseller {
             sort?: string;
             startDate: string;
             startIndex?: number;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         saved: {
             /**
              * Generate an Ad Exchange report based on the saved report ID sent in the query parameters.
@@ -186,7 +186,7 @@ declare module googleapis.adexchangeseller {
                 maxResults?: number;
                 savedReportId: string;
                 startIndex?: number;
-            }, callback: (err: any, response: IReport) => void) => void;
+            }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all saved reports in this Ad Exchange account.
              * @params {number} maxResults The maximum number of saved reports to include in the response, used for paging.
@@ -195,7 +195,7 @@ declare module googleapis.adexchangeseller {
             list: (params: {
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: ISavedReports) => void) => void;
+            }, callback: (err: IErrorResponse, response: ISavedReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var urlchannels: {
@@ -209,7 +209,7 @@ declare module googleapis.adexchangeseller {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IUrlChannels) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAccount {
         /**

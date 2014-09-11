@@ -24,7 +24,7 @@ declare module googleapis.mirror {
             accountType: string;
             userToken: string;
             resource?: IAccount;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var contacts: {
         /**
@@ -33,25 +33,25 @@ declare module googleapis.mirror {
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a single contact by ID.
          * @params {string} id The ID of the contact.
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: IContact) => void) => void;
+        }, callback: (err: IErrorResponse, response: IContact, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new contact.
          */
         insert: (params: {
             resource?: IContact;
-        }, callback: (err: any, response: IContact) => void) => void;
+        }, callback: (err: IErrorResponse, response: IContact, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of contacts for the authenticated user.
          */
         list: (params: {
-        }, callback: (err: any, response: IContactsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IContactsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a contact in place. This method supports patch semantics.
          * @params {string} id The ID of the contact.
@@ -59,7 +59,7 @@ declare module googleapis.mirror {
         patch: (params: {
             id: string;
             resource?: IContact;
-        }, callback: (err: any, response: IContact) => void) => void;
+        }, callback: (err: IErrorResponse, response: IContact, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a contact in place.
          * @params {string} id The ID of the contact.
@@ -67,7 +67,7 @@ declare module googleapis.mirror {
         update: (params: {
             id: string;
             resource?: IContact;
-        }, callback: (err: any, response: IContact) => void) => void;
+        }, callback: (err: IErrorResponse, response: IContact, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var locations: {
         /**
@@ -76,12 +76,12 @@ declare module googleapis.mirror {
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: ILocation) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILocation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of locations for the user.
          */
         list: (params: {
-        }, callback: (err: any, response: ILocationsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILocationsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var settings: {
         /**
@@ -92,7 +92,7 @@ declare module googleapis.mirror {
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: ISetting) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var subscriptions: {
         /**
@@ -101,18 +101,18 @@ declare module googleapis.mirror {
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a new subscription.
          */
         insert: (params: {
             resource?: ISubscription;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of subscriptions for the authenticated user and service.
          */
         list: (params: {
-        }, callback: (err: any, response: ISubscriptionsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscriptionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing subscription in place.
          * @params {string} id The ID of the subscription.
@@ -120,7 +120,7 @@ declare module googleapis.mirror {
         update: (params: {
             id: string;
             resource?: ISubscription;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var timeline: {
         /**
@@ -129,20 +129,20 @@ declare module googleapis.mirror {
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a single timeline item by ID.
          * @params {string} id The ID of the timeline item.
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: ITimelineItem) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITimelineItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new item into the timeline.
          */
         insert: (params: {
             resource?: ITimelineItem;
-        }, callback: (err: any, response: ITimelineItem) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITimelineItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of timeline items for the authenticated user.
          * @params {string} bundleId If provided, only items with the given bundleId will be returned.
@@ -161,7 +161,7 @@ declare module googleapis.mirror {
             pageToken?: string;
             pinnedOnly?: boolean;
             sourceItemId?: string;
-        }, callback: (err: any, response: ITimelineListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITimelineListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a timeline item in place. This method supports patch semantics.
          * @params {string} id The ID of the timeline item.
@@ -169,7 +169,7 @@ declare module googleapis.mirror {
         patch: (params: {
             id: string;
             resource?: ITimelineItem;
-        }, callback: (err: any, response: ITimelineItem) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITimelineItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a timeline item in place.
          * @params {string} id The ID of the timeline item.
@@ -177,7 +177,7 @@ declare module googleapis.mirror {
         update: (params: {
             id: string;
             resource?: ITimelineItem;
-        }, callback: (err: any, response: ITimelineItem) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITimelineItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         attachments: {
             /**
              * Deletes an attachment from a timeline item.
@@ -187,7 +187,7 @@ declare module googleapis.mirror {
             delete: (params: {
                 attachmentId: string;
                 itemId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Retrieves an attachment on a timeline item by item ID and attachment ID.
              * @params {string} attachmentId The ID of the attachment.
@@ -196,21 +196,21 @@ declare module googleapis.mirror {
             get: (params: {
                 attachmentId: string;
                 itemId: string;
-            }, callback: (err: any, response: IAttachment) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAttachment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Adds a new attachment to a timeline item.
              * @params {string} itemId The ID of the timeline item the attachment belongs to.
              */
             insert: (params: {
                 itemId: string;
-            }, callback: (err: any, response: IAttachment) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAttachment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Returns a list of attachments for a timeline item.
              * @params {string} itemId The ID of the timeline item whose attachments should be listed.
              */
             list: (params: {
                 itemId: string;
-            }, callback: (err: any, response: IAttachmentsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAttachmentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     /**

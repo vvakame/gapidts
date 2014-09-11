@@ -20,7 +20,7 @@ declare module googleapis.datastore {
         allocateIds: (params: {
             datasetId: string;
             resource?: IAllocateIdsRequest;
-        }, callback: (err: any, response: IAllocateIdsResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAllocateIdsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Begin a new transaction.
          * @params {string} datasetId Identifies the dataset.
@@ -28,7 +28,7 @@ declare module googleapis.datastore {
         beginTransaction: (params: {
             datasetId: string;
             resource?: IBeginTransactionRequest;
-        }, callback: (err: any, response: IBeginTransactionResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBeginTransactionResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create, delete or modify some entities outside a transaction.
          * @params {string} datasetId Identifies the dataset.
@@ -36,7 +36,7 @@ declare module googleapis.datastore {
         blindWrite: (params: {
             datasetId: string;
             resource?: IBlindWriteRequest;
-        }, callback: (err: any, response: IBlindWriteResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBlindWriteResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Commit a transaction, optionally creating, deleting or modifying some entities.
          * @params {string} datasetId Identifies the dataset.
@@ -44,7 +44,7 @@ declare module googleapis.datastore {
         commit: (params: {
             datasetId: string;
             resource?: ICommitRequest;
-        }, callback: (err: any, response: ICommitResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICommitResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Look up some entities by key.
          * @params {string} datasetId Identifies the dataset.
@@ -52,7 +52,7 @@ declare module googleapis.datastore {
         lookup: (params: {
             datasetId: string;
             resource?: ILookupRequest;
-        }, callback: (err: any, response: ILookupResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILookupResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Roll back a transaction.
          * @params {string} datasetId Identifies the dataset.
@@ -60,7 +60,7 @@ declare module googleapis.datastore {
         rollback: (params: {
             datasetId: string;
             resource?: IRollbackRequest;
-        }, callback: (err: any, response: IRollbackResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRollbackResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Query for entities.
          * @params {string} datasetId Identifies the dataset.
@@ -68,7 +68,7 @@ declare module googleapis.datastore {
         runQuery: (params: {
             datasetId: string;
             resource?: IRunQueryRequest;
-        }, callback: (err: any, response: IRunQueryResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRunQueryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAllocateIdsRequest {
         /**

@@ -19,19 +19,19 @@ declare module googleapis.gamesManagement {
          */
         reset: (params: {
             achievementId: string;
-        }, callback: (err: any, response: IAchievementResetResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAchievementResetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
          */
         resetAll: (params: {
-        }, callback: (err: any, response: IAchievementResetAllResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAchievementResetAllResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Resets the achievement with the given ID for the all players. This method is only available to user accounts for your developer console. Only draft achievements can be reset.
          * @params {string} achievementId The ID of the achievement used by this method.
          */
         resetForAllPlayers: (params: {
             achievementId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var applications: {
         /**
@@ -44,7 +44,7 @@ declare module googleapis.gamesManagement {
             applicationId: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IHiddenPlayerList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IHiddenPlayerList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var events: {
         /**
@@ -53,19 +53,19 @@ declare module googleapis.gamesManagement {
          */
         reset: (params: {
             eventId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Reset all player progress on all unpublished events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All resources that use the events will also be reset.
          */
         resetAll: (params: {
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Reset all player progress on the event for all players. This method is only available to user accounts for your developer console. Only draft events can be reset. All resources that use the event will also be reset.
          * @params {string} eventId The ID of the event.
          */
         resetForAllPlayers: (params: {
             eventId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var players: {
         /**
@@ -76,7 +76,7 @@ declare module googleapis.gamesManagement {
         hide: (params: {
             applicationId: string;
             playerId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Unhide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.
          * @params {string} applicationId The application being requested.
@@ -85,7 +85,7 @@ declare module googleapis.gamesManagement {
         unhide: (params: {
             applicationId: string;
             playerId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var quests: {
         /**
@@ -94,14 +94,14 @@ declare module googleapis.gamesManagement {
          */
         reset: (params: {
             questId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var rooms: {
         /**
          * Reset all rooms for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
          */
         reset: (params: {
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var scores: {
         /**
@@ -110,21 +110,21 @@ declare module googleapis.gamesManagement {
          */
         reset: (params: {
             leaderboardId: string;
-        }, callback: (err: any, response: IPlayerScoreResetResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlayerScoreResetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Reset scores for the specified leaderboard for all players. This method is only available to user accounts for your developer console. Only draft leaderboards can be reset.
          * @params {string} leaderboardId The ID of the leaderboard.
          */
         resetForAllPlayers: (params: {
             leaderboardId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var turnBasedMatches: {
         /**
          * Reset all turn-based match data for a user. This method is only accessible to whitelisted tester accounts for your application.
          */
         reset: (params: {
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     /**
      * This is a JSON template for achievement reset all response.

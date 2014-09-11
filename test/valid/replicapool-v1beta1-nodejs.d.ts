@@ -24,7 +24,7 @@ declare module googleapis.replicapool {
             projectName: string;
             zone: string;
             resource?: IPoolsDeleteRequest;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets information about a single replica pool.
          * @params {string} poolName The name of the replica pool for this request.
@@ -35,7 +35,7 @@ declare module googleapis.replicapool {
             poolName: string;
             projectName: string;
             zone: string;
-        }, callback: (err: any, response: IPool) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPool, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new replica pool.
          * @params {string} projectName The project ID for this replica pool.
@@ -45,7 +45,7 @@ declare module googleapis.replicapool {
             projectName: string;
             zone: string;
             resource?: IPool;
-        }, callback: (err: any, response: IPool) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPool, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all replica pools.
          * @params {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)
@@ -58,7 +58,7 @@ declare module googleapis.replicapool {
             pageToken?: string;
             projectName: string;
             zone: string;
-        }, callback: (err: any, response: IPoolsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPoolsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Resize a pool. This is an asynchronous operation, and multiple overlapping resize requests can be made. Replica Pools will use the information from the last resize request.
          * @params {number} numReplicas The desired number of replicas to resize to. If this number is larger than the existing number of replicas, new replicas will be added. If the number is smaller, then existing replicas will be deleted.
@@ -71,7 +71,7 @@ declare module googleapis.replicapool {
             poolName: string;
             projectName: string;
             zone: string;
-        }, callback: (err: any, response: IPool) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPool, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the template used by the pool.
          * @params {string} poolName The name of the replica pool for this request.
@@ -83,7 +83,7 @@ declare module googleapis.replicapool {
             projectName: string;
             zone: string;
             resource?: ITemplate;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var replicas: {
         /**
@@ -99,7 +99,7 @@ declare module googleapis.replicapool {
             replicaName: string;
             zone: string;
             resource?: IReplicasDeleteRequest;
-        }, callback: (err: any, response: IReplica) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReplica, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets information about a specific replica.
          * @params {string} poolName The replica pool name for this request.
@@ -112,7 +112,7 @@ declare module googleapis.replicapool {
             projectName: string;
             replicaName: string;
             zone: string;
-        }, callback: (err: any, response: IReplica) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReplica, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all replicas in a pool.
          * @params {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)
@@ -127,7 +127,7 @@ declare module googleapis.replicapool {
             poolName: string;
             projectName: string;
             zone: string;
-        }, callback: (err: any, response: IReplicasListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReplicasListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Restarts a replica in a pool.
          * @params {string} poolName The replica pool name for this request.
@@ -140,7 +140,7 @@ declare module googleapis.replicapool {
             projectName: string;
             replicaName: string;
             zone: string;
-        }, callback: (err: any, response: IReplica) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReplica, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * A Compute Engine network accessConfig. Identical to the accessConfig on corresponding Compute Engine resource.

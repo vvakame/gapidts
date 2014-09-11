@@ -21,28 +21,28 @@ declare module googleapis.appstate {
         clear: (params: {
             currentDataVersion?: string;
             stateKey: number;
-        }, callback: (err: any, response: IWriteResult) => void) => void;
+        }, callback: (err: IErrorResponse, response: IWriteResult, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a key and the data associated with it. The key is removed and no longer counts against the key quota. Note that since this method is not safe in the face of concurrent modifications, it should only be used for development and testing purposes. Invoking this method in shipping code can result in data loss and data corruption.
          * @params {number} stateKey The key for the data to be retrieved.
          */
         delete: (params: {
             stateKey: number;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the data corresponding to the passed key. If the key does not exist on the server, an HTTP 404 will be returned.
          * @params {number} stateKey The key for the data to be retrieved.
          */
         get: (params: {
             stateKey: number;
-        }, callback: (err: any, response: IGetResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all the states keys, and optionally the state data.
          * @params {boolean} includeData Whether to include the full data in addition to the version number
          */
         list: (params: {
             includeData?: boolean;
-        }, callback: (err: any, response: IListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the data associated with the input key if and only if the passed version matches the currently stored version. This method is safe in the face of concurrent writes. Maximum per-key size is 128KB.
          * @params {string} currentStateVersion The version of the app state your application is attempting to update. If this does not match the current version, this method will return a conflict error. If there is no data stored on the server for this key, the update will succeed irrespective of the value of this parameter.
@@ -52,7 +52,7 @@ declare module googleapis.appstate {
             currentStateVersion?: string;
             stateKey: number;
             resource?: IUpdateRequest;
-        }, callback: (err: any, response: IWriteResult) => void) => void;
+        }, callback: (err: IErrorResponse, response: IWriteResult, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * This is a JSON template for an app state resource.

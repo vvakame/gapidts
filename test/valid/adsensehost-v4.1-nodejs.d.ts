@@ -19,14 +19,14 @@ declare module googleapis.adsensehost {
          */
         get: (params: {
             accountId: string;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List hosted accounts associated with this AdSense account by ad client id.
          * @params {string} filterAdClientId Ad clients to list accounts for.
          */
         list: (params: {
             filterAdClientId: string;
-        }, callback: (err: any, response: IAccounts) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccounts, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         adclients: {
             /**
              * Get information about one of the ad clients in the specified publisher's AdSense account.
@@ -36,7 +36,7 @@ declare module googleapis.adsensehost {
             get: (params: {
                 accountId: string;
                 adClientId: string;
-            }, callback: (err: any, response: IAdClient) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdClient, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all hosted ad clients in the specified hosted account.
              * @params {string} accountId Account for which to list ad clients.
@@ -47,7 +47,7 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IAdClients) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         adunits: {
             /**
@@ -60,7 +60,7 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 adClientId: string;
                 adUnitId: string;
-            }, callback: (err: any, response: IAdUnit) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Get the specified host ad unit in this AdSense account.
              * @params {string} accountId Account which contains the ad unit.
@@ -71,7 +71,7 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 adClientId: string;
                 adUnitId: string;
-            }, callback: (err: any, response: IAdUnit) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Get ad code for the specified ad unit, attaching the specified host custom channels.
              * @params {string} accountId Account which contains the ad client.
@@ -84,7 +84,7 @@ declare module googleapis.adsensehost {
                 adClientId: string;
                 adUnitId: string;
                 hostCustomChannelId?: string;
-            }, callback: (err: any, response: IAdCode) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdCode, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Insert the supplied ad unit into the specified publisher AdSense account.
              * @params {string} accountId Account which will contain the ad unit.
@@ -94,7 +94,7 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 adClientId: string;
                 resource?: IAdUnit;
-            }, callback: (err: any, response: IAdUnit) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all ad units in the specified publisher's AdSense account.
              * @params {string} accountId Account which contains the ad client.
@@ -109,7 +109,7 @@ declare module googleapis.adsensehost {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
-            }, callback: (err: any, response: IAdUnits) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update the supplied ad unit in the specified publisher AdSense account. This method supports patch semantics.
              * @params {string} accountId Account which contains the ad client.
@@ -121,7 +121,7 @@ declare module googleapis.adsensehost {
                 adClientId: string;
                 adUnitId: string;
                 resource?: IAdUnit;
-            }, callback: (err: any, response: IAdUnit) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update the supplied ad unit in the specified publisher AdSense account.
              * @params {string} accountId Account which contains the ad client.
@@ -131,7 +131,7 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 adClientId: string;
                 resource?: IAdUnit;
-            }, callback: (err: any, response: IAdUnit) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         reports: {
             /**
@@ -158,7 +158,7 @@ declare module googleapis.adsensehost {
                 sort?: string;
                 startDate: string;
                 startIndex?: number;
-            }, callback: (err: any, response: IReport) => void) => void;
+            }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var adclients: {
@@ -168,7 +168,7 @@ declare module googleapis.adsensehost {
          */
         get: (params: {
             adClientId: string;
-        }, callback: (err: any, response: IAdClient) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdClient, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all host ad clients in this AdSense account.
          * @params {number} maxResults The maximum number of ad clients to include in the response, used for paging.
@@ -177,7 +177,7 @@ declare module googleapis.adsensehost {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IAdClients) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var associationsessions: {
         /**
@@ -192,14 +192,14 @@ declare module googleapis.adsensehost {
             userLocale?: string;
             websiteLocale?: string;
             websiteUrl: string;
-        }, callback: (err: any, response: IAssociationSession) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAssociationSession, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Verify an association session after the association callback returns from AdSense signup.
          * @params {string} token The token returned to the association callback URL.
          */
         verify: (params: {
             token: string;
-        }, callback: (err: any, response: IAssociationSession) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAssociationSession, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var customchannels: {
         /**
@@ -210,7 +210,7 @@ declare module googleapis.adsensehost {
         delete: (params: {
             adClientId: string;
             customChannelId: string;
-        }, callback: (err: any, response: ICustomChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a specific custom channel from the host AdSense account.
          * @params {string} adClientId Ad client from which to get the custom channel.
@@ -219,7 +219,7 @@ declare module googleapis.adsensehost {
         get: (params: {
             adClientId: string;
             customChannelId: string;
-        }, callback: (err: any, response: ICustomChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a new custom channel to the host AdSense account.
          * @params {string} adClientId Ad client to which the new custom channel will be added.
@@ -227,7 +227,7 @@ declare module googleapis.adsensehost {
         insert: (params: {
             adClientId: string;
             resource?: ICustomChannel;
-        }, callback: (err: any, response: ICustomChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all host custom channels in this AdSense account.
          * @params {string} adClientId Ad client for which to list custom channels.
@@ -238,7 +238,7 @@ declare module googleapis.adsensehost {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ICustomChannels) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a custom channel in the host AdSense account. This method supports patch semantics.
          * @params {string} adClientId Ad client in which the custom channel will be updated.
@@ -248,7 +248,7 @@ declare module googleapis.adsensehost {
             adClientId: string;
             customChannelId: string;
             resource?: ICustomChannel;
-        }, callback: (err: any, response: ICustomChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a custom channel in the host AdSense account.
          * @params {string} adClientId Ad client in which the custom channel will be updated.
@@ -256,7 +256,7 @@ declare module googleapis.adsensehost {
         update: (params: {
             adClientId: string;
             resource?: ICustomChannel;
-        }, callback: (err: any, response: ICustomChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
         /**
@@ -281,7 +281,7 @@ declare module googleapis.adsensehost {
             sort?: string;
             startDate: string;
             startIndex?: number;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var urlchannels: {
         /**
@@ -292,7 +292,7 @@ declare module googleapis.adsensehost {
         delete: (params: {
             adClientId: string;
             urlChannelId: string;
-        }, callback: (err: any, response: IUrlChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a new URL channel to the host AdSense account.
          * @params {string} adClientId Ad client to which the new URL channel will be added.
@@ -300,7 +300,7 @@ declare module googleapis.adsensehost {
         insert: (params: {
             adClientId: string;
             resource?: IUrlChannel;
-        }, callback: (err: any, response: IUrlChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all host URL channels in the host AdSense account.
          * @params {string} adClientId Ad client for which to list URL channels.
@@ -311,7 +311,7 @@ declare module googleapis.adsensehost {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IUrlChannels) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAccount {
         /**

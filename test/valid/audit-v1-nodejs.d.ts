@@ -39,7 +39,7 @@ declare module googleapis.audit {
             eventName?: string;
             maxResults?: number;
             startTime?: string;
-        }, callback: (err: any, response: IActivities) => void) => void;
+        }, callback: (err: IErrorResponse, response: IActivities, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IActivities {
         /**

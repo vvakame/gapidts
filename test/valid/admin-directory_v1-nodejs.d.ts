@@ -21,7 +21,7 @@ declare module googleapis.admin {
         delete: (params: {
             codeId: number;
             userKey: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get information about an ASP issued by a user.
          * @params {number} codeId The unique ID of the ASP.
@@ -30,14 +30,14 @@ declare module googleapis.admin {
         get: (params: {
             codeId: number;
             userKey: string;
-        }, callback: (err: any, response: IAsp) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAsp, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the ASPs issued by a user.
          * @params {string} userKey Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
          */
         list: (params: {
             userKey: string;
-        }, callback: (err: any, response: IAsps) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAsps, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channels: {
         /**
@@ -45,7 +45,7 @@ declare module googleapis.admin {
          */
         stop: (params: {
             resource?: IChannel;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var chromeosdevices: {
         /**
@@ -58,7 +58,7 @@ declare module googleapis.admin {
             customerId: string;
             deviceId: string;
             projection?: string;
-        }, callback: (err: any, response: IChromeOsDevice) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChromeOsDevice, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve all Chrome OS Devices of a customer (paginated)
          * @params {string} customerId Immutable id of the Google Apps account
@@ -77,7 +77,7 @@ declare module googleapis.admin {
             projection?: string;
             query?: string;
             sortOrder?: string;
-        }, callback: (err: any, response: IChromeOsDevices) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChromeOsDevices, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Chrome OS Device. This method supports patch semantics.
          * @params {string} customerId Immutable id of the Google Apps account
@@ -89,7 +89,7 @@ declare module googleapis.admin {
             deviceId: string;
             projection?: string;
             resource?: IChromeOsDevice;
-        }, callback: (err: any, response: IChromeOsDevice) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChromeOsDevice, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Chrome OS Device
          * @params {string} customerId Immutable id of the Google Apps account
@@ -101,7 +101,7 @@ declare module googleapis.admin {
             deviceId: string;
             projection?: string;
             resource?: IChromeOsDevice;
-        }, callback: (err: any, response: IChromeOsDevice) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChromeOsDevice, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var groups: {
         /**
@@ -110,20 +110,20 @@ declare module googleapis.admin {
          */
         delete: (params: {
             groupKey: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieve Group
          * @params {string} groupKey Email or immutable Id of the group
          */
         get: (params: {
             groupKey: string;
-        }, callback: (err: any, response: IGroup) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroup, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create Group
          */
         insert: (params: {
             resource?: IGroup;
-        }, callback: (err: any, response: IGroup) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroup, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve all groups in a domain (paginated)
          * @params {string} customer Immutable id of the Google Apps account. In case of multi-domain, to fetch all groups for a customer, fill this field instead of domain.
@@ -138,7 +138,7 @@ declare module googleapis.admin {
             maxResults?: number;
             pageToken?: string;
             userKey?: string;
-        }, callback: (err: any, response: IGroups) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Group. This method supports patch semantics.
          * @params {string} groupKey Email or immutable Id of the group. If Id, it should match with id of group object
@@ -146,7 +146,7 @@ declare module googleapis.admin {
         patch: (params: {
             groupKey: string;
             resource?: IGroup;
-        }, callback: (err: any, response: IGroup) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroup, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Group
          * @params {string} groupKey Email or immutable Id of the group. If Id, it should match with id of group object
@@ -154,7 +154,7 @@ declare module googleapis.admin {
         update: (params: {
             groupKey: string;
             resource?: IGroup;
-        }, callback: (err: any, response: IGroup) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroup, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         aliases: {
             /**
              * Remove a alias for the group
@@ -164,7 +164,7 @@ declare module googleapis.admin {
             delete: (params: {
                 alias: string;
                 groupKey: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Add a alias for the group
              * @params {string} groupKey Email or immutable Id of the group
@@ -172,14 +172,14 @@ declare module googleapis.admin {
             insert: (params: {
                 groupKey: string;
                 resource?: IAlias;
-            }, callback: (err: any, response: IAlias) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAlias, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all aliases for a group
              * @params {string} groupKey Email or immutable Id of the group
              */
             list: (params: {
                 groupKey: string;
-            }, callback: (err: any, response: IAliases) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAliases, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var members: {
@@ -191,7 +191,7 @@ declare module googleapis.admin {
         delete: (params: {
             groupKey: string;
             memberKey: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieve Group Member
          * @params {string} groupKey Email or immutable Id of the group
@@ -200,7 +200,7 @@ declare module googleapis.admin {
         get: (params: {
             groupKey: string;
             memberKey: string;
-        }, callback: (err: any, response: IMember) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMember, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add user to the specified group.
          * @params {string} groupKey Email or immutable Id of the group
@@ -208,7 +208,7 @@ declare module googleapis.admin {
         insert: (params: {
             groupKey: string;
             resource?: IMember;
-        }, callback: (err: any, response: IMember) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMember, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve all members in a group (paginated)
          * @params {string} groupKey Email or immutable Id of the group
@@ -221,7 +221,7 @@ declare module googleapis.admin {
             maxResults?: number;
             pageToken?: string;
             roles?: string;
-        }, callback: (err: any, response: IMembers) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMembers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update membership of a user in the specified group. This method supports patch semantics.
          * @params {string} groupKey Email or immutable Id of the group. If Id, it should match with id of group object
@@ -231,7 +231,7 @@ declare module googleapis.admin {
             groupKey: string;
             memberKey: string;
             resource?: IMember;
-        }, callback: (err: any, response: IMember) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMember, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update membership of a user in the specified group.
          * @params {string} groupKey Email or immutable Id of the group. If Id, it should match with id of group object
@@ -241,7 +241,7 @@ declare module googleapis.admin {
             groupKey: string;
             memberKey: string;
             resource?: IMember;
-        }, callback: (err: any, response: IMember) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMember, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var mobiledevices: {
         /**
@@ -253,7 +253,7 @@ declare module googleapis.admin {
             customerId: string;
             resourceId: string;
             resource?: IMobileDeviceAction;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Delete Mobile Device
          * @params {string} customerId Immutable id of the Google Apps account
@@ -262,7 +262,7 @@ declare module googleapis.admin {
         delete: (params: {
             customerId: string;
             resourceId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieve Mobile Device
          * @params {string} customerId Immutable id of the Google Apps account
@@ -273,7 +273,7 @@ declare module googleapis.admin {
             customerId: string;
             projection?: string;
             resourceId: string;
-        }, callback: (err: any, response: IMobileDevice) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMobileDevice, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve all Mobile Devices of a customer (paginated)
          * @params {string} customerId Immutable id of the Google Apps account
@@ -292,7 +292,7 @@ declare module googleapis.admin {
             projection?: string;
             query?: string;
             sortOrder?: string;
-        }, callback: (err: any, response: IMobileDevices) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMobileDevices, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var notifications: {
         /**
@@ -303,7 +303,7 @@ declare module googleapis.admin {
         delete: (params: {
             customer: string;
             notificationId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a notification.
          * @params {string} customer The unique ID for the customer's Google account. The customerId is also returned as part of the Users resource.
@@ -312,7 +312,7 @@ declare module googleapis.admin {
         get: (params: {
             customer: string;
             notificationId: string;
-        }, callback: (err: any, response: INotification) => void) => void;
+        }, callback: (err: IErrorResponse, response: INotification, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of notifications.
          * @params {string} customer The unique ID for the customer's Google account.
@@ -325,7 +325,7 @@ declare module googleapis.admin {
             language?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: INotifications) => void) => void;
+        }, callback: (err: IErrorResponse, response: INotifications, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a notification. This method supports patch semantics.
          * @params {string} customer The unique ID for the customer's Google account.
@@ -335,7 +335,7 @@ declare module googleapis.admin {
             customer: string;
             notificationId: string;
             resource?: INotification;
-        }, callback: (err: any, response: INotification) => void) => void;
+        }, callback: (err: IErrorResponse, response: INotification, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a notification.
          * @params {string} customer The unique ID for the customer's Google account.
@@ -345,7 +345,7 @@ declare module googleapis.admin {
             customer: string;
             notificationId: string;
             resource?: INotification;
-        }, callback: (err: any, response: INotification) => void) => void;
+        }, callback: (err: IErrorResponse, response: INotification, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var orgunits: {
         /**
@@ -356,7 +356,7 @@ declare module googleapis.admin {
         delete: (params: {
             customerId: string;
             orgUnitPath: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieve Organization Unit
          * @params {string} customerId Immutable id of the Google Apps account
@@ -365,7 +365,7 @@ declare module googleapis.admin {
         get: (params: {
             customerId: string;
             orgUnitPath: string;
-        }, callback: (err: any, response: IOrgUnit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOrgUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add Organization Unit
          * @params {string} customerId Immutable id of the Google Apps account
@@ -373,7 +373,7 @@ declare module googleapis.admin {
         insert: (params: {
             customerId: string;
             resource?: IOrgUnit;
-        }, callback: (err: any, response: IOrgUnit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOrgUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve all Organization Units
          * @params {string} customerId Immutable id of the Google Apps account
@@ -384,7 +384,7 @@ declare module googleapis.admin {
             customerId: string;
             orgUnitPath?: string;
             type?: string;
-        }, callback: (err: any, response: IOrgUnits) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOrgUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Organization Unit. This method supports patch semantics.
          * @params {string} customerId Immutable id of the Google Apps account
@@ -394,7 +394,7 @@ declare module googleapis.admin {
             customerId: string;
             orgUnitPath: string;
             resource?: IOrgUnit;
-        }, callback: (err: any, response: IOrgUnit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOrgUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Organization Unit
          * @params {string} customerId Immutable id of the Google Apps account
@@ -404,7 +404,7 @@ declare module googleapis.admin {
             customerId: string;
             orgUnitPath: string;
             resource?: IOrgUnit;
-        }, callback: (err: any, response: IOrgUnit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOrgUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tokens: {
         /**
@@ -415,7 +415,7 @@ declare module googleapis.admin {
         delete: (params: {
             clientId: string;
             userKey: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get information about an access token issued by a user.
          * @params {string} clientId The Client ID of the application the token is issued to.
@@ -424,14 +424,14 @@ declare module googleapis.admin {
         get: (params: {
             clientId: string;
             userKey: string;
-        }, callback: (err: any, response: IToken) => void) => void;
+        }, callback: (err: IErrorResponse, response: IToken, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the set of tokens specified user has issued to 3rd party applications.
          * @params {string} userKey Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
          */
         list: (params: {
             userKey: string;
-        }, callback: (err: any, response: ITokens) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITokens, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var users: {
         /**
@@ -440,20 +440,20 @@ declare module googleapis.admin {
          */
         delete: (params: {
             userKey: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * retrieve user
          * @params {string} userKey Email or immutable Id of the user
          */
         get: (params: {
             userKey: string;
-        }, callback: (err: any, response: IUser) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * create user.
          */
         insert: (params: {
             resource?: IUser;
-        }, callback: (err: any, response: IUser) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve either deleted users or all users in a domain (paginated)
          * @params {string} customer Immutable id of the Google Apps account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
@@ -476,7 +476,7 @@ declare module googleapis.admin {
             query?: string;
             showDeleted?: string;
             sortOrder?: string;
-        }, callback: (err: any, response: IUsers) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUsers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * change admin status of a user
          * @params {string} userKey Email or immutable Id of the user as admin
@@ -484,7 +484,7 @@ declare module googleapis.admin {
         makeAdmin: (params: {
             userKey: string;
             resource?: IUserMakeAdmin;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * update user. This method supports patch semantics.
          * @params {string} userKey Email or immutable Id of the user. If Id, it should match with id of user object
@@ -492,7 +492,7 @@ declare module googleapis.admin {
         patch: (params: {
             userKey: string;
             resource?: IUser;
-        }, callback: (err: any, response: IUser) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Undelete a deleted user
          * @params {string} userKey The immutable id of the user
@@ -500,7 +500,7 @@ declare module googleapis.admin {
         undelete: (params: {
             userKey: string;
             resource?: IUserUndelete;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * update user
          * @params {string} userKey Email or immutable Id of the user. If Id, it should match with id of user object
@@ -508,7 +508,7 @@ declare module googleapis.admin {
         update: (params: {
             userKey: string;
             resource?: IUser;
-        }, callback: (err: any, response: IUser) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Watch for changes in users list
          * @params {string} customer Immutable id of the Google Apps account. In case of multi-domain, to fetch all users for a customer, fill this field instead of domain.
@@ -532,7 +532,7 @@ declare module googleapis.admin {
             showDeleted?: string;
             sortOrder?: string;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         aliases: {
             /**
              * Remove a alias for the user
@@ -542,7 +542,7 @@ declare module googleapis.admin {
             delete: (params: {
                 alias: string;
                 userKey: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Add a alias for the user
              * @params {string} userKey Email or immutable Id of the user
@@ -550,7 +550,7 @@ declare module googleapis.admin {
             insert: (params: {
                 userKey: string;
                 resource?: IAlias;
-            }, callback: (err: any, response: IAlias) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAlias, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all aliases for a user
              * @params {string} event Event on which subscription is intended (if subscribing)
@@ -559,7 +559,7 @@ declare module googleapis.admin {
             list: (params: {
                 event?: string;
                 userKey: string;
-            }, callback: (err: any, response: IAliases) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAliases, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Watch for changes in user aliases list
              * @params {string} event Event on which subscription is intended (if subscribing)
@@ -569,7 +569,7 @@ declare module googleapis.admin {
                 event?: string;
                 userKey: string;
                 resource?: IChannel;
-            }, callback: (err: any, response: IChannel) => void) => void;
+            }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         photos: {
             /**
@@ -578,14 +578,14 @@ declare module googleapis.admin {
              */
             delete: (params: {
                 userKey: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Retrieve photo of a user
              * @params {string} userKey Email or immutable Id of the user
              */
             get: (params: {
                 userKey: string;
-            }, callback: (err: any, response: IUserPhoto) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUserPhoto, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Add a photo for the user. This method supports patch semantics.
              * @params {string} userKey Email or immutable Id of the user
@@ -593,7 +593,7 @@ declare module googleapis.admin {
             patch: (params: {
                 userKey: string;
                 resource?: IUserPhoto;
-            }, callback: (err: any, response: IUserPhoto) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUserPhoto, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Add a photo for the user
              * @params {string} userKey Email or immutable Id of the user
@@ -601,7 +601,7 @@ declare module googleapis.admin {
             update: (params: {
                 userKey: string;
                 resource?: IUserPhoto;
-            }, callback: (err: any, response: IUserPhoto) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUserPhoto, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var verificationCodes: {
@@ -611,21 +611,21 @@ declare module googleapis.admin {
          */
         generate: (params: {
             userKey: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Invalidate the current backup verification codes for the user.
          * @params {string} userKey Email or immutable Id of the user
          */
         invalidate: (params: {
             userKey: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the current set of valid backup verification codes for the specified user.
          * @params {string} userKey Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
          */
         list: (params: {
             userKey: string;
-        }, callback: (err: any, response: IVerificationCodes) => void) => void;
+        }, callback: (err: IErrorResponse, response: IVerificationCodes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * JSON template for Alias object in Directory API.

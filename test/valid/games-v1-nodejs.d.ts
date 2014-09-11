@@ -23,7 +23,7 @@ declare module googleapis.games {
             language?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IAchievementDefinitionsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAchievementDefinitionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var achievements: {
         /**
@@ -36,7 +36,7 @@ declare module googleapis.games {
             achievementId: string;
             requestId?: string;
             stepsToIncrement: number;
-        }, callback: (err: any, response: IAchievementIncrementResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAchievementIncrementResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the progress for all your application's achievements for the currently authenticated player.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -51,14 +51,14 @@ declare module googleapis.games {
             pageToken?: string;
             playerId: string;
             state?: string;
-        }, callback: (err: any, response: IPlayerAchievementListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlayerAchievementListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets the state of the achievement with the given ID to REVEALED for the currently authenticated player.
          * @params {string} achievementId The ID of the achievement used by this method.
          */
         reveal: (params: {
             achievementId: string;
-        }, callback: (err: any, response: IAchievementRevealResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAchievementRevealResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets the steps for the currently authenticated player towards unlocking an achievement. If the steps parameter is less than the current number of steps that the player already gained for the achievement, the achievement is not modified.
          * @params {string} achievementId The ID of the achievement used by this method.
@@ -67,20 +67,20 @@ declare module googleapis.games {
         setStepsAtLeast: (params: {
             achievementId: string;
             steps: number;
-        }, callback: (err: any, response: IAchievementSetStepsAtLeastResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAchievementSetStepsAtLeastResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Unlocks this achievement for the currently authenticated player.
          * @params {string} achievementId The ID of the achievement used by this method.
          */
         unlock: (params: {
             achievementId: string;
-        }, callback: (err: any, response: IAchievementUnlockResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAchievementUnlockResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates multiple achievements for the currently authenticated player.
          */
         updateMultiple: (params: {
             resource?: IAchievementUpdateMultipleRequest;
-        }, callback: (err: any, response: IAchievementUpdateMultipleResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAchievementUpdateMultipleResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var applications: {
         /**
@@ -93,12 +93,12 @@ declare module googleapis.games {
             applicationId: string;
             language?: string;
             platformType?: string;
-        }, callback: (err: any, response: IApplication) => void) => void;
+        }, callback: (err: IErrorResponse, response: IApplication, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Indicate that the the currently authenticated user is playing your application.
          */
         played: (params: {
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var events: {
         /**
@@ -111,7 +111,7 @@ declare module googleapis.games {
             language?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IPlayerEventListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlayerEventListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns a list of the event definitions in this application.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -122,7 +122,7 @@ declare module googleapis.games {
             language?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IEventDefinitionListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEventDefinitionListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Records a batch of changes to the number of times events have occurred for the currently authenticated user of this application.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -130,7 +130,7 @@ declare module googleapis.games {
         record: (params: {
             language?: string;
             resource?: IEventRecordRequest;
-        }, callback: (err: any, response: IEventUpdateResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IEventUpdateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var leaderboards: {
         /**
@@ -141,7 +141,7 @@ declare module googleapis.games {
         get: (params: {
             language?: string;
             leaderboardId: string;
-        }, callback: (err: any, response: ILeaderboard) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILeaderboard, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all the leaderboard metadata for your application.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -152,14 +152,14 @@ declare module googleapis.games {
             language?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ILeaderboardListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILeaderboardListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var metagame: {
         /**
          * Return the metagame configuration data for the calling application.
          */
         getMetagameConfig: (params: {
-        }, callback: (err: any, response: IMetagameConfig) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMetagameConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List play data aggregated per category for the player corresponding to playerId.
          * @params {string} collection The collection of categories for which data will be returned.
@@ -174,7 +174,7 @@ declare module googleapis.games {
             maxResults?: number;
             pageToken?: string;
             playerId: string;
-        }, callback: (err: any, response: ICategoryListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICategoryListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var players: {
         /**
@@ -185,7 +185,7 @@ declare module googleapis.games {
         get: (params: {
             language?: string;
             playerId: string;
-        }, callback: (err: any, response: IPlayer) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlayer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get the collection of players for the currently authenticated user.
          * @params {string} collection Collection of players being retrieved
@@ -198,7 +198,7 @@ declare module googleapis.games {
             language?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IPlayerListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlayerListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pushtokens: {
         /**
@@ -206,13 +206,13 @@ declare module googleapis.games {
          */
         remove: (params: {
             resource?: IPushTokenId;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Registers a push token for the current user and application.
          */
         update: (params: {
             resource?: IPushToken;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var questMilestones: {
         /**
@@ -225,7 +225,7 @@ declare module googleapis.games {
             milestoneId: string;
             questId: string;
             requestId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var quests: {
         /**
@@ -236,7 +236,7 @@ declare module googleapis.games {
         accept: (params: {
             language?: string;
             questId: string;
-        }, callback: (err: any, response: IQuest) => void) => void;
+        }, callback: (err: IErrorResponse, response: IQuest, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a list of quests for your application and the currently authenticated player.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -249,7 +249,7 @@ declare module googleapis.games {
             maxResults?: number;
             pageToken?: string;
             playerId: string;
-        }, callback: (err: any, response: IQuestListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IQuestListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var revisions: {
         /**
@@ -263,7 +263,7 @@ declare module googleapis.games {
          */
         check: (params: {
             clientRevision: string;
-        }, callback: (err: any, response: IRevisionCheckResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRevisionCheckResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var rooms: {
         /**
@@ -273,7 +273,7 @@ declare module googleapis.games {
         create: (params: {
             language?: string;
             resource?: IRoomCreateRequest;
-        }, callback: (err: any, response: IRoom) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRoom, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Decline an invitation to join a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -282,14 +282,14 @@ declare module googleapis.games {
         decline: (params: {
             language?: string;
             roomId: string;
-        }, callback: (err: any, response: IRoom) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRoom, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Dismiss an invitation to join a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
          * @params {string} roomId The ID of the room.
          */
         dismiss: (params: {
             roomId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get the data for a room.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -298,7 +298,7 @@ declare module googleapis.games {
         get: (params: {
             language?: string;
             roomId: string;
-        }, callback: (err: any, response: IRoom) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRoom, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Join a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -308,7 +308,7 @@ declare module googleapis.games {
             language?: string;
             roomId: string;
             resource?: IRoomJoinRequest;
-        }, callback: (err: any, response: IRoom) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRoom, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Leave a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -318,7 +318,7 @@ declare module googleapis.games {
             language?: string;
             roomId: string;
             resource?: IRoomLeaveRequest;
-        }, callback: (err: any, response: IRoom) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRoom, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns invitations to join rooms.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -329,7 +329,7 @@ declare module googleapis.games {
             language?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IRoomList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRoomList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates sent by a client reporting the status of peers in a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -339,7 +339,7 @@ declare module googleapis.games {
             language?: string;
             roomId: string;
             resource?: IRoomP2PStatuses;
-        }, callback: (err: any, response: IRoomStatus) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRoomStatus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var scores: {
         /**
@@ -361,7 +361,7 @@ declare module googleapis.games {
             pageToken?: string;
             playerId: string;
             timeSpan: string;
-        }, callback: (err: any, response: IPlayerLeaderboardScoreListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlayerLeaderboardScoreListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the scores in a leaderboard, starting from the top.
          * @params {string} collection The collection of scores you're requesting.
@@ -378,7 +378,7 @@ declare module googleapis.games {
             maxResults?: number;
             pageToken?: string;
             timeSpan: string;
-        }, callback: (err: any, response: ILeaderboardScores) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILeaderboardScores, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the scores in a leaderboard around (and including) a player's score.
          * @params {string} collection The collection of scores you're requesting.
@@ -399,7 +399,7 @@ declare module googleapis.games {
             resultsAbove?: number;
             returnTopIfAbsent?: boolean;
             timeSpan: string;
-        }, callback: (err: any, response: ILeaderboardScores) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILeaderboardScores, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Submits a score to the specified leaderboard.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -412,7 +412,7 @@ declare module googleapis.games {
             leaderboardId: string;
             score: string;
             scoreTag?: string;
-        }, callback: (err: any, response: IPlayerScoreResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlayerScoreResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Submits multiple scores to leaderboards.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -420,7 +420,7 @@ declare module googleapis.games {
         submitMultiple: (params: {
             language?: string;
             resource?: IPlayerScoreSubmissionList;
-        }, callback: (err: any, response: IPlayerScoreListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPlayerScoreListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var snapshots: {
         /**
@@ -431,7 +431,7 @@ declare module googleapis.games {
         get: (params: {
             language?: string;
             snapshotId: string;
-        }, callback: (err: any, response: ISnapshot) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISnapshot, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of snapshots created by your application for the player corresponding to the player ID.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -444,7 +444,7 @@ declare module googleapis.games {
             maxResults?: number;
             pageToken?: string;
             playerId: string;
-        }, callback: (err: any, response: ISnapshotListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISnapshotListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var turnBasedMatches: {
         /**
@@ -453,7 +453,7 @@ declare module googleapis.games {
          */
         cancel: (params: {
             matchId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Create a turn-based match.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -461,7 +461,7 @@ declare module googleapis.games {
         create: (params: {
             language?: string;
             resource?: ITurnBasedMatchCreateRequest;
-        }, callback: (err: any, response: ITurnBasedMatch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Decline an invitation to play a turn-based match.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -470,14 +470,14 @@ declare module googleapis.games {
         decline: (params: {
             language?: string;
             matchId: string;
-        }, callback: (err: any, response: ITurnBasedMatch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Dismiss a turn-based match from the match list. The match will no longer show up in the list and will not generate notifications.
          * @params {string} matchId The ID of the match.
          */
         dismiss: (params: {
             matchId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Finish a turn-based match. Each player should make this call once, after all results are in. Only the player whose turn it is may make the first call to Finish, and can pass in the final match state.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -487,7 +487,7 @@ declare module googleapis.games {
             language?: string;
             matchId: string;
             resource?: ITurnBasedMatchResults;
-        }, callback: (err: any, response: ITurnBasedMatch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get the data for a turn-based match.
          * @params {boolean} includeMatchData Get match data along with metadata.
@@ -498,7 +498,7 @@ declare module googleapis.games {
             includeMatchData?: boolean;
             language?: string;
             matchId: string;
-        }, callback: (err: any, response: ITurnBasedMatch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Join a turn-based match.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -507,7 +507,7 @@ declare module googleapis.games {
         join: (params: {
             language?: string;
             matchId: string;
-        }, callback: (err: any, response: ITurnBasedMatch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Leave a turn-based match when it is not the current player's turn, without canceling the match.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -516,7 +516,7 @@ declare module googleapis.games {
         leave: (params: {
             language?: string;
             matchId: string;
-        }, callback: (err: any, response: ITurnBasedMatch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Leave a turn-based match during the current player's turn, without canceling the match.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -529,7 +529,7 @@ declare module googleapis.games {
             matchId: string;
             matchVersion: number;
             pendingParticipantId?: string;
-        }, callback: (err: any, response: ITurnBasedMatch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns turn-based matches the player is or was involved in.
          * @params {boolean} includeMatchData True if match data should be returned in the response. Note that not all data will necessarily be returned if include_match_data is true; the server may decide to only return data for some of the matches to limit download size for the client. The remainder of the data for these matches will be retrievable on request.
@@ -544,7 +544,7 @@ declare module googleapis.games {
             maxCompletedMatches?: number;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ITurnBasedMatchList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatchList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a rematch of a match that was previously completed, with the same participants. This can be called by only one player on a match still in their list; the player must have called Finish first. Returns the newly created match; it will be the caller's turn.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -555,7 +555,7 @@ declare module googleapis.games {
             language?: string;
             matchId: string;
             requestId?: string;
-        }, callback: (err: any, response: ITurnBasedMatchRematch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatchRematch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns turn-based matches the player is or was involved in that changed since the last sync call, with the least recent changes coming first. Matches that should be removed from the local cache will have a status of MATCH_DELETED.
          * @params {boolean} includeMatchData True if match data should be returned in the response. Note that not all data will necessarily be returned if include_match_data is true; the server may decide to only return data for some of the matches to limit download size for the client. The remainder of the data for these matches will be retrievable on request.
@@ -570,7 +570,7 @@ declare module googleapis.games {
             maxCompletedMatches?: number;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ITurnBasedMatchSync) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatchSync, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Commit the results of a player turn.
          * @params {string} language The preferred language to use for strings returned by this method.
@@ -580,7 +580,7 @@ declare module googleapis.games {
             language?: string;
             matchId: string;
             resource?: ITurnBasedMatchTurn;
-        }, callback: (err: any, response: ITurnBasedMatch) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITurnBasedMatch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * This is a JSON template for an achievement definition object.

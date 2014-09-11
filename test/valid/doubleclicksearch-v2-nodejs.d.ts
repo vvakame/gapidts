@@ -39,13 +39,13 @@ declare module googleapis.doubleclicksearch {
             rowCount: number;
             startDate: number;
             startRow: number;
-        }, callback: (err: any, response: IConversionList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IConversionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a batch of new conversions into DoubleClick Search.
          */
         insert: (params: {
             resource?: IConversionList;
-        }, callback: (err: any, response: IConversionList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IConversionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a batch of conversions in DoubleClick Search. This method supports patch semantics.
          * @params {string} advertiserId Numeric ID of the advertiser.
@@ -65,19 +65,19 @@ declare module googleapis.doubleclicksearch {
             startDate: number;
             startRow: number;
             resource?: IConversionList;
-        }, callback: (err: any, response: IConversionList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IConversionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a batch of conversions in DoubleClick Search.
          */
         update: (params: {
             resource?: IConversionList;
-        }, callback: (err: any, response: IConversionList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IConversionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the availabilities of a batch of floodlight activities in DoubleClick Search.
          */
         updateAvailability: (params: {
             resource?: IUpdateAvailabilityRequest;
-        }, callback: (err: any, response: IUpdateAvailabilityResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUpdateAvailabilityResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
         /**
@@ -85,14 +85,14 @@ declare module googleapis.doubleclicksearch {
          */
         generate: (params: {
             resource?: IReportRequest;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Polls for the status of a report request.
          * @params {string} reportId ID of the report request being polled.
          */
         get: (params: {
             reportId: string;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Downloads a report file.
          * @params {number} reportFragment The index of the report fragment to download.
@@ -101,13 +101,13 @@ declare module googleapis.doubleclicksearch {
         getFile: (params: {
             reportFragment: number;
             reportId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Inserts a report request into the reporting system.
          */
         request: (params: {
             resource?: IReportRequest;
-        }, callback: (err: any, response: IReport) => void) => void;
+        }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var savedColumns: {
         /**
@@ -118,7 +118,7 @@ declare module googleapis.doubleclicksearch {
         list: (params: {
             advertiserId: string;
             agencyId: string;
-        }, callback: (err: any, response: ISavedColumnList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISavedColumnList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * A message containing availability data relevant to DoubleClick Search.

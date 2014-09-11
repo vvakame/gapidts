@@ -19,7 +19,7 @@ declare module googleapis.youtubeAnalytics {
          */
         list: (params: {
             onBehalfOfContentOwner: string;
-        }, callback: (err: any, response: IBatchReportDefinitionList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBatchReportDefinitionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var batchReports: {
         /**
@@ -30,7 +30,7 @@ declare module googleapis.youtubeAnalytics {
         list: (params: {
             batchReportDefinitionId: string;
             onBehalfOfContentOwner: string;
-        }, callback: (err: any, response: IBatchReportList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBatchReportList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
         /**
@@ -57,7 +57,7 @@ declare module googleapis.youtubeAnalytics {
             sort?: string;
             "start-date": string;
             "start-index"?: number;
-        }, callback: (err: any, response: IResultTable) => void) => void;
+        }, callback: (err: IErrorResponse, response: IResultTable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * A paginated list of batchReportDefinition resources returned in response to a youtubeAnalytics.batchReportDefinitions.list request.

@@ -19,12 +19,12 @@ declare module googleapis.adexchangebuyer {
          */
         get: (params: {
             id: number;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the authenticated user's list of accounts.
          */
         list: (params: {
-        }, callback: (err: any, response: IAccountsList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccountsList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing account. This method supports patch semantics.
          * @params {number} id The account id
@@ -32,7 +32,7 @@ declare module googleapis.adexchangebuyer {
         patch: (params: {
             id: number;
             resource?: IAccount;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing account.
          * @params {number} id The account id
@@ -40,7 +40,7 @@ declare module googleapis.adexchangebuyer {
         update: (params: {
             id: number;
             resource?: IAccount;
-        }, callback: (err: any, response: IAccount) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var billingInfo: {
         /**
@@ -49,12 +49,12 @@ declare module googleapis.adexchangebuyer {
          */
         get: (params: {
             accountId: number;
-        }, callback: (err: any, response: IBillingInfo) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBillingInfo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of billing information for all accounts of the authenticated user.
          */
         list: (params: {
-        }, callback: (err: any, response: IBillingInfoList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBillingInfoList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var creatives: {
         /**
@@ -65,13 +65,13 @@ declare module googleapis.adexchangebuyer {
         get: (params: {
             accountId: number;
             buyerCreativeId: string;
-        }, callback: (err: any, response: ICreative) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICreative, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Submit a new creative.
          */
         insert: (params: {
             resource?: ICreative;
-        }, callback: (err: any, response: ICreative) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICreative, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of the authenticated user's active creatives. A creative will be available 30-40 minutes after submission.
          * @params {number} accountId When specified, only creatives for the given account ids are returned.
@@ -86,7 +86,7 @@ declare module googleapis.adexchangebuyer {
             maxResults?: number;
             pageToken?: string;
             statusFilter?: string;
-        }, callback: (err: any, response: ICreativesList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICreativesList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var directDeals: {
         /**
@@ -95,12 +95,12 @@ declare module googleapis.adexchangebuyer {
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: IDirectDeal) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDirectDeal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the authenticated user's list of direct deals.
          */
         list: (params: {
-        }, callback: (err: any, response: IDirectDealsList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDirectDealsList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var performanceReport: {
         /**
@@ -117,7 +117,7 @@ declare module googleapis.adexchangebuyer {
             maxResults?: number;
             pageToken?: string;
             startDateTime: string;
-        }, callback: (err: any, response: IPerformanceReportList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPerformanceReportList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pretargetingConfig: {
         /**
@@ -128,7 +128,7 @@ declare module googleapis.adexchangebuyer {
         delete: (params: {
             accountId: string;
             configId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific pretargeting configuration
          * @params {string} accountId The account id to get the pretargeting config for.
@@ -137,7 +137,7 @@ declare module googleapis.adexchangebuyer {
         get: (params: {
             accountId: string;
             configId: string;
-        }, callback: (err: any, response: IPretargetingConfig) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPretargetingConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new pretargeting configuration.
          * @params {string} accountId The account id to insert the pretargeting config for.
@@ -145,14 +145,14 @@ declare module googleapis.adexchangebuyer {
         insert: (params: {
             accountId: string;
             resource?: IPretargetingConfig;
-        }, callback: (err: any, response: IPretargetingConfig) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPretargetingConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of the authenticated user's pretargeting configurations.
          * @params {string} accountId The account id to get the pretargeting configs for.
          */
         list: (params: {
             accountId: string;
-        }, callback: (err: any, response: IPretargetingConfigList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPretargetingConfigList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing pretargeting config. This method supports patch semantics.
          * @params {string} accountId The account id to update the pretargeting config for.
@@ -162,7 +162,7 @@ declare module googleapis.adexchangebuyer {
             accountId: string;
             configId: string;
             resource?: IPretargetingConfig;
-        }, callback: (err: any, response: IPretargetingConfig) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPretargetingConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing pretargeting config.
          * @params {string} accountId The account id to update the pretargeting config for.
@@ -172,7 +172,7 @@ declare module googleapis.adexchangebuyer {
             accountId: string;
             configId: string;
             resource?: IPretargetingConfig;
-        }, callback: (err: any, response: IPretargetingConfig) => void) => void;
+        }, callback: (err: IErrorResponse, response: IPretargetingConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Configuration data for an Ad Exchange buyer account.

@@ -19,7 +19,7 @@ declare module googleapis.reseller {
          */
         get: (params: {
             customerId: string;
-        }, callback: (err: any, response: ICustomer) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a customer resource if one does not already exist.
          * @params {string} customerAuthToken An auth token needed for inserting a customer for which domain already exists. Can be generated at https://www.google.com/a/cpanel//TransferToken. Optional.
@@ -27,7 +27,7 @@ declare module googleapis.reseller {
         insert: (params: {
             customerAuthToken?: string;
             resource?: ICustomer;
-        }, callback: (err: any, response: ICustomer) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a customer resource if one it exists and is owned by the reseller. This method supports patch semantics.
          * @params {string} customerId Id of the Customer
@@ -35,7 +35,7 @@ declare module googleapis.reseller {
         patch: (params: {
             customerId: string;
             resource?: ICustomer;
-        }, callback: (err: any, response: ICustomer) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a customer resource if one it exists and is owned by the reseller.
          * @params {string} customerId Id of the Customer
@@ -43,7 +43,7 @@ declare module googleapis.reseller {
         update: (params: {
             customerId: string;
             resource?: ICustomer;
-        }, callback: (err: any, response: ICustomer) => void) => void;
+        }, callback: (err: IErrorResponse, response: ICustomer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var subscriptions: {
         /**
@@ -55,7 +55,7 @@ declare module googleapis.reseller {
             customerId: string;
             subscriptionId: string;
             resource?: IChangePlanRequest;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes the renewal settings of a subscription
          * @params {string} customerId Id of the Customer
@@ -65,7 +65,7 @@ declare module googleapis.reseller {
             customerId: string;
             subscriptionId: string;
             resource?: IRenewalSettings;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes the seats configuration of a subscription
          * @params {string} customerId Id of the Customer
@@ -75,7 +75,7 @@ declare module googleapis.reseller {
             customerId: string;
             subscriptionId: string;
             resource?: ISeats;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Cancels/Downgrades a subscription.
          * @params {string} customerId Id of the Customer
@@ -86,7 +86,7 @@ declare module googleapis.reseller {
             customerId: string;
             deletionType: string;
             subscriptionId: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a subscription of the customer.
          * @params {string} customerId Id of the Customer
@@ -95,7 +95,7 @@ declare module googleapis.reseller {
         get: (params: {
             customerId: string;
             subscriptionId: string;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates/Transfers a subscription for the customer.
          * @params {string} customerAuthToken An auth token needed for transferring a subscription. Can be generated at https://www.google.com/a/cpanel/customer-domain/TransferToken. Optional.
@@ -105,7 +105,7 @@ declare module googleapis.reseller {
             customerAuthToken?: string;
             customerId: string;
             resource?: ISubscription;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists subscriptions of a reseller, optionally filtered by a customer name prefix.
          * @params {string} customerAuthToken An auth token needed if the customer is not a resold customer of this reseller. Can be generated at https://www.google.com/a/cpanel/customer-domain/TransferToken.Optional.
@@ -120,7 +120,7 @@ declare module googleapis.reseller {
             customerNamePrefix?: string;
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: ISubscriptions) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscriptions, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Starts paid service of a trial subscription
          * @params {string} customerId Id of the Customer
@@ -129,7 +129,7 @@ declare module googleapis.reseller {
         startPaidService: (params: {
             customerId: string;
             subscriptionId: string;
-        }, callback: (err: any, response: ISubscription) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * JSON template for address of a customer.

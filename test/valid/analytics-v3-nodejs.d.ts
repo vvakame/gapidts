@@ -42,7 +42,7 @@ declare module googleapis.analytics {
                 sort?: string;
                 "start-date": string;
                 "start-index"?: number;
-            }, callback: (err: any, response: IGaData) => void) => void;
+            }, callback: (err: IErrorResponse, response: IGaData, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         mcf: {
             /**
@@ -69,7 +69,7 @@ declare module googleapis.analytics {
                 sort?: string;
                 "start-date": string;
                 "start-index"?: number;
-            }, callback: (err: any, response: IMcfData) => void) => void;
+            }, callback: (err: IErrorResponse, response: IMcfData, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         realtime: {
             /**
@@ -88,7 +88,7 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 metrics: string;
                 sort?: string;
-            }, callback: (err: any, response: IRealtimeData) => void) => void;
+            }, callback: (err: IErrorResponse, response: IRealtimeData, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var management: {
@@ -101,7 +101,7 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: IAccountSummaries) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAccountSummaries, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         accountUserLinks: {
             /**
@@ -112,7 +112,7 @@ declare module googleapis.analytics {
             delete: (params: {
                 accountId: string;
                 linkId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Adds a new user to the given account.
              * @params {string} accountId Account ID to create the user link for.
@@ -120,7 +120,7 @@ declare module googleapis.analytics {
             insert: (params: {
                 accountId: string;
                 resource?: IEntityUserLink;
-            }, callback: (err: any, response: IEntityUserLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists account-user links for a given account.
              * @params {string} accountId Account ID to retrieve the user links for.
@@ -131,7 +131,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: IEntityUserLinks) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates permissions for an existing user on the given account.
              * @params {string} accountId Account ID to update the account-user link for.
@@ -141,7 +141,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 linkId: string;
                 resource?: IEntityUserLink;
-            }, callback: (err: any, response: IEntityUserLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         accounts: {
             /**
@@ -152,7 +152,7 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: IAccounts) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAccounts, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         customDataSources: {
             /**
@@ -167,7 +167,7 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: ICustomDataSources) => void) => void;
+            }, callback: (err: IErrorResponse, response: ICustomDataSources, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         dailyUploads: {
             /**
@@ -184,7 +184,7 @@ declare module googleapis.analytics {
                 date: string;
                 type: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * List daily uploads to which the user has access.
              * @params {string} accountId Account Id for the daily uploads to retrieve.
@@ -203,7 +203,7 @@ declare module googleapis.analytics {
                 "start-date": string;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IDailyUploads) => void) => void;
+            }, callback: (err: IErrorResponse, response: IDailyUploads, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update/Overwrite data for a custom data source.
              * @params {string} accountId Account Id associated with daily upload.
@@ -222,7 +222,7 @@ declare module googleapis.analytics {
                 reset?: boolean;
                 type: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IDailyUploadAppend) => void) => void;
+            }, callback: (err: IErrorResponse, response: IDailyUploadAppend, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         experiments: {
             /**
@@ -237,7 +237,7 @@ declare module googleapis.analytics {
                 experimentId: string;
                 profileId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Returns an experiment to which the user has access.
              * @params {string} accountId Account ID to retrieve the experiment for.
@@ -250,7 +250,7 @@ declare module googleapis.analytics {
                 experimentId: string;
                 profileId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IExperiment) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExperiment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new experiment.
              * @params {string} accountId Account ID to create the experiment for.
@@ -262,7 +262,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IExperiment;
-            }, callback: (err: any, response: IExperiment) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExperiment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists experiments to which the user has access.
              * @params {string} accountId Account ID to retrieve experiments for.
@@ -277,7 +277,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IExperiments) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExperiments, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update an existing experiment. This method supports patch semantics.
              * @params {string} accountId Account ID of the experiment to update.
@@ -291,7 +291,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IExperiment;
-            }, callback: (err: any, response: IExperiment) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExperiment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update an existing experiment.
              * @params {string} accountId Account ID of the experiment to update.
@@ -305,7 +305,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IExperiment;
-            }, callback: (err: any, response: IExperiment) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExperiment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         filters: {
             /**
@@ -316,7 +316,7 @@ declare module googleapis.analytics {
             delete: (params: {
                 accountId: string;
                 filterId: string;
-            }, callback: (err: any, response: IFilter) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Returns a filters to which the user has access.
              * @params {string} accountId Account ID to retrieve filters for.
@@ -325,7 +325,7 @@ declare module googleapis.analytics {
             get: (params: {
                 accountId: string;
                 filterId: string;
-            }, callback: (err: any, response: IFilter) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new filter.
              * @params {string} accountId Account ID to create filter for.
@@ -333,7 +333,7 @@ declare module googleapis.analytics {
             insert: (params: {
                 accountId: string;
                 resource?: IFilter;
-            }, callback: (err: any, response: IFilter) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all filters for an account
              * @params {string} accountId Account ID to retrieve filters for.
@@ -344,7 +344,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: IFilters) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFilters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing filter. This method supports patch semantics.
              * @params {string} accountId Account ID to which the filter belongs.
@@ -354,7 +354,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 filterId: string;
                 resource?: IFilter;
-            }, callback: (err: any, response: IFilter) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing filter.
              * @params {string} accountId Account ID to which the filter belongs.
@@ -364,7 +364,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 filterId: string;
                 resource?: IFilter;
-            }, callback: (err: any, response: IFilter) => void) => void;
+            }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         goals: {
             /**
@@ -379,7 +379,7 @@ declare module googleapis.analytics {
                 goalId: string;
                 profileId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IGoal) => void) => void;
+            }, callback: (err: IErrorResponse, response: IGoal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new goal.
              * @params {string} accountId Account ID to create the goal for.
@@ -391,7 +391,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IGoal;
-            }, callback: (err: any, response: IGoal) => void) => void;
+            }, callback: (err: IErrorResponse, response: IGoal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists goals to which the user has access.
              * @params {string} accountId Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
@@ -406,7 +406,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IGoals) => void) => void;
+            }, callback: (err: IErrorResponse, response: IGoals, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing view (profile). This method supports patch semantics.
              * @params {string} accountId Account ID to update the goal.
@@ -420,7 +420,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IGoal;
-            }, callback: (err: any, response: IGoal) => void) => void;
+            }, callback: (err: IErrorResponse, response: IGoal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing view (profile).
              * @params {string} accountId Account ID to update the goal.
@@ -434,7 +434,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IGoal;
-            }, callback: (err: any, response: IGoal) => void) => void;
+            }, callback: (err: IErrorResponse, response: IGoal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         profileFilterLinks: {
             /**
@@ -449,7 +449,7 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Returns a single profile filter link.
              * @params {string} accountId Account ID to retrieve profile filter link for.
@@ -462,7 +462,7 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IProfileFilterLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfileFilterLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new profile filter link.
              * @params {string} accountId Account ID to create profile filter link for.
@@ -474,7 +474,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IProfileFilterLink;
-            }, callback: (err: any, response: IProfileFilterLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfileFilterLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all profile filter links for a profile.
              * @params {string} accountId Account ID to retrieve profile filter links for.
@@ -489,7 +489,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IProfileFilterLinks) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfileFilterLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update an existing profile filter link. This method supports patch semantics.
              * @params {string} accountId Account ID to which profile filter link belongs.
@@ -503,7 +503,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IProfileFilterLink;
-            }, callback: (err: any, response: IProfileFilterLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfileFilterLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update an existing profile filter link.
              * @params {string} accountId Account ID to which profile filter link belongs.
@@ -517,7 +517,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IProfileFilterLink;
-            }, callback: (err: any, response: IProfileFilterLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfileFilterLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         profileUserLinks: {
             /**
@@ -532,7 +532,7 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Adds a new user to the given view (profile).
              * @params {string} accountId Account ID to create the user link for.
@@ -544,7 +544,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IEntityUserLink;
-            }, callback: (err: any, response: IEntityUserLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists profile-user links for a given view (profile).
              * @params {string} accountId Account ID which the given view (profile) belongs to.
@@ -559,7 +559,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IEntityUserLinks) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates permissions for an existing user on the given view (profile).
              * @params {string} accountId Account ID to update the user link for.
@@ -573,7 +573,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IEntityUserLink;
-            }, callback: (err: any, response: IEntityUserLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         profiles: {
             /**
@@ -586,7 +586,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets a view (profile) to which the user has access.
              * @params {string} accountId Account ID to retrieve the goal for.
@@ -597,7 +597,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IProfile) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new view (profile).
              * @params {string} accountId Account ID to create the view (profile) for.
@@ -607,7 +607,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyId: string;
                 resource?: IProfile;
-            }, callback: (err: any, response: IProfile) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists views (profiles) to which the user has access.
              * @params {string} accountId Account ID for the view (profiles) to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.
@@ -620,7 +620,7 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IProfiles) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfiles, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing view (profile). This method supports patch semantics.
              * @params {string} accountId Account ID to which the view (profile) belongs
@@ -632,7 +632,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IProfile;
-            }, callback: (err: any, response: IProfile) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing view (profile).
              * @params {string} accountId Account ID to which the view (profile) belongs
@@ -644,7 +644,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IProfile;
-            }, callback: (err: any, response: IProfile) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         segments: {
             /**
@@ -655,7 +655,7 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: ISegments) => void) => void;
+            }, callback: (err: IErrorResponse, response: ISegments, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         unsampledReports: {
             /**
@@ -670,7 +670,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 unsampledReportId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IUnsampledReport) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUnsampledReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new unsampled report.
              * @params {string} accountId Account ID to create the unsampled report for.
@@ -682,7 +682,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 webPropertyId: string;
                 resource?: IUnsampledReport;
-            }, callback: (err: any, response: IUnsampledReport) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUnsampledReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists unsampled reports to which the user has access.
              * @params {string} accountId Account ID to retrieve unsampled reports for. Must be a specific account ID, ~all is not supported.
@@ -697,7 +697,7 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IUnsampledReports) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUnsampledReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         uploads: {
             /**
@@ -711,7 +711,7 @@ declare module googleapis.analytics {
                 customDataSourceId: string;
                 webPropertyId: string;
                 resource?: IAnalyticsDataimportDeleteUploadDataRequest;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * List uploads to which the user has access.
              * @params {string} accountId Account Id for the upload to retrieve.
@@ -724,7 +724,7 @@ declare module googleapis.analytics {
                 customDataSourceId: string;
                 uploadId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IUpload) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUpload, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List uploads to which the user has access.
              * @params {string} accountId Account Id for the uploads to retrieve.
@@ -739,7 +739,7 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IUploads) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUploads, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Migrate custom data source and data imports to latest version.
              * @params {string} accountId Account Id for migration.
@@ -750,7 +750,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 customDataSourceId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Upload data for a custom data source.
              * @params {string} accountId Account Id associated with the upload.
@@ -761,7 +761,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 customDataSourceId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IUpload) => void) => void;
+            }, callback: (err: IErrorResponse, response: IUpload, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         webPropertyAdWordsLinks: {
             /**
@@ -774,7 +774,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyAdWordsLinkId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Returns a web property-AdWords link to which the user has access.
              * @params {string} accountId ID of the account which the given web property belongs to.
@@ -785,7 +785,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyAdWordsLinkId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IEntityAdWordsLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityAdWordsLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Creates a webProperty-AdWords link.
              * @params {string} accountId ID of the Google Analytics account to create the link for.
@@ -795,7 +795,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyId: string;
                 resource?: IEntityAdWordsLink;
-            }, callback: (err: any, response: IEntityAdWordsLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityAdWordsLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists webProperty-AdWords links for a given web property.
              * @params {string} accountId ID of the account which the given web property belongs to.
@@ -808,7 +808,7 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IEntityAdWordsLinks) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityAdWordsLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing webProperty-AdWords link. This method supports patch semantics.
              * @params {string} accountId ID of the account which the given web property belongs to.
@@ -820,7 +820,7 @@ declare module googleapis.analytics {
                 webPropertyAdWordsLinkId: string;
                 webPropertyId: string;
                 resource?: IEntityAdWordsLink;
-            }, callback: (err: any, response: IEntityAdWordsLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityAdWordsLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing webProperty-AdWords link.
              * @params {string} accountId ID of the account which the given web property belongs to.
@@ -832,7 +832,7 @@ declare module googleapis.analytics {
                 webPropertyAdWordsLinkId: string;
                 webPropertyId: string;
                 resource?: IEntityAdWordsLink;
-            }, callback: (err: any, response: IEntityAdWordsLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityAdWordsLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         webproperties: {
             /**
@@ -843,7 +843,7 @@ declare module googleapis.analytics {
             get: (params: {
                 accountId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: IWebproperty) => void) => void;
+            }, callback: (err: IErrorResponse, response: IWebproperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new property if the account has fewer than 20 properties. Web properties are visible in the Google Analytics interface only if they have at least one profile.
              * @params {string} accountId Account ID to create the web property for.
@@ -851,7 +851,7 @@ declare module googleapis.analytics {
             insert: (params: {
                 accountId: string;
                 resource?: IWebproperty;
-            }, callback: (err: any, response: IWebproperty) => void) => void;
+            }, callback: (err: IErrorResponse, response: IWebproperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists web properties to which the user has access.
              * @params {string} accountId Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
@@ -862,7 +862,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 "max-results"?: number;
                 "start-index"?: number;
-            }, callback: (err: any, response: IWebproperties) => void) => void;
+            }, callback: (err: IErrorResponse, response: IWebproperties, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing web property. This method supports patch semantics.
              * @params {string} accountId Account ID to which the web property belongs
@@ -872,7 +872,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyId: string;
                 resource?: IWebproperty;
-            }, callback: (err: any, response: IWebproperty) => void) => void;
+            }, callback: (err: IErrorResponse, response: IWebproperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing web property.
              * @params {string} accountId Account ID to which the web property belongs
@@ -882,7 +882,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyId: string;
                 resource?: IWebproperty;
-            }, callback: (err: any, response: IWebproperty) => void) => void;
+            }, callback: (err: IErrorResponse, response: IWebproperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         webpropertyUserLinks: {
             /**
@@ -895,7 +895,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 linkId: string;
                 webPropertyId: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Adds a new user to the given web property.
              * @params {string} accountId Account ID to create the user link for.
@@ -905,7 +905,7 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyId: string;
                 resource?: IEntityUserLink;
-            }, callback: (err: any, response: IEntityUserLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists webProperty-user links for a given web property.
              * @params {string} accountId Account ID which the given web property belongs to.
@@ -918,7 +918,7 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
-            }, callback: (err: any, response: IEntityUserLinks) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates permissions for an existing user on the given web property.
              * @params {string} accountId Account ID to update the account-user link for.
@@ -930,7 +930,7 @@ declare module googleapis.analytics {
                 linkId: string;
                 webPropertyId: string;
                 resource?: IEntityUserLink;
-            }, callback: (err: any, response: IEntityUserLink) => void) => void;
+            }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var metadata: {
@@ -941,7 +941,7 @@ declare module googleapis.analytics {
              */
             list: (params: {
                 reportType: string;
-            }, callback: (err: any, response: IColumns) => void) => void;
+            }, callback: (err: IErrorResponse, response: IColumns, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var provisioning: {
@@ -950,7 +950,7 @@ declare module googleapis.analytics {
          */
         createAccountTicket: (params: {
             resource?: IAccountTicket;
-        }, callback: (err: any, response: IAccountTicket) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAccountTicket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * JSON template for Analytics account entry.

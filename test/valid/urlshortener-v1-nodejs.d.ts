@@ -21,13 +21,13 @@ declare module googleapis.urlshortener {
         get: (params: {
             projection?: string;
             shortUrl: string;
-        }, callback: (err: any, response: IUrl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new short URL.
          */
         insert: (params: {
             resource?: IUrl;
-        }, callback: (err: any, response: IUrl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of URLs shortened by a user.
          * @params {string} projection Additional information to return.
@@ -36,7 +36,7 @@ declare module googleapis.urlshortener {
         list: (params: {
             projection?: string;
             "start-token"?: string;
-        }, callback: (err: any, response: IUrlHistory) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlHistory, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAnalyticsSnapshot {
         /**

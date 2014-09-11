@@ -20,7 +20,7 @@ declare module googleapis.prediction {
         predict: (params: {
             hostedModelName: string;
             resource?: IInput;
-        }, callback: (err: any, response: IOutput) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var trainedmodels: {
         /**
@@ -29,27 +29,27 @@ declare module googleapis.prediction {
          */
         analyze: (params: {
             id: string;
-        }, callback: (err: any, response: IAnalyze) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAnalyze, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a trained model.
          * @params {string} id The unique name for the predictive model.
          */
         delete: (params: {
             id: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Check training status of your model.
          * @params {string} id The unique name for the predictive model.
          */
         get: (params: {
             id: string;
-        }, callback: (err: any, response: ITraining) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Begin training your model.
          */
         insert: (params: {
             resource?: ITraining;
-        }, callback: (err: any, response: ITraining) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List available models.
          * @params {number} maxResults Maximum number of results to return
@@ -58,7 +58,7 @@ declare module googleapis.prediction {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
-        }, callback: (err: any, response: IList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Submit model id and request a prediction.
          * @params {string} id The unique name for the predictive model.
@@ -66,7 +66,7 @@ declare module googleapis.prediction {
         predict: (params: {
             id: string;
             resource?: IInput;
-        }, callback: (err: any, response: IOutput) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add new data to a trained model.
          * @params {string} id The unique name for the predictive model.
@@ -74,7 +74,7 @@ declare module googleapis.prediction {
         update: (params: {
             id: string;
             resource?: IUpdate;
-        }, callback: (err: any, response: ITraining) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAnalyze {
         /**

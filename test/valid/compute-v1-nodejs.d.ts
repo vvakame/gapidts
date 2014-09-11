@@ -25,7 +25,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IAddressAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAddressAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified address resource.
          * @params {string} address Name of the address resource to delete.
@@ -36,7 +36,7 @@ declare module googleapis.compute {
             address: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified address resource.
          * @params {string} address Name of the address resource to return.
@@ -47,7 +47,7 @@ declare module googleapis.compute {
             address: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: IAddress) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAddress, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an address resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -57,7 +57,7 @@ declare module googleapis.compute {
             project: string;
             region: string;
             resource?: IAddress;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of address resources contained within the specified region.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -72,7 +72,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: IAddressList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAddressList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var backendServices: {
         /**
@@ -83,7 +83,7 @@ declare module googleapis.compute {
         delete: (params: {
             backendService: string;
             project: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified BackendService resource.
          * @params {string} backendService Name of the BackendService resource to return.
@@ -92,7 +92,7 @@ declare module googleapis.compute {
         get: (params: {
             backendService: string;
             project: string;
-        }, callback: (err: any, response: IBackendService) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBackendService, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets the most recent health check results for this BackendService.
          * @params {string} backendService Name of the BackendService resource to which the queried instance belongs.
@@ -102,7 +102,7 @@ declare module googleapis.compute {
             backendService: string;
             project: string;
             resource?: IResourceGroupReference;
-        }, callback: (err: any, response: IBackendServiceGroupHealth) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBackendServiceGroupHealth, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a BackendService resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -110,7 +110,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: IBackendService;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of BackendService resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -123,7 +123,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IBackendServiceList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBackendServiceList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the BackendService resource. This method supports patch semantics.
          * @params {string} backendService Name of the BackendService resource to update.
@@ -133,7 +133,7 @@ declare module googleapis.compute {
             backendService: string;
             project: string;
             resource?: IBackendService;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the BackendService resource.
          * @params {string} backendService Name of the BackendService resource to update.
@@ -143,7 +143,7 @@ declare module googleapis.compute {
             backendService: string;
             project: string;
             resource?: IBackendService;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var diskTypes: {
         /**
@@ -158,7 +158,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IDiskTypeAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDiskTypeAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified disk type resource.
          * @params {string} diskType Name of the disk type resource to return.
@@ -169,7 +169,7 @@ declare module googleapis.compute {
             diskType: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IDiskType) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDiskType, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of disk type resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -184,7 +184,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IDiskTypeList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDiskTypeList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var disks: {
         /**
@@ -199,7 +199,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IDiskAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDiskAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
          * @params {string} disk Name of the persistent disk resource to snapshot.
@@ -211,7 +211,7 @@ declare module googleapis.compute {
             project: string;
             zone: string;
             resource?: ISnapshot;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified persistent disk resource.
          * @params {string} disk Name of the persistent disk resource to delete.
@@ -222,7 +222,7 @@ declare module googleapis.compute {
             disk: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified persistent disk resource.
          * @params {string} disk Name of the persistent disk resource to return.
@@ -233,7 +233,7 @@ declare module googleapis.compute {
             disk: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IDisk) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDisk, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a persistent disk resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -245,7 +245,7 @@ declare module googleapis.compute {
             sourceImage?: string;
             zone: string;
             resource?: IDisk;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of persistent disk resources contained within the specified zone.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -260,7 +260,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IDiskList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDiskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var firewalls: {
         /**
@@ -271,7 +271,7 @@ declare module googleapis.compute {
         delete: (params: {
             firewall: string;
             project: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified firewall resource.
          * @params {string} firewall Name of the firewall resource to return.
@@ -280,7 +280,7 @@ declare module googleapis.compute {
         get: (params: {
             firewall: string;
             project: string;
-        }, callback: (err: any, response: IFirewall) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFirewall, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a firewall resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -288,7 +288,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: IFirewall;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of firewall resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -301,7 +301,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IFirewallList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IFirewallList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the specified firewall resource with the data included in the request. This method supports patch semantics.
          * @params {string} firewall Name of the firewall resource to update.
@@ -311,7 +311,7 @@ declare module googleapis.compute {
             firewall: string;
             project: string;
             resource?: IFirewall;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the specified firewall resource with the data included in the request.
          * @params {string} firewall Name of the firewall resource to update.
@@ -321,7 +321,7 @@ declare module googleapis.compute {
             firewall: string;
             project: string;
             resource?: IFirewall;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var forwardingRules: {
         /**
@@ -336,7 +336,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IForwardingRuleAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IForwardingRuleAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified ForwardingRule resource.
          * @params {string} forwardingRule Name of the ForwardingRule resource to delete.
@@ -347,7 +347,7 @@ declare module googleapis.compute {
             forwardingRule: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified ForwardingRule resource.
          * @params {string} forwardingRule Name of the ForwardingRule resource to return.
@@ -358,7 +358,7 @@ declare module googleapis.compute {
             forwardingRule: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: IForwardingRule) => void) => void;
+        }, callback: (err: IErrorResponse, response: IForwardingRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -368,7 +368,7 @@ declare module googleapis.compute {
             project: string;
             region: string;
             resource?: IForwardingRule;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of ForwardingRule resources available to the specified project and region.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -383,7 +383,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: IForwardingRuleList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IForwardingRuleList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes target url for forwarding rule.
          * @params {string} forwardingRule Name of the ForwardingRule resource in which target is to be set.
@@ -395,7 +395,7 @@ declare module googleapis.compute {
             project: string;
             region: string;
             resource?: ITargetReference;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var globalAddresses: {
         /**
@@ -406,7 +406,7 @@ declare module googleapis.compute {
         delete: (params: {
             address: string;
             project: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified address resource.
          * @params {string} address Name of the address resource to return.
@@ -415,7 +415,7 @@ declare module googleapis.compute {
         get: (params: {
             address: string;
             project: string;
-        }, callback: (err: any, response: IAddress) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAddress, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an address resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -423,7 +423,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: IAddress;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of global address resources.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -436,7 +436,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IAddressList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAddressList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var globalForwardingRules: {
         /**
@@ -447,7 +447,7 @@ declare module googleapis.compute {
         delete: (params: {
             forwardingRule: string;
             project: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified ForwardingRule resource.
          * @params {string} forwardingRule Name of the ForwardingRule resource to return.
@@ -456,7 +456,7 @@ declare module googleapis.compute {
         get: (params: {
             forwardingRule: string;
             project: string;
-        }, callback: (err: any, response: IForwardingRule) => void) => void;
+        }, callback: (err: IErrorResponse, response: IForwardingRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -464,7 +464,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: IForwardingRule;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of ForwardingRule resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -477,7 +477,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IForwardingRuleList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IForwardingRuleList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes target url for forwarding rule.
          * @params {string} forwardingRule Name of the ForwardingRule resource in which target is to be set.
@@ -487,7 +487,7 @@ declare module googleapis.compute {
             forwardingRule: string;
             project: string;
             resource?: ITargetReference;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var globalOperations: {
         /**
@@ -502,7 +502,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IOperationAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperationAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified operation resource.
          * @params {string} operation Name of the operation resource to delete.
@@ -511,7 +511,7 @@ declare module googleapis.compute {
         delete: (params: {
             operation: string;
             project: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the specified operation resource.
          * @params {string} operation Name of the operation resource to return.
@@ -520,7 +520,7 @@ declare module googleapis.compute {
         get: (params: {
             operation: string;
             project: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of operation resources contained within the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -533,7 +533,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IOperationList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperationList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var httpHealthChecks: {
         /**
@@ -544,7 +544,7 @@ declare module googleapis.compute {
         delete: (params: {
             httpHealthCheck: string;
             project: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified HttpHealthCheck resource.
          * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to return.
@@ -553,7 +553,7 @@ declare module googleapis.compute {
         get: (params: {
             httpHealthCheck: string;
             project: string;
-        }, callback: (err: any, response: IHttpHealthCheck) => void) => void;
+        }, callback: (err: IErrorResponse, response: IHttpHealthCheck, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a HttpHealthCheck resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -561,7 +561,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: IHttpHealthCheck;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of HttpHealthCheck resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -574,7 +574,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IHttpHealthCheckList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IHttpHealthCheckList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a HttpHealthCheck resource in the specified project using the data included in the request. This method supports patch semantics.
          * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to update.
@@ -584,7 +584,7 @@ declare module googleapis.compute {
             httpHealthCheck: string;
             project: string;
             resource?: IHttpHealthCheck;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a HttpHealthCheck resource in the specified project using the data included in the request.
          * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to update.
@@ -594,7 +594,7 @@ declare module googleapis.compute {
             httpHealthCheck: string;
             project: string;
             resource?: IHttpHealthCheck;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var images: {
         /**
@@ -605,7 +605,7 @@ declare module googleapis.compute {
         delete: (params: {
             image: string;
             project: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets the deprecation status of an image. If no message body is given, clears the deprecation status instead.
          * @params {string} image Image name.
@@ -615,7 +615,7 @@ declare module googleapis.compute {
             image: string;
             project: string;
             resource?: IDeprecationStatus;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified image resource.
          * @params {string} image Name of the image resource to return.
@@ -624,7 +624,7 @@ declare module googleapis.compute {
         get: (params: {
             image: string;
             project: string;
-        }, callback: (err: any, response: IImage) => void) => void;
+        }, callback: (err: IErrorResponse, response: IImage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an image resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -632,7 +632,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: IImage;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of image resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -645,7 +645,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IImageList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IImageList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var instances: {
         /**
@@ -661,7 +661,7 @@ declare module googleapis.compute {
             project: string;
             zone: string;
             resource?: IAccessConfig;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -674,7 +674,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IInstanceAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstanceAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Attaches a disk resource to an instance.
          * @params {string} instance Instance name.
@@ -686,7 +686,7 @@ declare module googleapis.compute {
             project: string;
             zone: string;
             resource?: IAttachedDisk;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified instance resource.
          * @params {string} instance Name of the instance resource to delete.
@@ -697,7 +697,7 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes an access config from an instance's network interface.
          * @params {string} accessConfig Access config name.
@@ -712,7 +712,7 @@ declare module googleapis.compute {
             networkInterface: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Detaches a disk from an instance.
          * @params {string} deviceName Disk device name to detach.
@@ -725,7 +725,7 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified instance resource.
          * @params {string} instance Name of the instance resource to return.
@@ -736,7 +736,7 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IInstance) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstance, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified instance's serial port output.
          * @params {string} instance Name of the instance scoping this request.
@@ -747,7 +747,7 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: ISerialPortOutput) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISerialPortOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an instance resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -757,7 +757,7 @@ declare module googleapis.compute {
             project: string;
             zone: string;
             resource?: IInstance;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of instance resources contained within the specified zone.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -772,7 +772,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IInstanceList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInstanceList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Performs a hard reset on the instance.
          * @params {string} instance Name of the instance scoping this request.
@@ -783,7 +783,7 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets the auto-delete flag for a disk attached to an instance
          * @params {boolean} autoDelete Whether to auto-delete the disk when the instance is deleted.
@@ -798,7 +798,7 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets metadata for the specified instance to the data included in the request.
          * @params {string} instance Name of the instance scoping this request.
@@ -810,7 +810,7 @@ declare module googleapis.compute {
             project: string;
             zone: string;
             resource?: IMetadata;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets an instance's scheduling options.
          * @params {string} instance Instance name.
@@ -822,7 +822,7 @@ declare module googleapis.compute {
             project: string;
             zone: string;
             resource?: IScheduling;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets tags for the specified instance to the data included in the request.
          * @params {string} instance Name of the instance scoping this request.
@@ -834,7 +834,7 @@ declare module googleapis.compute {
             project: string;
             zone: string;
             resource?: ITags;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var licenses: {
         /**
@@ -845,7 +845,7 @@ declare module googleapis.compute {
         get: (params: {
             license: string;
             project: string;
-        }, callback: (err: any, response: ILicense) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILicense, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var machineTypes: {
         /**
@@ -860,7 +860,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IMachineTypeAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMachineTypeAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified machine type resource.
          * @params {string} machineType Name of the machine type resource to return.
@@ -871,7 +871,7 @@ declare module googleapis.compute {
             machineType: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IMachineType) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMachineType, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of machine type resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -886,7 +886,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IMachineTypeList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IMachineTypeList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var networks: {
         /**
@@ -897,7 +897,7 @@ declare module googleapis.compute {
         delete: (params: {
             network: string;
             project: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified network resource.
          * @params {string} network Name of the network resource to return.
@@ -906,7 +906,7 @@ declare module googleapis.compute {
         get: (params: {
             network: string;
             project: string;
-        }, callback: (err: any, response: INetwork) => void) => void;
+        }, callback: (err: IErrorResponse, response: INetwork, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a network resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -914,7 +914,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: INetwork;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of network resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -927,7 +927,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: INetworkList) => void) => void;
+        }, callback: (err: IErrorResponse, response: INetworkList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var projects: {
         /**
@@ -936,7 +936,7 @@ declare module googleapis.compute {
          */
         get: (params: {
             project: string;
-        }, callback: (err: any, response: IProject) => void) => void;
+        }, callback: (err: IErrorResponse, response: IProject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets metadata common to all instances within the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -944,7 +944,7 @@ declare module googleapis.compute {
         setCommonInstanceMetadata: (params: {
             project: string;
             resource?: IMetadata;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets usage export location
          * @params {string} project Name of the project scoping this request.
@@ -952,7 +952,7 @@ declare module googleapis.compute {
         setUsageExportBucket: (params: {
             project: string;
             resource?: IUsageExportLocation;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var regionOperations: {
         /**
@@ -965,7 +965,7 @@ declare module googleapis.compute {
             operation: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the specified region-specific operation resource.
          * @params {string} operation Name of the operation resource to return.
@@ -976,7 +976,7 @@ declare module googleapis.compute {
             operation: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of operation resources contained within the specified region.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -991,7 +991,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: IOperationList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperationList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var regions: {
         /**
@@ -1002,7 +1002,7 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             region: string;
-        }, callback: (err: any, response: IRegion) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRegion, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of region resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1015,7 +1015,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IRegionList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRegionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var routes: {
         /**
@@ -1026,7 +1026,7 @@ declare module googleapis.compute {
         delete: (params: {
             project: string;
             route: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified route resource.
          * @params {string} project Name of the project scoping this request.
@@ -1035,7 +1035,7 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             route: string;
-        }, callback: (err: any, response: IRoute) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRoute, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a route resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -1043,7 +1043,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: IRoute;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of route resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1056,7 +1056,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IRouteList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IRouteList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var snapshots: {
         /**
@@ -1067,7 +1067,7 @@ declare module googleapis.compute {
         delete: (params: {
             project: string;
             snapshot: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified persistent disk snapshot resource.
          * @params {string} project Name of the project scoping this request.
@@ -1076,7 +1076,7 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             snapshot: string;
-        }, callback: (err: any, response: ISnapshot) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISnapshot, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of persistent disk snapshot resources contained within the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1089,7 +1089,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: ISnapshotList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ISnapshotList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var targetHttpProxies: {
         /**
@@ -1100,7 +1100,7 @@ declare module googleapis.compute {
         delete: (params: {
             project: string;
             targetHttpProxy: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified TargetHttpProxy resource.
          * @params {string} project Name of the project scoping this request.
@@ -1109,7 +1109,7 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             targetHttpProxy: string;
-        }, callback: (err: any, response: ITargetHttpProxy) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetHttpProxy, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a TargetHttpProxy resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -1117,7 +1117,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: ITargetHttpProxy;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of TargetHttpProxy resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1130,7 +1130,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: ITargetHttpProxyList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetHttpProxyList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes the URL map for TargetHttpProxy.
          * @params {string} project Name of the project scoping this request.
@@ -1140,7 +1140,7 @@ declare module googleapis.compute {
             project: string;
             targetHttpProxy: string;
             resource?: IUrlMapReference;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var targetInstances: {
         /**
@@ -1155,7 +1155,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: ITargetInstanceAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetInstanceAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified TargetInstance resource.
          * @params {string} project Name of the project scoping this request.
@@ -1166,7 +1166,7 @@ declare module googleapis.compute {
             project: string;
             targetInstance: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified TargetInstance resource.
          * @params {string} project Name of the project scoping this request.
@@ -1177,7 +1177,7 @@ declare module googleapis.compute {
             project: string;
             targetInstance: string;
             zone: string;
-        }, callback: (err: any, response: ITargetInstance) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetInstance, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a TargetInstance resource in the specified project and zone using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -1187,7 +1187,7 @@ declare module googleapis.compute {
             project: string;
             zone: string;
             resource?: ITargetInstance;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of TargetInstance resources available to the specified project and zone.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1202,7 +1202,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: ITargetInstanceList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetInstanceList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var targetPools: {
         /**
@@ -1216,7 +1216,7 @@ declare module googleapis.compute {
             region: string;
             targetPool: string;
             resource?: ITargetPoolsAddHealthCheckRequest;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds instance url to targetPool.
          * @params {string} project 
@@ -1228,7 +1228,7 @@ declare module googleapis.compute {
             region: string;
             targetPool: string;
             resource?: ITargetPoolsAddInstanceRequest;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of target pools grouped by scope.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1241,7 +1241,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: ITargetPoolAggregatedList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetPoolAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified TargetPool resource.
          * @params {string} project Name of the project scoping this request.
@@ -1252,7 +1252,7 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified TargetPool resource.
          * @params {string} project Name of the project scoping this request.
@@ -1263,7 +1263,7 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
-        }, callback: (err: any, response: ITargetPool) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetPool, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets the most recent health check results for each IP for the given instance that is referenced by given TargetPool.
          * @params {string} project 
@@ -1275,7 +1275,7 @@ declare module googleapis.compute {
             region: string;
             targetPool: string;
             resource?: IInstanceReference;
-        }, callback: (err: any, response: ITargetPoolInstanceHealth) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetPoolInstanceHealth, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a TargetPool resource in the specified project and region using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -1285,7 +1285,7 @@ declare module googleapis.compute {
             project: string;
             region: string;
             resource?: ITargetPool;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of TargetPool resources available to the specified project and region.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1300,7 +1300,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             region: string;
-        }, callback: (err: any, response: ITargetPoolList) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITargetPoolList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Removes health check URL from targetPool.
          * @params {string} project 
@@ -1312,7 +1312,7 @@ declare module googleapis.compute {
             region: string;
             targetPool: string;
             resource?: ITargetPoolsRemoveHealthCheckRequest;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Removes instance URL from targetPool.
          * @params {string} project 
@@ -1324,7 +1324,7 @@ declare module googleapis.compute {
             region: string;
             targetPool: string;
             resource?: ITargetPoolsRemoveInstanceRequest;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes backup pool configurations.
          * @params {number} failoverRatio New failoverRatio value for the containing target pool.
@@ -1338,7 +1338,7 @@ declare module googleapis.compute {
             region: string;
             targetPool: string;
             resource?: ITargetReference;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var urlMaps: {
         /**
@@ -1349,7 +1349,7 @@ declare module googleapis.compute {
         delete: (params: {
             project: string;
             urlMap: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified UrlMap resource.
          * @params {string} project Name of the project scoping this request.
@@ -1358,7 +1358,7 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             urlMap: string;
-        }, callback: (err: any, response: IUrlMap) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlMap, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a UrlMap resource in the specified project using the data included in the request.
          * @params {string} project Name of the project scoping this request.
@@ -1366,7 +1366,7 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             resource?: IUrlMap;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of UrlMap resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1379,7 +1379,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IUrlMapList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlMapList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the UrlMap resource. This method supports patch semantics.
          * @params {string} project Name of the project scoping this request.
@@ -1389,7 +1389,7 @@ declare module googleapis.compute {
             project: string;
             urlMap: string;
             resource?: IUrlMap;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the UrlMap resource.
          * @params {string} project Name of the project scoping this request.
@@ -1399,7 +1399,7 @@ declare module googleapis.compute {
             project: string;
             urlMap: string;
             resource?: IUrlMap;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Run static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
          * @params {string} project Name of the project scoping this request.
@@ -1409,7 +1409,7 @@ declare module googleapis.compute {
             project: string;
             urlMap: string;
             resource?: IUrlMapsValidateRequest;
-        }, callback: (err: any, response: IUrlMapsValidateResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IUrlMapsValidateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var zoneOperations: {
         /**
@@ -1422,7 +1422,7 @@ declare module googleapis.compute {
             operation: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the specified zone-specific operation resource.
          * @params {string} operation Name of the operation resource to return.
@@ -1433,7 +1433,7 @@ declare module googleapis.compute {
             operation: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of operation resources contained within the specified zone.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1448,7 +1448,7 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperationList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperationList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var zones: {
         /**
@@ -1459,7 +1459,7 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             zone: string;
-        }, callback: (err: any, response: IZone) => void) => void;
+        }, callback: (err: IErrorResponse, response: IZone, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of zone resources available to the specified project.
          * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1472,7 +1472,7 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
-        }, callback: (err: any, response: IZoneList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IZoneList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * An access configuration attached to an instance's network interface.

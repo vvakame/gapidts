@@ -21,7 +21,7 @@ declare module googleapis.storage {
         delete: (params: {
             bucket: string;
             entity: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the ACL entry for the specified entity on the specified bucket.
          * @params {string} bucket Name of a bucket.
@@ -30,7 +30,7 @@ declare module googleapis.storage {
         get: (params: {
             bucket: string;
             entity: string;
-        }, callback: (err: any, response: IBucketAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucketAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new ACL entry on the specified bucket.
          * @params {string} bucket Name of a bucket.
@@ -38,14 +38,14 @@ declare module googleapis.storage {
         insert: (params: {
             bucket: string;
             resource?: IBucketAccessControl;
-        }, callback: (err: any, response: IBucketAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucketAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves ACL entries on the specified bucket.
          * @params {string} bucket Name of a bucket.
          */
         list: (params: {
             bucket: string;
-        }, callback: (err: any, response: IBucketAccessControls) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucketAccessControls, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an ACL entry on the specified bucket. This method supports patch semantics.
          * @params {string} bucket Name of a bucket.
@@ -55,7 +55,7 @@ declare module googleapis.storage {
             bucket: string;
             entity: string;
             resource?: IBucketAccessControl;
-        }, callback: (err: any, response: IBucketAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucketAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an ACL entry on the specified bucket.
          * @params {string} bucket Name of a bucket.
@@ -65,7 +65,7 @@ declare module googleapis.storage {
             bucket: string;
             entity: string;
             resource?: IBucketAccessControl;
-        }, callback: (err: any, response: IBucketAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucketAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var buckets: {
         /**
@@ -78,7 +78,7 @@ declare module googleapis.storage {
             bucket: string;
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns metadata for the specified bucket.
          * @params {string} bucket Name of a bucket.
@@ -91,7 +91,7 @@ declare module googleapis.storage {
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
             projection?: string;
-        }, callback: (err: any, response: IBucket) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new bucket.
          * @params {string} project A valid API project identifier.
@@ -101,7 +101,7 @@ declare module googleapis.storage {
             project: string;
             projection?: string;
             resource?: IBucket;
-        }, callback: (err: any, response: IBucket) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of buckets for a given project.
          * @params {number} maxResults Maximum number of buckets to return.
@@ -114,7 +114,7 @@ declare module googleapis.storage {
             pageToken?: string;
             project: string;
             projection?: string;
-        }, callback: (err: any, response: IBuckets) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBuckets, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a bucket. This method supports patch semantics.
          * @params {string} bucket Name of a bucket.
@@ -128,7 +128,7 @@ declare module googleapis.storage {
             ifMetagenerationNotMatch?: string;
             projection?: string;
             resource?: IBucket;
-        }, callback: (err: any, response: IBucket) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a bucket.
          * @params {string} bucket Name of a bucket.
@@ -142,7 +142,7 @@ declare module googleapis.storage {
             ifMetagenerationNotMatch?: string;
             projection?: string;
             resource?: IBucket;
-        }, callback: (err: any, response: IBucket) => void) => void;
+        }, callback: (err: IErrorResponse, response: IBucket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channels: {
         /**
@@ -150,7 +150,7 @@ declare module googleapis.storage {
          */
         stop: (params: {
             resource?: IChannel;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var defaultObjectAccessControls: {
         /**
@@ -161,7 +161,7 @@ declare module googleapis.storage {
         delete: (params: {
             bucket: string;
             entity: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the default object ACL entry for the specified entity on the specified bucket.
          * @params {string} bucket Name of a bucket.
@@ -170,7 +170,7 @@ declare module googleapis.storage {
         get: (params: {
             bucket: string;
             entity: string;
-        }, callback: (err: any, response: IObjectAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new default object ACL entry on the specified bucket.
          * @params {string} bucket Name of a bucket.
@@ -178,7 +178,7 @@ declare module googleapis.storage {
         insert: (params: {
             bucket: string;
             resource?: IObjectAccessControl;
-        }, callback: (err: any, response: IObjectAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves default object ACL entries on the specified bucket.
          * @params {string} bucket Name of a bucket.
@@ -189,7 +189,7 @@ declare module googleapis.storage {
             bucket: string;
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
-        }, callback: (err: any, response: IObjectAccessControls) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControls, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a default object ACL entry on the specified bucket. This method supports patch semantics.
          * @params {string} bucket Name of a bucket.
@@ -199,7 +199,7 @@ declare module googleapis.storage {
             bucket: string;
             entity: string;
             resource?: IObjectAccessControl;
-        }, callback: (err: any, response: IObjectAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a default object ACL entry on the specified bucket.
          * @params {string} bucket Name of a bucket.
@@ -209,7 +209,7 @@ declare module googleapis.storage {
             bucket: string;
             entity: string;
             resource?: IObjectAccessControl;
-        }, callback: (err: any, response: IObjectAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var objectAccessControls: {
         /**
@@ -224,7 +224,7 @@ declare module googleapis.storage {
             entity: string;
             generation?: string;
             object: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the ACL entry for the specified entity on the specified object.
          * @params {string} bucket Name of a bucket.
@@ -237,7 +237,7 @@ declare module googleapis.storage {
             entity: string;
             generation?: string;
             object: string;
-        }, callback: (err: any, response: IObjectAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new ACL entry on the specified object.
          * @params {string} bucket Name of a bucket.
@@ -249,7 +249,7 @@ declare module googleapis.storage {
             generation?: string;
             object: string;
             resource?: IObjectAccessControl;
-        }, callback: (err: any, response: IObjectAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves ACL entries on the specified object.
          * @params {string} bucket Name of a bucket.
@@ -260,7 +260,7 @@ declare module googleapis.storage {
             bucket: string;
             generation?: string;
             object: string;
-        }, callback: (err: any, response: IObjectAccessControls) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControls, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an ACL entry on the specified object. This method supports patch semantics.
          * @params {string} bucket Name of a bucket.
@@ -274,7 +274,7 @@ declare module googleapis.storage {
             generation?: string;
             object: string;
             resource?: IObjectAccessControl;
-        }, callback: (err: any, response: IObjectAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an ACL entry on the specified object.
          * @params {string} bucket Name of a bucket.
@@ -288,7 +288,7 @@ declare module googleapis.storage {
             generation?: string;
             object: string;
             resource?: IObjectAccessControl;
-        }, callback: (err: any, response: IObjectAccessControl) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var objects: {
         /**
@@ -304,7 +304,7 @@ declare module googleapis.storage {
             ifGenerationMatch?: string;
             ifMetagenerationMatch?: string;
             resource?: IComposeRequest;
-        }, callback: (err: any, response: IObject) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Copies an object to a destination in the same location. Optionally overrides metadata.
          * @params {string} destinationBucket Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.
@@ -338,7 +338,7 @@ declare module googleapis.storage {
             sourceGeneration?: string;
             sourceObject: string;
             resource?: IObject;
-        }, callback: (err: any, response: IObject) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes data blobs and associated metadata. Deletions are permanent if versioning is not enabled for the bucket, or if the generation parameter is used.
          * @params {string} bucket Name of the bucket in which the object resides.
@@ -357,7 +357,7 @@ declare module googleapis.storage {
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
             object: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves objects or their associated metadata.
          * @params {string} bucket Name of the bucket in which the object resides.
@@ -378,7 +378,7 @@ declare module googleapis.storage {
             ifMetagenerationNotMatch?: string;
             object: string;
             projection?: string;
-        }, callback: (err: any, response: IObject) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Stores new data blobs and associated metadata.
          * @params {string} bucket Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.
@@ -398,7 +398,7 @@ declare module googleapis.storage {
             name?: string;
             projection?: string;
             resource?: IObject;
-        }, callback: (err: any, response: IObject) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of objects matching the criteria.
          * @params {string} bucket Name of the bucket in which to look for objects.
@@ -417,7 +417,7 @@ declare module googleapis.storage {
             prefix?: string;
             projection?: string;
             versions?: boolean;
-        }, callback: (err: any, response: IObjects) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObjects, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a data blob's associated metadata. This method supports patch semantics.
          * @params {string} bucket Name of the bucket in which the object resides.
@@ -439,7 +439,7 @@ declare module googleapis.storage {
             object: string;
             projection?: string;
             resource?: IObject;
-        }, callback: (err: any, response: IObject) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a data blob's associated metadata.
          * @params {string} bucket Name of the bucket in which the object resides.
@@ -461,7 +461,7 @@ declare module googleapis.storage {
             object: string;
             projection?: string;
             resource?: IObject;
-        }, callback: (err: any, response: IObject) => void) => void;
+        }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Watch for changes on all objects in a bucket.
          * @params {string} bucket Name of the bucket in which to look for objects.
@@ -481,7 +481,7 @@ declare module googleapis.storage {
             projection?: string;
             versions?: boolean;
             resource?: IChannel;
-        }, callback: (err: any, response: IChannel) => void) => void;
+        }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * A bucket.

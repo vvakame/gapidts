@@ -10,6 +10,7 @@ declare module gapi.client {
      * Lets you access OAuth2 protocol related APIs.
      */
     module oauth2 {
+        var _tmp: {};
         var userinfo: {
             get: (params: {
             }) => { execute(callback: (data: IResponse<IUserinfoplus>, original: string) => void):void; };

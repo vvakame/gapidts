@@ -19,7 +19,7 @@ declare module googleapis.groupssettings {
          */
         get: (params: {
             groupUniqueId: string;
-        }, callback: (err: any, response: IGroups) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing resource. This method supports patch semantics.
          * @params {string} groupUniqueId The resource ID
@@ -27,7 +27,7 @@ declare module googleapis.groupssettings {
         patch: (params: {
             groupUniqueId: string;
             resource?: IGroups;
-        }, callback: (err: any, response: IGroups) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing resource.
          * @params {string} groupUniqueId The resource ID
@@ -35,7 +35,7 @@ declare module googleapis.groupssettings {
         update: (params: {
             groupUniqueId: string;
             resource?: IGroups;
-        }, callback: (err: any, response: IGroups) => void) => void;
+        }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * JSON template for Group resource

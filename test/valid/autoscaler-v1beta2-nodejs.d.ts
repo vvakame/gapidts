@@ -23,7 +23,7 @@ declare module googleapis.autoscaler {
             autoscaler: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets the specified Autoscaler resource.
          * @params {string} autoscaler Name of the Autoscaler resource.
@@ -34,7 +34,7 @@ declare module googleapis.autoscaler {
             autoscaler: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IAutoscaler) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAutoscaler, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds new Autoscaler resource.
          * @params {string} project Project ID of Autoscaler resource.
@@ -44,7 +44,7 @@ declare module googleapis.autoscaler {
             project: string;
             zone: string;
             resource?: IAutoscaler;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all Autoscaler resources in this zone.
          * @params {string} filter 
@@ -59,7 +59,7 @@ declare module googleapis.autoscaler {
             pageToken?: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IAutoscalerListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAutoscalerListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the Autoscaler resource. This method supports patch semantics.
          * @params {string} autoscaler Name of the Autoscaler resource.
@@ -71,7 +71,7 @@ declare module googleapis.autoscaler {
             project: string;
             zone: string;
             resource?: IAutoscaler;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the Autoscaler resource.
          * @params {string} autoscaler Name of the Autoscaler resource.
@@ -83,7 +83,7 @@ declare module googleapis.autoscaler {
             project: string;
             zone: string;
             resource?: IAutoscaler;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var zoneOperations: {
         /**
@@ -96,7 +96,7 @@ declare module googleapis.autoscaler {
             operation: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the specified zone-specific operation resource.
          * @params {string} operation 
@@ -107,7 +107,7 @@ declare module googleapis.autoscaler {
             operation: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperation) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of operation resources contained within the specified zone.
          * @params {string} filter 
@@ -122,7 +122,7 @@ declare module googleapis.autoscaler {
             pageToken?: string;
             project: string;
             zone: string;
-        }, callback: (err: any, response: IOperationList) => void) => void;
+        }, callback: (err: IErrorResponse, response: IOperationList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**
      * Cloud Autoscaler resource.

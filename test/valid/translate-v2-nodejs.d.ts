@@ -19,7 +19,7 @@ declare module googleapis.translate {
          */
         list: (params: {
             q: string;
-        }, callback: (err: any, response: IDetectionsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IDetectionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var languages: {
         /**
@@ -28,7 +28,7 @@ declare module googleapis.translate {
          */
         list: (params: {
             target?: string;
-        }, callback: (err: any, response: ILanguagesListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ILanguagesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var translations: {
         /**
@@ -45,7 +45,7 @@ declare module googleapis.translate {
             q: string;
             source?: string;
             target: string;
-        }, callback: (err: any, response: ITranslationsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: ITranslationsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IDetectionsListResponse {
         /**

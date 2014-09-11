@@ -21,7 +21,7 @@ declare module googleapis.androidpublisher {
         commit: (params: {
             editId: string;
             packageName: string;
-        }, callback: (err: any, response: IAppEdit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAppEdit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes an edit for an app. Creating a new edit will automatically delete any of your previous edits so this method need only be called if you want to preemptively abandon an edit.
          * @params {string} editId Unique identifier for this edit.
@@ -30,7 +30,7 @@ declare module googleapis.androidpublisher {
         delete: (params: {
             editId: string;
             packageName: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns information about the edit specified. Calls will fail if the edit is no long active (e.g. has been deleted, superseded or expired).
          * @params {string} editId Unique identifier for this edit.
@@ -39,7 +39,7 @@ declare module googleapis.androidpublisher {
         get: (params: {
             editId: string;
             packageName: string;
-        }, callback: (err: any, response: IAppEdit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAppEdit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new edit for an app, populated with the app's current state.
          * @params {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
@@ -47,7 +47,7 @@ declare module googleapis.androidpublisher {
         insert: (params: {
             packageName: string;
             resource?: IAppEdit;
-        }, callback: (err: any, response: IAppEdit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAppEdit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Checks that the edit can be successfully committed. The edit's changes are not applied to the live app.
          * @params {string} editId Unique identifier for this edit.
@@ -56,7 +56,7 @@ declare module googleapis.androidpublisher {
         validate: (params: {
             editId: string;
             packageName: string;
-        }, callback: (err: any, response: IAppEdit) => void) => void;
+        }, callback: (err: IErrorResponse, response: IAppEdit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         apklistings: {
             /**
              * Deletes the APK-specific localized listing for a specified APK and language code.
@@ -70,7 +70,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Deletes all the APK-specific localized listings for a specified APK.
              * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -81,7 +81,7 @@ declare module googleapis.androidpublisher {
                 apkVersionCode: number;
                 editId: string;
                 packageName: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Fetches the APK-specific localized listing for a specified APK and language code.
              * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -94,7 +94,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
-            }, callback: (err: any, response: IApkListing) => void) => void;
+            }, callback: (err: IErrorResponse, response: IApkListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all the APK-specific localized listings for a specified APK.
              * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -105,7 +105,7 @@ declare module googleapis.androidpublisher {
                 apkVersionCode: number;
                 editId: string;
                 packageName: string;
-            }, callback: (err: any, response: IApkListingsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IApkListingsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates or creates the APK-specific localized listing for a specified APK and language code. This method supports patch semantics.
              * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -119,7 +119,7 @@ declare module googleapis.androidpublisher {
                 language: string;
                 packageName: string;
                 resource?: IApkListing;
-            }, callback: (err: any, response: IApkListing) => void) => void;
+            }, callback: (err: IErrorResponse, response: IApkListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates or creates the APK-specific localized listing for a specified APK and language code.
              * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -133,7 +133,7 @@ declare module googleapis.androidpublisher {
                 language: string;
                 packageName: string;
                 resource?: IApkListing;
-            }, callback: (err: any, response: IApkListing) => void) => void;
+            }, callback: (err: IErrorResponse, response: IApkListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         apks: {
             /**
@@ -144,7 +144,7 @@ declare module googleapis.androidpublisher {
             list: (params: {
                 editId: string;
                 packageName: string;
-            }, callback: (err: any, response: IApksListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IApksListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * 
              * @params {string} editId Unique identifier for this edit.
@@ -153,7 +153,7 @@ declare module googleapis.androidpublisher {
             upload: (params: {
                 editId: string;
                 packageName: string;
-            }, callback: (err: any, response: IApk) => void) => void;
+            }, callback: (err: IErrorResponse, response: IApk, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         details: {
             /**
@@ -164,7 +164,7 @@ declare module googleapis.androidpublisher {
             get: (params: {
                 editId: string;
                 packageName: string;
-            }, callback: (err: any, response: IAppDetails) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAppDetails, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates app details for this edit. This method supports patch semantics.
              * @params {string} editId Unique identifier for this edit.
@@ -174,7 +174,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 resource?: IAppDetails;
-            }, callback: (err: any, response: IAppDetails) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAppDetails, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates app details for this edit.
              * @params {string} editId Unique identifier for this edit.
@@ -184,7 +184,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 resource?: IAppDetails;
-            }, callback: (err: any, response: IAppDetails) => void) => void;
+            }, callback: (err: IErrorResponse, response: IAppDetails, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         expansionfiles: {
             /**
@@ -199,7 +199,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 expansionFileType: string;
                 packageName: string;
-            }, callback: (err: any, response: IExpansionFile) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExpansionFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the APK's Expansion File configuration to reference another APK's Expansion Files. To add a new Expansion File use the Upload method. This method supports patch semantics.
              * @params {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
@@ -213,7 +213,7 @@ declare module googleapis.androidpublisher {
                 expansionFileType: string;
                 packageName: string;
                 resource?: IExpansionFile;
-            }, callback: (err: any, response: IExpansionFile) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExpansionFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the APK's Expansion File configuration to reference another APK's Expansion Files. To add a new Expansion File use the Upload method.
              * @params {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
@@ -227,7 +227,7 @@ declare module googleapis.androidpublisher {
                 expansionFileType: string;
                 packageName: string;
                 resource?: IExpansionFile;
-            }, callback: (err: any, response: IExpansionFile) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExpansionFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Uploads and attaches a new Expansion File to the APK specified.
              * @params {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
@@ -240,7 +240,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 expansionFileType: string;
                 packageName: string;
-            }, callback: (err: any, response: IExpansionFilesUploadResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IExpansionFilesUploadResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         images: {
             /**
@@ -257,7 +257,7 @@ declare module googleapis.androidpublisher {
                 imageType: string;
                 language: string;
                 packageName: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Deletes all images for the specified language and image type.
              * @params {string} editId Unique identifier for this edit.
@@ -270,7 +270,7 @@ declare module googleapis.androidpublisher {
                 imageType: string;
                 language: string;
                 packageName: string;
-            }, callback: (err: any, response: IImagesDeleteAllResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IImagesDeleteAllResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all images for the specified language and image type.
              * @params {string} editId Unique identifier for this edit.
@@ -283,7 +283,7 @@ declare module googleapis.androidpublisher {
                 imageType: string;
                 language: string;
                 packageName: string;
-            }, callback: (err: any, response: IImagesListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IImagesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Uploads a new image and adds it to the list of images for the specified language and image type.
              * @params {string} editId Unique identifier for this edit.
@@ -296,7 +296,7 @@ declare module googleapis.androidpublisher {
                 imageType: string;
                 language: string;
                 packageName: string;
-            }, callback: (err: any, response: IImagesUploadResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IImagesUploadResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         listings: {
             /**
@@ -309,7 +309,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Deletes all localized listings from an edit.
              * @params {string} editId Unique identifier for this edit.
@@ -318,7 +318,7 @@ declare module googleapis.androidpublisher {
             deleteall: (params: {
                 editId: string;
                 packageName: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Fetches information about a localized store listing.
              * @params {string} editId Unique identifier for this edit.
@@ -329,7 +329,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
-            }, callback: (err: any, response: IListing) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Returns all of the localized store listings attached to this edit.
              * @params {string} editId Unique identifier for this edit.
@@ -338,7 +338,7 @@ declare module googleapis.androidpublisher {
             list: (params: {
                 editId: string;
                 packageName: string;
-            }, callback: (err: any, response: IListingsListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListingsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Creates or updates a localized store listing. This method supports patch semantics.
              * @params {string} editId Unique identifier for this edit.
@@ -350,7 +350,7 @@ declare module googleapis.androidpublisher {
                 language: string;
                 packageName: string;
                 resource?: IListing;
-            }, callback: (err: any, response: IListing) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Creates or updates a localized store listing.
              * @params {string} editId Unique identifier for this edit.
@@ -362,7 +362,7 @@ declare module googleapis.androidpublisher {
                 language: string;
                 packageName: string;
                 resource?: IListing;
-            }, callback: (err: any, response: IListing) => void) => void;
+            }, callback: (err: IErrorResponse, response: IListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         testers: {
             /**
@@ -375,7 +375,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 track: string;
-            }, callback: (err: any, response: ITesters) => void) => void;
+            }, callback: (err: IErrorResponse, response: ITesters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * 
              * @params {string} editId Unique identifier for this edit.
@@ -387,7 +387,7 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 track: string;
                 resource?: ITesters;
-            }, callback: (err: any, response: ITesters) => void) => void;
+            }, callback: (err: IErrorResponse, response: ITesters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * 
              * @params {string} editId Unique identifier for this edit.
@@ -399,7 +399,7 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 track: string;
                 resource?: ITesters;
-            }, callback: (err: any, response: ITesters) => void) => void;
+            }, callback: (err: IErrorResponse, response: ITesters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         tracks: {
             /**
@@ -412,7 +412,7 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 track: string;
-            }, callback: (err: any, response: ITrack) => void) => void;
+            }, callback: (err: IErrorResponse, response: ITrack, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all the track configurations for this edit.
              * @params {string} editId Unique identifier for this edit.
@@ -421,7 +421,7 @@ declare module googleapis.androidpublisher {
             list: (params: {
                 editId: string;
                 packageName: string;
-            }, callback: (err: any, response: ITracksListResponse) => void) => void;
+            }, callback: (err: IErrorResponse, response: ITracksListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the track configuration for the specified track type. This method supports patch semantics.
              * @params {string} editId Unique identifier for this edit.
@@ -433,7 +433,7 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 track: string;
                 resource?: ITrack;
-            }, callback: (err: any, response: ITrack) => void) => void;
+            }, callback: (err: IErrorResponse, response: ITrack, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the track configuration for the specified track type.
              * @params {string} editId Unique identifier for this edit.
@@ -445,13 +445,13 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 track: string;
                 resource?: ITrack;
-            }, callback: (err: any, response: ITrack) => void) => void;
+            }, callback: (err: IErrorResponse, response: ITrack, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var inappproducts: {
         batch: (params: {
             resource?: IInappproductsBatchRequest;
-        }, callback: (err: any, response: IInappproductsBatchResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInappproductsBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete an in-app product for an app.
          * @params {string} packageName Unique identifier for the Android app with the in-app product; for example, "com.spiffygame".
@@ -460,7 +460,7 @@ declare module googleapis.androidpublisher {
         delete: (params: {
             packageName: string;
             sku: string;
-        }, callback: (err: any, response: any) => void ) => void; // void
+        }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns information about the in-app product specified.
          * @params {string} packageName 
@@ -469,7 +469,7 @@ declare module googleapis.androidpublisher {
         get: (params: {
             packageName: string;
             sku: string;
-        }, callback: (err: any, response: IInAppProduct) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInAppProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new in-app product for an app.
          * @params {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -479,7 +479,7 @@ declare module googleapis.androidpublisher {
             autoConvertMissingPrices?: boolean;
             packageName: string;
             resource?: IInAppProduct;
-        }, callback: (err: any, response: IInAppProduct) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInAppProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all the in-app products for an Android app, both subscriptions and managed in-app products..
          * @params {number} maxResults 
@@ -492,7 +492,7 @@ declare module googleapis.androidpublisher {
             packageName: string;
             startIndex?: number;
             token?: string;
-        }, callback: (err: any, response: IInappproductsListResponse) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInappproductsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the details of an in-app product. This method supports patch semantics.
          * @params {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -504,7 +504,7 @@ declare module googleapis.androidpublisher {
             packageName: string;
             sku: string;
             resource?: IInAppProduct;
-        }, callback: (err: any, response: IInAppProduct) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInAppProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the details of an in-app product.
          * @params {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -516,7 +516,7 @@ declare module googleapis.androidpublisher {
             packageName: string;
             sku: string;
             resource?: IInAppProduct;
-        }, callback: (err: any, response: IInAppProduct) => void) => void;
+        }, callback: (err: IErrorResponse, response: IInAppProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var purchases: {
         products: {
@@ -530,7 +530,7 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 productId: string;
                 token: string;
-            }, callback: (err: any, response: IProductPurchase) => void) => void;
+            }, callback: (err: IErrorResponse, response: IProductPurchase, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         subscriptions: {
             /**
@@ -543,7 +543,7 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 subscriptionId: string;
                 token: string;
-            }, callback: (err: any, response: any) => void ) => void; // void
+            }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Checks whether a user's subscription purchase is valid and returns its expiry time.
              * @params {string} packageName The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
@@ -554,7 +554,7 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 subscriptionId: string;
                 token: string;
-            }, callback: (err: any, response: ISubscriptionPurchase) => void) => void;
+            }, callback: (err: IErrorResponse, response: ISubscriptionPurchase, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     interface IApk {

@@ -2,12 +2,14 @@ import model = require("../model");
 
 import Schema = require("./schema");
 import Resource = require("./resource");
+import Method = require("./method");
 import Process = require("./process");
 
 class Root {
 	name:string;
 	schemas:Schema[];
 	resources:Resource[];
+	methods:Method[];
 
 	constructor(public base:model.IRestDescription) {
 		this.name = this.base.name;
@@ -17,6 +19,9 @@ class Root {
 		});
 		this.resources = Object.keys(this.base.resources || {}).map(resourceName=> {
 			return new Resource(resourceName, base.resources[resourceName]);
+		});
+		this.methods = Object.keys(this.base.methods || {}).map(methodName=> {
+			return new Method(methodName, base.methods[methodName]);
 		});
 	}
 
@@ -58,6 +63,10 @@ class Root {
 		process.outputNodeJS("declare module googleapis.").outputNodeJS(this.name).outputNodeJS(" {").outputLineNodeJS();
 		process.increaseIndent();
 
+		if (this.methods.length !== 0) {
+			process.outputLine("var _tmp: {};"); // adhoc fix
+		}
+
 		proc();
 
 		process.decreaseIndent();
@@ -68,6 +77,7 @@ class Root {
 
 	emitMethods(process:Process) {
 		this.resources.forEach(resource=>resource.emit(process));
+		// TODO this.methods.forEach(method=>method.emit(process));
 	}
 
 	emitTypes(process:Process) {
