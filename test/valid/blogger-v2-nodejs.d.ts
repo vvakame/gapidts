@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function blogger(version:string):typeof googleapis.blogger;
+    function blogger(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.blogger;
 }
 /**
  * API for access to the data within Blogger.
@@ -19,6 +20,8 @@ declare module googleapis.blogger {
          */
         get: (params: {
             blogId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBlog, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
@@ -32,6 +35,8 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the comments for a blog, possibly filtered.
@@ -49,6 +54,8 @@ declare module googleapis.blogger {
             pageToken?: string;
             postId: string;
             startDate?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pages: {
@@ -60,6 +67,8 @@ declare module googleapis.blogger {
         get: (params: {
             blogId: string;
             pageId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves pages for a blog, possibly filtered.
@@ -69,6 +78,8 @@ declare module googleapis.blogger {
         list: (params: {
             blogId: string;
             fetchBodies?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPageList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var posts: {
@@ -80,6 +91,8 @@ declare module googleapis.blogger {
         get: (params: {
             blogId: string;
             postId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of posts, possibly filtered.
@@ -95,6 +108,8 @@ declare module googleapis.blogger {
             maxResults?: number;
             pageToken?: string;
             startDate?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPostList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var users: {
@@ -104,6 +119,8 @@ declare module googleapis.blogger {
          */
         get: (params: {
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         blogs: {
             /**
@@ -112,6 +129,8 @@ declare module googleapis.blogger {
              */
             list: (params: {
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IBlogList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };

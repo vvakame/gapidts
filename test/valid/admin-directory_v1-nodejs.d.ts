@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function admin(version:string):typeof googleapis.admin;
+    function admin(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.admin;
 }
 /**
  * The Admin SDK Directory API lets you view and manage enterprise resources such as users and groups, administrative notifications, security features, and more.
@@ -21,6 +22,8 @@ declare module googleapis.admin {
         delete: (params: {
             codeId: number;
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get information about an ASP issued by a user.
@@ -30,6 +33,8 @@ declare module googleapis.admin {
         get: (params: {
             codeId: number;
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAsp, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the ASPs issued by a user.
@@ -37,6 +42,8 @@ declare module googleapis.admin {
          */
         list: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAsps, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channels: {
@@ -44,6 +51,8 @@ declare module googleapis.admin {
          * Stop watching resources through this channel
          */
         stop: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
@@ -58,6 +67,8 @@ declare module googleapis.admin {
             customerId: string;
             deviceId: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChromeOsDevice, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve all Chrome OS Devices of a customer (paginated)
@@ -77,6 +88,8 @@ declare module googleapis.admin {
             projection?: string;
             query?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChromeOsDevices, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Chrome OS Device. This method supports patch semantics.
@@ -88,6 +101,8 @@ declare module googleapis.admin {
             customerId: string;
             deviceId: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChromeOsDevice;
         }, callback: (err: IErrorResponse, response: IChromeOsDevice, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -100,6 +115,8 @@ declare module googleapis.admin {
             customerId: string;
             deviceId: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChromeOsDevice;
         }, callback: (err: IErrorResponse, response: IChromeOsDevice, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -110,6 +127,8 @@ declare module googleapis.admin {
          */
         delete: (params: {
             groupKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieve Group
@@ -117,11 +136,15 @@ declare module googleapis.admin {
          */
         get: (params: {
             groupKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IGroup, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create Group
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IGroup;
         }, callback: (err: IErrorResponse, response: IGroup, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -138,6 +161,8 @@ declare module googleapis.admin {
             maxResults?: number;
             pageToken?: string;
             userKey?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Group. This method supports patch semantics.
@@ -145,6 +170,8 @@ declare module googleapis.admin {
          */
         patch: (params: {
             groupKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IGroup;
         }, callback: (err: IErrorResponse, response: IGroup, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -153,6 +180,8 @@ declare module googleapis.admin {
          */
         update: (params: {
             groupKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IGroup;
         }, callback: (err: IErrorResponse, response: IGroup, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         aliases: {
@@ -164,6 +193,8 @@ declare module googleapis.admin {
             delete: (params: {
                 alias: string;
                 groupKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Add a alias for the group
@@ -171,6 +202,8 @@ declare module googleapis.admin {
              */
             insert: (params: {
                 groupKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAlias;
             }, callback: (err: IErrorResponse, response: IAlias, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -179,6 +212,8 @@ declare module googleapis.admin {
              */
             list: (params: {
                 groupKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAliases, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -191,6 +226,8 @@ declare module googleapis.admin {
         delete: (params: {
             groupKey: string;
             memberKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieve Group Member
@@ -200,6 +237,8 @@ declare module googleapis.admin {
         get: (params: {
             groupKey: string;
             memberKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMember, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add user to the specified group.
@@ -207,6 +246,8 @@ declare module googleapis.admin {
          */
         insert: (params: {
             groupKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMember;
         }, callback: (err: IErrorResponse, response: IMember, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -221,6 +262,8 @@ declare module googleapis.admin {
             maxResults?: number;
             pageToken?: string;
             roles?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMembers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update membership of a user in the specified group. This method supports patch semantics.
@@ -230,6 +273,8 @@ declare module googleapis.admin {
         patch: (params: {
             groupKey: string;
             memberKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMember;
         }, callback: (err: IErrorResponse, response: IMember, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -240,6 +285,8 @@ declare module googleapis.admin {
         update: (params: {
             groupKey: string;
             memberKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMember;
         }, callback: (err: IErrorResponse, response: IMember, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -252,6 +299,8 @@ declare module googleapis.admin {
         action: (params: {
             customerId: string;
             resourceId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMobileDeviceAction;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -262,6 +311,8 @@ declare module googleapis.admin {
         delete: (params: {
             customerId: string;
             resourceId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieve Mobile Device
@@ -273,6 +324,8 @@ declare module googleapis.admin {
             customerId: string;
             projection?: string;
             resourceId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMobileDevice, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve all Mobile Devices of a customer (paginated)
@@ -292,6 +345,8 @@ declare module googleapis.admin {
             projection?: string;
             query?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMobileDevices, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var notifications: {
@@ -303,6 +358,8 @@ declare module googleapis.admin {
         delete: (params: {
             customer: string;
             notificationId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a notification.
@@ -312,6 +369,8 @@ declare module googleapis.admin {
         get: (params: {
             customer: string;
             notificationId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: INotification, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of notifications.
@@ -325,6 +384,8 @@ declare module googleapis.admin {
             language?: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: INotifications, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a notification. This method supports patch semantics.
@@ -334,6 +395,8 @@ declare module googleapis.admin {
         patch: (params: {
             customer: string;
             notificationId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: INotification;
         }, callback: (err: IErrorResponse, response: INotification, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -344,6 +407,8 @@ declare module googleapis.admin {
         update: (params: {
             customer: string;
             notificationId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: INotification;
         }, callback: (err: IErrorResponse, response: INotification, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -356,6 +421,8 @@ declare module googleapis.admin {
         delete: (params: {
             customerId: string;
             orgUnitPath: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieve Organization Unit
@@ -365,6 +432,8 @@ declare module googleapis.admin {
         get: (params: {
             customerId: string;
             orgUnitPath: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOrgUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add Organization Unit
@@ -372,6 +441,8 @@ declare module googleapis.admin {
          */
         insert: (params: {
             customerId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IOrgUnit;
         }, callback: (err: IErrorResponse, response: IOrgUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -384,6 +455,8 @@ declare module googleapis.admin {
             customerId: string;
             orgUnitPath?: string;
             type?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOrgUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update Organization Unit. This method supports patch semantics.
@@ -393,6 +466,8 @@ declare module googleapis.admin {
         patch: (params: {
             customerId: string;
             orgUnitPath: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IOrgUnit;
         }, callback: (err: IErrorResponse, response: IOrgUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -403,6 +478,8 @@ declare module googleapis.admin {
         update: (params: {
             customerId: string;
             orgUnitPath: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IOrgUnit;
         }, callback: (err: IErrorResponse, response: IOrgUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -415,6 +492,8 @@ declare module googleapis.admin {
         delete: (params: {
             clientId: string;
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get information about an access token issued by a user.
@@ -424,6 +503,8 @@ declare module googleapis.admin {
         get: (params: {
             clientId: string;
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IToken, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the set of tokens specified user has issued to 3rd party applications.
@@ -431,6 +512,8 @@ declare module googleapis.admin {
          */
         list: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITokens, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var users: {
@@ -440,6 +523,8 @@ declare module googleapis.admin {
          */
         delete: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * retrieve user
@@ -447,11 +532,15 @@ declare module googleapis.admin {
          */
         get: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * create user.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUser;
         }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -476,6 +565,8 @@ declare module googleapis.admin {
             query?: string;
             showDeleted?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUsers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * change admin status of a user
@@ -483,6 +574,8 @@ declare module googleapis.admin {
          */
         makeAdmin: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUserMakeAdmin;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -491,6 +584,8 @@ declare module googleapis.admin {
          */
         patch: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUser;
         }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -499,6 +594,8 @@ declare module googleapis.admin {
          */
         undelete: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUserUndelete;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -507,6 +604,8 @@ declare module googleapis.admin {
          */
         update: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUser;
         }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -531,6 +630,8 @@ declare module googleapis.admin {
             query?: string;
             showDeleted?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         aliases: {
@@ -542,6 +643,8 @@ declare module googleapis.admin {
             delete: (params: {
                 alias: string;
                 userKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Add a alias for the user
@@ -549,6 +652,8 @@ declare module googleapis.admin {
              */
             insert: (params: {
                 userKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAlias;
             }, callback: (err: IErrorResponse, response: IAlias, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -559,6 +664,8 @@ declare module googleapis.admin {
             list: (params: {
                 event?: string;
                 userKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAliases, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Watch for changes in user aliases list
@@ -568,6 +675,8 @@ declare module googleapis.admin {
             watch: (params: {
                 event?: string;
                 userKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IChannel;
             }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -578,6 +687,8 @@ declare module googleapis.admin {
              */
             delete: (params: {
                 userKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Retrieve photo of a user
@@ -585,6 +696,8 @@ declare module googleapis.admin {
              */
             get: (params: {
                 userKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IUserPhoto, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Add a photo for the user. This method supports patch semantics.
@@ -592,6 +705,8 @@ declare module googleapis.admin {
              */
             patch: (params: {
                 userKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IUserPhoto;
             }, callback: (err: IErrorResponse, response: IUserPhoto, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -600,6 +715,8 @@ declare module googleapis.admin {
              */
             update: (params: {
                 userKey: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IUserPhoto;
             }, callback: (err: IErrorResponse, response: IUserPhoto, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -611,6 +728,8 @@ declare module googleapis.admin {
          */
         generate: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Invalidate the current backup verification codes for the user.
@@ -618,6 +737,8 @@ declare module googleapis.admin {
          */
         invalidate: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the current set of valid backup verification codes for the specified user.
@@ -625,6 +746,8 @@ declare module googleapis.admin {
          */
         list: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVerificationCodes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

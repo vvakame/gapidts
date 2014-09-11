@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function appstate(version:string):typeof googleapis.appstate;
+    function appstate(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.appstate;
 }
 /**
  * The Google App State API.
@@ -21,6 +22,8 @@ declare module googleapis.appstate {
         clear: (params: {
             currentDataVersion?: string;
             stateKey: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IWriteResult, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a key and the data associated with it. The key is removed and no longer counts against the key quota. Note that since this method is not safe in the face of concurrent modifications, it should only be used for development and testing purposes. Invoking this method in shipping code can result in data loss and data corruption.
@@ -28,6 +31,8 @@ declare module googleapis.appstate {
          */
         delete: (params: {
             stateKey: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the data corresponding to the passed key. If the key does not exist on the server, an HTTP 404 will be returned.
@@ -35,6 +40,8 @@ declare module googleapis.appstate {
          */
         get: (params: {
             stateKey: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IGetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all the states keys, and optionally the state data.
@@ -42,6 +49,8 @@ declare module googleapis.appstate {
          */
         list: (params: {
             includeData?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the data associated with the input key if and only if the passed version matches the currently stored version. This method is safe in the face of concurrent writes. Maximum per-key size is 128KB.
@@ -51,6 +60,8 @@ declare module googleapis.appstate {
         update: (params: {
             currentStateVersion?: string;
             stateKey: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUpdateRequest;
         }, callback: (err: IErrorResponse, response: IWriteResult, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

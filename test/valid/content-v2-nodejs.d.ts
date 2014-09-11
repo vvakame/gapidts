@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function content(version:string):typeof googleapis.content;
+    function content(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.content;
 }
 /**
  * Manage product items, inventory, and Merchant Center accounts for Google Shopping.
@@ -17,6 +18,8 @@ declare module googleapis.content {
          * Retrieves, inserts, updates, and deletes multiple Merchant Center (sub-)accounts in a single request.
          */
         custombatch: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccountsCustomBatchRequest;
         }, callback: (err: IErrorResponse, response: IAccountsCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -27,6 +30,8 @@ declare module googleapis.content {
         delete: (params: {
             accountId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a Merchant Center account.
@@ -36,6 +41,8 @@ declare module googleapis.content {
         get: (params: {
             accountId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a Merchant Center sub-account.
@@ -43,6 +50,8 @@ declare module googleapis.content {
          */
         insert: (params: {
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccount;
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -55,6 +64,8 @@ declare module googleapis.content {
             maxResults?: number;
             merchantId: string;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccountsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a Merchant Center account. This method supports patch semantics.
@@ -64,6 +75,8 @@ declare module googleapis.content {
         patch: (params: {
             accountId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccount;
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -74,11 +87,15 @@ declare module googleapis.content {
         update: (params: {
             accountId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccount;
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var accountstatuses: {
         custombatch: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccountstatusesCustomBatchRequest;
         }, callback: (err: IErrorResponse, response: IAccountstatusesCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -89,6 +106,8 @@ declare module googleapis.content {
         get: (params: {
             accountId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccountStatus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the statuses of the sub-accounts in your Merchant Center account.
@@ -100,10 +119,14 @@ declare module googleapis.content {
             maxResults?: number;
             merchantId: string;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccountstatusesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var datafeeds: {
         custombatch: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDatafeedsCustomBatchRequest;
         }, callback: (err: IErrorResponse, response: IDatafeedsCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -114,6 +137,8 @@ declare module googleapis.content {
         delete: (params: {
             datafeedId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a datafeed from your Merchant Center account.
@@ -123,6 +148,8 @@ declare module googleapis.content {
         get: (params: {
             datafeedId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDatafeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Registers a datafeed with your Merchant Center account.
@@ -130,6 +157,8 @@ declare module googleapis.content {
          */
         insert: (params: {
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDatafeed;
         }, callback: (err: IErrorResponse, response: IDatafeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -138,6 +167,8 @@ declare module googleapis.content {
          */
         list: (params: {
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDatafeedsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a datafeed of your Merchant Center account. This method supports patch semantics.
@@ -147,6 +178,8 @@ declare module googleapis.content {
         patch: (params: {
             datafeedId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDatafeed;
         }, callback: (err: IErrorResponse, response: IDatafeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -157,11 +190,15 @@ declare module googleapis.content {
         update: (params: {
             datafeedId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDatafeed;
         }, callback: (err: IErrorResponse, response: IDatafeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var datafeedstatuses: {
         custombatch: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDatafeedstatusesCustomBatchRequest;
         }, callback: (err: IErrorResponse, response: IDatafeedstatusesCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -172,6 +209,8 @@ declare module googleapis.content {
         get: (params: {
             datafeedId: string;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDatafeedStatus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the statuses of the datafeeds in your Merchant Center account.
@@ -179,6 +218,8 @@ declare module googleapis.content {
          */
         list: (params: {
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDatafeedstatusesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var inventory: {
@@ -186,6 +227,8 @@ declare module googleapis.content {
          * Updates price and availability for multiple products or stores in a single request.
          */
         custombatch: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInventoryCustomBatchRequest;
         }, callback: (err: IErrorResponse, response: IInventoryCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -198,6 +241,8 @@ declare module googleapis.content {
             merchantId: string;
             productId: string;
             storeCode: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInventorySetRequest;
         }, callback: (err: IErrorResponse, response: IInventorySetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -208,6 +253,8 @@ declare module googleapis.content {
          */
         custombatch: (params: {
             dryRun?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IProductsCustomBatchRequest;
         }, callback: (err: IErrorResponse, response: IProductsCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -220,6 +267,8 @@ declare module googleapis.content {
             dryRun?: boolean;
             merchantId: string;
             productId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a product from your Merchant Center account.
@@ -229,6 +278,8 @@ declare module googleapis.content {
         get: (params: {
             merchantId: string;
             productId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Uploads a product to your Merchant Center account.
@@ -238,6 +289,8 @@ declare module googleapis.content {
         insert: (params: {
             dryRun?: boolean;
             merchantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IProduct;
         }, callback: (err: IErrorResponse, response: IProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -250,6 +303,8 @@ declare module googleapis.content {
             maxResults?: number;
             merchantId: string;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProductsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var productstatuses: {
@@ -257,6 +312,8 @@ declare module googleapis.content {
          * Gets the statuses of multiple products in a single request.
          */
         custombatch: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IProductstatusesCustomBatchRequest;
         }, callback: (err: IErrorResponse, response: IProductstatusesCustomBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -267,6 +324,8 @@ declare module googleapis.content {
         get: (params: {
             merchantId: string;
             productId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProductStatus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the statuses of the products in your Merchant Center account.
@@ -278,6 +337,8 @@ declare module googleapis.content {
             maxResults?: number;
             merchantId: string;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProductstatusesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAccount {

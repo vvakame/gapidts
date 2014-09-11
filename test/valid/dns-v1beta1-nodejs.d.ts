@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function dns(version:string):typeof googleapis.dns;
+    function dns(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.dns;
 }
 /**
  * The Google Cloud DNS API provides services for configuring and serving authoritative DNS records.
@@ -21,6 +22,8 @@ declare module googleapis.dns {
         create: (params: {
             managedZone: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChange;
         }, callback: (err: IErrorResponse, response: IChange, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -33,6 +36,8 @@ declare module googleapis.dns {
             changeId: string;
             managedZone: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChange, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Enumerate Changes to a ResourceRecordSet collection.
@@ -50,6 +55,8 @@ declare module googleapis.dns {
             project: string;
             sortBy?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChangesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var managedZones: {
@@ -59,6 +66,8 @@ declare module googleapis.dns {
          */
         create: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IManagedZone;
         }, callback: (err: IErrorResponse, response: IManagedZone, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -69,6 +78,8 @@ declare module googleapis.dns {
         delete: (params: {
             managedZone: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Fetch the representation of an existing ManagedZone.
@@ -78,6 +89,8 @@ declare module googleapis.dns {
         get: (params: {
             managedZone: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IManagedZone, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Enumerate ManagedZones that have been created but not yet deleted.
@@ -89,6 +102,8 @@ declare module googleapis.dns {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IManagedZonesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var projects: {
@@ -98,6 +113,8 @@ declare module googleapis.dns {
          */
         get: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var resourceRecordSets: {
@@ -117,6 +134,8 @@ declare module googleapis.dns {
             pageToken?: string;
             project: string;
             type?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IResourceRecordSetsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function dfareporting(version:string):typeof googleapis.dfareporting;
+    function dfareporting(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.dfareporting;
 }
 /**
  * Lets you create, run and download reports.
@@ -23,6 +24,8 @@ declare module googleapis.dfareporting {
             maxResults?: number;
             pageToken?: string;
             profileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDimensionValueRequest;
         }, callback: (err: IErrorResponse, response: IDimensionValueList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -41,6 +44,8 @@ declare module googleapis.dfareporting {
             profileId: string;
             sortField?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFileList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
@@ -52,6 +57,8 @@ declare module googleapis.dfareporting {
         delete: (params: {
             profileId: string;
             reportId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a report by its id.
@@ -61,6 +68,8 @@ declare module googleapis.dfareporting {
         get: (params: {
             profileId: string;
             reportId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a report.
@@ -68,6 +77,8 @@ declare module googleapis.dfareporting {
          */
         insert: (params: {
             profileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IReport;
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -84,6 +95,8 @@ declare module googleapis.dfareporting {
             profileId: string;
             sortField?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReportList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a report. This method supports patch semantics.
@@ -93,6 +106,8 @@ declare module googleapis.dfareporting {
         patch: (params: {
             profileId: string;
             reportId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IReport;
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -105,6 +120,8 @@ declare module googleapis.dfareporting {
             profileId: string;
             reportId: string;
             synchronous?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a report.
@@ -114,6 +131,8 @@ declare module googleapis.dfareporting {
         update: (params: {
             profileId: string;
             reportId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IReport;
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         files: {
@@ -127,6 +146,8 @@ declare module googleapis.dfareporting {
                 fileId: string;
                 profileId: string;
                 reportId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists files for a report.
@@ -144,6 +165,8 @@ declare module googleapis.dfareporting {
                 reportId: string;
                 sortField?: string;
                 sortOrder?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IFileList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -154,11 +177,15 @@ declare module googleapis.dfareporting {
          */
         get: (params: {
             profileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUserProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves list of user profiles for a user.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUserProfileList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

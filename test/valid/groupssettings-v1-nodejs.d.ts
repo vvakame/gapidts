@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function groupssettings(version:string):typeof googleapis.groupssettings;
+    function groupssettings(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.groupssettings;
 }
 /**
  * Lets you manage permission levels and related settings of a group.
@@ -19,6 +20,8 @@ declare module googleapis.groupssettings {
          */
         get: (params: {
             groupUniqueId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing resource. This method supports patch semantics.
@@ -26,6 +29,8 @@ declare module googleapis.groupssettings {
          */
         patch: (params: {
             groupUniqueId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IGroups;
         }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -34,6 +39,8 @@ declare module googleapis.groupssettings {
          */
         update: (params: {
             groupUniqueId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IGroups;
         }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

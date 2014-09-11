@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function calendar(version:string):typeof googleapis.calendar;
+    function calendar(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.calendar;
 }
 /**
  * Lets you manipulate events and other calendar data.
@@ -21,6 +22,8 @@ declare module googleapis.calendar {
         delete: (params: {
             calendarId: string;
             ruleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns an access control rule.
@@ -30,6 +33,8 @@ declare module googleapis.calendar {
         get: (params: {
             calendarId: string;
             ruleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAclRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an access control rule.
@@ -37,6 +42,8 @@ declare module googleapis.calendar {
          */
         insert: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAclRule;
         }, callback: (err: IErrorResponse, response: IAclRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -56,6 +63,8 @@ Optional. The default is to return all entries.
             pageToken?: string;
             showDeleted?: boolean;
             syncToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAcl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an access control rule. This method supports patch semantics.
@@ -65,6 +74,8 @@ Optional. The default is to return all entries.
         patch: (params: {
             calendarId: string;
             ruleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAclRule;
         }, callback: (err: IErrorResponse, response: IAclRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -75,6 +86,8 @@ Optional. The default is to return all entries.
         update: (params: {
             calendarId: string;
             ruleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAclRule;
         }, callback: (err: IErrorResponse, response: IAclRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -94,6 +107,8 @@ Optional. The default is to return all entries.
             pageToken?: string;
             showDeleted?: boolean;
             syncToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -104,6 +119,8 @@ Optional. The default is to return all entries.
          */
         delete: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns an entry on the user's calendar list.
@@ -111,6 +128,8 @@ Optional. The default is to return all entries.
          */
         get: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICalendarListEntry, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds an entry to the user's calendar list.
@@ -118,6 +137,8 @@ Optional. The default is to return all entries.
          */
         insert: (params: {
             colorRgbFormat?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICalendarListEntry;
         }, callback: (err: IErrorResponse, response: ICalendarListEntry, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -140,6 +161,8 @@ Optional. The default is to return all entries.
             showDeleted?: boolean;
             showHidden?: boolean;
             syncToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICalendarList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an entry on the user's calendar list. This method supports patch semantics.
@@ -149,6 +172,8 @@ Optional. The default is to return all entries.
         patch: (params: {
             calendarId: string;
             colorRgbFormat?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICalendarListEntry;
         }, callback: (err: IErrorResponse, response: ICalendarListEntry, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -159,6 +184,8 @@ Optional. The default is to return all entries.
         update: (params: {
             calendarId: string;
             colorRgbFormat?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICalendarListEntry;
         }, callback: (err: IErrorResponse, response: ICalendarListEntry, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -181,6 +208,8 @@ Optional. The default is to return all entries.
             showDeleted?: boolean;
             showHidden?: boolean;
             syncToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -191,6 +220,8 @@ Optional. The default is to return all entries.
          */
         clear: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Deletes a secondary calendar.
@@ -198,6 +229,8 @@ Optional. The default is to return all entries.
          */
         delete: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns metadata for a calendar.
@@ -205,11 +238,15 @@ Optional. The default is to return all entries.
          */
         get: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICalendar, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a secondary calendar.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICalendar;
         }, callback: (err: IErrorResponse, response: ICalendar, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -218,6 +255,8 @@ Optional. The default is to return all entries.
          */
         patch: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICalendar;
         }, callback: (err: IErrorResponse, response: ICalendar, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -226,6 +265,8 @@ Optional. The default is to return all entries.
          */
         update: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICalendar;
         }, callback: (err: IErrorResponse, response: ICalendar, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -234,6 +275,8 @@ Optional. The default is to return all entries.
          * Stop watching resources through this channel
          */
         stop: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
@@ -242,6 +285,8 @@ Optional. The default is to return all entries.
          * Returns the color definitions for calendars and events.
          */
         get: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IColors, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var events: {
@@ -255,6 +300,8 @@ Optional. The default is to return all entries.
             calendarId: string;
             eventId: string;
             sendNotifications?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns an event.
@@ -270,6 +317,8 @@ Optional. The default is to return all entries.
             eventId: string;
             maxAttendees?: number;
             timeZone?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Imports an event. This operation is used to add a private copy of an existing event to a calendar.
@@ -277,6 +326,8 @@ Optional. The default is to return all entries.
          */
         import: (params: {
             calendarId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IEvent;
         }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -289,6 +340,8 @@ Optional. The default is to return all entries.
             calendarId: string;
             maxAttendees?: number;
             sendNotifications?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IEvent;
         }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -317,6 +370,8 @@ Optional. The default is to return all entries.
             timeMax?: string;
             timeMin?: string;
             timeZone?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IEvents, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns events on the specified calendar.
@@ -371,6 +426,8 @@ Optional. The default is to return all entries.
             timeMin?: string;
             timeZone?: string;
             updatedMin?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IEvents, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Moves an event to another calendar, i.e. changes an event's organizer.
@@ -384,6 +441,8 @@ Optional. The default is to return all entries.
             destination: string;
             eventId: string;
             sendNotifications?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an event. This method supports patch semantics.
@@ -399,6 +458,8 @@ Optional. The default is to return all entries.
             eventId: string;
             maxAttendees?: number;
             sendNotifications?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IEvent;
         }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -411,6 +472,8 @@ Optional. The default is to return all entries.
             calendarId: string;
             sendNotifications?: boolean;
             text: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an event.
@@ -426,6 +489,8 @@ Optional. The default is to return all entries.
             eventId: string;
             maxAttendees?: number;
             sendNotifications?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IEvent;
         }, callback: (err: IErrorResponse, response: IEvent, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -481,6 +546,8 @@ Optional. The default is to return all entries.
             timeMin?: string;
             timeZone?: string;
             updatedMin?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -489,6 +556,8 @@ Optional. The default is to return all entries.
          * Returns free/busy information for a set of calendars.
          */
         query: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFreeBusyRequest;
         }, callback: (err: IErrorResponse, response: IFreeBusyResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -499,6 +568,8 @@ Optional. The default is to return all entries.
          */
         get: (params: {
             setting: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns all user settings for the authenticated user.
@@ -513,6 +584,8 @@ Optional. The default is to return all entries.
             maxResults?: number;
             pageToken?: string;
             syncToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISettings, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Watch for changes to Settings resources.
@@ -527,6 +600,8 @@ Optional. The default is to return all entries.
             maxResults?: number;
             pageToken?: string;
             syncToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

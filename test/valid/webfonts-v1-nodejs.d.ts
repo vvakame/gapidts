@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function webfonts(version:string):typeof googleapis.webfonts;
+    function webfonts(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.webfonts;
 }
 /**
  * The Google Fonts Developer API.
@@ -19,6 +20,8 @@ declare module googleapis.webfonts {
          */
         list: (params: {
             sort?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IWebfontList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IWebfont {

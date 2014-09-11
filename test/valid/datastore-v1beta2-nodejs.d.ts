@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function datastore(version:string):typeof googleapis.datastore;
+    function datastore(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.datastore;
 }
 /**
  * API for accessing Google Cloud Datastore.
@@ -19,6 +20,8 @@ declare module googleapis.datastore {
          */
         allocateIds: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAllocateIdsRequest;
         }, callback: (err: IErrorResponse, response: IAllocateIdsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -27,6 +30,8 @@ declare module googleapis.datastore {
          */
         beginTransaction: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBeginTransactionRequest;
         }, callback: (err: IErrorResponse, response: IBeginTransactionResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -35,6 +40,8 @@ declare module googleapis.datastore {
          */
         commit: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICommitRequest;
         }, callback: (err: IErrorResponse, response: ICommitResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -43,6 +50,8 @@ declare module googleapis.datastore {
          */
         lookup: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILookupRequest;
         }, callback: (err: IErrorResponse, response: ILookupResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -51,6 +60,8 @@ declare module googleapis.datastore {
          */
         rollback: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRollbackRequest;
         }, callback: (err: IErrorResponse, response: IRollbackResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -59,6 +70,8 @@ declare module googleapis.datastore {
          */
         runQuery: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRunQueryRequest;
         }, callback: (err: IErrorResponse, response: IRunQueryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

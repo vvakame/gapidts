@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function audit(version:string):typeof googleapis.audit;
+    function audit(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.audit;
 }
 /**
  * Lets you access user activities in your enterprise made through various applications.
@@ -39,6 +40,8 @@ declare module googleapis.audit {
             eventName?: string;
             maxResults?: number;
             startTime?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivities, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IActivities {

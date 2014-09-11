@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function adexchangeseller(version:string):typeof googleapis.adexchangeseller;
+    function adexchangeseller(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.adexchangeseller;
 }
 /**
  * Gives Ad Exchange seller users access to their inventory and the ability to generate reports
@@ -19,6 +20,8 @@ declare module googleapis.adexchangeseller {
          */
         get: (params: {
             accountId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var adclients: {
@@ -30,6 +33,8 @@ declare module googleapis.adexchangeseller {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var adunits: {
@@ -41,6 +46,8 @@ declare module googleapis.adexchangeseller {
         get: (params: {
             adClientId: string;
             adUnitId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all ad units in the specified ad client for this Ad Exchange account.
@@ -54,6 +61,8 @@ declare module googleapis.adexchangeseller {
             includeInactive?: boolean;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         customchannels: {
             /**
@@ -68,6 +77,8 @@ declare module googleapis.adexchangeseller {
                 adUnitId: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -78,6 +89,8 @@ declare module googleapis.adexchangeseller {
          */
         list: (params: {
             locale?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAlerts, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var customchannels: {
@@ -89,6 +102,8 @@ declare module googleapis.adexchangeseller {
         get: (params: {
             adClientId: string;
             customChannelId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all custom channels in the specified ad client for this Ad Exchange account.
@@ -100,6 +115,8 @@ declare module googleapis.adexchangeseller {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         adunits: {
             /**
@@ -116,6 +133,8 @@ declare module googleapis.adexchangeseller {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -125,6 +144,8 @@ declare module googleapis.adexchangeseller {
              * List the metadata for the dimensions available to this AdExchange account.
              */
             list: (params: {
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IMetadata, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         metrics: {
@@ -132,6 +153,8 @@ declare module googleapis.adexchangeseller {
              * List the metadata for the metrics available to this AdExchange account.
              */
             list: (params: {
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IMetadata, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -142,11 +165,15 @@ declare module googleapis.adexchangeseller {
          */
         get: (params: {
             dealId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPreferredDeal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the preferred deals for this Ad Exchange account.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPreferredDeals, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
@@ -172,6 +199,8 @@ declare module googleapis.adexchangeseller {
             sort?: string;
             startDate: string;
             startIndex?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         saved: {
             /**
@@ -186,6 +215,8 @@ declare module googleapis.adexchangeseller {
                 maxResults?: number;
                 savedReportId: string;
                 startIndex?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all saved reports in this Ad Exchange account.
@@ -195,6 +226,8 @@ declare module googleapis.adexchangeseller {
             list: (params: {
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ISavedReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -209,6 +242,8 @@ declare module googleapis.adexchangeseller {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUrlChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAccount {

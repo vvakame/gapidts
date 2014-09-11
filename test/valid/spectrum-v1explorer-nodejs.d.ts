@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function spectrum(version:string):typeof googleapis.spectrum;
+    function spectrum(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.spectrum;
 }
 /**
  * API for spectrum-management functions.
@@ -17,36 +18,48 @@ declare module googleapis.spectrum {
          * Requests information about the available spectrum for a device at a location. Requests from a fixed-mode device must include owner information so the device can be registered with the database.
          */
         getSpectrum: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPawsGetSpectrumRequest;
         }, callback: (err: IErrorResponse, response: IPawsGetSpectrumResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * The Google Spectrum Database does not support batch requests, so this method always yields an UNIMPLEMENTED error.
          */
         getSpectrumBatch: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPawsGetSpectrumBatchRequest;
         }, callback: (err: IErrorResponse, response: IPawsGetSpectrumBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Initializes the connection between a white space device and the database.
          */
         init: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPawsInitRequest;
         }, callback: (err: IErrorResponse, response: IPawsInitResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Notifies the database that the device has selected certain frequency ranges for transmission. Only to be invoked when required by the regulator. The Google Spectrum Database does not operate in domains that require notification, so this always yields an UNIMPLEMENTED error.
          */
         notifySpectrumUse: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPawsNotifySpectrumUseRequest;
         }, callback: (err: IErrorResponse, response: IPawsNotifySpectrumUseResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * The Google Spectrum Database implements registration in the getSpectrum method. As such this always returns an UNIMPLEMENTED error.
          */
         register: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPawsRegisterRequest;
         }, callback: (err: IErrorResponse, response: IPawsRegisterResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Validates a device for white space use in accordance with regulatory rules. The Google Spectrum Database does not support master/slave configurations, so this always yields an UNIMPLEMENTED error.
          */
         verifyDevice: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPawsVerifyDeviceRequest;
         }, callback: (err: IErrorResponse, response: IPawsVerifyDeviceResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

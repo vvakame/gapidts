@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function urlshortener(version:string):typeof googleapis.urlshortener;
+    function urlshortener(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.urlshortener;
 }
 /**
  * Lets you create, inspect, and manage goo.gl short URLs
@@ -21,11 +22,15 @@ declare module googleapis.urlshortener {
         get: (params: {
             projection?: string;
             shortUrl: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUrl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new short URL.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUrl;
         }, callback: (err: IErrorResponse, response: IUrl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -36,6 +41,8 @@ declare module googleapis.urlshortener {
         list: (params: {
             projection?: string;
             "start-token"?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUrlHistory, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAnalyticsSnapshot {

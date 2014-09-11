@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function drive(version:string):typeof googleapis.drive;
+    function drive(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.drive;
 }
 /**
  * The API to interact with Drive.
@@ -23,11 +24,15 @@ declare module googleapis.drive {
             id: string;
             projection?: string;
             updateViewedDate?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a file, and any settable metadata or blob content sent with the request.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFile;
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -42,6 +47,8 @@ declare module googleapis.drive {
             newRevision?: boolean;
             updateModifiedDate?: boolean;
             updateViewedDate?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFile;
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -56,6 +63,8 @@ declare module googleapis.drive {
             newRevision?: boolean;
             updateModifiedDate?: boolean;
             updateViewedDate?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFile;
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

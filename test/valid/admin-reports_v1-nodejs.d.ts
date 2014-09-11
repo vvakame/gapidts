@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function admin(version:string):typeof googleapis.admin;
+    function admin(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.admin;
 }
 /**
  * Allows the administrators of Google Apps customers to fetch reports about the usage, collaboration, security and risk for their users.
@@ -37,6 +38,8 @@ declare module googleapis.admin {
             pageToken?: string;
             startTime?: string;
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivities, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Push changes to activities
@@ -62,6 +65,8 @@ declare module googleapis.admin {
             pageToken?: string;
             startTime?: string;
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -70,6 +75,8 @@ declare module googleapis.admin {
          * Stop watching resources through this channel
          */
         stop: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
@@ -86,6 +93,8 @@ declare module googleapis.admin {
             date: string;
             pageToken?: string;
             parameters?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUsageReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var userUsageReport: {
@@ -107,6 +116,8 @@ declare module googleapis.admin {
             pageToken?: string;
             parameters?: string;
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUsageReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

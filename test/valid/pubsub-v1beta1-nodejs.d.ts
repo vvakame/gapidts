@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function pubsub(version:string):typeof googleapis.pubsub;
+    function pubsub(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.pubsub;
 }
 /**
  * Provides reliable, many-to-many, asynchronous messaging between applications.
@@ -17,12 +18,16 @@ declare module googleapis.pubsub {
          * Acknowledges a particular received message: the Pub/Sub system can remove the given message from the subscription. Acknowledging a message whose Ack deadline has expired may succeed, but the message could have been already redelivered. Acknowledging a message more than once will not result in an error. This is only used for messages received via pull.
          */
         acknowledge: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAcknowledgeRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a subscription on a given topic for a given subscriber. If the subscription already exists, returns ALREADY_EXISTS. If the corresponding topic doesn't exist, returns NOT_FOUND.
          */
         create: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISubscription;
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -31,6 +36,8 @@ declare module googleapis.pubsub {
          */
         delete: (params: {
             subscription: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets the configuration details of a subscription.
@@ -38,6 +45,8 @@ declare module googleapis.pubsub {
          */
         get: (params: {
             subscription: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists matching subscriptions.
@@ -49,23 +58,31 @@ declare module googleapis.pubsub {
             maxResults?: number;
             pageToken?: string;
             query?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IListSubscriptionsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modifies the Ack deadline for a message received from a pull request.
          */
         modifyAckDeadline: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IModifyAckDeadlineRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Modifies the PushConfig for a specified subscription. This method can be used to suspend the flow of messages to an end point by clearing the PushConfig field in the request. Messages will be accumulated for delivery even if no push configuration is defined or while the configuration is modified.
          */
         modifyPushConfig: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IModifyPushConfigRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Pulls a single message from the server. If return_immediately is true, and no messages are available in the subscription, this method returns FAILED_PRECONDITION. The system is free to return an UNAVAILABLE error if no messages are available in a reasonable amount of time (to reduce system load).
          */
         pull: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPullRequest;
         }, callback: (err: IErrorResponse, response: IPullResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -74,6 +91,8 @@ declare module googleapis.pubsub {
          * Creates the given topic with the given name.
          */
         create: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITopic;
         }, callback: (err: IErrorResponse, response: ITopic, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -82,6 +101,8 @@ declare module googleapis.pubsub {
          */
         delete: (params: {
             topic: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets the configuration of a topic. Since the topic only has the name attribute, this method is only useful to check the existence of a topic. If other attributes are added in the future, they will be returned here.
@@ -89,6 +110,8 @@ declare module googleapis.pubsub {
          */
         get: (params: {
             topic: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITopic, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists matching topics.
@@ -100,11 +123,15 @@ declare module googleapis.pubsub {
             maxResults?: number;
             pageToken?: string;
             query?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IListTopicsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a message to the topic. Returns NOT_FOUND if the topic does not exist.
          */
         publish: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPublishRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };

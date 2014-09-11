@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function adsensehost(version:string):typeof googleapis.adsensehost;
+    function adsensehost(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.adsensehost;
 }
 /**
  * Gives AdSense Hosts access to report generation, ad code generation, and publisher management capabilities.
@@ -19,6 +20,8 @@ declare module googleapis.adsensehost {
          */
         get: (params: {
             accountId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List hosted accounts associated with this AdSense account by ad client id.
@@ -26,6 +29,8 @@ declare module googleapis.adsensehost {
          */
         list: (params: {
             filterAdClientId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccounts, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         adclients: {
             /**
@@ -36,6 +41,8 @@ declare module googleapis.adsensehost {
             get: (params: {
                 accountId: string;
                 adClientId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdClient, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all hosted ad clients in the specified hosted account.
@@ -47,6 +54,8 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         adunits: {
@@ -60,6 +69,8 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 adClientId: string;
                 adUnitId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Get the specified host ad unit in this AdSense account.
@@ -71,6 +82,8 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 adClientId: string;
                 adUnitId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Get ad code for the specified ad unit, attaching the specified host custom channels.
@@ -84,6 +97,8 @@ declare module googleapis.adsensehost {
                 adClientId: string;
                 adUnitId: string;
                 hostCustomChannelId?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdCode, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Insert the supplied ad unit into the specified publisher AdSense account.
@@ -93,6 +108,8 @@ declare module googleapis.adsensehost {
             insert: (params: {
                 accountId: string;
                 adClientId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAdUnit;
             }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -109,6 +126,8 @@ declare module googleapis.adsensehost {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update the supplied ad unit in the specified publisher AdSense account. This method supports patch semantics.
@@ -120,6 +139,8 @@ declare module googleapis.adsensehost {
                 accountId: string;
                 adClientId: string;
                 adUnitId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAdUnit;
             }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -130,6 +151,8 @@ declare module googleapis.adsensehost {
             update: (params: {
                 accountId: string;
                 adClientId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAdUnit;
             }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -158,6 +181,8 @@ declare module googleapis.adsensehost {
                 sort?: string;
                 startDate: string;
                 startIndex?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -168,6 +193,8 @@ declare module googleapis.adsensehost {
          */
         get: (params: {
             adClientId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdClient, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all host ad clients in this AdSense account.
@@ -177,6 +204,8 @@ declare module googleapis.adsensehost {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var associationsessions: {
@@ -192,6 +221,8 @@ declare module googleapis.adsensehost {
             userLocale?: string;
             websiteLocale?: string;
             websiteUrl: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAssociationSession, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Verify an association session after the association callback returns from AdSense signup.
@@ -199,6 +230,8 @@ declare module googleapis.adsensehost {
          */
         verify: (params: {
             token: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAssociationSession, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var customchannels: {
@@ -210,6 +243,8 @@ declare module googleapis.adsensehost {
         delete: (params: {
             adClientId: string;
             customChannelId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a specific custom channel from the host AdSense account.
@@ -219,6 +254,8 @@ declare module googleapis.adsensehost {
         get: (params: {
             adClientId: string;
             customChannelId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a new custom channel to the host AdSense account.
@@ -226,6 +263,8 @@ declare module googleapis.adsensehost {
          */
         insert: (params: {
             adClientId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICustomChannel;
         }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -238,6 +277,8 @@ declare module googleapis.adsensehost {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a custom channel in the host AdSense account. This method supports patch semantics.
@@ -247,6 +288,8 @@ declare module googleapis.adsensehost {
         patch: (params: {
             adClientId: string;
             customChannelId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICustomChannel;
         }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -255,6 +298,8 @@ declare module googleapis.adsensehost {
          */
         update: (params: {
             adClientId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICustomChannel;
         }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -281,6 +326,8 @@ declare module googleapis.adsensehost {
             sort?: string;
             startDate: string;
             startIndex?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var urlchannels: {
@@ -292,6 +339,8 @@ declare module googleapis.adsensehost {
         delete: (params: {
             adClientId: string;
             urlChannelId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUrlChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a new URL channel to the host AdSense account.
@@ -299,6 +348,8 @@ declare module googleapis.adsensehost {
          */
         insert: (params: {
             adClientId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUrlChannel;
         }, callback: (err: IErrorResponse, response: IUrlChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -311,6 +362,8 @@ declare module googleapis.adsensehost {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUrlChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAccount {

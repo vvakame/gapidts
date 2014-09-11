@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function doubleclicksearch(version:string):typeof googleapis.doubleclicksearch;
+    function doubleclicksearch(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.doubleclicksearch;
 }
 /**
  * Report and modify your advertising data in DoubleClick Search (for example, campaigns, ad groups, keywords, and conversions).
@@ -39,11 +40,15 @@ declare module googleapis.doubleclicksearch {
             rowCount: number;
             startDate: number;
             startRow: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IConversionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a batch of new conversions into DoubleClick Search.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IConversionList;
         }, callback: (err: IErrorResponse, response: IConversionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -64,18 +69,24 @@ declare module googleapis.doubleclicksearch {
             rowCount: number;
             startDate: number;
             startRow: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IConversionList;
         }, callback: (err: IErrorResponse, response: IConversionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a batch of conversions in DoubleClick Search.
          */
         update: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IConversionList;
         }, callback: (err: IErrorResponse, response: IConversionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the availabilities of a batch of floodlight activities in DoubleClick Search.
          */
         updateAvailability: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUpdateAvailabilityRequest;
         }, callback: (err: IErrorResponse, response: IUpdateAvailabilityResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -84,6 +95,8 @@ declare module googleapis.doubleclicksearch {
          * Generates and returns a report immediately.
          */
         generate: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IReportRequest;
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -92,6 +105,8 @@ declare module googleapis.doubleclicksearch {
          */
         get: (params: {
             reportId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Downloads a report file.
@@ -101,11 +116,15 @@ declare module googleapis.doubleclicksearch {
         getFile: (params: {
             reportFragment: number;
             reportId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Inserts a report request into the reporting system.
          */
         request: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IReportRequest;
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -118,6 +137,8 @@ declare module googleapis.doubleclicksearch {
         list: (params: {
             advertiserId: string;
             agencyId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISavedColumnList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

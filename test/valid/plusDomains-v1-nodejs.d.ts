@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function plusDomains(version:string):typeof googleapis.plusDomains;
+    function plusDomains(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.plusDomains;
 }
 /**
  * The Google+ API enables developers to build on top of the Google+ platform.
@@ -19,6 +20,8 @@ declare module googleapis.plusDomains {
          */
         get: (params: {
             activityId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a new activity for the authenticated user.
@@ -28,6 +31,8 @@ declare module googleapis.plusDomains {
         insert: (params: {
             preview?: boolean;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IActivity;
         }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -42,6 +47,8 @@ declare module googleapis.plusDomains {
             maxResults?: number;
             pageToken?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivityFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var audiences: {
@@ -55,6 +62,8 @@ declare module googleapis.plusDomains {
             maxResults?: number;
             pageToken?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAudiencesFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var circles: {
@@ -68,6 +77,8 @@ declare module googleapis.plusDomains {
             circleId: string;
             email?: string;
             userId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a circle.
@@ -75,6 +86,8 @@ declare module googleapis.plusDomains {
          */
         get: (params: {
             circleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a new circle for the authenticated user.
@@ -82,6 +95,8 @@ declare module googleapis.plusDomains {
          */
         insert: (params: {
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICircle;
         }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -94,6 +109,8 @@ declare module googleapis.plusDomains {
             maxResults?: number;
             pageToken?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICircleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a circle's description. This method supports patch semantics.
@@ -101,6 +118,8 @@ declare module googleapis.plusDomains {
          */
         patch: (params: {
             circleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICircle;
         }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -109,6 +128,8 @@ declare module googleapis.plusDomains {
          */
         remove: (params: {
             circleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Remove a person from a circle.
@@ -120,6 +141,8 @@ declare module googleapis.plusDomains {
             circleId: string;
             email?: string;
             userId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Update a circle's description.
@@ -127,6 +150,8 @@ declare module googleapis.plusDomains {
          */
         update: (params: {
             circleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICircle;
         }, callback: (err: IErrorResponse, response: ICircle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -137,6 +162,8 @@ declare module googleapis.plusDomains {
          */
         get: (params: {
             commentId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a new comment in reply to an activity.
@@ -144,6 +171,8 @@ declare module googleapis.plusDomains {
          */
         insert: (params: {
             activityId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IComment;
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -158,6 +187,8 @@ declare module googleapis.plusDomains {
             maxResults?: number;
             pageToken?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var media: {
@@ -169,6 +200,8 @@ declare module googleapis.plusDomains {
         insert: (params: {
             collection: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMedia;
         }, callback: (err: IErrorResponse, response: IMedia, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -179,6 +212,8 @@ declare module googleapis.plusDomains {
          */
         get: (params: {
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPerson, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people in the specified collection.
@@ -194,6 +229,8 @@ declare module googleapis.plusDomains {
             orderBy?: string;
             pageToken?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people in the specified collection for a particular activity.
@@ -207,6 +244,8 @@ declare module googleapis.plusDomains {
             collection: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people who are members of a circle.
@@ -218,6 +257,8 @@ declare module googleapis.plusDomains {
             circleId: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAcl {

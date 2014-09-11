@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function youtube(version:string):typeof googleapis.youtube;
+    function youtube(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.youtube;
 }
 /**
  * Programmatic access to YouTube features.
@@ -23,6 +24,8 @@ The part names that you can include in the parameter value are snippet and conte
          */
         insert: (params: {
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IActivity;
         }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -49,6 +52,8 @@ If the parameter identifies a property that contains child properties, the child
             publishedAfter?: string;
             publishedBefore?: string;
             regionCode?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivityListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var channelBanners: {
@@ -64,6 +69,8 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
          */
         insert: (params: {
             onBehalfOfContentOwner?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannelBannerResource;
         }, callback: (err: IErrorResponse, response: IChannelBannerResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -74,6 +81,8 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a channelSection for the authenticated user's channel.
@@ -93,6 +102,8 @@ The part names that you can include in the parameter value are snippet and conte
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannelSection;
         }, callback: (err: IErrorResponse, response: IChannelSection, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -113,6 +124,8 @@ If the parameter identifies a property that contains child properties, the child
             mine?: boolean;
             onBehalfOfContentOwner?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChannelSectionListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a channelSection.
@@ -122,6 +135,8 @@ The part names that you can include in the parameter value are snippet and conte
          */
         update: (params: {
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannelSection;
         }, callback: (err: IErrorResponse, response: IChannelSection, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -152,6 +167,8 @@ If the parameter identifies a property that contains child properties, the child
             onBehalfOfContentOwner?: string;
             pageToken?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChannelListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a channel's metadata.
@@ -165,6 +182,8 @@ Note that this method will override the existing values for all of the mutable p
         update: (params: {
             onBehalfOfContentOwner?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -183,6 +202,8 @@ If the parameter identifies a property that contains child properties, the child
             id?: string;
             part: string;
             regionCode?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IGuideCategoryListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var i18nLanguages: {
@@ -194,6 +215,8 @@ If the parameter identifies a property that contains child properties, the child
         list: (params: {
             hl?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: II18nLanguageListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var i18nRegions: {
@@ -205,6 +228,8 @@ If the parameter identifies a property that contains child properties, the child
         list: (params: {
             hl?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: II18nRegionListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var liveBroadcasts: {
@@ -228,6 +253,8 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             streamId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Controls the settings for a slate that can be displayed in the broadcast stream.
@@ -257,6 +284,8 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             walltime?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a broadcast.
@@ -274,6 +303,8 @@ This parameter is intended for YouTube content partners that own and manage many
             id: string;
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a broadcast.
@@ -293,6 +324,8 @@ The part properties that you can include in the parameter value are id, snippet,
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILiveBroadcast;
         }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -321,6 +354,8 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwnerChannel?: string;
             pageToken?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILiveBroadcastListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes the status of a YouTube live broadcast and initiates any processes associated with the new status. For example, when you transition a broadcast's status to testing, YouTube starts to transmit video to that broadcast's monitor stream. Before calling this method, you should confirm that the value of the status.streamStatus property for the stream bound to your broadcast is active.
@@ -342,6 +377,8 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a broadcast. For example, you could modify the broadcast settings defined in the liveBroadcast resource's contentDetails object.
@@ -363,6 +400,8 @@ Note that this method will override the existing values for all of the mutable p
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILiveBroadcast;
         }, callback: (err: IErrorResponse, response: ILiveBroadcast, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -383,6 +422,8 @@ This parameter is intended for YouTube content partners that own and manage many
             id: string;
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a video stream. The stream enables you to send your video to YouTube, which can then broadcast the video to your audience.
@@ -402,6 +443,8 @@ The part properties that you can include in the parameter value are id, snippet,
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILiveStream;
         }, callback: (err: IErrorResponse, response: ILiveStream, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -428,6 +471,8 @@ This parameter is intended for YouTube content partners that own and manage many
             onBehalfOfContentOwnerChannel?: string;
             pageToken?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILiveStreamListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a video stream. If the properties that you want to change cannot be updated, then you need to create a new stream with the proper settings.
@@ -449,6 +494,8 @@ Note that this method will override the existing values for all of the mutable p
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILiveStream;
         }, callback: (err: IErrorResponse, response: ILiveStream, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -459,6 +506,8 @@ Note that this method will override the existing values for all of the mutable p
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a resource to a playlist.
@@ -472,6 +521,8 @@ The part names that you can include in the parameter value are snippet, contentD
         insert: (params: {
             onBehalfOfContentOwner?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPlaylistItem;
         }, callback: (err: IErrorResponse, response: IPlaylistItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -496,6 +547,8 @@ If the parameter identifies a property that contains child properties, the child
             part: string;
             playlistId?: string;
             videoId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPlaylistItemListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modifies a playlist item. For example, you could update the item's position in the playlist.
@@ -507,6 +560,8 @@ Note that this method will override the existing values for all of the mutable p
          */
         update: (params: {
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPlaylistItem;
         }, callback: (err: IErrorResponse, response: IPlaylistItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -521,6 +576,8 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
         delete: (params: {
             id: string;
             onBehalfOfContentOwner?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a playlist.
@@ -540,6 +597,8 @@ The part names that you can include in the parameter value are snippet and statu
             onBehalfOfContentOwner?: string;
             onBehalfOfContentOwnerChannel?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPlaylist;
         }, callback: (err: IErrorResponse, response: IPlaylist, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -570,6 +629,8 @@ If the parameter identifies a property that contains child properties, the child
             onBehalfOfContentOwnerChannel?: string;
             pageToken?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPlaylistListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modifies a playlist. For example, you could change a playlist's title, description, or privacy status.
@@ -585,6 +646,8 @@ Note that this method will override the existing values for all of the mutable p
         update: (params: {
             onBehalfOfContentOwner?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPlaylist;
         }, callback: (err: IErrorResponse, response: IPlaylist, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -657,6 +720,8 @@ If the parameter identifies a property that contains child properties, the child
             videoLicense?: string;
             videoSyndicated?: string;
             videoType?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISearchListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var subscriptions: {
@@ -666,6 +731,8 @@ If the parameter identifies a property that contains child properties, the child
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a subscription for the authenticated user's channel.
@@ -675,6 +742,8 @@ The part names that you can include in the parameter value are snippet and conte
          */
         insert: (params: {
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISubscription;
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -711,6 +780,8 @@ If the parameter identifies a property that contains child properties, the child
             order?: string;
             pageToken?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISubscriptionListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var thumbnails: {
@@ -722,6 +793,8 @@ If the parameter identifies a property that contains child properties, the child
         set: (params: {
             onBehalfOfContentOwner?: string;
             videoId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IThumbnailSetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var videoCategories: {
@@ -737,6 +810,8 @@ If the parameter identifies a property that contains child properties, the child
             id?: string;
             part: string;
             regionCode?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVideoCategoryListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var videos: {
@@ -750,6 +825,8 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
         delete: (params: {
             id: string;
             onBehalfOfContentOwner?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the ratings that the authorized user gave to a list of specified videos.
@@ -761,6 +838,8 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
         getRating: (params: {
             id: string;
             onBehalfOfContentOwner?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVideoGetRatingResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Uploads a video to YouTube and optionally sets the video's metadata.
@@ -786,6 +865,8 @@ The part names that you can include in the parameter value are snippet, contentD
             onBehalfOfContentOwnerChannel?: string;
             part: string;
             stabilize?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IVideo;
         }, callback: (err: IErrorResponse, response: IVideo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -820,6 +901,8 @@ If the parameter identifies a property that contains child properties, the child
             part: string;
             regionCode?: string;
             videoCategoryId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVideoListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a like or dislike rating to a video or remove a rating from a video.
@@ -833,6 +916,8 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
             id: string;
             onBehalfOfContentOwner?: string;
             rating: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Updates a video's metadata.
@@ -850,6 +935,8 @@ In addition, not all of those parts contain properties that can be set when sett
         update: (params: {
             onBehalfOfContentOwner?: string;
             part: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IVideo;
         }, callback: (err: IErrorResponse, response: IVideo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -862,6 +949,8 @@ In addition, not all of those parts contain properties that can be set when sett
         set: (params: {
             channelId: string;
             onBehalfOfContentOwner?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInvideoBranding;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -872,6 +961,8 @@ In addition, not all of those parts contain properties that can be set when sett
         unset: (params: {
             channelId: string;
             onBehalfOfContentOwner?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     /**

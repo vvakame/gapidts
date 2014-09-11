@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function adexchangebuyer(version:string):typeof googleapis.adexchangebuyer;
+    function adexchangebuyer(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.adexchangebuyer;
 }
 /**
  * Accesses your bidding-account information, submits creatives for validation, finds available direct deals, and retrieves performance reports.
@@ -19,11 +20,15 @@ declare module googleapis.adexchangebuyer {
          */
         get: (params: {
             id: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the authenticated user's list of accounts.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccountsList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing account. This method supports patch semantics.
@@ -31,6 +36,8 @@ declare module googleapis.adexchangebuyer {
          */
         patch: (params: {
             id: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccount;
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -39,6 +46,8 @@ declare module googleapis.adexchangebuyer {
          */
         update: (params: {
             id: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccount;
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -49,11 +58,15 @@ declare module googleapis.adexchangebuyer {
          */
         get: (params: {
             accountId: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBillingInfo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of billing information for all accounts of the authenticated user.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBillingInfoList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var creatives: {
@@ -65,11 +78,15 @@ declare module googleapis.adexchangebuyer {
         get: (params: {
             accountId: number;
             buyerCreativeId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICreative, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Submit a new creative.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICreative;
         }, callback: (err: IErrorResponse, response: ICreative, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -86,6 +103,8 @@ declare module googleapis.adexchangebuyer {
             maxResults?: number;
             pageToken?: string;
             statusFilter?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICreativesList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var directDeals: {
@@ -95,11 +114,15 @@ declare module googleapis.adexchangebuyer {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDirectDeal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the authenticated user's list of direct deals.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDirectDealsList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var performanceReport: {
@@ -117,6 +140,8 @@ declare module googleapis.adexchangebuyer {
             maxResults?: number;
             pageToken?: string;
             startDateTime: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPerformanceReportList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pretargetingConfig: {
@@ -128,6 +153,8 @@ declare module googleapis.adexchangebuyer {
         delete: (params: {
             accountId: string;
             configId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific pretargeting configuration
@@ -137,6 +164,8 @@ declare module googleapis.adexchangebuyer {
         get: (params: {
             accountId: string;
             configId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPretargetingConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new pretargeting configuration.
@@ -144,6 +173,8 @@ declare module googleapis.adexchangebuyer {
          */
         insert: (params: {
             accountId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPretargetingConfig;
         }, callback: (err: IErrorResponse, response: IPretargetingConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -152,6 +183,8 @@ declare module googleapis.adexchangebuyer {
          */
         list: (params: {
             accountId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPretargetingConfigList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing pretargeting config. This method supports patch semantics.
@@ -161,6 +194,8 @@ declare module googleapis.adexchangebuyer {
         patch: (params: {
             accountId: string;
             configId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPretargetingConfig;
         }, callback: (err: IErrorResponse, response: IPretargetingConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -171,6 +206,8 @@ declare module googleapis.adexchangebuyer {
         update: (params: {
             accountId: string;
             configId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPretargetingConfig;
         }, callback: (err: IErrorResponse, response: IPretargetingConfig, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function gamesManagement(version:string):typeof googleapis.gamesManagement;
+    function gamesManagement(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.gamesManagement;
 }
 /**
  * The Management API for Google Play Game Services.
@@ -19,11 +20,15 @@ declare module googleapis.gamesManagement {
          */
         reset: (params: {
             achievementId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAchievementResetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
          */
         resetAll: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAchievementResetAllResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Resets the achievement with the given ID for the all players. This method is only available to user accounts for your developer console. Only draft achievements can be reset.
@@ -31,6 +36,8 @@ declare module googleapis.gamesManagement {
          */
         resetForAllPlayers: (params: {
             achievementId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var applications: {
@@ -44,6 +51,8 @@ declare module googleapis.gamesManagement {
             applicationId: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IHiddenPlayerList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var events: {
@@ -53,11 +62,15 @@ declare module googleapis.gamesManagement {
          */
         reset: (params: {
             eventId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Reset all player progress on all unpublished events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application. All resources that use the events will also be reset.
          */
         resetAll: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Reset all player progress on the event for all players. This method is only available to user accounts for your developer console. Only draft events can be reset. All resources that use the event will also be reset.
@@ -65,6 +78,8 @@ declare module googleapis.gamesManagement {
          */
         resetForAllPlayers: (params: {
             eventId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var players: {
@@ -76,6 +91,8 @@ declare module googleapis.gamesManagement {
         hide: (params: {
             applicationId: string;
             playerId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Unhide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.
@@ -85,6 +102,8 @@ declare module googleapis.gamesManagement {
         unhide: (params: {
             applicationId: string;
             playerId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var quests: {
@@ -94,6 +113,8 @@ declare module googleapis.gamesManagement {
          */
         reset: (params: {
             questId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var rooms: {
@@ -101,6 +122,8 @@ declare module googleapis.gamesManagement {
          * Reset all rooms for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
          */
         reset: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var scores: {
@@ -110,6 +133,8 @@ declare module googleapis.gamesManagement {
          */
         reset: (params: {
             leaderboardId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPlayerScoreResetResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Reset scores for the specified leaderboard for all players. This method is only available to user accounts for your developer console. Only draft leaderboards can be reset.
@@ -117,6 +142,8 @@ declare module googleapis.gamesManagement {
          */
         resetForAllPlayers: (params: {
             leaderboardId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var turnBasedMatches: {
@@ -124,6 +151,8 @@ declare module googleapis.gamesManagement {
          * Reset all turn-based match data for a user. This method is only accessible to whitelisted tester accounts for your application.
          */
         reset: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     /**

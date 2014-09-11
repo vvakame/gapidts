@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function identitytoolkit(version:string):typeof googleapis.identitytoolkit;
+    function identitytoolkit(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.identitytoolkit;
 }
 /**
  * Help the third party sites to implement federated login.
@@ -17,65 +18,87 @@ declare module googleapis.identitytoolkit {
          * Creates the URI used by the IdP to authenticate the user.
          */
         createAuthUri: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartyCreateAuthUriRequest;
         }, callback: (err: IErrorResponse, response: ICreateAuthUriResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete user account.
          */
         deleteAccount: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartyDeleteAccountRequest;
         }, callback: (err: IErrorResponse, response: IDeleteAccountResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Batch download user accounts.
          */
         downloadAccount: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartyDownloadAccountRequest;
         }, callback: (err: IErrorResponse, response: IDownloadAccountResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the account info.
          */
         getAccountInfo: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartyGetAccountInfoRequest;
         }, callback: (err: IErrorResponse, response: IGetAccountInfoResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a code for user action confirmation.
          */
         getOobConfirmationCode: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRelyingparty;
         }, callback: (err: IErrorResponse, response: IGetOobConfirmationCodeResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get token signing public key.
          */
         getPublicKeys: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IIdentitytoolkitRelyingpartyGetPublicKeysResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Set account info for a user.
          */
         resetPassword: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartyResetPasswordRequest;
         }, callback: (err: IErrorResponse, response: IResetPasswordResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Set account info for a user.
          */
         setAccountInfo: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartySetAccountInfoRequest;
         }, callback: (err: IErrorResponse, response: ISetAccountInfoResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Batch upload existing user accounts.
          */
         uploadAccount: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartyUploadAccountRequest;
         }, callback: (err: IErrorResponse, response: IUploadAccountResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Verifies the assertion returned by the IdP.
          */
         verifyAssertion: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartyVerifyAssertionRequest;
         }, callback: (err: IErrorResponse, response: IVerifyAssertionResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Verifies the user entered password.
          */
         verifyPassword: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IIdentitytoolkitRelyingpartyVerifyPasswordRequest;
         }, callback: (err: IErrorResponse, response: IVerifyPasswordResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

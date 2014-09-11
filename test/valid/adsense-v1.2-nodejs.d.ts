@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function adsense(version:string):typeof googleapis.adsense;
+    function adsense(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.adsense;
 }
 /**
  * Gives AdSense publishers access to their inventory and the ability to generate reports
@@ -21,6 +22,8 @@ declare module googleapis.adsense {
         get: (params: {
             accountId: string;
             tree?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all accounts available to this AdSense account.
@@ -30,6 +33,8 @@ declare module googleapis.adsense {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAccounts, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         adclients: {
             /**
@@ -42,6 +47,8 @@ declare module googleapis.adsense {
                 accountId: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         adunits: {
@@ -55,6 +62,8 @@ declare module googleapis.adsense {
                 accountId: string;
                 adClientId: string;
                 adUnitId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all ad units in the specified ad client for the specified account.
@@ -70,6 +79,8 @@ declare module googleapis.adsense {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             customchannels: {
                 /**
@@ -86,6 +97,8 @@ declare module googleapis.adsense {
                     adUnitId: string;
                     maxResults?: number;
                     pageToken?: string;
+                    key?: string; // API_KEY
+                    auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
@@ -100,6 +113,8 @@ declare module googleapis.adsense {
                 accountId: string;
                 adClientId: string;
                 customChannelId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all custom channels in the specified ad client for the specified account.
@@ -113,6 +128,8 @@ declare module googleapis.adsense {
                 adClientId: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             adunits: {
                 /**
@@ -131,6 +148,8 @@ declare module googleapis.adsense {
                     includeInactive?: boolean;
                     maxResults?: number;
                     pageToken?: string;
+                    key?: string; // API_KEY
+                    auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
@@ -161,6 +180,8 @@ declare module googleapis.adsense {
                 sort?: string;
                 startDate: string;
                 startIndex?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdsenseReportsGenerateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             saved: {
                 /**
@@ -177,6 +198,8 @@ declare module googleapis.adsense {
                     maxResults?: number;
                     savedReportId: string;
                     startIndex?: number;
+                    key?: string; // API_KEY
+                    auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 }, callback: (err: IErrorResponse, response: IAdsenseReportsGenerateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
                 /**
                  * List all saved reports in the specified AdSense account.
@@ -188,6 +211,8 @@ declare module googleapis.adsense {
                     accountId: string;
                     maxResults?: number;
                     pageToken?: string;
+                    key?: string; // API_KEY
+                    auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 }, callback: (err: IErrorResponse, response: ISavedReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
@@ -200,6 +225,8 @@ declare module googleapis.adsense {
             get: (params: {
                 accountId: string;
                 savedAdStyleId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ISavedAdStyle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all saved ad styles in the specified account.
@@ -211,6 +238,8 @@ declare module googleapis.adsense {
                 accountId: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ISavedAdStyles, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         urlchannels: {
@@ -226,6 +255,8 @@ declare module googleapis.adsense {
                 adClientId: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IUrlChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -238,6 +269,8 @@ declare module googleapis.adsense {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdClients, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var adunits: {
@@ -249,6 +282,8 @@ declare module googleapis.adsense {
         get: (params: {
             adClientId: string;
             adUnitId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdUnit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all ad units in the specified ad client for this AdSense account.
@@ -262,6 +297,8 @@ declare module googleapis.adsense {
             includeInactive?: boolean;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         customchannels: {
             /**
@@ -276,6 +313,8 @@ declare module googleapis.adsense {
                 adUnitId: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -288,6 +327,8 @@ declare module googleapis.adsense {
         get: (params: {
             adClientId: string;
             customChannelId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all custom channels in the specified ad client for this AdSense account.
@@ -299,6 +340,8 @@ declare module googleapis.adsense {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         adunits: {
             /**
@@ -315,6 +358,8 @@ declare module googleapis.adsense {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdUnits, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -345,6 +390,8 @@ declare module googleapis.adsense {
             sort?: string;
             startDate: string;
             startIndex?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdsenseReportsGenerateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         saved: {
             /**
@@ -359,6 +406,8 @@ declare module googleapis.adsense {
                 maxResults?: number;
                 savedReportId: string;
                 startIndex?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAdsenseReportsGenerateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List all saved reports in this AdSense account.
@@ -368,6 +417,8 @@ declare module googleapis.adsense {
             list: (params: {
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ISavedReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -378,6 +429,8 @@ declare module googleapis.adsense {
          */
         get: (params: {
             savedAdStyleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISavedAdStyle, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all saved ad styles in the user's account.
@@ -387,6 +440,8 @@ declare module googleapis.adsense {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISavedAdStyles, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var urlchannels: {
@@ -400,6 +455,8 @@ declare module googleapis.adsense {
             adClientId: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUrlChannels, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAccount {

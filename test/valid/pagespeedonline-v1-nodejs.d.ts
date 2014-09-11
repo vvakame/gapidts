@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function pagespeedonline(version:string):typeof googleapis.pagespeedonline;
+    function pagespeedonline(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.pagespeedonline;
 }
 /**
  * Lets you analyze the performance of a web page and get tailored suggestions to make that page faster.
@@ -29,6 +30,8 @@ declare module googleapis.pagespeedonline {
             screenshot?: boolean;
             strategy?: string;
             url: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IResult, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IResult {

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function freebase(version:string):typeof googleapis.freebase;
+    function freebase(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.freebase;
 }
 /**
  * Find Freebase entities using textual queries and other constraints.

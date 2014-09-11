@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function civicinfo(version:string):typeof googleapis.civicinfo;
+    function civicinfo(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.civicinfo;
 }
 /**
  * An API for accessing civic information.
@@ -19,6 +20,8 @@ declare module googleapis.civicinfo {
          */
         search: (params: {
             query?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDivisionSearchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var elections: {
@@ -26,6 +29,8 @@ declare module googleapis.civicinfo {
          * List of available elections to query.
          */
         electionQuery: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IElectionsQueryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Looks up information relevant to a voter based on the voter's registered address.
@@ -35,6 +40,8 @@ declare module googleapis.civicinfo {
         voterInfoQuery: (params: {
             electionId: string;
             officialOnly?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IVoterInfoRequest;
         }, callback: (err: IErrorResponse, response: IVoterInfoResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -49,6 +56,8 @@ declare module googleapis.civicinfo {
             includeOffices?: boolean;
             ocdId?: string;
             recursive?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRepresentativeInfoRequest;
         }, callback: (err: IErrorResponse, response: IRepresentativeInfoResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

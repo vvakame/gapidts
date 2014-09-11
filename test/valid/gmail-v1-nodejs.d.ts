@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function gmail(version:string):typeof googleapis.gmail;
+    function gmail(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.gmail;
 }
 /**
  * The Gmail REST API.
@@ -20,6 +21,8 @@ declare module googleapis.gmail {
              */
             create: (params: {
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IDraft;
             }, callback: (err: IErrorResponse, response: IDraft, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -30,6 +33,8 @@ declare module googleapis.gmail {
             delete: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets the specified draft.
@@ -41,6 +46,8 @@ declare module googleapis.gmail {
                 format?: string;
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IDraft, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists the drafts in the user's mailbox.
@@ -52,6 +59,8 @@ declare module googleapis.gmail {
                 maxResults?: number;
                 pageToken?: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IListDraftsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
@@ -59,6 +68,8 @@ declare module googleapis.gmail {
              */
             send: (params: {
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IDraft;
             }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -69,6 +80,8 @@ declare module googleapis.gmail {
             update: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IDraft;
             }, callback: (err: IErrorResponse, response: IDraft, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -87,6 +100,8 @@ declare module googleapis.gmail {
                 pageToken?: string;
                 startHistoryId?: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IListHistoryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         labels: {
@@ -96,6 +111,8 @@ declare module googleapis.gmail {
              */
             create: (params: {
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: ILabel;
             }, callback: (err: IErrorResponse, response: ILabel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -106,6 +123,8 @@ declare module googleapis.gmail {
             delete: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets the specified label.
@@ -115,6 +134,8 @@ declare module googleapis.gmail {
             get: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ILabel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all labels in the user's mailbox.
@@ -122,6 +143,8 @@ declare module googleapis.gmail {
              */
             list: (params: {
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IListLabelsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the specified label. This method supports patch semantics.
@@ -131,6 +154,8 @@ declare module googleapis.gmail {
             patch: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: ILabel;
             }, callback: (err: IErrorResponse, response: ILabel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -141,6 +166,8 @@ declare module googleapis.gmail {
             update: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: ILabel;
             }, callback: (err: IErrorResponse, response: ILabel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -153,6 +180,8 @@ declare module googleapis.gmail {
             delete: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets the specified message.
@@ -166,6 +195,8 @@ declare module googleapis.gmail {
                 id: string;
                 metadataHeaders?: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
@@ -175,6 +206,8 @@ declare module googleapis.gmail {
             import: (params: {
                 internalDateSource?: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IMessage;
             }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -185,6 +218,8 @@ declare module googleapis.gmail {
             insert: (params: {
                 internalDateSource?: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IMessage;
             }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -203,6 +238,8 @@ declare module googleapis.gmail {
                 pageToken?: string;
                 q?: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IListMessagesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Modifies the labels on the specified message.
@@ -212,6 +249,8 @@ declare module googleapis.gmail {
             modify: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IModifyMessageRequest;
             }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -220,6 +259,8 @@ declare module googleapis.gmail {
              */
             send: (params: {
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IMessage;
             }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -230,6 +271,8 @@ declare module googleapis.gmail {
             trash: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Removes the specified message from the trash.
@@ -239,6 +282,8 @@ declare module googleapis.gmail {
             untrash: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             attachments: {
                 /**
@@ -251,6 +296,8 @@ declare module googleapis.gmail {
                     id: string;
                     messageId: string;
                     userId: string;
+                    key?: string; // API_KEY
+                    auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 }, callback: (err: IErrorResponse, response: IMessagePartBody, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
@@ -263,6 +310,8 @@ declare module googleapis.gmail {
             delete: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets the specified thread.
@@ -272,6 +321,8 @@ declare module googleapis.gmail {
             get: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IThread, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists the threads in the user's mailbox.
@@ -289,6 +340,8 @@ declare module googleapis.gmail {
                 pageToken?: string;
                 q?: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IListThreadsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Modifies the labels applied to the thread. This applies to all messages in the thread.
@@ -298,6 +351,8 @@ declare module googleapis.gmail {
             modify: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IModifyThreadRequest;
             }, callback: (err: IErrorResponse, response: IThread, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -308,6 +363,8 @@ declare module googleapis.gmail {
             trash: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IThread, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Removes the specified thread from the trash.
@@ -317,6 +374,8 @@ declare module googleapis.gmail {
             untrash: (params: {
                 id: string;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IThread, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };

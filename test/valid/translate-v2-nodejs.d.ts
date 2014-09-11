@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function translate(version:string):typeof googleapis.translate;
+    function translate(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.translate;
 }
 /**
  * Lets you translate text from one language to another
@@ -19,6 +20,8 @@ declare module googleapis.translate {
          */
         list: (params: {
             q: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDetectionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var languages: {
@@ -28,6 +31,8 @@ declare module googleapis.translate {
          */
         list: (params: {
             target?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILanguagesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var translations: {
@@ -45,6 +50,8 @@ declare module googleapis.translate {
             q: string;
             source?: string;
             target: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITranslationsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IDetectionsListResponse {

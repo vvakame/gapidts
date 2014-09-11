@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function compute(version:string):typeof googleapis.compute;
+    function compute(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.compute;
 }
 /**
  * API for the Google Compute Engine service.
@@ -25,6 +26,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAddressAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified address resource.
@@ -36,6 +39,8 @@ declare module googleapis.compute {
             address: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified address resource.
@@ -47,6 +52,8 @@ declare module googleapis.compute {
             address: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAddress, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an address resource in the specified project using the data included in the request.
@@ -56,6 +63,8 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAddress;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -72,6 +81,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAddressList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var backendServices: {
@@ -83,6 +94,8 @@ declare module googleapis.compute {
         delete: (params: {
             backendService: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified BackendService resource.
@@ -92,6 +105,8 @@ declare module googleapis.compute {
         get: (params: {
             backendService: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBackendService, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets the most recent health check results for this BackendService.
@@ -101,6 +116,8 @@ declare module googleapis.compute {
         getHealth: (params: {
             backendService: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IResourceGroupReference;
         }, callback: (err: IErrorResponse, response: IBackendServiceGroupHealth, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -109,6 +126,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBackendService;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -123,6 +142,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBackendServiceList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the BackendService resource. This method supports patch semantics.
@@ -132,6 +153,8 @@ declare module googleapis.compute {
         patch: (params: {
             backendService: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBackendService;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -142,6 +165,8 @@ declare module googleapis.compute {
         update: (params: {
             backendService: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBackendService;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -158,6 +183,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDiskTypeAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified disk type resource.
@@ -169,6 +196,8 @@ declare module googleapis.compute {
             diskType: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDiskType, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of disk type resources available to the specified project.
@@ -184,6 +213,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDiskTypeList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var disks: {
@@ -199,6 +230,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDiskAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
@@ -210,6 +243,8 @@ declare module googleapis.compute {
             disk: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISnapshot;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -222,6 +257,8 @@ declare module googleapis.compute {
             disk: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified persistent disk resource.
@@ -233,6 +270,8 @@ declare module googleapis.compute {
             disk: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDisk, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a persistent disk resource in the specified project using the data included in the request.
@@ -244,6 +283,8 @@ declare module googleapis.compute {
             project: string;
             sourceImage?: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDisk;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -260,6 +301,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDiskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var firewalls: {
@@ -271,6 +314,8 @@ declare module googleapis.compute {
         delete: (params: {
             firewall: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified firewall resource.
@@ -280,6 +325,8 @@ declare module googleapis.compute {
         get: (params: {
             firewall: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFirewall, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a firewall resource in the specified project using the data included in the request.
@@ -287,6 +334,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFirewall;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -301,6 +350,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFirewallList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the specified firewall resource with the data included in the request. This method supports patch semantics.
@@ -310,6 +361,8 @@ declare module googleapis.compute {
         patch: (params: {
             firewall: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFirewall;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -320,6 +373,8 @@ declare module googleapis.compute {
         update: (params: {
             firewall: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFirewall;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -336,6 +391,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IForwardingRuleAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified ForwardingRule resource.
@@ -347,6 +404,8 @@ declare module googleapis.compute {
             forwardingRule: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified ForwardingRule resource.
@@ -358,6 +417,8 @@ declare module googleapis.compute {
             forwardingRule: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IForwardingRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
@@ -367,6 +428,8 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IForwardingRule;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -383,6 +446,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IForwardingRuleList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes target url for forwarding rule.
@@ -394,6 +459,8 @@ declare module googleapis.compute {
             forwardingRule: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetReference;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -406,6 +473,8 @@ declare module googleapis.compute {
         delete: (params: {
             address: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified address resource.
@@ -415,6 +484,8 @@ declare module googleapis.compute {
         get: (params: {
             address: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAddress, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an address resource in the specified project using the data included in the request.
@@ -422,6 +493,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAddress;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -436,6 +509,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAddressList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var globalForwardingRules: {
@@ -447,6 +522,8 @@ declare module googleapis.compute {
         delete: (params: {
             forwardingRule: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified ForwardingRule resource.
@@ -456,6 +533,8 @@ declare module googleapis.compute {
         get: (params: {
             forwardingRule: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IForwardingRule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
@@ -463,6 +542,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IForwardingRule;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -477,6 +558,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IForwardingRuleList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes target url for forwarding rule.
@@ -486,6 +569,8 @@ declare module googleapis.compute {
         setTarget: (params: {
             forwardingRule: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetReference;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -502,6 +587,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperationAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified operation resource.
@@ -511,6 +598,8 @@ declare module googleapis.compute {
         delete: (params: {
             operation: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the specified operation resource.
@@ -520,6 +609,8 @@ declare module googleapis.compute {
         get: (params: {
             operation: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of operation resources contained within the specified project.
@@ -533,6 +624,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperationList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var httpHealthChecks: {
@@ -544,6 +637,8 @@ declare module googleapis.compute {
         delete: (params: {
             httpHealthCheck: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified HttpHealthCheck resource.
@@ -553,6 +648,8 @@ declare module googleapis.compute {
         get: (params: {
             httpHealthCheck: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IHttpHealthCheck, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a HttpHealthCheck resource in the specified project using the data included in the request.
@@ -560,6 +657,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IHttpHealthCheck;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -574,6 +673,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IHttpHealthCheckList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a HttpHealthCheck resource in the specified project using the data included in the request. This method supports patch semantics.
@@ -583,6 +684,8 @@ declare module googleapis.compute {
         patch: (params: {
             httpHealthCheck: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IHttpHealthCheck;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -593,6 +696,8 @@ declare module googleapis.compute {
         update: (params: {
             httpHealthCheck: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IHttpHealthCheck;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -605,6 +710,8 @@ declare module googleapis.compute {
         delete: (params: {
             image: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets the deprecation status of an image. If no message body is given, clears the deprecation status instead.
@@ -614,6 +721,8 @@ declare module googleapis.compute {
         deprecate: (params: {
             image: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDeprecationStatus;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -624,6 +733,8 @@ declare module googleapis.compute {
         get: (params: {
             image: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IImage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an image resource in the specified project using the data included in the request.
@@ -631,6 +742,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IImage;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -645,6 +758,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IImageList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var instances: {
@@ -660,6 +775,8 @@ declare module googleapis.compute {
             networkInterface: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccessConfig;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -674,6 +791,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInstanceAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Attaches a disk resource to an instance.
@@ -685,6 +804,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAttachedDisk;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -697,6 +818,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes an access config from an instance's network interface.
@@ -712,6 +835,8 @@ declare module googleapis.compute {
             networkInterface: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Detaches a disk from an instance.
@@ -725,6 +850,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified instance resource.
@@ -736,6 +863,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInstance, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified instance's serial port output.
@@ -747,6 +876,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISerialPortOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates an instance resource in the specified project using the data included in the request.
@@ -756,6 +887,8 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInstance;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -772,6 +905,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInstanceList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Performs a hard reset on the instance.
@@ -783,6 +918,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets the auto-delete flag for a disk attached to an instance
@@ -798,6 +935,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets metadata for the specified instance to the data included in the request.
@@ -809,6 +948,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMetadata;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -821,6 +962,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IScheduling;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -833,6 +976,8 @@ declare module googleapis.compute {
             instance: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITags;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -845,6 +990,8 @@ declare module googleapis.compute {
         get: (params: {
             license: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILicense, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var machineTypes: {
@@ -860,6 +1007,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMachineTypeAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified machine type resource.
@@ -871,6 +1020,8 @@ declare module googleapis.compute {
             machineType: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMachineType, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of machine type resources available to the specified project.
@@ -886,6 +1037,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMachineTypeList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var networks: {
@@ -897,6 +1050,8 @@ declare module googleapis.compute {
         delete: (params: {
             network: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified network resource.
@@ -906,6 +1061,8 @@ declare module googleapis.compute {
         get: (params: {
             network: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: INetwork, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a network resource in the specified project using the data included in the request.
@@ -913,6 +1070,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: INetwork;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -927,6 +1086,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: INetworkList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var projects: {
@@ -936,6 +1097,8 @@ declare module googleapis.compute {
          */
         get: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Sets metadata common to all instances within the specified project using the data included in the request.
@@ -943,6 +1106,8 @@ declare module googleapis.compute {
          */
         setCommonInstanceMetadata: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMetadata;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -951,6 +1116,8 @@ declare module googleapis.compute {
          */
         setUsageExportBucket: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUsageExportLocation;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -965,6 +1132,8 @@ declare module googleapis.compute {
             operation: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the specified region-specific operation resource.
@@ -976,6 +1145,8 @@ declare module googleapis.compute {
             operation: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of operation resources contained within the specified region.
@@ -991,6 +1162,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperationList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var regions: {
@@ -1002,6 +1175,8 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRegion, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of region resources available to the specified project.
@@ -1015,6 +1190,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRegionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var routes: {
@@ -1026,6 +1203,8 @@ declare module googleapis.compute {
         delete: (params: {
             project: string;
             route: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified route resource.
@@ -1035,6 +1214,8 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             route: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRoute, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a route resource in the specified project using the data included in the request.
@@ -1042,6 +1223,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRoute;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1056,6 +1239,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRouteList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var snapshots: {
@@ -1067,6 +1252,8 @@ declare module googleapis.compute {
         delete: (params: {
             project: string;
             snapshot: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified persistent disk snapshot resource.
@@ -1076,6 +1263,8 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             snapshot: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISnapshot, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of persistent disk snapshot resources contained within the specified project.
@@ -1089,6 +1278,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISnapshotList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var targetHttpProxies: {
@@ -1100,6 +1291,8 @@ declare module googleapis.compute {
         delete: (params: {
             project: string;
             targetHttpProxy: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified TargetHttpProxy resource.
@@ -1109,6 +1302,8 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             targetHttpProxy: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITargetHttpProxy, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a TargetHttpProxy resource in the specified project using the data included in the request.
@@ -1116,6 +1311,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetHttpProxy;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1130,6 +1327,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITargetHttpProxyList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Changes the URL map for TargetHttpProxy.
@@ -1139,6 +1338,8 @@ declare module googleapis.compute {
         setUrlMap: (params: {
             project: string;
             targetHttpProxy: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUrlMapReference;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -1155,6 +1356,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITargetInstanceAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified TargetInstance resource.
@@ -1166,6 +1369,8 @@ declare module googleapis.compute {
             project: string;
             targetInstance: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified TargetInstance resource.
@@ -1177,6 +1382,8 @@ declare module googleapis.compute {
             project: string;
             targetInstance: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITargetInstance, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a TargetInstance resource in the specified project and zone using the data included in the request.
@@ -1186,6 +1393,8 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetInstance;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1202,6 +1411,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITargetInstanceList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var targetPools: {
@@ -1215,6 +1426,8 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetPoolsAddHealthCheckRequest;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1227,6 +1440,8 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetPoolsAddInstanceRequest;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1241,6 +1456,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITargetPoolAggregatedList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes the specified TargetPool resource.
@@ -1252,6 +1469,8 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified TargetPool resource.
@@ -1263,6 +1482,8 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITargetPool, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets the most recent health check results for each IP for the given instance that is referenced by given TargetPool.
@@ -1274,6 +1495,8 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInstanceReference;
         }, callback: (err: IErrorResponse, response: ITargetPoolInstanceHealth, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1284,6 +1507,8 @@ declare module googleapis.compute {
         insert: (params: {
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetPool;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1300,6 +1525,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITargetPoolList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Removes health check URL from targetPool.
@@ -1311,6 +1538,8 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetPoolsRemoveHealthCheckRequest;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1323,6 +1552,8 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetPoolsRemoveInstanceRequest;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1337,6 +1568,8 @@ declare module googleapis.compute {
             project: string;
             region: string;
             targetPool: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITargetReference;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -1349,6 +1582,8 @@ declare module googleapis.compute {
         delete: (params: {
             project: string;
             urlMap: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the specified UrlMap resource.
@@ -1358,6 +1593,8 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             urlMap: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUrlMap, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a UrlMap resource in the specified project using the data included in the request.
@@ -1365,6 +1602,8 @@ declare module googleapis.compute {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUrlMap;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1379,6 +1618,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUrlMapList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the UrlMap resource. This method supports patch semantics.
@@ -1388,6 +1629,8 @@ declare module googleapis.compute {
         patch: (params: {
             project: string;
             urlMap: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUrlMap;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1398,6 +1641,8 @@ declare module googleapis.compute {
         update: (params: {
             project: string;
             urlMap: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUrlMap;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -1408,6 +1653,8 @@ declare module googleapis.compute {
         validate: (params: {
             project: string;
             urlMap: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUrlMapsValidateRequest;
         }, callback: (err: IErrorResponse, response: IUrlMapsValidateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -1422,6 +1669,8 @@ declare module googleapis.compute {
             operation: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the specified zone-specific operation resource.
@@ -1433,6 +1682,8 @@ declare module googleapis.compute {
             operation: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of operation resources contained within the specified zone.
@@ -1448,6 +1699,8 @@ declare module googleapis.compute {
             pageToken?: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperationList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var zones: {
@@ -1459,6 +1712,8 @@ declare module googleapis.compute {
         get: (params: {
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IZone, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of zone resources available to the specified project.
@@ -1472,6 +1727,8 @@ declare module googleapis.compute {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IZoneList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

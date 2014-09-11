@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function drive(version:string):typeof googleapis.drive;
+    function drive(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.drive;
 }
 /**
  * The API to interact with Drive.
@@ -23,6 +24,8 @@ declare module googleapis.drive {
             includeSubscribed?: boolean;
             maxChangeIdCount?: string;
             startChangeId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAbout, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var apps: {
@@ -32,6 +35,8 @@ declare module googleapis.drive {
          */
         get: (params: {
             appId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IApp, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a user's installed apps.
@@ -43,6 +48,8 @@ declare module googleapis.drive {
             appFilterExtensions?: string;
             appFilterMimeTypes?: string;
             languageCode?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAppList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var changes: {
@@ -52,6 +59,8 @@ declare module googleapis.drive {
          */
         get: (params: {
             changeId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChange, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists the changes for a user.
@@ -67,6 +76,8 @@ declare module googleapis.drive {
             maxResults?: number;
             pageToken?: string;
             startChangeId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChangeList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Subscribe to changes for a user.
@@ -82,6 +93,8 @@ declare module googleapis.drive {
             maxResults?: number;
             pageToken?: string;
             startChangeId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -90,6 +103,8 @@ declare module googleapis.drive {
          * Stop watching resources through this channel
          */
         stop: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
@@ -102,6 +117,8 @@ declare module googleapis.drive {
         delete: (params: {
             childId: string;
             folderId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific child reference.
@@ -111,6 +128,8 @@ declare module googleapis.drive {
         get: (params: {
             childId: string;
             folderId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChildReference, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a file into a folder.
@@ -118,6 +137,8 @@ declare module googleapis.drive {
          */
         insert: (params: {
             folderId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChildReference;
         }, callback: (err: IErrorResponse, response: IChildReference, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -132,6 +153,8 @@ declare module googleapis.drive {
             maxResults?: number;
             pageToken?: string;
             q?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IChildList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
@@ -143,6 +166,8 @@ declare module googleapis.drive {
         delete: (params: {
             commentId: string;
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a comment by ID.
@@ -154,6 +179,8 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             includeDeleted?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new comment on the given file.
@@ -161,6 +188,8 @@ declare module googleapis.drive {
          */
         insert: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IComment;
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -177,6 +206,8 @@ declare module googleapis.drive {
             maxResults?: number;
             pageToken?: string;
             updatedMin?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing comment. This method supports patch semantics.
@@ -186,6 +217,8 @@ declare module googleapis.drive {
         patch: (params: {
             commentId: string;
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IComment;
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -196,6 +229,8 @@ declare module googleapis.drive {
         update: (params: {
             commentId: string;
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IComment;
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -220,6 +255,8 @@ declare module googleapis.drive {
             timedTextLanguage?: string;
             timedTextTrackName?: string;
             visibility?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFile;
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -228,11 +265,15 @@ declare module googleapis.drive {
          */
         delete: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Permanently deletes all of the user's trashed files.
          */
         emptyTrash: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a file's metadata by ID.
@@ -244,6 +285,8 @@ declare module googleapis.drive {
             fileId: string;
             projection?: string;
             updateViewedDate?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Insert a new file.
@@ -265,6 +308,8 @@ declare module googleapis.drive {
             timedTextTrackName?: string;
             useContentAsIndexableText?: boolean;
             visibility?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFile;
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -281,6 +326,8 @@ declare module googleapis.drive {
             pageToken?: string;
             projection?: string;
             q?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFileList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates file metadata and/or content. This method supports patch semantics.
@@ -312,6 +359,8 @@ declare module googleapis.drive {
             timedTextTrackName?: string;
             updateViewedDate?: boolean;
             useContentAsIndexableText?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFile;
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -320,6 +369,8 @@ declare module googleapis.drive {
          */
         touch: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Moves a file to the trash.
@@ -327,6 +378,8 @@ declare module googleapis.drive {
          */
         trash: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Restores a file from the trash.
@@ -334,6 +387,8 @@ declare module googleapis.drive {
          */
         untrash: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates file metadata and/or content.
@@ -365,6 +420,8 @@ declare module googleapis.drive {
             timedTextTrackName?: string;
             updateViewedDate?: boolean;
             useContentAsIndexableText?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IFile;
         }, callback: (err: IErrorResponse, response: IFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -377,6 +434,8 @@ declare module googleapis.drive {
             fileId: string;
             projection?: string;
             updateViewedDate?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -389,6 +448,8 @@ declare module googleapis.drive {
         delete: (params: {
             fileId: string;
             parentId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific parent reference.
@@ -398,6 +459,8 @@ declare module googleapis.drive {
         get: (params: {
             fileId: string;
             parentId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IParentReference, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a parent folder for a file.
@@ -405,6 +468,8 @@ declare module googleapis.drive {
          */
         insert: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IParentReference;
         }, callback: (err: IErrorResponse, response: IParentReference, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -413,6 +478,8 @@ declare module googleapis.drive {
          */
         list: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IParentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var permissions: {
@@ -424,6 +491,8 @@ declare module googleapis.drive {
         delete: (params: {
             fileId: string;
             permissionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a permission by ID.
@@ -433,6 +502,8 @@ declare module googleapis.drive {
         get: (params: {
             fileId: string;
             permissionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPermission, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Returns the permission ID for an email address.
@@ -440,6 +511,8 @@ declare module googleapis.drive {
          */
         getIdForEmail: (params: {
             email: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPermissionId, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a permission for a file.
@@ -451,6 +524,8 @@ declare module googleapis.drive {
             emailMessage?: string;
             fileId: string;
             sendNotificationEmails?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPermission;
         }, callback: (err: IErrorResponse, response: IPermission, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -459,6 +534,8 @@ declare module googleapis.drive {
          */
         list: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPermissionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a permission. This method supports patch semantics.
@@ -470,6 +547,8 @@ declare module googleapis.drive {
             fileId: string;
             permissionId: string;
             transferOwnership?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPermission;
         }, callback: (err: IErrorResponse, response: IPermission, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -482,6 +561,8 @@ declare module googleapis.drive {
             fileId: string;
             permissionId: string;
             transferOwnership?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPermission;
         }, callback: (err: IErrorResponse, response: IPermission, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -496,6 +577,8 @@ declare module googleapis.drive {
             fileId: string;
             propertyKey: string;
             visibility?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a property by its key.
@@ -507,6 +590,8 @@ declare module googleapis.drive {
             fileId: string;
             propertyKey: string;
             visibility?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a property to a file.
@@ -514,6 +599,8 @@ declare module googleapis.drive {
          */
         insert: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IProperty;
         }, callback: (err: IErrorResponse, response: IProperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -522,6 +609,8 @@ declare module googleapis.drive {
          */
         list: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPropertyList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a property. This method supports patch semantics.
@@ -533,6 +622,8 @@ declare module googleapis.drive {
             fileId: string;
             propertyKey: string;
             visibility?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IProperty;
         }, callback: (err: IErrorResponse, response: IProperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -545,6 +636,8 @@ declare module googleapis.drive {
             fileId: string;
             propertyKey: string;
             visibility?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IProperty;
         }, callback: (err: IErrorResponse, response: IProperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -557,6 +650,8 @@ declare module googleapis.drive {
         get: (params: {
             fileId: string;
             revision?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Overwrites the Realtime API data model associated with this file with the provided JSON data model.
@@ -566,6 +661,8 @@ declare module googleapis.drive {
         update: (params: {
             baseRevision?: string;
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var replies: {
@@ -579,6 +676,8 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             replyId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a reply.
@@ -592,6 +691,8 @@ declare module googleapis.drive {
             fileId: string;
             includeDeleted?: boolean;
             replyId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentReply, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new reply to the given comment.
@@ -601,6 +702,8 @@ declare module googleapis.drive {
         insert: (params: {
             commentId: string;
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICommentReply;
         }, callback: (err: IErrorResponse, response: ICommentReply, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -617,6 +720,8 @@ declare module googleapis.drive {
             includeDeleted?: boolean;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentReplyList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing reply. This method supports patch semantics.
@@ -628,6 +733,8 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             replyId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICommentReply;
         }, callback: (err: IErrorResponse, response: ICommentReply, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -640,6 +747,8 @@ declare module googleapis.drive {
             commentId: string;
             fileId: string;
             replyId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICommentReply;
         }, callback: (err: IErrorResponse, response: ICommentReply, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -652,6 +761,8 @@ declare module googleapis.drive {
         delete: (params: {
             fileId: string;
             revisionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific revision.
@@ -661,6 +772,8 @@ declare module googleapis.drive {
         get: (params: {
             fileId: string;
             revisionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRevision, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists a file's revisions.
@@ -668,6 +781,8 @@ declare module googleapis.drive {
          */
         list: (params: {
             fileId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRevisionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a revision. This method supports patch semantics.
@@ -677,6 +792,8 @@ declare module googleapis.drive {
         patch: (params: {
             fileId: string;
             revisionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRevision;
         }, callback: (err: IErrorResponse, response: IRevision, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -687,6 +804,8 @@ declare module googleapis.drive {
         update: (params: {
             fileId: string;
             revisionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRevision;
         }, callback: (err: IErrorResponse, response: IRevision, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

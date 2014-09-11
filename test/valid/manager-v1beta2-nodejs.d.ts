@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function manager(version:string):typeof googleapis.manager;
+    function manager(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.manager;
 }
 /**
  * The Deployment Manager API allows users to declaratively configure, deploy and run complex solutions on the Google Cloud Platform.
@@ -23,6 +24,8 @@ declare module googleapis.manager {
             deploymentName: string;
             projectId: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * 
@@ -34,6 +37,8 @@ declare module googleapis.manager {
             deploymentName: string;
             projectId: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDeployment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
@@ -43,6 +48,8 @@ declare module googleapis.manager {
         insert: (params: {
             projectId: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDeployment;
         }, callback: (err: IErrorResponse, response: IDeployment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -57,6 +64,8 @@ declare module googleapis.manager {
             pageToken?: string;
             projectId: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDeploymentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var templates: {
@@ -68,6 +77,8 @@ declare module googleapis.manager {
         delete: (params: {
             projectId: string;
             templateName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * 
@@ -77,6 +88,8 @@ declare module googleapis.manager {
         get: (params: {
             projectId: string;
             templateName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * 
@@ -84,6 +97,8 @@ declare module googleapis.manager {
          */
         insert: (params: {
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITemplate;
         }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -96,6 +111,8 @@ declare module googleapis.manager {
             maxResults?: number;
             pageToken?: string;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITemplatesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function discovery(version:string):typeof googleapis.discovery;
+    function discovery(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.discovery;
 }
 /**
  * Lets you discover information about other Google APIs, such as what APIs are available, the resource and method details for each API.
@@ -21,6 +22,8 @@ declare module googleapis.discovery {
         getRest: (params: {
             api: string;
             version: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRestDescription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve the list of APIs supported at this endpoint.
@@ -30,6 +33,8 @@ declare module googleapis.discovery {
         list: (params: {
             name?: string;
             preferred?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDirectoryList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IDirectoryList {

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function reseller(version:string):typeof googleapis.reseller;
+    function reseller(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.reseller;
 }
 /**
  * Lets you create and manage your customers and their subscriptions.
@@ -19,6 +20,8 @@ declare module googleapis.reseller {
          */
         get: (params: {
             customerId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a customer resource if one does not already exist.
@@ -26,6 +29,8 @@ declare module googleapis.reseller {
          */
         insert: (params: {
             customerAuthToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICustomer;
         }, callback: (err: IErrorResponse, response: ICustomer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -34,6 +39,8 @@ declare module googleapis.reseller {
          */
         patch: (params: {
             customerId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICustomer;
         }, callback: (err: IErrorResponse, response: ICustomer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -42,6 +49,8 @@ declare module googleapis.reseller {
          */
         update: (params: {
             customerId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICustomer;
         }, callback: (err: IErrorResponse, response: ICustomer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -54,6 +63,8 @@ declare module googleapis.reseller {
         changePlan: (params: {
             customerId: string;
             subscriptionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChangePlanRequest;
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -64,6 +75,8 @@ declare module googleapis.reseller {
         changeRenewalSettings: (params: {
             customerId: string;
             subscriptionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRenewalSettings;
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -74,6 +87,8 @@ declare module googleapis.reseller {
         changeSeats: (params: {
             customerId: string;
             subscriptionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISeats;
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -86,6 +101,8 @@ declare module googleapis.reseller {
             customerId: string;
             deletionType: string;
             subscriptionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a subscription of the customer.
@@ -95,6 +112,8 @@ declare module googleapis.reseller {
         get: (params: {
             customerId: string;
             subscriptionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates/Transfers a subscription for the customer.
@@ -104,6 +123,8 @@ declare module googleapis.reseller {
         insert: (params: {
             customerAuthToken?: string;
             customerId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISubscription;
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -120,6 +141,8 @@ declare module googleapis.reseller {
             customerNamePrefix?: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISubscriptions, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Starts paid service of a trial subscription
@@ -129,6 +152,8 @@ declare module googleapis.reseller {
         startPaidService: (params: {
             customerId: string;
             subscriptionId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

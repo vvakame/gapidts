@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function autoscaler(version:string):typeof googleapis.autoscaler;
+    function autoscaler(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.autoscaler;
 }
 /**
  * The Google Compute Engine Autoscaler API provides autoscaling for groups of Cloud VMs.
@@ -23,6 +24,8 @@ declare module googleapis.autoscaler {
             autoscaler: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets the specified Autoscaler resource.
@@ -34,6 +37,8 @@ declare module googleapis.autoscaler {
             autoscaler: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAutoscaler, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds new Autoscaler resource.
@@ -43,6 +48,8 @@ declare module googleapis.autoscaler {
         insert: (params: {
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAutoscaler;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -59,6 +66,8 @@ declare module googleapis.autoscaler {
             pageToken?: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAutoscalerListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the entire content of the Autoscaler resource. This method supports patch semantics.
@@ -70,6 +79,8 @@ declare module googleapis.autoscaler {
             autoscaler: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAutoscaler;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -82,6 +93,8 @@ declare module googleapis.autoscaler {
             autoscaler: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAutoscaler;
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -96,6 +109,8 @@ declare module googleapis.autoscaler {
             operation: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the specified zone-specific operation resource.
@@ -107,6 +122,8 @@ declare module googleapis.autoscaler {
             operation: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of operation resources contained within the specified zone.
@@ -122,6 +139,8 @@ declare module googleapis.autoscaler {
             pageToken?: string;
             project: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperationList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

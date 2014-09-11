@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function prediction(version:string):typeof googleapis.prediction;
+    function prediction(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.prediction;
 }
 /**
  * Lets you access a cloud hosted machine learning service that makes it easy to build smart apps
@@ -19,6 +20,8 @@ declare module googleapis.prediction {
          */
         predict: (params: {
             hostedModelName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInput;
         }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -29,6 +32,8 @@ declare module googleapis.prediction {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Check training status of your model.
@@ -36,11 +41,15 @@ declare module googleapis.prediction {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Begin training your model.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITraining;
         }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -49,6 +58,8 @@ declare module googleapis.prediction {
          */
         predict: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInput;
         }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -57,6 +68,8 @@ declare module googleapis.prediction {
          */
         update: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUpdate;
         }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

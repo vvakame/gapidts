@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function resourceviews(version:string):typeof googleapis.resourceviews;
+    function resourceviews(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.resourceviews;
 }
 /**
  * The Resource View API allows users to create and manage logical sets of Google Compute Engine instances.
@@ -23,6 +24,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resourceViewName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRegionViewsAddResourcesRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -35,6 +38,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resourceViewName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get the information of a resource view.
@@ -46,6 +51,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resourceViewName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IResourceView, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a resource view.
@@ -55,6 +62,8 @@ declare module googleapis.resourceviews {
         insert: (params: {
             projectName: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IResourceView;
         }, callback: (err: IErrorResponse, response: IRegionViewsInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -69,6 +78,8 @@ declare module googleapis.resourceviews {
             pageToken?: string;
             projectName: string;
             region: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRegionViewsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the resources in the view.
@@ -84,6 +95,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resourceViewName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRegionViewsListResourcesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Remove resources from the view.
@@ -95,6 +108,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             region: string;
             resourceViewName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRegionViewsRemoveResourcesRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
@@ -109,6 +124,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             resourceViewName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IZoneViewsAddResourcesRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -121,6 +138,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             resourceViewName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get the information of a zonal resource view.
@@ -132,6 +151,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             resourceViewName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IResourceView, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a resource view.
@@ -141,6 +162,8 @@ declare module googleapis.resourceviews {
         insert: (params: {
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IResourceView;
         }, callback: (err: IErrorResponse, response: IZoneViewsInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -155,6 +178,8 @@ declare module googleapis.resourceviews {
             pageToken?: string;
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IZoneViewsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the resources of the resource view.
@@ -170,6 +195,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             resourceViewName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IZoneViewsListResourcesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Remove resources from the view.
@@ -181,6 +208,8 @@ declare module googleapis.resourceviews {
             projectName: string;
             resourceViewName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IZoneViewsRemoveResourcesRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };

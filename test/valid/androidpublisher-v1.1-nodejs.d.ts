@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function androidpublisher(version:string):typeof googleapis.androidpublisher;
+    function androidpublisher(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.androidpublisher;
 }
 /**
  * Lets Android application developers access their Google Play accounts.
@@ -23,6 +24,8 @@ declare module googleapis.androidpublisher {
             packageName: string;
             productId: string;
             token: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInappPurchase, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var purchases: {
@@ -36,6 +39,8 @@ declare module googleapis.androidpublisher {
             packageName: string;
             subscriptionId: string;
             token: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Checks whether a user's subscription purchase is valid and returns its expiry time.
@@ -47,6 +52,8 @@ declare module googleapis.androidpublisher {
             packageName: string;
             subscriptionId: string;
             token: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISubscriptionPurchase, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

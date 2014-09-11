@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function storage(version:string):typeof googleapis.storage;
+    function storage(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.storage;
 }
 /**
  * Lets you store and retrieve potentially-large, immutable data objects.
@@ -21,6 +22,8 @@ declare module googleapis.storage {
         delete: (params: {
             bucket: string;
             entity: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the ACL entry for the specified entity on the specified bucket.
@@ -30,6 +33,8 @@ declare module googleapis.storage {
         get: (params: {
             bucket: string;
             entity: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBucketAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new ACL entry on the specified bucket.
@@ -37,6 +42,8 @@ declare module googleapis.storage {
          */
         insert: (params: {
             bucket: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBucketAccessControl;
         }, callback: (err: IErrorResponse, response: IBucketAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -45,6 +52,8 @@ declare module googleapis.storage {
          */
         list: (params: {
             bucket: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBucketAccessControls, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an ACL entry on the specified bucket. This method supports patch semantics.
@@ -54,6 +63,8 @@ declare module googleapis.storage {
         patch: (params: {
             bucket: string;
             entity: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBucketAccessControl;
         }, callback: (err: IErrorResponse, response: IBucketAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -64,6 +75,8 @@ declare module googleapis.storage {
         update: (params: {
             bucket: string;
             entity: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBucketAccessControl;
         }, callback: (err: IErrorResponse, response: IBucketAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -78,6 +91,8 @@ declare module googleapis.storage {
             bucket: string;
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns metadata for the specified bucket.
@@ -91,6 +106,8 @@ declare module googleapis.storage {
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBucket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new bucket.
@@ -100,6 +117,8 @@ declare module googleapis.storage {
         insert: (params: {
             project: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBucket;
         }, callback: (err: IErrorResponse, response: IBucket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -114,6 +133,8 @@ declare module googleapis.storage {
             pageToken?: string;
             project: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBuckets, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a bucket. This method supports patch semantics.
@@ -127,6 +148,8 @@ declare module googleapis.storage {
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBucket;
         }, callback: (err: IErrorResponse, response: IBucket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -141,6 +164,8 @@ declare module googleapis.storage {
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBucket;
         }, callback: (err: IErrorResponse, response: IBucket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -149,6 +174,8 @@ declare module googleapis.storage {
          * Stop watching resources through this channel
          */
         stop: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
@@ -161,6 +188,8 @@ declare module googleapis.storage {
         delete: (params: {
             bucket: string;
             entity: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the default object ACL entry for the specified entity on the specified bucket.
@@ -170,6 +199,8 @@ declare module googleapis.storage {
         get: (params: {
             bucket: string;
             entity: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new default object ACL entry on the specified bucket.
@@ -177,6 +208,8 @@ declare module googleapis.storage {
          */
         insert: (params: {
             bucket: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObjectAccessControl;
         }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -189,6 +222,8 @@ declare module googleapis.storage {
             bucket: string;
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IObjectAccessControls, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a default object ACL entry on the specified bucket. This method supports patch semantics.
@@ -198,6 +233,8 @@ declare module googleapis.storage {
         patch: (params: {
             bucket: string;
             entity: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObjectAccessControl;
         }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -208,6 +245,8 @@ declare module googleapis.storage {
         update: (params: {
             bucket: string;
             entity: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObjectAccessControl;
         }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -224,6 +263,8 @@ declare module googleapis.storage {
             entity: string;
             generation?: string;
             object: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the ACL entry for the specified entity on the specified object.
@@ -237,6 +278,8 @@ declare module googleapis.storage {
             entity: string;
             generation?: string;
             object: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new ACL entry on the specified object.
@@ -248,6 +291,8 @@ declare module googleapis.storage {
             bucket: string;
             generation?: string;
             object: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObjectAccessControl;
         }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -260,6 +305,8 @@ declare module googleapis.storage {
             bucket: string;
             generation?: string;
             object: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IObjectAccessControls, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an ACL entry on the specified object. This method supports patch semantics.
@@ -273,6 +320,8 @@ declare module googleapis.storage {
             entity: string;
             generation?: string;
             object: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObjectAccessControl;
         }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -287,6 +336,8 @@ declare module googleapis.storage {
             entity: string;
             generation?: string;
             object: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObjectAccessControl;
         }, callback: (err: IErrorResponse, response: IObjectAccessControl, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -303,6 +354,8 @@ declare module googleapis.storage {
             destinationObject: string;
             ifGenerationMatch?: string;
             ifMetagenerationMatch?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IComposeRequest;
         }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -337,6 +390,8 @@ declare module googleapis.storage {
             sourceBucket: string;
             sourceGeneration?: string;
             sourceObject: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObject;
         }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -357,6 +412,8 @@ declare module googleapis.storage {
             ifMetagenerationMatch?: string;
             ifMetagenerationNotMatch?: string;
             object: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves objects or their associated metadata.
@@ -378,6 +435,8 @@ declare module googleapis.storage {
             ifMetagenerationNotMatch?: string;
             object: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Stores new data blobs and associated metadata.
@@ -397,6 +456,8 @@ declare module googleapis.storage {
             ifMetagenerationNotMatch?: string;
             name?: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObject;
         }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -417,6 +478,8 @@ declare module googleapis.storage {
             prefix?: string;
             projection?: string;
             versions?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IObjects, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a data blob's associated metadata. This method supports patch semantics.
@@ -438,6 +501,8 @@ declare module googleapis.storage {
             ifMetagenerationNotMatch?: string;
             object: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObject;
         }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -460,6 +525,8 @@ declare module googleapis.storage {
             ifMetagenerationNotMatch?: string;
             object: string;
             projection?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IObject;
         }, callback: (err: IErrorResponse, response: IObject, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -480,6 +547,8 @@ declare module googleapis.storage {
             prefix?: string;
             projection?: string;
             versions?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IChannel;
         }, callback: (err: IErrorResponse, response: IChannel, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

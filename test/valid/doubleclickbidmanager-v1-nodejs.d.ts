@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function doubleclickbidmanager(version:string):typeof googleapis.doubleclickbidmanager;
+    function doubleclickbidmanager(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.doubleclickbidmanager;
 }
 /**
  * API for viewing and managing your reports in DoubleClick Bid Manager.
@@ -17,12 +18,16 @@ declare module googleapis.doubleclickbidmanager {
          * Retrieves line items in CSV format.
          */
         downloadlineitems: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDownloadLineItemsRequest;
         }, callback: (err: IErrorResponse, response: IDownloadLineItemsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Uploads line items in CSV format.
          */
         uploadlineitems: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUploadLineItemsRequest;
         }, callback: (err: IErrorResponse, response: IUploadLineItemsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -31,6 +36,8 @@ declare module googleapis.doubleclickbidmanager {
          * Creates a query.
          */
         createquery: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IQuery;
         }, callback: (err: IErrorResponse, response: IQuery, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -39,6 +46,8 @@ declare module googleapis.doubleclickbidmanager {
          */
         deletequery: (params: {
             queryId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a stored query.
@@ -46,11 +55,15 @@ declare module googleapis.doubleclickbidmanager {
          */
         getquery: (params: {
             queryId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IQuery, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves stored queries.
          */
         listqueries: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IListQueriesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Runs a stored query to generate a report.
@@ -58,6 +71,8 @@ declare module googleapis.doubleclickbidmanager {
          */
         runquery: (params: {
             queryId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRunQueryRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
@@ -68,6 +83,8 @@ declare module googleapis.doubleclickbidmanager {
          */
         listreports: (params: {
             queryId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IListReportsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

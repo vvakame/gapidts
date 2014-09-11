@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function books(version:string):typeof googleapis.books;
+    function books(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.books;
 }
 /**
  * Lets you search for books and manage your Google Books library.
@@ -23,6 +24,8 @@ declare module googleapis.books {
             shelf: string;
             source?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBookshelf, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of public bookshelves for the specified user.
@@ -32,6 +35,8 @@ declare module googleapis.books {
         list: (params: {
             source?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBookshelves, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         volumes: {
             /**
@@ -50,6 +55,8 @@ declare module googleapis.books {
                 source?: string;
                 startIndex?: number;
                 userId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -66,6 +73,8 @@ declare module googleapis.books {
             mime_type?: string;
             name?: string;
             upload_client_token?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBooksCloudloadingResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Remove the book and its contents
@@ -73,8 +82,12 @@ declare module googleapis.books {
          */
         deleteBook: (params: {
             volumeId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         updateBook: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IBooksCloudloadingResource;
         }, callback: (err: IErrorResponse, response: IBooksCloudloadingResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -91,6 +104,8 @@ declare module googleapis.books {
             source?: string;
             summaryId: string;
             volumeId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILayersummary, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List the layer summaries for a volume.
@@ -106,6 +121,8 @@ declare module googleapis.books {
             pageToken?: string;
             source?: string;
             volumeId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILayersummaries, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         annotationData: {
             /**
@@ -132,6 +149,8 @@ declare module googleapis.books {
                 source?: string;
                 volumeId: string;
                 w?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAnnotationdata, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Gets the annotation data for a volume and layer.
@@ -163,6 +182,8 @@ declare module googleapis.books {
                 updatedMin?: string;
                 volumeId: string;
                 w?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAnnotationsdata, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         volumeAnnotations: {
@@ -180,6 +201,8 @@ declare module googleapis.books {
                 locale?: string;
                 source?: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IVolumeannotation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Gets the volume annotations for a volume and layer.
@@ -215,6 +238,8 @@ declare module googleapis.books {
                 updatedMin?: string;
                 volumeAnnotationsVersion?: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IVolumeannotations, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -231,6 +256,8 @@ declare module googleapis.books {
             locale?: string;
             source?: string;
             volumeIds: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDownloadAccesses, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Request concurrent and download access restrictions.
@@ -248,6 +275,8 @@ declare module googleapis.books {
             nonce: string;
             source: string;
             volumeId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRequestAccess, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Request downloaded content access for specified volumes on the My eBooks shelf.
@@ -267,6 +296,8 @@ declare module googleapis.books {
             showPreorders?: boolean;
             source: string;
             volumeIds?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var mylibrary: {
@@ -279,6 +310,8 @@ declare module googleapis.books {
             delete: (params: {
                 annotationId: string;
                 source?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets an annotation by its ID.
@@ -288,6 +321,8 @@ declare module googleapis.books {
             get: (params: {
                 annotationId: string;
                 source?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAnnotation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Inserts a new annotation.
@@ -297,6 +332,8 @@ declare module googleapis.books {
             insert: (params: {
                 showOnlySummaryInResponse?: boolean;
                 source?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAnnotation;
             }, callback: (err: IErrorResponse, response: IAnnotation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -325,6 +362,8 @@ declare module googleapis.books {
                 updatedMax?: string;
                 updatedMin?: string;
                 volumeId?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAnnotations, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Gets the summary of specified layers.
@@ -334,6 +373,8 @@ declare module googleapis.books {
             summary: (params: {
                 layerIds: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAnnotationsSummary, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing annotation.
@@ -343,6 +384,8 @@ declare module googleapis.books {
             update: (params: {
                 annotationId: string;
                 source?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAnnotation;
             }, callback: (err: IErrorResponse, response: IAnnotation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -357,6 +400,8 @@ declare module googleapis.books {
                 shelf: string;
                 source?: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Clears all volumes from a bookshelf.
@@ -366,6 +411,8 @@ declare module googleapis.books {
             clearVolumes: (params: {
                 shelf: string;
                 source?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Retrieves metadata for a specific bookshelf belonging to the authenticated user.
@@ -375,6 +422,8 @@ declare module googleapis.books {
             get: (params: {
                 shelf: string;
                 source?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IBookshelf, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Retrieves a list of bookshelves belonging to the authenticated user.
@@ -382,6 +431,8 @@ declare module googleapis.books {
              */
             list: (params: {
                 source?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IBookshelves, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Moves a volume within a bookshelf.
@@ -395,6 +446,8 @@ declare module googleapis.books {
                 source?: string;
                 volumeId: string;
                 volumePosition: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Removes a volume from a bookshelf.
@@ -406,6 +459,8 @@ declare module googleapis.books {
                 shelf: string;
                 source?: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             volumes: {
                 /**
@@ -428,6 +483,8 @@ declare module googleapis.books {
                     showPreorders?: boolean;
                     source?: string;
                     startIndex?: number;
+                    key?: string; // API_KEY
+                    auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };
@@ -442,6 +499,8 @@ declare module googleapis.books {
                 contentVersion?: string;
                 source?: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IReadingPosition, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Sets my reading position information for a volume.
@@ -461,6 +520,8 @@ declare module googleapis.books {
                 source?: string;
                 timestamp: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
     };
@@ -485,6 +546,8 @@ declare module googleapis.books {
             product?: string;
             serial?: string;
             volumeId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * 
@@ -504,6 +567,8 @@ declare module googleapis.books {
             offerId?: string;
             product?: string;
             serial?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns a list of promo offers available to the user
@@ -521,6 +586,8 @@ declare module googleapis.books {
             model?: string;
             product?: string;
             serial?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOffers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var volumes: {
@@ -538,6 +605,8 @@ declare module googleapis.books {
             projection?: string;
             source?: string;
             volumeId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVolume, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Performs a book search.
@@ -569,6 +638,8 @@ declare module googleapis.books {
             showPreorders?: boolean;
             source?: string;
             startIndex?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         associated: {
             /**
@@ -583,6 +654,8 @@ declare module googleapis.books {
                 locale?: string;
                 source?: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         mybooks: {
@@ -602,6 +675,8 @@ declare module googleapis.books {
                 processingState?: string;
                 source?: string;
                 startIndex?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         recommended: {
@@ -613,6 +688,8 @@ declare module googleapis.books {
             list: (params: {
                 locale?: string;
                 source?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Rate a recommended book for the current user.
@@ -626,6 +703,8 @@ declare module googleapis.books {
                 rating: string;
                 source?: string;
                 volumeId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IBooksVolumesRecommendedRateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         useruploaded: {
@@ -645,6 +724,8 @@ declare module googleapis.books {
                 source?: string;
                 startIndex?: number;
                 volumeId?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IVolumes, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };

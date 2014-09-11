@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function orkut(version:string):typeof googleapis.orkut;
+    function orkut(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.orkut;
 }
 /**
  * Lets you manage activities, comments and badges in Orkut. More stuff coming in time.
@@ -21,6 +22,8 @@ declare module googleapis.orkut {
         delete: (params: {
             activityId: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var activities: {
@@ -30,6 +33,8 @@ declare module googleapis.orkut {
          */
         delete: (params: {
             activityId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a list of activities.
@@ -45,6 +50,8 @@ declare module googleapis.orkut {
             maxResults?: number;
             pageToken?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivityList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var activityVisibility: {
@@ -54,6 +61,8 @@ declare module googleapis.orkut {
          */
         get: (params: {
             activityId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVisibility, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the visibility of an existing activity. This method supports patch semantics.
@@ -61,6 +70,8 @@ declare module googleapis.orkut {
          */
         patch: (params: {
             activityId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IVisibility;
         }, callback: (err: IErrorResponse, response: IVisibility, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -69,6 +80,8 @@ declare module googleapis.orkut {
          */
         update: (params: {
             activityId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IVisibility;
         }, callback: (err: IErrorResponse, response: IVisibility, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -81,6 +94,8 @@ declare module googleapis.orkut {
         get: (params: {
             badgeId: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBadge, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of visible badges of a user.
@@ -88,6 +103,8 @@ declare module googleapis.orkut {
          */
         list: (params: {
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBadgeList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
@@ -97,6 +114,8 @@ declare module googleapis.orkut {
          */
         delete: (params: {
             commentId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves an existing comment.
@@ -106,6 +125,8 @@ declare module googleapis.orkut {
         get: (params: {
             commentId: string;
             hl?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new comment to an activity.
@@ -113,6 +134,8 @@ declare module googleapis.orkut {
          */
         insert: (params: {
             activityId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IComment;
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -129,6 +152,8 @@ declare module googleapis.orkut {
             maxResults?: number;
             orderBy?: string;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communities: {
@@ -140,6 +165,8 @@ declare module googleapis.orkut {
         get: (params: {
             communityId: number;
             hl?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the list of communities the current user is a member of.
@@ -153,6 +180,8 @@ declare module googleapis.orkut {
             maxResults?: number;
             orderBy?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityFollow: {
@@ -164,6 +193,8 @@ declare module googleapis.orkut {
         delete: (params: {
             communityId: number;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a user as a follower of a community.
@@ -173,6 +204,8 @@ declare module googleapis.orkut {
         insert: (params: {
             communityId: number;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityMembers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityMembers: {
@@ -184,6 +217,8 @@ declare module googleapis.orkut {
         delete: (params: {
             communityId: number;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves the relationship between a user and a community.
@@ -195,6 +230,8 @@ declare module googleapis.orkut {
             communityId: number;
             hl?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityMembers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Makes the user join a community.
@@ -204,6 +241,8 @@ declare module googleapis.orkut {
         insert: (params: {
             communityId: number;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityMembers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists members of a community. Use the pagination tokens to retrieve the full list; do not rely on the member count available in the community profile information to know when to stop iterating, as that count may be approximate.
@@ -219,6 +258,8 @@ declare module googleapis.orkut {
             hl?: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityMembersList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityMessages: {
@@ -232,6 +273,8 @@ declare module googleapis.orkut {
             communityId: number;
             messageId: string;
             topicId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Adds a message to a given community topic.
@@ -241,6 +284,8 @@ declare module googleapis.orkut {
         insert: (params: {
             communityId: number;
             topicId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICommunityMessage;
         }, callback: (err: IErrorResponse, response: ICommunityMessage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -257,6 +302,8 @@ declare module googleapis.orkut {
             maxResults?: number;
             pageToken?: string;
             topicId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityMessageList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityPollComments: {
@@ -268,6 +315,8 @@ declare module googleapis.orkut {
         insert: (params: {
             communityId: number;
             pollId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICommunityPollComment;
         }, callback: (err: IErrorResponse, response: ICommunityPollComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -284,6 +333,8 @@ declare module googleapis.orkut {
             maxResults?: number;
             pageToken?: string;
             pollId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityPollCommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityPollVotes: {
@@ -295,6 +346,8 @@ declare module googleapis.orkut {
         insert: (params: {
             communityId: number;
             pollId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICommunityPollVote;
         }, callback: (err: IErrorResponse, response: ICommunityPollVote, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -309,6 +362,8 @@ declare module googleapis.orkut {
             communityId: number;
             hl?: string;
             pollId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityPoll, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the polls of a community.
@@ -322,6 +377,8 @@ declare module googleapis.orkut {
             hl?: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityPollList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityRelated: {
@@ -333,6 +390,8 @@ declare module googleapis.orkut {
         list: (params: {
             communityId: number;
             hl?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var communityTopics: {
@@ -344,6 +403,8 @@ declare module googleapis.orkut {
         delete: (params: {
             communityId: number;
             topicId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a topic of a community.
@@ -355,6 +416,8 @@ declare module googleapis.orkut {
             communityId: number;
             hl?: string;
             topicId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityTopic, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a topic to a given community.
@@ -364,6 +427,8 @@ declare module googleapis.orkut {
         insert: (params: {
             communityId: number;
             isShout?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICommunityTopic;
         }, callback: (err: IErrorResponse, response: ICommunityTopic, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -378,6 +443,8 @@ declare module googleapis.orkut {
             hl?: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommunityTopicList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var counters: {
@@ -387,6 +454,8 @@ declare module googleapis.orkut {
          */
         list: (params: {
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICounters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var scraps: {
@@ -394,6 +463,8 @@ declare module googleapis.orkut {
          * Creates a new scrap.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IActivity;
         }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

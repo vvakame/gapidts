@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function mapsengine(version:string):typeof googleapis.mapsengine;
+    function mapsengine(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.mapsengine;
 }
 /**
  * The Google Maps Engine API allows developers to store and query geospatial vector and raster data.
@@ -19,6 +20,8 @@ declare module googleapis.mapsengine {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAsset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all assets readable by the current user.
@@ -50,6 +53,8 @@ declare module googleapis.mapsengine {
             search?: string;
             tags?: string;
             type?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAssetsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         parents: {
             /**
@@ -62,6 +67,8 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         permissions: {
@@ -71,6 +78,8 @@ declare module googleapis.mapsengine {
              */
             list: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IPermissionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -81,6 +90,8 @@ declare module googleapis.mapsengine {
          */
         cancelProcessing: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a layer asset.
@@ -88,6 +99,8 @@ declare module googleapis.mapsengine {
          */
         create: (params: {
             process?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILayer;
         }, callback: (err: IErrorResponse, response: ILayer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -96,6 +109,8 @@ declare module googleapis.mapsengine {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a particular layer.
@@ -105,6 +120,8 @@ declare module googleapis.mapsengine {
         get: (params: {
             id: string;
             version?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILayer, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all layers readable by the current user.
@@ -136,6 +153,8 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILayersListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a layer asset.
@@ -143,6 +162,8 @@ declare module googleapis.mapsengine {
          */
         patch: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILayer;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -151,6 +172,8 @@ declare module googleapis.mapsengine {
          */
         process: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Publish a layer asset.
@@ -160,6 +183,8 @@ declare module googleapis.mapsengine {
         publish: (params: {
             force?: boolean;
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPublishResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Unpublish a layer asset.
@@ -167,6 +192,8 @@ declare module googleapis.mapsengine {
          */
         unpublish: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPublishResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         parents: {
             /**
@@ -179,6 +206,8 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         permissions: {
@@ -190,6 +219,8 @@ declare module googleapis.mapsengine {
              */
             batchInsert: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IPermissionsBatchInsertRequest;
             }, callback: (err: IErrorResponse, response: IPermissionsBatchInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -198,6 +229,8 @@ declare module googleapis.mapsengine {
              */
             list: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IPermissionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -206,6 +239,8 @@ declare module googleapis.mapsengine {
          * Create a map asset.
          */
         create: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMap;
         }, callback: (err: IErrorResponse, response: IMap, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -214,6 +249,8 @@ declare module googleapis.mapsengine {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a particular map.
@@ -223,6 +260,8 @@ declare module googleapis.mapsengine {
         get: (params: {
             id: string;
             version?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMap, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all maps readable by the current user.
@@ -256,6 +295,8 @@ declare module googleapis.mapsengine {
             search?: string;
             tags?: string;
             version?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMapsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a map asset.
@@ -263,6 +304,8 @@ declare module googleapis.mapsengine {
          */
         patch: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMap;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -273,6 +316,8 @@ declare module googleapis.mapsengine {
         publish: (params: {
             force?: boolean;
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPublishResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Unpublish a map asset.
@@ -280,6 +325,8 @@ declare module googleapis.mapsengine {
          */
         unpublish: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPublishResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         permissions: {
             /**
@@ -290,6 +337,8 @@ declare module googleapis.mapsengine {
              */
             batchInsert: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IPermissionsBatchInsertRequest;
             }, callback: (err: IErrorResponse, response: IPermissionsBatchInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -298,6 +347,8 @@ declare module googleapis.mapsengine {
              */
             list: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IPermissionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -308,6 +359,8 @@ declare module googleapis.mapsengine {
          */
         getIdForEmail: (params: {
             email: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPermissionsGetIdForEmailResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var projects: {
@@ -315,6 +368,8 @@ declare module googleapis.mapsengine {
          * Return all projects readable by the current user.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProjectsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         icons: {
             /**
@@ -323,6 +378,8 @@ declare module googleapis.mapsengine {
              */
             create: (params: {
                 projectId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IIcon;
             }, callback: (err: IErrorResponse, response: IIcon, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -333,6 +390,8 @@ declare module googleapis.mapsengine {
             get: (params: {
                 id: string;
                 projectId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IIcon, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Return all icons in the current project
@@ -344,6 +403,8 @@ declare module googleapis.mapsengine {
                 maxResults?: number;
                 pageToken?: string;
                 projectId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IIconsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -354,11 +415,15 @@ declare module googleapis.mapsengine {
          */
         cancelProcessing: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a raster collection asset.
          */
         create: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRasterCollection;
         }, callback: (err: IErrorResponse, response: IRasterCollection, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -367,6 +432,8 @@ declare module googleapis.mapsengine {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a particular raster collection.
@@ -374,6 +441,8 @@ declare module googleapis.mapsengine {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRasterCollection, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all raster collections readable by the current user.
@@ -405,6 +474,8 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRasterCollectionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a raster collection asset.
@@ -412,6 +483,8 @@ declare module googleapis.mapsengine {
          */
         patch: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRasterCollection;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -420,6 +493,8 @@ declare module googleapis.mapsengine {
          */
         process: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         parents: {
             /**
@@ -432,6 +507,8 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         permissions: {
@@ -443,6 +520,8 @@ declare module googleapis.mapsengine {
              */
             batchInsert: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IPermissionsBatchInsertRequest;
             }, callback: (err: IErrorResponse, response: IPermissionsBatchInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -451,6 +530,8 @@ declare module googleapis.mapsengine {
              */
             list: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IPermissionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         rasters: {
@@ -462,6 +543,8 @@ declare module googleapis.mapsengine {
              */
             batchDelete: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IRasterCollectionsRasterBatchDeleteRequest;
             }, callback: (err: IErrorResponse, response: IRasterCollectionsRastersBatchDeleteResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -472,6 +555,8 @@ declare module googleapis.mapsengine {
              */
             batchInsert: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IRasterCollectionsRastersBatchInsertRequest;
             }, callback: (err: IErrorResponse, response: IRasterCollectionsRastersBatchInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -502,6 +587,8 @@ declare module googleapis.mapsengine {
                 role?: string;
                 search?: string;
                 tags?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IRasterCollectionsRastersListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -512,6 +599,8 @@ declare module googleapis.mapsengine {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a single raster.
@@ -519,6 +608,8 @@ declare module googleapis.mapsengine {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRaster, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all rasters readable by the current user.
@@ -550,6 +641,8 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IRastersListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a raster asset.
@@ -557,6 +650,8 @@ declare module googleapis.mapsengine {
          */
         patch: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRaster;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -565,11 +660,15 @@ declare module googleapis.mapsengine {
          */
         process: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a skeleton raster asset for upload.
          */
         upload: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IRaster;
         }, callback: (err: IErrorResponse, response: IRaster, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         files: {
@@ -581,6 +680,8 @@ declare module googleapis.mapsengine {
             insert: (params: {
                 filename: string;
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         parents: {
@@ -594,6 +695,8 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         permissions: {
@@ -603,6 +706,8 @@ declare module googleapis.mapsengine {
              */
             list: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IPermissionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -611,6 +716,8 @@ declare module googleapis.mapsengine {
          * Create a table asset.
          */
         create: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -619,6 +726,8 @@ declare module googleapis.mapsengine {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Return metadata for a particular table, including the schema.
@@ -628,6 +737,8 @@ declare module googleapis.mapsengine {
         get: (params: {
             id: string;
             version?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Return all tables readable by the current user.
@@ -659,6 +770,8 @@ declare module googleapis.mapsengine {
             role?: string;
             search?: string;
             tags?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITablesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Mutate a table asset.
@@ -666,6 +779,8 @@ declare module googleapis.mapsengine {
          */
         patch: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -674,6 +789,8 @@ declare module googleapis.mapsengine {
          */
         process: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProcessResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Create a placeholder table asset to which table files can be uploaded.
@@ -681,6 +798,8 @@ declare module googleapis.mapsengine {
          * See Table Upload in the Developer's Guide or Table.files: insert in the reference documentation for more information.
          */
         upload: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         features: {
@@ -690,6 +809,8 @@ declare module googleapis.mapsengine {
              */
             batchDelete: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IFeaturesBatchDeleteRequest;
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
@@ -698,6 +819,8 @@ declare module googleapis.mapsengine {
              */
             batchInsert: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IFeaturesBatchInsertRequest;
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
@@ -706,6 +829,8 @@ declare module googleapis.mapsengine {
              */
             batchPatch: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IFeaturesBatchPatchRequest;
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
@@ -720,6 +845,8 @@ declare module googleapis.mapsengine {
                 select?: string;
                 tableId: string;
                 version?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IFeature, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Return all features readable by the current user.
@@ -745,6 +872,8 @@ declare module googleapis.mapsengine {
                 select?: string;
                 version?: string;
                 where?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IFeaturesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         files: {
@@ -757,6 +886,8 @@ declare module googleapis.mapsengine {
             insert: (params: {
                 filename: string;
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         parents: {
@@ -770,6 +901,8 @@ declare module googleapis.mapsengine {
                 id: string;
                 maxResults?: number;
                 pageToken?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IParentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         permissions: {
@@ -781,6 +914,8 @@ declare module googleapis.mapsengine {
              */
             batchInsert: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IPermissionsBatchInsertRequest;
             }, callback: (err: IErrorResponse, response: IPermissionsBatchInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -789,6 +924,8 @@ declare module googleapis.mapsengine {
              */
             list: (params: {
                 id: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IPermissionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function genomics(version:string):typeof googleapis.genomics;
+    function genomics(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.genomics;
 }
 /**
  * Provides access to Genomics data.
@@ -25,6 +26,8 @@ declare module googleapis.genomics {
             contig?: string;
             position?: string;
             variantsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBeacon, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var callsets: {
@@ -32,6 +35,8 @@ declare module googleapis.genomics {
          * Creates a new callset.
          */
         create: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICallset;
         }, callback: (err: IErrorResponse, response: ICallset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -40,6 +45,8 @@ declare module googleapis.genomics {
          */
         delete: (params: {
             callsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a callset by ID.
@@ -47,6 +54,8 @@ declare module googleapis.genomics {
          */
         get: (params: {
             callsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICallset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a callset. This method supports patch semantics.
@@ -54,12 +63,16 @@ declare module googleapis.genomics {
          */
         patch: (params: {
             callsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICallset;
         }, callback: (err: IErrorResponse, response: ICallset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a list of callsets matching the criteria.
          */
         search: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISearchCallsetsRequest;
         }, callback: (err: IErrorResponse, response: ISearchCallsetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -68,6 +81,8 @@ declare module googleapis.genomics {
          */
         update: (params: {
             callsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ICallset;
         }, callback: (err: IErrorResponse, response: ICallset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -76,6 +91,8 @@ declare module googleapis.genomics {
          * Creates a new dataset.
          */
         create: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDataset;
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -84,6 +101,8 @@ declare module googleapis.genomics {
          */
         delete: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a dataset by ID.
@@ -91,6 +110,8 @@ declare module googleapis.genomics {
          */
         get: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all datasets.
@@ -102,6 +123,8 @@ declare module googleapis.genomics {
             maxResults?: string;
             pageToken?: string;
             projectId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IListDatasetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a dataset. This method supports patch semantics.
@@ -109,6 +132,8 @@ declare module googleapis.genomics {
          */
         patch: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDataset;
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -117,6 +142,8 @@ declare module googleapis.genomics {
          */
         undelete: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a dataset.
@@ -124,6 +151,8 @@ declare module googleapis.genomics {
          */
         update: (params: {
             datasetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDataset;
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -133,6 +162,8 @@ declare module googleapis.genomics {
              * Creates and asynchronously runs an ad-hoc job. This is an experimental call and may be removed or changed at any time.
              */
             create: (params: {
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IExperimentalCreateJobRequest;
             }, callback: (err: IErrorResponse, response: IExperimentalCreateJobResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -144,6 +175,8 @@ declare module googleapis.genomics {
          */
         cancel: (params: {
             jobId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a job by ID.
@@ -151,11 +184,15 @@ declare module googleapis.genomics {
          */
         get: (params: {
             jobId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a list of jobs matching the criteria.
          */
         search: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISearchJobsRequest;
         }, callback: (err: IErrorResponse, response: ISearchJobsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -164,6 +201,8 @@ declare module googleapis.genomics {
          * Gets a list of reads for one or more readsets. Reads search operates over a genomic coordinate space of reference sequence & position defined over the reference sequences to which the requested readsets are aligned. If a target positional range is specified, search returns all reads whose alignment to the reference genome overlap the range. A query which specifies only readset IDs yields all reads in those readsets, including unmapped reads. All reads returned (including reads on subsequent pages) are ordered by genomic coordinate (reference sequence & position). Reads with equivalent genomic coordinates are returned in a deterministic order.
          */
         search: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISearchReadsRequest;
         }, callback: (err: IErrorResponse, response: ISearchReadsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -174,11 +213,15 @@ declare module googleapis.genomics {
          */
         delete: (params: {
             readsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Exports readsets to a BAM file in Google Cloud Storage. Note that currently there may be some differences between exported BAM files and the original BAM file at the time of import. In particular, comments in the input file header will not be preserved, and some custom tags will be converted to strings.
          */
         export: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IExportReadsetsRequest;
         }, callback: (err: IErrorResponse, response: IExportReadsetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -187,11 +230,15 @@ declare module googleapis.genomics {
          */
         get: (params: {
             readsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReadset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates readsets by asynchronously importing the provided information. Note that currently comments in the input file header are not imported and some custom tags will be converted to strings, rather than preserving tag types. The caller must have WRITE permissions to the dataset.
          */
         import: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IImportReadsetsRequest;
         }, callback: (err: IErrorResponse, response: IImportReadsetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -200,12 +247,16 @@ declare module googleapis.genomics {
          */
         patch: (params: {
             readsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IReadset;
         }, callback: (err: IErrorResponse, response: IReadset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a list of readsets matching the criteria.
          */
         search: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISearchReadsetsRequest;
         }, callback: (err: IErrorResponse, response: ISearchReadsetsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -214,6 +265,8 @@ declare module googleapis.genomics {
          */
         update: (params: {
             readsetId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IReadset;
         }, callback: (err: IErrorResponse, response: IReadset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         coveragebuckets: {
@@ -235,6 +288,8 @@ declare module googleapis.genomics {
                 "range.sequenceStart"?: string;
                 readsetId: string;
                 targetBucketWidth?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IListCoverageBucketsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -243,6 +298,8 @@ declare module googleapis.genomics {
          * Creates a new variant.
          */
         create: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IVariant;
         }, callback: (err: IErrorResponse, response: IVariant, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -251,11 +308,15 @@ declare module googleapis.genomics {
          */
         delete: (params: {
             variantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Exports variant data to an external destination.
          */
         export: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IExportVariantsRequest;
         }, callback: (err: IErrorResponse, response: IExportVariantsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -264,6 +325,8 @@ declare module googleapis.genomics {
          */
         get: (params: {
             variantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IVariant, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a summary of all the variant data in a variantset.
@@ -271,11 +334,15 @@ declare module googleapis.genomics {
          */
         getSummary: (params: {
             variantsetId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IGetVariantsSummaryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates variant data by asynchronously importing the provided information.
          */
         import: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IImportVariantsRequest;
         }, callback: (err: IErrorResponse, response: IImportVariantsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -284,12 +351,16 @@ declare module googleapis.genomics {
          */
         patch: (params: {
             variantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IVariant;
         }, callback: (err: IErrorResponse, response: IVariant, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Gets a list of variants matching the criteria.
          */
         search: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISearchVariantsRequest;
         }, callback: (err: IErrorResponse, response: ISearchVariantsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -298,6 +369,8 @@ declare module googleapis.genomics {
          */
         update: (params: {
             variantId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IVariant;
         }, callback: (err: IErrorResponse, response: IVariant, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

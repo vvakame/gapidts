@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function cloudmonitoring(version:string):typeof googleapis.cloudmonitoring;
+    function cloudmonitoring(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.cloudmonitoring;
 }
 /**
  * API for accessing Google Cloud and API monitoring data.
@@ -25,6 +26,8 @@ declare module googleapis.cloudmonitoring {
             pageToken?: string;
             project: string;
             query?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IListMetricDescriptorsRequest;
         }, callback: (err: IErrorResponse, response: IListMetricDescriptorsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -61,6 +64,8 @@ If neither oldest nor timespan is specified, the default time interval will be (
             project: string;
             timespan?: string;
             youngest: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IListTimeseriesRequest;
         }, callback: (err: IErrorResponse, response: IListTimeseriesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -97,6 +102,8 @@ If neither oldest nor timespan is specified, the default time interval will be (
             project: string;
             timespan?: string;
             youngest: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IListTimeseriesDescriptorsRequest;
         }, callback: (err: IErrorResponse, response: IListTimeseriesDescriptorsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

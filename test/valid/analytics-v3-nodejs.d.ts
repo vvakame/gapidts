@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function analytics(version:string):typeof googleapis.analytics;
+    function analytics(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.analytics;
 }
 /**
  * View and manage your Google Analytics data
@@ -42,6 +43,8 @@ declare module googleapis.analytics {
                 sort?: string;
                 "start-date": string;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IGaData, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         mcf: {
@@ -69,6 +72,8 @@ declare module googleapis.analytics {
                 sort?: string;
                 "start-date": string;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IMcfData, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         realtime: {
@@ -88,6 +93,8 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 metrics: string;
                 sort?: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IRealtimeData, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -101,6 +108,8 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAccountSummaries, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         accountUserLinks: {
@@ -112,6 +121,8 @@ declare module googleapis.analytics {
             delete: (params: {
                 accountId: string;
                 linkId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Adds a new user to the given account.
@@ -119,6 +130,8 @@ declare module googleapis.analytics {
              */
             insert: (params: {
                 accountId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityUserLink;
             }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -131,6 +144,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IEntityUserLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates permissions for an existing user on the given account.
@@ -140,6 +155,8 @@ declare module googleapis.analytics {
             update: (params: {
                 accountId: string;
                 linkId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityUserLink;
             }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -152,6 +169,8 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAccounts, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         customDataSources: {
@@ -167,6 +186,8 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ICustomDataSources, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         dailyUploads: {
@@ -184,6 +205,8 @@ declare module googleapis.analytics {
                 date: string;
                 type: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * List daily uploads to which the user has access.
@@ -203,6 +226,8 @@ declare module googleapis.analytics {
                 "start-date": string;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IDailyUploads, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update/Overwrite data for a custom data source.
@@ -222,6 +247,8 @@ declare module googleapis.analytics {
                 reset?: boolean;
                 type: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IDailyUploadAppend, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         experiments: {
@@ -237,6 +264,8 @@ declare module googleapis.analytics {
                 experimentId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Returns an experiment to which the user has access.
@@ -250,6 +279,8 @@ declare module googleapis.analytics {
                 experimentId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IExperiment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new experiment.
@@ -261,6 +292,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IExperiment;
             }, callback: (err: IErrorResponse, response: IExperiment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -277,6 +310,8 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IExperiments, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update an existing experiment. This method supports patch semantics.
@@ -290,6 +325,8 @@ declare module googleapis.analytics {
                 experimentId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IExperiment;
             }, callback: (err: IErrorResponse, response: IExperiment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -304,6 +341,8 @@ declare module googleapis.analytics {
                 experimentId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IExperiment;
             }, callback: (err: IErrorResponse, response: IExperiment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -316,6 +355,8 @@ declare module googleapis.analytics {
             delete: (params: {
                 accountId: string;
                 filterId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Returns a filters to which the user has access.
@@ -325,6 +366,8 @@ declare module googleapis.analytics {
             get: (params: {
                 accountId: string;
                 filterId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new filter.
@@ -332,6 +375,8 @@ declare module googleapis.analytics {
              */
             insert: (params: {
                 accountId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IFilter;
             }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -344,6 +389,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IFilters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing filter. This method supports patch semantics.
@@ -353,6 +400,8 @@ declare module googleapis.analytics {
             patch: (params: {
                 accountId: string;
                 filterId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IFilter;
             }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -363,6 +412,8 @@ declare module googleapis.analytics {
             update: (params: {
                 accountId: string;
                 filterId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IFilter;
             }, callback: (err: IErrorResponse, response: IFilter, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -379,6 +430,8 @@ declare module googleapis.analytics {
                 goalId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IGoal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new goal.
@@ -390,6 +443,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IGoal;
             }, callback: (err: IErrorResponse, response: IGoal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -406,6 +461,8 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IGoals, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing view (profile). This method supports patch semantics.
@@ -419,6 +476,8 @@ declare module googleapis.analytics {
                 goalId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IGoal;
             }, callback: (err: IErrorResponse, response: IGoal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -433,6 +492,8 @@ declare module googleapis.analytics {
                 goalId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IGoal;
             }, callback: (err: IErrorResponse, response: IGoal, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -449,6 +510,8 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Returns a single profile filter link.
@@ -462,6 +525,8 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IProfileFilterLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new profile filter link.
@@ -473,6 +538,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IProfileFilterLink;
             }, callback: (err: IErrorResponse, response: IProfileFilterLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -489,6 +556,8 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IProfileFilterLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Update an existing profile filter link. This method supports patch semantics.
@@ -502,6 +571,8 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IProfileFilterLink;
             }, callback: (err: IErrorResponse, response: IProfileFilterLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -516,6 +587,8 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IProfileFilterLink;
             }, callback: (err: IErrorResponse, response: IProfileFilterLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -532,6 +605,8 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Adds a new user to the given view (profile).
@@ -543,6 +618,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityUserLink;
             }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -559,6 +636,8 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IEntityUserLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates permissions for an existing user on the given view (profile).
@@ -572,6 +651,8 @@ declare module googleapis.analytics {
                 linkId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityUserLink;
             }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -586,6 +667,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Gets a view (profile) to which the user has access.
@@ -597,6 +680,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new view (profile).
@@ -606,6 +691,8 @@ declare module googleapis.analytics {
             insert: (params: {
                 accountId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IProfile;
             }, callback: (err: IErrorResponse, response: IProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -620,6 +707,8 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IProfiles, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing view (profile). This method supports patch semantics.
@@ -631,6 +720,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IProfile;
             }, callback: (err: IErrorResponse, response: IProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -643,6 +734,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IProfile;
             }, callback: (err: IErrorResponse, response: IProfile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -655,6 +748,8 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ISegments, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         unsampledReports: {
@@ -670,6 +765,8 @@ declare module googleapis.analytics {
                 profileId: string;
                 unsampledReportId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IUnsampledReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new unsampled report.
@@ -681,6 +778,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 profileId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IUnsampledReport;
             }, callback: (err: IErrorResponse, response: IUnsampledReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -697,6 +796,8 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IUnsampledReports, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         uploads: {
@@ -710,6 +811,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 customDataSourceId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAnalyticsDataimportDeleteUploadDataRequest;
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
@@ -724,6 +827,8 @@ declare module googleapis.analytics {
                 customDataSourceId: string;
                 uploadId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IUpload, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * List uploads to which the user has access.
@@ -739,6 +844,8 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IUploads, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Migrate custom data source and data imports to latest version.
@@ -750,6 +857,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 customDataSourceId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Upload data for a custom data source.
@@ -761,6 +870,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 customDataSourceId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IUpload, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         webPropertyAdWordsLinks: {
@@ -774,6 +885,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyAdWordsLinkId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Returns a web property-AdWords link to which the user has access.
@@ -785,6 +898,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyAdWordsLinkId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IEntityAdWordsLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Creates a webProperty-AdWords link.
@@ -794,6 +909,8 @@ declare module googleapis.analytics {
             insert: (params: {
                 accountId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityAdWordsLink;
             }, callback: (err: IErrorResponse, response: IEntityAdWordsLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -808,6 +925,8 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IEntityAdWordsLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing webProperty-AdWords link. This method supports patch semantics.
@@ -819,6 +938,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyAdWordsLinkId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityAdWordsLink;
             }, callback: (err: IErrorResponse, response: IEntityAdWordsLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -831,6 +952,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 webPropertyAdWordsLinkId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityAdWordsLink;
             }, callback: (err: IErrorResponse, response: IEntityAdWordsLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -843,6 +966,8 @@ declare module googleapis.analytics {
             get: (params: {
                 accountId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IWebproperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Create a new property if the account has fewer than 20 properties. Web properties are visible in the Google Analytics interface only if they have at least one profile.
@@ -850,6 +975,8 @@ declare module googleapis.analytics {
              */
             insert: (params: {
                 accountId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IWebproperty;
             }, callback: (err: IErrorResponse, response: IWebproperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -862,6 +989,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IWebproperties, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates an existing web property. This method supports patch semantics.
@@ -871,6 +1000,8 @@ declare module googleapis.analytics {
             patch: (params: {
                 accountId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IWebproperty;
             }, callback: (err: IErrorResponse, response: IWebproperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -881,6 +1012,8 @@ declare module googleapis.analytics {
             update: (params: {
                 accountId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IWebproperty;
             }, callback: (err: IErrorResponse, response: IWebproperty, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -895,6 +1028,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 linkId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Adds a new user to the given web property.
@@ -904,6 +1039,8 @@ declare module googleapis.analytics {
             insert: (params: {
                 accountId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityUserLink;
             }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -918,6 +1055,8 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IEntityUserLinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates permissions for an existing user on the given web property.
@@ -929,6 +1068,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 linkId: string;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IEntityUserLink;
             }, callback: (err: IErrorResponse, response: IEntityUserLink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -941,6 +1082,8 @@ declare module googleapis.analytics {
              */
             list: (params: {
                 reportType: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IColumns, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
@@ -949,6 +1092,8 @@ declare module googleapis.analytics {
          * Creates an account ticket.
          */
         createAccountTicket: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccountTicket;
         }, callback: (err: IErrorResponse, response: IAccountTicket, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

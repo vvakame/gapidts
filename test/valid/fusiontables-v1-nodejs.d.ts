@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function fusiontables(version:string):typeof googleapis.fusiontables;
+    function fusiontables(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.fusiontables;
 }
 /**
  * API for working with Fusion Tables data.
@@ -21,6 +22,8 @@ declare module googleapis.fusiontables {
         delete: (params: {
             columnId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a specific column by its id.
@@ -30,6 +33,8 @@ declare module googleapis.fusiontables {
         get: (params: {
             columnId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IColumn, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a new column to the table.
@@ -37,6 +42,8 @@ declare module googleapis.fusiontables {
          */
         insert: (params: {
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IColumn;
         }, callback: (err: IErrorResponse, response: IColumn, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -49,6 +56,8 @@ declare module googleapis.fusiontables {
             maxResults?: number;
             pageToken?: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IColumnList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the name or type of an existing column. This method supports patch semantics.
@@ -58,6 +67,8 @@ declare module googleapis.fusiontables {
         patch: (params: {
             columnId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IColumn;
         }, callback: (err: IErrorResponse, response: IColumn, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -68,6 +79,8 @@ declare module googleapis.fusiontables {
         update: (params: {
             columnId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IColumn;
         }, callback: (err: IErrorResponse, response: IColumn, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -82,6 +95,8 @@ declare module googleapis.fusiontables {
             hdrs?: boolean;
             sql: string;
             typed?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISqlresponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Executes an SQL SELECT/SHOW/DESCRIBE statement.
@@ -93,6 +108,8 @@ declare module googleapis.fusiontables {
             hdrs?: boolean;
             sql: string;
             typed?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISqlresponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var style: {
@@ -104,6 +121,8 @@ declare module googleapis.fusiontables {
         delete: (params: {
             styleId: number;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a specific style.
@@ -113,6 +132,8 @@ declare module googleapis.fusiontables {
         get: (params: {
             styleId: number;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IStyleSetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Adds a new style for the table.
@@ -120,6 +141,8 @@ declare module googleapis.fusiontables {
          */
         insert: (params: {
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IStyleSetting;
         }, callback: (err: IErrorResponse, response: IStyleSetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -132,6 +155,8 @@ declare module googleapis.fusiontables {
             maxResults?: number;
             pageToken?: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IStyleSettingList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing style. This method supports patch semantics.
@@ -141,6 +166,8 @@ declare module googleapis.fusiontables {
         patch: (params: {
             styleId: number;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IStyleSetting;
         }, callback: (err: IErrorResponse, response: IStyleSetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -151,6 +178,8 @@ declare module googleapis.fusiontables {
         update: (params: {
             styleId: number;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IStyleSetting;
         }, callback: (err: IErrorResponse, response: IStyleSetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -163,6 +192,8 @@ declare module googleapis.fusiontables {
         copy: (params: {
             copyPresentation?: boolean;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes a table.
@@ -170,6 +201,8 @@ declare module googleapis.fusiontables {
          */
         delete: (params: {
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a specific table by its id.
@@ -177,6 +210,8 @@ declare module googleapis.fusiontables {
          */
         get: (params: {
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Import more rows into a table.
@@ -194,6 +229,8 @@ declare module googleapis.fusiontables {
             isStrict?: boolean;
             startLine?: number;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IImport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Import a new table.
@@ -205,11 +242,15 @@ declare module googleapis.fusiontables {
             delimiter?: string;
             encoding?: string;
             name: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new table.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -220,6 +261,8 @@ declare module googleapis.fusiontables {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITableList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing table. Unless explicitly requested, only the name, description, and attribution will be updated. This method supports patch semantics.
@@ -229,6 +272,8 @@ declare module googleapis.fusiontables {
         patch: (params: {
             replaceViewDefinition?: boolean;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -239,6 +284,8 @@ declare module googleapis.fusiontables {
         update: (params: {
             replaceViewDefinition?: boolean;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -251,6 +298,8 @@ declare module googleapis.fusiontables {
         delete: (params: {
             tableId: string;
             taskId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a specific task by its id.
@@ -260,6 +309,8 @@ declare module googleapis.fusiontables {
         get: (params: {
             tableId: string;
             taskId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of tasks.
@@ -273,6 +324,8 @@ declare module googleapis.fusiontables {
             pageToken?: string;
             startIndex?: number;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var template: {
@@ -284,6 +337,8 @@ declare module googleapis.fusiontables {
         delete: (params: {
             tableId: string;
             templateId: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Retrieves a specific template by its id
@@ -293,6 +348,8 @@ declare module googleapis.fusiontables {
         get: (params: {
             tableId: string;
             templateId: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new template for the table.
@@ -300,6 +357,8 @@ declare module googleapis.fusiontables {
          */
         insert: (params: {
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITemplate;
         }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -312,6 +371,8 @@ declare module googleapis.fusiontables {
             maxResults?: number;
             pageToken?: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITemplateList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing template. This method supports patch semantics.
@@ -321,6 +382,8 @@ declare module googleapis.fusiontables {
         patch: (params: {
             tableId: string;
             templateId: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITemplate;
         }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -331,6 +394,8 @@ declare module googleapis.fusiontables {
         update: (params: {
             tableId: string;
             templateId: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITemplate;
         }, callback: (err: IErrorResponse, response: ITemplate, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

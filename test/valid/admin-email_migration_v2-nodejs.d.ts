@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function admin(version:string):typeof googleapis.admin;
+    function admin(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.admin;
 }
 /**
  * Email Migration API lets you migrate emails of users to Google backends.
@@ -19,6 +20,8 @@ declare module googleapis.admin {
          */
         insert: (params: {
             userKey: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMailItem;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };

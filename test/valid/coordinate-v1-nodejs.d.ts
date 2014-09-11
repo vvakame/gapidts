@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function coordinate(version:string):typeof googleapis.coordinate;
+    function coordinate(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.coordinate;
 }
 /**
  * Lets you view and manage jobs in a Coordinate team.
@@ -19,6 +20,8 @@ declare module googleapis.coordinate {
          */
         list: (params: {
             teamId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICustomFieldDefListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var jobs: {
@@ -30,6 +33,8 @@ declare module googleapis.coordinate {
         get: (params: {
             jobId: string;
             teamId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new job. Only the state field of the job should be set.
@@ -55,6 +60,8 @@ declare module googleapis.coordinate {
             note?: string;
             teamId: string;
             title: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IJob;
         }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -69,6 +76,8 @@ declare module googleapis.coordinate {
             minModifiedTimestampMs?: string;
             pageToken?: string;
             teamId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IJobListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a job. Fields that are set in the job state will be updated. This method supports patch semantics.
@@ -98,6 +107,8 @@ declare module googleapis.coordinate {
             progress?: string;
             teamId: string;
             title?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IJob;
         }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -128,6 +139,8 @@ declare module googleapis.coordinate {
             progress?: string;
             teamId: string;
             title?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IJob;
         }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -146,6 +159,8 @@ declare module googleapis.coordinate {
             startTimestampMs: string;
             teamId: string;
             workerEmail: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILocationListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var schedule: {
@@ -157,6 +172,8 @@ declare module googleapis.coordinate {
         get: (params: {
             jobId: string;
             teamId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISchedule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Replaces the schedule of a job with the provided schedule. This method supports patch semantics.
@@ -174,6 +191,8 @@ declare module googleapis.coordinate {
             jobId: string;
             startTime?: string;
             teamId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISchedule;
         }, callback: (err: IErrorResponse, response: ISchedule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -192,6 +211,8 @@ declare module googleapis.coordinate {
             jobId: string;
             startTime?: string;
             teamId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISchedule;
         }, callback: (err: IErrorResponse, response: ISchedule, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -202,6 +223,8 @@ declare module googleapis.coordinate {
          */
         list: (params: {
             teamId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IWorkerListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

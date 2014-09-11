@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function groupsmigration(version:string):typeof googleapis.groupsmigration;
+    function groupsmigration(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.groupsmigration;
 }
 /**
  * Groups Migration Api.
@@ -19,6 +20,8 @@ declare module googleapis.groupsmigration {
          */
         insert: (params: {
             groupId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IGroups, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

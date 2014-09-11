@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function taskqueue(version:string):typeof googleapis.taskqueue;
+    function taskqueue(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.taskqueue;
 }
 /**
  * Lets you access a Google App Engine Pull Task Queue over REST.
@@ -23,6 +24,8 @@ declare module googleapis.taskqueue {
             getStats?: boolean;
             project: string;
             taskqueue: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITaskQueue, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tasks: {
@@ -36,6 +39,8 @@ declare module googleapis.taskqueue {
             project: string;
             task: string;
             taskqueue: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get a particular task from a TaskQueue.
@@ -47,6 +52,8 @@ declare module googleapis.taskqueue {
             project: string;
             task: string;
             taskqueue: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Insert a new task in a TaskQueue
@@ -56,6 +63,8 @@ declare module googleapis.taskqueue {
         insert: (params: {
             project: string;
             taskqueue: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITask;
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -74,6 +83,8 @@ declare module googleapis.taskqueue {
             project: string;
             tag?: string;
             taskqueue: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITasks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List Tasks in a TaskQueue
@@ -83,6 +94,8 @@ declare module googleapis.taskqueue {
         list: (params: {
             project: string;
             taskqueue: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITasks2, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update tasks that are leased out of a TaskQueue. This method supports patch semantics.
@@ -96,6 +109,8 @@ declare module googleapis.taskqueue {
             project: string;
             task: string;
             taskqueue: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITask;
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -110,6 +125,8 @@ declare module googleapis.taskqueue {
             project: string;
             task: string;
             taskqueue: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITask;
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

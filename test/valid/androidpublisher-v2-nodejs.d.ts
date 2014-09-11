@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function androidpublisher(version:string):typeof googleapis.androidpublisher;
+    function androidpublisher(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.androidpublisher;
 }
 /**
  * Lets Android application developers access their Google Play accounts.
@@ -21,6 +22,8 @@ declare module googleapis.androidpublisher {
         commit: (params: {
             editId: string;
             packageName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAppEdit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Deletes an edit for an app. Creating a new edit will automatically delete any of your previous edits so this method need only be called if you want to preemptively abandon an edit.
@@ -30,6 +33,8 @@ declare module googleapis.androidpublisher {
         delete: (params: {
             editId: string;
             packageName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns information about the edit specified. Calls will fail if the edit is no long active (e.g. has been deleted, superseded or expired).
@@ -39,6 +44,8 @@ declare module googleapis.androidpublisher {
         get: (params: {
             editId: string;
             packageName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAppEdit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new edit for an app, populated with the app's current state.
@@ -46,6 +53,8 @@ declare module googleapis.androidpublisher {
          */
         insert: (params: {
             packageName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAppEdit;
         }, callback: (err: IErrorResponse, response: IAppEdit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -56,6 +65,8 @@ declare module googleapis.androidpublisher {
         validate: (params: {
             editId: string;
             packageName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAppEdit, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         apklistings: {
             /**
@@ -70,6 +81,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Deletes all the APK-specific localized listings for a specified APK.
@@ -81,6 +94,8 @@ declare module googleapis.androidpublisher {
                 apkVersionCode: number;
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Fetches the APK-specific localized listing for a specified APK and language code.
@@ -94,6 +109,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IApkListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all the APK-specific localized listings for a specified APK.
@@ -105,6 +122,8 @@ declare module googleapis.androidpublisher {
                 apkVersionCode: number;
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IApkListingsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates or creates the APK-specific localized listing for a specified APK and language code. This method supports patch semantics.
@@ -118,6 +137,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IApkListing;
             }, callback: (err: IErrorResponse, response: IApkListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -132,6 +153,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IApkListing;
             }, callback: (err: IErrorResponse, response: IApkListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -144,6 +167,8 @@ declare module googleapis.androidpublisher {
             list: (params: {
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IApksListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * 
@@ -153,6 +178,8 @@ declare module googleapis.androidpublisher {
             upload: (params: {
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IApk, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         details: {
@@ -164,6 +191,8 @@ declare module googleapis.androidpublisher {
             get: (params: {
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAppDetails, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates app details for this edit. This method supports patch semantics.
@@ -173,6 +202,8 @@ declare module googleapis.androidpublisher {
             patch: (params: {
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAppDetails;
             }, callback: (err: IErrorResponse, response: IAppDetails, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -183,6 +214,8 @@ declare module googleapis.androidpublisher {
             update: (params: {
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IAppDetails;
             }, callback: (err: IErrorResponse, response: IAppDetails, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -199,6 +232,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 expansionFileType: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IExpansionFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the APK's Expansion File configuration to reference another APK's Expansion Files. To add a new Expansion File use the Upload method. This method supports patch semantics.
@@ -212,6 +247,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 expansionFileType: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IExpansionFile;
             }, callback: (err: IErrorResponse, response: IExpansionFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -226,6 +263,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 expansionFileType: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IExpansionFile;
             }, callback: (err: IErrorResponse, response: IExpansionFile, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -240,6 +279,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 expansionFileType: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IExpansionFilesUploadResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         images: {
@@ -257,6 +298,8 @@ declare module googleapis.androidpublisher {
                 imageType: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Deletes all images for the specified language and image type.
@@ -270,6 +313,8 @@ declare module googleapis.androidpublisher {
                 imageType: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IImagesDeleteAllResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all images for the specified language and image type.
@@ -283,6 +328,8 @@ declare module googleapis.androidpublisher {
                 imageType: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IImagesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Uploads a new image and adds it to the list of images for the specified language and image type.
@@ -296,6 +343,8 @@ declare module googleapis.androidpublisher {
                 imageType: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IImagesUploadResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         listings: {
@@ -309,6 +358,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Deletes all localized listings from an edit.
@@ -318,6 +369,8 @@ declare module googleapis.androidpublisher {
             deleteall: (params: {
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Fetches information about a localized store listing.
@@ -329,6 +382,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Returns all of the localized store listings attached to this edit.
@@ -338,6 +393,8 @@ declare module googleapis.androidpublisher {
             list: (params: {
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IListingsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Creates or updates a localized store listing. This method supports patch semantics.
@@ -349,6 +406,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IListing;
             }, callback: (err: IErrorResponse, response: IListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -361,6 +420,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 language: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: IListing;
             }, callback: (err: IErrorResponse, response: IListing, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -375,6 +436,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 track: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ITesters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * 
@@ -386,6 +449,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 track: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: ITesters;
             }, callback: (err: IErrorResponse, response: ITesters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -398,6 +463,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 track: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: ITesters;
             }, callback: (err: IErrorResponse, response: ITesters, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
@@ -412,6 +479,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 track: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ITrack, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Lists all the track configurations for this edit.
@@ -421,6 +490,8 @@ declare module googleapis.androidpublisher {
             list: (params: {
                 editId: string;
                 packageName: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ITracksListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Updates the track configuration for the specified track type. This method supports patch semantics.
@@ -432,6 +503,8 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 track: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: ITrack;
             }, callback: (err: IErrorResponse, response: ITrack, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
@@ -444,12 +517,16 @@ declare module googleapis.androidpublisher {
                 editId: string;
                 packageName: string;
                 track: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 resource?: ITrack;
             }, callback: (err: IErrorResponse, response: ITrack, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
     var inappproducts: {
         batch: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInappproductsBatchRequest;
         }, callback: (err: IErrorResponse, response: IInappproductsBatchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -460,6 +537,8 @@ declare module googleapis.androidpublisher {
         delete: (params: {
             packageName: string;
             sku: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns information about the in-app product specified.
@@ -469,6 +548,8 @@ declare module googleapis.androidpublisher {
         get: (params: {
             packageName: string;
             sku: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInAppProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new in-app product for an app.
@@ -478,6 +559,8 @@ declare module googleapis.androidpublisher {
         insert: (params: {
             autoConvertMissingPrices?: boolean;
             packageName: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInAppProduct;
         }, callback: (err: IErrorResponse, response: IInAppProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -492,6 +575,8 @@ declare module googleapis.androidpublisher {
             packageName: string;
             startIndex?: number;
             token?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInappproductsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the details of an in-app product. This method supports patch semantics.
@@ -503,6 +588,8 @@ declare module googleapis.androidpublisher {
             autoConvertMissingPrices?: boolean;
             packageName: string;
             sku: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInAppProduct;
         }, callback: (err: IErrorResponse, response: IInAppProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -515,6 +602,8 @@ declare module googleapis.androidpublisher {
             autoConvertMissingPrices?: boolean;
             packageName: string;
             sku: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInAppProduct;
         }, callback: (err: IErrorResponse, response: IInAppProduct, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -530,6 +619,8 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 productId: string;
                 token: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IProductPurchase, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
         subscriptions: {
@@ -543,6 +634,8 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 subscriptionId: string;
                 token: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Checks whether a user's subscription purchase is valid and returns its expiry time.
@@ -554,6 +647,8 @@ declare module googleapis.androidpublisher {
                 packageName: string;
                 subscriptionId: string;
                 token: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: ISubscriptionPurchase, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };

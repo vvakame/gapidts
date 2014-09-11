@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function gan(version:string):typeof googleapis.gan;
+    function gan(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.gan;
 }
 /**
  * Lets you have programmatic access to your Google Affiliate Network data.
@@ -23,6 +24,8 @@ declare module googleapis.gan {
             advertiserId?: string;
             role: string;
             roleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdvertiser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves data about all advertisers that the requesting advertiser/publisher has access to.
@@ -46,6 +49,8 @@ declare module googleapis.gan {
             relationshipStatus?: string;
             role: string;
             roleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAdvertisers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var ccOffers: {
@@ -59,6 +64,8 @@ declare module googleapis.gan {
             advertiser?: string;
             projection?: string;
             publisher: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICcOffers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var events: {
@@ -102,6 +109,8 @@ declare module googleapis.gan {
             sku?: string;
             status?: string;
             type?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IEvents, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var links: {
@@ -115,6 +124,8 @@ declare module googleapis.gan {
             linkId: string;
             role: string;
             roleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new link.
@@ -124,6 +135,8 @@ declare module googleapis.gan {
         insert: (params: {
             role: string;
             roleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILink;
         }, callback: (err: IErrorResponse, response: ILink, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -160,6 +173,8 @@ declare module googleapis.gan {
             searchText?: string;
             startDateMax?: string;
             startDateMin?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILinks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var publishers: {
@@ -173,6 +188,8 @@ declare module googleapis.gan {
             publisherId?: string;
             role: string;
             roleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPublisher, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves data about all publishers that the requesting advertiser/publisher has access to.
@@ -196,6 +213,8 @@ declare module googleapis.gan {
             relationshipStatus?: string;
             role: string;
             roleId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPublishers, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
@@ -231,6 +250,8 @@ declare module googleapis.gan {
             startDate?: string;
             startIndex?: number;
             status?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReport, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

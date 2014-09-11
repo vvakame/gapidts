@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function sqladmin(version:string):typeof googleapis.sqladmin;
+    function sqladmin(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.sqladmin;
 }
 /**
  * API for Cloud SQL database instance management.
@@ -25,6 +26,8 @@ declare module googleapis.sqladmin {
             dueTime: string;
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBackupRun, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all backup runs associated with a given instance and configuration in the reverse chronological order of the enqueued time.
@@ -40,6 +43,8 @@ declare module googleapis.sqladmin {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBackupRunsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var instances: {
@@ -51,6 +56,8 @@ declare module googleapis.sqladmin {
         delete: (params: {
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInstancesDeleteResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Exports data from a Cloud SQL instance to a Google Cloud Storage bucket as a MySQL dump file.
@@ -60,6 +67,8 @@ declare module googleapis.sqladmin {
         export: (params: {
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInstancesExportRequest;
         }, callback: (err: IErrorResponse, response: IInstancesExportResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -70,6 +79,8 @@ declare module googleapis.sqladmin {
         get: (params: {
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDatabaseInstance, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Imports data into a Cloud SQL instance from a MySQL dump file in Google Cloud Storage.
@@ -79,6 +90,8 @@ declare module googleapis.sqladmin {
         import: (params: {
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInstancesImportRequest;
         }, callback: (err: IErrorResponse, response: IInstancesImportResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -87,6 +100,8 @@ declare module googleapis.sqladmin {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDatabaseInstance;
         }, callback: (err: IErrorResponse, response: IInstancesInsertResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -99,6 +114,8 @@ declare module googleapis.sqladmin {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInstancesListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates settings of a Cloud SQL instance. Caution: This is not a partial update, so you must include values for all the settings that you want to retain. For partial updates, use patch.. This method supports patch semantics.
@@ -108,6 +125,8 @@ declare module googleapis.sqladmin {
         patch: (params: {
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDatabaseInstance;
         }, callback: (err: IErrorResponse, response: IInstancesUpdateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -118,6 +137,8 @@ declare module googleapis.sqladmin {
         restart: (params: {
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInstancesRestartResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Restores a backup of a Cloud SQL instance.
@@ -131,6 +152,8 @@ declare module googleapis.sqladmin {
             dueTime: string;
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInstancesRestoreBackupResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates settings of a Cloud SQL instance. Caution: This is not a partial update, so you must include values for all the settings that you want to retain. For partial updates, use patch.
@@ -140,6 +163,8 @@ declare module googleapis.sqladmin {
         update: (params: {
             instance: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDatabaseInstance;
         }, callback: (err: IErrorResponse, response: IInstancesUpdateResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -154,6 +179,8 @@ declare module googleapis.sqladmin {
             instance: string;
             operation: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInstanceOperation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all instance operations that have been performed on the given Cloud SQL instance in the reverse chronological order of the start time.
@@ -167,6 +194,8 @@ declare module googleapis.sqladmin {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IOperationsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tiers: {
@@ -174,6 +203,8 @@ declare module googleapis.sqladmin {
          * Lists all available service tiers for Google Cloud SQL, for example D1, D2. For related information, see Pricing.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITiersListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

@@ -19,6 +19,8 @@ class Method {
 		parameterNames.forEach(parameterName=> {
 			this.emitParameter(process, parameterName, this.base.parameters[parameterName]);
 		});
+		process.outputLineNodeJS("key?: string; // API_KEY");
+		process.outputLineNodeJS("auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2");
 		if (this.base.request) {
 			process.output("resource?: I").output(this.base.request.$ref).outputLine(";");
 		}

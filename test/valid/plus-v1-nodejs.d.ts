@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function plus(version:string):typeof googleapis.plus;
+    function plus(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.plus;
 }
 /**
  * The Google+ API enables developers to build on top of the Google+ platform.
@@ -19,6 +20,8 @@ declare module googleapis.plus {
          */
         get: (params: {
             activityId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivity, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the activities in the specified collection for a particular user.
@@ -32,6 +35,8 @@ declare module googleapis.plus {
             maxResults?: number;
             pageToken?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivityFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Search public activities.
@@ -47,6 +52,8 @@ declare module googleapis.plus {
             orderBy?: string;
             pageToken?: string;
             query: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IActivityFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
@@ -56,6 +63,8 @@ declare module googleapis.plus {
          */
         get: (params: {
             commentId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the comments for an activity.
@@ -69,6 +78,8 @@ declare module googleapis.plus {
             maxResults?: number;
             pageToken?: string;
             sortOrder?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var moments: {
@@ -82,6 +93,8 @@ declare module googleapis.plus {
             collection: string;
             debug?: boolean;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IMoment;
         }, callback: (err: IErrorResponse, response: IMoment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -100,6 +113,8 @@ declare module googleapis.plus {
             targetUrl?: string;
             type?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IMomentsFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a moment.
@@ -107,6 +122,8 @@ declare module googleapis.plus {
          */
         remove: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var people: {
@@ -116,6 +133,8 @@ declare module googleapis.plus {
          */
         get: (params: {
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPerson, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people in the specified collection.
@@ -131,6 +150,8 @@ declare module googleapis.plus {
             orderBy?: string;
             pageToken?: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List all of the people in the specified collection for a particular activity.
@@ -144,6 +165,8 @@ declare module googleapis.plus {
             collection: string;
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Search all public profiles.
@@ -157,6 +180,8 @@ declare module googleapis.plus {
             maxResults?: number;
             pageToken?: string;
             query: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPeopleFeed, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IAcl {

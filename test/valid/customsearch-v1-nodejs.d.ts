@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function customsearch(version:string):typeof googleapis.customsearch;
+    function customsearch(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.customsearch;
 }
 /**
  * Lets you search over a website or collection of websites
@@ -81,6 +82,8 @@ declare module googleapis.customsearch {
             siteSearchFilter?: string;
             sort?: string;
             start?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISearch, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IContext {

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function youtubeAnalytics(version:string):typeof googleapis.youtubeAnalytics;
+    function youtubeAnalytics(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.youtubeAnalytics;
 }
 /**
  * Retrieve your YouTube Analytics reports.
@@ -19,6 +20,8 @@ declare module googleapis.youtubeAnalytics {
          */
         list: (params: {
             onBehalfOfContentOwner: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBatchReportDefinitionList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var batchReports: {
@@ -30,6 +33,8 @@ declare module googleapis.youtubeAnalytics {
         list: (params: {
             batchReportDefinitionId: string;
             onBehalfOfContentOwner: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBatchReportList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var reports: {
@@ -57,6 +62,8 @@ declare module googleapis.youtubeAnalytics {
             sort?: string;
             "start-date": string;
             "start-index"?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IResultTable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

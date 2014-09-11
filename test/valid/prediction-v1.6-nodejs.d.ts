@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function prediction(version:string):typeof googleapis.prediction;
+    function prediction(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.prediction;
 }
 /**
  * Lets you access a cloud hosted machine learning service that makes it easy to build smart apps
@@ -21,6 +22,8 @@ declare module googleapis.prediction {
         predict: (params: {
             hostedModelName: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInput;
         }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -33,6 +36,8 @@ declare module googleapis.prediction {
         analyze: (params: {
             id: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IAnalyze, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a trained model.
@@ -42,6 +47,8 @@ declare module googleapis.prediction {
         delete: (params: {
             id: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Check training status of your model.
@@ -51,6 +58,8 @@ declare module googleapis.prediction {
         get: (params: {
             id: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IInsert2, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Train a Prediction API model.
@@ -58,6 +67,8 @@ declare module googleapis.prediction {
          */
         insert: (params: {
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInsert;
         }, callback: (err: IErrorResponse, response: IInsert2, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -70,6 +81,8 @@ declare module googleapis.prediction {
             maxResults?: number;
             pageToken?: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Submit model id and request a prediction.
@@ -79,6 +92,8 @@ declare module googleapis.prediction {
         predict: (params: {
             id: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IInput;
         }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -89,6 +104,8 @@ declare module googleapis.prediction {
         update: (params: {
             id: string;
             project: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IUpdate;
         }, callback: (err: IErrorResponse, response: IInsert2, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

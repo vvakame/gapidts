@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function analytics(version:string):typeof googleapis.analytics;
+    function analytics(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.analytics;
 }
 /**
  * View and manage your Google Analytics data
@@ -37,6 +38,8 @@ declare module googleapis.analytics {
             sort?: string;
             "start-date": string;
             "start-index"?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
     var management: {
@@ -49,6 +52,8 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         goals: {
@@ -66,6 +71,8 @@ declare module googleapis.analytics {
                 profileId: string;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         profiles: {
@@ -81,6 +88,8 @@ declare module googleapis.analytics {
                 "max-results"?: number;
                 "start-index"?: number;
                 webPropertyId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         segments: {
@@ -92,6 +101,8 @@ declare module googleapis.analytics {
             list: (params: {
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
         webproperties: {
@@ -105,6 +116,8 @@ declare module googleapis.analytics {
                 accountId: string;
                 "max-results"?: number;
                 "start-index"?: number;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         };
     };

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function blogger(version:string):typeof googleapis.blogger;
+    function blogger(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.blogger;
 }
 /**
  * API for access to the data within Blogger.
@@ -23,6 +24,8 @@ declare module googleapis.blogger {
             blogId: string;
             maxPosts?: number;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBlogUserInfo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var blogs: {
@@ -36,6 +39,8 @@ declare module googleapis.blogger {
             blogId: string;
             maxPosts?: number;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBlog, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve a Blog by URL.
@@ -45,6 +50,8 @@ declare module googleapis.blogger {
         getByUrl: (params: {
             url: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBlog, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of blogs, possibly filtered.
@@ -60,6 +67,8 @@ declare module googleapis.blogger {
             status?: string;
             userId: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IBlogList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var comments: {
@@ -73,6 +82,8 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Delete a comment by ID.
@@ -84,6 +95,8 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets one comment by ID.
@@ -97,6 +110,8 @@ declare module googleapis.blogger {
             commentId: string;
             postId: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the comments for a post, possibly filtered.
@@ -120,6 +135,8 @@ declare module googleapis.blogger {
             startDate?: string;
             status?: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the comments for a blog, across all posts, possibly filtered.
@@ -137,6 +154,8 @@ declare module googleapis.blogger {
             maxResults?: number;
             pageToken?: string;
             startDate?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ICommentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Marks a comment as spam.
@@ -148,6 +167,8 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Removes the content of a comment.
@@ -159,6 +180,8 @@ declare module googleapis.blogger {
             blogId: string;
             commentId: string;
             postId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IComment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pageViews: {
@@ -170,6 +193,8 @@ declare module googleapis.blogger {
         get: (params: {
             blogId: string;
             range?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPageviews, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var pages: {
@@ -181,6 +206,8 @@ declare module googleapis.blogger {
         delete: (params: {
             blogId: string;
             pageId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets one blog page by ID.
@@ -192,6 +219,8 @@ declare module googleapis.blogger {
             blogId: string;
             pageId: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a page.
@@ -201,6 +230,8 @@ declare module googleapis.blogger {
         insert: (params: {
             blogId: string;
             isDraft?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPage;
         }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -215,6 +246,8 @@ declare module googleapis.blogger {
             fetchBodies?: boolean;
             status?: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPageList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a page. This method supports patch semantics.
@@ -228,6 +261,8 @@ declare module googleapis.blogger {
             pageId: string;
             publish?: boolean;
             revert?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPage;
         }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -238,6 +273,8 @@ declare module googleapis.blogger {
         publish: (params: {
             blogId: string;
             pageId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Revert a published or scheduled page to draft state.
@@ -247,6 +284,8 @@ declare module googleapis.blogger {
         revert: (params: {
             blogId: string;
             pageId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a page.
@@ -260,6 +299,8 @@ declare module googleapis.blogger {
             pageId: string;
             publish?: boolean;
             revert?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPage;
         }, callback: (err: IErrorResponse, response: IPage, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -276,6 +317,8 @@ declare module googleapis.blogger {
             maxComments?: number;
             postId: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPostUserInfo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.
@@ -303,6 +346,8 @@ declare module googleapis.blogger {
             status?: string;
             userId: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPostUserInfosList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var posts: {
@@ -314,6 +359,8 @@ declare module googleapis.blogger {
         delete: (params: {
             blogId: string;
             postId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get a post by ID.
@@ -331,6 +378,8 @@ declare module googleapis.blogger {
             maxComments?: number;
             postId: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieve a Post by Path.
@@ -344,6 +393,8 @@ declare module googleapis.blogger {
             maxComments?: number;
             path: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Add a post.
@@ -357,6 +408,8 @@ declare module googleapis.blogger {
             fetchBody?: boolean;
             fetchImages?: boolean;
             isDraft?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPost;
         }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -385,6 +438,8 @@ declare module googleapis.blogger {
             startDate?: string;
             status?: string;
             view?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPostList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a post. This method supports patch semantics.
@@ -404,6 +459,8 @@ declare module googleapis.blogger {
             postId: string;
             publish?: boolean;
             revert?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPost;
         }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -416,6 +473,8 @@ declare module googleapis.blogger {
             blogId: string;
             postId: string;
             publishDate?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Revert a published or scheduled post to draft state.
@@ -425,6 +484,8 @@ declare module googleapis.blogger {
         revert: (params: {
             blogId: string;
             postId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Search for a post.
@@ -438,6 +499,8 @@ declare module googleapis.blogger {
             fetchBodies?: boolean;
             orderBy?: string;
             q: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPostList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update a post.
@@ -457,6 +520,8 @@ declare module googleapis.blogger {
             postId: string;
             publish?: boolean;
             revert?: boolean;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPost;
         }, callback: (err: IErrorResponse, response: IPost, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -467,6 +532,8 @@ declare module googleapis.blogger {
          */
         get: (params: {
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUser, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     interface IBlog {

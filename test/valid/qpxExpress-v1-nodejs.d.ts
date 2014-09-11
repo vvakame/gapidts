@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function qpxExpress(version:string):typeof googleapis.qpxExpress;
+    function qpxExpress(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.qpxExpress;
 }
 /**
  * Lets you find the least expensive flights between an origin and a destination.
@@ -17,6 +18,8 @@ declare module googleapis.qpxExpress {
          * Returns a list of flights.
          */
         search: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITripsSearchRequest;
         }, callback: (err: IErrorResponse, response: ITripsSearchResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

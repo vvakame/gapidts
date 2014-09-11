@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function appsactivity(version:string):typeof googleapis.appsactivity;
+    function appsactivity(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.appsactivity;
 }
 /**
  * Provides a historical view of activity.
@@ -32,6 +33,8 @@ declare module googleapis.appsactivity {
             pageToken?: string;
             source?: string;
             userId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IListActivitiesResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

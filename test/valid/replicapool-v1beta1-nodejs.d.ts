@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function replicapool(version:string):typeof googleapis.replicapool;
+    function replicapool(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.replicapool;
 }
 /**
  * The Replica Pool API allows users to declaratively provision and manage groups of Google Compute Engine instances based on a common template.
@@ -23,6 +24,8 @@ declare module googleapis.replicapool {
             poolName: string;
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPoolsDeleteRequest;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
@@ -35,6 +38,8 @@ declare module googleapis.replicapool {
             poolName: string;
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPool, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new replica pool.
@@ -44,6 +49,8 @@ declare module googleapis.replicapool {
         insert: (params: {
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IPool;
         }, callback: (err: IErrorResponse, response: IPool, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -58,6 +65,8 @@ declare module googleapis.replicapool {
             pageToken?: string;
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPoolsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Resize a pool. This is an asynchronous operation, and multiple overlapping resize requests can be made. Replica Pools will use the information from the last resize request.
@@ -71,6 +80,8 @@ declare module googleapis.replicapool {
             poolName: string;
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IPool, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Update the template used by the pool.
@@ -82,6 +93,8 @@ declare module googleapis.replicapool {
             poolName: string;
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITemplate;
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
     };
@@ -98,6 +111,8 @@ declare module googleapis.replicapool {
             projectName: string;
             replicaName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IReplicasDeleteRequest;
         }, callback: (err: IErrorResponse, response: IReplica, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -112,6 +127,8 @@ declare module googleapis.replicapool {
             projectName: string;
             replicaName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReplica, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Lists all replicas in a pool.
@@ -127,6 +144,8 @@ declare module googleapis.replicapool {
             poolName: string;
             projectName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReplicasListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Restarts a replica in a pool.
@@ -140,6 +159,8 @@ declare module googleapis.replicapool {
             projectName: string;
             replicaName: string;
             zone: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IReplica, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     /**

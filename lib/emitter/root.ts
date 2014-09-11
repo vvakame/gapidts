@@ -54,6 +54,7 @@ class Root {
 		process.outputLineNodeJS("declare module \"googleapis\" {");
 		process.increaseIndentNodeJS();
 		process.outputNodeJS("function ").outputNodeJS(this.name).outputNodeJS("(version:string):typeof googleapis.").outputNodeJS(this.name).outputLineNodeJS(";");
+		process.outputNodeJS("function ").outputNodeJS(this.name).outputNodeJS("(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.").outputNodeJS(this.name).outputLineNodeJS(";");
 		process.decreaseIndentNodeJS();
 		process.outputLineNodeJS("}");
 

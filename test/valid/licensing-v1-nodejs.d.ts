@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function licensing(version:string):typeof googleapis.licensing;
+    function licensing(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.licensing;
 }
 /**
  * Licensing API to view and manage license for your domain.
@@ -23,6 +24,8 @@ declare module googleapis.licensing {
             productId: string;
             skuId: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get license assignment of a particular product and sku for a user
@@ -34,6 +37,8 @@ declare module googleapis.licensing {
             productId: string;
             skuId: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILicenseAssignment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Assign License.
@@ -43,6 +48,8 @@ declare module googleapis.licensing {
         insert: (params: {
             productId: string;
             skuId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILicenseAssignmentInsert;
         }, callback: (err: IErrorResponse, response: ILicenseAssignment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -57,6 +64,8 @@ declare module googleapis.licensing {
             maxResults?: number;
             pageToken?: string;
             productId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILicenseAssignmentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * List license assignments for given product and sku of the customer.
@@ -72,6 +81,8 @@ declare module googleapis.licensing {
             pageToken?: string;
             productId: string;
             skuId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILicenseAssignmentList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Assign License. This method supports patch semantics.
@@ -83,6 +94,8 @@ declare module googleapis.licensing {
             productId: string;
             skuId: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILicenseAssignment;
         }, callback: (err: IErrorResponse, response: ILicenseAssignment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -95,6 +108,8 @@ declare module googleapis.licensing {
             productId: string;
             skuId: string;
             userId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ILicenseAssignment;
         }, callback: (err: IErrorResponse, response: ILicenseAssignment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

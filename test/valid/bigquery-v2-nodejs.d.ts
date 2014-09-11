@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function bigquery(version:string):typeof googleapis.bigquery;
+    function bigquery(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.bigquery;
 }
 /**
  * A data platform for customers to create, manage, share and query data.
@@ -23,6 +24,8 @@ declare module googleapis.bigquery {
             datasetId: string;
             deleteContents?: boolean;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the dataset specified by datasetID.
@@ -32,6 +35,8 @@ declare module googleapis.bigquery {
         get: (params: {
             datasetId: string;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new empty dataset.
@@ -39,6 +44,8 @@ declare module googleapis.bigquery {
          */
         insert: (params: {
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDataset;
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -53,6 +60,8 @@ declare module googleapis.bigquery {
             maxResults?: number;
             pageToken?: string;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IDatasetList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates information in an existing dataset. The update method replaces the entire dataset resource, whereas the patch method only replaces fields that are provided in the submitted dataset resource. This method supports patch semantics.
@@ -62,6 +71,8 @@ declare module googleapis.bigquery {
         patch: (params: {
             datasetId: string;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDataset;
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -72,6 +83,8 @@ declare module googleapis.bigquery {
         update: (params: {
             datasetId: string;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IDataset;
         }, callback: (err: IErrorResponse, response: IDataset, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -84,6 +97,8 @@ declare module googleapis.bigquery {
         get: (params: {
             jobId: string;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves the results of a query job.
@@ -101,6 +116,8 @@ declare module googleapis.bigquery {
             projectId: string;
             startIndex?: string;
             timeoutMs?: number;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IGetQueryResultsResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Starts a new asynchronous job.
@@ -108,6 +125,8 @@ declare module googleapis.bigquery {
          */
         insert: (params: {
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IJob;
         }, callback: (err: IErrorResponse, response: IJob, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -126,6 +145,8 @@ declare module googleapis.bigquery {
             projectId: string;
             projection?: string;
             stateFilter?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IJobList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Runs a BigQuery SQL query synchronously and returns query results if the query completes within a specified timeout.
@@ -133,6 +154,8 @@ declare module googleapis.bigquery {
          */
         query: (params: {
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IQueryRequest;
         }, callback: (err: IErrorResponse, response: IQueryResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -145,6 +168,8 @@ declare module googleapis.bigquery {
         list: (params: {
             maxResults?: number;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IProjectList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tabledata: {
@@ -158,6 +183,8 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITableDataInsertAllRequest;
         }, callback: (err: IErrorResponse, response: ITableDataInsertAllResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -176,6 +203,8 @@ declare module googleapis.bigquery {
             projectId: string;
             startIndex?: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITableDataList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var tables: {
@@ -189,6 +218,8 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets the specified table resource by table ID. This method does not return the data in the table, it only returns the table resource, which describes the structure of this table.
@@ -200,6 +231,8 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new, empty table in the dataset.
@@ -209,6 +242,8 @@ declare module googleapis.bigquery {
         insert: (params: {
             datasetId: string;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -223,6 +258,8 @@ declare module googleapis.bigquery {
             maxResults?: number;
             pageToken?: string;
             projectId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITableList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource. This method supports patch semantics.
@@ -234,6 +271,8 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -246,6 +285,8 @@ declare module googleapis.bigquery {
             datasetId: string;
             projectId: string;
             tableId: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITable;
         }, callback: (err: IErrorResponse, response: ITable, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

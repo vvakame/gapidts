@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function tasks(version:string):typeof googleapis.tasks;
+    function tasks(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.tasks;
 }
 /**
  * Lets you manage your tasks and task lists.
@@ -19,6 +20,8 @@ declare module googleapis.tasks {
          */
         delete: (params: {
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the authenticated user's specified task list.
@@ -26,11 +29,15 @@ declare module googleapis.tasks {
          */
         get: (params: {
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new task list and adds it to the authenticated user's task lists.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITaskList;
         }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -41,6 +48,8 @@ declare module googleapis.tasks {
         list: (params: {
             maxResults?: string;
             pageToken?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITaskLists, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the authenticated user's specified task list. This method supports patch semantics.
@@ -48,6 +57,8 @@ declare module googleapis.tasks {
          */
         patch: (params: {
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITaskList;
         }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -56,6 +67,8 @@ declare module googleapis.tasks {
          */
         update: (params: {
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITaskList;
         }, callback: (err: IErrorResponse, response: ITaskList, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -66,6 +79,8 @@ declare module googleapis.tasks {
          */
         clear: (params: {
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Deletes the specified task from the task list.
@@ -75,6 +90,8 @@ declare module googleapis.tasks {
         delete: (params: {
             task: string;
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Returns the specified task.
@@ -84,6 +101,8 @@ declare module googleapis.tasks {
         get: (params: {
             task: string;
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Creates a new task on the specified task list.
@@ -95,6 +114,8 @@ declare module googleapis.tasks {
             parent?: string;
             previous?: string;
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITask;
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -123,6 +144,8 @@ declare module googleapis.tasks {
             showHidden?: boolean;
             tasklist: string;
             updatedMin?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITasks, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks.
@@ -136,6 +159,8 @@ declare module googleapis.tasks {
             previous?: string;
             task: string;
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates the specified task. This method supports patch semantics.
@@ -145,6 +170,8 @@ declare module googleapis.tasks {
         patch: (params: {
             task: string;
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITask;
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -155,6 +182,8 @@ declare module googleapis.tasks {
         update: (params: {
             task: string;
             tasklist: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITask;
         }, callback: (err: IErrorResponse, response: ITask, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

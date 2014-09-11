@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function siteVerification(version:string):typeof googleapis.siteVerification;
+    function siteVerification(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.siteVerification;
 }
 /**
  * Lets you programatically verify ownership of websites or domains with Google.
@@ -19,6 +20,8 @@ declare module googleapis.siteVerification {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Get the most current data for a website or domain.
@@ -26,11 +29,15 @@ declare module googleapis.siteVerification {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get a verification token for placing on a website or domain.
          */
         getToken: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISiteVerificationWebResourceGettokenRequest;
         }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceGettokenResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -39,12 +46,16 @@ declare module googleapis.siteVerification {
          */
         insert: (params: {
             verificationMethod: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISiteVerificationWebResourceResource;
         }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Get the list of your verified websites and domains.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Modify the list of owners for your website or domain. This method supports patch semantics.
@@ -52,6 +63,8 @@ declare module googleapis.siteVerification {
          */
         patch: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISiteVerificationWebResourceResource;
         }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -60,6 +73,8 @@ declare module googleapis.siteVerification {
          */
         update: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISiteVerificationWebResourceResource;
         }, callback: (err: IErrorResponse, response: ISiteVerificationWebResourceResource, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };

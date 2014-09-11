@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function oauth2(version:string):typeof googleapis.oauth2;
+    function oauth2(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.oauth2;
 }
 /**
  * Lets you access OAuth2 protocol related APIs.
@@ -15,10 +16,14 @@ declare module googleapis.oauth2 {
     var _tmp: {};
     var userinfo: {
         get: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IUserinfoplus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         v2: {
             me: {
                 get: (params: {
+                    key?: string; // API_KEY
+                    auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
                 }, callback: (err: IErrorResponse, response: IUserinfoplus, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             };
         };

@@ -7,6 +7,7 @@
 
 declare module "googleapis" {
     function mirror(version:string):typeof googleapis.mirror;
+    function mirror(opts: {version:string; auth?: googleapis.google.auth.OAuth2; }):typeof googleapis.mirror;
 }
 /**
  * API for interacting with Glass users via the timeline.
@@ -23,6 +24,8 @@ declare module googleapis.mirror {
             accountName: string;
             accountType: string;
             userToken: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IAccount;
         }, callback: (err: IErrorResponse, response: IAccount, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -33,6 +36,8 @@ declare module googleapis.mirror {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a single contact by ID.
@@ -40,17 +45,23 @@ declare module googleapis.mirror {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IContact, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new contact.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IContact;
         }, callback: (err: IErrorResponse, response: IContact, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of contacts for the authenticated user.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: IContactsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a contact in place. This method supports patch semantics.
@@ -58,6 +69,8 @@ declare module googleapis.mirror {
          */
         patch: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IContact;
         }, callback: (err: IErrorResponse, response: IContact, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -66,6 +79,8 @@ declare module googleapis.mirror {
          */
         update: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: IContact;
         }, callback: (err: IErrorResponse, response: IContact, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -76,11 +91,15 @@ declare module googleapis.mirror {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILocation, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of locations for the user.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ILocationsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var settings: {
@@ -92,6 +111,8 @@ declare module googleapis.mirror {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISetting, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
     var subscriptions: {
@@ -101,17 +122,23 @@ declare module googleapis.mirror {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Creates a new subscription.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISubscription;
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Retrieves a list of subscriptions for the authenticated user and service.
          */
         list: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ISubscriptionsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates an existing subscription in place.
@@ -119,6 +146,8 @@ declare module googleapis.mirror {
          */
         update: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ISubscription;
         }, callback: (err: IErrorResponse, response: ISubscription, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
@@ -129,6 +158,8 @@ declare module googleapis.mirror {
          */
         delete: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
         /**
          * Gets a single timeline item by ID.
@@ -136,11 +167,15 @@ declare module googleapis.mirror {
          */
         get: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITimelineItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Inserts a new item into the timeline.
          */
         insert: (params: {
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITimelineItem;
         }, callback: (err: IErrorResponse, response: ITimelineItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -161,6 +196,8 @@ declare module googleapis.mirror {
             pageToken?: string;
             pinnedOnly?: boolean;
             sourceItemId?: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
         }, callback: (err: IErrorResponse, response: ITimelineListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
          * Updates a timeline item in place. This method supports patch semantics.
@@ -168,6 +205,8 @@ declare module googleapis.mirror {
          */
         patch: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITimelineItem;
         }, callback: (err: IErrorResponse, response: ITimelineItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         /**
@@ -176,6 +215,8 @@ declare module googleapis.mirror {
          */
         update: (params: {
             id: string;
+            key?: string; // API_KEY
+            auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             resource?: ITimelineItem;
         }, callback: (err: IErrorResponse, response: ITimelineItem, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         attachments: {
@@ -187,6 +228,8 @@ declare module googleapis.mirror {
             delete: (params: {
                 attachmentId: string;
                 itemId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: any, incomingMessage: any /* http.IncomingMessage */) => void ) => void; // void
             /**
              * Retrieves an attachment on a timeline item by item ID and attachment ID.
@@ -196,6 +239,8 @@ declare module googleapis.mirror {
             get: (params: {
                 attachmentId: string;
                 itemId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAttachment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Adds a new attachment to a timeline item.
@@ -203,6 +248,8 @@ declare module googleapis.mirror {
              */
             insert: (params: {
                 itemId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAttachment, incomingMessage: any /* http.IncomingMessage */) => void) => void;
             /**
              * Returns a list of attachments for a timeline item.
@@ -210,6 +257,8 @@ declare module googleapis.mirror {
              */
             list: (params: {
                 itemId: string;
+                key?: string; // API_KEY
+                auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
             }, callback: (err: IErrorResponse, response: IAttachmentsListResponse, incomingMessage: any /* http.IncomingMessage */) => void) => void;
         };
     };
