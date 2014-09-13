@@ -3,6 +3,16 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://mail.google.com/
+//   View and manage your mail
+// https://www.googleapis.com/auth/gmail.compose
+//   Manage drafts and send emails
+// https://www.googleapis.com/auth/gmail.modify
+//   View and modify but not delete your email
+// https://www.googleapis.com/auth/gmail.readonly
+//   View your emails messages and settings
+
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
 declare module "googleapis" {

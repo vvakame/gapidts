@@ -3,6 +3,12 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/coordinate
+//   View and manage your Google Maps Coordinate jobs
+// https://www.googleapis.com/auth/coordinate.readonly
+//   View your Google Coordinate jobs
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

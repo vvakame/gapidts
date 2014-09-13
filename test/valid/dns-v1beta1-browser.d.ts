@@ -3,6 +3,14 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/cloud-platform
+//   View and manage your data across Google Cloud Platform services
+// https://www.googleapis.com/auth/ndev.clouddns.readonly
+//   View your DNS records hosted by Google Cloud DNS
+// https://www.googleapis.com/auth/ndev.clouddns.readwrite
+//   View and manage your DNS records hosted by Google Cloud DNS
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

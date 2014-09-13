@@ -3,6 +3,12 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/cloud-platform
+//   View and manage your data across Google Cloud Platform services
+// https://www.googleapis.com/auth/sqlservice.admin
+//   Manage your Google SQL Service instances
+
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
 declare module "googleapis" {

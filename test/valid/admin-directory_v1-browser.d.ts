@@ -3,6 +3,42 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/admin.directory.device.chromeos
+//   View and manage your Chrome OS devices' metadata
+// https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly
+//   View your Chrome OS devices' metadata
+// https://www.googleapis.com/auth/admin.directory.device.mobile
+//   View and manage your mobile devices' metadata
+// https://www.googleapis.com/auth/admin.directory.device.mobile.action
+//   Manage your mobile devices by performing administrative tasks
+// https://www.googleapis.com/auth/admin.directory.device.mobile.readonly
+//   View your mobile devices' metadata
+// https://www.googleapis.com/auth/admin.directory.group
+//   View and manage the provisioning of groups on your domain
+// https://www.googleapis.com/auth/admin.directory.group.member
+//   View and manage group subscriptions on your domain
+// https://www.googleapis.com/auth/admin.directory.group.member.readonly
+//   View group subscriptions on your domain
+// https://www.googleapis.com/auth/admin.directory.group.readonly
+//   View groups on your domain
+// https://www.googleapis.com/auth/admin.directory.notifications
+//   View and manage notifications received on your domain
+// https://www.googleapis.com/auth/admin.directory.orgunit
+//   View and manage organization units on your domain
+// https://www.googleapis.com/auth/admin.directory.orgunit.readonly
+//   View organization units on your domain
+// https://www.googleapis.com/auth/admin.directory.user
+//   View and manage the provisioning of users on your domain
+// https://www.googleapis.com/auth/admin.directory.user.alias
+//   View and manage user aliases on your domain
+// https://www.googleapis.com/auth/admin.directory.user.alias.readonly
+//   View user aliases on your domain
+// https://www.googleapis.com/auth/admin.directory.user.readonly
+//   View users on your domain
+// https://www.googleapis.com/auth/admin.directory.user.security
+//   Manage data access permissions for users on your domain
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

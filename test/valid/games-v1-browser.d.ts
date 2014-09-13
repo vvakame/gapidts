@@ -3,6 +3,14 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/drive.appdata
+//   View and manage its own configuration data in your Google Drive
+// https://www.googleapis.com/auth/games
+//   Share your Google+ profile information and view and manage your game activity
+// https://www.googleapis.com/auth/plus.login
+//   Know your basic profile info and list of people in your circles.
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

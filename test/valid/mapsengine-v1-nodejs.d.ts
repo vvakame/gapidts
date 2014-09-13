@@ -3,6 +3,12 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/mapsengine
+//   View and manage your Google Maps Engine data
+// https://www.googleapis.com/auth/mapsengine.readonly
+//   View your Google Maps Engine data
+
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
 declare module "googleapis" {

@@ -3,6 +3,18 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/youtube
+//   Manage your YouTube account
+// https://www.googleapis.com/auth/youtube.readonly
+//   View your YouTube account
+// https://www.googleapis.com/auth/youtube.upload
+//   Manage your YouTube videos
+// https://www.googleapis.com/auth/youtubepartner
+//   View and manage your assets and associated content on YouTube
+// https://www.googleapis.com/auth/youtubepartner-channel-audit
+//   View private information of your YouTube channel relevant during the audit process with a YouTube partner
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

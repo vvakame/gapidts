@@ -3,6 +3,22 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/drive
+//   View and manage the files and documents in your Google Drive
+// https://www.googleapis.com/auth/drive.appdata
+//   View and manage its own configuration data in your Google Drive
+// https://www.googleapis.com/auth/drive.apps.readonly
+//   View your Google Drive apps
+// https://www.googleapis.com/auth/drive.file
+//   View and manage Google Drive files that you have opened or created with this app
+// https://www.googleapis.com/auth/drive.metadata.readonly
+//   View metadata for files and documents in your Google Drive
+// https://www.googleapis.com/auth/drive.readonly
+//   View the files and documents in your Google Drive
+// https://www.googleapis.com/auth/drive.scripts
+//   Modify your Google Apps Script scripts' behavior
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

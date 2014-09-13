@@ -3,6 +3,18 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/cloud-platform
+//   View and manage your data across Google Cloud Platform services
+// https://www.googleapis.com/auth/compute
+//   View and manage your Google Compute Engine resources
+// https://www.googleapis.com/auth/compute.readonly
+//   View your Google Compute Engine resources
+// https://www.googleapis.com/auth/ndev.cloudman
+//   View and manage your Google Cloud Platform management resources and deployment status information
+// https://www.googleapis.com/auth/ndev.cloudman.readonly
+//   View your Google Cloud Platform management resources and deployment status information
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

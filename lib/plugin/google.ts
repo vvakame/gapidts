@@ -18,6 +18,16 @@ class GoogleDiscoveryBasedAPI implements IPlugin {
 		process.outputLine("// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>");
 		process.outputLine("// Definitions: https://github.com/vvakame/gapidts");
 		process.outputLine("");
+
+		if (root.auth) {
+			process.outputLine("// OAuth2 scopes");
+			Object.keys(root.auth.oauth2.scopes).forEach(key => {
+				var scope = root.auth.oauth2.scopes[key];
+				process.output("// ").outputLine(key);
+				process.output("//   ").outputLine(scope.description);
+			});
+			process.outputLine("");
+		}
 	}
 
 	emitCommonDefinition(process:Process, root:Root) {

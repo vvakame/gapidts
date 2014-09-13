@@ -3,6 +3,10 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/adsensehost
+//   View and manage your AdSense host data and associated accounts
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

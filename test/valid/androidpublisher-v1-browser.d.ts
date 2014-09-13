@@ -3,6 +3,10 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/androidpublisher
+//   View and manage your Google Play Android Developer account
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

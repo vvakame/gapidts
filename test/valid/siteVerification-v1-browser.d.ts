@@ -3,6 +3,12 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/siteverification
+//   Manage the list of sites and domains you control
+// https://www.googleapis.com/auth/siteverification.verify_only
+//   Manage your new site verifications with Google
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

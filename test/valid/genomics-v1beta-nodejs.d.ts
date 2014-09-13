@@ -3,6 +3,16 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/bigquery
+//   View and manage your data in Google BigQuery
+// https://www.googleapis.com/auth/devstorage.read_write
+//   Manage your data in Google Cloud Storage
+// https://www.googleapis.com/auth/genomics
+//   View and manage Genomics data
+// https://www.googleapis.com/auth/genomics.readonly
+//   View Genomics data
+
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
 declare module "googleapis" {

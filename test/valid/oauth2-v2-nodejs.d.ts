@@ -3,6 +3,16 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/plus.login
+//   Know your basic profile info and list of people in your circles.
+// https://www.googleapis.com/auth/plus.me
+//   Know who you are on Google
+// https://www.googleapis.com/auth/userinfo.email
+//   View your email address
+// https://www.googleapis.com/auth/userinfo.profile
+//   View your basic profile info
+
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
 declare module "googleapis" {

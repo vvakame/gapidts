@@ -3,6 +3,12 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/glass.location
+//   View your location
+// https://www.googleapis.com/auth/glass.timeline
+//   View and manage your Glass timeline
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

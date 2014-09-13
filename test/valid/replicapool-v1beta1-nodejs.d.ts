@@ -3,6 +3,18 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/cloud-platform
+//   View and manage your data across Google Cloud Platform services
+// https://www.googleapis.com/auth/ndev.cloudman
+//   View and manage your Google Cloud Platform management resources and deployment status information
+// https://www.googleapis.com/auth/ndev.cloudman.readonly
+//   View your Google Cloud Platform management resources and deployment status information
+// https://www.googleapis.com/auth/replicapool
+//   View and manage replica pools
+// https://www.googleapis.com/auth/replicapool.readonly
+//   View replica pools
+
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
 declare module "googleapis" {

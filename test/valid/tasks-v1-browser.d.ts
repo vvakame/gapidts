@@ -3,6 +3,12 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/tasks
+//   Manage your tasks
+// https://www.googleapis.com/auth/tasks.readonly
+//   View your tasks
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

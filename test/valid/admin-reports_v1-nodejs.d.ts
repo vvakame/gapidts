@@ -3,6 +3,12 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/admin.reports.audit.readonly
+//   View audit reports of Google Apps for your domain
+// https://www.googleapis.com/auth/admin.reports.usage.readonly
+//   View usage reports of Google Apps for your domain
+
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
 declare module "googleapis" {

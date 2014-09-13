@@ -45,6 +45,10 @@ class Root {
 	get description() {
 		return this.base.description;
 	}
+
+	get auth() {
+		return this.base.auth;
+	}
 }
 
 export = Root;

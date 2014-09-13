@@ -3,6 +3,14 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/devstorage.full_control
+//   Manage your data and permissions in Google Cloud Storage
+// https://www.googleapis.com/auth/devstorage.read_only
+//   View your data in Google Cloud Storage
+// https://www.googleapis.com/auth/devstorage.read_write
+//   Manage your data in Google Cloud Storage
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {

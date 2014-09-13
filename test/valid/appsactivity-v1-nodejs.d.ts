@@ -3,6 +3,16 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/activity
+//   View historical activity for Google services
+// https://www.googleapis.com/auth/drive
+//   View and manage the files and documents in your Google Drive
+// https://www.googleapis.com/auth/drive.metadata.readonly
+//   View metadata for files and documents in your Google Drive
+// https://www.googleapis.com/auth/drive.readonly
+//   View the files and documents in your Google Drive
+
 /// <reference path="./googleapis-nodejs-common.d.ts" />
 
 declare module "googleapis" {

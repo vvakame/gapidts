@@ -3,6 +3,10 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/adexchange.buyer
+//   Manage your Ad Exchange buyer account configuration
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {
