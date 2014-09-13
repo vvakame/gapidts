@@ -1,9 +1,9 @@
 {
-  "name": "google-api-typescript-definition-generator",
+  "name": "gapidts",
   "author": "vvakame",
   "private": true,
   "version": "0.1.0",
-  "description": "",
+  "description": "TypeScript .d.ts file generator for Google Discovery based APIs",
   "main": "./index",
   "bin": {
     "gapidts": "./bin/gapidts"
