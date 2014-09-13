@@ -2,7 +2,7 @@
   "name": "google-api-typescript-definition-generator",
   "author": "vvakame",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "./index",
   "bin": {
@@ -39,20 +39,15 @@
   "devDependencies": {
     "googleapis": "1.0.11",
     "source-map-support": "0.2.7",
-
     "grunt": "0.4.5",
-
     "grunt-contrib-clean": "0.6.0",
-
     "grunt-ts": "1.11.7",
     "typescript": "1.0.1",
     "grunt-tslint": "0.4.2",
     "grunt-tsd": "0.1.0",
-
     "mocha": "1.21.4",
     "power-assert": "0.8.0",
     "espower-loader": "0.7.1",
-
     "grunt-mocha": "0.4.11",
     "grunt-mocha-test": "0.11.0",
     "matchdep": "0.3.0"
