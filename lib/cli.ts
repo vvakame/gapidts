@@ -59,6 +59,8 @@ if (opts.list || opts.listShort) {
 	processList();
 } else if (opts.source) {
 	processFromSource();
+} else if (opts.endpoint) {
+	processFromEndpoint();
 } else {
 	processFromId();
 }
@@ -153,6 +155,31 @@ function processFromSource() {
 	}
 }
 
+
+function processFromEndpoint() {
+	var data = url.parse(opts.endpoint);
+	fetch({
+		host: data.host,
+		port: data.protocol === "https:" ? 443 : 80,
+		method: "GET",
+		path: data.path
+	})
+		.then(processJsonSchema)
+		.catch((err)=> {
+			if (err instanceof Error) {
+				console.error(err.stack);
+			} else if (typeof err === "string") {
+				console.error(err);
+			} else if (err && err.stack) {
+				console.error(err.stack);
+			}
+			return Promise.reject(null);
+		})
+		.catch((err)=> {
+			process.exit(1);
+		});
+}
+
 function processFromId() {
 	if (!opts.id) {
 		console.error("--id or --source are required.");
@@ -179,39 +206,7 @@ function processFromId() {
 				path: data.path
 			});
 		})
-		.then(data=> {
-			if (opts.json) {
-				if (opts.outDir) {
-					mkdirp.sync(opts.outDir);
-					// TODO
-					fs.writeFileSync(opts.outDir + "/test.json", data, {encoding: "utf8"});
-				} else {
-					if (opts.silent) {
-						return;
-					}
-					console.log(data);
-				}
-				return true;
-			}
-			var result = gapidts(JSON.parse(data));
-			if (opts.outDir) {
-				mkdirp.sync(opts.outDir);
-				// TODO
-				fs.writeFileSync(opts.outDir + "/googleapis-browser-common.d.ts", result.browserCommon, {encoding: "utf8"});
-				fs.writeFileSync(opts.outDir + "/googleapis-nodejs-common.d.ts", result.nodejsCommon, {encoding: "utf8"});
-				fs.writeFileSync(opts.outDir + "/" + result.name + "-" + result.version + "-browser.d.ts", result.browserDefinition, {encoding: "utf8"});
-				fs.writeFileSync(opts.outDir + "/" + result.name + "-" + result.version + "-nodejs.d.ts", result.nodejsDefinition, {encoding: "utf8"});
-			} else {
-				if (opts.silent) {
-					return;
-				}
-				console.log(result.browserCommon);
-				console.log(result.browserDefinition);
-				console.log(result.nodejsCommon);
-				console.log(result.nodejsDefinition);
-			}
-			return true;
-		})
+		.then(processJsonSchema)
 		.catch((err)=> {
 			if (err instanceof Error) {
 				console.error(err.stack);
@@ -225,4 +220,38 @@ function processFromId() {
 		.catch((err)=> {
 			process.exit(1);
 		});
+}
+
+function processJsonSchema(data:string) {
+	if (opts.json) {
+		if (opts.outDir) {
+			mkdirp.sync(opts.outDir);
+			// TODO
+			fs.writeFileSync(opts.outDir + "/test.json", data, {encoding: "utf8"});
+		} else {
+			if (opts.silent) {
+				return;
+			}
+			console.log(data);
+		}
+		return true;
+	}
+	var result = gapidts(JSON.parse(data));
+	if (opts.outDir) {
+		mkdirp.sync(opts.outDir);
+		// TODO
+		fs.writeFileSync(opts.outDir + "/googleapis-browser-common.d.ts", result.browserCommon, {encoding: "utf8"});
+		fs.writeFileSync(opts.outDir + "/googleapis-nodejs-common.d.ts", result.nodejsCommon, {encoding: "utf8"});
+		fs.writeFileSync(opts.outDir + "/" + result.name + "-" + result.version + "-browser.d.ts", result.browserDefinition, {encoding: "utf8"});
+		fs.writeFileSync(opts.outDir + "/" + result.name + "-" + result.version + "-nodejs.d.ts", result.nodejsDefinition, {encoding: "utf8"});
+	} else {
+		if (opts.silent) {
+			return;
+		}
+		console.log(result.browserCommon);
+		console.log(result.browserDefinition);
+		console.log(result.nodejsCommon);
+		console.log(result.nodejsDefinition);
+	}
+	return true;
 }

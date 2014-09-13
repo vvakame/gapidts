@@ -1,6 +1,7 @@
 /// <reference path="../typings/node/node.d.ts" />
 
 import _model = require("./model");
+_model;
 import _emitter = require("./emitter");
 
 try {
