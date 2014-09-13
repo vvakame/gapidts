@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/vvakame/.nodebrew/current/bin/node',
+1 verbose cli   '/Users/vvakame/.nodebrew/current/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   '.' ]
+2 info using npm@1.4.23
+3 info using node@v0.10.31
+4 verbose node symlink /Users/vvakame/.nodebrew/current/bin/node
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /Users/vvakame/.npm/3a52ce78-.lock
+11 verbose tar pack [ '/Users/vvakame/.npm/gapidts/0.1.1/package.tgz', '.' ]
+12 verbose tarball /Users/vvakame/.npm/gapidts/0.1.1/package.tgz
+13 verbose folder .
+14 info prepublish gapidts@0.1.1
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. /Users/vvakame/.npm/1f1177db-tar.lock
+17 silly lockFile f65c1e2a-me-npm-gapidts-0-1-1-package-tgz tar:///Users/vvakame/.npm/gapidts/0.1.1/package.tgz
+18 verbose lock tar:///Users/vvakame/.npm/gapidts/0.1.1/package.tgz /Users/vvakame/.npm/f65c1e2a-me-npm-gapidts-0-1-1-package-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile f65c1e2a-me-npm-gapidts-0-1-1-package-tgz tar:///Users/vvakame/.npm/gapidts/0.1.1/package.tgz
+22 silly lockFile f65c1e2a-me-npm-gapidts-0-1-1-package-tgz tar:///Users/vvakame/.npm/gapidts/0.1.1/package.tgz
+23 silly lockFile a49f7c23-vakame-npm-gapidts-0-1-1-package /Users/vvakame/.npm/gapidts/0.1.1/package
+24 verbose lock /Users/vvakame/.npm/gapidts/0.1.1/package /Users/vvakame/.npm/a49f7c23-vakame-npm-gapidts-0-1-1-package.lock
+25 silly lockFile a49f7c23-vakame-npm-gapidts-0-1-1-package /Users/vvakame/.npm/gapidts/0.1.1/package
+26 silly lockFile a49f7c23-vakame-npm-gapidts-0-1-1-package /Users/vvakame/.npm/gapidts/0.1.1/package
+27 silly lockFile 3a52ce78- .
+28 silly lockFile 3a52ce78- .
+29 silly publish { name: 'gapidts',
+29 silly publish   author: { name: 'vvakame' },
+29 silly publish   private: true,
+29 silly publish   version: '0.1.1',
+29 silly publish   description: 'TypeScript .d.ts file generator for Google Discovery based APIs',
+29 silly publish   main: './index',
+29 silly publish   bin: { gapidts: './bin/gapidts' },
+29 silly publish   scripts: { build: 'grunt default', test: 'grunt test' },
+29 silly publish   keywords: [ 'TypeScript', 'google', 'google apis' ],
+29 silly publish   license: 'MIT',
+29 silly publish   homepage: 'https://github.com/vvakame/google-api-typescript-definition-generator',
+29 silly publish   repository:
+29 silly publish    { type: 'git',
+29 silly publish      url: 'git@github.com:vvakame/google-api-typescript-definition-generator.git' },
+29 silly publish   bugs: { url: 'https://github.com/vvakame/google-api-typescript-definition-generator/issues' },
+29 silly publish   engines: { node: '>= 0.10.0' },
+29 silly publish   dependencies:
+29 silly publish    { 'update-notifier': '0.2.0',
+29 silly publish      commander: '2.3.0',
+29 silly publish      colors: '0.6.2',
+29 silly publish      'es6-promise': '1.0.0',
+29 silly publish      mkdirp: '0.5.0' },
+29 silly publish   devDependencies:
+29 silly publish    { googleapis: '1.0.11',
+29 silly publish      'source-map-support': '0.2.7',
+29 silly publish      grunt: '0.4.5',
+29 silly publish      'grunt-contrib-clean': '0.6.0',
+29 silly publish      'grunt-ts': '1.11.7',
+29 silly publish      typescript: '1.0.1',
+29 silly publish      'grunt-tslint': '0.4.2',
+29 silly publish      'grunt-tsd': '0.1.0',
+29 silly publish      mocha: '1.21.4',
+29 silly publish      'power-assert': '0.8.0',
+29 silly publish      'espower-loader': '0.7.1',
+29 silly publish      'grunt-mocha': '0.4.11',
+29 silly publish      'grunt-mocha-test': '0.11.0',
+29 silly publish      matchdep: '0.3.0' },
+29 silly publish   readme: '# gapidts\n\nthe TypeScript definition file generator for Google APIs Discovery Service\n\n## Usage\n\n```\n$ gapidts --help\n\n    Usage: gapidts [options]\n\n    Options:\n\n      -h, --help                   output usage information\n      --source <file>              specified source JSON file\n      --list-short                 list of API ID.\n      --list                       list of API ID.\n      --id <apiId>                 endpoint ID. e.g. urlshortener:v1\n      --host [hostName]            host name. default www.googleapis.com\n      --port [port]                port number. default 443\n      --discovery-api-path <path>  discovery api path. default /discovery/v1/apis\n      --endpoint <endpoint>        path. e.g. https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest\n      --out <outFileName>          output file name\n```\n\n```\n$ gapidts --list\n...\nblogger:v3\n\t Blogger API\n\t API for access to the data within Blogger.\n\nbooks:v1\n\t Books API\n\t Lets you search for books and manage your Google Books library.\n...\n$ gapidts --id books:v1 --out books-v1.d.ts\n$ ls -la books-v1.d.ts\n-rw-r--r--  1 vvakame  staff  41898  9  6 02:52 books-v1.d.ts\n```\n',
+29 silly publish   readmeFilename: 'README.md',
+29 silly publish   gitHead: '5dfdcb71a7f3bcdbd4f2e02d6b9df89092ffc4a7',
+29 silly publish   _id: 'gapidts@0.1.1',
+29 silly publish   _shasum: '90f91aa2571dfe25160b44b6445a6c7e351ffc26',
+29 silly publish   _from: '.' }
+30 error Error: This package has been marked as private
+30 error Remove the 'private' field from the package.json to publish it.
+30 error     at publish_ (/Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/lib/publish.js:91:31)
+30 error     at Array.1 (/Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+30 error     at LOOP (/Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+30 error     at LOOP (/Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+30 error     at chain (/Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+30 error     at /Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/lib/publish.js:57:5
+30 error     at /Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/node_modules/inflight/inflight.js:22:7
+30 error     at Array.forEach (native)
+30 error     at res (/Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/node_modules/inflight/inflight.js:21:9)
+30 error     at f (/Users/vvakame/.nodebrew/node/v0.10.31/lib/node_modules/npm/node_modules/once/once.js:16:25)
+31 error If you need help, you may report this *entire* log,
+31 error including the npm and node versions, at:
+31 error     <http://github.com/npm/npm/issues>
+32 error System Darwin 13.3.0
+33 error command "/Users/vvakame/.nodebrew/current/bin/node" "/Users/vvakame/.nodebrew/current/bin/npm" "publish" "."
+34 error cwd /Users/vvakame/Dropbox/work/gapidts
+35 error node -v v0.10.31
+36 error npm -v 1.4.23
+37 verbose exit [ 1, true ]
