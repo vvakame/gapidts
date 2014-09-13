@@ -29,14 +29,14 @@ if (notifier.update) {
 
 // <hoge> is required, [hoge] is optional
 program
-	.option("--source <file>", "specified source JSON file")
+	.option("--source <file>", "specified source JSON file.")
 	.option("--list-short", "list of API ID.")
 	.option("--list", "list of API ID.")
 	.option("--json", "emit schema source by JSON.")
 	.option("--id <apiId>", "endpoint ID. e.g. urlshortener:v1")
 	.option("--endpoint <endpoint>", "path. e.g. https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest")
-	.option("--outDir <directory>", "output file name")
-	.option("--silent", "execute silently")
+	.option("--outDir <directory>", "output directory.")
+	.option("--silent", "execute silently.")
 	.parse(process.argv);
 
 interface ICommandlineOptions {
