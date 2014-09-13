@@ -12,9 +12,12 @@ import Process = require("../process");
 class GoogleDiscoveryBasedAPI implements IPlugin {
 
 	emitDefinitionHeader(process:Process, root:Root) {
-		process.output("// Type definitions for ").output(root.ownerName || "").output(" ");
-		process.output(root.title).output(" ").outputLine(root.version);
-		process.output("// Project: ").outputLine(root.documentationLink);
+		process.output("// Type definitions for ");
+		if (root.ownerName) {
+			process.output(root.ownerName).output(" ");
+		}
+		process.output(root.title || root.name).output(" ").outputLine(root.version);
+		process.output("// Project: ").outputLine(root.documentationLink || root.baseUrl);
 		process.outputLine("// Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>");
 		process.outputLine("// Definitions: https://github.com/vvakame/gapidts");
 		process.outputLine("");

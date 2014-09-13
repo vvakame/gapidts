@@ -42,6 +42,10 @@ class Root {
 		return this.base.documentationLink;
 	}
 
+	get baseUrl() {
+		return this.base.baseUrl;
+	}
+
 	get description() {
 		return this.base.description;
 	}
