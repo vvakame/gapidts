@@ -1,7 +1,7 @@
 {
   "name": "gapidts",
   "author": "vvakame",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "TypeScript .d.ts file generator for Google Discovery based APIs",
   "main": "./index",
   "bin": {
