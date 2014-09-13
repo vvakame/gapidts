@@ -1,8 +1,7 @@
 /// <reference path="../typings/node/node.d.ts" />
 
 import _model = require("./model");
-_model; // avoid eliminator
-import _emitter = require("./emitter/index");
+import _emitter = require("./emitter");
 
 try {
 	// optional

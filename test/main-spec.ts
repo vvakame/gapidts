@@ -10,14 +10,14 @@ import path = require("path");
 import util = require("./util");
 
 import model = require("../lib/model");
-import emitter = require("../lib/emitter/index");
+import emitter = require("../lib/emitter");
 
 interface IServiceInfo {
 	name: string;
 	version: string;
 }
 
-describe("definition emitter", ()=> {
+describe("definition api", ()=> {
 	var serviceInfos:IServiceInfo[] = fs.readdirSync("./test/fixture")
 		.map(fileName=> {
 			var matches = fileName.match(/^(.+)-(.+)-rest.json$/);

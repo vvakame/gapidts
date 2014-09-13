@@ -13,7 +13,6 @@ declare module "googleapis" {
  * Lets you access OAuth2 protocol related APIs.
  */
 declare module googleapis.oauth2 {
-    var _tmp: {};
     var userinfo: {
         /**
          * Get user info
@@ -34,6 +33,17 @@ declare module googleapis.oauth2 {
             };
         };
     };
+    /**
+     * Get token info
+     * @params {string} access_token The oauth2 access token
+     * @params {string} id_token The ID token
+     */
+    var tokeninfo: (params: {
+        access_token?: string;
+        id_token?: string;
+        key?: string; // API_KEY
+        auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
+    }, callback: (err: IErrorResponse, response: ITokeninfo, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     interface ITokeninfo {
         /**
          * The access type granted with this token. It can be offline or online.

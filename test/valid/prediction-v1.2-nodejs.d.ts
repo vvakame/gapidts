@@ -13,7 +13,6 @@ declare module "googleapis" {
  * Lets you access a cloud hosted machine learning service that makes it easy to build smart apps
  */
 declare module googleapis.prediction {
-    var _tmp: {};
     var hostedmodels: {
         /**
          * Submit input and request an output against a hosted model
@@ -66,6 +65,16 @@ declare module googleapis.prediction {
             resource?: IUpdate;
         }, callback: (err: IErrorResponse, response: ITraining, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     };
+    /**
+     * Submit data and request a prediction
+     * @params {string} data mybucket%2Fmydata resource in Google Storage
+     */
+    var predict: (params: {
+        data: string;
+        key?: string; // API_KEY
+        auth?: googleapis.google.auth.OAuth2; // string(API_KEY) or googleapis.google.auth.OAuth2
+        resource?: IInput;
+    }, callback: (err: IErrorResponse, response: IOutput, incomingMessage: any /* http.IncomingMessage */) => void) => void;
     interface IInput {
         input: {
             csvInstance: any[];

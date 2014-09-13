@@ -10,7 +10,6 @@ declare module gapi.client {
      * Lets you access a cloud hosted machine learning service that makes it easy to build smart apps
      */
     module prediction {
-        var _tmp: {};
         var hostedmodels: {
             /**
              * Submit input and request an output against a hosted model
@@ -53,6 +52,14 @@ declare module gapi.client {
                 resource?: IUpdate;
             }) => { execute(callback: (data: IResponse<ITraining>, original: string) => void):void; };
         };
+        /**
+         * Submit data and request a prediction
+         * @params {string} data mybucket%2Fmydata resource in Google Storage
+         */
+        var predict: (params: {
+            data: string;
+            resource?: IInput;
+        }) => { execute(callback: (data: IResponse<IOutput>, original: string) => void):void; };
         interface IInput {
             input: {
                 csvInstance: any[];

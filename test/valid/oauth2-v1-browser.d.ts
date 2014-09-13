@@ -10,7 +10,6 @@ declare module gapi.client {
      * Lets you access OAuth2 protocol related APIs.
      */
     module oauth2 {
-        var _tmp: {};
         var userinfo: {
             /**
              * Get user info
@@ -27,6 +26,15 @@ declare module gapi.client {
                 };
             };
         };
+        /**
+         * Get token info
+         * @params {string} access_token The oauth2 access token
+         * @params {string} id_token The ID token
+         */
+        var tokeninfo: (params: {
+            access_token?: string;
+            id_token?: string;
+        }) => { execute(callback: (data: IResponse<ITokeninfo>, original: string) => void):void; };
         interface ITokeninfo {
             /**
              * The access type granted with this token. It can be offline or online.
