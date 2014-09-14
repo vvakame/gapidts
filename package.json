@@ -17,13 +17,13 @@
     "google apis"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/vvakame/google-api-typescript-definition-generator",
+  "homepage": "https://github.com/vvakame/gapidts",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vvakame/google-api-typescript-definition-generator.git"
+    "url": "git@github.com:vvakame/gapidts.git"
   },
   "bugs": {
-    "url": "https://github.com/vvakame/google-api-typescript-definition-generator/issues"
+    "url": "https://github.com/vvakame/gapidts/issues"
   },
   "engines": {
     "node": ">= 0.10.0"
