@@ -26,7 +26,15 @@ declare module gapi.client {
                 pageToken?: string;
                 profileId: string;
                 resource?: IDimensionValueRequest;
-            }) => { execute(callback: (data: IResponse<IDimensionValueList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDimensionValueList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDimensionValueList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDimensionValueList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDimensionValueList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDimensionValueList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDimensionValueList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDimensionValueList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var files: {
             /**
@@ -43,7 +51,15 @@ declare module gapi.client {
                 profileId: string;
                 sortField?: string;
                 sortOrder?: string;
-            }) => { execute(callback: (data: IResponse<IFileList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFileList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var reports: {
             /**
@@ -54,7 +70,15 @@ declare module gapi.client {
             delete: (params: {
                 profileId: string;
                 reportId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a report by its ID.
              * @params {string} profileId The DFA user profile ID.
@@ -63,7 +87,15 @@ declare module gapi.client {
             get: (params: {
                 profileId: string;
                 reportId: string;
-            }) => { execute(callback: (data: IResponse<IReport>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IReport>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a report.
              * @params {string} profileId The DFA user profile ID.
@@ -71,7 +103,15 @@ declare module gapi.client {
             insert: (params: {
                 profileId: string;
                 resource?: IReport;
-            }) => { execute(callback: (data: IResponse<IReport>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IReport>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves list of reports.
              * @params {number} maxResults Maximum number of results to return.
@@ -86,7 +126,15 @@ declare module gapi.client {
                 profileId: string;
                 sortField?: string;
                 sortOrder?: string;
-            }) => { execute(callback: (data: IResponse<IReportList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IReportList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReportList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReportList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReportList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReportList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReportList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReportList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a report. This method supports patch semantics.
              * @params {string} profileId The DFA user profile ID.
@@ -96,7 +144,15 @@ declare module gapi.client {
                 profileId: string;
                 reportId: string;
                 resource?: IReport;
-            }) => { execute(callback: (data: IResponse<IReport>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IReport>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Runs a report.
              * @params {string} profileId The DFA profile ID.
@@ -107,7 +163,15 @@ declare module gapi.client {
                 profileId: string;
                 reportId: string;
                 synchronous?: boolean;
-            }) => { execute(callback: (data: IResponse<IFile>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFile>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a report.
              * @params {string} profileId The DFA user profile ID.
@@ -117,7 +181,15 @@ declare module gapi.client {
                 profileId: string;
                 reportId: string;
                 resource?: IReport;
-            }) => { execute(callback: (data: IResponse<IReport>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IReport>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             files: {
                 /**
                  * Retrieves a report file.
@@ -129,7 +201,15 @@ declare module gapi.client {
                     fileId: string;
                     profileId: string;
                     reportId: string;
-                }) => { execute(callback: (data: IResponse<IFile>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFile>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists files for a report.
                  * @params {number} maxResults Maximum number of results to return.
@@ -146,7 +226,15 @@ declare module gapi.client {
                     reportId: string;
                     sortField?: string;
                     sortOrder?: string;
-                }) => { execute(callback: (data: IResponse<IFileList>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFileList>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var userProfiles: {
@@ -156,12 +244,28 @@ declare module gapi.client {
              */
             get: (params: {
                 profileId: string;
-            }) => { execute(callback: (data: IResponse<IUserProfile>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUserProfile>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves list of user profiles for a user.
              */
             list: (params: {
-            }) => { execute(callback: (data: IResponse<IUserProfileList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUserProfileList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfileList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserProfileList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Represents an activity group.

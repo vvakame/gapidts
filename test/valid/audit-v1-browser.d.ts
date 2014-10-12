@@ -37,7 +37,15 @@ declare module gapi.client {
                 eventName?: string;
                 maxResults?: number;
                 startTime?: string;
-            }) => { execute(callback: (data: IResponse<IActivities>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IActivities>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivities>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivities>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivities>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivities>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivities>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivities>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IActivities {
             /**

@@ -25,7 +25,15 @@ declare module gapi.client {
             get: (params: {
                 accountId: string;
                 tree?: boolean;
-            }) => { execute(callback: (data: IResponse<IAccount>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccount>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all accounts available to this AdSense account.
              * @params {number} maxResults The maximum number of accounts to include in the response, used for paging.
@@ -34,7 +42,15 @@ declare module gapi.client {
             list: (params: {
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IAccounts>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccounts>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             adclients: {
                 /**
                  * List all ad clients in the specified account.
@@ -46,7 +62,15 @@ declare module gapi.client {
                     accountId: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IAdClients>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAdClients>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             adunits: {
                 /**
@@ -59,7 +83,15 @@ declare module gapi.client {
                     accountId: string;
                     adClientId: string;
                     adUnitId: string;
-                }) => { execute(callback: (data: IResponse<IAdUnit>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAdUnit>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Get ad code for the specified ad unit.
                  * @params {string} accountId Account which contains the ad client.
@@ -70,7 +102,15 @@ declare module gapi.client {
                     accountId: string;
                     adClientId: string;
                     adUnitId: string;
-                }) => { execute(callback: (data: IResponse<IAdCode>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAdCode>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * List all ad units in the specified ad client for the specified account.
                  * @params {string} accountId Account to which the ad client belongs.
@@ -85,7 +125,15 @@ declare module gapi.client {
                     includeInactive?: boolean;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IAdUnits>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAdUnits>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 customchannels: {
                     /**
                      * List all custom channels which the specified ad unit belongs to.
@@ -101,7 +149,15 @@ declare module gapi.client {
                         adUnitId: string;
                         maxResults?: number;
                         pageToken?: string;
-                    }) => { execute(callback: (data: IResponse<ICustomChannels>, original: string) => void):void; };
+                    }) => {
+                        execute(callback: (data: IResponse<ICustomChannels>, original: string) => void):void;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    };
                 };
             };
             alerts: {
@@ -113,7 +169,15 @@ declare module gapi.client {
                 delete: (params: {
                     accountId: string;
                     alertId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * List the alerts for the specified AdSense account.
                  * @params {string} accountId Account for which to retrieve the alerts.
@@ -122,7 +186,15 @@ declare module gapi.client {
                 list: (params: {
                     accountId: string;
                     locale?: string;
-                }) => { execute(callback: (data: IResponse<IAlerts>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAlerts>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             customchannels: {
                 /**
@@ -135,7 +207,15 @@ declare module gapi.client {
                     accountId: string;
                     adClientId: string;
                     customChannelId: string;
-                }) => { execute(callback: (data: IResponse<ICustomChannel>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ICustomChannel>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * List all custom channels in the specified ad client for the specified account.
                  * @params {string} accountId Account to which the ad client belongs.
@@ -148,7 +228,15 @@ declare module gapi.client {
                     adClientId: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<ICustomChannels>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ICustomChannels>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 adunits: {
                     /**
                      * List all ad units in the specified custom channel.
@@ -166,7 +254,15 @@ declare module gapi.client {
                         includeInactive?: boolean;
                         maxResults?: number;
                         pageToken?: string;
-                    }) => { execute(callback: (data: IResponse<IAdUnits>, original: string) => void):void; };
+                    }) => {
+                        execute(callback: (data: IResponse<IAdUnits>, original: string) => void):void;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    };
                 };
             };
             payments: {
@@ -176,7 +272,15 @@ declare module gapi.client {
                  */
                 list: (params: {
                     accountId: string;
-                }) => { execute(callback: (data: IResponse<IPayments>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IPayments>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             reports: {
                 /**
@@ -207,7 +311,15 @@ declare module gapi.client {
                     startDate: string;
                     startIndex?: number;
                     useTimezoneReporting?: boolean;
-                }) => { execute(callback: (data: IResponse<IAdsenseReportsGenerateResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAdsenseReportsGenerateResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 saved: {
                     /**
                      * Generate an AdSense report based on the saved report ID sent in the query parameters.
@@ -223,7 +335,15 @@ declare module gapi.client {
                         maxResults?: number;
                         savedReportId: string;
                         startIndex?: number;
-                    }) => { execute(callback: (data: IResponse<IAdsenseReportsGenerateResponse>, original: string) => void):void; };
+                    }) => {
+                        execute(callback: (data: IResponse<IAdsenseReportsGenerateResponse>, original: string) => void):void;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    };
                     /**
                      * List all saved reports in the specified AdSense account.
                      * @params {string} accountId Account to which the saved reports belong.
@@ -234,7 +354,15 @@ declare module gapi.client {
                         accountId: string;
                         maxResults?: number;
                         pageToken?: string;
-                    }) => { execute(callback: (data: IResponse<ISavedReports>, original: string) => void):void; };
+                    }) => {
+                        execute(callback: (data: IResponse<ISavedReports>, original: string) => void):void;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    };
                 };
             };
             savedadstyles: {
@@ -246,7 +374,15 @@ declare module gapi.client {
                 get: (params: {
                     accountId: string;
                     savedAdStyleId: string;
-                }) => { execute(callback: (data: IResponse<ISavedAdStyle>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ISavedAdStyle>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * List all saved ad styles in the specified account.
                  * @params {string} accountId Account for which to list saved ad styles.
@@ -257,7 +393,15 @@ declare module gapi.client {
                     accountId: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<ISavedAdStyles>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ISavedAdStyles>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             urlchannels: {
                 /**
@@ -272,7 +416,15 @@ declare module gapi.client {
                     adClientId: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IUrlChannels>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IUrlChannels>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var adclients: {
@@ -284,7 +436,15 @@ declare module gapi.client {
             list: (params: {
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IAdClients>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAdClients>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdClients>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var adunits: {
             /**
@@ -295,7 +455,15 @@ declare module gapi.client {
             get: (params: {
                 adClientId: string;
                 adUnitId: string;
-            }) => { execute(callback: (data: IResponse<IAdUnit>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAdUnit>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get ad code for the specified ad unit.
              * @params {string} adClientId Ad client with contains the ad unit.
@@ -304,7 +472,15 @@ declare module gapi.client {
             getAdCode: (params: {
                 adClientId: string;
                 adUnitId: string;
-            }) => { execute(callback: (data: IResponse<IAdCode>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAdCode>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdCode>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all ad units in the specified ad client for this AdSense account.
              * @params {string} adClientId Ad client for which to list ad units.
@@ -317,7 +493,15 @@ declare module gapi.client {
                 includeInactive?: boolean;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IAdUnits>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAdUnits>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             customchannels: {
                 /**
                  * List all custom channels which the specified ad unit belongs to.
@@ -331,7 +515,15 @@ declare module gapi.client {
                     adUnitId: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<ICustomChannels>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ICustomChannels>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var alerts: {
@@ -341,14 +533,30 @@ declare module gapi.client {
              */
             delete: (params: {
                 alertId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List the alerts for this AdSense account.
              * @params {string} locale The locale to use for translating alert messages. The account locale will be used if this is not supplied. The AdSense default (English) will be used if the supplied locale is invalid or unsupported.
              */
             list: (params: {
                 locale?: string;
-            }) => { execute(callback: (data: IResponse<IAlerts>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAlerts>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAlerts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var customchannels: {
             /**
@@ -359,7 +567,15 @@ declare module gapi.client {
             get: (params: {
                 adClientId: string;
                 customChannelId: string;
-            }) => { execute(callback: (data: IResponse<ICustomChannel>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICustomChannel>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all custom channels in the specified ad client for this AdSense account.
              * @params {string} adClientId Ad client for which to list custom channels.
@@ -370,7 +586,15 @@ declare module gapi.client {
                 adClientId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<ICustomChannels>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICustomChannels>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             adunits: {
                 /**
                  * List all ad units in the specified custom channel.
@@ -386,7 +610,15 @@ declare module gapi.client {
                     includeInactive?: boolean;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IAdUnits>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAdUnits>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdUnits>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var metadata: {
@@ -395,14 +627,30 @@ declare module gapi.client {
                  * List the metadata for the dimensions available to this AdSense account.
                  */
                 list: (params: {
-                }) => { execute(callback: (data: IResponse<IMetadata>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMetadata>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             metrics: {
                 /**
                  * List the metadata for the metrics available to this AdSense account.
                  */
                 list: (params: {
-                }) => { execute(callback: (data: IResponse<IMetadata>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMetadata>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMetadata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var payments: {
@@ -410,7 +658,15 @@ declare module gapi.client {
              * List the payments for this AdSense account.
              */
             list: (params: {
-            }) => { execute(callback: (data: IResponse<IPayments>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPayments>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPayments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var reports: {
             /**
@@ -441,7 +697,15 @@ declare module gapi.client {
                 startDate: string;
                 startIndex?: number;
                 useTimezoneReporting?: boolean;
-            }) => { execute(callback: (data: IResponse<IAdsenseReportsGenerateResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAdsenseReportsGenerateResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             saved: {
                 /**
                  * Generate an AdSense report based on the saved report ID sent in the query parameters.
@@ -455,7 +719,15 @@ declare module gapi.client {
                     maxResults?: number;
                     savedReportId: string;
                     startIndex?: number;
-                }) => { execute(callback: (data: IResponse<IAdsenseReportsGenerateResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAdsenseReportsGenerateResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAdsenseReportsGenerateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * List all saved reports in this AdSense account.
                  * @params {number} maxResults The maximum number of saved reports to include in the response, used for paging.
@@ -464,7 +736,15 @@ declare module gapi.client {
                 list: (params: {
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<ISavedReports>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ISavedReports>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISavedReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var savedadstyles: {
@@ -474,7 +754,15 @@ declare module gapi.client {
              */
             get: (params: {
                 savedAdStyleId: string;
-            }) => { execute(callback: (data: IResponse<ISavedAdStyle>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISavedAdStyle>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyle>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all saved ad styles in the user's account.
              * @params {number} maxResults The maximum number of saved ad styles to include in the response, used for paging.
@@ -483,7 +771,15 @@ declare module gapi.client {
             list: (params: {
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<ISavedAdStyles>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISavedAdStyles>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISavedAdStyles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var urlchannels: {
             /**
@@ -496,7 +792,15 @@ declare module gapi.client {
                 adClientId: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IUrlChannels>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUrlChannels>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlChannels>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IAccount {
             /**

@@ -24,7 +24,15 @@ declare module gapi.client {
             allocateIds: (params: {
                 datasetId: string;
                 resource?: IAllocateIdsRequest;
-            }) => { execute(callback: (data: IResponse<IAllocateIdsResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAllocateIdsResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAllocateIdsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAllocateIdsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAllocateIdsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAllocateIdsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAllocateIdsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAllocateIdsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Begin a new transaction.
              * @params {string} datasetId Identifies the dataset.
@@ -32,7 +40,15 @@ declare module gapi.client {
             beginTransaction: (params: {
                 datasetId: string;
                 resource?: IBeginTransactionRequest;
-            }) => { execute(callback: (data: IResponse<IBeginTransactionResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBeginTransactionResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBeginTransactionResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBeginTransactionResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBeginTransactionResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBeginTransactionResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBeginTransactionResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBeginTransactionResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Create, delete or modify some entities outside a transaction.
              * @params {string} datasetId Identifies the dataset.
@@ -40,7 +56,15 @@ declare module gapi.client {
             blindWrite: (params: {
                 datasetId: string;
                 resource?: IBlindWriteRequest;
-            }) => { execute(callback: (data: IResponse<IBlindWriteResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBlindWriteResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlindWriteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlindWriteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlindWriteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlindWriteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlindWriteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlindWriteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Commit a transaction, optionally creating, deleting or modifying some entities.
              * @params {string} datasetId Identifies the dataset.
@@ -48,7 +72,15 @@ declare module gapi.client {
             commit: (params: {
                 datasetId: string;
                 resource?: ICommitRequest;
-            }) => { execute(callback: (data: IResponse<ICommitResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICommitResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommitResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommitResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommitResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommitResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommitResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommitResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Look up some entities by key.
              * @params {string} datasetId Identifies the dataset.
@@ -56,7 +88,15 @@ declare module gapi.client {
             lookup: (params: {
                 datasetId: string;
                 resource?: ILookupRequest;
-            }) => { execute(callback: (data: IResponse<ILookupResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILookupResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILookupResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILookupResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILookupResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILookupResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILookupResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILookupResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Roll back a transaction.
              * @params {string} datasetId Identifies the dataset.
@@ -64,7 +104,15 @@ declare module gapi.client {
             rollback: (params: {
                 datasetId: string;
                 resource?: IRollbackRequest;
-            }) => { execute(callback: (data: IResponse<IRollbackResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRollbackResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRollbackResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRollbackResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRollbackResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRollbackResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRollbackResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRollbackResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Query for entities.
              * @params {string} datasetId Identifies the dataset.
@@ -72,7 +120,15 @@ declare module gapi.client {
             runQuery: (params: {
                 datasetId: string;
                 resource?: IRunQueryRequest;
-            }) => { execute(callback: (data: IResponse<IRunQueryResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRunQueryResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRunQueryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRunQueryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRunQueryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRunQueryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRunQueryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRunQueryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IAllocateIdsRequest {
             /**

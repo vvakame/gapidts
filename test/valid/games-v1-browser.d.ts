@@ -29,7 +29,15 @@ declare module gapi.client {
                 language?: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IAchievementDefinitionsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAchievementDefinitionsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementDefinitionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementDefinitionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementDefinitionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementDefinitionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementDefinitionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementDefinitionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var achievements: {
             /**
@@ -42,7 +50,15 @@ declare module gapi.client {
                 achievementId: string;
                 requestId?: string;
                 stepsToIncrement: number;
-            }) => { execute(callback: (data: IResponse<IAchievementIncrementResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAchievementIncrementResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementIncrementResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementIncrementResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementIncrementResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementIncrementResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementIncrementResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementIncrementResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the progress for all your application's achievements for the currently authenticated player.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -57,14 +73,30 @@ declare module gapi.client {
                 pageToken?: string;
                 playerId: string;
                 state?: string;
-            }) => { execute(callback: (data: IResponse<IPlayerAchievementListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlayerAchievementListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerAchievementListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerAchievementListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerAchievementListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerAchievementListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerAchievementListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerAchievementListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets the state of the achievement with the given ID to REVEALED for the currently authenticated player.
              * @params {string} achievementId The ID of the achievement used by this method.
              */
             reveal: (params: {
                 achievementId: string;
-            }) => { execute(callback: (data: IResponse<IAchievementRevealResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAchievementRevealResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementRevealResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementRevealResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementRevealResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementRevealResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementRevealResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementRevealResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets the steps for the currently authenticated player towards unlocking an achievement. If the steps parameter is less than the current number of steps that the player already gained for the achievement, the achievement is not modified.
              * @params {string} achievementId The ID of the achievement used by this method.
@@ -73,20 +105,44 @@ declare module gapi.client {
             setStepsAtLeast: (params: {
                 achievementId: string;
                 steps: number;
-            }) => { execute(callback: (data: IResponse<IAchievementSetStepsAtLeastResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAchievementSetStepsAtLeastResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementSetStepsAtLeastResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementSetStepsAtLeastResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementSetStepsAtLeastResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementSetStepsAtLeastResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementSetStepsAtLeastResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementSetStepsAtLeastResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Unlocks this achievement for the currently authenticated player.
              * @params {string} achievementId The ID of the achievement used by this method.
              */
             unlock: (params: {
                 achievementId: string;
-            }) => { execute(callback: (data: IResponse<IAchievementUnlockResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAchievementUnlockResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUnlockResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUnlockResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUnlockResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUnlockResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUnlockResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUnlockResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates multiple achievements for the currently authenticated player.
              */
             updateMultiple: (params: {
                 resource?: IAchievementUpdateMultipleRequest;
-            }) => { execute(callback: (data: IResponse<IAchievementUpdateMultipleResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAchievementUpdateMultipleResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUpdateMultipleResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUpdateMultipleResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUpdateMultipleResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUpdateMultipleResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUpdateMultipleResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAchievementUpdateMultipleResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var applications: {
             /**
@@ -99,12 +155,28 @@ declare module gapi.client {
                 applicationId: string;
                 language?: string;
                 platformType?: string;
-            }) => { execute(callback: (data: IResponse<IApplication>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IApplication>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IApplication>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IApplication>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IApplication>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IApplication>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IApplication>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IApplication>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Indicate that the the currently authenticated user is playing your application.
              */
             played: (params: {
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var events: {
             /**
@@ -117,7 +189,15 @@ declare module gapi.client {
                 language?: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IPlayerEventListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlayerEventListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerEventListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerEventListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerEventListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerEventListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerEventListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerEventListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns a list of the event definitions in this application.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -128,7 +208,15 @@ declare module gapi.client {
                 language?: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IEventDefinitionListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEventDefinitionListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventDefinitionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventDefinitionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventDefinitionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventDefinitionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventDefinitionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventDefinitionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Records a batch of changes to the number of times events have occurred for the currently authenticated user of this application.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -136,7 +224,15 @@ declare module gapi.client {
             record: (params: {
                 language?: string;
                 resource?: IEventRecordRequest;
-            }) => { execute(callback: (data: IResponse<IEventUpdateResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEventUpdateResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEventUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var leaderboards: {
             /**
@@ -147,7 +243,15 @@ declare module gapi.client {
             get: (params: {
                 language?: string;
                 leaderboardId: string;
-            }) => { execute(callback: (data: IResponse<ILeaderboard>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILeaderboard>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboard>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboard>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboard>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboard>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboard>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboard>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists all the leaderboard metadata for your application.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -158,14 +262,30 @@ declare module gapi.client {
                 language?: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<ILeaderboardListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILeaderboardListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var metagame: {
             /**
              * Return the metagame configuration data for the calling application.
              */
             getMetagameConfig: (params: {
-            }) => { execute(callback: (data: IResponse<IMetagameConfig>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMetagameConfig>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMetagameConfig>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMetagameConfig>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMetagameConfig>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMetagameConfig>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMetagameConfig>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMetagameConfig>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List play data aggregated per category for the player corresponding to playerId.
              * @params {string} collection The collection of categories for which data will be returned.
@@ -180,7 +300,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 playerId: string;
-            }) => { execute(callback: (data: IResponse<ICategoryListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICategoryListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var players: {
             /**
@@ -191,7 +319,15 @@ declare module gapi.client {
             get: (params: {
                 language?: string;
                 playerId: string;
-            }) => { execute(callback: (data: IResponse<IPlayer>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlayer>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get the collection of players for the currently authenticated user.
              * @params {string} collection Collection of players being retrieved
@@ -204,7 +340,15 @@ declare module gapi.client {
                 language?: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IPlayerListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlayerListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var pushtokens: {
             /**
@@ -212,13 +356,29 @@ declare module gapi.client {
              */
             remove: (params: {
                 resource?: IPushTokenId;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Registers a push token for the current user and application.
              */
             update: (params: {
                 resource?: IPushToken;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var questMilestones: {
             /**
@@ -231,7 +391,15 @@ declare module gapi.client {
                 milestoneId: string;
                 questId: string;
                 requestId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var quests: {
             /**
@@ -242,7 +410,15 @@ declare module gapi.client {
             accept: (params: {
                 language?: string;
                 questId: string;
-            }) => { execute(callback: (data: IResponse<IQuest>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IQuest>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuest>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuest>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuest>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuest>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuest>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuest>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get a list of quests for your application and the currently authenticated player.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -255,7 +431,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 playerId: string;
-            }) => { execute(callback: (data: IResponse<IQuestListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IQuestListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuestListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuestListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuestListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuestListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuestListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IQuestListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var revisions: {
             /**
@@ -269,7 +453,15 @@ declare module gapi.client {
              */
             check: (params: {
                 clientRevision: string;
-            }) => { execute(callback: (data: IResponse<IRevisionCheckResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRevisionCheckResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRevisionCheckResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRevisionCheckResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRevisionCheckResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRevisionCheckResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRevisionCheckResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRevisionCheckResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var rooms: {
             /**
@@ -279,7 +471,15 @@ declare module gapi.client {
             create: (params: {
                 language?: string;
                 resource?: IRoomCreateRequest;
-            }) => { execute(callback: (data: IResponse<IRoom>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRoom>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Decline an invitation to join a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -288,14 +488,30 @@ declare module gapi.client {
             decline: (params: {
                 language?: string;
                 roomId: string;
-            }) => { execute(callback: (data: IResponse<IRoom>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRoom>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Dismiss an invitation to join a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
              * @params {string} roomId The ID of the room.
              */
             dismiss: (params: {
                 roomId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get the data for a room.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -304,7 +520,15 @@ declare module gapi.client {
             get: (params: {
                 language?: string;
                 roomId: string;
-            }) => { execute(callback: (data: IResponse<IRoom>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRoom>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Join a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -314,7 +538,15 @@ declare module gapi.client {
                 language?: string;
                 roomId: string;
                 resource?: IRoomJoinRequest;
-            }) => { execute(callback: (data: IResponse<IRoom>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRoom>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Leave a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -324,7 +556,15 @@ declare module gapi.client {
                 language?: string;
                 roomId: string;
                 resource?: IRoomLeaveRequest;
-            }) => { execute(callback: (data: IResponse<IRoom>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRoom>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoom>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns invitations to join rooms.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -335,7 +575,15 @@ declare module gapi.client {
                 language?: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IRoomList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRoomList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates sent by a client reporting the status of peers in a room. For internal use by the Games SDK only. Calling this method directly is unsupported.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -345,7 +593,15 @@ declare module gapi.client {
                 language?: string;
                 roomId: string;
                 resource?: IRoomP2PStatuses;
-            }) => { execute(callback: (data: IResponse<IRoomStatus>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRoomStatus>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoomStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var scores: {
             /**
@@ -367,7 +623,15 @@ declare module gapi.client {
                 pageToken?: string;
                 playerId: string;
                 timeSpan: string;
-            }) => { execute(callback: (data: IResponse<IPlayerLeaderboardScoreListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlayerLeaderboardScoreListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerLeaderboardScoreListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerLeaderboardScoreListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerLeaderboardScoreListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerLeaderboardScoreListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerLeaderboardScoreListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerLeaderboardScoreListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the scores in a leaderboard, starting from the top.
              * @params {string} collection The collection of scores you're requesting.
@@ -384,7 +648,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 timeSpan: string;
-            }) => { execute(callback: (data: IResponse<ILeaderboardScores>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILeaderboardScores>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the scores in a leaderboard around (and including) a player's score.
              * @params {string} collection The collection of scores you're requesting.
@@ -405,7 +677,15 @@ declare module gapi.client {
                 resultsAbove?: number;
                 returnTopIfAbsent?: boolean;
                 timeSpan: string;
-            }) => { execute(callback: (data: IResponse<ILeaderboardScores>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILeaderboardScores>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILeaderboardScores>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Submits a score to the specified leaderboard.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -418,7 +698,15 @@ declare module gapi.client {
                 leaderboardId: string;
                 score: string;
                 scoreTag?: string;
-            }) => { execute(callback: (data: IResponse<IPlayerScoreResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlayerScoreResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Submits multiple scores to leaderboards.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -426,7 +714,15 @@ declare module gapi.client {
             submitMultiple: (params: {
                 language?: string;
                 resource?: IPlayerScoreSubmissionList;
-            }) => { execute(callback: (data: IResponse<IPlayerScoreListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlayerScoreListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlayerScoreListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var snapshots: {
             /**
@@ -437,7 +733,15 @@ declare module gapi.client {
             get: (params: {
                 language?: string;
                 snapshotId: string;
-            }) => { execute(callback: (data: IResponse<ISnapshot>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISnapshot>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of snapshots created by your application for the player corresponding to the player ID.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -450,7 +754,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 playerId: string;
-            }) => { execute(callback: (data: IResponse<ISnapshotListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISnapshotListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var turnBasedMatches: {
             /**
@@ -459,7 +771,15 @@ declare module gapi.client {
              */
             cancel: (params: {
                 matchId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Create a turn-based match.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -467,7 +787,15 @@ declare module gapi.client {
             create: (params: {
                 language?: string;
                 resource?: ITurnBasedMatchCreateRequest;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Decline an invitation to play a turn-based match.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -476,14 +804,30 @@ declare module gapi.client {
             decline: (params: {
                 language?: string;
                 matchId: string;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Dismiss a turn-based match from the match list. The match will no longer show up in the list and will not generate notifications.
              * @params {string} matchId The ID of the match.
              */
             dismiss: (params: {
                 matchId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Finish a turn-based match. Each player should make this call once, after all results are in. Only the player whose turn it is may make the first call to Finish, and can pass in the final match state.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -493,7 +837,15 @@ declare module gapi.client {
                 language?: string;
                 matchId: string;
                 resource?: ITurnBasedMatchResults;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get the data for a turn-based match.
              * @params {boolean} includeMatchData Get match data along with metadata.
@@ -504,7 +856,15 @@ declare module gapi.client {
                 includeMatchData?: boolean;
                 language?: string;
                 matchId: string;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Join a turn-based match.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -513,7 +873,15 @@ declare module gapi.client {
             join: (params: {
                 language?: string;
                 matchId: string;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Leave a turn-based match when it is not the current player's turn, without canceling the match.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -522,7 +890,15 @@ declare module gapi.client {
             leave: (params: {
                 language?: string;
                 matchId: string;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Leave a turn-based match during the current player's turn, without canceling the match.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -535,7 +911,15 @@ declare module gapi.client {
                 matchId: string;
                 matchVersion: number;
                 pendingParticipantId?: string;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns turn-based matches the player is or was involved in.
              * @params {boolean} includeMatchData True if match data should be returned in the response. Note that not all data will necessarily be returned if include_match_data is true; the server may decide to only return data for some of the matches to limit download size for the client. The remainder of the data for these matches will be retrievable on request.
@@ -550,7 +934,15 @@ declare module gapi.client {
                 maxCompletedMatches?: number;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatchList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatchList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Create a rematch of a match that was previously completed, with the same participants. This can be called by only one player on a match still in their list; the player must have called Finish first. Returns the newly created match; it will be the caller's turn.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -561,7 +953,15 @@ declare module gapi.client {
                 language?: string;
                 matchId: string;
                 requestId?: string;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatchRematch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatchRematch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchRematch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchRematch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchRematch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchRematch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchRematch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchRematch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns turn-based matches the player is or was involved in that changed since the last sync call, with the least recent changes coming first. Matches that should be removed from the local cache will have a status of MATCH_DELETED.
              * @params {boolean} includeMatchData True if match data should be returned in the response. Note that not all data will necessarily be returned if include_match_data is true; the server may decide to only return data for some of the matches to limit download size for the client. The remainder of the data for these matches will be retrievable on request.
@@ -576,7 +976,15 @@ declare module gapi.client {
                 maxCompletedMatches?: number;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatchSync>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatchSync>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchSync>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchSync>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchSync>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchSync>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchSync>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatchSync>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Commit the results of a player turn.
              * @params {string} language The preferred language to use for strings returned by this method.
@@ -586,7 +994,15 @@ declare module gapi.client {
                 language?: string;
                 matchId: string;
                 resource?: ITurnBasedMatchTurn;
-            }) => { execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITurnBasedMatch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITurnBasedMatch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * This is a JSON template for an achievement definition object.

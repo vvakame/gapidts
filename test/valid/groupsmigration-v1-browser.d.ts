@@ -17,7 +17,15 @@ declare module gapi.client {
              */
             insert: (params: {
                 groupId: string;
-            }) => { execute(callback: (data: IResponse<IGroups>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IGroups>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * JSON response template for groups migration API.

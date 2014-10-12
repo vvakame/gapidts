@@ -16,66 +16,154 @@ declare module gapi.client {
              */
             createAuthUri: (params: {
                 resource?: IIdentitytoolkitRelyingpartyCreateAuthUriRequest;
-            }) => { execute(callback: (data: IResponse<ICreateAuthUriResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICreateAuthUriResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreateAuthUriResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreateAuthUriResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreateAuthUriResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreateAuthUriResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreateAuthUriResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreateAuthUriResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete user account.
              */
             deleteAccount: (params: {
                 resource?: IIdentitytoolkitRelyingpartyDeleteAccountRequest;
-            }) => { execute(callback: (data: IResponse<IDeleteAccountResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDeleteAccountResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDeleteAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDeleteAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDeleteAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDeleteAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDeleteAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDeleteAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Batch download user accounts.
              */
             downloadAccount: (params: {
                 resource?: IIdentitytoolkitRelyingpartyDownloadAccountRequest;
-            }) => { execute(callback: (data: IResponse<IDownloadAccountResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDownloadAccountResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the account info.
              */
             getAccountInfo: (params: {
                 resource?: IIdentitytoolkitRelyingpartyGetAccountInfoRequest;
-            }) => { execute(callback: (data: IResponse<IGetAccountInfoResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IGetAccountInfoResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetAccountInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetAccountInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetAccountInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetAccountInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetAccountInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetAccountInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get a code for user action confirmation.
              */
             getOobConfirmationCode: (params: {
                 resource?: IRelyingparty;
-            }) => { execute(callback: (data: IResponse<IGetOobConfirmationCodeResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IGetOobConfirmationCodeResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetOobConfirmationCodeResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetOobConfirmationCodeResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetOobConfirmationCodeResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetOobConfirmationCodeResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetOobConfirmationCodeResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGetOobConfirmationCodeResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get token signing public key.
              */
             getPublicKeys: (params: {
-            }) => { execute(callback: (data: IResponse<IIdentitytoolkitRelyingpartyGetPublicKeysResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IIdentitytoolkitRelyingpartyGetPublicKeysResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IIdentitytoolkitRelyingpartyGetPublicKeysResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IIdentitytoolkitRelyingpartyGetPublicKeysResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IIdentitytoolkitRelyingpartyGetPublicKeysResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IIdentitytoolkitRelyingpartyGetPublicKeysResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IIdentitytoolkitRelyingpartyGetPublicKeysResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IIdentitytoolkitRelyingpartyGetPublicKeysResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Set account info for a user.
              */
             resetPassword: (params: {
                 resource?: IIdentitytoolkitRelyingpartyResetPasswordRequest;
-            }) => { execute(callback: (data: IResponse<IResetPasswordResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IResetPasswordResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResetPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResetPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResetPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResetPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResetPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResetPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Set account info for a user.
              */
             setAccountInfo: (params: {
                 resource?: IIdentitytoolkitRelyingpartySetAccountInfoRequest;
-            }) => { execute(callback: (data: IResponse<ISetAccountInfoResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISetAccountInfoResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetAccountInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetAccountInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetAccountInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetAccountInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetAccountInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetAccountInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Batch upload existing user accounts.
              */
             uploadAccount: (params: {
                 resource?: IIdentitytoolkitRelyingpartyUploadAccountRequest;
-            }) => { execute(callback: (data: IResponse<IUploadAccountResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUploadAccountResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUploadAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUploadAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUploadAccountResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUploadAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUploadAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUploadAccountResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Verifies the assertion returned by the IdP.
              */
             verifyAssertion: (params: {
                 resource?: IIdentitytoolkitRelyingpartyVerifyAssertionRequest;
-            }) => { execute(callback: (data: IResponse<IVerifyAssertionResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVerifyAssertionResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyAssertionResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyAssertionResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyAssertionResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyAssertionResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyAssertionResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyAssertionResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Verifies the user entered password.
              */
             verifyPassword: (params: {
                 resource?: IIdentitytoolkitRelyingpartyVerifyPasswordRequest;
-            }) => { execute(callback: (data: IResponse<IVerifyPasswordResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVerifyPasswordResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVerifyPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Response of creating the IDP authentication URL.

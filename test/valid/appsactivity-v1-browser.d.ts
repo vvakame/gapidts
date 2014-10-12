@@ -40,7 +40,15 @@ declare module gapi.client {
                 pageToken?: string;
                 source?: string;
                 userId?: string;
-            }) => { execute(callback: (data: IResponse<IListActivitiesResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IListActivitiesResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListActivitiesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListActivitiesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListActivitiesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListActivitiesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListActivitiesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListActivitiesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * An Activity resource is a combined view of multiple events. An activity has a list of individual events and a combined view of the common fields among all events.

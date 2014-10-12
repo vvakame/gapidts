@@ -3,6 +3,8 @@
 // Definitions by: vvakame <https://github.com/vvakame>
 // Definitions: https://github.com/vvakame/gapidts
 
+// https://github.com/google/google-api-nodejs-client#authorizing-and-authenticating
+
 declare module googleapis {
 
 	module google {

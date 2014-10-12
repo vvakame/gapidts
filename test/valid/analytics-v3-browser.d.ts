@@ -52,7 +52,15 @@ declare module gapi.client {
                     sort?: string;
                     "start-date": string;
                     "start-index"?: number;
-                }) => { execute(callback: (data: IResponse<IGaData>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IGaData>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGaData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGaData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGaData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGaData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGaData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGaData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             mcf: {
                 /**
@@ -79,7 +87,15 @@ declare module gapi.client {
                     sort?: string;
                     "start-date": string;
                     "start-index"?: number;
-                }) => { execute(callback: (data: IResponse<IMcfData>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMcfData>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMcfData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMcfData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMcfData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMcfData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMcfData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMcfData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             realtime: {
                 /**
@@ -98,7 +114,15 @@ declare module gapi.client {
                     "max-results"?: number;
                     metrics: string;
                     sort?: string;
-                }) => { execute(callback: (data: IResponse<IRealtimeData>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IRealtimeData>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRealtimeData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRealtimeData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRealtimeData>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRealtimeData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRealtimeData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRealtimeData>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var management: {
@@ -111,7 +135,15 @@ declare module gapi.client {
                 list: (params: {
                     "max-results"?: number;
                     "start-index"?: number;
-                }) => { execute(callback: (data: IResponse<IAccountSummaries>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAccountSummaries>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccountSummaries>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccountSummaries>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccountSummaries>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccountSummaries>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccountSummaries>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccountSummaries>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             accountUserLinks: {
                 /**
@@ -122,7 +154,15 @@ declare module gapi.client {
                 delete: (params: {
                     accountId: string;
                     linkId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Adds a new user to the given account.
                  * @params {string} accountId Account ID to create the user link for.
@@ -130,7 +170,15 @@ declare module gapi.client {
                 insert: (params: {
                     accountId: string;
                     resource?: IEntityUserLink;
-                }) => { execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists account-user links for a given account.
                  * @params {string} accountId Account ID to retrieve the user links for.
@@ -141,7 +189,15 @@ declare module gapi.client {
                     accountId: string;
                     "max-results"?: number;
                     "start-index"?: number;
-                }) => { execute(callback: (data: IResponse<IEntityUserLinks>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLinks>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates permissions for an existing user on the given account.
                  * @params {string} accountId Account ID to update the account-user link for.
@@ -151,7 +207,15 @@ declare module gapi.client {
                     accountId: string;
                     linkId: string;
                     resource?: IEntityUserLink;
-                }) => { execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             accounts: {
                 /**
@@ -162,7 +226,15 @@ declare module gapi.client {
                 list: (params: {
                     "max-results"?: number;
                     "start-index"?: number;
-                }) => { execute(callback: (data: IResponse<IAccounts>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAccounts>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAccounts>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             customDataSources: {
                 /**
@@ -177,7 +249,15 @@ declare module gapi.client {
                     "max-results"?: number;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<ICustomDataSources>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ICustomDataSources>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomDataSources>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomDataSources>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomDataSources>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomDataSources>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomDataSources>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ICustomDataSources>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             dailyUploads: {
                 /**
@@ -194,7 +274,15 @@ declare module gapi.client {
                     date: string;
                     type: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * List daily uploads to which the user has access.
                  * @params {string} accountId Account Id for the daily uploads to retrieve.
@@ -213,7 +301,15 @@ declare module gapi.client {
                     "start-date": string;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IDailyUploads>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IDailyUploads>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploads>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploads>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploads>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploads>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploads>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploads>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Update/Overwrite data for a custom data source.
                  * @params {string} accountId Account Id associated with daily upload.
@@ -232,7 +328,15 @@ declare module gapi.client {
                     reset?: boolean;
                     type: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IDailyUploadAppend>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IDailyUploadAppend>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploadAppend>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploadAppend>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploadAppend>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploadAppend>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploadAppend>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDailyUploadAppend>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             experiments: {
                 /**
@@ -247,7 +351,15 @@ declare module gapi.client {
                     experimentId: string;
                     profileId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Returns an experiment to which the user has access.
                  * @params {string} accountId Account ID to retrieve the experiment for.
@@ -260,7 +372,15 @@ declare module gapi.client {
                     experimentId: string;
                     profileId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IExperiment>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExperiment>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Create a new experiment.
                  * @params {string} accountId Account ID to create the experiment for.
@@ -272,7 +392,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IExperiment;
-                }) => { execute(callback: (data: IResponse<IExperiment>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExperiment>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists experiments to which the user has access.
                  * @params {string} accountId Account ID to retrieve experiments for.
@@ -287,7 +415,15 @@ declare module gapi.client {
                     profileId: string;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IExperiments>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExperiments>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Update an existing experiment. This method supports patch semantics.
                  * @params {string} accountId Account ID of the experiment to update.
@@ -301,7 +437,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IExperiment;
-                }) => { execute(callback: (data: IResponse<IExperiment>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExperiment>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Update an existing experiment.
                  * @params {string} accountId Account ID of the experiment to update.
@@ -315,7 +459,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IExperiment;
-                }) => { execute(callback: (data: IResponse<IExperiment>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExperiment>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExperiment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             filters: {
                 /**
@@ -326,7 +478,15 @@ declare module gapi.client {
                 delete: (params: {
                     accountId: string;
                     filterId: string;
-                }) => { execute(callback: (data: IResponse<IFilter>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFilter>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Returns a filters to which the user has access.
                  * @params {string} accountId Account ID to retrieve filters for.
@@ -335,7 +495,15 @@ declare module gapi.client {
                 get: (params: {
                     accountId: string;
                     filterId: string;
-                }) => { execute(callback: (data: IResponse<IFilter>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFilter>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Create a new filter.
                  * @params {string} accountId Account ID to create filter for.
@@ -343,7 +511,15 @@ declare module gapi.client {
                 insert: (params: {
                     accountId: string;
                     resource?: IFilter;
-                }) => { execute(callback: (data: IResponse<IFilter>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFilter>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists all filters for an account
                  * @params {string} accountId Account ID to retrieve filters for.
@@ -354,7 +530,15 @@ declare module gapi.client {
                     accountId: string;
                     "max-results"?: number;
                     "start-index"?: number;
-                }) => { execute(callback: (data: IResponse<IFilters>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFilters>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing filter. This method supports patch semantics.
                  * @params {string} accountId Account ID to which the filter belongs.
@@ -364,7 +548,15 @@ declare module gapi.client {
                     accountId: string;
                     filterId: string;
                     resource?: IFilter;
-                }) => { execute(callback: (data: IResponse<IFilter>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFilter>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing filter.
                  * @params {string} accountId Account ID to which the filter belongs.
@@ -374,7 +566,15 @@ declare module gapi.client {
                     accountId: string;
                     filterId: string;
                     resource?: IFilter;
-                }) => { execute(callback: (data: IResponse<IFilter>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFilter>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFilter>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             goals: {
                 /**
@@ -389,7 +589,15 @@ declare module gapi.client {
                     goalId: string;
                     profileId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IGoal>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IGoal>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Create a new goal.
                  * @params {string} accountId Account ID to create the goal for.
@@ -401,7 +609,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IGoal;
-                }) => { execute(callback: (data: IResponse<IGoal>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IGoal>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists goals to which the user has access.
                  * @params {string} accountId Account ID to retrieve goals for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
@@ -416,7 +632,15 @@ declare module gapi.client {
                     profileId: string;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IGoals>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IGoals>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoals>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoals>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoals>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoals>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoals>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoals>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing view (profile). This method supports patch semantics.
                  * @params {string} accountId Account ID to update the goal.
@@ -430,7 +654,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IGoal;
-                }) => { execute(callback: (data: IResponse<IGoal>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IGoal>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing view (profile).
                  * @params {string} accountId Account ID to update the goal.
@@ -444,7 +676,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IGoal;
-                }) => { execute(callback: (data: IResponse<IGoal>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IGoal>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IGoal>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             profileFilterLinks: {
                 /**
@@ -459,7 +699,15 @@ declare module gapi.client {
                     linkId: string;
                     profileId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Returns a single profile filter link.
                  * @params {string} accountId Account ID to retrieve profile filter link for.
@@ -472,7 +720,15 @@ declare module gapi.client {
                     linkId: string;
                     profileId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IProfileFilterLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfileFilterLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Create a new profile filter link.
                  * @params {string} accountId Account ID to create profile filter link for.
@@ -484,7 +740,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IProfileFilterLink;
-                }) => { execute(callback: (data: IResponse<IProfileFilterLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfileFilterLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists all profile filter links for a profile.
                  * @params {string} accountId Account ID to retrieve profile filter links for.
@@ -499,7 +763,15 @@ declare module gapi.client {
                     profileId: string;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IProfileFilterLinks>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfileFilterLinks>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Update an existing profile filter link. This method supports patch semantics.
                  * @params {string} accountId Account ID to which profile filter link belongs.
@@ -513,7 +785,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IProfileFilterLink;
-                }) => { execute(callback: (data: IResponse<IProfileFilterLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfileFilterLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Update an existing profile filter link.
                  * @params {string} accountId Account ID to which profile filter link belongs.
@@ -527,7 +807,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IProfileFilterLink;
-                }) => { execute(callback: (data: IResponse<IProfileFilterLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfileFilterLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfileFilterLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             profileUserLinks: {
                 /**
@@ -542,7 +830,15 @@ declare module gapi.client {
                     linkId: string;
                     profileId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Adds a new user to the given view (profile).
                  * @params {string} accountId Account ID to create the user link for.
@@ -554,7 +850,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IEntityUserLink;
-                }) => { execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists profile-user links for a given view (profile).
                  * @params {string} accountId Account ID which the given view (profile) belongs to.
@@ -569,7 +873,15 @@ declare module gapi.client {
                     profileId: string;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IEntityUserLinks>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLinks>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates permissions for an existing user on the given view (profile).
                  * @params {string} accountId Account ID to update the user link for.
@@ -583,7 +895,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IEntityUserLink;
-                }) => { execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             profiles: {
                 /**
@@ -596,7 +916,15 @@ declare module gapi.client {
                     accountId: string;
                     profileId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets a view (profile) to which the user has access.
                  * @params {string} accountId Account ID to retrieve the goal for.
@@ -607,7 +935,15 @@ declare module gapi.client {
                     accountId: string;
                     profileId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IProfile>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfile>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Create a new view (profile).
                  * @params {string} accountId Account ID to create the view (profile) for.
@@ -617,7 +953,15 @@ declare module gapi.client {
                     accountId: string;
                     webPropertyId: string;
                     resource?: IProfile;
-                }) => { execute(callback: (data: IResponse<IProfile>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfile>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists views (profiles) to which the user has access.
                  * @params {string} accountId Account ID for the view (profiles) to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.
@@ -630,7 +974,15 @@ declare module gapi.client {
                     "max-results"?: number;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IProfiles>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfiles>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfiles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfiles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfiles>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfiles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfiles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfiles>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing view (profile). This method supports patch semantics.
                  * @params {string} accountId Account ID to which the view (profile) belongs
@@ -642,7 +994,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IProfile;
-                }) => { execute(callback: (data: IResponse<IProfile>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfile>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing view (profile).
                  * @params {string} accountId Account ID to which the view (profile) belongs
@@ -654,7 +1014,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IProfile;
-                }) => { execute(callback: (data: IResponse<IProfile>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProfile>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProfile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             segments: {
                 /**
@@ -665,7 +1033,15 @@ declare module gapi.client {
                 list: (params: {
                     "max-results"?: number;
                     "start-index"?: number;
-                }) => { execute(callback: (data: IResponse<ISegments>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ISegments>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISegments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISegments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISegments>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISegments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISegments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISegments>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             unsampledReports: {
                 /**
@@ -680,7 +1056,15 @@ declare module gapi.client {
                     profileId: string;
                     unsampledReportId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IUnsampledReport>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IUnsampledReport>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Create a new unsampled report.
                  * @params {string} accountId Account ID to create the unsampled report for.
@@ -692,7 +1076,15 @@ declare module gapi.client {
                     profileId: string;
                     webPropertyId: string;
                     resource?: IUnsampledReport;
-                }) => { execute(callback: (data: IResponse<IUnsampledReport>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IUnsampledReport>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists unsampled reports to which the user has access.
                  * @params {string} accountId Account ID to retrieve unsampled reports for. Must be a specific account ID, ~all is not supported.
@@ -707,7 +1099,15 @@ declare module gapi.client {
                     profileId: string;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IUnsampledReports>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IUnsampledReports>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReports>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUnsampledReports>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             uploads: {
                 /**
@@ -721,7 +1121,15 @@ declare module gapi.client {
                     customDataSourceId: string;
                     webPropertyId: string;
                     resource?: IAnalyticsDataimportDeleteUploadDataRequest;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * List uploads to which the user has access.
                  * @params {string} accountId Account Id for the upload to retrieve.
@@ -734,7 +1142,15 @@ declare module gapi.client {
                     customDataSourceId: string;
                     uploadId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IUpload>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IUpload>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * List uploads to which the user has access.
                  * @params {string} accountId Account Id for the uploads to retrieve.
@@ -749,7 +1165,15 @@ declare module gapi.client {
                     "max-results"?: number;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IUploads>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IUploads>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUploads>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUploads>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUploads>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUploads>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUploads>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUploads>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Migrate custom data source and data imports to latest version.
                  * @params {string} accountId Account Id for migration.
@@ -760,7 +1184,15 @@ declare module gapi.client {
                     accountId: string;
                     customDataSourceId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Upload data for a custom data source.
                  * @params {string} accountId Account Id associated with the upload.
@@ -771,7 +1203,15 @@ declare module gapi.client {
                     accountId: string;
                     customDataSourceId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IUpload>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IUpload>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IUpload>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             webPropertyAdWordsLinks: {
                 /**
@@ -784,7 +1224,15 @@ declare module gapi.client {
                     accountId: string;
                     webPropertyAdWordsLinkId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Returns a web property-AdWords link to which the user has access.
                  * @params {string} accountId ID of the account which the given web property belongs to.
@@ -795,7 +1243,15 @@ declare module gapi.client {
                     accountId: string;
                     webPropertyAdWordsLinkId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IEntityAdWordsLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityAdWordsLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Creates a webProperty-AdWords link.
                  * @params {string} accountId ID of the Google Analytics account to create the link for.
@@ -805,7 +1261,15 @@ declare module gapi.client {
                     accountId: string;
                     webPropertyId: string;
                     resource?: IEntityAdWordsLink;
-                }) => { execute(callback: (data: IResponse<IEntityAdWordsLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityAdWordsLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists webProperty-AdWords links for a given web property.
                  * @params {string} accountId ID of the account which the given web property belongs to.
@@ -818,7 +1282,15 @@ declare module gapi.client {
                     "max-results"?: number;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IEntityAdWordsLinks>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityAdWordsLinks>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing webProperty-AdWords link. This method supports patch semantics.
                  * @params {string} accountId ID of the account which the given web property belongs to.
@@ -830,7 +1302,15 @@ declare module gapi.client {
                     webPropertyAdWordsLinkId: string;
                     webPropertyId: string;
                     resource?: IEntityAdWordsLink;
-                }) => { execute(callback: (data: IResponse<IEntityAdWordsLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityAdWordsLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing webProperty-AdWords link.
                  * @params {string} accountId ID of the account which the given web property belongs to.
@@ -842,7 +1322,15 @@ declare module gapi.client {
                     webPropertyAdWordsLinkId: string;
                     webPropertyId: string;
                     resource?: IEntityAdWordsLink;
-                }) => { execute(callback: (data: IResponse<IEntityAdWordsLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityAdWordsLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityAdWordsLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             webproperties: {
                 /**
@@ -853,7 +1341,15 @@ declare module gapi.client {
                 get: (params: {
                     accountId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IWebproperty>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IWebproperty>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Create a new property if the account has fewer than 20 properties. Web properties are visible in the Google Analytics interface only if they have at least one profile.
                  * @params {string} accountId Account ID to create the web property for.
@@ -861,7 +1357,15 @@ declare module gapi.client {
                 insert: (params: {
                     accountId: string;
                     resource?: IWebproperty;
-                }) => { execute(callback: (data: IResponse<IWebproperty>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IWebproperty>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists web properties to which the user has access.
                  * @params {string} accountId Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.
@@ -872,7 +1376,15 @@ declare module gapi.client {
                     accountId: string;
                     "max-results"?: number;
                     "start-index"?: number;
-                }) => { execute(callback: (data: IResponse<IWebproperties>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IWebproperties>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperties>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperties>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperties>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperties>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperties>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperties>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing web property. This method supports patch semantics.
                  * @params {string} accountId Account ID to which the web property belongs
@@ -882,7 +1394,15 @@ declare module gapi.client {
                     accountId: string;
                     webPropertyId: string;
                     resource?: IWebproperty;
-                }) => { execute(callback: (data: IResponse<IWebproperty>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IWebproperty>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing web property.
                  * @params {string} accountId Account ID to which the web property belongs
@@ -892,7 +1412,15 @@ declare module gapi.client {
                     accountId: string;
                     webPropertyId: string;
                     resource?: IWebproperty;
-                }) => { execute(callback: (data: IResponse<IWebproperty>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IWebproperty>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IWebproperty>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             webpropertyUserLinks: {
                 /**
@@ -905,7 +1433,15 @@ declare module gapi.client {
                     accountId: string;
                     linkId: string;
                     webPropertyId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Adds a new user to the given web property.
                  * @params {string} accountId Account ID to create the user link for.
@@ -915,7 +1451,15 @@ declare module gapi.client {
                     accountId: string;
                     webPropertyId: string;
                     resource?: IEntityUserLink;
-                }) => { execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists webProperty-user links for a given web property.
                  * @params {string} accountId Account ID which the given web property belongs to.
@@ -928,7 +1472,15 @@ declare module gapi.client {
                     "max-results"?: number;
                     "start-index"?: number;
                     webPropertyId: string;
-                }) => { execute(callback: (data: IResponse<IEntityUserLinks>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLinks>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates permissions for an existing user on the given web property.
                  * @params {string} accountId Account ID to update the account-user link for.
@@ -940,7 +1492,15 @@ declare module gapi.client {
                     linkId: string;
                     webPropertyId: string;
                     resource?: IEntityUserLink;
-                }) => { execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IEntityUserLink>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IEntityUserLink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var metadata: {
@@ -951,7 +1511,15 @@ declare module gapi.client {
                  */
                 list: (params: {
                     reportType: string;
-                }) => { execute(callback: (data: IResponse<IColumns>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IColumns>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IColumns>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IColumns>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IColumns>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IColumns>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IColumns>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IColumns>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var provisioning: {
@@ -960,7 +1528,15 @@ declare module gapi.client {
              */
             createAccountTicket: (params: {
                 resource?: IAccountTicket;
-            }) => { execute(callback: (data: IResponse<IAccountTicket>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccountTicket>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountTicket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountTicket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountTicket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountTicket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountTicket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountTicket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * JSON template for Analytics account entry.

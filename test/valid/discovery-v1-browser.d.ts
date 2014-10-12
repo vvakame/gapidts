@@ -19,7 +19,15 @@ declare module gapi.client {
             getRest: (params: {
                 api: string;
                 version: string;
-            }) => { execute(callback: (data: IResponse<IRestDescription>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRestDescription>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRestDescription>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRestDescription>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRestDescription>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRestDescription>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRestDescription>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRestDescription>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieve the list of APIs supported at this endpoint.
              * @params {string} name Only include APIs with the given name.
@@ -28,7 +36,15 @@ declare module gapi.client {
             list: (params: {
                 name?: string;
                 preferred?: boolean;
-            }) => { execute(callback: (data: IResponse<IDirectoryList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDirectoryList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDirectoryList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDirectoryList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDirectoryList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDirectoryList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDirectoryList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDirectoryList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IDirectoryList {
             /**

@@ -3,6 +3,10 @@
 // Definitions by: vvakame's gapidts <https://github.com/vvakame/gapidts>
 // Definitions: https://github.com/vvakame/gapidts
 
+// OAuth2 scopes
+// https://www.googleapis.com/auth/urlshortener
+//   Manage your goo.gl short URLs
+
 /// <reference path="./googleapis-browser-common.d.ts" />
 
 declare module gapi.client {
@@ -19,13 +23,29 @@ declare module gapi.client {
             get: (params: {
                 projection?: string;
                 shortUrl: string;
-            }) => { execute(callback: (data: IResponse<IUrl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUrl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a new short URL.
              */
             insert: (params: {
                 resource?: IUrl;
-            }) => { execute(callback: (data: IResponse<IUrl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUrl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of URLs shortened by a user.
              * @params {string} projection Additional information to return.
@@ -34,7 +54,15 @@ declare module gapi.client {
             list: (params: {
                 projection?: string;
                 "start-token"?: string;
-            }) => { execute(callback: (data: IResponse<IUrlHistory>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUrlHistory>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlHistory>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlHistory>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlHistory>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlHistory>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlHistory>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlHistory>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IAnalyticsSnapshot {
             /**

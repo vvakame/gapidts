@@ -21,7 +21,15 @@ declare module gapi.client {
                 productId: string;
                 skuId: string;
                 userId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get license assignment of a particular product and sku for a user
              * @params {string} productId Name for product
@@ -32,7 +40,15 @@ declare module gapi.client {
                 productId: string;
                 skuId: string;
                 userId: string;
-            }) => { execute(callback: (data: IResponse<ILicenseAssignment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILicenseAssignment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Assign License.
              * @params {string} productId Name for product
@@ -42,7 +58,15 @@ declare module gapi.client {
                 productId: string;
                 skuId: string;
                 resource?: ILicenseAssignmentInsert;
-            }) => { execute(callback: (data: IResponse<ILicenseAssignment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILicenseAssignment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List license assignments for given product of the customer.
              * @params {string} customerId CustomerId represents the customer for whom licenseassignments are queried
@@ -55,7 +79,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 productId: string;
-            }) => { execute(callback: (data: IResponse<ILicenseAssignmentList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILicenseAssignmentList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List license assignments for given product and sku of the customer.
              * @params {string} customerId CustomerId represents the customer for whom licenseassignments are queried
@@ -70,7 +102,15 @@ declare module gapi.client {
                 pageToken?: string;
                 productId: string;
                 skuId: string;
-            }) => { execute(callback: (data: IResponse<ILicenseAssignmentList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILicenseAssignmentList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignmentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Assign License. This method supports patch semantics.
              * @params {string} productId Name for product
@@ -82,7 +122,15 @@ declare module gapi.client {
                 skuId: string;
                 userId: string;
                 resource?: ILicenseAssignment;
-            }) => { execute(callback: (data: IResponse<ILicenseAssignment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILicenseAssignment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Assign License.
              * @params {string} productId Name for product
@@ -94,7 +142,15 @@ declare module gapi.client {
                 skuId: string;
                 userId: string;
                 resource?: ILicenseAssignment;
-            }) => { execute(callback: (data: IResponse<ILicenseAssignment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILicenseAssignment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicenseAssignment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Template for LiscenseAssignment Resource

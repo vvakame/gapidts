@@ -27,7 +27,15 @@ declare module gapi.client {
                 autoscaler: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Gets the specified Autoscaler resource.
              * @params {string} autoscaler Name of the Autoscaler resource.
@@ -38,7 +46,15 @@ declare module gapi.client {
                 autoscaler: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IAutoscaler>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAutoscaler>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscaler>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscaler>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscaler>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscaler>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscaler>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscaler>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Adds new Autoscaler resource.
              * @params {string} project Project ID of Autoscaler resource.
@@ -48,7 +64,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: IAutoscaler;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists all Autoscaler resources in this zone.
              * @params {string} filter 
@@ -63,7 +87,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IAutoscalerListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAutoscalerListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscalerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscalerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscalerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscalerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscalerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAutoscalerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update the entire content of the Autoscaler resource. This method supports patch semantics.
              * @params {string} autoscaler Name of the Autoscaler resource.
@@ -75,7 +107,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: IAutoscaler;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update the entire content of the Autoscaler resource.
              * @params {string} autoscaler Name of the Autoscaler resource.
@@ -87,7 +127,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: IAutoscaler;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var zoneOperations: {
             /**
@@ -100,7 +148,15 @@ declare module gapi.client {
                 operation: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the specified zone-specific operation resource.
              * @params {string} operation 
@@ -111,7 +167,15 @@ declare module gapi.client {
                 operation: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of operation resources contained within the specified zone.
              * @params {string} filter 
@@ -126,7 +190,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperationList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperationList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Cloud Autoscaler resource.

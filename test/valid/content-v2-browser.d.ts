@@ -20,7 +20,15 @@ declare module gapi.client {
              */
             custombatch: (params: {
                 resource?: IAccountsCustomBatchRequest;
-            }) => { execute(callback: (data: IResponse<IAccountsCustomBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccountsCustomBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes a Merchant Center sub-account.
              * @params {string} accountId The ID of the account.
@@ -29,7 +37,15 @@ declare module gapi.client {
             delete: (params: {
                 accountId: string;
                 merchantId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a Merchant Center account.
              * @params {string} accountId The ID of the account.
@@ -38,7 +54,15 @@ declare module gapi.client {
             get: (params: {
                 accountId: string;
                 merchantId: string;
-            }) => { execute(callback: (data: IResponse<IAccount>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccount>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a Merchant Center sub-account.
              * @params {string} merchantId The ID of the managing account.
@@ -46,7 +70,15 @@ declare module gapi.client {
             insert: (params: {
                 merchantId: string;
                 resource?: IAccount;
-            }) => { execute(callback: (data: IResponse<IAccount>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccount>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the sub-accounts in your Merchant Center account.
              * @params {number} maxResults The maximum number of accounts to return in the response, used for paging.
@@ -57,7 +89,15 @@ declare module gapi.client {
                 maxResults?: number;
                 merchantId: string;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IAccountsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccountsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a Merchant Center account. This method supports patch semantics.
              * @params {string} accountId The ID of the account.
@@ -67,7 +107,15 @@ declare module gapi.client {
                 accountId: string;
                 merchantId: string;
                 resource?: IAccount;
-            }) => { execute(callback: (data: IResponse<IAccount>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccount>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a Merchant Center account.
              * @params {string} accountId The ID of the account.
@@ -77,12 +125,28 @@ declare module gapi.client {
                 accountId: string;
                 merchantId: string;
                 resource?: IAccount;
-            }) => { execute(callback: (data: IResponse<IAccount>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccount>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var accountstatuses: {
             custombatch: (params: {
                 resource?: IAccountstatusesCustomBatchRequest;
-            }) => { execute(callback: (data: IResponse<IAccountstatusesCustomBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccountstatusesCustomBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the status of a Merchant Center account.
              * @params {string} accountId The ID of the account.
@@ -91,7 +155,15 @@ declare module gapi.client {
             get: (params: {
                 accountId: string;
                 merchantId: string;
-            }) => { execute(callback: (data: IResponse<IAccountStatus>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccountStatus>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the statuses of the sub-accounts in your Merchant Center account.
              * @params {number} maxResults The maximum number of account statuses to return in the response, used for paging.
@@ -102,12 +174,28 @@ declare module gapi.client {
                 maxResults?: number;
                 merchantId: string;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IAccountstatusesListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccountstatusesListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var datafeeds: {
             custombatch: (params: {
                 resource?: IDatafeedsCustomBatchRequest;
-            }) => { execute(callback: (data: IResponse<IDatafeedsCustomBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeedsCustomBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes a datafeed from your Merchant Center account.
              * @params {string} datafeedId 
@@ -116,7 +204,15 @@ declare module gapi.client {
             delete: (params: {
                 datafeedId: string;
                 merchantId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a datafeed from your Merchant Center account.
              * @params {string} datafeedId 
@@ -125,7 +221,15 @@ declare module gapi.client {
             get: (params: {
                 datafeedId: string;
                 merchantId: string;
-            }) => { execute(callback: (data: IResponse<IDatafeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Registers a datafeed with your Merchant Center account.
              * @params {string} merchantId 
@@ -133,14 +237,30 @@ declare module gapi.client {
             insert: (params: {
                 merchantId: string;
                 resource?: IDatafeed;
-            }) => { execute(callback: (data: IResponse<IDatafeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the datafeeds in your Merchant Center account.
              * @params {string} merchantId 
              */
             list: (params: {
                 merchantId: string;
-            }) => { execute(callback: (data: IResponse<IDatafeedsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeedsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a datafeed of your Merchant Center account. This method supports patch semantics.
              * @params {string} datafeedId 
@@ -150,7 +270,15 @@ declare module gapi.client {
                 datafeedId: string;
                 merchantId: string;
                 resource?: IDatafeed;
-            }) => { execute(callback: (data: IResponse<IDatafeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a datafeed of your Merchant Center account.
              * @params {string} datafeedId 
@@ -160,12 +288,28 @@ declare module gapi.client {
                 datafeedId: string;
                 merchantId: string;
                 resource?: IDatafeed;
-            }) => { execute(callback: (data: IResponse<IDatafeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var datafeedstatuses: {
             custombatch: (params: {
                 resource?: IDatafeedstatusesCustomBatchRequest;
-            }) => { execute(callback: (data: IResponse<IDatafeedstatusesCustomBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeedstatusesCustomBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the status of a datafeed from your Merchant Center account.
              * @params {string} datafeedId 
@@ -174,14 +318,30 @@ declare module gapi.client {
             get: (params: {
                 datafeedId: string;
                 merchantId: string;
-            }) => { execute(callback: (data: IResponse<IDatafeedStatus>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeedStatus>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the statuses of the datafeeds in your Merchant Center account.
              * @params {string} merchantId 
              */
             list: (params: {
                 merchantId: string;
-            }) => { execute(callback: (data: IResponse<IDatafeedstatusesListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatafeedstatusesListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatafeedstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var inventory: {
             /**
@@ -189,7 +349,15 @@ declare module gapi.client {
              */
             custombatch: (params: {
                 resource?: IInventoryCustomBatchRequest;
-            }) => { execute(callback: (data: IResponse<IInventoryCustomBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInventoryCustomBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventoryCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventoryCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventoryCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventoryCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventoryCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventoryCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates price and availability of a product in your Merchant Center account.
              * @params {string} merchantId The ID of the managing account.
@@ -201,7 +369,15 @@ declare module gapi.client {
                 productId: string;
                 storeCode: string;
                 resource?: IInventorySetRequest;
-            }) => { execute(callback: (data: IResponse<IInventorySetResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInventorySetResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventorySetResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventorySetResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventorySetResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventorySetResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventorySetResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInventorySetResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var products: {
             /**
@@ -211,7 +387,15 @@ declare module gapi.client {
             custombatch: (params: {
                 dryRun?: boolean;
                 resource?: IProductsCustomBatchRequest;
-            }) => { execute(callback: (data: IResponse<IProductsCustomBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProductsCustomBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes a product from your Merchant Center account.
              * @params {boolean} dryRun Flag to run the request in dry-run mode.
@@ -222,7 +406,15 @@ declare module gapi.client {
                 dryRun?: boolean;
                 merchantId: string;
                 productId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a product from your Merchant Center account.
              * @params {string} merchantId The ID of the managing account.
@@ -231,7 +423,15 @@ declare module gapi.client {
             get: (params: {
                 merchantId: string;
                 productId: string;
-            }) => { execute(callback: (data: IResponse<IProduct>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProduct>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Uploads a product to your Merchant Center account.
              * @params {boolean} dryRun Flag to run the request in dry-run mode.
@@ -241,7 +441,15 @@ declare module gapi.client {
                 dryRun?: boolean;
                 merchantId: string;
                 resource?: IProduct;
-            }) => { execute(callback: (data: IResponse<IProduct>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProduct>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the products in your Merchant Center account.
              * @params {number} maxResults The maximum number of products to return in the response, used for paging.
@@ -252,7 +460,15 @@ declare module gapi.client {
                 maxResults?: number;
                 merchantId: string;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IProductsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProductsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var productstatuses: {
             /**
@@ -260,7 +476,15 @@ declare module gapi.client {
              */
             custombatch: (params: {
                 resource?: IProductstatusesCustomBatchRequest;
-            }) => { execute(callback: (data: IResponse<IProductstatusesCustomBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProductstatusesCustomBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesCustomBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesCustomBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Gets the status of a product from your Merchant Center account.
              * @params {string} merchantId The ID of the managing account.
@@ -269,7 +493,15 @@ declare module gapi.client {
             get: (params: {
                 merchantId: string;
                 productId: string;
-            }) => { execute(callback: (data: IResponse<IProductStatus>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProductStatus>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductStatus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductStatus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists the statuses of the products in your Merchant Center account.
              * @params {number} maxResults The maximum number of product statuses to return in the response, used for paging.
@@ -280,7 +512,15 @@ declare module gapi.client {
                 maxResults?: number;
                 merchantId: string;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IProductstatusesListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProductstatusesListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProductstatusesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IAccount {
             /**

@@ -17,14 +17,30 @@ declare module gapi.client {
              */
             search: (params: {
                 query?: string;
-            }) => { execute(callback: (data: IResponse<IDivisionSearchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDivisionSearchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDivisionSearchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDivisionSearchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDivisionSearchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDivisionSearchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDivisionSearchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDivisionSearchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var elections: {
             /**
              * List of available elections to query.
              */
             electionQuery: (params: {
-            }) => { execute(callback: (data: IResponse<IElectionsQueryResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IElectionsQueryResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IElectionsQueryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IElectionsQueryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IElectionsQueryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IElectionsQueryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IElectionsQueryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IElectionsQueryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Looks up information relevant to a voter based on the voter's registered address.
              * @params {string} electionId The unique ID of the election to look up. A list of election IDs can be obtained at https://www.googleapis.com/civicinfo/{version}/elections
@@ -34,7 +50,15 @@ declare module gapi.client {
                 electionId: string;
                 officialOnly?: boolean;
                 resource?: IVoterInfoRequest;
-            }) => { execute(callback: (data: IResponse<IVoterInfoResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVoterInfoResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVoterInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVoterInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVoterInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVoterInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVoterInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVoterInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var representatives: {
             /**
@@ -48,7 +72,15 @@ declare module gapi.client {
                 ocdId?: string;
                 recursive?: boolean;
                 resource?: IRepresentativeInfoRequest;
-            }) => { execute(callback: (data: IResponse<IRepresentativeInfoResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRepresentativeInfoResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRepresentativeInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRepresentativeInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRepresentativeInfoResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRepresentativeInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRepresentativeInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRepresentativeInfoResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Describes information about a regional election administrative area.

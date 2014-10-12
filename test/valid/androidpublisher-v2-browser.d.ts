@@ -23,7 +23,15 @@ declare module gapi.client {
             commit: (params: {
                 editId: string;
                 packageName: string;
-            }) => { execute(callback: (data: IResponse<IAppEdit>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAppEdit>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes an edit for an app. Creating a new edit will automatically delete any of your previous edits so this method need only be called if you want to preemptively abandon an edit.
              * @params {string} editId Unique identifier for this edit.
@@ -32,7 +40,15 @@ declare module gapi.client {
             delete: (params: {
                 editId: string;
                 packageName: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns information about the edit specified. Calls will fail if the edit is no long active (e.g. has been deleted, superseded or expired).
              * @params {string} editId Unique identifier for this edit.
@@ -41,7 +57,15 @@ declare module gapi.client {
             get: (params: {
                 editId: string;
                 packageName: string;
-            }) => { execute(callback: (data: IResponse<IAppEdit>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAppEdit>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a new edit for an app, populated with the app's current state.
              * @params {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
@@ -49,7 +73,15 @@ declare module gapi.client {
             insert: (params: {
                 packageName: string;
                 resource?: IAppEdit;
-            }) => { execute(callback: (data: IResponse<IAppEdit>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAppEdit>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Checks that the edit can be successfully committed. The edit's changes are not applied to the live app.
              * @params {string} editId Unique identifier for this edit.
@@ -58,7 +90,15 @@ declare module gapi.client {
             validate: (params: {
                 editId: string;
                 packageName: string;
-            }) => { execute(callback: (data: IResponse<IAppEdit>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAppEdit>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAppEdit>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             apklistings: {
                 /**
                  * Deletes the APK-specific localized listing for a specified APK and language code.
@@ -72,7 +112,15 @@ declare module gapi.client {
                     editId: string;
                     language: string;
                     packageName: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Deletes all the APK-specific localized listings for a specified APK.
                  * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -83,7 +131,15 @@ declare module gapi.client {
                     apkVersionCode: number;
                     editId: string;
                     packageName: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Fetches the APK-specific localized listing for a specified APK and language code.
                  * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -96,7 +152,15 @@ declare module gapi.client {
                     editId: string;
                     language: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IApkListing>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IApkListing>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists all the APK-specific localized listings for a specified APK.
                  * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -107,7 +171,15 @@ declare module gapi.client {
                     apkVersionCode: number;
                     editId: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IApkListingsListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IApkListingsListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListingsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListingsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListingsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListingsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListingsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListingsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates or creates the APK-specific localized listing for a specified APK and language code. This method supports patch semantics.
                  * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -121,7 +193,15 @@ declare module gapi.client {
                     language: string;
                     packageName: string;
                     resource?: IApkListing;
-                }) => { execute(callback: (data: IResponse<IApkListing>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IApkListing>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates or creates the APK-specific localized listing for a specified APK and language code.
                  * @params {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
@@ -135,7 +215,15 @@ declare module gapi.client {
                     language: string;
                     packageName: string;
                     resource?: IApkListing;
-                }) => { execute(callback: (data: IResponse<IApkListing>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IApkListing>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApkListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             apks: {
                 /**
@@ -146,7 +234,15 @@ declare module gapi.client {
                 list: (params: {
                     editId: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IApksListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IApksListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApksListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApksListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApksListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApksListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApksListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApksListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * 
                  * @params {string} editId Unique identifier for this edit.
@@ -155,7 +251,15 @@ declare module gapi.client {
                 upload: (params: {
                     editId: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IApk>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IApk>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApk>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApk>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApk>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApk>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApk>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IApk>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             details: {
                 /**
@@ -166,7 +270,15 @@ declare module gapi.client {
                 get: (params: {
                     editId: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IAppDetails>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAppDetails>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates app details for this edit. This method supports patch semantics.
                  * @params {string} editId Unique identifier for this edit.
@@ -176,7 +288,15 @@ declare module gapi.client {
                     editId: string;
                     packageName: string;
                     resource?: IAppDetails;
-                }) => { execute(callback: (data: IResponse<IAppDetails>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAppDetails>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates app details for this edit.
                  * @params {string} editId Unique identifier for this edit.
@@ -186,7 +306,15 @@ declare module gapi.client {
                     editId: string;
                     packageName: string;
                     resource?: IAppDetails;
-                }) => { execute(callback: (data: IResponse<IAppDetails>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAppDetails>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAppDetails>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             expansionfiles: {
                 /**
@@ -201,7 +329,15 @@ declare module gapi.client {
                     editId: string;
                     expansionFileType: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IExpansionFile>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExpansionFile>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates the APK's Expansion File configuration to reference another APK's Expansion Files. To add a new Expansion File use the Upload method. This method supports patch semantics.
                  * @params {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
@@ -215,7 +351,15 @@ declare module gapi.client {
                     expansionFileType: string;
                     packageName: string;
                     resource?: IExpansionFile;
-                }) => { execute(callback: (data: IResponse<IExpansionFile>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExpansionFile>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates the APK's Expansion File configuration to reference another APK's Expansion Files. To add a new Expansion File use the Upload method.
                  * @params {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
@@ -229,7 +373,15 @@ declare module gapi.client {
                     expansionFileType: string;
                     packageName: string;
                     resource?: IExpansionFile;
-                }) => { execute(callback: (data: IResponse<IExpansionFile>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExpansionFile>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Uploads and attaches a new Expansion File to the APK specified.
                  * @params {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
@@ -242,7 +394,15 @@ declare module gapi.client {
                     editId: string;
                     expansionFileType: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IExpansionFilesUploadResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IExpansionFilesUploadResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFilesUploadResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFilesUploadResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFilesUploadResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFilesUploadResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFilesUploadResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IExpansionFilesUploadResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             images: {
                 /**
@@ -259,7 +419,15 @@ declare module gapi.client {
                     imageType: string;
                     language: string;
                     packageName: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Deletes all images for the specified language and image type.
                  * @params {string} editId Unique identifier for this edit.
@@ -272,7 +440,15 @@ declare module gapi.client {
                     imageType: string;
                     language: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IImagesDeleteAllResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IImagesDeleteAllResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesDeleteAllResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesDeleteAllResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesDeleteAllResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesDeleteAllResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesDeleteAllResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesDeleteAllResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists all images for the specified language and image type.
                  * @params {string} editId Unique identifier for this edit.
@@ -285,7 +461,15 @@ declare module gapi.client {
                     imageType: string;
                     language: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IImagesListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IImagesListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Uploads a new image and adds it to the list of images for the specified language and image type.
                  * @params {string} editId Unique identifier for this edit.
@@ -298,7 +482,15 @@ declare module gapi.client {
                     imageType: string;
                     language: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IImagesUploadResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IImagesUploadResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesUploadResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesUploadResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesUploadResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesUploadResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesUploadResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IImagesUploadResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             listings: {
                 /**
@@ -311,7 +503,15 @@ declare module gapi.client {
                     editId: string;
                     language: string;
                     packageName: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Deletes all localized listings from an edit.
                  * @params {string} editId Unique identifier for this edit.
@@ -320,7 +520,15 @@ declare module gapi.client {
                 deleteall: (params: {
                     editId: string;
                     packageName: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Fetches information about a localized store listing.
                  * @params {string} editId Unique identifier for this edit.
@@ -331,7 +539,15 @@ declare module gapi.client {
                     editId: string;
                     language: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IListing>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListing>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Returns all of the localized store listings attached to this edit.
                  * @params {string} editId Unique identifier for this edit.
@@ -340,7 +556,15 @@ declare module gapi.client {
                 list: (params: {
                     editId: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<IListingsListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListingsListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListingsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListingsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListingsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListingsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListingsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListingsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Creates or updates a localized store listing. This method supports patch semantics.
                  * @params {string} editId Unique identifier for this edit.
@@ -352,7 +576,15 @@ declare module gapi.client {
                     language: string;
                     packageName: string;
                     resource?: IListing;
-                }) => { execute(callback: (data: IResponse<IListing>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListing>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Creates or updates a localized store listing.
                  * @params {string} editId Unique identifier for this edit.
@@ -364,7 +596,15 @@ declare module gapi.client {
                     language: string;
                     packageName: string;
                     resource?: IListing;
-                }) => { execute(callback: (data: IResponse<IListing>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListing>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListing>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             testers: {
                 /**
@@ -377,7 +617,15 @@ declare module gapi.client {
                     editId: string;
                     packageName: string;
                     track: string;
-                }) => { execute(callback: (data: IResponse<ITesters>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ITesters>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * 
                  * @params {string} editId Unique identifier for this edit.
@@ -389,7 +637,15 @@ declare module gapi.client {
                     packageName: string;
                     track: string;
                     resource?: ITesters;
-                }) => { execute(callback: (data: IResponse<ITesters>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ITesters>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * 
                  * @params {string} editId Unique identifier for this edit.
@@ -401,7 +657,15 @@ declare module gapi.client {
                     packageName: string;
                     track: string;
                     resource?: ITesters;
-                }) => { execute(callback: (data: IResponse<ITesters>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ITesters>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITesters>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             tracks: {
                 /**
@@ -414,7 +678,15 @@ declare module gapi.client {
                     editId: string;
                     packageName: string;
                     track: string;
-                }) => { execute(callback: (data: IResponse<ITrack>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ITrack>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists all the track configurations for this edit.
                  * @params {string} editId Unique identifier for this edit.
@@ -423,7 +695,15 @@ declare module gapi.client {
                 list: (params: {
                     editId: string;
                     packageName: string;
-                }) => { execute(callback: (data: IResponse<ITracksListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ITracksListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITracksListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITracksListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITracksListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITracksListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITracksListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITracksListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates the track configuration for the specified track type. This method supports patch semantics.
                  * @params {string} editId Unique identifier for this edit.
@@ -435,7 +715,15 @@ declare module gapi.client {
                     packageName: string;
                     track: string;
                     resource?: ITrack;
-                }) => { execute(callback: (data: IResponse<ITrack>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ITrack>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates the track configuration for the specified track type.
                  * @params {string} editId Unique identifier for this edit.
@@ -447,13 +735,29 @@ declare module gapi.client {
                     packageName: string;
                     track: string;
                     resource?: ITrack;
-                }) => { execute(callback: (data: IResponse<ITrack>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ITrack>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ITrack>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var inappproducts: {
             batch: (params: {
                 resource?: IInappproductsBatchRequest;
-            }) => { execute(callback: (data: IResponse<IInappproductsBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInappproductsBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete an in-app product for an app.
              * @params {string} packageName Unique identifier for the Android app with the in-app product; for example, "com.spiffygame".
@@ -462,7 +766,15 @@ declare module gapi.client {
             delete: (params: {
                 packageName: string;
                 sku: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns information about the in-app product specified.
              * @params {string} packageName 
@@ -471,7 +783,15 @@ declare module gapi.client {
             get: (params: {
                 packageName: string;
                 sku: string;
-            }) => { execute(callback: (data: IResponse<IInAppProduct>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInAppProduct>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a new in-app product for an app.
              * @params {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -481,7 +801,15 @@ declare module gapi.client {
                 autoConvertMissingPrices?: boolean;
                 packageName: string;
                 resource?: IInAppProduct;
-            }) => { execute(callback: (data: IResponse<IInAppProduct>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInAppProduct>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all the in-app products for an Android app, both subscriptions and managed in-app products..
              * @params {number} maxResults 
@@ -494,7 +822,15 @@ declare module gapi.client {
                 packageName: string;
                 startIndex?: number;
                 token?: string;
-            }) => { execute(callback: (data: IResponse<IInappproductsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInappproductsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInappproductsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates the details of an in-app product. This method supports patch semantics.
              * @params {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -506,7 +842,15 @@ declare module gapi.client {
                 packageName: string;
                 sku: string;
                 resource?: IInAppProduct;
-            }) => { execute(callback: (data: IResponse<IInAppProduct>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInAppProduct>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates the details of an in-app product.
              * @params {boolean} autoConvertMissingPrices If true the prices for all regions targeted by the parent app that don't have a price specified for this in-app product will be auto converted to the target currency based on the default price. Defaults to false.
@@ -518,7 +862,15 @@ declare module gapi.client {
                 packageName: string;
                 sku: string;
                 resource?: IInAppProduct;
-            }) => { execute(callback: (data: IResponse<IInAppProduct>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInAppProduct>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInAppProduct>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var purchases: {
             products: {
@@ -532,7 +884,15 @@ declare module gapi.client {
                     packageName: string;
                     productId: string;
                     token: string;
-                }) => { execute(callback: (data: IResponse<IProductPurchase>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IProductPurchase>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProductPurchase>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProductPurchase>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProductPurchase>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProductPurchase>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProductPurchase>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IProductPurchase>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             subscriptions: {
                 /**
@@ -545,7 +905,15 @@ declare module gapi.client {
                     packageName: string;
                     subscriptionId: string;
                     token: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Checks whether a user's subscription purchase is valid and returns its expiry time.
                  * @params {string} packageName The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
@@ -556,7 +924,15 @@ declare module gapi.client {
                     packageName: string;
                     subscriptionId: string;
                     token: string;
-                }) => { execute(callback: (data: IResponse<ISubscriptionPurchase>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ISubscriptionPurchase>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionPurchase>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionPurchase>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionPurchase>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionPurchase>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionPurchase>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionPurchase>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         interface IApk {

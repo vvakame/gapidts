@@ -25,7 +25,15 @@ declare module gapi.client {
                 shelf: string;
                 source?: string;
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IBookshelf>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBookshelf>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of public bookshelves for the specified user.
              * @params {string} source String to identify the originator of this request.
@@ -34,7 +42,15 @@ declare module gapi.client {
             list: (params: {
                 source?: string;
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IBookshelves>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBookshelves>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             volumes: {
                 /**
                  * Retrieves volumes in a specific bookshelf for the specified user.
@@ -52,7 +68,15 @@ declare module gapi.client {
                     source?: string;
                     startIndex?: number;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IVolumes>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IVolumes>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var cloudloading: {
@@ -68,17 +92,41 @@ declare module gapi.client {
                 mime_type?: string;
                 name?: string;
                 upload_client_token?: string;
-            }) => { execute(callback: (data: IResponse<IBooksCloudloadingResource>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBooksCloudloadingResource>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Remove the book and its contents
              * @params {string} volumeId The id of the book to be removed.
              */
             deleteBook: (params: {
                 volumeId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             updateBook: (params: {
                 resource?: IBooksCloudloadingResource;
-            }) => { execute(callback: (data: IResponse<IBooksCloudloadingResource>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBooksCloudloadingResource>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBooksCloudloadingResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var layers: {
             /**
@@ -93,7 +141,15 @@ declare module gapi.client {
                 source?: string;
                 summaryId: string;
                 volumeId: string;
-            }) => { execute(callback: (data: IResponse<ILayersummary>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILayersummary>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummary>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummary>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummary>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummary>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummary>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummary>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List the layer summaries for a volume.
              * @params {string} contentVersion The content version for the requested volume.
@@ -108,7 +164,15 @@ declare module gapi.client {
                 pageToken?: string;
                 source?: string;
                 volumeId: string;
-            }) => { execute(callback: (data: IResponse<ILayersummaries>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILayersummaries>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummaries>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummaries>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummaries>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummaries>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummaries>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersummaries>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             annotationData: {
                 /**
                  * Gets the annotation data.
@@ -134,7 +198,15 @@ declare module gapi.client {
                     source?: string;
                     volumeId: string;
                     w?: number;
-                }) => { execute(callback: (data: IResponse<IAnnotationdata>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAnnotationdata>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationdata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationdata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationdata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationdata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationdata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationdata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets the annotation data for a volume and layer.
                  * @params {string} annotationDataId The list of Annotation Data Ids to retrieve. Pagination is ignored if this is set.
@@ -165,7 +237,15 @@ declare module gapi.client {
                     updatedMin?: string;
                     volumeId: string;
                     w?: number;
-                }) => { execute(callback: (data: IResponse<IAnnotationsdata>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAnnotationsdata>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsdata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsdata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsdata>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsdata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsdata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsdata>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             volumeAnnotations: {
                 /**
@@ -182,7 +262,15 @@ declare module gapi.client {
                     locale?: string;
                     source?: string;
                     volumeId: string;
-                }) => { execute(callback: (data: IResponse<IVolumeannotation>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IVolumeannotation>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets the volume annotations for a volume and layer.
                  * @params {string} contentVersion The content version for the requested volume.
@@ -217,7 +305,15 @@ declare module gapi.client {
                     updatedMin?: string;
                     volumeAnnotationsVersion?: string;
                     volumeId: string;
-                }) => { execute(callback: (data: IResponse<IVolumeannotations>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IVolumeannotations>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotations>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotations>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotations>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotations>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotations>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumeannotations>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var myconfig: {
@@ -233,7 +329,15 @@ declare module gapi.client {
                 locale?: string;
                 source?: string;
                 volumeIds: string;
-            }) => { execute(callback: (data: IResponse<IDownloadAccesses>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDownloadAccesses>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccesses>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccesses>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccesses>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccesses>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccesses>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDownloadAccesses>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Request concurrent and download access restrictions.
              * @params {string} cpksver The device/version ID from which to request the restrictions.
@@ -250,7 +354,15 @@ declare module gapi.client {
                 nonce: string;
                 source: string;
                 volumeId: string;
-            }) => { execute(callback: (data: IResponse<IRequestAccess>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRequestAccess>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRequestAccess>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRequestAccess>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRequestAccess>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRequestAccess>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRequestAccess>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRequestAccess>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Request downloaded content access for specified volumes on the My eBooks shelf.
              * @params {string} cpksver The device/version ID from which to release the restriction.
@@ -269,7 +381,15 @@ declare module gapi.client {
                 showPreorders?: boolean;
                 source: string;
                 volumeIds?: string;
-            }) => { execute(callback: (data: IResponse<IVolumes>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVolumes>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var mylibrary: {
             annotations: {
@@ -281,7 +401,15 @@ declare module gapi.client {
                 delete: (params: {
                     annotationId: string;
                     source?: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets an annotation by its ID.
                  * @params {string} annotationId The ID for the annotation to retrieve.
@@ -290,7 +418,15 @@ declare module gapi.client {
                 get: (params: {
                     annotationId: string;
                     source?: string;
-                }) => { execute(callback: (data: IResponse<IAnnotation>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAnnotation>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Inserts a new annotation.
                  * @params {boolean} showOnlySummaryInResponse Requests that only the summary of the specified layer be provided in the response.
@@ -300,7 +436,15 @@ declare module gapi.client {
                     showOnlySummaryInResponse?: boolean;
                     source?: string;
                     resource?: IAnnotation;
-                }) => { execute(callback: (data: IResponse<IAnnotation>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAnnotation>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Retrieves a list of annotations, possibly filtered.
                  * @params {string} contentVersion The content version for the requested volume.
@@ -327,7 +471,15 @@ declare module gapi.client {
                     updatedMax?: string;
                     updatedMin?: string;
                     volumeId?: string;
-                }) => { execute(callback: (data: IResponse<IAnnotations>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAnnotations>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotations>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotations>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotations>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotations>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotations>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotations>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets the summary of specified layers.
                  * @params {string} layerIds Array of layer IDs to get the summary for.
@@ -336,7 +488,15 @@ declare module gapi.client {
                 summary: (params: {
                     layerIds: string;
                     volumeId: string;
-                }) => { execute(callback: (data: IResponse<IAnnotationsSummary>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAnnotationsSummary>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsSummary>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsSummary>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsSummary>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsSummary>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsSummary>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotationsSummary>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates an existing annotation.
                  * @params {string} annotationId The ID for the annotation to update.
@@ -346,7 +506,15 @@ declare module gapi.client {
                     annotationId: string;
                     source?: string;
                     resource?: IAnnotation;
-                }) => { execute(callback: (data: IResponse<IAnnotation>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IAnnotation>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IAnnotation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             bookshelves: {
                 /**
@@ -359,7 +527,15 @@ declare module gapi.client {
                     shelf: string;
                     source?: string;
                     volumeId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Clears all volumes from a bookshelf.
                  * @params {string} shelf ID of bookshelf from which to remove a volume.
@@ -368,7 +544,15 @@ declare module gapi.client {
                 clearVolumes: (params: {
                     shelf: string;
                     source?: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Retrieves metadata for a specific bookshelf belonging to the authenticated user.
                  * @params {string} shelf ID of bookshelf to retrieve.
@@ -377,14 +561,30 @@ declare module gapi.client {
                 get: (params: {
                     shelf: string;
                     source?: string;
-                }) => { execute(callback: (data: IResponse<IBookshelf>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IBookshelf>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelf>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Retrieves a list of bookshelves belonging to the authenticated user.
                  * @params {string} source String to identify the originator of this request.
                  */
                 list: (params: {
                     source?: string;
-                }) => { execute(callback: (data: IResponse<IBookshelves>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IBookshelves>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBookshelves>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Moves a volume within a bookshelf.
                  * @params {string} shelf ID of bookshelf with the volume.
@@ -397,7 +597,15 @@ declare module gapi.client {
                     source?: string;
                     volumeId: string;
                     volumePosition: number;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Removes a volume from a bookshelf.
                  * @params {string} shelf ID of bookshelf from which to remove a volume.
@@ -408,7 +616,15 @@ declare module gapi.client {
                     shelf: string;
                     source?: string;
                     volumeId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 volumes: {
                     /**
                      * Gets volume information for volumes on a bookshelf.
@@ -430,7 +646,15 @@ declare module gapi.client {
                         showPreorders?: boolean;
                         source?: string;
                         startIndex?: number;
-                    }) => { execute(callback: (data: IResponse<IVolumes>, original: string) => void):void; };
+                    }) => {
+                        execute(callback: (data: IResponse<IVolumes>, original: string) => void):void;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    };
                 };
             };
             readingpositions: {
@@ -444,7 +668,15 @@ declare module gapi.client {
                     contentVersion?: string;
                     source?: string;
                     volumeId: string;
-                }) => { execute(callback: (data: IResponse<IReadingPosition>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IReadingPosition>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IReadingPosition>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IReadingPosition>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IReadingPosition>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IReadingPosition>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IReadingPosition>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IReadingPosition>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Sets my reading position information for a volume.
                  * @params {string} action Action that caused this reading position to be set.
@@ -463,7 +695,15 @@ declare module gapi.client {
                     source?: string;
                     timestamp: string;
                     volumeId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var promooffer: {
@@ -487,7 +727,15 @@ declare module gapi.client {
                 product?: string;
                 serial?: string;
                 volumeId?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * 
              * @params {string} androidId device android_id
@@ -506,7 +754,15 @@ declare module gapi.client {
                 offerId?: string;
                 product?: string;
                 serial?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns a list of promo offers available to the user
              * @params {string} androidId device android_id
@@ -523,7 +779,15 @@ declare module gapi.client {
                 model?: string;
                 product?: string;
                 serial?: string;
-            }) => { execute(callback: (data: IResponse<IOffers>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOffers>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOffers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOffers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOffers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOffers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOffers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOffers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var volumes: {
             /**
@@ -540,7 +804,15 @@ declare module gapi.client {
                 projection?: string;
                 source?: string;
                 volumeId: string;
-            }) => { execute(callback: (data: IResponse<IVolume>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVolume>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolume>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolume>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolume>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolume>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolume>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolume>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Performs a book search.
              * @params {string} download Restrict to volumes by download availability.
@@ -571,7 +843,15 @@ declare module gapi.client {
                 showPreorders?: boolean;
                 source?: string;
                 startIndex?: number;
-            }) => { execute(callback: (data: IResponse<IVolumes>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVolumes>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             associated: {
                 /**
                  * Return a list of associated books.
@@ -585,7 +865,15 @@ declare module gapi.client {
                     locale?: string;
                     source?: string;
                     volumeId: string;
-                }) => { execute(callback: (data: IResponse<IVolumes>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IVolumes>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             mybooks: {
                 /**
@@ -604,7 +892,15 @@ declare module gapi.client {
                     processingState?: string;
                     source?: string;
                     startIndex?: number;
-                }) => { execute(callback: (data: IResponse<IVolumes>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IVolumes>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             recommended: {
                 /**
@@ -615,7 +911,15 @@ declare module gapi.client {
                 list: (params: {
                     locale?: string;
                     source?: string;
-                }) => { execute(callback: (data: IResponse<IVolumes>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IVolumes>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Rate a recommended book for the current user.
                  * @params {string} locale ISO-639-1 language and ISO-3166-1 country code. Ex: 'en_US'. Used for generating recommendations.
@@ -628,7 +932,15 @@ declare module gapi.client {
                     rating: string;
                     source?: string;
                     volumeId: string;
-                }) => { execute(callback: (data: IResponse<IBooksVolumesRecommendedRateResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IBooksVolumesRecommendedRateResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBooksVolumesRecommendedRateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBooksVolumesRecommendedRateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBooksVolumesRecommendedRateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBooksVolumesRecommendedRateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBooksVolumesRecommendedRateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IBooksVolumesRecommendedRateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             useruploaded: {
                 /**
@@ -647,7 +959,15 @@ declare module gapi.client {
                     source?: string;
                     startIndex?: number;
                     volumeId?: string;
-                }) => { execute(callback: (data: IResponse<IVolumes>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IVolumes>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IVolumes>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         interface IAnnotation {

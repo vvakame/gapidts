@@ -28,7 +28,15 @@ declare module gapi.client {
                 managedZone: string;
                 project: string;
                 resource?: IChange;
-            }) => { execute(callback: (data: IResponse<IChange>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChange>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Fetch the representation of an existing Change.
              * @params {string} changeId The identifier of the requested change, from a previous ResourceRecordSetsChangeResponse.
@@ -39,7 +47,15 @@ declare module gapi.client {
                 changeId: string;
                 managedZone: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IChange>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChange>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChange>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Enumerate Changes to a ResourceRecordSet collection.
              * @params {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or id.
@@ -56,7 +72,15 @@ declare module gapi.client {
                 project: string;
                 sortBy?: string;
                 sortOrder?: string;
-            }) => { execute(callback: (data: IResponse<IChangesListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChangesListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChangesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChangesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChangesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChangesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChangesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChangesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var managedZones: {
             /**
@@ -66,7 +90,15 @@ declare module gapi.client {
             create: (params: {
                 project: string;
                 resource?: IManagedZone;
-            }) => { execute(callback: (data: IResponse<IManagedZone>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IManagedZone>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete a previously created ManagedZone.
              * @params {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or id.
@@ -75,7 +107,15 @@ declare module gapi.client {
             delete: (params: {
                 managedZone: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Fetch the representation of an existing ManagedZone.
              * @params {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or id.
@@ -84,7 +124,15 @@ declare module gapi.client {
             get: (params: {
                 managedZone: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IManagedZone>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IManagedZone>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Enumerate ManagedZones that have been created but not yet deleted.
              * @params {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server will decide how many results to return.
@@ -95,7 +143,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IManagedZonesListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IManagedZonesListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZonesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZonesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZonesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZonesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZonesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IManagedZonesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var projects: {
             /**
@@ -104,7 +160,15 @@ declare module gapi.client {
              */
             get: (params: {
                 project: string;
-            }) => { execute(callback: (data: IResponse<IProject>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProject>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var resourceRecordSets: {
             /**
@@ -123,7 +187,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 type?: string;
-            }) => { execute(callback: (data: IResponse<IResourceRecordSetsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IResourceRecordSetsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResourceRecordSetsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResourceRecordSetsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResourceRecordSetsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResourceRecordSetsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResourceRecordSetsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResourceRecordSetsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * An atomic update to a collection of ResourceRecordSets.

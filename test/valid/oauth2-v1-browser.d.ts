@@ -25,14 +25,30 @@ declare module gapi.client {
              * Get user info
              */
             get: (params: {
-            }) => { execute(callback: (data: IResponse<IUserinfoplus>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUserinfoplus>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             v2: {
                 me: {
                     /**
                      * Get user info
                      */
                     get: (params: {
-                    }) => { execute(callback: (data: IResponse<IUserinfoplus>, original: string) => void):void; };
+                    }) => {
+                        execute(callback: (data: IResponse<IUserinfoplus>, original: string) => void):void;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IUserinfoplus>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    };
                 };
             };
         };
@@ -44,7 +60,15 @@ declare module gapi.client {
         var tokeninfo: (params: {
             access_token?: string;
             id_token?: string;
-        }) => { execute(callback: (data: IResponse<ITokeninfo>, original: string) => void):void; };
+        }) => {
+            execute(callback: (data: IResponse<ITokeninfo>, original: string) => void):void;
+            then<U>(onFulfilled: (response: IPromiseResponse<ITokeninfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<ITokeninfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<ITokeninfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<ITokeninfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<ITokeninfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<ITokeninfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+        };
         interface ITokeninfo {
             /**
              * The access type granted with this token. It can be offline or online.

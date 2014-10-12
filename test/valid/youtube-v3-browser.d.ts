@@ -34,7 +34,15 @@ The part names that you can include in the parameter value are snippet and conte
             insert: (params: {
                 part: string;
                 resource?: IActivity;
-            }) => { execute(callback: (data: IResponse<IActivity>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IActivity>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns a list of channel activity events that match the request criteria. For example, you can retrieve events associated with a particular channel, events associated with the user's subscriptions and Google+ friends, or the YouTube home page feed, which is customized for each user.
              * @params {string} channelId The channelId parameter specifies a unique YouTube channel ID. The API will then return a list of that channel's activities.
@@ -59,7 +67,15 @@ If the parameter identifies a property that contains child properties, the child
                 publishedAfter?: string;
                 publishedBefore?: string;
                 regionCode?: string;
-            }) => { execute(callback: (data: IResponse<IActivityListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IActivityListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var channelBanners: {
             /**
@@ -75,7 +91,15 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
             insert: (params: {
                 onBehalfOfContentOwner?: string;
                 resource?: IChannelBannerResource;
-            }) => { execute(callback: (data: IResponse<IChannelBannerResource>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannelBannerResource>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelBannerResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelBannerResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelBannerResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelBannerResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelBannerResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelBannerResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var channelSections: {
             /**
@@ -84,7 +108,15 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Adds a channelSection for the authenticated user's channel.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -104,7 +136,15 @@ The part names that you can include in the parameter value are snippet and conte
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
                 resource?: IChannelSection;
-            }) => { execute(callback: (data: IResponse<IChannelSection>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannelSection>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns channelSection resources that match the API request criteria.
              * @params {string} channelId The channelId parameter specifies a YouTube channel ID. The API will only return that channel's channelSections.
@@ -123,7 +163,15 @@ If the parameter identifies a property that contains child properties, the child
                 mine?: boolean;
                 onBehalfOfContentOwner?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<IChannelSectionListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannelSectionListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSectionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSectionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSectionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSectionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSectionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSectionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update a channelSection.
              * @params {string} part The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -133,7 +181,15 @@ The part names that you can include in the parameter value are snippet and conte
             update: (params: {
                 part: string;
                 resource?: IChannelSection;
-            }) => { execute(callback: (data: IResponse<IChannelSection>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannelSection>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelSection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var channels: {
             /**
@@ -162,7 +218,15 @@ If the parameter identifies a property that contains child properties, the child
                 onBehalfOfContentOwner?: string;
                 pageToken?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<IChannelListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannelListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannelListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a channel's metadata.
              * @params {string} onBehalfOfContentOwner The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.
@@ -176,7 +240,15 @@ Note that this method will override the existing values for all of the mutable p
                 onBehalfOfContentOwner?: string;
                 part: string;
                 resource?: IChannel;
-            }) => { execute(callback: (data: IResponse<IChannel>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannel>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var guideCategories: {
             /**
@@ -193,7 +265,15 @@ If the parameter identifies a property that contains child properties, the child
                 id?: string;
                 part: string;
                 regionCode?: string;
-            }) => { execute(callback: (data: IResponse<IGuideCategoryListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IGuideCategoryListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGuideCategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGuideCategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGuideCategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGuideCategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGuideCategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGuideCategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var i18nLanguages: {
             /**
@@ -204,7 +284,15 @@ If the parameter identifies a property that contains child properties, the child
             list: (params: {
                 hl?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<II18nLanguageListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<II18nLanguageListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nLanguageListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nLanguageListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nLanguageListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nLanguageListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nLanguageListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nLanguageListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var i18nRegions: {
             /**
@@ -215,7 +303,15 @@ If the parameter identifies a property that contains child properties, the child
             list: (params: {
                 hl?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<II18nRegionListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<II18nRegionListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nRegionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nRegionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nRegionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nRegionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nRegionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<II18nRegionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var liveBroadcasts: {
             /**
@@ -238,7 +334,15 @@ This parameter is intended for YouTube content partners that own and manage many
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
                 streamId?: string;
-            }) => { execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Controls the settings for a slate that can be displayed in the broadcast stream.
              * @params {boolean} displaySlate The displaySlate parameter specifies whether the slate is being enabled or disabled.
@@ -267,7 +371,15 @@ This parameter is intended for YouTube content partners that own and manage many
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
                 walltime?: string;
-            }) => { execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes a broadcast.
              * @params {string} id The id parameter specifies the YouTube live broadcast ID for the resource that is being deleted.
@@ -284,7 +396,15 @@ This parameter is intended for YouTube content partners that own and manage many
                 id: string;
                 onBehalfOfContentOwner?: string;
                 onBehalfOfContentOwnerChannel?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a broadcast.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -304,7 +424,15 @@ The part properties that you can include in the parameter value are id, snippet,
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
                 resource?: ILiveBroadcast;
-            }) => { execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns a list of YouTube broadcasts that match the API request parameters.
              * @params {string} broadcastStatus The broadcastStatus parameter filters the API response to only include broadcasts with the specified status.
@@ -331,7 +459,15 @@ This parameter is intended for YouTube content partners that own and manage many
                 onBehalfOfContentOwnerChannel?: string;
                 pageToken?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<ILiveBroadcastListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveBroadcastListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcastListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcastListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcastListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcastListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcastListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcastListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Changes the status of a YouTube live broadcast and initiates any processes associated with the new status. For example, when you transition a broadcast's status to testing, YouTube starts to transmit video to that broadcast's monitor stream. Before calling this method, you should confirm that the value of the status.streamStatus property for the stream bound to your broadcast is active.
              * @params {string} broadcastStatus The broadcastStatus parameter identifies the state to which the broadcast is changing. Note that to transition a broadcast to either the testing or live state, the status.streamStatus must be active for the stream that the broadcast is bound to.
@@ -352,7 +488,15 @@ This parameter is intended for YouTube content partners that own and manage many
                 onBehalfOfContentOwner?: string;
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a broadcast. For example, you could modify the broadcast settings defined in the liveBroadcast resource's contentDetails object.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -374,7 +518,15 @@ Note that this method will override the existing values for all of the mutable p
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
                 resource?: ILiveBroadcast;
-            }) => { execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveBroadcast>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveBroadcast>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var liveStreams: {
             /**
@@ -393,7 +545,15 @@ This parameter is intended for YouTube content partners that own and manage many
                 id: string;
                 onBehalfOfContentOwner?: string;
                 onBehalfOfContentOwnerChannel?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a video stream. The stream enables you to send your video to YouTube, which can then broadcast the video to your audience.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -413,7 +573,15 @@ The part properties that you can include in the parameter value are id, snippet,
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
                 resource?: ILiveStream;
-            }) => { execute(callback: (data: IResponse<ILiveStream>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveStream>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns a list of video streams that match the API request parameters.
              * @params {string} id The id parameter specifies a comma-separated list of YouTube stream IDs that identify the streams being retrieved. In a liveStream resource, the id property specifies the stream's ID.
@@ -438,7 +606,15 @@ This parameter is intended for YouTube content partners that own and manage many
                 onBehalfOfContentOwnerChannel?: string;
                 pageToken?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<ILiveStreamListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveStreamListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStreamListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStreamListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStreamListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStreamListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStreamListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStreamListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a video stream. If the properties that you want to change cannot be updated, then you need to create a new stream with the proper settings.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -460,7 +636,15 @@ Note that this method will override the existing values for all of the mutable p
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
                 resource?: ILiveStream;
-            }) => { execute(callback: (data: IResponse<ILiveStream>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILiveStream>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILiveStream>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var playlistItems: {
             /**
@@ -469,7 +653,15 @@ Note that this method will override the existing values for all of the mutable p
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Adds a resource to a playlist.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -483,7 +675,15 @@ The part names that you can include in the parameter value are snippet, contentD
                 onBehalfOfContentOwner?: string;
                 part: string;
                 resource?: IPlaylistItem;
-            }) => { execute(callback: (data: IResponse<IPlaylistItem>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlaylistItem>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns a collection of playlist items that match the API request parameters. You can retrieve all of the playlist items in a specified playlist or retrieve one or more playlist items by their unique IDs.
              * @params {string} id The id parameter specifies a comma-separated list of one or more unique playlist item IDs.
@@ -506,7 +706,15 @@ If the parameter identifies a property that contains child properties, the child
                 part: string;
                 playlistId?: string;
                 videoId?: string;
-            }) => { execute(callback: (data: IResponse<IPlaylistItemListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlaylistItemListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItemListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItemListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItemListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItemListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItemListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItemListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Modifies a playlist item. For example, you could update the item's position in the playlist.
              * @params {string} part The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -518,7 +726,15 @@ Note that this method will override the existing values for all of the mutable p
             update: (params: {
                 part: string;
                 resource?: IPlaylistItem;
-            }) => { execute(callback: (data: IResponse<IPlaylistItem>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlaylistItem>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistItem>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var playlists: {
             /**
@@ -531,7 +747,15 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
             delete: (params: {
                 id: string;
                 onBehalfOfContentOwner?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a playlist.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -551,7 +775,15 @@ The part names that you can include in the parameter value are snippet and statu
                 onBehalfOfContentOwnerChannel?: string;
                 part: string;
                 resource?: IPlaylist;
-            }) => { execute(callback: (data: IResponse<IPlaylist>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlaylist>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns a collection of playlists that match the API request parameters. For example, you can retrieve all playlists that the authenticated user owns, or you can retrieve one or more playlists by their unique IDs.
              * @params {string} channelId This value indicates that the API should only return the specified channel's playlists.
@@ -580,7 +812,15 @@ If the parameter identifies a property that contains child properties, the child
                 onBehalfOfContentOwnerChannel?: string;
                 pageToken?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<IPlaylistListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlaylistListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylistListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Modifies a playlist. For example, you could change a playlist's title, description, or privacy status.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -596,7 +836,15 @@ Note that this method will override the existing values for all of the mutable p
                 onBehalfOfContentOwner?: string;
                 part: string;
                 resource?: IPlaylist;
-            }) => { execute(callback: (data: IResponse<IPlaylist>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPlaylist>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPlaylist>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var search: {
             /**
@@ -667,7 +915,15 @@ If the parameter identifies a property that contains child properties, the child
                 videoLicense?: string;
                 videoSyndicated?: string;
                 videoType?: string;
-            }) => { execute(callback: (data: IResponse<ISearchListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISearchListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearchListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearchListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearchListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearchListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearchListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearchListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var subscriptions: {
             /**
@@ -676,7 +932,15 @@ If the parameter identifies a property that contains child properties, the child
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Adds a subscription for the authenticated user's channel.
              * @params {string} part The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include.
@@ -686,7 +950,15 @@ The part names that you can include in the parameter value are snippet and conte
             insert: (params: {
                 part: string;
                 resource?: ISubscription;
-            }) => { execute(callback: (data: IResponse<ISubscription>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISubscription>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscription>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscription>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscription>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscription>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscription>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscription>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns subscription resources that match the API request criteria.
              * @params {string} channelId The channelId parameter specifies a YouTube channel ID. The API will only return that channel's subscriptions.
@@ -721,7 +993,15 @@ If the parameter identifies a property that contains child properties, the child
                 order?: string;
                 pageToken?: string;
                 part: string;
-            }) => { execute(callback: (data: IResponse<ISubscriptionListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISubscriptionListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISubscriptionListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var thumbnails: {
             /**
@@ -732,7 +1012,15 @@ If the parameter identifies a property that contains child properties, the child
             set: (params: {
                 onBehalfOfContentOwner?: string;
                 videoId: string;
-            }) => { execute(callback: (data: IResponse<IThumbnailSetResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IThumbnailSetResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IThumbnailSetResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IThumbnailSetResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IThumbnailSetResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IThumbnailSetResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IThumbnailSetResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IThumbnailSetResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var videoCategories: {
             /**
@@ -747,7 +1035,15 @@ If the parameter identifies a property that contains child properties, the child
                 id?: string;
                 part: string;
                 regionCode?: string;
-            }) => { execute(callback: (data: IResponse<IVideoCategoryListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVideoCategoryListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoCategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoCategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoCategoryListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoCategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoCategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoCategoryListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var videos: {
             /**
@@ -760,7 +1056,15 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
             delete: (params: {
                 id: string;
                 onBehalfOfContentOwner?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the ratings that the authorized user gave to a list of specified videos.
              * @params {string} id The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) for which you are retrieving rating data. In a video resource, the id property specifies the video's ID.
@@ -771,7 +1075,15 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
             getRating: (params: {
                 id: string;
                 onBehalfOfContentOwner?: string;
-            }) => { execute(callback: (data: IResponse<IVideoGetRatingResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVideoGetRatingResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoGetRatingResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoGetRatingResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoGetRatingResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoGetRatingResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoGetRatingResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoGetRatingResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Uploads a video to YouTube and optionally sets the video's metadata.
              * @params {boolean} autoLevels The autoLevels parameter indicates whether YouTube should automatically enhance the video's lighting and color.
@@ -797,7 +1109,15 @@ The part names that you can include in the parameter value are snippet, contentD
                 part: string;
                 stabilize?: boolean;
                 resource?: IVideo;
-            }) => { execute(callback: (data: IResponse<IVideo>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVideo>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns a list of videos that match the API request parameters.
              * @params {string} chart The chart parameter identifies the chart that you want to retrieve.
@@ -830,7 +1150,15 @@ If the parameter identifies a property that contains child properties, the child
                 part: string;
                 regionCode?: string;
                 videoCategoryId?: string;
-            }) => { execute(callback: (data: IResponse<IVideoListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVideoListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideoListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Add a like or dislike rating to a video or remove a rating from a video.
              * @params {string} id The id parameter specifies the YouTube video ID of the video that is being rated or having its rating removed.
@@ -843,7 +1171,15 @@ The onBehalfOfContentOwner parameter indicates that the request's authorization 
                 id: string;
                 onBehalfOfContentOwner?: string;
                 rating: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a video's metadata.
              * @params {string} onBehalfOfContentOwner Note: This parameter is intended exclusively for YouTube content partners.
@@ -861,7 +1197,15 @@ In addition, not all of those parts contain properties that can be set when sett
                 onBehalfOfContentOwner?: string;
                 part: string;
                 resource?: IVideo;
-            }) => { execute(callback: (data: IResponse<IVideo>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IVideo>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IVideo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var watermarks: {
             /**
@@ -873,7 +1217,15 @@ In addition, not all of those parts contain properties that can be set when sett
                 channelId: string;
                 onBehalfOfContentOwner?: string;
                 resource?: IInvideoBranding;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes a watermark.
              * @params {string} channelId The channelId parameter specifies a YouTube channel ID for which the watermark is being unset.
@@ -882,7 +1234,15 @@ In addition, not all of those parts contain properties that can be set when sett
             unset: (params: {
                 channelId: string;
                 onBehalfOfContentOwner?: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Rights management policy for YouTube resources.
