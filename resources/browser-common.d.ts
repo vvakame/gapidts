@@ -56,5 +56,25 @@ declare module gapi {
 			result?: T;
 			error?: IErrorResponse;
 		}
+
+		interface IPromiseResponse<T> {
+			result?: T;
+			body?: string;
+			headers?: {[key:string]:string};
+			status?: number;
+			statusText?: string;
+		}
+
+		interface IPromiseErrorResponse extends IPromiseResponse<{error:IErrorResponse;}> {
+		}
+
+		interface Thenable<R> {
+			then<U>(onFulfilled?:(value:R) => Thenable<U>, onRejected?:(error:any) => Thenable<U>): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => Thenable<U>, onRejected?:(error:any) => U): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => Thenable<U>, onRejected?:(error:any) => void): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => U, onRejected?:(error:any) => Thenable<U>): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => U, onRejected?:(error:any) => U): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => U, onRejected?:(error:any) => void): Thenable<U>;
+		}
 	}
 }
