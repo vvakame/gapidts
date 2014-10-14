@@ -23,7 +23,15 @@ declare module gapi.client {
              */
             list: (params: {
                 onBehalfOfContentOwner: string;
-            }) => { execute(callback: (data: IResponse<IBatchReportDefinitionList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBatchReportDefinitionList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportDefinitionList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportDefinitionList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportDefinitionList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportDefinitionList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportDefinitionList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportDefinitionList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var batchReports: {
             /**
@@ -34,7 +42,15 @@ declare module gapi.client {
             list: (params: {
                 batchReportDefinitionId: string;
                 onBehalfOfContentOwner: string;
-            }) => { execute(callback: (data: IResponse<IBatchReportList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBatchReportList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBatchReportList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var reports: {
             /**
@@ -61,7 +77,15 @@ declare module gapi.client {
                 sort?: string;
                 "start-date": string;
                 "start-index"?: number;
-            }) => { execute(callback: (data: IResponse<IResultTable>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IResultTable>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResultTable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResultTable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResultTable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResultTable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResultTable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IResultTable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * A paginated list of batchReportDefinition resources returned in response to a youtubeAnalytics.batchReportDefinitions.list request.

@@ -29,7 +29,15 @@ declare module gapi.client {
                 create: (params: {
                     userId: string;
                     resource?: IDraft;
-                }) => { execute(callback: (data: IResponse<IDraft>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IDraft>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Immediately and permanently deletes the specified draft. Does not simply trash it.
                  * @params {string} id The ID of the draft to delete.
@@ -38,7 +46,15 @@ declare module gapi.client {
                 delete: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets the specified draft.
                  * @params {string} format The format to return the draft in.
@@ -49,7 +65,15 @@ declare module gapi.client {
                     format?: string;
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IDraft>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IDraft>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists the drafts in the user's mailbox.
                  * @params {number} maxResults Maximum number of drafts to return.
@@ -60,7 +84,15 @@ declare module gapi.client {
                     maxResults?: number;
                     pageToken?: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IListDraftsResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListDraftsResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListDraftsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListDraftsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListDraftsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListDraftsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListDraftsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListDraftsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
                  * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
@@ -68,7 +100,15 @@ declare module gapi.client {
                 send: (params: {
                     userId: string;
                     resource?: IDraft;
-                }) => { execute(callback: (data: IResponse<IMessage>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMessage>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Replaces a draft's content.
                  * @params {string} id The ID of the draft to update.
@@ -78,7 +118,15 @@ declare module gapi.client {
                     id: string;
                     userId: string;
                     resource?: IDraft;
-                }) => { execute(callback: (data: IResponse<IDraft>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IDraft>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IDraft>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             history: {
                 /**
@@ -95,7 +143,15 @@ declare module gapi.client {
                     pageToken?: string;
                     startHistoryId?: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IListHistoryResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListHistoryResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListHistoryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListHistoryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListHistoryResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListHistoryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListHistoryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListHistoryResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             labels: {
                 /**
@@ -105,7 +161,15 @@ declare module gapi.client {
                 create: (params: {
                     userId: string;
                     resource?: ILabel;
-                }) => { execute(callback: (data: IResponse<ILabel>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ILabel>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Immediately and permanently deletes the specified label and removes it from any messages and threads that it is applied to.
                  * @params {string} id The ID of the label to delete.
@@ -114,7 +178,15 @@ declare module gapi.client {
                 delete: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets the specified label.
                  * @params {string} id The ID of the label to retrieve.
@@ -123,14 +195,30 @@ declare module gapi.client {
                 get: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<ILabel>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ILabel>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists all labels in the user's mailbox.
                  * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
                  */
                 list: (params: {
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IListLabelsResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListLabelsResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListLabelsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListLabelsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListLabelsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListLabelsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListLabelsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListLabelsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates the specified label. This method supports patch semantics.
                  * @params {string} id The ID of the label to update.
@@ -140,7 +228,15 @@ declare module gapi.client {
                     id: string;
                     userId: string;
                     resource?: ILabel;
-                }) => { execute(callback: (data: IResponse<ILabel>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ILabel>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Updates the specified label.
                  * @params {string} id The ID of the label to update.
@@ -150,7 +246,15 @@ declare module gapi.client {
                     id: string;
                     userId: string;
                     resource?: ILabel;
-                }) => { execute(callback: (data: IResponse<ILabel>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<ILabel>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<ILabel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             messages: {
                 /**
@@ -161,7 +265,15 @@ declare module gapi.client {
                 delete: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets the specified message.
                  * @params {string} format The format to return the message in.
@@ -174,7 +286,15 @@ declare module gapi.client {
                     id: string;
                     metadataHeaders?: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IMessage>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMessage>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
                  * @params {string} internalDateSource Source for Gmail's internal date of the message.
@@ -184,7 +304,15 @@ declare module gapi.client {
                     internalDateSource?: string;
                     userId: string;
                     resource?: IMessage;
-                }) => { execute(callback: (data: IResponse<IMessage>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMessage>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.
                  * @params {string} internalDateSource Source for Gmail's internal date of the message.
@@ -194,7 +322,15 @@ declare module gapi.client {
                     internalDateSource?: string;
                     userId: string;
                     resource?: IMessage;
-                }) => { execute(callback: (data: IResponse<IMessage>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMessage>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists the messages in the user's mailbox.
                  * @params {boolean} includeSpamTrash Include messages from SPAM and TRASH in the results.
@@ -211,7 +347,15 @@ declare module gapi.client {
                     pageToken?: string;
                     q?: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IListMessagesResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListMessagesResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListMessagesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListMessagesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListMessagesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListMessagesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListMessagesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListMessagesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Modifies the labels on the specified message.
                  * @params {string} id The ID of the message to modify.
@@ -221,7 +365,15 @@ declare module gapi.client {
                     id: string;
                     userId: string;
                     resource?: IModifyMessageRequest;
-                }) => { execute(callback: (data: IResponse<IMessage>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMessage>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Sends the specified message to the recipients in the To, Cc, and Bcc headers.
                  * @params {string} userId The user's email address. The special value me can be used to indicate the authenticated user.
@@ -229,7 +381,15 @@ declare module gapi.client {
                 send: (params: {
                     userId: string;
                     resource?: IMessage;
-                }) => { execute(callback: (data: IResponse<IMessage>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMessage>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Moves the specified message to the trash.
                  * @params {string} id The ID of the message to Trash.
@@ -238,7 +398,15 @@ declare module gapi.client {
                 trash: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IMessage>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMessage>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Removes the specified message from the trash.
                  * @params {string} id The ID of the message to remove from Trash.
@@ -247,7 +415,15 @@ declare module gapi.client {
                 untrash: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IMessage>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IMessage>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IMessage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 attachments: {
                     /**
                      * Gets the specified message attachment.
@@ -259,7 +435,15 @@ declare module gapi.client {
                         id: string;
                         messageId: string;
                         userId: string;
-                    }) => { execute(callback: (data: IResponse<IMessagePartBody>, original: string) => void):void; };
+                    }) => {
+                        execute(callback: (data: IResponse<IMessagePartBody>, original: string) => void):void;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IMessagePartBody>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IMessagePartBody>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IMessagePartBody>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IMessagePartBody>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IMessagePartBody>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                        then<U>(onFulfilled: (response: IPromiseResponse<IMessagePartBody>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    };
                 };
             };
             threads: {
@@ -271,7 +455,15 @@ declare module gapi.client {
                 delete: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Gets the specified thread.
                  * @params {string} id The ID of the thread to retrieve.
@@ -280,7 +472,15 @@ declare module gapi.client {
                 get: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IThread>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IThread>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Lists the threads in the user's mailbox.
                  * @params {boolean} includeSpamTrash Include threads from SPAM and TRASH in the results.
@@ -297,7 +497,15 @@ declare module gapi.client {
                     pageToken?: string;
                     q?: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IListThreadsResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IListThreadsResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListThreadsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListThreadsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListThreadsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListThreadsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListThreadsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IListThreadsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Modifies the labels applied to the thread. This applies to all messages in the thread.
                  * @params {string} id The ID of the thread to modify.
@@ -307,7 +515,15 @@ declare module gapi.client {
                     id: string;
                     userId: string;
                     resource?: IModifyThreadRequest;
-                }) => { execute(callback: (data: IResponse<IThread>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IThread>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Moves the specified thread to the trash.
                  * @params {string} id The ID of the thread to Trash.
@@ -316,7 +532,15 @@ declare module gapi.client {
                 trash: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IThread>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IThread>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Removes the specified thread from the trash.
                  * @params {string} id The ID of the thread to remove from Trash.
@@ -325,7 +549,15 @@ declare module gapi.client {
                 untrash: (params: {
                     id: string;
                     userId: string;
-                }) => { execute(callback: (data: IResponse<IThread>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IThread>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IThread>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         /**

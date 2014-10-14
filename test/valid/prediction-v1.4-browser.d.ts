@@ -28,7 +28,15 @@ declare module gapi.client {
             predict: (params: {
                 hostedModelName: string;
                 resource?: IInput;
-            }) => { execute(callback: (data: IResponse<IOutput>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOutput>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var trainedmodels: {
             /**
@@ -37,20 +45,44 @@ declare module gapi.client {
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Check training status of your model.
              * @params {string} id The unique name for the predictive model.
              */
             get: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<ITraining>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITraining>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Begin training your model.
              */
             insert: (params: {
                 resource?: ITraining;
-            }) => { execute(callback: (data: IResponse<ITraining>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITraining>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Submit model id and request a prediction
              * @params {string} id The unique name for the predictive model.
@@ -58,7 +90,15 @@ declare module gapi.client {
             predict: (params: {
                 id: string;
                 resource?: IInput;
-            }) => { execute(callback: (data: IResponse<IOutput>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOutput>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Add new data to a trained model.
              * @params {string} id The unique name for the predictive model.
@@ -66,7 +106,15 @@ declare module gapi.client {
             update: (params: {
                 id: string;
                 resource?: IUpdate;
-            }) => { execute(callback: (data: IResponse<ITraining>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITraining>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITraining>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IInput {
             /**

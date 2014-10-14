@@ -21,12 +21,28 @@ declare module gapi.client {
              */
             get: (params: {
                 id: number;
-            }) => { execute(callback: (data: IResponse<IAccount>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccount>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the authenticated user's list of accounts.
              */
             list: (params: {
-            }) => { execute(callback: (data: IResponse<IAccountsList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccountsList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccountsList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an existing account. This method supports patch semantics.
              * @params {number} id The account id
@@ -34,7 +50,15 @@ declare module gapi.client {
             patch: (params: {
                 id: number;
                 resource?: IAccount;
-            }) => { execute(callback: (data: IResponse<IAccount>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccount>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an existing account.
              * @params {number} id The account id
@@ -42,7 +66,15 @@ declare module gapi.client {
             update: (params: {
                 id: number;
                 resource?: IAccount;
-            }) => { execute(callback: (data: IResponse<IAccount>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAccount>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAccount>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var creatives: {
             /**
@@ -53,13 +85,29 @@ declare module gapi.client {
             get: (params: {
                 accountId: number;
                 buyerCreativeId: string;
-            }) => { execute(callback: (data: IResponse<ICreative>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICreative>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Submit a new creative.
              */
             insert: (params: {
                 resource?: ICreative;
-            }) => { execute(callback: (data: IResponse<ICreative>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICreative>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreative>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of the authenticated user's active creatives. A creative will be available 30-40 minutes after submission.
              * @params {number} maxResults Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
@@ -70,7 +118,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 statusFilter?: string;
-            }) => { execute(callback: (data: IResponse<ICreativesList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICreativesList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreativesList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreativesList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreativesList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreativesList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreativesList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICreativesList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Configuration data for an Ad Exchange buyer account.

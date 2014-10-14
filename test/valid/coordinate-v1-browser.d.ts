@@ -23,7 +23,15 @@ declare module gapi.client {
              */
             list: (params: {
                 teamId: string;
-            }) => { execute(callback: (data: IResponse<ICustomFieldDefListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICustomFieldDefListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomFieldDefListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomFieldDefListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomFieldDefListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomFieldDefListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomFieldDefListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICustomFieldDefListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var jobs: {
             /**
@@ -34,7 +42,15 @@ declare module gapi.client {
             get: (params: {
                 jobId: string;
                 teamId: string;
-            }) => { execute(callback: (data: IResponse<IJob>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IJob>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Inserts a new job. Only the state field of the job should be set.
              * @params {string} address Job address as newline (Unix) separated string
@@ -60,7 +76,15 @@ declare module gapi.client {
                 teamId: string;
                 title: string;
                 resource?: IJob;
-            }) => { execute(callback: (data: IResponse<IJob>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IJob>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves jobs created or modified since the given timestamp.
              * @params {number} maxResults Maximum number of results to return in one page.
@@ -73,7 +97,15 @@ declare module gapi.client {
                 minModifiedTimestampMs?: string;
                 pageToken?: string;
                 teamId: string;
-            }) => { execute(callback: (data: IResponse<IJobListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IJobListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJobListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJobListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJobListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJobListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJobListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJobListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a job. Fields that are set in the job state will be updated. This method supports patch semantics.
              * @params {string} address Job address as newline (Unix) separated string
@@ -103,7 +135,15 @@ declare module gapi.client {
                 teamId: string;
                 title?: string;
                 resource?: IJob;
-            }) => { execute(callback: (data: IResponse<IJob>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IJob>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a job. Fields that are set in the job state will be updated.
              * @params {string} address Job address as newline (Unix) separated string
@@ -133,7 +173,15 @@ declare module gapi.client {
                 teamId: string;
                 title?: string;
                 resource?: IJob;
-            }) => { execute(callback: (data: IResponse<IJob>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IJob>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IJob>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var location: {
             /**
@@ -150,7 +198,15 @@ declare module gapi.client {
                 startTimestampMs: string;
                 teamId: string;
                 workerEmail: string;
-            }) => { execute(callback: (data: IResponse<ILocationListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILocationListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILocationListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILocationListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILocationListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILocationListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILocationListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILocationListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var schedule: {
             /**
@@ -161,7 +217,15 @@ declare module gapi.client {
             get: (params: {
                 jobId: string;
                 teamId: string;
-            }) => { execute(callback: (data: IResponse<ISchedule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISchedule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Replaces the schedule of a job with the provided schedule. This method supports patch semantics.
              * @params {boolean} allDay Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.
@@ -179,7 +243,15 @@ declare module gapi.client {
                 startTime?: string;
                 teamId: string;
                 resource?: ISchedule;
-            }) => { execute(callback: (data: IResponse<ISchedule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISchedule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Replaces the schedule of a job with the provided schedule.
              * @params {boolean} allDay Whether the job is scheduled for the whole day. Time of day in start/end times is ignored if this is true.
@@ -197,7 +269,15 @@ declare module gapi.client {
                 startTime?: string;
                 teamId: string;
                 resource?: ISchedule;
-            }) => { execute(callback: (data: IResponse<ISchedule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISchedule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISchedule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var worker: {
             /**
@@ -206,7 +286,15 @@ declare module gapi.client {
              */
             list: (params: {
                 teamId: string;
-            }) => { execute(callback: (data: IResponse<IWorkerListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IWorkerListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWorkerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWorkerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWorkerListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWorkerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWorkerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWorkerListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Custom field.

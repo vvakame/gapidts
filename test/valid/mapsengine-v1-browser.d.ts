@@ -23,7 +23,15 @@ declare module gapi.client {
              */
             get: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IAsset>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAsset>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAsset>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAsset>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAsset>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAsset>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAsset>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAsset>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return all assets readable by the current user.
              * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -54,7 +62,15 @@ declare module gapi.client {
                 search?: string;
                 tags?: string;
                 type?: string;
-            }) => { execute(callback: (data: IResponse<IAssetsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAssetsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAssetsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAssetsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAssetsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAssetsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAssetsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAssetsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             parents: {
                 /**
                  * Return all parent ids of the specified asset.
@@ -66,7 +82,15 @@ declare module gapi.client {
                     id: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var layers: {
@@ -76,7 +100,15 @@ declare module gapi.client {
              */
             cancelProcessing: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Create a layer asset.
              * @params {boolean} process Whether to queue the created layer for processing.
@@ -84,14 +116,30 @@ declare module gapi.client {
             create: (params: {
                 process?: boolean;
                 resource?: ILayer;
-            }) => { execute(callback: (data: IResponse<ILayer>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILayer>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete a layer.
              * @params {string} id The ID of the layer. Only the layer creator or project owner are permitted to delete. If the layer is published, or included in a map, the request will fail. Unpublish the layer, and remove it from all maps prior to deleting.
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return metadata for a particular layer.
              * @params {string} id The ID of the layer.
@@ -100,7 +148,15 @@ declare module gapi.client {
             get: (params: {
                 id: string;
                 version?: string;
-            }) => { execute(callback: (data: IResponse<ILayer>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILayer>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayer>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return all layers readable by the current user.
              * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -131,7 +187,15 @@ declare module gapi.client {
                 role?: string;
                 search?: string;
                 tags?: string;
-            }) => { execute(callback: (data: IResponse<ILayersListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILayersListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILayersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Mutate a layer asset.
              * @params {string} id The ID of the layer.
@@ -139,14 +203,30 @@ declare module gapi.client {
             patch: (params: {
                 id: string;
                 resource?: ILayer;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Process a layer asset.
              * @params {string} id The ID of the layer.
              */
             process: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Publish a layer asset.
              * @params {boolean} force If set to true, the API will allow publication of the layer even if it's out of date. If not true, you'll need to reprocess any out-of-date layer before publishing.
@@ -155,14 +235,30 @@ declare module gapi.client {
             publish: (params: {
                 force?: boolean;
                 id: string;
-            }) => { execute(callback: (data: IResponse<IPublishResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPublishResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Unpublish a layer asset.
              * @params {string} id The ID of the layer.
              */
             unpublish: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IPublishResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPublishResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             parents: {
                 /**
                  * Return all parent ids of the specified layer.
@@ -174,7 +270,15 @@ declare module gapi.client {
                     id: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var maps: {
@@ -183,14 +287,30 @@ declare module gapi.client {
              */
             create: (params: {
                 resource?: IMap;
-            }) => { execute(callback: (data: IResponse<IMap>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMap>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete a map.
              * @params {string} id The ID of the map. Only the map creator or project owner are permitted to delete. If the map is published the request will fail. Unpublish the map prior to deleting.
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return metadata for a particular map.
              * @params {string} id The ID of the map.
@@ -199,7 +319,15 @@ declare module gapi.client {
             get: (params: {
                 id: string;
                 version?: string;
-            }) => { execute(callback: (data: IResponse<IMap>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMap>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return all maps readable by the current user.
              * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -230,7 +358,15 @@ declare module gapi.client {
                 role?: string;
                 search?: string;
                 tags?: string;
-            }) => { execute(callback: (data: IResponse<IMapsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMapsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMapsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMapsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMapsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMapsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMapsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMapsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Mutate a map asset.
              * @params {string} id The ID of the map.
@@ -238,7 +374,15 @@ declare module gapi.client {
             patch: (params: {
                 id: string;
                 resource?: IMap;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Publish a map asset.
              * @params {boolean} force If set to true, the API will allow publication of the map even if it's out of date. If false, the map must have a processingStatus of complete before publishing.
@@ -247,21 +391,45 @@ declare module gapi.client {
             publish: (params: {
                 force?: boolean;
                 id: string;
-            }) => { execute(callback: (data: IResponse<IPublishResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPublishResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Unpublish a map asset.
              * @params {string} id The ID of the map.
              */
             unpublish: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IPublishResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPublishResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var projects: {
             /**
              * Return all projects readable by the current user.
              */
             list: (params: {
-            }) => { execute(callback: (data: IResponse<IProjectsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProjectsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProjectsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProjectsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProjectsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProjectsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProjectsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProjectsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             icons: {
                 /**
                  * Create an icon.
@@ -270,7 +438,15 @@ declare module gapi.client {
                 create: (params: {
                     projectId: string;
                     resource?: IIcon;
-                }) => { execute(callback: (data: IResponse<IIcon>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IIcon>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Return metadata for a specific icon
                  * @params {string} id The ID of the icon.
@@ -279,7 +455,15 @@ declare module gapi.client {
                 get: (params: {
                     id: string;
                     projectId: string;
-                }) => { execute(callback: (data: IResponse<IIcon>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IIcon>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIcon>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Return all icons in the current project
                  * @params {number} maxResults The maximum number of items to include in a single response page. The maximum supported value is 50.
@@ -290,7 +474,15 @@ declare module gapi.client {
                     maxResults?: number;
                     pageToken?: string;
                     projectId: string;
-                }) => { execute(callback: (data: IResponse<IIconsListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IIconsListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIconsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIconsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIconsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIconsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIconsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IIconsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var rasterCollections: {
@@ -300,27 +492,59 @@ declare module gapi.client {
              */
             cancelProcessing: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Create a raster collection asset.
              */
             create: (params: {
                 resource?: IRasterCollection;
-            }) => { execute(callback: (data: IResponse<IRasterCollection>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRasterCollection>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete a raster collection.
              * @params {string} id The ID of the raster collection. Only the raster collection creator or project owner are permitted to delete. If the rastor collection is included in a layer, the request will fail. Remove the raster collection from all layers prior to deleting.
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return metadata for a particular raster collection.
              * @params {string} id The ID of the raster collection.
              */
             get: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IRasterCollection>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRasterCollection>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollection>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return all raster collections readable by the current user.
              * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -351,7 +575,15 @@ declare module gapi.client {
                 role?: string;
                 search?: string;
                 tags?: string;
-            }) => { execute(callback: (data: IResponse<IRasterCollectionsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRasterCollectionsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Mutate a raster collection asset.
              * @params {string} id The ID of the raster collection.
@@ -359,14 +591,30 @@ declare module gapi.client {
             patch: (params: {
                 id: string;
                 resource?: IRasterCollection;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Process a raster collection asset.
              * @params {string} id The ID of the raster collection.
              */
             process: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             parents: {
                 /**
                  * Return all parent ids of the specified raster collection.
@@ -378,7 +626,15 @@ declare module gapi.client {
                     id: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             rasters: {
                 /**
@@ -390,7 +646,15 @@ declare module gapi.client {
                 batchDelete: (params: {
                     id: string;
                     resource?: IRasterCollectionsRasterBatchDeleteRequest;
-                }) => { execute(callback: (data: IResponse<IRasterCollectionsRastersBatchDeleteResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IRasterCollectionsRastersBatchDeleteResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Add rasters to an existing raster collection. Rasters must be successfully processed in order to be added to a raster collection.
                  * 
@@ -400,7 +664,15 @@ declare module gapi.client {
                 batchInsert: (params: {
                     id: string;
                     resource?: IRasterCollectionsRastersBatchInsertRequest;
-                }) => { execute(callback: (data: IResponse<IRasterCollectionsRastersBatchInsertResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IRasterCollectionsRastersBatchInsertResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersBatchInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Return all rasters within a raster collection.
                  * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -429,7 +701,15 @@ declare module gapi.client {
                     role?: string;
                     search?: string;
                     tags?: string;
-                }) => { execute(callback: (data: IResponse<IRasterCollectionsRastersListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IRasterCollectionsRastersListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IRasterCollectionsRastersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var rasters: {
@@ -439,14 +719,30 @@ declare module gapi.client {
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return metadata for a single raster.
              * @params {string} id The ID of the raster.
              */
             get: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IRaster>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRaster>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return all rasters readable by the current user.
              * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -477,7 +773,15 @@ declare module gapi.client {
                 role?: string;
                 search?: string;
                 tags?: string;
-            }) => { execute(callback: (data: IResponse<IRastersListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRastersListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRastersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRastersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRastersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRastersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRastersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRastersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Mutate a raster asset.
              * @params {string} id The ID of the raster.
@@ -485,20 +789,44 @@ declare module gapi.client {
             patch: (params: {
                 id: string;
                 resource?: IRaster;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Process a raster asset.
              * @params {string} id The ID of the raster.
              */
             process: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Create a skeleton raster asset for upload.
              */
             upload: (params: {
                 resource?: IRaster;
-            }) => { execute(callback: (data: IResponse<IRaster>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRaster>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRaster>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             files: {
                 /**
                  * Upload a file to a raster asset.
@@ -508,7 +836,15 @@ declare module gapi.client {
                 insert: (params: {
                     filename: string;
                     id: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             parents: {
                 /**
@@ -521,7 +857,15 @@ declare module gapi.client {
                     id: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         var tables: {
@@ -530,14 +874,30 @@ declare module gapi.client {
              */
             create: (params: {
                 resource?: ITable;
-            }) => { execute(callback: (data: IResponse<ITable>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITable>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete a table.
              * @params {string} id The ID of the table. Only the table creator or project owner are permitted to delete. If the table is included in a layer, the request will fail. Remove it from all layers prior to deleting.
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return metadata for a particular table, including the schema.
              * @params {string} id The ID of the table.
@@ -546,7 +906,15 @@ declare module gapi.client {
             get: (params: {
                 id: string;
                 version?: string;
-            }) => { execute(callback: (data: IResponse<ITable>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITable>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Return all tables readable by the current user.
              * @params {string} bbox A bounding box, expressed as "west,south,east,north". If set, only assets which intersect this bounding box will be returned.
@@ -577,7 +945,15 @@ declare module gapi.client {
                 role?: string;
                 search?: string;
                 tags?: string;
-            }) => { execute(callback: (data: IResponse<ITablesListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITablesListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITablesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITablesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITablesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITablesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITablesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITablesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Mutate a table asset.
              * @params {string} id The ID of the table.
@@ -585,14 +961,30 @@ declare module gapi.client {
             patch: (params: {
                 id: string;
                 resource?: ITable;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Process a table asset.
              * @params {string} id The ID of the table.
              */
             process: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProcessResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProcessResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Create a placeholder table asset to which table files can be uploaded.
              * Once the placeholder has been created, files are uploaded to the https://www.googleapis.com/upload/mapsengine/v1/tables/table_id/files endpoint.
@@ -600,7 +992,15 @@ declare module gapi.client {
              */
             upload: (params: {
                 resource?: ITable;
-            }) => { execute(callback: (data: IResponse<ITable>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITable>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITable>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             features: {
                 /**
                  * Delete all features matching the given IDs.
@@ -609,7 +1009,15 @@ declare module gapi.client {
                 batchDelete: (params: {
                     id: string;
                     resource?: IFeaturesBatchDeleteRequest;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Append features to an existing table.
                  * 
@@ -625,7 +1033,15 @@ declare module gapi.client {
                 batchInsert: (params: {
                     id: string;
                     resource?: IFeaturesBatchInsertRequest;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Update the supplied features.
                  * 
@@ -647,7 +1063,15 @@ declare module gapi.client {
                 batchPatch: (params: {
                     id: string;
                     resource?: IFeaturesBatchPatchRequest;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Return a single feature, given its ID.
                  * @params {string} id The ID of the feature to get.
@@ -660,7 +1084,15 @@ declare module gapi.client {
                     select?: string;
                     tableId: string;
                     version?: string;
-                }) => { execute(callback: (data: IResponse<IFeature>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFeature>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeature>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeature>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeature>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeature>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeature>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeature>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
                 /**
                  * Return all features readable by the current user.
                  * @params {string} id The ID of the table to which these features belong.
@@ -685,7 +1117,15 @@ declare module gapi.client {
                     select?: string;
                     version?: string;
                     where?: string;
-                }) => { execute(callback: (data: IResponse<IFeaturesListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IFeaturesListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeaturesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeaturesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeaturesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeaturesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeaturesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IFeaturesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             files: {
                 /**
@@ -697,7 +1137,15 @@ declare module gapi.client {
                 insert: (params: {
                     filename: string;
                     id: string;
-                }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+                }) => {
+                    execute(callback: (data:any, original: string) => void):void;// void
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
             parents: {
                 /**
@@ -710,7 +1158,15 @@ declare module gapi.client {
                     id: string;
                     maxResults?: number;
                     pageToken?: string;
-                }) => { execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void; };
+                }) => {
+                    execute(callback: (data: IResponse<IParentsListResponse>, original: string) => void):void;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                    then<U>(onFulfilled: (response: IPromiseResponse<IParentsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                };
             };
         };
         /**

@@ -27,7 +27,15 @@ declare module gapi.client {
              */
             get: (params: {
                 activityId: string;
-            }) => { execute(callback: (data: IResponse<IActivity>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IActivity>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivity>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all of the activities in the specified collection for a particular user.
              * @params {string} collection The collection of activities to list.
@@ -40,7 +48,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IActivityFeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IActivityFeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Search public activities.
              * @params {string} language Specify the preferred language to search with. See search language codes for available values.
@@ -55,7 +71,15 @@ declare module gapi.client {
                 orderBy?: string;
                 pageToken?: string;
                 query: string;
-            }) => { execute(callback: (data: IResponse<IActivityFeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IActivityFeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IActivityFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var comments: {
             /**
@@ -64,7 +88,15 @@ declare module gapi.client {
              */
             get: (params: {
                 commentId: string;
-            }) => { execute(callback: (data: IResponse<IComment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IComment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all of the comments for an activity.
              * @params {string} activityId The ID of the activity to get comments for.
@@ -77,7 +109,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 sortOrder?: string;
-            }) => { execute(callback: (data: IResponse<ICommentFeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICommentFeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var moments: {
             /**
@@ -91,7 +131,15 @@ declare module gapi.client {
                 debug?: boolean;
                 userId: string;
                 resource?: IMoment;
-            }) => { execute(callback: (data: IResponse<IMoment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMoment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMoment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMoment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMoment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMoment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMoment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMoment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all of the moments for a particular user.
              * @params {string} collection The collection of moments to list.
@@ -108,14 +156,30 @@ declare module gapi.client {
                 targetUrl?: string;
                 type?: string;
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IMomentsFeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMomentsFeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMomentsFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMomentsFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMomentsFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMomentsFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMomentsFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMomentsFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete a moment.
              * @params {string} id The ID of the moment to delete.
              */
             remove: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var people: {
             /**
@@ -124,7 +188,15 @@ declare module gapi.client {
              */
             get: (params: {
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IPerson>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPerson>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPerson>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPerson>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPerson>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPerson>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPerson>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPerson>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all of the people in the specified collection.
              * @params {string} collection The collection of people to list.
@@ -139,7 +211,15 @@ declare module gapi.client {
                 orderBy?: string;
                 pageToken?: string;
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IPeopleFeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPeopleFeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * List all of the people in the specified collection for a particular activity.
              * @params {string} activityId The ID of the activity to get the list of people for.
@@ -152,7 +232,15 @@ declare module gapi.client {
                 collection: string;
                 maxResults?: number;
                 pageToken?: string;
-            }) => { execute(callback: (data: IResponse<IPeopleFeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPeopleFeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Search all public profiles.
              * @params {string} language Specify the preferred language to search with. See search language codes for available values.
@@ -165,7 +253,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 query: string;
-            }) => { execute(callback: (data: IResponse<IPeopleFeed>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPeopleFeed>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPeopleFeed>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IAcl {
             /**

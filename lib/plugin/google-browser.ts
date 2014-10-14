@@ -37,10 +37,30 @@ class GoogleDiscoveryBasedAPIForBrowser extends GoogleDiscoveryBasedAPI {
 		process.output(") => ");
 
 		if (method.response && method.response.$ref) {
-			process.output("{ execute(callback: (data: IResponse<I").output(method.response.$ref).outputLine(">, original: string) => void):void; };");
+			process.outputLine("{");
+			process.increaseIndent();
+			process.output("execute(callback: (data: IResponse<I").output(method.response.$ref).outputLine(">, original: string) => void):void;");
+			process.output("then<U>(onFulfilled: (response: IPromiseResponse<I").output(method.response.$ref).outputLine(">) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;");
+			process.output("then<U>(onFulfilled: (response: IPromiseResponse<I").output(method.response.$ref).outputLine(">) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;");
+			process.output("then<U>(onFulfilled: (response: IPromiseResponse<I").output(method.response.$ref).outputLine(">) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;");
+			process.output("then<U>(onFulfilled: (response: IPromiseResponse<I").output(method.response.$ref).outputLine(">) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;");
+			process.output("then<U>(onFulfilled: (response: IPromiseResponse<I").output(method.response.$ref).outputLine(">) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;");
+			process.output("then<U>(onFulfilled: (response: IPromiseResponse<I").output(method.response.$ref).outputLine(">) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;");
+			process.decreaseIndent();
+			process.outputLine("};");
 		} else if (!method.response) {
 			// e.g. blogger-v3 blogger.comments.delete and other delete, remove API
-			process.outputLine("{ execute(callback: (data:any, original: string) => void):void; }; // void");
+			process.outputLine("{");
+			process.increaseIndent();
+			process.outputLine("execute(callback: (data:any, original: string) => void):void;// void");
+			process.outputLine("then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;");
+			process.outputLine("then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;");
+			process.outputLine("then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;");
+			process.outputLine("then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;");
+			process.outputLine("then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;");
+			process.outputLine("then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;");
+			process.decreaseIndent();
+			process.outputLine("};");
 		} else {
 			console.log(method.base);
 			throw new Error("unknown response");

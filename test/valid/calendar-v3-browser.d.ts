@@ -25,7 +25,15 @@ declare module gapi.client {
             delete: (params: {
                 calendarId: string;
                 ruleId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns an access control rule.
              * @params {string} calendarId Calendar identifier.
@@ -34,7 +42,15 @@ declare module gapi.client {
             get: (params: {
                 calendarId: string;
                 ruleId: string;
-            }) => { execute(callback: (data: IResponse<IAclRule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAclRule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates an access control rule.
              * @params {string} calendarId Calendar identifier.
@@ -42,7 +58,15 @@ declare module gapi.client {
             insert: (params: {
                 calendarId: string;
                 resource?: IAclRule;
-            }) => { execute(callback: (data: IResponse<IAclRule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAclRule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the rules in the access control list for the calendar.
              * @params {string} calendarId Calendar identifier.
@@ -60,7 +84,15 @@ Optional. The default is to return all entries.
                 pageToken?: string;
                 showDeleted?: boolean;
                 syncToken?: string;
-            }) => { execute(callback: (data: IResponse<IAcl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAcl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAcl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAcl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAcl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAcl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAcl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAcl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an access control rule. This method supports patch semantics.
              * @params {string} calendarId Calendar identifier.
@@ -70,7 +102,15 @@ Optional. The default is to return all entries.
                 calendarId: string;
                 ruleId: string;
                 resource?: IAclRule;
-            }) => { execute(callback: (data: IResponse<IAclRule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAclRule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an access control rule.
              * @params {string} calendarId Calendar identifier.
@@ -80,7 +120,15 @@ Optional. The default is to return all entries.
                 calendarId: string;
                 ruleId: string;
                 resource?: IAclRule;
-            }) => { execute(callback: (data: IResponse<IAclRule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAclRule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAclRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Watch for changes to ACL resources.
              * @params {string} calendarId Calendar identifier.
@@ -99,7 +147,15 @@ Optional. The default is to return all entries.
                 showDeleted?: boolean;
                 syncToken?: string;
                 resource?: IChannel;
-            }) => { execute(callback: (data: IResponse<IChannel>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannel>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var calendarList: {
             /**
@@ -108,14 +164,30 @@ Optional. The default is to return all entries.
              */
             delete: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns an entry on the user's calendar list.
              * @params {string} calendarId Calendar identifier.
              */
             get: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data: IResponse<ICalendarListEntry>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendarListEntry>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Adds an entry to the user's calendar list.
              * @params {boolean} colorRgbFormat Whether to use the foregroundColor and backgroundColor fields to write the calendar colors (RGB). If this feature is used, the index-based colorId field will be set to the best matching option automatically. Optional. The default is False.
@@ -123,7 +195,15 @@ Optional. The default is to return all entries.
             insert: (params: {
                 colorRgbFormat?: boolean;
                 resource?: ICalendarListEntry;
-            }) => { execute(callback: (data: IResponse<ICalendarListEntry>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendarListEntry>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns entries on the user's calendar list.
              * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -144,7 +224,15 @@ Optional. The default is to return all entries.
                 showDeleted?: boolean;
                 showHidden?: boolean;
                 syncToken?: string;
-            }) => { execute(callback: (data: IResponse<ICalendarList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendarList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an entry on the user's calendar list. This method supports patch semantics.
              * @params {string} calendarId Calendar identifier.
@@ -154,7 +242,15 @@ Optional. The default is to return all entries.
                 calendarId: string;
                 colorRgbFormat?: boolean;
                 resource?: ICalendarListEntry;
-            }) => { execute(callback: (data: IResponse<ICalendarListEntry>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendarListEntry>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an entry on the user's calendar list.
              * @params {string} calendarId Calendar identifier.
@@ -164,7 +260,15 @@ Optional. The default is to return all entries.
                 calendarId: string;
                 colorRgbFormat?: boolean;
                 resource?: ICalendarListEntry;
-            }) => { execute(callback: (data: IResponse<ICalendarListEntry>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendarListEntry>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendarListEntry>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Watch for changes to CalendarList resources.
              * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -186,7 +290,15 @@ Optional. The default is to return all entries.
                 showHidden?: boolean;
                 syncToken?: string;
                 resource?: IChannel;
-            }) => { execute(callback: (data: IResponse<IChannel>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannel>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var calendars: {
             /**
@@ -195,27 +307,59 @@ Optional. The default is to return all entries.
              */
             clear: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes a secondary calendar.
              * @params {string} calendarId Calendar identifier.
              */
             delete: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns metadata for a calendar.
              * @params {string} calendarId Calendar identifier.
              */
             get: (params: {
                 calendarId: string;
-            }) => { execute(callback: (data: IResponse<ICalendar>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendar>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a secondary calendar.
              */
             insert: (params: {
                 resource?: ICalendar;
-            }) => { execute(callback: (data: IResponse<ICalendar>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendar>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates metadata for a calendar. This method supports patch semantics.
              * @params {string} calendarId Calendar identifier.
@@ -223,7 +367,15 @@ Optional. The default is to return all entries.
             patch: (params: {
                 calendarId: string;
                 resource?: ICalendar;
-            }) => { execute(callback: (data: IResponse<ICalendar>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendar>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates metadata for a calendar.
              * @params {string} calendarId Calendar identifier.
@@ -231,7 +383,15 @@ Optional. The default is to return all entries.
             update: (params: {
                 calendarId: string;
                 resource?: ICalendar;
-            }) => { execute(callback: (data: IResponse<ICalendar>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICalendar>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICalendar>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var channels: {
             /**
@@ -239,14 +399,30 @@ Optional. The default is to return all entries.
              */
             stop: (params: {
                 resource?: IChannel;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var colors: {
             /**
              * Returns the color definitions for calendars and events.
              */
             get: (params: {
-            }) => { execute(callback: (data: IResponse<IColors>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IColors>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IColors>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IColors>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IColors>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IColors>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IColors>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IColors>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var events: {
             /**
@@ -259,7 +435,15 @@ Optional. The default is to return all entries.
                 calendarId: string;
                 eventId: string;
                 sendNotifications?: boolean;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns an event.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -274,7 +458,15 @@ Optional. The default is to return all entries.
                 eventId: string;
                 maxAttendees?: number;
                 timeZone?: string;
-            }) => { execute(callback: (data: IResponse<IEvent>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvent>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Imports an event. This operation is used to add a private copy of an existing event to a calendar.
              * @params {string} calendarId Calendar identifier.
@@ -282,7 +474,15 @@ Optional. The default is to return all entries.
             import: (params: {
                 calendarId: string;
                 resource?: IEvent;
-            }) => { execute(callback: (data: IResponse<IEvent>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvent>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates an event.
              * @params {string} calendarId Calendar identifier.
@@ -294,7 +494,15 @@ Optional. The default is to return all entries.
                 maxAttendees?: number;
                 sendNotifications?: boolean;
                 resource?: IEvent;
-            }) => { execute(callback: (data: IResponse<IEvent>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvent>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns instances of the specified recurring event.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -321,7 +529,15 @@ Optional. The default is to return all entries.
                 timeMax?: string;
                 timeMin?: string;
                 timeZone?: string;
-            }) => { execute(callback: (data: IResponse<IEvents>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvents>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns events on the specified calendar.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -375,7 +591,15 @@ Optional. The default is to return all entries.
                 timeMin?: string;
                 timeZone?: string;
                 updatedMin?: string;
-            }) => { execute(callback: (data: IResponse<IEvents>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvents>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Moves an event to another calendar, i.e. changes an event's organizer.
              * @params {string} calendarId Calendar identifier of the source calendar where the event currently is on.
@@ -388,7 +612,15 @@ Optional. The default is to return all entries.
                 destination: string;
                 eventId: string;
                 sendNotifications?: boolean;
-            }) => { execute(callback: (data: IResponse<IEvent>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvent>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an event. This method supports patch semantics.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -404,7 +636,15 @@ Optional. The default is to return all entries.
                 maxAttendees?: number;
                 sendNotifications?: boolean;
                 resource?: IEvent;
-            }) => { execute(callback: (data: IResponse<IEvent>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvent>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates an event based on a simple text string.
              * @params {string} calendarId Calendar identifier.
@@ -415,7 +655,15 @@ Optional. The default is to return all entries.
                 calendarId: string;
                 sendNotifications?: boolean;
                 text: string;
-            }) => { execute(callback: (data: IResponse<IEvent>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvent>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an event.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -431,7 +679,15 @@ Optional. The default is to return all entries.
                 maxAttendees?: number;
                 sendNotifications?: boolean;
                 resource?: IEvent;
-            }) => { execute(callback: (data: IResponse<IEvent>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvent>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvent>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Watch for changes to Events resources.
              * @params {boolean} alwaysIncludeEmail Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided). The use of this option is discouraged and should only be used by clients which cannot handle the absence of an email address value in the mentioned places. Optional. The default is False.
@@ -486,7 +742,15 @@ Optional. The default is to return all entries.
                 timeZone?: string;
                 updatedMin?: string;
                 resource?: IChannel;
-            }) => { execute(callback: (data: IResponse<IChannel>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannel>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var freebusy: {
             /**
@@ -494,7 +758,15 @@ Optional. The default is to return all entries.
              */
             query: (params: {
                 resource?: IFreeBusyRequest;
-            }) => { execute(callback: (data: IResponse<IFreeBusyResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFreeBusyResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFreeBusyResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFreeBusyResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFreeBusyResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFreeBusyResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFreeBusyResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFreeBusyResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var settings: {
             /**
@@ -503,7 +775,15 @@ Optional. The default is to return all entries.
              */
             get: (params: {
                 setting: string;
-            }) => { execute(callback: (data: IResponse<ISetting>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISetting>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetting>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetting>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetting>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetting>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetting>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISetting>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns all user settings for the authenticated user.
              * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -517,7 +797,15 @@ Optional. The default is to return all entries.
                 maxResults?: number;
                 pageToken?: string;
                 syncToken?: string;
-            }) => { execute(callback: (data: IResponse<ISettings>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISettings>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISettings>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISettings>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISettings>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISettings>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISettings>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISettings>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Watch for changes to Settings resources.
              * @params {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
@@ -532,7 +820,15 @@ Optional. The default is to return all entries.
                 pageToken?: string;
                 syncToken?: string;
                 resource?: IChannel;
-            }) => { execute(callback: (data: IResponse<IChannel>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IChannel>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IChannel>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IAcl {
             /**

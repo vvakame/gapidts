@@ -16,7 +16,15 @@ declare module gapi.client {
              */
             search: (params: {
                 resource?: ITripsSearchRequest;
-            }) => { execute(callback: (data: IResponse<ITripsSearchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITripsSearchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITripsSearchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITripsSearchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITripsSearchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITripsSearchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITripsSearchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITripsSearchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * The make, model, and type of an aircraft.

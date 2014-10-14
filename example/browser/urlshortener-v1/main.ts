@@ -18,6 +18,12 @@ function init() {
 					result.innerText = data.message;
 				}
 			});
+
+			request.then<string>(response => {
+				return response.result.longUrl;
+			}).then(url => {
+				console.log(url);
+			});
 		});
 	});
 }

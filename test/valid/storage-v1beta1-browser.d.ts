@@ -27,7 +27,15 @@ declare module gapi.client {
             delete: (params: {
                 bucket: string;
                 entity: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the ACL entry for the specified entity on the specified bucket.
              * @params {string} bucket Name of a bucket.
@@ -36,7 +44,15 @@ declare module gapi.client {
             get: (params: {
                 bucket: string;
                 entity: string;
-            }) => { execute(callback: (data: IResponse<IBucketAccessControl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucketAccessControl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a new ACL entry on the specified bucket.
              * @params {string} bucket Name of a bucket.
@@ -44,14 +60,30 @@ declare module gapi.client {
             insert: (params: {
                 bucket: string;
                 resource?: IBucketAccessControl;
-            }) => { execute(callback: (data: IResponse<IBucketAccessControl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucketAccessControl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves ACL entries on the specified bucket.
              * @params {string} bucket Name of a bucket.
              */
             list: (params: {
                 bucket: string;
-            }) => { execute(callback: (data: IResponse<IBucketAccessControls>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucketAccessControls>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControls>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControls>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControls>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControls>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControls>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControls>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an ACL entry on the specified bucket. This method supports patch semantics.
              * @params {string} bucket Name of a bucket.
@@ -61,7 +93,15 @@ declare module gapi.client {
                 bucket: string;
                 entity: string;
                 resource?: IBucketAccessControl;
-            }) => { execute(callback: (data: IResponse<IBucketAccessControl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucketAccessControl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an ACL entry on the specified bucket.
              * @params {string} bucket Name of a bucket.
@@ -71,7 +111,15 @@ declare module gapi.client {
                 bucket: string;
                 entity: string;
                 resource?: IBucketAccessControl;
-            }) => { execute(callback: (data: IResponse<IBucketAccessControl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucketAccessControl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucketAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var buckets: {
             /**
@@ -80,7 +128,15 @@ declare module gapi.client {
              */
             delete: (params: {
                 bucket: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns metadata for the specified bucket.
              * @params {string} bucket Name of a bucket.
@@ -89,7 +145,15 @@ declare module gapi.client {
             get: (params: {
                 bucket: string;
                 projection?: string;
-            }) => { execute(callback: (data: IResponse<IBucket>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucket>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a new bucket.
              * @params {string} projection Set of properties to return. Defaults to no_acl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.
@@ -97,7 +161,15 @@ declare module gapi.client {
             insert: (params: {
                 projection?: string;
                 resource?: IBucket;
-            }) => { execute(callback: (data: IResponse<IBucket>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucket>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of buckets for a given project.
              * @params {number} max-results Maximum number of buckets to return.
@@ -110,7 +182,15 @@ declare module gapi.client {
                 pageToken?: string;
                 projectId: string;
                 projection?: string;
-            }) => { execute(callback: (data: IResponse<IBuckets>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBuckets>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBuckets>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBuckets>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBuckets>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBuckets>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBuckets>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBuckets>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a bucket. This method supports patch semantics.
              * @params {string} bucket Name of a bucket.
@@ -120,7 +200,15 @@ declare module gapi.client {
                 bucket: string;
                 projection?: string;
                 resource?: IBucket;
-            }) => { execute(callback: (data: IResponse<IBucket>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucket>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a bucket.
              * @params {string} bucket Name of a bucket.
@@ -130,7 +218,15 @@ declare module gapi.client {
                 bucket: string;
                 projection?: string;
                 resource?: IBucket;
-            }) => { execute(callback: (data: IResponse<IBucket>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBucket>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBucket>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var objectAccessControls: {
             /**
@@ -143,7 +239,15 @@ declare module gapi.client {
                 bucket: string;
                 entity: string;
                 object: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the ACL entry for the specified entity on the specified object.
              * @params {string} bucket Name of a bucket.
@@ -154,7 +258,15 @@ declare module gapi.client {
                 bucket: string;
                 entity: string;
                 object: string;
-            }) => { execute(callback: (data: IResponse<IObjectAccessControl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObjectAccessControl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a new ACL entry on the specified object.
              * @params {string} bucket Name of a bucket.
@@ -164,7 +276,15 @@ declare module gapi.client {
                 bucket: string;
                 object: string;
                 resource?: IObjectAccessControl;
-            }) => { execute(callback: (data: IResponse<IObjectAccessControl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObjectAccessControl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves ACL entries on the specified object.
              * @params {string} bucket Name of a bucket.
@@ -173,7 +293,15 @@ declare module gapi.client {
             list: (params: {
                 bucket: string;
                 object: string;
-            }) => { execute(callback: (data: IResponse<IObjectAccessControls>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObjectAccessControls>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControls>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControls>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControls>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControls>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControls>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControls>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an ACL entry on the specified object. This method supports patch semantics.
              * @params {string} bucket Name of a bucket.
@@ -185,7 +313,15 @@ declare module gapi.client {
                 entity: string;
                 object: string;
                 resource?: IObjectAccessControl;
-            }) => { execute(callback: (data: IResponse<IObjectAccessControl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObjectAccessControl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an ACL entry on the specified object.
              * @params {string} bucket Name of a bucket.
@@ -197,7 +333,15 @@ declare module gapi.client {
                 entity: string;
                 object: string;
                 resource?: IObjectAccessControl;
-            }) => { execute(callback: (data: IResponse<IObjectAccessControl>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObjectAccessControl>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjectAccessControl>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var objects: {
             /**
@@ -208,7 +352,15 @@ declare module gapi.client {
             delete: (params: {
                 bucket: string;
                 object: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves objects or their associated metadata.
              * @params {string} bucket Name of the bucket in which the object resides.
@@ -219,7 +371,15 @@ declare module gapi.client {
                 bucket: string;
                 object: string;
                 projection?: string;
-            }) => { execute(callback: (data: IResponse<IObject>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObject>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Stores new data blobs and associated metadata.
              * @params {string} bucket Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.
@@ -231,7 +391,15 @@ declare module gapi.client {
                 name?: string;
                 projection?: string;
                 resource?: IObject;
-            }) => { execute(callback: (data: IResponse<IObject>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObject>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of objects matching the criteria.
              * @params {string} bucket Name of the bucket in which to look for objects.
@@ -248,7 +416,15 @@ declare module gapi.client {
                 pageToken?: string;
                 prefix?: string;
                 projection?: string;
-            }) => { execute(callback: (data: IResponse<IObjects>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObjects>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjects>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjects>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjects>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjects>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjects>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObjects>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a data blob's associated metadata. This method supports patch semantics.
              * @params {string} bucket Name of the bucket in which the object resides.
@@ -260,7 +436,15 @@ declare module gapi.client {
                 object: string;
                 projection?: string;
                 resource?: IObject;
-            }) => { execute(callback: (data: IResponse<IObject>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObject>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a data blob's associated metadata.
              * @params {string} bucket Name of the bucket in which the object resides.
@@ -272,7 +456,15 @@ declare module gapi.client {
                 object: string;
                 projection?: string;
                 resource?: IObject;
-            }) => { execute(callback: (data: IResponse<IObject>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IObject>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IObject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * A bucket.

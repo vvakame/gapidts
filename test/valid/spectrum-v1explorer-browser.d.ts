@@ -16,37 +16,85 @@ declare module gapi.client {
              */
             getSpectrum: (params: {
                 resource?: IPawsGetSpectrumRequest;
-            }) => { execute(callback: (data: IResponse<IPawsGetSpectrumResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPawsGetSpectrumResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * The Google Spectrum Database does not support batch requests, so this method always yields an UNIMPLEMENTED error.
              */
             getSpectrumBatch: (params: {
                 resource?: IPawsGetSpectrumBatchRequest;
-            }) => { execute(callback: (data: IResponse<IPawsGetSpectrumBatchResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPawsGetSpectrumBatchResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumBatchResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsGetSpectrumBatchResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Initializes the connection between a white space device and the database.
              */
             init: (params: {
                 resource?: IPawsInitRequest;
-            }) => { execute(callback: (data: IResponse<IPawsInitResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPawsInitResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsInitResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsInitResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsInitResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsInitResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsInitResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsInitResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Notifies the database that the device has selected certain frequency ranges for transmission. Only to be invoked when required by the regulator. The Google Spectrum Database does not operate in domains that require notification, so this always yields an UNIMPLEMENTED error.
              */
             notifySpectrumUse: (params: {
                 resource?: IPawsNotifySpectrumUseRequest;
-            }) => { execute(callback: (data: IResponse<IPawsNotifySpectrumUseResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPawsNotifySpectrumUseResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsNotifySpectrumUseResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsNotifySpectrumUseResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsNotifySpectrumUseResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsNotifySpectrumUseResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsNotifySpectrumUseResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsNotifySpectrumUseResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * The Google Spectrum Database implements registration in the getSpectrum method. As such this always returns an UNIMPLEMENTED error.
              */
             register: (params: {
                 resource?: IPawsRegisterRequest;
-            }) => { execute(callback: (data: IResponse<IPawsRegisterResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPawsRegisterResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsRegisterResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsRegisterResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsRegisterResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsRegisterResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsRegisterResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsRegisterResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Validates a device for white space use in accordance with regulatory rules. The Google Spectrum Database does not support master/slave configurations, so this always yields an UNIMPLEMENTED error.
              */
             verifyDevice: (params: {
                 resource?: IPawsVerifyDeviceRequest;
-            }) => { execute(callback: (data: IResponse<IPawsVerifyDeviceResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPawsVerifyDeviceResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsVerifyDeviceResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsVerifyDeviceResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsVerifyDeviceResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsVerifyDeviceResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsVerifyDeviceResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPawsVerifyDeviceResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Antenna characteristics provide additional information, such as the antenna height, antenna type, etc. Whether antenna characteristics must be provided in a request depends on the device type and regulatory domain.

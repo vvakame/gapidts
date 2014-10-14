@@ -17,7 +17,15 @@ declare module gapi.client {
              */
             list: (params: {
                 q: string;
-            }) => { execute(callback: (data: IResponse<IDetectionsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDetectionsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDetectionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDetectionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDetectionsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDetectionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDetectionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDetectionsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var languages: {
             /**
@@ -26,7 +34,15 @@ declare module gapi.client {
              */
             list: (params: {
                 target?: string;
-            }) => { execute(callback: (data: IResponse<ILanguagesListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILanguagesListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILanguagesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILanguagesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILanguagesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILanguagesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILanguagesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILanguagesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var translations: {
             /**
@@ -43,7 +59,15 @@ declare module gapi.client {
                 q: string;
                 source?: string;
                 target: string;
-            }) => { execute(callback: (data: IResponse<ITranslationsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITranslationsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITranslationsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITranslationsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITranslationsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITranslationsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITranslationsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITranslationsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IDetectionsListResponse {
             /**

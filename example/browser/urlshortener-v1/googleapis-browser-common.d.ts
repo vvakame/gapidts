@@ -3,6 +3,8 @@
 // Definitions by: vvakame <https://github.com/vvakame>
 // Definitions: https://github.com/vvakame/gapidts
 
+// https://developers.google.com/api-client-library/javascript/reference/referencedocs
+
 declare module gapi {
 	module auth {
 		function authorize(params:IAuthorizeParams, callback:(tokens:ITokenObject)=>void):void;
@@ -53,6 +55,26 @@ declare module gapi {
 		interface IResponse<T> extends IErrorResponse /* , T */ {
 			result?: T;
 			error?: IErrorResponse;
+		}
+
+		interface IPromiseResponse<T> {
+			result?: T;
+			body?: string;
+			headers?: {[key:string]:string};
+			status?: number;
+			statusText?: string;
+		}
+
+		interface IPromiseErrorResponse extends IPromiseResponse<{error:IErrorResponse;}> {
+		}
+
+		interface Thenable<R> {
+			then<U>(onFulfilled?:(value:R) => Thenable<U>, onRejected?:(error:any) => Thenable<U>): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => Thenable<U>, onRejected?:(error:any) => U): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => Thenable<U>, onRejected?:(error:any) => void): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => U, onRejected?:(error:any) => Thenable<U>): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => U, onRejected?:(error:any) => U): Thenable<U>;
+			then<U>(onFulfilled?:(value:R) => U, onRejected?:(error:any) => void): Thenable<U>;
 		}
 	}
 }

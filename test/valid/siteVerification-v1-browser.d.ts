@@ -23,20 +23,44 @@ declare module gapi.client {
              */
             delete: (params: {
                 id: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get the most current data for a website or domain.
              * @params {string} id The id of a verified site or domain.
              */
             get: (params: {
                 id: string;
-            }) => { execute(callback: (data: IResponse<ISiteVerificationWebResourceResource>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISiteVerificationWebResourceResource>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get a verification token for placing on a website or domain.
              */
             getToken: (params: {
                 resource?: ISiteVerificationWebResourceGettokenRequest;
-            }) => { execute(callback: (data: IResponse<ISiteVerificationWebResourceGettokenResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISiteVerificationWebResourceGettokenResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceGettokenResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceGettokenResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceGettokenResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceGettokenResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceGettokenResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceGettokenResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Attempt verification of a website or domain.
              * @params {string} verificationMethod The method to use for verifying a site or domain.
@@ -44,12 +68,28 @@ declare module gapi.client {
             insert: (params: {
                 verificationMethod: string;
                 resource?: ISiteVerificationWebResourceResource;
-            }) => { execute(callback: (data: IResponse<ISiteVerificationWebResourceResource>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISiteVerificationWebResourceResource>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get the list of your verified websites and domains.
              */
             list: (params: {
-            }) => { execute(callback: (data: IResponse<ISiteVerificationWebResourceListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISiteVerificationWebResourceListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Modify the list of owners for your website or domain. This method supports patch semantics.
              * @params {string} id The id of a verified site or domain.
@@ -57,7 +97,15 @@ declare module gapi.client {
             patch: (params: {
                 id: string;
                 resource?: ISiteVerificationWebResourceResource;
-            }) => { execute(callback: (data: IResponse<ISiteVerificationWebResourceResource>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISiteVerificationWebResourceResource>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Modify the list of owners for your website or domain.
              * @params {string} id The id of a verified site or domain.
@@ -65,7 +113,15 @@ declare module gapi.client {
             update: (params: {
                 id: string;
                 resource?: ISiteVerificationWebResourceResource;
-            }) => { execute(callback: (data: IResponse<ISiteVerificationWebResourceResource>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISiteVerificationWebResourceResource>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISiteVerificationWebResourceResource>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface ISiteVerificationWebResourceGettokenRequest {
             /**

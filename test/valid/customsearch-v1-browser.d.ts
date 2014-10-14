@@ -79,7 +79,15 @@ declare module gapi.client {
                 siteSearchFilter?: string;
                 sort?: string;
                 start?: number;
-            }) => { execute(callback: (data: IResponse<ISearch>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISearch>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearch>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISearch>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IContext {
             facets: {

@@ -27,7 +27,15 @@ declare module gapi.client {
                 blogId: string;
                 maxPosts?: number;
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IBlogUserInfo>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBlogUserInfo>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogUserInfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogUserInfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogUserInfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogUserInfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogUserInfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogUserInfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var blogs: {
             /**
@@ -40,7 +48,15 @@ declare module gapi.client {
                 blogId: string;
                 maxPosts?: number;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IBlog>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBlog>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieve a Blog by URL.
              * @params {string} url The URL of the blog to retrieve.
@@ -49,7 +65,15 @@ declare module gapi.client {
             getByUrl: (params: {
                 url: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IBlog>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBlog>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlog>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of blogs, possibly filtered.
              * @params {boolean} fetchUserInfo Whether the response is a list of blogs with per-user information instead of just blogs.
@@ -64,7 +88,15 @@ declare module gapi.client {
                 status?: string;
                 userId: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IBlogList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBlogList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBlogList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var comments: {
             /**
@@ -77,7 +109,15 @@ declare module gapi.client {
                 blogId: string;
                 commentId: string;
                 postId: string;
-            }) => { execute(callback: (data: IResponse<IComment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IComment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Delete a comment by ID.
              * @params {string} blogId The ID of the Blog.
@@ -88,7 +128,15 @@ declare module gapi.client {
                 blogId: string;
                 commentId: string;
                 postId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Gets one comment by ID.
              * @params {string} blogId ID of the blog to containing the comment.
@@ -101,7 +149,15 @@ declare module gapi.client {
                 commentId: string;
                 postId: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IComment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IComment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the comments for a post, possibly filtered.
              * @params {string} blogId ID of the blog to fetch comments from.
@@ -124,7 +180,15 @@ declare module gapi.client {
                 startDate?: string;
                 status?: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<ICommentList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICommentList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the comments for a blog, across all posts, possibly filtered.
              * @params {string} blogId ID of the blog to fetch comments from.
@@ -141,7 +205,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 startDate?: string;
-            }) => { execute(callback: (data: IResponse<ICommentList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICommentList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICommentList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Marks a comment as spam.
              * @params {string} blogId The ID of the Blog.
@@ -152,7 +224,15 @@ declare module gapi.client {
                 blogId: string;
                 commentId: string;
                 postId: string;
-            }) => { execute(callback: (data: IResponse<IComment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IComment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Removes the content of a comment.
              * @params {string} blogId The ID of the Blog.
@@ -163,7 +243,15 @@ declare module gapi.client {
                 blogId: string;
                 commentId: string;
                 postId: string;
-            }) => { execute(callback: (data: IResponse<IComment>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IComment>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IComment>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var pageViews: {
             /**
@@ -174,7 +262,15 @@ declare module gapi.client {
             get: (params: {
                 blogId: string;
                 range?: string;
-            }) => { execute(callback: (data: IResponse<IPageviews>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPageviews>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageviews>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageviews>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageviews>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageviews>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageviews>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageviews>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var pages: {
             /**
@@ -185,7 +281,15 @@ declare module gapi.client {
             delete: (params: {
                 blogId: string;
                 pageId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Gets one blog page by ID.
              * @params {string} blogId ID of the blog containing the page.
@@ -196,7 +300,15 @@ declare module gapi.client {
                 blogId: string;
                 pageId: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IPage>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPage>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Add a page.
              * @params {string} blogId ID of the blog to add the page to.
@@ -206,7 +318,15 @@ declare module gapi.client {
                 blogId: string;
                 isDraft?: boolean;
                 resource?: IPage;
-            }) => { execute(callback: (data: IResponse<IPage>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPage>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the pages for a blog, optionally including non-LIVE statuses.
              * @params {string} blogId ID of the blog to fetch pages from.
@@ -219,7 +339,15 @@ declare module gapi.client {
                 fetchBodies?: boolean;
                 status?: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IPageList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPageList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPageList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update a page. This method supports patch semantics.
              * @params {string} blogId The ID of the Blog.
@@ -233,7 +361,15 @@ declare module gapi.client {
                 publish?: boolean;
                 revert?: boolean;
                 resource?: IPage;
-            }) => { execute(callback: (data: IResponse<IPage>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPage>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Publishes a draft page.
              * @params {string} blogId The ID of the blog.
@@ -242,7 +378,15 @@ declare module gapi.client {
             publish: (params: {
                 blogId: string;
                 pageId: string;
-            }) => { execute(callback: (data: IResponse<IPage>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPage>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Revert a published or scheduled page to draft state.
              * @params {string} blogId The ID of the blog.
@@ -251,7 +395,15 @@ declare module gapi.client {
             revert: (params: {
                 blogId: string;
                 pageId: string;
-            }) => { execute(callback: (data: IResponse<IPage>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPage>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update a page.
              * @params {string} blogId The ID of the Blog.
@@ -265,7 +417,15 @@ declare module gapi.client {
                 publish?: boolean;
                 revert?: boolean;
                 resource?: IPage;
-            }) => { execute(callback: (data: IResponse<IPage>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPage>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var postUserInfos: {
             /**
@@ -280,7 +440,15 @@ declare module gapi.client {
                 maxComments?: number;
                 postId: string;
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IPostUserInfo>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPostUserInfo>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfo>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfo>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of post and post user info pairs, possibly filtered. The post user info contains per-user information about the post, such as access rights, specific to the user.
              * @params {string} blogId ID of the blog to fetch posts from.
@@ -307,7 +475,15 @@ declare module gapi.client {
                 status?: string;
                 userId: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IPostUserInfosList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPostUserInfosList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfosList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfosList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfosList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfosList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfosList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostUserInfosList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var posts: {
             /**
@@ -318,7 +494,15 @@ declare module gapi.client {
             delete: (params: {
                 blogId: string;
                 postId: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Get a post by ID.
              * @params {string} blogId ID of the blog to fetch the post from.
@@ -335,7 +519,15 @@ declare module gapi.client {
                 maxComments?: number;
                 postId: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IPost>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPost>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieve a Post by Path.
              * @params {string} blogId ID of the blog to fetch the post from.
@@ -348,7 +540,15 @@ declare module gapi.client {
                 maxComments?: number;
                 path: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IPost>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPost>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Add a post.
              * @params {string} blogId ID of the blog to add the post to.
@@ -362,7 +562,15 @@ declare module gapi.client {
                 fetchImages?: boolean;
                 isDraft?: boolean;
                 resource?: IPost;
-            }) => { execute(callback: (data: IResponse<IPost>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPost>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves a list of posts, possibly filtered.
              * @params {string} blogId ID of the blog to fetch posts from.
@@ -389,7 +597,15 @@ declare module gapi.client {
                 startDate?: string;
                 status?: string;
                 view?: string;
-            }) => { execute(callback: (data: IResponse<IPostList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPostList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update a post. This method supports patch semantics.
              * @params {string} blogId The ID of the Blog.
@@ -409,7 +625,15 @@ declare module gapi.client {
                 publish?: boolean;
                 revert?: boolean;
                 resource?: IPost;
-            }) => { execute(callback: (data: IResponse<IPost>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPost>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Publishes a draft post, optionally at the specific time of the given publishDate parameter.
              * @params {string} blogId The ID of the Blog.
@@ -420,7 +644,15 @@ declare module gapi.client {
                 blogId: string;
                 postId: string;
                 publishDate?: string;
-            }) => { execute(callback: (data: IResponse<IPost>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPost>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Revert a published or scheduled post to draft state.
              * @params {string} blogId The ID of the Blog.
@@ -429,7 +661,15 @@ declare module gapi.client {
             revert: (params: {
                 blogId: string;
                 postId: string;
-            }) => { execute(callback: (data: IResponse<IPost>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPost>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Search for a post.
              * @params {string} blogId ID of the blog to fetch the post from.
@@ -442,7 +682,15 @@ declare module gapi.client {
                 fetchBodies?: boolean;
                 orderBy?: string;
                 q: string;
-            }) => { execute(callback: (data: IResponse<IPostList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPostList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPostList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update a post.
              * @params {string} blogId The ID of the Blog.
@@ -462,7 +710,15 @@ declare module gapi.client {
                 publish?: boolean;
                 revert?: boolean;
                 resource?: IPost;
-            }) => { execute(callback: (data: IResponse<IPost>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPost>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPost>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var users: {
             /**
@@ -471,7 +727,15 @@ declare module gapi.client {
              */
             get: (params: {
                 userId: string;
-            }) => { execute(callback: (data: IResponse<IUser>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUser>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUser>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUser>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUser>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUser>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUser>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUser>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IBlog {
             /**

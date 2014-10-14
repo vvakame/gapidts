@@ -28,7 +28,15 @@ declare module gapi.client {
                 project: string;
                 query?: string;
                 resource?: IListMetricDescriptorsRequest;
-            }) => { execute(callback: (data: IResponse<IListMetricDescriptorsResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IListMetricDescriptorsResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListMetricDescriptorsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListMetricDescriptorsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListMetricDescriptorsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListMetricDescriptorsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListMetricDescriptorsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListMetricDescriptorsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var timeseries: {
             /**
@@ -64,7 +72,15 @@ If neither oldest nor timespan is specified, the default time interval will be (
                 timespan?: string;
                 youngest: string;
                 resource?: IListTimeseriesRequest;
-            }) => { execute(callback: (data: IResponse<IListTimeseriesResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IListTimeseriesResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var timeseriesDescriptors: {
             /**
@@ -100,7 +116,15 @@ If neither oldest nor timespan is specified, the default time interval will be (
                 timespan?: string;
                 youngest: string;
                 resource?: IListTimeseriesDescriptorsRequest;
-            }) => { execute(callback: (data: IResponse<IListTimeseriesDescriptorsResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IListTimeseriesDescriptorsResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesDescriptorsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesDescriptorsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesDescriptorsResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesDescriptorsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesDescriptorsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IListTimeseriesDescriptorsResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * The request of cloudmonitoring.metricDescriptors.list.

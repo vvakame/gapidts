@@ -27,7 +27,15 @@ declare module gapi.client {
             limit?: number;
             name?: string;
             prop?: string;
-        }) => { execute(callback: (data: IResponse<IReconcileGet>, original: string) => void):void; };
+        }) => {
+            execute(callback: (data: IResponse<IReconcileGet>, original: string) => void):void;
+            then<U>(onFulfilled: (response: IPromiseResponse<IReconcileGet>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<IReconcileGet>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<IReconcileGet>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<IReconcileGet>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<IReconcileGet>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<IReconcileGet>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+        };
         /**
          * Search Freebase open data.
          * @params {string} as_of_time A mql as_of_time value to use with mql_output queries.
@@ -78,7 +86,15 @@ declare module gapi.client {
             type?: string;
             with?: string;
             without?: string;
-        }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+        }) => {
+            execute(callback: (data:any, original: string) => void):void;// void
+            then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+            then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+        };
         interface IReconcileCandidate {
             /**
              * Percentage likelihood that this candidate is the unique matching entity. Value will be between 0.0 and 1.0

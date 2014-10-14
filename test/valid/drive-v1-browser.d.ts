@@ -25,13 +25,29 @@ declare module gapi.client {
                 id: string;
                 projection?: string;
                 updateViewedDate?: boolean;
-            }) => { execute(callback: (data: IResponse<IFile>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFile>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Inserts a file, and any settable metadata or blob content sent with the request.
              */
             insert: (params: {
                 resource?: IFile;
-            }) => { execute(callback: (data: IResponse<IFile>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFile>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates file metadata and/or content. This method supports patch semantics.
              * @params {string} id The id for the file in question.
@@ -45,7 +61,15 @@ declare module gapi.client {
                 updateModifiedDate?: boolean;
                 updateViewedDate?: boolean;
                 resource?: IFile;
-            }) => { execute(callback: (data: IResponse<IFile>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFile>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates file metadata and/or content
              * @params {string} id The id for the file in question.
@@ -59,7 +83,15 @@ declare module gapi.client {
                 updateModifiedDate?: boolean;
                 updateViewedDate?: boolean;
                 resource?: IFile;
-            }) => { execute(callback: (data: IResponse<IFile>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFile>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFile>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * The metadata for a file.

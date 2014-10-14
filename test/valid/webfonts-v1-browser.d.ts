@@ -17,7 +17,15 @@ declare module gapi.client {
              */
             list: (params: {
                 sort?: string;
-            }) => { execute(callback: (data: IResponse<IWebfontList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IWebfontList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWebfontList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWebfontList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWebfontList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWebfontList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWebfontList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IWebfontList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         interface IWebfont {
             /**

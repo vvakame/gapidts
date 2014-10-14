@@ -29,7 +29,15 @@ declare module gapi.client {
                 dueTime: string;
                 instance: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IBackupRun>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBackupRun>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRun>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRun>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRun>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRun>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRun>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRun>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists all backup runs associated with a Cloud SQL instance.
              * @params {string} backupConfiguration Identifier for the backup configuration. This gets generated automatically when a backup configuration is created.
@@ -44,14 +52,30 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IBackupRunsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBackupRunsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRunsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRunsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRunsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRunsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRunsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackupRunsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var flags: {
             /**
              * Lists all database flags that can be set for Google Cloud SQL instances.
              */
             list: (params: {
-            }) => { execute(callback: (data: IResponse<IFlagsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFlagsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFlagsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFlagsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFlagsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFlagsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFlagsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFlagsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var instances: {
             /**
@@ -61,7 +85,15 @@ declare module gapi.client {
             clone: (params: {
                 project: string;
                 resource?: IInstancesCloneRequest;
-            }) => { execute(callback: (data: IResponse<IInstancesCloneResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesCloneResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesCloneResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesCloneResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesCloneResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesCloneResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesCloneResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesCloneResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes a Cloud SQL instance.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -70,7 +102,15 @@ declare module gapi.client {
             delete: (params: {
                 instance: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IInstancesDeleteResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesDeleteResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Exports data from a Cloud SQL instance to a Google Cloud Storage bucket as a MySQL dump file.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -80,7 +120,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 resource?: IInstancesExportRequest;
-            }) => { execute(callback: (data: IResponse<IInstancesExportResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesExportResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesExportResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesExportResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesExportResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesExportResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesExportResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesExportResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves information about a Cloud SQL instance.
              * @params {string} instance Database instance ID. This does not include the project ID.
@@ -89,7 +137,15 @@ declare module gapi.client {
             get: (params: {
                 instance: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IDatabaseInstance>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDatabaseInstance>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatabaseInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatabaseInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatabaseInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatabaseInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatabaseInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDatabaseInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Imports data into a Cloud SQL instance from a MySQL dump file stored in a Google Cloud Storage bucket.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -99,7 +155,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 resource?: IInstancesImportRequest;
-            }) => { execute(callback: (data: IResponse<IInstancesImportResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesImportResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesImportResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesImportResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesImportResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesImportResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesImportResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesImportResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a new Cloud SQL instance.
              * @params {string} project Project ID of the project to which the newly created Cloud SQL instances should belong.
@@ -107,7 +171,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IDatabaseInstance;
-            }) => { execute(callback: (data: IResponse<IInstancesInsertResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesInsertResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists instances for a given project, in alphabetical order by instance name.
              * @params {number} maxResults The maximum number of results to return per response.
@@ -118,7 +190,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IInstancesListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates the settings of a Cloud SQL instance. This method supports patch semantics.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -128,7 +208,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 resource?: IDatabaseInstance;
-            }) => { execute(callback: (data: IResponse<IInstancesUpdateResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesUpdateResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Promotes the read replica instance to be a stand-alone Cloud SQL instance.
              * @params {string} instance Cloud SQL read replica instance name.
@@ -137,7 +225,15 @@ declare module gapi.client {
             promoteReplica: (params: {
                 instance: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IInstancesPromoteReplicaResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesPromoteReplicaResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesPromoteReplicaResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesPromoteReplicaResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesPromoteReplicaResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesPromoteReplicaResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesPromoteReplicaResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesPromoteReplicaResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes all client certificates and generates a new server SSL certificate for a Cloud SQL instance.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -146,7 +242,15 @@ declare module gapi.client {
             resetSslConfig: (params: {
                 instance: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IInstancesResetSslConfigResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesResetSslConfigResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesResetSslConfigResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesResetSslConfigResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesResetSslConfigResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesResetSslConfigResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesResetSslConfigResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesResetSslConfigResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Restarts a Cloud SQL instance.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -155,7 +259,15 @@ declare module gapi.client {
             restart: (params: {
                 instance: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IInstancesRestartResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesRestartResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestartResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestartResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestartResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestartResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestartResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestartResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Restores a backup of a Cloud SQL instance.
              * @params {string} backupConfiguration The identifier of the backup configuration. This gets generated automatically when a backup configuration is created.
@@ -168,7 +280,15 @@ declare module gapi.client {
                 dueTime: string;
                 instance: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IInstancesRestoreBackupResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesRestoreBackupResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestoreBackupResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestoreBackupResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestoreBackupResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestoreBackupResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestoreBackupResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesRestoreBackupResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets the password for the root user of the specified Cloud SQL instance.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -178,7 +298,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 resource?: IInstanceSetRootPasswordRequest;
-            }) => { execute(callback: (data: IResponse<IInstancesSetRootPasswordResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesSetRootPasswordResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesSetRootPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesSetRootPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesSetRootPasswordResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesSetRootPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesSetRootPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesSetRootPasswordResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates the settings of a Cloud SQL instance.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -188,7 +316,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 resource?: IDatabaseInstance;
-            }) => { execute(callback: (data: IResponse<IInstancesUpdateResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstancesUpdateResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstancesUpdateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var operations: {
             /**
@@ -201,7 +337,15 @@ declare module gapi.client {
                 instance: string;
                 operation: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IInstanceOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstanceOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists all operations that have been performed on a Cloud SQL instance.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -214,7 +358,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperationsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperationsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var sslCerts: {
             /**
@@ -227,7 +379,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 sha1Fingerprint: string;
-            }) => { execute(callback: (data: IResponse<ISslCertsDeleteResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISslCertsDeleteResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsDeleteResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsDeleteResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves an SSL certificate as specified by its SHA-1 fingerprint.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -238,7 +398,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 sha1Fingerprint: string;
-            }) => { execute(callback: (data: IResponse<ISslCert>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISslCert>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCert>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCert>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCert>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCert>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCert>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCert>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates an SSL certificate and returns the certificate, the associated private key, and the server certificate authority.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -248,7 +416,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 resource?: ISslCertsInsertRequest;
-            }) => { execute(callback: (data: IResponse<ISslCertsInsertResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISslCertsInsertResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsInsertResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsInsertResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Lists all of the current SSL certificates defined for a Cloud SQL instance.
              * @params {string} instance Cloud SQL instance ID. This does not include the project ID.
@@ -257,7 +433,15 @@ declare module gapi.client {
             list: (params: {
                 instance: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<ISslCertsListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISslCertsListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISslCertsListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var tiers: {
             /**
@@ -266,7 +450,15 @@ declare module gapi.client {
              */
             list: (params: {
                 project: string;
-            }) => { execute(callback: (data: IResponse<ITiersListResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITiersListResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITiersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITiersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITiersListResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITiersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITiersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITiersListResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * Database instance backup configuration.

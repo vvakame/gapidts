@@ -35,7 +35,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IAddressAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAddressAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes the specified address resource.
              * @params {string} address Name of the address resource to delete.
@@ -46,7 +54,15 @@ declare module gapi.client {
                 address: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified address resource.
              * @params {string} address Name of the address resource to return.
@@ -57,7 +73,15 @@ declare module gapi.client {
                 address: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IAddress>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAddress>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates an address resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -67,7 +91,15 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 resource?: IAddress;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of address resources contained within the specified region.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -82,7 +114,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IAddressList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAddressList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var backendServices: {
             /**
@@ -93,7 +133,15 @@ declare module gapi.client {
             delete: (params: {
                 backendService: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified BackendService resource.
              * @params {string} backendService Name of the BackendService resource to return.
@@ -102,7 +150,15 @@ declare module gapi.client {
             get: (params: {
                 backendService: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IBackendService>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBackendService>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendService>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendService>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendService>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendService>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendService>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendService>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Gets the most recent health check results for this BackendService.
              * @params {string} backendService Name of the BackendService resource to which the queried instance belongs.
@@ -112,7 +168,15 @@ declare module gapi.client {
                 backendService: string;
                 project: string;
                 resource?: IResourceGroupReference;
-            }) => { execute(callback: (data: IResponse<IBackendServiceGroupHealth>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBackendServiceGroupHealth>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceGroupHealth>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceGroupHealth>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceGroupHealth>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceGroupHealth>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceGroupHealth>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceGroupHealth>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a BackendService resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -120,7 +184,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IBackendService;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of BackendService resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -133,7 +205,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IBackendServiceList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IBackendServiceList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IBackendServiceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update the entire content of the BackendService resource. This method supports patch semantics.
              * @params {string} backendService Name of the BackendService resource to update.
@@ -143,7 +223,15 @@ declare module gapi.client {
                 backendService: string;
                 project: string;
                 resource?: IBackendService;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update the entire content of the BackendService resource.
              * @params {string} backendService Name of the BackendService resource to update.
@@ -153,7 +241,15 @@ declare module gapi.client {
                 backendService: string;
                 project: string;
                 resource?: IBackendService;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var diskTypes: {
             /**
@@ -168,7 +264,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IDiskTypeAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDiskTypeAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified disk type resource.
              * @params {string} diskType Name of the disk type resource to return.
@@ -179,7 +283,15 @@ declare module gapi.client {
                 diskType: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IDiskType>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDiskType>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskType>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskType>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskType>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskType>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskType>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskType>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of disk type resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -194,7 +306,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IDiskTypeList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDiskTypeList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskTypeList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var disks: {
             /**
@@ -209,7 +329,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IDiskAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDiskAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * 
              * @params {string} disk Name of the persistent disk resource to snapshot.
@@ -221,7 +349,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: ISnapshot;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes the specified persistent disk resource.
              * @params {string} disk Name of the persistent disk resource to delete.
@@ -232,7 +368,15 @@ declare module gapi.client {
                 disk: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified persistent disk resource.
              * @params {string} disk Name of the persistent disk resource to return.
@@ -243,7 +387,15 @@ declare module gapi.client {
                 disk: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IDisk>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDisk>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDisk>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDisk>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDisk>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDisk>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDisk>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDisk>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a persistent disk resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -255,7 +407,15 @@ declare module gapi.client {
                 sourceImage?: string;
                 zone: string;
                 resource?: IDisk;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of persistent disk resources contained within the specified zone.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -270,7 +430,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IDiskList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IDiskList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IDiskList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var firewalls: {
             /**
@@ -281,7 +449,15 @@ declare module gapi.client {
             delete: (params: {
                 firewall: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified firewall resource.
              * @params {string} firewall Name of the firewall resource to return.
@@ -290,7 +466,15 @@ declare module gapi.client {
             get: (params: {
                 firewall: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IFirewall>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFirewall>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewall>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewall>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewall>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewall>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewall>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewall>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a firewall resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -298,7 +482,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IFirewall;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of firewall resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -311,7 +503,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IFirewallList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IFirewallList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewallList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewallList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewallList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewallList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewallList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IFirewallList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates the specified firewall resource with the data included in the request. This method supports patch semantics.
              * @params {string} firewall Name of the firewall resource to update.
@@ -321,7 +521,15 @@ declare module gapi.client {
                 firewall: string;
                 project: string;
                 resource?: IFirewall;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates the specified firewall resource with the data included in the request.
              * @params {string} firewall Name of the firewall resource to update.
@@ -331,7 +539,15 @@ declare module gapi.client {
                 firewall: string;
                 project: string;
                 resource?: IFirewall;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var forwardingRules: {
             /**
@@ -346,7 +562,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IForwardingRuleAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IForwardingRuleAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes the specified ForwardingRule resource.
              * @params {string} forwardingRule Name of the ForwardingRule resource to delete.
@@ -357,7 +581,15 @@ declare module gapi.client {
                 forwardingRule: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified ForwardingRule resource.
              * @params {string} forwardingRule Name of the ForwardingRule resource to return.
@@ -368,7 +600,15 @@ declare module gapi.client {
                 forwardingRule: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IForwardingRule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IForwardingRule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -378,7 +618,15 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 resource?: IForwardingRule;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of ForwardingRule resources available to the specified project and region.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -393,7 +641,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IForwardingRuleList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IForwardingRuleList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Changes target url for forwarding rule.
              * @params {string} forwardingRule Name of the ForwardingRule resource in which target is to be set.
@@ -405,7 +661,15 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 resource?: ITargetReference;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var globalAddresses: {
             /**
@@ -416,7 +680,15 @@ declare module gapi.client {
             delete: (params: {
                 address: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified address resource.
              * @params {string} address Name of the address resource to return.
@@ -425,7 +697,15 @@ declare module gapi.client {
             get: (params: {
                 address: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IAddress>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAddress>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddress>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates an address resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -433,7 +713,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IAddress;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of global address resources.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -446,7 +734,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IAddressList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAddressList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAddressList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var globalForwardingRules: {
             /**
@@ -457,7 +753,15 @@ declare module gapi.client {
             delete: (params: {
                 forwardingRule: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified ForwardingRule resource.
              * @params {string} forwardingRule Name of the ForwardingRule resource to return.
@@ -466,7 +770,15 @@ declare module gapi.client {
             get: (params: {
                 forwardingRule: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IForwardingRule>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IForwardingRule>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRule>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a ForwardingRule resource in the specified project and region using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -474,7 +786,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IForwardingRule;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of ForwardingRule resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -487,7 +807,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IForwardingRuleList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IForwardingRuleList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IForwardingRuleList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Changes target url for forwarding rule.
              * @params {string} forwardingRule Name of the ForwardingRule resource in which target is to be set.
@@ -497,7 +825,15 @@ declare module gapi.client {
                 forwardingRule: string;
                 project: string;
                 resource?: ITargetReference;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var globalOperations: {
             /**
@@ -512,7 +848,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperationAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperationAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes the specified operation resource.
              * @params {string} operation Name of the operation resource to delete.
@@ -521,7 +865,15 @@ declare module gapi.client {
             delete: (params: {
                 operation: string;
                 project: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the specified operation resource.
              * @params {string} operation Name of the operation resource to return.
@@ -530,7 +882,15 @@ declare module gapi.client {
             get: (params: {
                 operation: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of operation resources contained within the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -543,7 +903,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperationList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperationList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var httpHealthChecks: {
             /**
@@ -554,7 +922,15 @@ declare module gapi.client {
             delete: (params: {
                 httpHealthCheck: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified HttpHealthCheck resource.
              * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to return.
@@ -563,7 +939,15 @@ declare module gapi.client {
             get: (params: {
                 httpHealthCheck: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IHttpHealthCheck>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IHttpHealthCheck>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheck>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheck>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheck>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheck>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheck>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheck>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a HttpHealthCheck resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -571,7 +955,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IHttpHealthCheck;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of HttpHealthCheck resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -584,7 +976,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IHttpHealthCheckList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IHttpHealthCheckList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheckList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheckList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheckList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheckList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheckList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IHttpHealthCheckList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a HttpHealthCheck resource in the specified project using the data included in the request. This method supports patch semantics.
              * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to update.
@@ -594,7 +994,15 @@ declare module gapi.client {
                 httpHealthCheck: string;
                 project: string;
                 resource?: IHttpHealthCheck;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates a HttpHealthCheck resource in the specified project using the data included in the request.
              * @params {string} httpHealthCheck Name of the HttpHealthCheck resource to update.
@@ -604,7 +1012,15 @@ declare module gapi.client {
                 httpHealthCheck: string;
                 project: string;
                 resource?: IHttpHealthCheck;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var images: {
             /**
@@ -615,7 +1031,15 @@ declare module gapi.client {
             delete: (params: {
                 image: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets the deprecation status of an image. If no message body is given, clears the deprecation status instead.
              * @params {string} image Image name.
@@ -625,7 +1049,15 @@ declare module gapi.client {
                 image: string;
                 project: string;
                 resource?: IDeprecationStatus;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified image resource.
              * @params {string} image Name of the image resource to return.
@@ -634,7 +1066,15 @@ declare module gapi.client {
             get: (params: {
                 image: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IImage>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IImage>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImage>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImage>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates an image resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -642,7 +1082,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IImage;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of image resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -655,7 +1103,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IImageList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IImageList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImageList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImageList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImageList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImageList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImageList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IImageList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var instances: {
             /**
@@ -671,7 +1127,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: IAccessConfig;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * 
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -684,7 +1148,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IInstanceAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstanceAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Attaches a disk resource to an instance.
              * @params {string} instance Instance name.
@@ -696,7 +1168,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: IAttachedDisk;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes the specified instance resource.
              * @params {string} instance Name of the instance resource to delete.
@@ -707,7 +1187,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes an access config from an instance's network interface.
              * @params {string} accessConfig Access config name.
@@ -722,7 +1210,15 @@ declare module gapi.client {
                 networkInterface: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Detaches a disk from an instance.
              * @params {string} deviceName Disk device name to detach.
@@ -735,7 +1231,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified instance resource.
              * @params {string} instance Name of the instance resource to return.
@@ -746,7 +1250,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IInstance>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstance>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified instance's serial port output.
              * @params {string} instance Name of the instance scoping this request.
@@ -757,7 +1269,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<ISerialPortOutput>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISerialPortOutput>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISerialPortOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISerialPortOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISerialPortOutput>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISerialPortOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISerialPortOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISerialPortOutput>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates an instance resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -767,7 +1287,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: IInstance;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of instance resources contained within the specified zone.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -782,7 +1310,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IInstanceList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IInstanceList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IInstanceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Performs a hard reset on the instance.
              * @params {string} instance Name of the instance scoping this request.
@@ -793,7 +1329,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets the auto-delete flag for a disk attached to an instance
              * @params {boolean} autoDelete Whether to auto-delete the disk when the instance is deleted.
@@ -808,7 +1352,15 @@ declare module gapi.client {
                 instance: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets metadata for the specified instance to the data included in the request.
              * @params {string} instance Name of the instance scoping this request.
@@ -820,7 +1372,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: IMetadata;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets an instance's scheduling options.
              * @params {string} instance Instance name.
@@ -832,7 +1392,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: IScheduling;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets tags for the specified instance to the data included in the request.
              * @params {string} instance Name of the instance scoping this request.
@@ -844,7 +1412,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: ITags;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var licenses: {
             /**
@@ -855,7 +1431,15 @@ declare module gapi.client {
             get: (params: {
                 license: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<ILicense>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILicense>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicense>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicense>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicense>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicense>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicense>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILicense>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var machineTypes: {
             /**
@@ -870,7 +1454,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IMachineTypeAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMachineTypeAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified machine type resource.
              * @params {string} machineType Name of the machine type resource to return.
@@ -881,7 +1473,15 @@ declare module gapi.client {
                 machineType: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IMachineType>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMachineType>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineType>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineType>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineType>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineType>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineType>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineType>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of machine type resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -896,7 +1496,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IMachineTypeList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IMachineTypeList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IMachineTypeList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var networks: {
             /**
@@ -907,7 +1515,15 @@ declare module gapi.client {
             delete: (params: {
                 network: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified network resource.
              * @params {string} network Name of the network resource to return.
@@ -916,7 +1532,15 @@ declare module gapi.client {
             get: (params: {
                 network: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<INetwork>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<INetwork>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetwork>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetwork>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetwork>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetwork>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetwork>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetwork>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a network resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -924,7 +1548,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: INetwork;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of network resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -937,7 +1569,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<INetworkList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<INetworkList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetworkList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetworkList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetworkList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetworkList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetworkList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<INetworkList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var projects: {
             /**
@@ -946,7 +1586,15 @@ declare module gapi.client {
              */
             get: (params: {
                 project: string;
-            }) => { execute(callback: (data: IResponse<IProject>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IProject>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IProject>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets metadata common to all instances within the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -954,7 +1602,15 @@ declare module gapi.client {
             setCommonInstanceMetadata: (params: {
                 project: string;
                 resource?: IMetadata;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Sets usage export location
              * @params {string} project Name of the project scoping this request.
@@ -962,7 +1618,15 @@ declare module gapi.client {
             setUsageExportBucket: (params: {
                 project: string;
                 resource?: IUsageExportLocation;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var regionOperations: {
             /**
@@ -975,7 +1639,15 @@ declare module gapi.client {
                 operation: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the specified region-specific operation resource.
              * @params {string} operation Name of the operation resource to return.
@@ -986,7 +1658,15 @@ declare module gapi.client {
                 operation: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of operation resources contained within the specified region.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1001,7 +1681,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IOperationList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperationList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var regions: {
             /**
@@ -1012,7 +1700,15 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<IRegion>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRegion>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegion>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegion>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegion>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegion>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegion>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegion>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of region resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1025,7 +1721,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IRegionList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRegionList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegionList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegionList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegionList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegionList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegionList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRegionList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var routes: {
             /**
@@ -1036,7 +1740,15 @@ declare module gapi.client {
             delete: (params: {
                 project: string;
                 route: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified route resource.
              * @params {string} project Name of the project scoping this request.
@@ -1045,7 +1757,15 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 route: string;
-            }) => { execute(callback: (data: IResponse<IRoute>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRoute>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoute>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoute>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoute>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoute>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoute>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRoute>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a route resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -1053,7 +1773,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IRoute;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of route resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1066,7 +1794,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IRouteList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IRouteList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRouteList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRouteList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRouteList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRouteList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRouteList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IRouteList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var snapshots: {
             /**
@@ -1077,7 +1813,15 @@ declare module gapi.client {
             delete: (params: {
                 project: string;
                 snapshot: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified persistent disk snapshot resource.
              * @params {string} project Name of the project scoping this request.
@@ -1086,7 +1830,15 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 snapshot: string;
-            }) => { execute(callback: (data: IResponse<ISnapshot>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISnapshot>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshot>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of persistent disk snapshot resources contained within the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1099,7 +1851,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<ISnapshotList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ISnapshotList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ISnapshotList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var targetHttpProxies: {
             /**
@@ -1110,7 +1870,15 @@ declare module gapi.client {
             delete: (params: {
                 project: string;
                 targetHttpProxy: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified TargetHttpProxy resource.
              * @params {string} project Name of the project scoping this request.
@@ -1119,7 +1887,15 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 targetHttpProxy: string;
-            }) => { execute(callback: (data: IResponse<ITargetHttpProxy>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetHttpProxy>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxy>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxy>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxy>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxy>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxy>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxy>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a TargetHttpProxy resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -1127,7 +1903,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: ITargetHttpProxy;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of TargetHttpProxy resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1140,7 +1924,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<ITargetHttpProxyList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetHttpProxyList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxyList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxyList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxyList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxyList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxyList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetHttpProxyList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Changes the URL map for TargetHttpProxy.
              * @params {string} project Name of the project scoping this request.
@@ -1150,7 +1942,15 @@ declare module gapi.client {
                 project: string;
                 targetHttpProxy: string;
                 resource?: IUrlMapReference;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var targetInstances: {
             /**
@@ -1165,7 +1965,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<ITargetInstanceAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetInstanceAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes the specified TargetInstance resource.
              * @params {string} project Name of the project scoping this request.
@@ -1176,7 +1984,15 @@ declare module gapi.client {
                 project: string;
                 targetInstance: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified TargetInstance resource.
              * @params {string} project Name of the project scoping this request.
@@ -1187,7 +2003,15 @@ declare module gapi.client {
                 project: string;
                 targetInstance: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<ITargetInstance>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetInstance>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstance>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstance>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a TargetInstance resource in the specified project and zone using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -1197,7 +2021,15 @@ declare module gapi.client {
                 project: string;
                 zone: string;
                 resource?: ITargetInstance;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of TargetInstance resources available to the specified project and zone.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1212,7 +2044,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<ITargetInstanceList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetInstanceList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetInstanceList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var targetPools: {
             /**
@@ -1226,7 +2066,15 @@ declare module gapi.client {
                 region: string;
                 targetPool: string;
                 resource?: ITargetPoolsAddHealthCheckRequest;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Adds instance url to targetPool.
              * @params {string} project 
@@ -1238,7 +2086,15 @@ declare module gapi.client {
                 region: string;
                 targetPool: string;
                 resource?: ITargetPoolsAddInstanceRequest;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of target pools grouped by scope.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1251,7 +2107,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<ITargetPoolAggregatedList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetPoolAggregatedList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolAggregatedList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolAggregatedList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Deletes the specified TargetPool resource.
              * @params {string} project Name of the project scoping this request.
@@ -1262,7 +2126,15 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified TargetPool resource.
              * @params {string} project Name of the project scoping this request.
@@ -1273,7 +2145,15 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 targetPool: string;
-            }) => { execute(callback: (data: IResponse<ITargetPool>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetPool>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPool>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPool>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPool>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPool>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPool>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPool>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Gets the most recent health check results for each IP for the given instance that is referenced by given TargetPool.
              * @params {string} project 
@@ -1285,7 +2165,15 @@ declare module gapi.client {
                 region: string;
                 targetPool: string;
                 resource?: IInstanceReference;
-            }) => { execute(callback: (data: IResponse<ITargetPoolInstanceHealth>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetPoolInstanceHealth>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolInstanceHealth>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolInstanceHealth>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolInstanceHealth>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolInstanceHealth>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolInstanceHealth>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolInstanceHealth>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a TargetPool resource in the specified project and region using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -1295,7 +2183,15 @@ declare module gapi.client {
                 project: string;
                 region: string;
                 resource?: ITargetPool;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of TargetPool resources available to the specified project and region.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1310,7 +2206,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 region: string;
-            }) => { execute(callback: (data: IResponse<ITargetPoolList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ITargetPoolList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ITargetPoolList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Removes health check URL from targetPool.
              * @params {string} project 
@@ -1322,7 +2226,15 @@ declare module gapi.client {
                 region: string;
                 targetPool: string;
                 resource?: ITargetPoolsRemoveHealthCheckRequest;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Removes instance URL from targetPool.
              * @params {string} project 
@@ -1334,7 +2246,15 @@ declare module gapi.client {
                 region: string;
                 targetPool: string;
                 resource?: ITargetPoolsRemoveInstanceRequest;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Changes backup pool configurations.
              * @params {number} failoverRatio New failoverRatio value for the containing target pool.
@@ -1348,7 +2268,15 @@ declare module gapi.client {
                 region: string;
                 targetPool: string;
                 resource?: ITargetReference;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var urlMaps: {
             /**
@@ -1359,7 +2287,15 @@ declare module gapi.client {
             delete: (params: {
                 project: string;
                 urlMap: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Returns the specified UrlMap resource.
              * @params {string} project Name of the project scoping this request.
@@ -1368,7 +2304,15 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 urlMap: string;
-            }) => { execute(callback: (data: IResponse<IUrlMap>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUrlMap>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMap>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMap>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Creates a UrlMap resource in the specified project using the data included in the request.
              * @params {string} project Name of the project scoping this request.
@@ -1376,7 +2320,15 @@ declare module gapi.client {
             insert: (params: {
                 project: string;
                 resource?: IUrlMap;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of UrlMap resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1389,7 +2341,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IUrlMapList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUrlMapList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update the entire content of the UrlMap resource. This method supports patch semantics.
              * @params {string} project Name of the project scoping this request.
@@ -1399,7 +2359,15 @@ declare module gapi.client {
                 project: string;
                 urlMap: string;
                 resource?: IUrlMap;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Update the entire content of the UrlMap resource.
              * @params {string} project Name of the project scoping this request.
@@ -1409,7 +2377,15 @@ declare module gapi.client {
                 project: string;
                 urlMap: string;
                 resource?: IUrlMap;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Run static validation for the UrlMap. In particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the UrlMap.
              * @params {string} project Name of the project scoping this request.
@@ -1419,7 +2395,15 @@ declare module gapi.client {
                 project: string;
                 urlMap: string;
                 resource?: IUrlMapsValidateRequest;
-            }) => { execute(callback: (data: IResponse<IUrlMapsValidateResponse>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IUrlMapsValidateResponse>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapsValidateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapsValidateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapsValidateResponse>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapsValidateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapsValidateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IUrlMapsValidateResponse>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var zoneOperations: {
             /**
@@ -1432,7 +2416,15 @@ declare module gapi.client {
                 operation: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data:any, original: string) => void):void; }; // void
+            }) => {
+                execute(callback: (data:any, original: string) => void):void;// void
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<any>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the specified zone-specific operation resource.
              * @params {string} operation Name of the operation resource to return.
@@ -1443,7 +2435,15 @@ declare module gapi.client {
                 operation: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperation>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperation>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperation>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of operation resources contained within the specified zone.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1458,7 +2458,15 @@ declare module gapi.client {
                 pageToken?: string;
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IOperationList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IOperationList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IOperationList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var zones: {
             /**
@@ -1469,7 +2477,15 @@ declare module gapi.client {
             get: (params: {
                 project: string;
                 zone: string;
-            }) => { execute(callback: (data: IResponse<IZone>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IZone>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZone>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZone>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves the list of zone resources available to the specified project.
              * @params {string} filter Optional. Filter expression for filtering listed resources.
@@ -1482,7 +2498,15 @@ declare module gapi.client {
                 maxResults?: number;
                 pageToken?: string;
                 project: string;
-            }) => { execute(callback: (data: IResponse<IZoneList>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IZoneList>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZoneList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZoneList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZoneList>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZoneList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZoneList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IZoneList>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * An access configuration attached to an instance's network interface.

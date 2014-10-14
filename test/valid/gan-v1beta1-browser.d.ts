@@ -21,7 +21,15 @@ declare module gapi.client {
                 advertiserId?: string;
                 role: string;
                 roleId: string;
-            }) => { execute(callback: (data: IResponse<IAdvertiser>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAdvertiser>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertiser>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertiser>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertiser>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertiser>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertiser>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertiser>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves data about all advertisers that the requesting advertiser/publisher has access to.
              * @params {string} advertiserCategory Caret(^) delimted list of advertiser categories. Valid categories are defined here: http://www.google.com/support/affiliatenetwork/advertiser/bin/answer.py?hl=en&answer=107581. Filters out all advertisers not in one of the given advertiser categories. Optional.
@@ -44,7 +52,15 @@ declare module gapi.client {
                 relationshipStatus?: string;
                 role: string;
                 roleId: string;
-            }) => { execute(callback: (data: IResponse<IAdvertisers>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IAdvertisers>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertisers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertisers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertisers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertisers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertisers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IAdvertisers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var ccOffers: {
             /**
@@ -57,7 +73,15 @@ declare module gapi.client {
                 advertiser?: string;
                 projection?: string;
                 publisher: string;
-            }) => { execute(callback: (data: IResponse<ICcOffers>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ICcOffers>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICcOffers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICcOffers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICcOffers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICcOffers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICcOffers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ICcOffers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var events: {
             /**
@@ -100,7 +124,15 @@ declare module gapi.client {
                 sku?: string;
                 status?: string;
                 type?: string;
-            }) => { execute(callback: (data: IResponse<IEvents>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IEvents>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IEvents>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var links: {
             /**
@@ -113,7 +145,15 @@ declare module gapi.client {
                 linkId: string;
                 role: string;
                 roleId: string;
-            }) => { execute(callback: (data: IResponse<ILink>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILink>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Inserts a new link.
              * @params {string} role The role of the requester. Valid values: 'advertisers' or 'publishers'.
@@ -123,7 +163,15 @@ declare module gapi.client {
                 role: string;
                 roleId: string;
                 resource?: ILink;
-            }) => { execute(callback: (data: IResponse<ILink>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILink>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILink>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves all links that match the query parameters.
              * @params {string} advertiserId Limits the resulting links to the ones belonging to the listed advertisers.
@@ -158,7 +206,15 @@ declare module gapi.client {
                 searchText?: string;
                 startDateMax?: string;
                 startDateMin?: string;
-            }) => { execute(callback: (data: IResponse<ILinks>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<ILinks>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILinks>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<ILinks>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var publishers: {
             /**
@@ -171,7 +227,15 @@ declare module gapi.client {
                 publisherId?: string;
                 role: string;
                 roleId: string;
-            }) => { execute(callback: (data: IResponse<IPublisher>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPublisher>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublisher>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublisher>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublisher>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublisher>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublisher>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublisher>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Retrieves data about all publishers that the requesting advertiser/publisher has access to.
              * @params {number} maxResults Max number of items to return in this page. Optional. Defaults to 20.
@@ -194,7 +258,15 @@ declare module gapi.client {
                 relationshipStatus?: string;
                 role: string;
                 roleId: string;
-            }) => { execute(callback: (data: IResponse<IPublishers>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IPublishers>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishers>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IPublishers>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         var reports: {
             /**
@@ -229,7 +301,15 @@ declare module gapi.client {
                 startDate?: string;
                 startIndex?: number;
                 status?: string;
-            }) => { execute(callback: (data: IResponse<IReport>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IReport>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IReport>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * An AdvertiserResource.

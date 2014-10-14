@@ -21,7 +21,15 @@ declare module gapi.client {
              */
             get: (params: {
                 groupUniqueId: string;
-            }) => { execute(callback: (data: IResponse<IGroups>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IGroups>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an existing resource. This method supports patch semantics.
              * @params {string} groupUniqueId The resource ID
@@ -29,7 +37,15 @@ declare module gapi.client {
             patch: (params: {
                 groupUniqueId: string;
                 resource?: IGroups;
-            }) => { execute(callback: (data: IResponse<IGroups>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IGroups>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
             /**
              * Updates an existing resource.
              * @params {string} groupUniqueId The resource ID
@@ -37,7 +53,15 @@ declare module gapi.client {
             update: (params: {
                 groupUniqueId: string;
                 resource?: IGroups;
-            }) => { execute(callback: (data: IResponse<IGroups>, original: string) => void):void; };
+            }) => {
+                execute(callback: (data: IResponse<IGroups>, original: string) => void):void;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  Thenable<U>, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => Thenable<U>): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => U): Thenable<U>;
+                then<U>(onFulfilled: (response: IPromiseResponse<IGroups>) =>  U, onRejected?:(reason:IPromiseErrorResponse) => void): Thenable<U>;
+            };
         };
         /**
          * JSON template for Group resource
