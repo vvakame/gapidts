@@ -37,6 +37,7 @@ program
 	.option("--endpoint <endpoint>", "path. e.g. https://www.googleapis.com/discovery/v1/apis/urlshortener/v1/rest")
 	.option("--outDir <directory>", "output directory.")
 	.option("--silent", "execute silently.")
+	.option("--type-only", "emit type definition only.")
 	.parse(process.argv);
 
 interface ICommandlineOptions {
@@ -51,6 +52,7 @@ interface ICommandlineOptions {
 
 	outDir: string;
 	silent: boolean;
+	typeOnly: boolean;
 }
 
 var opts:ICommandlineOptions = <any>program;
@@ -236,7 +238,7 @@ function processJsonSchema(data:string) {
 		}
 		return true;
 	}
-	var result = gapidts(JSON.parse(data));
+	var result = gapidts(JSON.parse(data), opts.typeOnly);
 	if (opts.outDir) {
 		mkdirp.sync(opts.outDir);
 		// TODO

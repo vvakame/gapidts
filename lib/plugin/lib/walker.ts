@@ -8,7 +8,7 @@ import Process = require("../../process");
 
 import IPlugin = require("./plugin");
 
-function walk(plugin:IPlugin, process:Process, root:Root) {
+function walk(plugin:IPlugin, process:Process, root:Root, typeOnly = false) {
 	if (!plugin) {
 		throw new Error("plugin parameter required");
 	}
@@ -25,16 +25,18 @@ function walk(plugin:IPlugin, process:Process, root:Root) {
 
 	if (plugin.emitTopLevelModule) {
 		plugin.emitTopLevelModule(process, root, () => {
-			walkDefinition(plugin, process, root);
+			walkDefinition(plugin, process, root, typeOnly);
 		});
 	} else {
-		walkDefinition(plugin, process, root);
+		walkDefinition(plugin, process, root, typeOnly);
 	}
 }
 
-function walkDefinition(plugin:IPlugin, process:Process, root:Root) {
-	root.resources.forEach(resource => walkResource(plugin, process, resource));
-	root.methods.forEach(method => walkMethod(plugin, process, method));
+function walkDefinition(plugin:IPlugin, process:Process, root:Root, typeOnly = false) {
+	if(!typeOnly) {
+		root.resources.forEach(resource => walkResource(plugin, process, resource));
+		root.methods.forEach(method => walkMethod(plugin, process, method));
+	}
 	root.schemas.forEach(schema => plugin.emitType(process, schema));
 }
 

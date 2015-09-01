@@ -10,11 +10,11 @@ try {
 } catch (e) {
 }
 
-function gapidts(root:_model.IRestDescription):_emitter.IResult {
+function gapidts(root:_model.IRestDescription, typeOnly = false):_emitter.IResult {
 	if (typeof root === "string") {
 		root = JSON.parse(<any>root);
 	}
-	return _emitter.emit(root);
+	return _emitter.emit(root, typeOnly);
 }
 
 module gapidts {

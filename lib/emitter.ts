@@ -18,17 +18,17 @@ export interface IResult {
 	nodejsDefinition:string;
 }
 
-export function emit(root:model.IRestDescription):IResult {
+export function emit(root:model.IRestDescription, typeOnly = false):IResult {
 
 	var base = new Root(root);
 
 	var browser = new GoogleDiscoveryBasedAPIForBrowser();
 	var browserProcess = new Process();
-	walk(browser, browserProcess, base);
+	walk(browser, browserProcess, base, typeOnly);
 
 	var node = new GoogleDiscoveryBasedAPIForNode();
 	var nodeProcess = new Process();
-	walk(node, nodeProcess, base);
+	walk(node, nodeProcess, base, typeOnly);
 
 	return {
 		name: root.name,
