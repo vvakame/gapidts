@@ -101,17 +101,11 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		tsd: {
+		dtsm: {
 			client: {
 				options: {
-					// execute a command
-					command: 'reinstall',
-
-					//optional: always get from HEAD
-					latest: false,
-
 					// optional: specify config file
-					config: './tsd.json'
+					confog: './dtsm.json'
 				}
 			}
 		},
@@ -185,7 +179,7 @@ module.exports = function (grunt) {
 	grunt.registerTask(
 		'setup',
 		"setup project environment",
-		['clean', 'tsd']);
+		['clean', 'dtsm']);
 
 	grunt.registerTask(
 		'default',

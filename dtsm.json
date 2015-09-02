@@ -1,0 +1,41 @@
+{
+  "repos": [
+    {
+      "url": "https://github.com/borisyankov/DefinitelyTyped.git",
+      "ref": "master"
+    }
+  ],
+  "path": "typings",
+  "bundle": "typings/bundle.d.ts",
+  "link": {
+    "npm": {
+      "include": true
+    }
+  },
+  "dependencies": {
+    "node/node.d.ts": {
+      "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "commander/commander.d.ts": {
+      "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "update-notifier/update-notifier.d.ts": {
+      "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "colors/colors.d.ts": {
+      "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "mkdirp/mkdirp.d.ts": {
+      "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "mocha/mocha.d.ts": {
+      "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    },
+    "power-assert/power-assert.d.ts": {
+      "ref": "af76bf46025371c760d8fe8c03cf874428da6124"
+    }
+  }
+}
