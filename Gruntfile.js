@@ -66,7 +66,7 @@ module.exports = function (grunt) {
 						"noconstruct": true,
 						"nounreachable": false, // switch で怒られるので
 						"noempty": false, // プロパティアクセス付き引数有りのコンストラクタまで怒られるので
-						"oneline": [true,
+						"oneline": [false,
 							"check-open-brace",
 							"check-catch",
 							"check-else",
